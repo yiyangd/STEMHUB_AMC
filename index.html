@@ -5,161 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>STEMHUB AMC 题库</title>
   <style>
-    :root {
-      color-scheme: light;
-      --ink: #152235;
-      --muted: #607086;
-      --line: #dce3ea;
-      --panel: #ffffff;
-      --bg: #f5f2ed;
-      --navy: #173650;
-      --blue: #226aa5;
-      --green: #527d4d;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-    }
-    header {
-      background: var(--navy);
-      color: white;
-      padding: 32px clamp(20px, 4vw, 48px);
-    }
-    h1 {
-      margin: 0 0 10px;
-      font-size: clamp(32px, 5vw, 56px);
-      line-height: 1.05;
-      letter-spacing: 0;
-    }
-    .subtitle {
-      margin: 0;
-      color: #c8d8e6;
-      font-size: clamp(16px, 2vw, 22px);
-    }
-    main {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 28px clamp(18px, 3vw, 36px) 44px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 8px;
-    }
-    .card {
-      display: flex;
-      min-height: 220px;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      padding: 24px;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 0 1px 2px rgba(20, 35, 52, 0.04);
-      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
-    }
-    .card:hover {
-      transform: translateY(-2px);
-      border-color: #b9cad8;
-      box-shadow: 0 10px 24px rgba(20, 35, 52, 0.10);
-    }
-    .card h2 {
-      margin: 0 0 12px;
-      font-size: clamp(28px, 4vw, 42px);
-      letter-spacing: 0;
-    }
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.6;
-    }
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 24px;
-    }
-    .stat {
-      border-top: 1px solid var(--line);
-      padding-top: 12px;
-    }
-    .stat strong {
-      display: block;
-      font-size: 28px;
-      line-height: 1.1;
-    }
-    .stat span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 26px;
-    }
-    .links a {
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      padding: 10px 12px;
-      color: var(--ink);
-      background: white;
-      text-decoration: none;
-    }
-    .links a:hover { border-color: #b9cad8; }
-    footer {
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 28px;
-    }
-    @media (max-width: 760px) {
-      .grid { grid-template-columns: 1fr; }
-      .card { min-height: 190px; }
-    }
+    :root { color-scheme: light; --ink:#152235; --muted:#607086; --line:#dce3ea; --panel:#ffffff; --bg:#f5f2ed; --navy:#173650; --blue:#226aa5; --green:#527d4d; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--ink); }
+    .site-nav { display:flex; justify-content:space-between; align-items:center; gap:16px; background:#10283d; color:#fff; padding:10px clamp(20px,4vw,48px); border-bottom:1px solid rgba(255,255,255,.12); }
+    .site-brand { font-weight:800; color:#fff; text-decoration:none; white-space:nowrap; }
+    .site-links { display:flex; flex-wrap:wrap; gap:8px; }
+    .site-links a { color:#d7e4ef; text-decoration:none; border:1px solid rgba(255,255,255,.18); border-radius:6px; padding:7px 10px; min-height:34px; display:inline-flex; align-items:center; }
+    .site-links a:hover,.site-links a.active { color:#fff; background:rgba(255,255,255,.12); }
+    header { background:var(--navy); color:#fff; padding:32px clamp(20px,4vw,48px); }
+    h1 { margin:0 0 10px; font-size:clamp(32px,5vw,56px); line-height:1.05; letter-spacing:0; }
+    .subtitle { margin:0; color:#c8d8e6; font-size:clamp(16px,2vw,22px); max-width:900px; line-height:1.55; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .hero-actions a { color:#fff; text-decoration:none; border:1px solid rgba(255,255,255,.28); border-radius:6px; padding:11px 14px; background:rgba(255,255,255,.10); }
+    .hero-actions a.primary { background:#fff; color:var(--navy); border-color:#fff; font-weight:750; }
+    main { max-width:1180px; margin:0 auto; padding:28px clamp(18px,3vw,36px) 44px; }
+    .overview { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-bottom:18px; }
+    .metric { border:1px solid var(--line); border-radius:8px; background:#fff; padding:16px; }
+    .metric strong { display:block; font-size:28px; line-height:1.1; }
+    .metric span { color:var(--muted); font-size:14px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:8px; }
+    .card { display:flex; min-height:220px; flex-direction:column; justify-content:space-between; border:1px solid var(--line); border-radius:8px; background:var(--panel); padding:24px; text-decoration:none; color:inherit; box-shadow:0 1px 2px rgba(20,35,52,.04); transition:transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease; }
+    .card:hover { transform:translateY(-2px); border-color:#b9cad8; box-shadow:0 10px 24px rgba(20,35,52,.10); }
+    .card h2 { margin:0 0 12px; font-size:clamp(28px,4vw,42px); letter-spacing:0; }
+    .card p { margin:0; color:var(--muted); font-size:17px; line-height:1.6; }
+    .stats { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:24px; }
+    .stat { border-top:1px solid var(--line); padding-top:12px; }
+    .stat strong { display:block; font-size:28px; line-height:1.1; }
+    .stat span { color:var(--muted); font-size:14px; }
+    .feature-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:18px 0; }
+    .feature { background:#fff; border:1px solid var(--line); border-radius:8px; padding:16px; }
+    .feature strong { display:block; margin-bottom:6px; }
+    .feature span { color:var(--muted); line-height:1.55; }
+    .links { display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+    .links a { border:1px solid var(--line); border-radius:6px; padding:10px 12px; color:var(--ink); background:#fff; text-decoration:none; }
+    .links a:hover { border-color:#b9cad8; }
+    footer { color:var(--muted); font-size:14px; margin-top:28px; }
+    @media (max-width:760px) { .site-nav { align-items:flex-start; flex-direction:column; } .site-links { width:100%; } .site-links a { flex:1 1 auto; justify-content:center; } .overview,.grid,.feature-list { grid-template-columns:1fr; } .card { min-height:190px; } }
   </style>
 </head>
 <body>
+  <nav class="site-nav" aria-label="全站导航">
+    <a class="site-brand active" href="./" aria-current="page">STEMHUB AMC</a>
+    <div class="site-links">
+      <a class="active" href="./" aria-current="page">首页</a>
+      <a href="amc10/">AMC 10</a>
+      <a href="amc12/">AMC 12</a>
+      <a href="#downloads">数据下载</a>
+    </div>
+  </nav>
   <header>
     <h1>STEMHUB AMC 题库</h1>
-    <p class="subtitle">AMC 10 / AMC 12 分类检索、A/B 对比、二级题型下钻与题号分段分析。</p>
+    <p class="subtitle">AMC 10 / AMC 12 分类检索、A/B 对比、二级题型下钻与题号分段分析。面向竞赛教学、讲义编写和题型研究。</p>
+    <div class="hero-actions">
+      <a class="primary" href="amc10/">开始检索 AMC 10</a>
+      <a class="primary" href="amc12/">开始检索 AMC 12</a>
+      <a href="#downloads">下载结构化数据</a>
+    </div>
   </header>
   <main>
-    <section class="grid" aria-label="AMC contest entry points">
-      <a class="card" href="amc10/">
-        <div>
-          <h2>AMC 10</h2>
-          <p>进入 AMC 10 多年份题目总览，支持年份、A/B卷、一级/二级分类和关键词筛选。</p>
-        </div>
-        <div class="stats">
-          <div class="stat"><strong>23</strong><span>年份标签</span></div>
-          <div class="stat"><strong>1150</strong><span>题目</span></div>
-        </div>
-      </a>
-      <a class="card" href="amc12/">
-        <div>
-          <h2>AMC 12</h2>
-          <p>进入 AMC 12 多年份题目总览，包含教材分类目录、CSV 数据和部分 LaTeX 教材稿。</p>
-        </div>
-        <div class="stats">
-          <div class="stat"><strong>24</strong><span>年份标签</span></div>
-          <div class="stat"><strong>1200</strong><span>题目</span></div>
-        </div>
-      </a>
+    <section class="overview" aria-label="站点概览">
+      <div class="metric"><strong>47</strong><span>年份标签</span></div>
+      <div class="metric"><strong>2350</strong><span>总题量</span></div>
+      <div class="metric"><strong>2002-2024</strong><span>覆盖年份</span></div>
+      <div class="metric"><strong>A/B</strong><span>双卷对比</span></div>
     </section>
-    <nav class="links" aria-label="Data downloads">
+    <section class="grid" aria-label="AMC contest entry points">
+      <a class="card" href="amc10/"><div><h2>AMC 10</h2><p>进入 AMC 10 多年份题目总览，支持年份、A/B卷、一级/二级分类和关键词筛选。</p></div><div class="stats"><div class="stat"><strong>23</strong><span>年份标签</span></div><div class="stat"><strong>1150</strong><span>题目</span></div></div></a>
+      <a class="card" href="amc12/"><div><h2>AMC 12</h2><p>进入 AMC 12 多年份题目总览，包含教材分类目录、CSV 数据和部分 LaTeX 教材稿。</p></div><div class="stats"><div class="stat"><strong>24</strong><span>年份标签</span></div><div class="stat"><strong>1200</strong><span>题目</span></div></div></a>
+    </section>
+    <section class="feature-list" aria-label="功能亮点">
+      <div class="feature"><strong>分类检索</strong><span>按年份、A/B卷、一级分类、二级分类和关键词快速定位题目。</span></div>
+      <div class="feature"><strong>题型统计</strong><span>查看 A/B 卷题型分布、二级题型下钻和 Part 1/2/3 题号分段。</span></div>
+      <div class="feature"><strong>教材编写</strong><span>提供 CSV、Markdown、LaTeX 等结构化材料，方便二次整理。</span></div>
+    </section>
+    <nav id="downloads" class="links" aria-label="Data downloads">
       <a href="amc10/all_problems.csv">AMC 10 CSV</a>
       <a href="amc12/all_problems.csv">AMC 12 CSV</a>
       <a href="amc10/taxonomy.md">AMC 10 分类体系</a>
       <a href="amc12/taxonomy.md">AMC 12 分类体系</a>
+      <a href="amc12/latex/AMC12_2014_2020_classified.tex">AMC 12 LaTeX</a>
     </nav>
-    <footer>静态站点目录：STEMHUB_AMC。部署到 GitHub Pages 后，本页作为根入口。</footer>
+    <footer>部署于 GitHub Pages。当前站点为静态页面，可直接分享和检索。</footer>
   </main>
 </body>
 </html>
