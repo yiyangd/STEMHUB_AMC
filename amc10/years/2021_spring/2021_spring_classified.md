@@ -1,0 +1,294 @@
+# 2021 Spring AMC 10 分类题集
+
+> 自动批量整理草稿。每道题只归入一个一级分类和一个二级分类；answer 留空表示源 PDF 未提供答案表。
+
+## 统计概览
+
+- 总题量：50
+- A 卷：25 题
+- B 卷：25 题
+
+| 一级分类 | 题量 |
+| --- | ---: |
+| 代数 | 13 |
+| 几何 | 13 |
+| 数论 | 9 |
+| 组合数学 | 4 |
+| 概率与统计 | 11 |
+
+## 1. 代数
+
+### 1.1 方程与不等式
+
+- **2021 Spring AMC 10B Problem 15**
+  - 考点：将题设转化为方程组或不等式并求解。
+  - 标签：方程;不等式
+  - 题面：The real number x satisfies the equation x + 1 = 5. What is the value of x11 − 7x7 + x3? x (A) − 1 (B) 0 (C) 1 (D) 2 (E) 8
+
+### 1.2 运算与化简
+
+- **2021 Spring AMC 10A Problem 1**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：What is the value of (22 − 2) − (32 − 3) + (42 − 4)? (A) 1 (B) 2 (C) 5 (D) 8 (E) 12
+- **2021 Spring AMC 10A Problem 2**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Portia’s high school has 3 times as many students as Lara’s high school. The two high schools have a total of 2600 students. How many students does Portia’s high school have? (A) 600 (B) 650 (C) 1950 (D) 2000 (E) 2050
+- **2021 Spring AMC 10A Problem 4**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：A cart rolls down a hill, traveling 5 inches the first second and accelerating so that each succes- sive 1-second time interval, it travels 7 inches more than during the previous 1-second interval. The cart takes 30 seconds to reach the bottom of the hill. How far, in inches, does it travel? (A) 215 (B) 360 (C) 2992 (D) 3195 (E) 3242
+- **2021 Spring AMC 10A Problem 7**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Tom has a collection of 13 snakes, 4 of which are purple and 5 of which are happy. He observes that • all of his happy snakes can add • none of his purple snakes can subtract, and • all of his snakes that can’t subtract also can’t add Which of these conclusions can be drawn about Tom’s snakes? (A) Purple snakes can add. (B) Purple snakes are happy. (C) Snakes that can add are purple. (D) Happy snakes are not purple. (E) Happy snakes can’t subtract.
+- **2021 Spring AMC 10A Problem 9**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 题面：What is the least possible value of (xy − 1)2 + (x + y)2 for real numbers x and y? (A) 0 (B) 1 (C) 1 (D) 1 (E) 2 4 2
+- **2021 Spring AMC 10A Problem 10**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Which of the following is equivalent to (2 + 3)(22 + 32)(24 + 34)(28 + 38)(216 + 316)(232 + 332)(264 + 364)? (A) 3127 +2127 (B) 3127 +2127 +2·363 +3·263 (C) 3128 −2128 (D) 3128 +2128 (E) 5127
+- **2021 Spring AMC 10B Problem 2**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：What is the value of (3 − 2 3)2 + (3 + 2 3)2? √ √ √ (A) 0 (B) 4 3 − 6 (C) 6 (D) 4 3 (E) 4 3 + 6
+- **2021 Spring AMC 10B Problem 3**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：In an after-school program for juniors and seniors, there is a debate team with an equal number of students from each class on the team. among the 28 students in the program, 25 (A) 5 (B) 6 (C) 8 (D) 11 (E) 20.
+- **2021 Spring AMC 10B Problem 4**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：At a math contest, 57 students are wearing blue shirts, and another 75 students are wearing yellow shirts. The 132 students are assigned into 66 pairs. In exactly 23 of these pairs, both students are wearing blue shirts. In how many pairs are both students wearing yellow shirts? (A) 23 (B) 32 (C) 37 (D) 41 (E) 64
+- **2021 Spring AMC 10B Problem 9**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：The point P (a, b) in the xy-plane is first rotated counterclockwise by 90◦ around the point (1, 5) and then reflected about the line y = −x. The image of P after these two transformations is at (−6, 3). What is b − a? (A) 1 (B) 3 (C) 5 (D) 7 (E) 9
+- **2021 Spring AMC 10B Problem 12**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Let N = 34 · 34 · 63 · 270. What is the ratio of the sum of the odd divisors of N to the sum of the even divisors of N ? (A) 1 : 16 (B) 1 : 15 (C) 1 : 14 (D) 1 : 8 (E) 1 : 3
+- **2021 Spring AMC 10B Problem 24**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Arjun and Beth play a game in which they take turns removing one brick or two adjacent bricks from one ”wall” among a set of several walls of bricks, with gaps possibly creating new walls. The walls are one brick tall. For example, a set of walls of sizes 4 and 2 can be changed into any of the following by one move: (3, 2), (2, 1, 2), (4), (4, 1), (2, 2), or (1, 1, 2). , , ,... Arjun plays first, and the player who removes the last brick wins. For which starting configuration is there a strategy that guarantees a win for Beth? (A) (6, 1, 1) (B) (6, 2, 1) (C) (6, 2, 2) (D) (6, 3, 1) (E) (6, 3, 2)
+
+## 2. 几何
+
+### 2.1 三角形
+
+- **2021 Spring AMC 10A Problem 17**
+  - 考点：运用三角形边角关系、三角函数或面积公式。
+  - 标签：三角形;角度
+  - 题面：Trapezoid ABCD has AB ∥ CD, BC = CD = 43, and AD ⊥ BD. Let O be the intersection of the diagonals AC and BD, and let P be the midpoint of BD. GIven that OP = 11, the length √ AD can be written in the form m n, where m and n are positive integers and n is not divisible by the square of any prime. What is m + n? (A) 65 (B) 132 (C) 157 (D) 194 (E) 215
+
+### 2.2 圆与曲线
+
+- **2021 Spring AMC 10B Problem 7**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：In a plane, four circles with radii 1, 3, 5, and 7 are tangent to line l at the same point A, but they may be on either side of l. Region S consists of all the points that lie inside exactly one of the four circles. What is the maximum possible area of region S? (A) 24π (B) 32π (C) 64π (D) 65π (E) 84π
+- **2021 Spring AMC 10B Problem 14**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：Three equally spaced parallel lines intersect a circle, creating three chords of lengths 38, 38, and 34. What is the distance between two adjacent parallel lines? (A) 5 1 (B) 6 (C) 6 1 (D) 7 (E) 7 1 2 2 2 √
+
+### 2.3 坐标几何
+
+- **2021 Spring AMC 10B Problem 25**
+  - 考点：建立坐标或使用距离、斜率、面积公式求解。
+  - 标签：坐标;几何
+  - 备注：题面包含图形
+  - 题面：Let S be the set of lattice points in the coordinate plane, both of whose coordinates are integers between 1 and 30, inclusive. Exactly 300 points in S lie on or below a line with equation y = mx. The possible values of m lie in an interval of length a , where a and b are relatively prime positive b integers. What is a + b? (A) 31 (B) 47 (C) 62 (D) 72 (E) 85 –
+
+### 2.4 空间几何
+
+- **2021 Spring AMC 10A Problem 12**
+  - 考点：用截面、相似、体积或空间距离关系建模。
+  - 标签：空间几何;体积
+  - 备注：题面包含图形
+  - 题面：Two right circular cones with vertices facing down as shown in the figure below contain the same amount of liquid. The radii of the tops of the liquid surfaces are 3 cm and 6 cm. Into each cone is dropped a spherical marble of radius 1 cm, which sinks to the bottom and is completely submerged without spilling any liquid. What is the ratio of the rise of the liquid level in the narrow cone to the rise of the liquid level in the wide cone? (A) 1 : 1 (B) 47 : 43 (C) 2 : 1 (D) 40 : 13 (E) 4 : 1 3 6
+- **2021 Spring AMC 10A Problem 13**
+  - 考点：用截面、相似、体积或空间距离关系建模。
+  - 标签：空间几何;体积
+  - 题面：What is the volume of tetrahedron ABCD with edge lengths AB = 2, AC = 3, AD = 4, BC = √ √ 13, BD = 2 5, and CD = 5? √ √ (A) 3 (B) 2 3 (C) 4 (D) 3 3 (E) 6
+- **2021 Spring AMC 10B Problem 10**
+  - 考点：用截面、相似、体积或空间距离关系建模。
+  - 标签：空间几何;体积
+  - 题面：An inverted cone with base radius 12 cm and height 18 cm is full of water. The water is poured into a tall cylinder whose horizontal base has a radius of 24 cm. What is the height in centimeters of the water in the cylinder? (A) 1.5 (B) 3 (C) 4 (D) 4.5 (E) 6
+
+### 2.5 面积与相似
+
+- **2021 Spring AMC 10A Problem 19**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：The area of the region bounded by the graph of x2 + y2 = 3|x − y| + 3|x + y| is m + nπ, where m and n are integers. What is m + n? (A)18 (B)27 (C)36 (D)45 (E)54
+- **2021 Spring AMC 10A Problem 21**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：Let ABCDEF be an equiangular hexagon. The lines AB, CD, and EF determine a triangle with √ √ area 192 3, and the lines BC, DE, and F A determine a triangle with area 324 3. The perimeter √ of hexagon ABCDEF can be expressed as m + n p, where m, n, and p are positive integers and p is not divisible by the square of any prime. What is m + n + p? (A) 47 (B) 52 (C) 55 (D) 58 (E) 63
+- **2021 Spring AMC 10A Problem 24**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：The interior of a quadrilateral is bounded by the graphs of (x + ay)2 = 4a2 and (ax − y)2 = a2, where a is a positive real number. What is the area of this region in terms of a, valid for all a > 0? (A) 8a2 (B) 4a (C) 8a (D) 8a2 (E) 8a (a+1)2 a+1 a+1 a2+1 a2+1
+- **2021 Spring AMC 10B Problem 11**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：Grandma has just finished baking a large rectangular pan of brownies. She is planning to make rectangular pieces of equal size and shape, with straight cuts parallel to the sides of the pan. Each cut must be made entirely across the pan. Grandma wants to make the same number of interior pieces as pieces along the perimeter of the pan. What is the greatest possible number of brownies she can produce? (A) 24 (B) 30 (C) 48 (D) 60 (E) 64
+- **2021 Spring AMC 10B Problem 20**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 备注：题面包含图形
+  - 题面：The figure below is constructed from 11 line segments, each of which has length 2. The area of √ √ pentagon ABCDE can be written as m + n, where m and n are positive integers. What is m + n? A B E C D (A) 20 (B) 21 (C) 22 (D) 23 (E) 24
+- **2021 Spring AMC 10B Problem 21**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 备注：题面包含图形
+  - 题面：A square piece of paper has side length 1 and vertices A, B, C, and D in that order. As shown in the figure, the paper is folded so that vertex C meets edge AD at point C′, and edge BC intersects edge AB at point E. Suppose that C′D = 1 . What is the perimeter of △AEC′? 3 A C’ D E B C √ √ (A) 2 (B) 1 + 2 3 (C) 13 (D) 1 + 3 3 (E) 7 3 6 4 3
+
+## 3. 数论
+
+### 3.1 整数构造
+
+- **2021 Spring AMC 10A Problem 14**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：All the roots of polynomial z6 − 10z5 + Az4 + Bz3 + Cz2 + Dz + 16 are positive integers. What is the value of B? (A) − 88 (B) − 80 (C) − 64 (D) − 41 (E) − 40
+- **2021 Spring AMC 10B Problem 1**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：How many integer values satisfy |x| < 3π? (A) 9 (B) 10 (C) 18 (D) 19 (E) 20 (cid:113) √ (cid:113) √
+
+### 3.2 质因数与整除
+
+- **2021 Spring AMC 10A Problem 18**
+  - 考点：分解质因数并检查整除条件。
+  - 标签：质因数;整除
+  - 题面：Let f be a function defined on the set of positive rational numbers with the property that f (a·b) = f (a) + f (b) for all positive rational numbers a and b. Suppose that f also has the property that f (p) = p for every prime number p. For which of the following numbers x is f (x) < 0? (A) 17 (B) 11 (C) 7 (D) 7 (E) 25 32 16 9 6 11
+
+### 3.3 进制与数字
+
+- **2021 Spring AMC 10A Problem 3**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：The sum of two natural numbers is 17, 402. One of the two numbers is divisible by 10. If the units digit of that number is erased, the other number is obtained. What is the difference of these two numbers? (A) 10, 272 (B) 11, 700 (C) 13, 362 (D) 14, 238 (E) 15, 426
+- **2021 Spring AMC 10A Problem 8**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：When a student multiplied the number 66 by the repeating decimal, 1.abab. . . = 1.ab, where a and b are digits, he did not notice the notation and just multiplied 66 times 1.ab. Later he found that his answer is 0.5 less than the correct answer. What is the 2- digit integer ab? (A) 15 (B) 30 (C) 45 (D) 60 (E) 75
+- **2021 Spring AMC 10A Problem 11**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：For which of the following integers b is the base-b number 2021 − 221 not divisible by 3? b b (A) 3 (B) 4 (C) 6 (D) 7 (E) 8
+- **2021 Spring AMC 10B Problem 5**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：The ages of Jonie’s four cousins are distinct single-digit positive integers. Two of the cousins’ ages multiplied together give 24, while the other two multiply to 30. What is the sum of the ages of Jonie’s four cousins? (A) 21 (B) 22 (C) 23 (D) 24 (E) 25
+- **2021 Spring AMC 10B Problem 13**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：Let n be a positive integer and d be a digit such that the value of the numeral 32d in base n equals 263, and the value of the numeral 324 in base n equals the value of the numeral 11d1 in base six. What is n + d? (A) 10 (B) 11 (C) 13 (D) 15 (E) 16
+- **2021 Spring AMC 10B Problem 16**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：Call a positive integer an uphill integer if every digit is strictly greater than the previous digit. For example, 1357, 89, and 5 are all uphill integers, but 32, 1240, and 466 are not. How many uphill integers are divisible by 15? (A) 4 (B) 5 (C) 6 (D) 7 (E) 8
+
+## 4. 组合数学
+
+### 4.1 图形计数
+
+- **2021 Spring AMC 10A Problem 25**
+  - 考点：把图形限制转化为状态或结构计数。
+  - 标签：网格;计数
+  - 备注：题面包含图形
+  - 题面：How many ways are there to place 3 indistinguishable red chips, 3 indistinguishable blue chips, and 3 indistinguishable green chips in the squares of a 3 × 3 grid so that no two chips of the same color are directly adjacent to each other, either vertically or horizontally? (A) 12 (B) 18 (C) 24 (D) 30 (E) 36
+- **2021 Spring AMC 10B Problem 8**
+  - 考点：把图形限制转化为状态或结构计数。
+  - 标签：网格;计数
+  - 备注：题面包含图形
+  - 题面：Mr. Zhou places all the integers from 1 to 225 into a 15 by 15 grid. He places 1 in the middle square (eight row and eight column) and places the other numbers one by one clockwise, as shown in part in the diagram below. What is the sum of the greatest and the least number that appear in the second row from the top? .. .. .. . . . . . . . . . . . . . . . . . . . . . . . . 21 22 23 24 25 . . . . . . 20 7 8 9 10 . . . . . . 19 6 1 2 11 . . . . . . 18 5 4 3 12 . . . . . . 17 16 15 14 13 . . . .. .. .. . . . . . . . . . . . . .. .. .. (A) 367 (B) 368 (C) 369 (D) 379 (E) 380
+
+### 4.2 递推与序列计数
+
+- **2021 Spring AMC 10A Problem 15**
+  - 考点：建立状态递推或寻找周期规律计数。
+  - 标签：递推;序列
+  - 题面：Values for A, B, C, and D are to be selected from {1, 2, 3, 4, 5, 6} without replacement (i.e. no two letters have the same value). How many ways are there to make such choices so that the two curves y = Ax2 + B and y = Cx2 + D intersect? (The order in which the curves are listed does not matter; for example, the choices A = 3, B = 2, C = 4, D = 1 is considered the same as the choices A = 4, B = 1, C = 3, D = 2.) (A) 30 (B) 60 (C) 90 (D) 180 (E) 360
+- **2021 Spring AMC 10A Problem 20**
+  - 考点：建立状态递推或寻找周期规律计数。
+  - 标签：递推;序列
+  - 题面：In how many ways can the sequence 1, 2, 3, 4, 5 be arranged so that no three consecutive terms are increasing and no three consecutive terms are decreasing? (A) 10 (B) 18 (C) 24 (D) 32 (E) 44
+
+## 5. 概率与统计
+
+### 5.1 几何概率
+
+- **2021 Spring AMC 10A Problem 23**
+  - 考点：将随机位置参数化，用面积或长度比例计算概率。
+  - 标签：几何概率;面积
+  - 备注：题面包含图形
+  - 题面：Frieda the frog begins a sequence of hops on a 3×3 grid of squares, moving one square on each hop and choosing at random the direction of each hop up, down, left, or right. She does not hop diagonally. When the direction of a hop would take Frieda off the grid, she ”wraps around” and jumps to the opposite edge. For example if Frieda begins in the center square and makes two hops ”up”, the first hop would place her in the top row middle square, and the second hop would cause Frieda to jump to the opposite edge, landing in the bottom row middle square. Suppose Frieda starts from the center square, makes at most four hops at random, and stops hopping if she lands on a corner square. What is the probability that she reaches a corner square on one of the four hops? (A) 9 (B) 5 (C) 3 (D) 25 (E) 13 16 8 4 32 16
+- **2021 Spring AMC 10B Problem 23**
+  - 考点：将随机位置参数化，用面积或长度比例计算概率。
+  - 标签：几何概率;面积
+  - 备注：题面包含图形
+  - 题面：A square with side length 8 is colored white except for 4 black isosceles right triangular regions √ with legs of length 2 in each corner of the square and a black diamond with side length 2 2 in the center of the square, as shown in the diagram. A circular coin with diameter 1 is dropped onto the square and lands in a random location where the coin is completely contained within the square, The probability that the coin will cover part of the black region of the square can be √ written as 1 (a + b 2 + π), where a and b are positive integers. What is a + b? 196 (A) 64 (B) 66 (C) 68 (D) 70 (E) 72
+
+### 5.2 平均数与数据集
+
+- **2021 Spring AMC 10A Problem 5**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：The quiz scores of a class with k > 12 students have a mean of 8. The mean of a collection of 12 of these quiz scores is 14. What is the mean of the remaining quiz scores in terms of k? (A) 14−8 (B) 8k−168 (C) 14 − k (D) 14(k−12) (E) 14(k−12) k−12 k−12 12 8 k2 8k
+- **2021 Spring AMC 10A Problem 6**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：Chantal and Jean start hiking from a trailhead toward a fire tower. Jean is wearing a heavy backpack and walks slower. Chantal starts walking at 4 miles per hour. Halfway to the tower, the trail becomes really steep, and Chantal slows down to 2 miles per hour. After reaching the tower, she immediately turns around and descends the steep part of the trail at 3 miles per hour. She meets Jean at the halfway point. What was Jean’s average speed, in miles per hour, until they meet? (A) 12 (B) 1 (C) 13 (D) 24 (E) 2 13 12 13
+- **2021 Spring AMC 10A Problem 16**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：In the following list of numbers, the integer n appears n times in the list for 1 ≤ n ≤ 200. 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, . . . , 200, 200, . . . , 200 What is the median of the numbers in this list? (A) 100.5 (B) 134 (C) 142 (D) 150.5 (E) 167
+- **2021 Spring AMC 10A Problem 22**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：Hiram’s algebra notes are 50 pages long and are printed on 25 sheets of paper; the first sheet contains pages 1 and 2, the second sheet contains pages 3 and 4, and so on. One day he leaves his notes on the table before leaving for lunch, and his roommate decides to borrow some pages from the middle of the notes. When Hiram comes back, he discovers that his roommate has taken a consecutive set of sheets from the notes and that the average (mean) of the page numbers on all remaining sheets is exactly 19. How many sheets were borrowed? (A) 10 (B) 13 (C) 15 (D) 17 (E) 20
+- **2021 Spring AMC 10B Problem 6**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：Ms. Blackwell gives an exam to two classes. The mean of the scores of the students in the morning class is 84, and the afternoon class’s mean score is 70. The ratio of the number of students in the morning class to the number of students in the afternoon class is 3 . What is the 4 mean of the scores of all the students? (A) 74 (B) 75 (C) 76 (D) 77 (E) 78
+- **2021 Spring AMC 10B Problem 19**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：Suppose that S is a finite set of positive integers. If the greatest integer in S is removed from S, then the average value (arithmetic mean) of the integers remaining is 32. If the least integer is S is also removed, then the average value of the integers remaining is 35. If the greatest integer is then returned to the set, the average value of the integers rises to 40. The greatest integer in the original set S is 72 greater than the least integer in S. What is the average value of all the integers in the set S? (A) 36.2 (B) 36.4 (C) 36.6 (D) 36.8 (E) 37
+
+### 5.3 独立性
+
+- **2021 Spring AMC 10B Problem 22**
+  - 考点：把事件关系转化为计数或比例条件。
+  - 标签：独立事件;概率
+  - 题面：Ang, Ben, and Jasmin each have 5 blocks, colored red, blue, yellow, white, and green; and there are 5 empty boxes. Each of the people randomly and independently of the other two people places one of their blocks into each box. The probability that at least one box receives 3 blocks all of the same color is m , where m and n are relatively prime positive integers. What is m + n? n (A) 47 (B) 94 (C) 227 (D) 471 (E) 542
+
+### 5.4 组合概率
+
+- **2021 Spring AMC 10B Problem 17**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：Ravon, Oscar, Aditi, Tyrone, and Kim play a card game. Each person is given 2 cards out of a set of 10 cards numbered 1, 2, 3, . . . , 10. The score of a player is the sum of the numbers of their cards. The scores of the players are as follows: Ravon–11, Oscar–4, Aditi–7, Tyrone–16, Kim–17. Which of the following statements is true? (A) Ravon was given card 3. (B) Aditi was given card 3. (C) Ravon was given card 4. (D) Aditi was given card 4. (E) Tyrone was given card 7.
+- **2021 Spring AMC 10B Problem 18**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：A fair 6-sided die is repeatedly rolled until an odd number appears. What is the probability that every even number appears at least once before the first occurrence of an odd number? (A) 1 (B) 1 (C) 1 (D) 3 (E) 1 120 32 20 20 6

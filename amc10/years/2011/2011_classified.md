@@ -1,0 +1,288 @@
+# 2011 AMC 10 分类题集
+
+> 自动批量整理草稿。每道题只归入一个一级分类和一个二级分类；answer 留空表示源 PDF 未提供答案表。
+
+## 统计概览
+
+- 总题量：50
+- A 卷：25 题
+- B 卷：25 题
+
+| 一级分类 | 题量 |
+| --- | ---: |
+| 代数 | 14 |
+| 几何 | 15 |
+| 数论 | 6 |
+| 组合数学 | 2 |
+| 概率与统计 | 13 |
+
+## 1. 代数
+
+### 1.1 三角恒等式
+
+- **2011 AMC 10A Problem 1**
+  - 考点：用三角恒等式、角度关系或特殊角化简。
+  - 标签：三角函数;恒等式
+  - 题面：A cell phone plan costs $20 each month, plus 5¢ per text message sent, plus 10¢ for each minute used over 30 hours. In January Michelle sent 100 text messages and talked for 30.5 hours. How much did she have to pay? (A)$24.00 (B)$24.50 (C)$25.50 (D)$28.00 (E)$30.00
+- **2011 AMC 10B Problem 4**
+  - 考点：用三角恒等式、角度关系或特殊角化简。
+  - 标签：三角函数;恒等式
+  - 题面：LeRoy and Bernardo went on a week-long trip together and agreed to share the costs equally. Over the week, each of them paid for various joint expenses such as gasoline and car rental. At the end of the trip it turned out that LeRoy had paid A dollars and Bernardo had paid B dollars, where A < B. How many dollars must LeRoy give to Bernardo so that they share the costs equally? (A) A+B (B) A−B (C) B−A (D) B − A (E) A + B 2 2 2
+
+### 1.2 多项式与根
+
+- **2011 AMC 10B Problem 19**
+  - 考点：结合韦达定理、整数根或多项式结构求解。
+  - 标签：多项式;根
+  - 题面：What is the product of all the roots of the equation (cid:112) (cid:112) 5|x| + 8 = x2 − 16. (A) − 64 (B) − 24 (C) − 9 (D) 24 (E) 576
+
+### 1.3 数列与递推
+
+- **2011 AMC 10A Problem 17**
+  - 考点：从递推式或数列结构中找显式式、周期或求和规律。
+  - 标签：数列;递推
+  - 题面：In the eight-term sequence A, B, C, D, E, F, G, H, the value of C is 5 and the sum of any three consecutive terms is 30. What is A + H? (A) 17 (B) 18 (C) 25 (D) 26 (E) 43
+
+### 1.4 方程与不等式
+
+- **2011 AMC 10A Problem 7**
+  - 考点：将题设转化为方程组或不等式并求解。
+  - 标签：方程;不等式
+  - 题面：Which of the following equations does NOT have a solution? √ √ (A) (x + 7)2 = 0 (B) | − 3x| + 5 = 0 (C) −x − 2 = 0 (D) x − 8 = 0 (E) | − 3x| − 4 = 0
+
+### 1.5 运算与化简
+
+- **2011 AMC 10A Problem 2**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：A small bottle of shampoo can hold 35 milliliters of shampoo, whereas a large bottle can hold 500 milliliters of shampoo. Jasmine wants to buy the minimum number of small bottles neces- sary to completely fill a large bottle. How many bottles must she buy? (A) 11 (B) 12 (C) 13 (D) 14 (E) 15
+- **2011 AMC 10A Problem 6**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Set A has 20 elements, and set B has 15 elements. What is the smallest possible number of elements in A ∪ B, the union of A and B? (A) 5 (B) 15 (C) 20 (D) 35 (E) 300
+- **2011 AMC 10A Problem 8**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Last summer 30% of the birds living on Town Lake were geese, 25% were swans, 10% were herons, and 35% were ducks. What percent of the birds that were not swans were geese? (A) 20 (B) 30 (C) 40 (D) 50 (E) 60
+- **2011 AMC 10A Problem 12**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：The players on a basketball team made some three-point shots, some two-point shots, and some one-point free throws. They scored as many points with two-point shots as with three- point shots. Their number of successful free throws was one more than their number of suc- cessful two-point shots. The team’s total score was 61 points. How many free throws did they make? (A) 13 (B) 14 (C) 15 (D) 16 (E) 17
+- **2011 AMC 10A Problem 16**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Which of the following is equal to 9 − 6 2 + 9 + 6 2? √ √ √ √ (A) 3 2 (B) 2 6 (C) 7 2 (D) 3 3 (E) 6 2
+- **2011 AMC 10B Problem 1**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：What is 2 + 4 + 6 1 + 3 + 5 − ? 1 + 3 + 5 2 + 4 + 6 (A) − 1 (B) 5 (C) 7 (D) 147 (E) 43 36 12 60 3
+- **2011 AMC 10B Problem 6**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：On Halloween Casper ate 1 of his candies and then gave 2 candies to his brother. The next day 3 he ate 1 of his remaining candies and then gave 4 candies to his sister. On the third day he ate 3 his final 8 candies. How many candies did Casper have at the beginning? (A) 30 (B) 39 (C) 48 (D) 57 (E) 66
+- **2011 AMC 10B Problem 8**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：At a certain beach if it is at least 80◦F and sunny, then the beach will be crowded. On June 10 the beach was not crowded. What can be said about the weather conditions on June 10? (A) The temperature was cooler than 80◦F and it was not sunny. (B) The temperature was cooler than 80◦F or it was not sunny. (C) If the temperature was at least 80◦F , then it was sunny. (D) If the temperature was cooler than 80◦F , then it was sunny. (E) If the temperature was cooler than 80◦F , then it was not sunny.
+- **2011 AMC 10B Problem 11**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：There are 52 people in a room. What is the largest value of n such that the statement ”At least n people in this room have birthdays falling in the same month” is always true? (A) 2 (B) 3 (C) 4 (D) 5 (E) 12
+
+## 2. 几何
+
+### 2.1 三角形
+
+- **2011 AMC 10A Problem 19**
+  - 考点：运用三角形边角关系、三角函数或面积公式。
+  - 标签：三角形;角度
+  - 题面：In 1991 the population of a town was a perfect square. Ten years later, after an increase of 150 people, the population was 9 more than a perfect square. Now, in 2011, with an increase of another 150 people, the population is once again a perfect square. Which of the following is closest to the percent growth of the town’s population during this twenty-year period? (A) 42 (B) 47 (C) 52 (D) 57 (E) 62
+- **2011 AMC 10B Problem 7**
+  - 考点：运用三角形边角关系、三角函数或面积公式。
+  - 标签：三角形;角度
+  - 题面：The sum of two angles of a triangle is 6 of a right angle, and one of these two angles is 30◦ 5 larger than the other. What is the degree measure of the largest angle in the triangle? (A) 69 (B) 72 (C) 90 (D) 102 (E) 108
+- **2011 AMC 10B Problem 18**
+  - 考点：运用三角形边角关系、三角函数或面积公式。
+  - 标签：三角形;角度
+  - 题面：Rectangle ABCD has AB = 6 and BC = 3. Point M is chosen on side AB so that ∠AM D = ∠CM D. What is the degree measure of ∠AM D? (A) 15 (B) 30 (C) 45 (D) 60 (E) 75
+
+### 2.2 圆与曲线
+
+- **2011 AMC 10A Problem 18**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：Circles A, B, and C each have radius 1. Circles A and B share one point of tangency. Circle C has a point of tangency with the midpoint of AB. What is the area inside Circle C but outside circle A and circle B ? C A B (A) 3 − π (B) π (C) 2 (D) 3π (E) 1 + π 2 2 4 2
+- **2011 AMC 10B Problem 12**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：Keiko walks once around a track at exactly the same constant speed every day. The sides of the track are straight, and the ends are semicircles. The track has width 6 meters, and it takes her 36 seconds longer to walk around the outside edge of the track than around the inside edge. What is Keiko’s speed in meters per second? (A) π (B) 2π (C) π (D) 4π (E) 5π 3 3 3 3
+- **2011 AMC 10B Problem 17**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：In the given circle, the diameter EB is parallel to DC, and AB is parallel to ED. The angles AEB and ABE are in the ratio 4 : 5. What is the degree measure of angle BCD? A E B D C (A) 120 (B) 125 (C) 130 (D) 135 (E) 140
+- **2011 AMC 10B Problem 25**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：Let T be a triangle with sides 2011, 2012, and 2013. For n ≥ 1, if T = △ABC and D, E, and F 1 n are the points of tangency of the incircle of △ABC to the sides AB, BC and AC, respectively, then T is a triangle with side lengths AD, BE, and CF , if it exists. What is the perimeter of n+1 the last triangle in the sequence (T )? n (A) 1509 (B) 1509 (C) 1509 (D) 1509 (E) 1509 8 32 64 128 256 –
+
+### 2.3 空间几何
+
+- **2011 AMC 10A Problem 24**
+  - 考点：用截面、相似、体积或空间距离关系建模。
+  - 标签：空间几何;体积
+  - 题面：Two distinct regular tetrahedra have all their vertices among the vertices of the same unit cube. What is the volume of the region formed by the intersection of the tetrahedra? √ √ √ (A) 1 (B) 2 (C) 3 (D) 1 (E) 2 12 12 12 6 6
+- **2011 AMC 10B Problem 22**
+  - 考点：用截面、相似、体积或空间距离关系建模。
+  - 标签：空间几何;体积
+  - 题面：A pyramid has a square base with sides of length 1 and has lateral faces that are equilateral triangles. A cube is placed within the pyramid so that one face is on the base of the pyramid and its opposite face has all its edges on the lateral faces of the pyramid. What is the volume of this cube? √ √ √ √ √ (A) 5 2 − 7 (B) 7 − 4 3 (C) 2 2 (D) 2 (E) 3 27 9 9
+
+### 2.4 面积与相似
+
+- **2011 AMC 10A Problem 9**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：A rectangular region is bounded by the graphs of the equations y = a, y = −b, x = −c, and x = d, where a, b, c, and d are all positive numbers. Which of the following represents the area of this region? (A) ac + ad + bc + bd (B) ac − ad + bc − bd (C) ac + ad − bc − bd (D) − ac − ad + bc + bd (E) ac − ad − bc + bd
+- **2011 AMC 10A Problem 11**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：Square EF GH has one vertex on each side of square ABCD. Point E is on AB with AE = 7 · EB. What is the ratio of the area of EF GH to the area of ABCD? √ √ (A) 49 (B) 25 (C) 7 (D) 5 2 (E) 14 64 32 8 8 4
+- **2011 AMC 10A Problem 25**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：Let R be a square region and n ≥ 4 an integer. A point X in the interior of R is called n-ray partitional if there are n rays emanating from X that divide R into n triangles of equal area. How many points are 100-ray partitional but not 60-ray partitional? (A) 1500 (B) 1560 (C) 2320 (D) 2480 (E) 2500
+- **2011 AMC 10B Problem 9**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：The area of △EBD is one third of the area of 3 − 4 − 5 △ABC. Segment DE is perpendicular to segment AB. What is BD? C E 3 4 A 5 D B √ √ (A) 4 (B) 5 (C) 9 (D) 4 3 (E) 5 3 4 3 2
+- **2011 AMC 10B Problem 14**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：A rectangular parking lot has a diagonal of 25 meters and an area of 168 square meters. In meters, what is the perimeter of the parking lot? (A) 52 (B) 58 (C) 62 (D) 68 (E) 70
+- **2011 AMC 10B Problem 20**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：Rhombus ABCD has side length 2 and ∠B = 120◦. Region R consists of all points inside the rhombus that are closer to vertex B than any of the other three vertices. What is the area of R? √ √ √ √ (A) 3 (B) 3 (C) 2 3 (D) 1 + 3 (E) 2 3 2 3 3
+
+## 3. 数论
+
+### 3.1 整数构造
+
+- **2011 AMC 10B Problem 10**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：Consider the set of numbers {1, 10, 102, 103, ...1010}. The ratio of the largest element of the set to the sum of the other ten elements of the set is closest to which integer? (A) 1 (B) 9 (C) 10 (D) 11 (E) 101
+- **2011 AMC 10B Problem 21**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：Brian writes down four integers w > x > y > z whose sum is 44. The pairwise positive dif- ferences of these numbers are 1, 3, 4, 5, 6, and 9. What is the sum of the possible values for w? (A) 16 (B) 31 (C) 48 (D) 62 (E) 93
+- **2011 AMC 10B Problem 24**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：A lattice point in an xy-coordinate system is any point (x, y) where both x and y are integers. The graph of y = mx + 2 passes through no lattice point with 0 < x ≤ 100 for all m such that 1 < m < a. What is the maximum possible value of a? 2 (A) 51 (B) 50 (C) 51 (D) 52 (E) 13 101 99 100 101 25
+
+### 3.2 进制与数字
+
+- **2011 AMC 10A Problem 13**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：How many even integers are there between 200 and 700 whose digits are all different and come from the set 1,2,5,7,8,9? (A) 12 (B) 20 (C) 72 (D) 120 (E) 200
+- **2011 AMC 10B Problem 5**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：In multiplying two positive integers a and b, Ron reversed the digits of the two-digit number a. His errorneous product was 161. What is the correct value of the product of a and b? (A) 116 (B) 161 (C) 204 (D) 214 (E) 224
+- **2011 AMC 10B Problem 23**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：What is the hundreds digit of 20112011? (A) 1 (B) 4 (C) 5 (D) 6 (E) 9
+
+## 4. 组合数学
+
+### 4.1 染色与构造
+
+- **2011 AMC 10A Problem 22**
+  - 考点：按颜色/类型分类，使用构造、对称或计数。
+  - 标签：染色;构造
+  - 题面：Each vertex of convex pentagon ABCDE is to be assigned a color. There are 6 colors to choose from, and the ends of each diagonal must have different colors. How many different colorings are possible? (A) 2520 (B) 2880 (C) 3120 (D) 3250 (E) 3750
+
+### 4.2 递推与序列计数
+
+- **2011 AMC 10A Problem 4**
+  - 考点：建立状态递推或寻找周期规律计数。
+  - 标签：递推;序列
+  - 题面：Let X and Y be the following sums of arithmetic sequences: X = 10 + 12 + 14 + · · · + 100, Y = 12 + 14 + 16 + · · · + 102. What is the value of Y − X? (A) 92 (B) 98 (C) 100 (D) 102 (E) 112
+
+## 5. 概率与统计
+
+### 5.1 几何概率
+
+- **2011 AMC 10A Problem 14**
+  - 考点：将随机位置参数化，用面积或长度比例计算概率。
+  - 标签：几何概率;面积
+  - 题面：A pair of standard 6-sided fair dice is rolled once. The sum of the numbers rolled determines the diameter of a circle. What is the probability that the numerical value of the area of the circle is less than the numerical value of the circle’s circumference? (A) 1 (B) 1 (C) 1 (D) 1 (E) 5 36 12 6 4 18
+- **2011 AMC 10A Problem 20**
+  - 考点：将随机位置参数化，用面积或长度比例计算概率。
+  - 标签：几何概率;面积
+  - 题面：Two points on the circumference of a circle of radius r are selected independently and at ran- dom. From each point a chord of length r is drawn in a clockwise direction. What is the probability that the two chords intersect? (A) 1 (B) 1 (C) 1 (D) 1 (E) 1 6 5 4 3 2
+- **2011 AMC 10B Problem 16**
+  - 考点：将随机位置参数化，用面积或长度比例计算概率。
+  - 标签：几何概率;面积
+  - 备注：题面包含图形
+  - 题面：A dart board is a regular octagon divided into regions as shown. Suppose that a dart thrown at the board is equally likely to land anywhere on the board. What is probability that the dart lands within the center square? √ √ √ √ (A) 2−1 (B) 1 (C) 2− 2 (D) 2 (E) 2 − 2 2 4 2 4
+
+### 5.2 平均数与数据集
+
+- **2011 AMC 10A Problem 3**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：Suppose [a b] denotes the average of a and b, and {a b c} denotes the average of a, b, and c. What is {{1 1 0} [0 1] 0}? (A) 2 (B) 5 (C) 1 (D) 7 (E) 2 9 18 3 18 3
+- **2011 AMC 10A Problem 5**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：At an elementary school, the students in third grade, fourth grade, and fifth grade run an aver- age of 12, 15, and 10 minutes per day, respectively. There are twice as many third graders as fourth graders, and twice as many fourth graders as fifth graders. What is the average number of minutes run per day by these students? (A) 12 (B) 37 (C) 88 (D) 13 (E) 14 3 7
+- **2011 AMC 10A Problem 10**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：A majority of the 30 students in Ms. Deameanor’s class bought pencils at the school bookstore. Each of these students bought the same number of pencils, and this number was greater than 1. The cost of a pencil in cents was greater than the number of pencils each student bought, and the total cost of all the pencils was $17.71. What was the cost of a pencil in cents? (A) 7 (B) 11 (C) 17 (D) 23 (E) 77
+- **2011 AMC 10A Problem 15**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：Roy bought a new battery-gasoline hybrid car. On a trip the car ran exclusively on its battery for the first 40 miles, then ran exclusively on gasoline for the rest of the trip, using gasoline at a rate of 0.02 gallons per mile. On the whole trip he averaged 55 miles per gallon. How long was the trip in miles? (A) 140 (B) 240 (C) 440 (D) 640 (E) 840 (cid:112) √ (cid:112) √
+- **2011 AMC 10B Problem 2**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：Josanna’s test scores to date are 90, 80, 70, 60, and 85. Her goal is to raise her test average at least 3 points with her next test. What is the minimum test score she would need to accomplish this goal? (A) 80 (B) 82 (C) 85 (D) 90 (E) 95
+- **2011 AMC 10B Problem 3**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：At a store, when a length is reported as x inches that means the length is at least x − 0.5 inches and at most x+0.5 inches. Suppose the dimensions of a rectangular tile are reported as 2 inches by 3 inches. In square inches, what is the minimum area for the rectangle? (A) 3.75 (B) 4.5 (C) 5 (D) 6 (E) 8.75
+- **2011 AMC 10B Problem 15**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：Let @ denote the ”averaged with” operation: a @ b = a+b . Which of the following distributive laws 2 hold for all numbers x, y and z? I. x @ (y+z) = (x @ y) + (x @ z) II. x + (y @ z) = (x + y) @ (x + z) III. x @ (y @ z) = (x @ y) @ (x @ z) (A) I only (B) II only (C) III only (D) I and III only (E) II and III only
+
+### 5.3 独立性
+
+- **2011 AMC 10B Problem 13**
+  - 考点：把事件关系转化为计数或比例条件。
+  - 标签：独立事件;概率
+  - 题面：Two real numbers are selected independently at random from the interval [-20, 10]. What is the probability that the product of those numbers is greater than zero? (A) 1 (B) 1 (C) 4 (D) 5 (E) 2 9 3 9 9 3
+
+### 5.4 组合概率
+
+- **2011 AMC 10A Problem 21**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：Two counterfeit coins of equal weight are mixed with 8 identical genuine coins. The weight of each of the counterfeit coins is different from the weight of each of the genuine coins. A pair of coins is selected at random without replacement from the 10 coins. A second pair is selected at random without replacement from the remaining 8 coins. The combined weight of the first pair is equal to the combined weight of the second pair. What is the probability that all 4 selected coins are genuine? (A) 7 (B) 9 (C) 11 (D) 15 (E) 15 11 13 15 19 16
+- **2011 AMC 10A Problem 23**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：Seven students count from 1 to 1000 as follows: -Alice says all the numbers, except she skips the middle number in each consecutive group of three numbers. That is, Alice says 1, 3, 4, 6, 7, 9, · · · , 997, 999, 1000. -Barbara says all of the numbers that Alice doesn’t say, except she also skips the middle number in each consecutive group of three numbers. -Candice says all of the numbers that neither Alice nor Barbara says, except she also skips the middle number in each consecutive group of three numbers. -Debbie, Eliza, and Fatima say all of the numbers that none of the students with the first names beginning before theirs in the alphabet say, except each also skips the middle number in each of her consecutive groups of three numbers. -Finally, George says the only number that no one else says. What number does George say? (A) 37 (B) 242 (C) 365 (D) 728 (E) 998

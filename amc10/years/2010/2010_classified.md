@@ -1,0 +1,283 @@
+# 2010 AMC 10 分类题集
+
+> 自动批量整理草稿。每道题只归入一个一级分类和一个二级分类；answer 留空表示源 PDF 未提供答案表。
+
+## 统计概览
+
+- 总题量：50
+- A 卷：25 题
+- B 卷：25 题
+
+| 一级分类 | 题量 |
+| --- | ---: |
+| 代数 | 18 |
+| 几何 | 14 |
+| 数论 | 4 |
+| 组合数学 | 3 |
+| 概率与统计 | 11 |
+
+## 1. 代数
+
+### 1.1 三角恒等式
+
+- **2010 AMC 10B Problem 8**
+  - 考点：用三角恒等式、角度关系或特殊角化简。
+  - 标签：三角函数;恒等式
+  - 题面：A ticket to a school play costs x dollars, where x is a whole number. A group of 9th graders buys tickets costing a total of $48, and a group of 10th graders buys tickets costing a total of $64. How many values of x are possible? (A) 1 (B) 2 (C) 3 (D) 4 (E) 5
+- **2010 AMC 10B Problem 24**
+  - 考点：用三角恒等式、角度关系或特殊角化简。
+  - 标签：三角函数;恒等式
+  - 题面：A high school basketball game between the Raiders and Wildcats was tied at the end of the first quarter. The number of points scored by the Raiders in each of the four quarters formed an increasing geometric sequence, and the number of points scored by the Wildcats in each of the four quarters formed an increasing arithmetic sequence. At the end of the fourth quarter, the Raiders had won by one point. Neither team scored more than 100 points. What was the total number of points scored by the two teams in the first half? (A) 30 (B) 31 (C) 32 (D) 33 (E) 34
+
+### 1.2 运算与化简
+
+- **2010 AMC 10A Problem 4**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：A book that is to be recorded onto compact discs takes 412 minutes to read aloud. Each disc can hold up to 56 minutes of reading. Assume that the smallest possible number of discs is used and that each disc contains the same length of reading. How many minutes of reading will each disc contain? (A) 50.2 (B) 51.5 (C) 52.4 (D) 53.8 (E) 55.2
+- **2010 AMC 10A Problem 6**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：For positive numbers x and y the operation ♠(x, y) is defined as 1 ♠(x, y) = x − y What is ♠(2, ♠(2, 2))? (A) 2 (B) 1 (C) 4 (D) 5 (E) 2 3 3 3
+- **2010 AMC 10A Problem 7**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Crystal has a running course marked out for her daily run. She starts this run by heading due north for one mile. She then runs northeast for one mile, then southeast for one mile. The last portion of her run takes her on a straight line back to where she started. How far, in miles is this last portion of her run? √ √ √ (A) 1 (B) 2 (C) 3 (D) 2 (E) 2 2
+- **2010 AMC 10A Problem 8**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Tony works 2 hours a day and is paid $0.50 per hour for each full year of his age. During a six month period Tony worked 50 days and earned $630. How old was Tony at the end of the six month period? (A) 9 (B) 11 (C) 12 (D) 13 (E) 14
+- **2010 AMC 10A Problem 10**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Marvin had a birthday on Tuesday, May 27 in the leap year 2008. In what year will his birthday next fall on a Saturday? (A) 2011 (B) 2012 (C) 2013 (D) 2015 (E) 2017
+- **2010 AMC 10A Problem 11**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：The length of the interval of solutions of the inequality a ≤ 2x + 3 ≤ b is 10. What is b − a? (A) 6 (B) 10 (C) 15 (D) 20 (E) 30
+- **2010 AMC 10A Problem 15**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：In a magical swamp there are two species of talking amphibians: toads, whose statements are always true, and frogs, whose statements are always false. Four amphibians, Brian, Chris, LeRoy, and Mike live together in the swamp, and they make the following statements: Brian: ”Mike and I are different species.” Chris: ”LeRoy is a frog.” LeRoy: ”Chris is a frog.” Mike: ”Of the four of us, at least two are toads.” How many of these amphibians are frogs? (A) 0 (B) 1 (C) 2 (D) 3 (E) 4
+- **2010 AMC 10A Problem 20**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：A fly trapped inside a cubical box with side length 1 meter decides to relieve its boredom by visiting each corner of the box. It will begin and end in the same corner and visit each of the other corners exactly once. To get from a corner to any other corner, it will either fly or crawl in a straight line. What is the maximum possible length, in meters, of its path? √ √ √ √ √ √ √ (A) 4 + 4 2 (B) 2 + 4 2 + 2 3 (C) 2 + 3 2 + 3 3 (D) 4 2 + 4 3 √ √ (E) 3 2 + 5 3
+- **2010 AMC 10B Problem 1**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：What is 100(100 − 3) − (100 · 100 − 3)? (A) − 20, 000 (B) − 10, 000 (C) − 297 (D) − 6 (E) 0
+- **2010 AMC 10B Problem 2**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Makayla attended two meetings during her 9-hour work day. The first meeting took 45 minutes and the second meeting took twice as long. What percent of her work day was spent attending meetings? (A) 15 (B) 20 (C) 25 (D) 30 (E) 35
+- **2010 AMC 10B Problem 5**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：A month with 31 days has the same number of Mondays and Wednesdays. How many of the seven days of the week could be the first day of this month? (A) 2 (B) 3 (C) 4 (D) 5 (E) 6
+- **2010 AMC 10B Problem 10**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Shelby drives her scooter at a speed of 30 miles per hour if it is not raining, and 20 miles per hour if it is raining. Today she drove in the sun in the morning and in the rain in the evening, for a total of 16 miles in 40 minutes. How many minutes did she drive in the rain? (A) 18 (B) 21 (C) 24 (D) 27 (E) 30
+- **2010 AMC 10B Problem 11**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：A shopper plans to purchase an item that has a listed price greater than $100 and can use any one of the three coupons. Coupon A gives 15% off the listed price, Coupon B gives $30 the listed price, and Coupon C gives 25% off the amount by which the listed price exceeds $100. Let x and y be the smallest and largest prices, respectively, for which Coupon A saves at least as many dollars as Coupon B or C. What is y − x? (A) 50 (B) 60 (C) 75 (D) 80 (E) 100
+- **2010 AMC 10B Problem 12**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：At the beginning of the school year, 50% of all students in Mr. Well’s math class answered ”Yes” to the question ”Do you love math”, and 50% answered ”No.” At the end of the school year, 70% answered ”Yes” and 30% answered ”No.” Altogether, x% of the students gave a different answer at the beginning and end of the school year. What is the difference between the maximum and the minimum possible values of x? (A) 0 (B) 20 (C) 40 (D) 60 (E) 80
+- **2010 AMC 10B Problem 13**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：What is the sum of all the solutions of x = |2x − |60 − 2x||? (A) 32 (B) 60 (C) 92 (D) 120 (E) 124
+- **2010 AMC 10B Problem 15**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：On a 50-question multiple choice math contest, students receive 4 points for a correct answer, 0 points for an answer left blank, and -1 point for an incorrect answer. Jesse’s total score on the contest was 99. What is the maximum number of questions that Jesse could have answered correctly? (A) 25 (B) 27 (C) 29 (D) 31 (E) 33 √
+
+## 2. 几何
+
+### 2.1 三角形
+
+- **2010 AMC 10A Problem 2**
+  - 考点：运用三角形边角关系、三角函数或面积公式。
+  - 标签：三角形;角度
+  - 备注：题面包含图形
+  - 题面：Four identical squares and one rectangle are placed together to form one large square as shown. The length of the rectangle is how many times as large as its width? (A) 5 (B) 4 (C) 3 (D) 2 (E) 3 4 3 2
+- **2010 AMC 10A Problem 14**
+  - 考点：运用三角形边角关系、三角函数或面积公式。
+  - 标签：三角形;角度
+  - 题面：Triangle ABC has AB = 2 · AC. Let D and E be on AB and BC, respectively, such that ∠BAE = ∠ACD. Let F be the intersection of segments AE and CD, and suppose that △CF E is equilateral. What is ∠ACB? (A) 60◦ (B) 75◦ (C) 90◦ (D) 105◦ (E) 120◦
+- **2010 AMC 10A Problem 25**
+  - 考点：运用三角形边角关系、三角函数或面积公式。
+  - 标签：三角形;角度
+  - 题面：Jim starts with a positive integer n and creates a sequence of numbers. Each successive num- ber is obtained by subtracting the largest possible integer square less than or equal to the cur- rent number until zero is reached. For example, if Jim starts with n = 55, then his sequence contains 5 numbers: 55 55 − 72 = 6 6 − 22 = 2 2 − 12 = 1 1 − 12 = 0 Let N be the smallest number for which Jim’s sequence has 8 numbers. What is the units digit of N ? (A) 1 (B) 3 (C) 5 (D) 7 (E) 9
+
+### 2.2 圆与曲线
+
+- **2010 AMC 10A Problem 5**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：The area of a circle whose circumference is 24π is kπ. What is the value of k? (A) 6 (B) 12 (C) 24 (D) 36 (E) 144
+- **2010 AMC 10A Problem 22**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：Eight points are chosen on a circle, and chords are drawn connecting every pair of points. No three chords intersect in a single point inside the circle. How many triangles with all three ver- tices in the interior of the circle are created? (A) 28 (B) 56 (C) 70 (D) 84 (E) 140
+- **2010 AMC 10B Problem 6**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：A circle is centered at O, AB is a diameter and C is a point on the circle with ∠COB = 50◦. What is the degree measure of ∠CAB? (A) 20 (B) 25 (C) 45 (D) 50 (E) 65
+- **2010 AMC 10B Problem 16**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：A square of side length 1 and a circle of radius 3/3 share the same center. What is the area inside the circle, but outside the square? √ (A) π − 1 (B) 2π − 3 (C) π (D) 1 (E) 2π/9 3 9 3 18 4
+- **2010 AMC 10B Problem 19**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：A circle with center O has area 156π. Triangle ABC is equilateral, BC is a chord on the circle, √ OA = 4 3, and point O is outside △ABC. What is the side length of △ABC? √ √ (A) 2 3 (B) 6 (C) 4 3 (D) 12 (E) 18
+- **2010 AMC 10B Problem 20**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：Two circles lie outside regular hexagon ABCDEF . The first is tangent to AB, and the second is tangent to DE. Both are tangent to lines BC and F A. What is the ratio of the area of the second circle to that of the first circle? (A) 18 (B) 27 (C) 36 (D) 81 (E) 108
+
+### 2.3 空间几何
+
+- **2010 AMC 10A Problem 12**
+  - 考点：用截面、相似、体积或空间距离关系建模。
+  - 标签：空间几何;体积
+  - 题面：Logan is constructing a scaled model of his town. The city’s water tower stands 40 meters high, and the top portion is a sphere that holds 100, 000 liters of water. Logan’s miniature water tower holds 0.1 liters. How tall, in meters, should Logan make his tower? (A) 0.04 (B) 0.4 (C) 0.4 (D) 4 (E) 4 π π
+- **2010 AMC 10A Problem 17**
+  - 考点：用截面、相似、体积或空间距离关系建模。
+  - 标签：空间几何;体积
+  - 题面：A solid cube has side length 3 inches. A 2-inch by 2-inch square hole is cut into the center of each face. The edges of each cut are parallel to the edges of the cube, and each hole goes all the way through the cube. What is the volume, in cubic inches, of the remaining solid? (A) 7 (B) 8 (C) 10 (D) 12 (E) 15
+
+### 2.4 面积与相似
+
+- **2010 AMC 10A Problem 16**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：Nondegenerate △ABC has integer side lengths, BD is an angle bisector, AD = 3, and DC = 8. What is the smallest possible value of the perimeter? (A) 30 (B) 33 (C) 35 (D) 36 (E) 37
+- **2010 AMC 10A Problem 19**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：Equiangular hexagon ABCDEF has side lengths AB = CD = EF = 1 and BC = DE = F A = r. The area of △ACE is 70% of the area of the hexagon. What is the sum of all possible values of r? √ (A) 4 3 (B) 10 (C) 4 (D) 17 (E) 6 3 3 4
+- **2010 AMC 10B Problem 7**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：A triangle has side lengths 10, 10, and 12. A rectangle has width 4 and area equal to the area of the triangle. What is the perimeter of this rectangle? (A) 16 (B) 24 (C) 28 (D) 32 (E) 36
+
+## 3. 数论
+
+### 3.1 整数构造
+
+- **2010 AMC 10A Problem 21**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：The polynomial x3 − ax2 + bx − 2010 has three positive integer zeros. What is the smallest possible value of a? (A) 78 (B) 88 (C) 98 (D) 108 (E) 118
+- **2010 AMC 10B Problem 25**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：Let a > 0, and let P (x) be a polynomial with integer coefficients such that P (1) = P (3) = P (5) = P (7) = a, and P (2) = P (4) = P (6) = P (8) = −a. What is the smallest possible value of a? (A) 105 (B) 315 (C) 945 (D) 7! (E) 8! –
+
+### 3.2 进制与数字
+
+- **2010 AMC 10A Problem 9**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：A palindrome, such as 83438, is a number that remains the same when its digits are reversed. The numbers x and x + 32 are three-digit and four-digit palindromes, respectively. What is the sum of the digits of x? (A) 20 (B) 21 (C) 22 (D) 23 (E) 24
+- **2010 AMC 10A Problem 24**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：The number obtained from the last two nonzero digits of 90! is equal to n. What is n? (A) 12 (B) 32 (C) 48 (D) 52 (E) 68
+
+## 4. 组合数学
+
+### 4.1 排列组合
+
+- **2010 AMC 10B Problem 22**
+  - 考点：用分组、排列组合或容斥完成计数。
+  - 标签：排列组合;计数
+  - 题面：Seven distinct pieces of candy are to be distributed among three bags. The red bag and the blue bag must each receive at least one piece of candy; the white bag may remain empty. How many arrangements are possible? (A) 1930 (B) 1931 (C) 1932 (D) 1933 (E) 1934
+- **2010 AMC 10B Problem 23**
+  - 考点：用分组、排列组合或容斥完成计数。
+  - 标签：排列组合;计数
+  - 题面：The entries in a 3 × 3 array include all the digits from 1 through 9, arranged so that the entries in every row and column are in increasing order. How many such arrays are there? (A) 18 (B) 24 (C) 36 (D) 42 (E) 60
+
+### 4.2 染色与构造
+
+- **2010 AMC 10B Problem 3**
+  - 考点：按颜色/类型分类，使用构造、对称或计数。
+  - 标签：染色;构造
+  - 题面：A drawer contains red, green, blue, and white socks with at least 2 of each color. What is the minimum number of socks that must be pulled from the drawer to guarantee a matching pair? (A) 3 (B) 4 (C) 5 (D) 8 (E) 9
+
+## 5. 概率与统计
+
+### 5.1 平均数与数据集
+
+- **2010 AMC 10A Problem 1**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：Mary’s top book shelf holds five books with the following widths, in centimeters: 6, 1 , 1, 2.5, and 2 10. What is the average book width, in centimeters? (A) 1 (B) 2 (C) 3 (D) 4 (E) 5
+- **2010 AMC 10A Problem 13**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：Angelina drove at an average rate of 80 kph and then stopped 20 minutes for gas. After the stop, she drove at an average rate of 100 kph. Altogether she drove 250 km in a total trip time of 3 hours including the stop. Which equation could be used to solve for the time t in hours that she drove before her stop? (A) 80t + 100(8/3 − t) = 250 (B) 80t = 250 (C) 100t = 250 (D) 90t = 250 (E) 80(8/3 − t) + 100t = 250
+- **2010 AMC 10A Problem 18**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：Bernardo randomly picks 3 distinct numbers from the set {1, 2, 3, 4, 5, 6, 7, 8, 9} and arranges them in descending order to form a 3-digit number. Silvia randomly picks 3 distinct numbers from the set {1, 2, 3, 4, 5, 6, 7, 8} and also arranges them in descending order to form a 3-digit number. What is the probability that Bernardo’s number is larger than Silvia’s number? (A) 47 (B) 37 (C) 2 (D) 49 (E) 39 72 56 3 72 56
+- **2010 AMC 10B Problem 4**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：For a real number x, define ♡(x) to be the average of x and x2. What is ♡(1) + ♡(2) + ♡(3)? (A) 3 (B) 6 (C) 10 (D) 12 (E) 20
+- **2010 AMC 10B Problem 14**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：The average of the numbers 1, 2, 3, ..., 98, 99, and x is 100x. What is x? (A) 49 (B) 50 (C) 1 (D) 51 (E) 50 101 101 2 101 99
+- **2010 AMC 10B Problem 17**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：Every high school in the city of Euclid sent a team of 3 students to a math contest. Each partic- ipant in the contest received a different score. Andrea’s score was the median among all stu- dents, and hers was the highest score on her team. Andrea’s teammates Beth and Carla placed 37th and 64th, respectively. How many schools are in the city? (A) 22 (B) 23 (C) 24 (D) 25 (E) 26
+
+### 5.2 独立性
+
+- **2010 AMC 10B Problem 18**
+  - 考点：把事件关系转化为计数或比例条件。
+  - 标签：独立事件;概率
+  - 题面：Positive integers a, b, and c are randomly and independently selected with replacement from the set {1, 2, 3, . . . , 2010}. What is the probability that abc + ab + a is divisible by 3? 1 29 31 11 13 (A) (B) (C) (D) (E) 3 81 81 27 27
+
+### 5.3 组合概率
+
+- **2010 AMC 10A Problem 3**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：Tyrone had 97 marbles and Eric had 11 marbles. Tyrone then gave some of his marbles to Eric so that Tyrone ended with twice as many marbles as Eric. How many marbles did Tyrone give to Eric? (A) 3 (B) 13 (C) 18 (D) 25 (E) 29
+- **2010 AMC 10A Problem 23**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：Each of 2010 boxes in a line contains a single red marble, and for 1 ≤ k ≤ 2010, the box in the kth position also contains k white marbles. Isabella begins at the first box and successively draws a single marble at random from each box, in order. She stops when she first draws a red marble. Let P (n) be the probability that Isabella stops after drawing exactly n marbles. What is the smallest value of n for which P (n) < 1 ? 2010 (A) 45 (B) 63 (C) 64 (D) 201 (E) 1005
+- **2010 AMC 10B Problem 9**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：Lucky Larry’s teacher asked him to substitute numbers for a, b, c, d, and e in the expression a − (b−(c−(d+e))) and evaluate the result. Larry ignored the parentheses but added and subtracted correctly and obtained the correct result by coincedence. The numbers Larry substituted for a, b, c, and d were 1, 2, 3, and 4, respectively. What number did Larry substitute for e? (A) − 5 (B) − 3 (C) 0 (D) 3 (E) 5
+- **2010 AMC 10B Problem 21**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：A palindrome between 1000 and 10, 000 is chosen at random. What is the probability that it is divisible by 7? 1 1 1 1 1 (A) (B) (C) (D) (E) 10 9 7 6 5

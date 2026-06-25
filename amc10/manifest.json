@@ -1,0 +1,385 @@
+{
+  "project": "AMC 10 multi-year classification",
+  "start_time": "2026-06-21T22:36:18-07:00",
+  "last_updated": "2026-06-21T23:38:54-07:00",
+  "elapsed": "1:02:36",
+  "input_dir": "D:\\AMC10_Codex\\input",
+  "completed_years": [
+    "2002",
+    "2003",
+    "2004",
+    "2005",
+    "2006",
+    "2007",
+    "2008",
+    "2009",
+    "2010",
+    "2011",
+    "2012",
+    "2013",
+    "2014",
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021 Spring",
+    "2022",
+    "2023",
+    "2024"
+  ],
+  "missing_years": [],
+  "input_pdfs": [
+    "2002AMC10.pdf",
+    "2003AMC10.pdf",
+    "2004AMC10.pdf",
+    "2005AMC10.pdf",
+    "2006AMC10.pdf",
+    "2007AMC10.pdf",
+    "2008AMC10.pdf",
+    "2009AMC10.pdf",
+    "2010AMC10.pdf",
+    "2011AMC10.pdf",
+    "2012AMC10.pdf",
+    "2013AMC10.pdf",
+    "2014AMC10.pdf",
+    "2015AMC10.pdf",
+    "2016AMC10.pdf",
+    "2017AMC10.pdf",
+    "2018AMC10.pdf",
+    "2019AMC10.pdf",
+    "2020AMC10.pdf",
+    "2021AMC10Spring.pdf",
+    "2022AMC10.pdf",
+    "2023AMC10.pdf",
+    "2024AMC10.pdf"
+  ],
+  "total_problem_count": 1150,
+  "problem_count_by_year": {
+    "2002": 50,
+    "2003": 50,
+    "2004": 50,
+    "2005": 50,
+    "2006": 50,
+    "2007": 50,
+    "2008": 50,
+    "2009": 50,
+    "2010": 50,
+    "2011": 50,
+    "2012": 50,
+    "2013": 50,
+    "2014": 50,
+    "2015": 50,
+    "2016": 50,
+    "2017": 50,
+    "2018": 50,
+    "2019": 50,
+    "2020": 50,
+    "2021 Spring": 50,
+    "2022": 50,
+    "2023": 50,
+    "2024": 50
+  },
+  "problem_count_by_major_category": {
+    "代数": 348,
+    "几何": 334,
+    "数论": 211,
+    "组合数学": 70,
+    "概率与统计": 187
+  },
+  "year_timings": {
+    "2002": {
+      "year_start_time": "2026-06-21T23:38:50-07:00",
+      "year_end_time": "2026-06-21T23:38:50-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [
+        "2002 B Problem 1: ignored duplicate parser hit",
+        "2002 B Problem 2: ignored duplicate parser hit",
+        "2002 B Problem 3: ignored duplicate parser hit",
+        "2002 B Problem 4: ignored duplicate parser hit",
+        "2002 B Problem 5: ignored duplicate parser hit",
+        "2002 B Problem 6: ignored duplicate parser hit",
+        "2002 B Problem 7: ignored duplicate parser hit",
+        "2002 B Problem 8: ignored duplicate parser hit",
+        "2002 B Problem 9: ignored duplicate parser hit",
+        "2002 B Problem 10: ignored duplicate parser hit",
+        "2002 B Problem 11: ignored duplicate parser hit",
+        "2002 B Problem 12: ignored duplicate parser hit",
+        "2002 B Problem 13: ignored duplicate parser hit",
+        "2002 B Problem 14: ignored duplicate parser hit",
+        "2002 B Problem 15: ignored duplicate parser hit",
+        "2002 B Problem 16: ignored duplicate parser hit",
+        "2002 B Problem 17: ignored duplicate parser hit",
+        "2002 B Problem 18: ignored duplicate parser hit",
+        "2002 B Problem 19: ignored duplicate parser hit",
+        "2002 B Problem 20: ignored duplicate parser hit",
+        "2002 B Problem 21: ignored duplicate parser hit",
+        "2002 B Problem 22: ignored duplicate parser hit",
+        "2002 B Problem 23: ignored duplicate parser hit",
+        "2002 B Problem 24: ignored duplicate parser hit",
+        "2002 B Problem 25: ignored duplicate parser hit"
+      ],
+      "output_slug": "2002"
+    },
+    "2003": {
+      "year_start_time": "2026-06-21T23:38:50-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [
+        "2003 B Problem 3: ignored duplicate parser hit"
+      ],
+      "output_slug": "2003"
+    },
+    "2004": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [
+        "2004 A Problem 1: ignored duplicate parser hit",
+        "2004 B Problem 3: ignored duplicate parser hit",
+        "2004 B Problem 9: ignored duplicate parser hit",
+        "2004 B Problem 5: ignored duplicate parser hit",
+        "2004 B Problem 2: ignored duplicate parser hit",
+        "2004 B Problem 1: ignored duplicate parser hit"
+      ],
+      "output_slug": "2004"
+    },
+    "2005": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [],
+      "output_slug": "2005"
+    },
+    "2006": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [
+        "2006 A Problem 8: ignored duplicate parser hit",
+        "2006 A Problem 8: ignored duplicate parser hit",
+        "2006 A Problem 2: ignored duplicate parser hit",
+        "2006 B Problem 2: ignored duplicate parser hit"
+      ],
+      "output_slug": "2006"
+    },
+    "2007": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [
+        "2007 B Problem 3: ignored duplicate parser hit"
+      ],
+      "output_slug": "2007"
+    },
+    "2008": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [],
+      "output_slug": "2008"
+    },
+    "2009": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [
+        "2009 A Problem 3: ignored duplicate parser hit",
+        "2009 A Problem 4: ignored duplicate parser hit",
+        "2009 A Problem 20: ignored duplicate parser hit",
+        "2009 B Problem 7: ignored duplicate parser hit",
+        "2009 B Problem 4: ignored duplicate parser hit",
+        "2009 B Problem 1: ignored duplicate parser hit"
+      ],
+      "output_slug": "2009"
+    },
+    "2010": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [],
+      "output_slug": "2010"
+    },
+    "2011": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [],
+      "output_slug": "2011"
+    },
+    "2012": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [
+        "2012 B Problem 6: ignored duplicate parser hit"
+      ],
+      "output_slug": "2012"
+    },
+    "2013": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [],
+      "output_slug": "2013"
+    },
+    "2014": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [
+        "2014 A Problem 1: ignored duplicate parser hit",
+        "2014 A Problem 1: ignored duplicate parser hit",
+        "2014 A Problem 4: ignored duplicate parser hit"
+      ],
+      "output_slug": "2014"
+    },
+    "2015": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [],
+      "output_slug": "2015"
+    },
+    "2016": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [],
+      "output_slug": "2016"
+    },
+    "2017": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [],
+      "output_slug": "2017"
+    },
+    "2018": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [
+        "2018 A Problem 3: ignored duplicate parser hit",
+        "2018 A Problem 2: ignored duplicate parser hit",
+        "2018 B Problem 2: ignored duplicate parser hit",
+        "2018 B Problem 1: ignored duplicate parser hit"
+      ],
+      "output_slug": "2018"
+    },
+    "2019": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [
+        "2019 A Problem 1: ignored duplicate parser hit"
+      ],
+      "output_slug": "2019"
+    },
+    "2020": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [],
+      "output_slug": "2020"
+    },
+    "2021 Spring": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [],
+      "output_slug": "2021_spring"
+    },
+    "2022": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [],
+      "output_slug": "2022"
+    },
+    "2023": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [
+        "2023 A Problem 1: ignored duplicate parser hit",
+        "2023 A Problem 2: ignored duplicate parser hit"
+      ],
+      "output_slug": "2023"
+    },
+    "2024": {
+      "year_start_time": "2026-06-21T23:38:51-07:00",
+      "year_end_time": "2026-06-21T23:38:51-07:00",
+      "elapsed_time": "0:00:00",
+      "mode": "parsed_and_generated_from_pdf_text",
+      "problem_count": 50,
+      "issues": [
+        "2024 A Problem 2: ignored duplicate parser hit",
+        "2024 B Problem 4: ignored duplicate parser hit"
+      ],
+      "output_slug": "2024"
+    }
+  },
+  "outputs": {
+    "all_years_index": "output/all_years_index.html",
+    "all_problems_csv": "output/all_problems.csv",
+    "taxonomy": "output/taxonomy.md",
+    "progress_report": "output/progress_report.md",
+    "resume_prompt": "output/resume_prompt.md",
+    "validation_report": "output/validation_report.md"
+  },
+  "scripts": [
+    "scripts/run_pipeline.py",
+    "scripts/extract_input_pdfs.py",
+    "scripts/build_years_from_extracted_text.py",
+    "scripts/build_all_years_summary.py",
+    "scripts/validate_outputs.py"
+  ],
+  "issues": [],
+  "blocking_condition": ""
+}

@@ -1,0 +1,290 @@
+# 2015 AMC 12 分类题集
+
+> 自动批量整理草稿。每道题只归入一个一级分类和一个二级分类；answer 留空表示源 PDF 未提供答案表。
+
+## 统计概览
+
+- 总题量：50
+- A 卷：25 题
+- B 卷：25 题
+
+| 一级分类 | 题量 |
+| --- | ---: |
+| 代数 | 9 |
+| 几何 | 20 |
+| 数论 | 10 |
+| 组合数学 | 3 |
+| 概率与统计 | 8 |
+
+## 1. 代数
+
+### 1.1 三角恒等式
+
+- **2015 AMC 12A Problem 6**
+  - 考点：用三角恒等式、角度关系或特殊角化简。
+  - 标签：三角函数;恒等式
+  - 题面：Two years ago Pete was three times as old as his cousin Claire. Two years before that, Pete was four times as old as Claire. In how many years will the ratio of their ages be 2 : 1? (A) 2 (B) 4 (C) 5 (D) 6 (E) 8
+
+### 1.2 对数与指数
+
+- **2015 AMC 12A Problem 14**
+  - 考点：使用换底、指数规律或对数恒等式化简。
+  - 标签：对数;指数
+  - 题面：What is the value of a for which 1 + 1 + 1 = 1? log a log a log a 2 3 4 (A) 9 (B) 12 (C) 18 (D) 24 (E) 36
+- **2015 AMC 12B Problem 8**
+  - 考点：使用换底、指数规律或对数恒等式化简。
+  - 标签：对数;指数
+  - 题面：What is the value of (625log 5 2015) 1 4 ? √ √ (A) 5 (B) 4 2015 (C) 625 (D) 2015 (E) 4 52015
+
+### 1.3 运算与化简
+
+- **2015 AMC 12A Problem 1**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：What is the value of (20 − 1 + 52 + 0)−1 × 5? 1 5 (A) − 125 (B) − 120 (C) (D) (E) 25 5 24
+- **2015 AMC 12A Problem 4**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：The sum of two positive numbers is 5 times their difference. What is the ratio of the larger number to the smaller? 5 3 9 5 (A) (B) (C) (D) 2 (E) 4 2 5 2
+- **2015 AMC 12B Problem 1**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：What is the value of 2 − (−2)−2? 1 7 9 (A) − 2 (B) (C) (D) (E) 6 16 4 4
+- **2015 AMC 12B Problem 2**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Marie does three equally time-consuming tasks in a row without taking breaks. She begins the first task at 1:00 PM and finishes the second task at 2:40 PM. When does she finish the third task? (A) 3:10 PM (B) 3:30 PM (C) 4:00 PM (D) 4:10 PM (E) 4:30 PM
+- **2015 AMC 12B Problem 4**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：David, Hikmet, Jack, Marta, Rand, and Todd were in a 12-person race with 6 other people. Rand finished 6 places ahead of Hikmet. Marta finished 1 place behind Jack. David finished 2 places behind Hikmet. Jack finished 2 places behind Todd. Todd finished 1 place behind Rand. Marta finished in 6th place. Who finished in 8th place? (A) David (B) Hikmet (C) Jack (D) Rand (E) Todd
+- **2015 AMC 12B Problem 5**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：The Tigers beat the Sharks 2 out of the first 3 times they played. They then played N more times, and the Sharks ended up winning at least 95% of all the games played. What is the minimum possible value for N ? (A) 35 (B) 37 (C) 39 (D) 41 (E) 43
+
+## 2. 几何
+
+### 2.1 三角形
+
+- **2015 AMC 12B Problem 11**
+  - 考点：运用三角形边角关系、三角函数或面积公式。
+  - 标签：三角形;角度
+  - 题面：The line 12x + 5y = 60 forms a triangle with the coordinate axes. What is the sum of the lengths of the altitudes of this triangle? 360 107 43 281 (A) 20 (B) (C) (D) (E) 17 5 2 13
+- **2015 AMC 12B Problem 25**
+  - 考点：运用三角形边角关系、三角函数或面积公式。
+  - 标签：三角形;角度
+  - 题面：A bee starts flying from point P . She flies 1 inch due east to point P . For j ≥ 1, once the bee 0 1 reaches point P , she turns 30◦ counterclockwise and then flies j + 1 inches straight to point j √ √ P . When the bee reaches P she is exactly a b + c d inches away from P , where a, b, j+1 2015 0 c and d are positive integers and b and d are not divisible by the square of any prime. What is a + b + c + d? (A) 2016 (B) 2024 (C) 2032 (D) 2040 (E) 2048 –
+
+### 2.2 几何变换
+
+- **2015 AMC 12B Problem 7**
+  - 考点：用旋转、反射、对称或展开方法简化路径和角度。
+  - 标签：变换;对称
+  - 题面：A regular 15-gon has L lines of symmetry, and the smallest positive angle for which it has rota- tional symmetry is R degrees. What is L + R? (A) 24 (B) 27 (C) 32 (D) 39 (E) 54
+
+### 2.3 圆与曲线
+
+- **2015 AMC 12A Problem 11**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：On a sheet of paper, Isabella draws a circle of radius 2, a circle of radius 3, and all possible lines simultaneously tangent to both circles. Isabella notices that she has drawn exactly k ≥ 0 lines. How many different values of k are possible? (A) 2 (B) 3 (C) 4 (D) 5 (E) 6
+- **2015 AMC 12A Problem 21**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：A circle of radius r passes through both foci of, and exactly four points on, the ellipse with equation x2 + 16y2 = 16. The set of all possible values of r is an interval [a, b). What is a + b? √ √ √ √ (A) 5 2 + 4 (B) 17 + 7 (C) 6 2 + 3 (D) 15 + 8 (E) 12
+- **2015 AMC 12B Problem 13**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：Quadrilateral ABCD is inscribed inside a circle with ∠BAC = 70◦, ∠ADB = 40◦, AD = 4, and BC = 6. What is AC? √ √ √ (A) 3 + 5 (B) 6 (C) 9 2 (D) 8 − 2 (E) 7 2
+- **2015 AMC 12B Problem 14**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：A circle of radius 2 is centered at A. An equilateral triangle with side 4 has a vertex at A. What is the difference between the area of the region that lies inside the circle but outside the triangle and the area of the region that lies inside the triangle but outside the circle? √ √ √ (A) 8 − π (B) π + 2 (C) 2π − 2 (D) 4(π − 3) (E) 2π + 3 2 2
+- **2015 AMC 12B Problem 19**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：In △ABC, ∠C = 90◦ and AB = 12. Squares ABXY and ACW Z are constructed outside of the triangle. The points X, Y, Z, and W lie on a circle. What is the perimeter of the triangle? √ √ √ (A) 12 + 9 3 (B) 18 + 6 3 (C) 12 + 12 2 (D) 30 (E) 32
+- **2015 AMC 12B Problem 24**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：Four circles, no two of which are congruent, have centers at A, B, C, and D, and points P and Q lie on all four circles. The radius of circle A is 5 times the radius of circle B, and the radius of 8 circle C is 5 times the radius of circle D. Furthermore, AB = CD = 39 and P Q = 48. Let R be 8 the midpoint of P Q. What is AR + BR + CR + DR? (A) 180 (B) 184 (C) 188 (D) 192 (E) 196
+
+### 2.4 坐标几何
+
+- **2015 AMC 12A Problem 25**
+  - 考点：建立坐标或使用距离、斜率、面积公式求解。
+  - 标签：坐标;几何
+  - 题面：A collection of circles in the upper half-plane, all tangent to the x-axis, is constructed in layers as follows. Layer L consists of two circles of radii 702 and 732 that are externally tangent. For 0 k ≥ 1, the circles in (cid:83)k−1 L are ordered according to their points of tangency with the x-axis. j=0 j For every pair of consecutive circles in this order, a new circle is constructed externally tangent to each of the two circles in the pair. Layer L consists of the 2k−1 circles constructed in this k way. Let S = (cid:83)6 L , and for every circle C denote by r(C) its radius. What is j=0 j (cid:88) 1 ? (cid:112) r(C) C∈S 286 583 715 143 1573 (A) (B) (C) (D) (E) 35 70 73 14 146
+
+### 2.5 空间几何
+
+- **2015 AMC 12A Problem 7**
+  - 考点：用截面、相似、体积或空间距离关系建模。
+  - 标签：空间几何;体积
+  - 题面：Two right circular cylinders have the same volume. The radius of the second cylinder is 10% more than the radius of the first. What is the relationship between the heights of the two cylin- ders? (A) The second height is 10% less than the first. (B) The first height is 10% more than the second. (C) The second height is 21% less than the first. (D) The first height is 21% more than the second. (E) The second height is 80% of the first.
+- **2015 AMC 12A Problem 16**
+  - 考点：用截面、相似、体积或空间距离关系建模。
+  - 标签：空间几何;体积
+  - 题面：Tetrahedron ABCD has AB = 5, AC = 3, BC = 4, BD = 4, AD = 3, and CD = 12 2. What is 5 the volume of the tetrahedron? √ √ 24 √ 24 √ (A) 3 2 (B) 2 5 (C) (D) 3 3 (E) 2 5 5
+- **2015 AMC 12B Problem 16**
+  - 考点：用截面、相似、体积或空间距离关系建模。
+  - 标签：空间几何;体积
+  - 题面：A regular hexagon with sides of length 6 has an isosceles triangle attached to each side. Each of these triangles has two sides of length 8. The isosceles triangles are folded to make a pyramid with the hexagon as the base of the pyramid. What is the volume of the pyramid? √ √ √ (A) 18 (B) 162 (C) 36 21 (D) 18 138 (E) 54 21
+
+### 2.6 面积与相似
+
+- **2015 AMC 12A Problem 2**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：Two of the three sides of a triangle are 20 and 15. Which of the following numbers is not a possible perimeter of the triangle? (A) 52 (B) 57 (C) 62 (D) 67 (E) 72
+- **2015 AMC 12A Problem 8**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：The ratio of the length to the width of a rectangle is 4 : 3. If the rectangle has diagonal of length d, then the area may be expressed as kd2 for some constant k. What is k? 2 3 12 16 3 (A) (B) (C) (D) (E) 7 7 25 25 4
+- **2015 AMC 12A Problem 12**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：The parabolas y = ax2 − 2 and y = 4 − bx2 intersect the coordinate axes in exactly four points, and these four points are the vertices of a kite of area 12. What is a + b? (A) 1 (B) 1.5 (C) 2 (D) 2.5 (E) 3
+- **2015 AMC 12A Problem 19**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：For some positive integers p, there is a quadrilateral ABCD with positive integer side lengths, perimeter p, right angles at B and C, AB = 2, and CD = AD. How many different values of p < 2015 are possible? (A) 30 (B) 31 (C) 61 (D) 62 (E) 63
+- **2015 AMC 12A Problem 20**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：Isosceles triangles T and T ′ are not congruent but have the same area and the same perimeter. The sides of T have lengths 5, 5, and 8, while those of T ′ have lengths a, a, and b. Which of the following numbers is closest to b? (A) 3 (B) 4 (C) 5 (D) 6 (E) 8
+- **2015 AMC 12B Problem 10**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：How many noncongruent integer-sided triangles with positive area and perimeter less than 15 are neither equilateral, isosceles, nor right triangles? (A) 3 (B) 4 (C) 5 (D) 6 (E) 7
+- **2015 AMC 12B Problem 23**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：A rectangular box measures a × b × c, where a, b, and c are integers and 1 ≤ a ≤ b ≤ c. The volume and surface area of the box are numerically equal. How many ordered triples (a, b, c) are possible? (A) 4 (B) 10 (C) 12 (D) 21 (E) 26
+
+## 3. 数论
+
+### 3.1 整数构造
+
+- **2015 AMC 12A Problem 5**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：Amelia needs to estimate the quantity a − c, where a, b, and c are large positive integers. She b rounds each of the integers so that the calculation will be easier to do mentally. In which of these situations will her answer necessarily be greater than the exact value of a − c? b (A) She rounds all three numbers up. (B) She rounds a and b up, and she rounds c down. (C) She rounds a and c up, and she rounds b down. (D) She rounds a up, and she rounds b and c down. (E) She rounds c up, and she rounds a and b down.
+- **2015 AMC 12A Problem 10**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：Integers x and y with x > y > 0 satisfy x + y + xy = 80. What is x? (A) 8 (B) 10 (C) 15 (D) 18 (E) 26
+- **2015 AMC 12A Problem 18**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：The zeroes of the function f (x) = x2 − ax + 2a are integers. What is the sum of all possible values of a? (A) 7 (B) 8 (C) 16 (D) 17 (E) 18
+- **2015 AMC 12B Problem 3**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：Isaac has written down one integer two times and another integer three times. The sum of the five numbers is 100, and one of the numbers is 28. What is the other number? (A) 8 (B) 11 (C) 14 (D) 15 (E) 18
+
+### 3.2 整除与同余
+
+- **2015 AMC 12B Problem 20**
+  - 考点：把条件转化为同余或余数分类讨论。
+  - 标签：同余;余数
+  - 题面：For every positive integer n, let mod (n) be the remainder obtained when n is divided by 5. Define 5 a function f : {0, 1, 2, 3, . . . } × {0, 1, 2, 3, 4} → {0, 1, 2, 3, 4} recursively as follows:  mod (j + 1) if i = 0 and 0 ≤ j ≤ 4  5  f (i, j) = f (i − 1, 1) if i ≥ 1 and j = 0, and  f (i − 1, f (i, j − 1)) if i ≥ 1 and 1 ≤ j ≤ 4 What is f (2015, 2)? (A) 0 (B) 1 (C) 2 (D) 3 (E) 4
+
+### 3.3 质因数与整除
+
+- **2015 AMC 12B Problem 6**
+  - 考点：分解质因数并检查整除条件。
+  - 标签：质因数;整除
+  - 题面：Back in 1930, Tillie had to memorize her multiplication tables from 0 × 0 through 12 × 12. The multiplication table she was given had rows and columns labeled with the factors, and the prod- ucts formed the body of the table. To the nearest hundredth, what fraction of the numbers in the body of the table are odd? (A) 0.21 (B) 0.25 (C) 0.46 (D) 0.50 (E) 0.75
+- **2015 AMC 12B Problem 18**
+  - 考点：分解质因数并检查整除条件。
+  - 标签：质因数;整除
+  - 题面：For every composite positive integer n, define r(n) to be the sum of the factors in the prime factorization of n. For example, r(50) = 12 because the prime factorization of 50 is 2 · 52, and 2 + 5 + 5 = 12. What is the range of the function r, {r(n) : n is a composite positive integer}? (A) the set of positive integers (B) the set of composite positive integers (C) the set of even positive integers (D) the set of integers greater than 3 (E) the set of integers greater than 4
+
+### 3.4 进制与数字
+
+- **2015 AMC 12A Problem 15**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：What is the minimum number of digits to the right of the decimal point needed to express the 123 456 789 fraction as a decimal? 226 · 54 (A) 4 (B) 22 (C) 26 (D) 30 (E) 104 √
+- **2015 AMC 12B Problem 12**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：Let a, b, and c be three distinct one-digit numbers. What is the maximum value of the sum of the roots of the equation (x − a)(x − b) + (x − b)(x − c) = 0? (A) 15 (B) 15.5 (C) 16 (D) 16.5 (E) 17
+- **2015 AMC 12B Problem 21**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：Cozy the Cat and Dash the Dog are going up a staircase with a certain number of steps. However, instead of walking up the steps one at a time, both Cozy and Dash jump. Cozy goes two steps up with each jump (though if necessary, he will just jump the last step). Dash goes five steps up with each jump (though if necessary, he will just jump the last steps if there are fewer than 5 steps left). Suppose the Dash takes 19 fewer jumps than Cozy to reach the top of the staircase. Let s denote the sum of all possible numbers of steps this staircase can have. What is the sum of the digits of s? (A) 9 (B) 11 (C) 12 (D) 13 (E) 15
+
+## 4. 组合数学
+
+### 4.1 排列组合
+
+- **2015 AMC 12A Problem 13**
+  - 考点：用分组、排列组合或容斥完成计数。
+  - 标签：排列组合;计数
+  - 题面：A league with 12 teams holds a round-robin tournament, with each team playing every other team once. Games either end with one team victorious or else end in a draw. A team scores 2 points for every game it wins and 1 point for every game it draws. Which of the following is not a true statement about the list of 12 scores? (A) There must be an even number of odd scores. (B) There must be an even number of even scores. (C) There cannot be two scores of 0. (D) The sum of the scores must be at least 100. (E) The highest score must be at least 12.
+- **2015 AMC 12B Problem 22**
+  - 考点：用分组、排列组合或容斥完成计数。
+  - 标签：排列组合;计数
+  - 题面：Six chairs are evenly spaced around a circular table. One person is seated in each chair. Each person gets up and sits down in a chair that is not the same chair and is not adjacent to the chair he or she originally occupied, so that again one person is seated in each chair. In how many ways can this be done? (A) 14 (B) 16 (C) 18 (D) 20 (E) 24
+
+### 4.2 递推与序列计数
+
+- **2015 AMC 12A Problem 22**
+  - 考点：建立状态递推或寻找周期规律计数。
+  - 标签：递推;序列
+  - 题面：For each positive integer n, let S(n) be the number of sequences of length n consisting solely of the letters A and B, with no more than three As in a row and no more than three Bs in a row. What is the remainder when S(2015) is divided by 12? (A) 0 (B) 4 (C) 6 (D) 8 (E) 10
+
+## 5. 概率与统计
+
+### 5.1 几何概率
+
+- **2015 AMC 12A Problem 23**
+  - 考点：将随机位置参数化，用面积或长度比例计算概率。
+  - 标签：几何概率;面积
+  - 题面：Let S be a square of side length 1. Two points are chosen independently at random on the sides of S. The probability that the straight-line distance between the points is at least 1 is a−bπ , where 2 c a, b, and c are positive integers and gcd(a, b, c) = 1. What is a + b + c? (A) 59 (B) 60 (C) 61 (D) 62 (E) 63
+
+### 5.2 平均数与数据集
+
+- **2015 AMC 12A Problem 3**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：Mr. Patrick teaches math to 15 students. He was grading tests and found that when he graded everyone’s test except Payton’s, the average grade for the class was 80. After he graded Payton’s test, the class average became 81. What was Payton’s score on the test? (A) 81 (B) 85 (C) 91 (D) 94 (E) 95
+
+### 5.3 独立性
+
+- **2015 AMC 12B Problem 9**
+  - 考点：把事件关系转化为计数或比例条件。
+  - 标签：独立事件;概率
+  - 题面：Larry and Julius are playing a game, taking turns throwing a ball at a bottle sitting on a ledge. Larry throws first. The winner is the first person to knock the bottle off the ledge. At each turn the probability that a player knocks the bottle off the ledge is 1 , independently of what has happened 2 before. What is the probability that Larry wins the game? (A) 1 (B) 3 (C) 2 (D) 3 (E) 4 2 5 3 4 5
+- **2015 AMC 12B Problem 15**
+  - 考点：把事件关系转化为计数或比例条件。
+  - 标签：独立事件;概率
+  - 题面：At Rachelle’s school an A counts 4 points, a B 3 points, a C 2 points, and a D 1 point. Her GPA on the four classes she is taking is computed as the total sum of points divided by 4. She is certain that she will get As in both Mathematics and Science, and at least a C in each of English and History. She think she has a 1 chance of getting an A in English, and a 1 chance of getting a B. 6 4 In History, she has a 1 chance of getting an A, and a 1 chance of getting a B, independently of 4 3 what she gets in English. What is the probability that Rachelle will get a GPA of at least 3.5? (A) 11 (B) 1 (C) 3 (D) 11 (E) 1 72 6 16 24 2
+
+### 5.4 组合概率
+
+- **2015 AMC 12A Problem 9**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：A box contains 2 red marbles, 2 green marbles, and 2 yellow marbles. Carol takes 2 marbles from the box at random; then Claudia takes 2 of the remaining marbles at random; and then Cheryl takes the last two marbles. What is the probability that Cheryl gets 2 marbles of the same color? 1 1 1 1 1 (A) (B) (C) (D) (E) 10 6 5 3 2
+- **2015 AMC 12A Problem 17**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：Eight people are sitting around a circular table, each holding a fair coin. All eight people flip their coins and those who flip heads stand while those who flip tails remain seated. What is the probability that no two adjacent people will stand? 47 3 49 25 51 (A) (B) (C) (D) (E) 256 16 256 128 256
+- **2015 AMC 12A Problem 24**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：Rational numbers a and b are chosen at random among all rational numbers in the interval [0, 2) that can be written as fractions n where n and d are integers with 1 ≤ d ≤ 5. What is the d probability that (cos(aπ) + i sin(bπ))4 is a real number? 3 4 41 6 13 (A) (B) (C) (D) (E) 50 25 200 25 50
+- **2015 AMC 12B Problem 17**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：An unfair coin lands on heads with a probability of 1 . When tossed n times, the probability of 4 exactly two heads is the same as the probability of exactly three heads. What is the value of n? (A) 5 (B) 8 (C) 10 (D) 11 (E) 13

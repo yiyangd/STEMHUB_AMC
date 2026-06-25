@@ -1,0 +1,286 @@
+# 2004 AMC 12 分类题集
+
+> 自动批量整理草稿。每道题只归入一个一级分类和一个二级分类；answer 留空表示源 PDF 未提供答案表。
+
+## 统计概览
+
+- 总题量：50
+- A 卷：25 题
+- B 卷：25 题
+
+| 一级分类 | 题量 |
+| --- | ---: |
+| 代数 | 20 |
+| 几何 | 15 |
+| 数论 | 9 |
+| 概率与统计 | 6 |
+
+## 1. 代数
+
+### 1.1 三角恒等式
+
+- **2004 AMC 12A Problem 15**
+  - 考点：用三角恒等式、角度关系或特殊角化简。
+  - 标签：三角函数;恒等式
+  - 题面：Brenda and Sally run in opposite directions on a circular track, starting at diametrically opposite points. They first meet after Brenda has run 100 meters. They next meet after Sally has run 150 meters past their first meeting point. Each girl runs at a constant speed. What is the length of the track in meters? (A) 250 (B) 300 (C) 350 (D) 400 (E) 500
+- **2004 AMC 12A Problem 21**
+  - 考点：用三角恒等式、角度关系或特殊角化简。
+  - 标签：三角函数;恒等式
+  - 题面：If cos2n θ = 5, what is the value of cos 2θ? n=0 √ (A) 1 (B) 2 (C) 5 (D) 3 (E) 4 5 5 5 5 5
+
+### 1.2 函数与图像
+
+- **2004 AMC 12A Problem 5**
+  - 考点：分析函数图像、对称、交点或极值条件。
+  - 标签：函数;图像
+  - 备注：题面包含图形；自动分类依据较弱，按代数主线暂归类
+  - 题面：The graph of the line y = mx + b is shown. Which of the following is true? 2 1 1 1 2 − 1 − 2 − (A) mb < −1 (B) − 1 < mb < 0 (C) mb = 0 (D) 0 < mb < 1 (E) mb > 1
+- **2004 AMC 12B Problem 16**
+  - 考点：分析函数图像、对称、交点或极值条件。
+  - 标签：函数;图像
+  - 题面：A function f is defined by f (z) = iz¯, where i = −1 and z¯ is the complex conjugate of z. How many values of z satisfy both |z| = 5 and f (z) = z? (A) 0 (B) 1 (C) 2 (D) 4 (E) 8
+
+### 1.3 多项式与根
+
+- **2004 AMC 12A Problem 23**
+  - 考点：结合韦达定理、整数根或多项式结构求解。
+  - 标签：多项式;根
+  - 题面：A polynomial P (x) = c x2004 + c x2003 + ... + c x + c 2004 2003 1 0 has real coefficients with c ̸= 0 and 2004 distinct complex zeroes z = a + b i, 1 ≤ k ≤ 2004 2004 k k k with a and b real, a = b = 0, and k k 1 1 2004 2004 (cid:88) (cid:88) a = b . k k k=1 k=1 Which of the following quantities can be a nonzero number? (A) c (B) c (C) b b ...b (D) (cid:80)2004 a (E) (cid:80)2004 c 0 2003 2 3 2004 k=1 k k=1 k
+
+### 1.4 对数与指数
+
+- **2004 AMC 12A Problem 16**
+  - 考点：使用换底、指数规律或对数恒等式化简。
+  - 标签：对数;指数
+  - 题面：The set of all real numbers x for which log (log (log (log x))) 2004 2003 2002 2001 is defined is {x|x > c}. What is the value of c? (A) 0 (B) 20012002 (C) 20022003 (D) 20032004 (E) 200120022003
+
+### 1.5 数列与递推
+
+- **2004 AMC 12A Problem 14**
+  - 考点：从递推式或数列结构中找显式式、周期或求和规律。
+  - 标签：数列;递推
+  - 题面：A sequence of three real numbers forms an arithmetic progression with a first term of 9. If 2 is added to the second term and 20 is added to the third term, the three resulting numbers form a geometric progression. What is the smallest possible value for the third term in the geometric progression? (A) 1 (B) 4 (C) 36 (D) 49 (E) 81
+- **2004 AMC 12B Problem 12**
+  - 考点：从递推式或数列结构中找显式式、周期或求和规律。
+  - 标签：数列;递推
+  - 题面：In the sequence 2001, 2002, 2003, . . ., each term after the third is found by subtracting the previ- ous term from the sum of the two terms that precede that term. For example, the fourth term is 2001 + 2002 − 2003 = 2000. What is the 2004 th term in this sequence? (A) −2004 (B) −2 (C) 0 (D) 4003 (E) 6007
+
+### 1.6 运算与化简
+
+- **2004 AMC 12A Problem 1**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Alicia earns $20 per hour, of which 1.45% is deducted to pay local taxes. How many cents per hour of Alicia’s wages are used to pay local taxes? (A) 0.0029 (B) 0.029 (C) 0.29 (D) 2.9 (E) 29
+- **2004 AMC 12A Problem 2**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：On the AMC 12, each correct answer is worth 6 points, each incorrect answer is worth 0 points, and each problem left unanswered is worth 2.5 points. If Charlyn leaves 8 of the 25 problems unanswered, how many of the remaining problems must she answer correctly in order to score at least 100? (A) 11 (B) 13 (C) 14 (D) 16 (E) 17
+- **2004 AMC 12A Problem 4**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Bertha has 6 daughters and no sons. Some of her daughters have 6 daughters, and the rest have none. Bertha has a total of 30 daughters and granddaughters, and no great-granddaughters. How many of Bertha’s daughters and grand-daughters have no children? (A) 22 (B) 23 (C) 24 (D) 25 (E) 26
+- **2004 AMC 12A Problem 6**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Let U = 2 × 20042005, V = 20042005, W = 2003 × 20042004, X = 2 × 20042004, Y = 20042004 and Z = 20042003. Which of the following is the largest? (A) U − V (B) V − W (C) W − X (D) X − Y (E) Y − Z
+- **2004 AMC 12A Problem 7**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：A game is played with tokens according to the following rules. In each round, the player with the most tokens gives one token to each of the other players and also places one token into a discard pile. The game ends when some player runs out of tokens. Players A, B, and C start with 15, 14, and 13 tokens, respectively. How many rounds will there be in the game? (A) 36 (B) 37 (C) 38 (D) 39 (E) 40
+- **2004 AMC 12A Problem 12**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Let A = (0, 9) and B = (0, 12). Points A′ and B′ are on the line y = x, and AA′ and BB′ intersect at C = (2, 8). What is the length of A′B′? √ √ √ (A) 2 (B) 2 2 (C) 3 (D) 2 + 2 (E) 3 2
+- **2004 AMC 12B Problem 1**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：At each basketball practice last week, Jenny made twice as many free throws as she made at the previous practice. At her fifth practice she made 48 free throws. How many free throws did she make at the first practice? (A) 3 (B) 6 (C) 9 (D) 12 (E) 15
+- **2004 AMC 12B Problem 2**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：In the expression c · ab − d, the values of a, b, c, and d are 0, 1, 2, and 3, although not necessarily in that order. What is the maximum possible value of the result? (A) 5 (B) 6 (C) 8 (D) 9 (E) 10
+- **2004 AMC 12B Problem 6**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Minneapolis-St. Paul International Airport is 8 miles southwest of downtown St. Paul and 10 miles southeast of downtown Minneapolis. Which of the following is closest to the number of miles between downtown St. Paul and downtown Minneapolis? (A) 13 (B) 14 (C) 15 (D) 16 (E) 17
+- **2004 AMC 12B Problem 8**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：A grocer makes a display of cans in which the top row has one can and each lower row has two more cans than the row above it. If the display contains 100 cans, how many rows does it contain? (A) 5 (B) 8 (C) 9 (D) 10 (E) 11
+- **2004 AMC 12B Problem 9**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：The point (−3, 2) is rotated 90◦ clockwise around the origin to point B. Point B is then reflected over the line y = x to point C. What are the coordinates of C? (A) (−3, −2) (B) (−2, −3) (C) (2, −3) (D) (2, 3) (E) (3, 2)
+- **2004 AMC 12B Problem 13**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：If f (x) = ax + b and f −1(x) = bx + a with a and b real, what is the value of a + b? (A) −2 (B) −1 (C) 0 (D) 1 (E) 2
+
+## 2. 几何
+
+### 2.1 三角形
+
+- **2004 AMC 12B Problem 18**
+  - 考点：运用三角形边角关系、三角函数或面积公式。
+  - 标签：三角形;角度
+  - 题面：Points A and B are on the parabola y = 4x2 + 7x − 1, and the origin is the midpoint of AB. What is the length of AB? √ √ √ √ (A) 2 5 (B) 5 + 2 (C) 5 + 2 (D) 7 (E) 5 2 2
+- **2004 AMC 12B Problem 22**
+  - 考点：运用三角形边角关系、三角函数或面积公式。
+  - 标签：三角形;角度
+  - 题面：The square 50 b c d e f g h 2 is a multiplicative magic square. That is, the product of the numbers in each row, column, and diagonal is the same. If all the entries are positive integers, what is the sum of the possible values of g? (A) 10 (B) 25 (C) 35 (D) 62 (E) 136
+
+### 2.2 圆与曲线
+
+- **2004 AMC 12A Problem 9**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：A company sells peanut butter in cylindrical jars. Marketing research suggests that using wider jars would increase sales. If the diameter of the jars is increased by 25% without altering the volume, by what percent must the height be decreased? (A) 10% (B) 25% (C) 36% (D) 50% (E) 60%
+- **2004 AMC 12A Problem 18**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：Square ABCD has side length 2. A semicircle with diameter AB is constructed inside the square, and the tangent to the semicricle from C intersects side AD at E. What is the length of CE? D C E A B √ √ √ √ (A) 2+ 5 (B) 5 (C) 6 (D) 5 (E) 5 − 5 2 2
+- **2004 AMC 12A Problem 19**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：Circles A, B and C are externally tangent to each other and internally tangent to circle D. Circles B and C are congruent. Circle A has radius 1 and passes through the center of D. What is the radius of circle B? D B A C √ √ (A) 2 (B) 3 (C) 7 (D) 8 (E) 1+ 3 3 2 8 9 3
+- **2004 AMC 12A Problem 24**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：A plane contains points A and B with AB = 1. Let S be the union of all disks of radius 1 in the plane that cover AB. What is the area of S? √ √ √ √ (A) 2π + 3 (B) 8π (C) 3π − 3 (D) 10π − 3 (E) 4π − 2 3 3 2 3
+- **2004 AMC 12B Problem 7**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：A square has sides of length 10, and a circle centered at one of its vertices has radius 10. What is the area of the union of the regions enclosed by the square and the circle? (A) 200 + 25π (B) 100 + 75π (C) 75 + 100π (D) 100 + 100π (E) 100 + 125π
+- **2004 AMC 12B Problem 10**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 备注：题面包含图形
+  - 题面：An annulus is the region between two concentric circles. The concentric circles in the figure have radii b and c, with b > c. Let OX be a radius of the larger circle, let XZ be tangent to the smaller circle at Z, and let OY be the radius of the larger circle that contains Z. Let a = XZ, d = Y Z, and e = XY . What is the area of the annulus? (A) πa2 (B) πb2 (C) πc2 (D) πd2 (E) πe2 Y e d a X Z c b O
+- **2004 AMC 12B Problem 21**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：The graph of 2x2 + xy + 3y2 − 11x − 20y + 40 = 0 is an ellipse in the first quadrant of the xy-plane. Let a and b be the maximum and minimum values of y over all points (x, y) on the ellipse. What x is the value of a + b? √ √ (A) 3 (B) 10 (C) 7 (D) 9 (E) 2 14 2 2
+
+### 2.3 坐标几何
+
+- **2004 AMC 12A Problem 13**
+  - 考点：建立坐标或使用距离、斜率、面积公式求解。
+  - 标签：坐标;几何
+  - 题面：Let S be the set of points (a, b) in the coordinate plane, where each of a and b may be −1, 0, or 1. How many distinct lines pass through at least two members of S? (A) 8 (B) 20 (C) 24 (D) 27 (E) 36
+
+### 2.4 空间几何
+
+- **2004 AMC 12A Problem 22**
+  - 考点：用截面、相似、体积或空间距离关系建模。
+  - 标签：空间几何;体积
+  - 题面：Three mutually tangent spheres of radius 1 rest on a horizontal plane. A sphere of radius 2 rests on them. What is the distance from the plane to the top of the larger sphere? √ √ √ √ (A) 3 + 30 (B) 3 + 69 (C) 3 + 123 (D) 52 (E) 3 + 2 2 2 3 4 9
+- **2004 AMC 12B Problem 19**
+  - 考点：用截面、相似、体积或空间距离关系建模。
+  - 标签：空间几何;体积
+  - 题面：A truncated cone has horizontal bases with radii 18 and 2. A sphere is tangent to the top, bottom, and lateral surface of the truncated cone. What is the radius of the sphere? √ √ (A) 6 (B) 4 5 (C) 9 (D) 10 (E) 6 3
+
+### 2.5 面积与相似
+
+- **2004 AMC 12A Problem 8**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：In the overlapping triangles △ABC and △ABE sharing common side AB, ∠EAB and ∠ABC are right angles, AB = 4, BC = 6, AE = 8, and AC and BE intersect at D. What is the difference between the areas of △ADE and △BDC? E C
+- **2004 AMC 12B Problem 14**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：In △ABC , AB = 13, AC = 5, and BC = 12. Points M and N lie on AC and BC, respectively, with CM = CN = 4. Points J and K are on AB so that M J and N K are perpendicular to AB. What is the area of pentagon CM J KN ? A J M K C N B (A) 15 (B) 81 (C) 205 (D) 240 (E) 20 5 12 13
+- **2004 AMC 12B Problem 24**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：In △ABC, AB = BC, and BD is an altitude. Point E is on the extension of AC such that BE = 10. The values of tan CBE, tan DBE, and tan ABE form a geometric progression, and the values of cot DBE, cot CBE, cot DBC form an arithmetic progression. What is the area of △ABC? B A D C E √ √ (A) 16 (B) 50 (C) 10 3 (D) 8 5 (E) 18 3
+
+## 3. 数论
+
+### 3.1 整数构造
+
+- **2004 AMC 12A Problem 3**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：For how many ordered pairs of positive integers (x, y) is x + 2y = 100? (A) 33 (B) 49 (C) 50 (D) 99 (E) 100
+- **2004 AMC 12A Problem 17**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：Let f be a function with the following properties: (i) f (1) = 1, and (ii) f (2n) = n × f (n), for any positive integer n. What is the value of f (2100)? (A) 1 (B) 299 (C) 2100 (D) 24950 (E) 29999
+- **2004 AMC 12B Problem 3**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：If x and y are positive integers for which 2x3y = 1296, what is the value of x + y? (A) 8 (B) 9 (C) 10 (D) 11 (E) 12
+- **2004 AMC 12B Problem 23**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：The polynomial x3 − 2004x2 + mx + n has integer coefficients and three distinct positive zeros. Exactly one of these is an integer, and it is the sum of the other two. How many values of n are possible? (A) 250,000 (B) 250,250 (C) 250,500 (D) 250,750 (E) 251,000
+
+### 3.2 进制与数字
+
+- **2004 AMC 12A Problem 25**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：For each integer n ≥ 4, let a denote the base-n number 0.133 . The product a a · · · a can be n n 4 5 99 expressed as m , where m and n are positive integers and n is as small as possible. What is the n! value of m? (A) 98 (B) 101 (C) 132 (D) 798 (E) 962
+- **2004 AMC 12B Problem 5**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：On a trip from the United States to Canada, Isabella took d U.S. dollars. At the border she ex- changed them all, receiving 10 Canadian dollars for every 7 U.S. dollars. After spending 60 Cana- dian dollars, she had d Canadian dollars left. What is the sum of the digits of d? (A) 5 (B) 6 (C) 7 (D) 8 (E) 9
+- **2004 AMC 12B Problem 15**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：The two digits in Jack’s age are the same as the digits in Bill’s age, but in reverse order. In five years Jack will be twice as old as Bill will be then. What is the difference in their current ages? (A) 9 (B) 18 (C) 27 (D) 36 (E) 45 √
+- **2004 AMC 12B Problem 17**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：For some real numbers a and b, the equation 8x3 + 4ax2 + 2bx + a = 0 has three distinct positive roots. If the sum of the base-2 logarithms of the roots is 5, what is the value of a? (A) −256 (B) −64 (C) −8 (D) 64 (E) 256
+- **2004 AMC 12B Problem 25**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：Given that 22004 is a 604-digit number whose first digit is 1, how many elements of the set S = {20, 21, 22, . . . , 22003} have a first digit of 4? (A) 194 (B) 195 (C) 196 (D) 197 (E) 198 –
+
+## 4. 概率与统计
+
+### 4.1 平均数与数据集
+
+- **2004 AMC 12A Problem 10**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：The sum of 49 consecutive integers is 75. What is their median? (A) 7 (B) 72 (C) 73 (D) 74 (E) 75
+- **2004 AMC 12A Problem 11**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：The average value of all the pennies, nickels, dimes, and quarters in Paula’s purse is 20 cents. If she had one more quarter, the average value would be 21 cents. How many dimes does she have in her purse? (A) 0 (B) 1 (C) 2 (D) 3 (E) 4
+- **2004 AMC 12B Problem 11**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：All the students in an algebra class took a 100-point test. Five students scored 100, each student scored at least 60, and the mean score was 76. What is the smallest possible number of students in the class? (A) 10 (B) 11 (C) 12 (D) 13 (E) 14
+
+### 4.2 独立性
+
+- **2004 AMC 12A Problem 20**
+  - 考点：把事件关系转化为计数或比例条件。
+  - 标签：独立事件;概率
+  - 题面：Select numbers a and b between 0 and 1 independently and at random, and let c be their sum. Let A, B and C be the results when a, b and c, respectively, are rounded to the nearest integer. What is the probability that A + B = C? (A) 1 (B) 1 (C) 1 (D) 2 (E) 3 4 3 2 3 4 ∞ (cid:88)
+- **2004 AMC 12B Problem 20**
+  - 考点：把事件关系转化为计数或比例条件。
+  - 标签：独立事件;概率
+  - 题面：Each face of a cube is painted either red or blue, each with probability 1/2. The color of each face is determined independently. What is the probability that the painted cube can be placed on a horizontal surface so that the four vertical faces are all the same color? (A) 1 (B) 5 (C) 3 (D) 7 (E) 1 4 16 8 16 2
+
+### 4.3 组合概率
+
+- **2004 AMC 12B Problem 4**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：An integer x, with 10 ≤ x ≤ 99, is to be chosen. If all choices are equally likely, what is the probability that at least one digit of x is a 7? (A) 1 (B) 1 (C) 19 (D) 2 (E) 1 9 5 90 9 3

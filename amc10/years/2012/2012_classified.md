@@ -1,0 +1,289 @@
+# 2012 AMC 10 分类题集
+
+> 自动批量整理草稿。每道题只归入一个一级分类和一个二级分类；answer 留空表示源 PDF 未提供答案表。
+
+## 统计概览
+
+- 总题量：50
+- A 卷：25 题
+- B 卷：25 题
+
+| 一级分类 | 题量 |
+| --- | ---: |
+| 代数 | 16 |
+| 几何 | 13 |
+| 数论 | 10 |
+| 组合数学 | 3 |
+| 概率与统计 | 8 |
+
+## 1. 代数
+
+### 1.1 三角恒等式
+
+- **2012 AMC 10A Problem 16**
+  - 考点：用三角恒等式、角度关系或特殊角化简。
+  - 标签：三角函数;恒等式
+  - 题面：Three runners start running simultaneously from the same point on a 500-meter circular track. They each run clockwise around the course maintaining constant speeds of 4.4, 4.8, and 5.0 meters per second. The runners stop once they are all together again somewhere on the circular course. How many seconds do the runners run? (A) 1, 000 (B) 1, 250 (C) 2, 500 (D) 5, 000 (E) 10, 000
+- **2012 AMC 10A Problem 19**
+  - 考点：用三角恒等式、角度关系或特殊角化简。
+  - 标签：三角函数;恒等式
+  - 题面：Paula the painter and her two helpers each paint at constant, but different, rates. They always start at 8:00 AM, and all three always take the same amount of time to eat lunch. On Monday the three of them painted 50% of a house, quitting at 4:00 PM. On Tuesday, when Paula wasn’t there, the two helpers painted only 24% of the house and quit at 2:12 PM. On Wednesday Paula worked by herself and finished the house by working until 7:12 PM. How long, in minutes, was each day’s lunch break? (A) 30 (B) 36 (C) 42 (D) 48 (E) 60
+- **2012 AMC 10B Problem 5**
+  - 考点：用三角恒等式、角度关系或特殊角化简。
+  - 标签：三角函数;恒等式
+  - 题面：Anna enjoys dinner at a restaurant in Washington, D.C., where the sales tax on meals is 10%. She leaves a 15% tip on the prices of her meal before the sales tax is added, and the tax is calculated on the pre-tip amount. She spends a total of 27.50 for dinner. What is the cost of here dinner without tax or tip? (A) $18 (B) $20 (C) $21 (D) $22 (E) $24
+- **2012 AMC 10B Problem 13**
+  - 考点：用三角恒等式、角度关系或特殊角化简。
+  - 标签：三角函数;恒等式
+  - 题面：It takes Clea 60 seconds to walk down an escalator when it is not operating and only 24 seconds to walk down the escalator when it is operating. How many seconds does it take Clea to ride down the operating escalator when she just stands on it? (A) 36 (B) 40 (C) 42 (D) 48 (E) 52 √
+
+### 1.2 运算与化简
+
+- **2012 AMC 10A Problem 1**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Cagney can frost a cupcake every 20 seconds and Lacey can frost a cupcake every 30 seconds. Working together, how many cupcakes can they frost in 5 minutes? (A) 10 (B) 15 (C) 20 (D) 25 (E) 30
+- **2012 AMC 10A Problem 3**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：A bug crawls along a number line, starting at −2. It crawls to −6, then turns around and crawls to 5. How many units does the bug crawl altogether? (A) 9 (B) 11 (C) 13 (D) 14 (E) 15
+- **2012 AMC 10A Problem 4**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Let ∠ABC = 24◦ and ∠ABD = 20◦. What is the smallest possible degree measure for ∠CBD? (A) 0 (B) 2 (C) 4 (D) 6 (E) 12
+- **2012 AMC 10A Problem 6**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：The product of two positive numbers is 9. The reciprocal of one of these numbers is 4 times the reciprocal of the other number. What is the sum of the two numbers? 10 20 15 (A) (B) (C) 7 (D) (E) 8 3 3 2
+- **2012 AMC 10A Problem 8**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：The sums of three whole numbers taken in pairs are 12, 17, and 19. What is the middle number? (A) 4 (B) 5 (C) 6 (D) 7 (E) 8
+- **2012 AMC 10A Problem 23**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Adam, Benin, Chiang, Deshawn, Esther, and Fiona have internet accounts. Some, but not all, of them are internet friends with each other, and none of them has an internet friend outside this group. Each of them has the same number of internet friends. In how many different ways can this happen? (A) 60 (B) 170 (C) 290 (D) 320 (E) 660
+- **2012 AMC 10B Problem 1**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Each third-grade classroom at Pearl Creek Elementary has 18 students and 2 pet rabbits. How many more students than rabbits are there in all 4 of the third-grade classrooms? (A) 48 (B) 56 (C) 64 (D) 72 (E) 80
+- **2012 AMC 10B Problem 3**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：The point in the xy-plane with coordinates (1000, 2012) is reflected across line y = 2000. What are the coordinates of the reflected point? (A) (998, 2012) (B) (1000, 1988) (C) (1000, 2024) (D) (1000, 4012) (E) (1012, 2012)
+- **2012 AMC 10B Problem 6**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 题面：In order to estimate the value of x − y where x and y are real numbers with x > y > 0, Xiaoli rounded x up by a small amount, rounded y down by the same amount, and then subtracted her values. Which of the following statements is necessarily correct? (A) Her estimate is larger than x − y (B) Her estimate is smaller than x − y (C) Her estimate equals x − y (D) Her estimate equals y − x (E) Her estimate is 0
+- **2012 AMC 10B Problem 7**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：For a science project, Sammy observed a chipmunk and a squirrel stashing acorns in holes. The chipmunk hid 3 acorns in each of the holes it dug. The squirrel hid 4 acorns in each of the holes it dug. They each hid the same number of acorns, although the squirrel needed 4 fewer holes. How many acorns did the chip- munk hide? (A) 30 (B) 36 (C) 42 (D) 48 (E) 54
+- **2012 AMC 10B Problem 11**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：A dessert chef prepares the dessert for every day of a week starting with Sunday. The dessert each day is either cake, pie, ice cream, or pudding. The same dessert may not be served two days in a row. There must be cake on Friday because of a birthday. How many different dessert menus for the week are possible? (A) 729 (B) 972 (C) 1024 (D) 2187 (E) 2304
+- **2012 AMC 10B Problem 24**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Amy, Beth, and Jo listen to four different songs and discuss which ones they like. No song is liked by all three. Furthermore, for each of the three pairs of the girls, there is at least one song liked by those two girls but disliked by the third. In how many different ways is this possible? (A) 108 (B) 132 (C) 671 (D) 846 (E) 1105
+
+## 2. 几何
+
+### 2.1 三角形
+
+- **2012 AMC 10A Problem 2**
+  - 考点：运用三角形边角关系、三角函数或面积公式。
+  - 标签：三角形;角度
+  - 题面：A square with side length 8 is cut in half, creating two congruent rectangles. What are the di- mensions of one of these rectangles? (A) 2 by 4 (B) 2 by 6 (C) 2 by 8 (D) 4 by 4 (E) 4 by 8
+- **2012 AMC 10A Problem 14**
+  - 考点：运用三角形边角关系、三角函数或面积公式。
+  - 标签：三角形;角度
+  - 题面：Chubby makes nonstandard checkerboards that have 31 squares on each side. The checker- boards have a black square in every corner and alternate red and black squares along every row and column. How many black squares are there on such a checkerboard? (A) 480 (B) 481 (C) 482 (D) 483 (E) 484
+
+### 2.2 圆与曲线
+
+- **2012 AMC 10A Problem 10**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：Mary divides a circle into 12 sectors. The central angles of these sectors, measured in degrees, are all integers and they form an arithmetic sequence. What is the degree measure of the small- est possible sector angle? (A) 5 (B) 6 (C) 8 (D) 10 (E) 12
+- **2012 AMC 10A Problem 11**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：Externally tangent circles with centers at points A and B have radii of lengths 5 and 3, respec- tively. A line externally tangent to both circles intersects ray AB at point C. What is BC? (A) 4 (B) 4.8 (C) 10.2 (D) 12 (E) 14.4
+- **2012 AMC 10A Problem 18**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 备注：题面包含图形
+  - 题面：The closed curve in the figure is made up of 9 congruent circular arcs each of length 2π , where 3 each of the centers of the corresponding circles is among the vertices of a regular hexagon of side 2. What is the area enclosed by the curve? ◦ ◦ ◦ ◦ ◦ ◦ √ √ √ (A) 2π + 6 (B) 2π + 4 3 (C) 3π + 4 (D) 2π + 3 3 + 2 (E) π + 6 3
+- **2012 AMC 10B Problem 2**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 备注：题面包含图形
+  - 题面：A circle of radius 5 is inscribed in a rectangle as shown. The ratio of the the length of the rect- angle to its width is 2 : 1. What is the area of the rectangle? (A) 50 (B) 100 (C) 125 (D) 150 (E) 200
+- **2012 AMC 10B Problem 16**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 备注：题面包含图形
+  - 题面：Three circles with radius 2 are mutually tangent. What is the total area of the circles and the region bounded by them, as shown in the figure? √ √ √ (A) 10π + 4 3 (B) 13π − 3 (C) 12π + 3 (D) 10π + 9 (E) 13π
+
+### 2.3 空间几何
+
+- **2012 AMC 10B Problem 17**
+  - 考点：用截面、相似、体积或空间距离关系建模。
+  - 标签：空间几何;体积
+  - 题面：Jesse cuts a circular paper disk of radius 12 along two radii to form two sectors, the smaller having a central angle of 120 degrees. He makes two circular cones, using each sector to form the lateral surface of a cone. What is the ratio of the volume of the smaller cone to that of the larger? √ √ √ (A) 1 (B) 1 (C) 10 (D) 5 (E) 10 8 4 10 6 5
+- **2012 AMC 10B Problem 23**
+  - 考点：用截面、相似、体积或空间距离关系建模。
+  - 标签：空间几何;体积
+  - 题面：A solid tetrahedron is sliced off a solid wooden unit cube by a plane passing through two non- adjacent vertices on one face and one vertex on the opposite face not adjacent to either of the first two vertices. The tetrahedron is discarded and the remaining portion of the cube is placed on a table with the cut surface face down. What is the height of this object? √ √ √ 3 2 2 2 3 √ (A) (B) (C) 1 (D) (E) 2 3 3 3
+
+### 2.4 面积与相似
+
+- **2012 AMC 10A Problem 15**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 备注：题面包含图形
+  - 题面：Three unit squares and two line segments connecting two pairs of vertices are shown. What is the area of △ABC? A B C √ (A) 1 (B) 1 (C) 2 (D) 1 (E) 2 6 5 9 3 4
+- **2012 AMC 10A Problem 21**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：Let points A = (0, 0, 0), B = (1, 0, 0), C = (0, 2, 0), and D = (0, 0, 3). Points E, F, G, and H are midpoints of line segments BD, AB, AC, and DC respectively. What is the area of EF GH? √ √ √ √ √ (A) 2 (B) 2 5 (C) 3 5 (D) 3 (E) 2 7 3 4 3
+- **2012 AMC 10B Problem 14**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：Two equilateral triangles are contained in a square whose side length is 2 3. The bases of these triangles are the opposite sides of the square, and their intersection is a rhombus. What is the area of the rhombus? √ √ √ √ (A) 3 (B) 3 (C) 2 2 − 1 (D) 8 3 − 12 (E) 4 3 2 3
+- **2012 AMC 10B Problem 19**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：In rectangle ABCD, AB = 6, AD = 30, and G is the midpoint of AD. Segment AB is extended 2 units beyond B to point E, and F is the intersection of ED and BC. What is the area of BF DG? (A) 133 (B) 67 (C) 135 (D) 68 (E) 137 2 2 2
+
+## 3. 数论
+
+### 3.1 整数构造
+
+- **2012 AMC 10A Problem 22**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：The sum of the first m positive odd integers is 212 more than the sum of the first n positive even integers. What is the sum of all possible values of n? (A) 255 (B) 256 (C) 257 (D) 258 (E) 259
+- **2012 AMC 10A Problem 24**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：Let a, b, and c be positive integers with a ≥ b ≥ c such that a2 − b2 − c2 + ab = 2011 and a2 + 3b2 + 3c2 − 3ab − 2ac − 2bc = −1997 What is a? (A) 249 (B) 250 (C) 251 (D) 252 (E) 253
+- **2012 AMC 10B Problem 8**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：What is the sum of all integer solutions to 1 < (x − 2)2 < 25? (A) 10 (B) 12 (C) 15 (D) 19 (E) 25
+- **2012 AMC 10B Problem 9**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：Two integers have a sum of 26. When two more integers are added to the first two integers the sum is 41. Finally when two more integers are added to the sum of the previous four integers the sum is 57. What is the minimum number of even integers among the 6 integers? (A) 1 (B) 2 (C) 3 (D) 4 (E) 5
+- **2012 AMC 10B Problem 10**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：How many ordered pairs of positive integers (M, N ) staisfy the equation M = 6 ?
+- **2012 AMC 10B Problem 12**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：Point B is due east of point A. Point C is due north of point B. The distance between points √ A and C is 10 2 meters, and ∠BAC = 45◦. Point D is 20 meters due north of point C. The distance AD is between which two integers? (A) 30 and 31 (B) 31 and 32 (C) 32 and 33 (D) 33 and 34 (E) 34 and 35
+- **2012 AMC 10B Problem 22**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：Let (a , a , . . . , a ) be a list of the first 10 positive integers such that for each 2 ≤ i ≤ 10 either 1 2 10 a + 1 or a − 1 or both appear somewhere before a in the list. How many such lists are there? i i i (A) 120 (B) 512 (C) 1024 (D) 181, 440 (E) 362, 880
+
+### 3.2 质因数与整除
+
+- **2012 AMC 10A Problem 12**
+  - 考点：分解质因数并检查整除条件。
+  - 标签：质因数;整除
+  - 题面：A year is a leap year if and only if the year number is divisible by 400 (such as 2000) or is divisible by 4 but not by 100 (such as 2012). The 200th anniversary of the birth of novelist Charles Dickens was celebrated on February 7, 2012, a Tuesday. On what day of the week was Dickens born? (A) Friday (B) Saturday (C) Sunday (D) Monday (E) Tuesday
+- **2012 AMC 10A Problem 17**
+  - 考点：分解质因数并检查整除条件。
+  - 标签：质因数;整除
+  - 题面：Let a and b be relatively prime integers with a > b > 0 and a3−b3 = 73 . What is a − b? (a−b)3 3 (A) 1 (B) 2 (C) 3 (D) 4 (E) 5
+
+### 3.3 进制与数字
+
+- **2012 AMC 10B Problem 20**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：Bernado and Silvia play the following game. An integer between 0 and 999, inclusive, is selected and given to Bernado. Whenever Bernado receives a number, he doubles it and passes the result to Silvia. Whenever Silvia receives a number, she adds 50 to it and passes the result to Bernado. The winner is the last person who produces a number less than 1000. Let N be the smallest initial number that results in a win for Bernado. What is the sum of the digits of N ? (A) 7 (B) 8 (C) 9 (D) 10 (E) 11
+
+## 4. 组合数学
+
+### 4.1 图形计数
+
+- **2012 AMC 10B Problem 25**
+  - 考点：把图形限制转化为状态或结构计数。
+  - 标签：网格;计数
+  - 备注：题面包含图形
+  - 题面：A bug travels from A to B along the segments in the hexagonal lattice pictured below. The segments marked with an arrow can be traveled only in the direction of the arrow, and the bug never travels the same segment more than once. How many different paths are there? A B (A) 2112 (B) 2304 (C) 2368 (D) 2384 (E) 2400 –
+
+### 4.2 排列组合
+
+- **2012 AMC 10B Problem 15**
+  - 考点：用分组、排列组合或容斥完成计数。
+  - 标签：排列组合;计数
+  - 题面：In a round-robin tournament with 6 teams, each team plays one game against each other team, and each game results in one team winning and one team losing. At the end of the tournament, the teams are ranked by the number of games won. What is the maximum number of teams that could be tied for the most wins at the end of the tournament? (A) 2 (B) 3 (C) 4 (D) 5 (E) 6
+- **2012 AMC 10B Problem 21**
+  - 考点：用分组、排列组合或容斥完成计数。
+  - 标签：排列组合;计数
+  - 题面：Four distinct points are arranged in a plane so that the segments connecting them has lengths a, a, a, a, 2a, and b. What is the ratio of b to a? √ √ (A) 3 (B) 2 (C) 5 (D) 3 (E) π
+
+## 5. 概率与统计
+
+### 5.1 几何概率
+
+- **2012 AMC 10A Problem 20**
+  - 考点：将随机位置参数化，用面积或长度比例计算概率。
+  - 标签：几何概率;面积
+  - 备注：题面包含图形
+  - 题面：A 3 × 3 square is partitioned into 9 unit squares. Each unit square is painted either white or black with each color being equally likely, chosen independently and at random. The square is the rotated 90◦ clockwise about its center, and every white square in a position formerly occupied by a black square is painted black. The colors of all other squares are left unchanged. What is the probability that the grid is now entirely black? 49 7 121 81 9 (A) (B) (C) (D) (E) 512 64 1024 512 32
+
+### 5.2 平均数与数据集
+
+- **2012 AMC 10A Problem 5**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：Last year 100 adult cats, half of whom were female, were brought into the Smallville Animal Shel- ter. Half of the adult female cats were accompanied by a litter of kittens. The average number of kittens per litter was 4. What was the total number of cats and kittens received by the shelter last year? (A) 150 (B) 200 (C) 250 (D) 300 (E) 400
+- **2012 AMC 10A Problem 13**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：An iterative average of the numbers 1, 2, 3, 4, and 5 is computed in the following way. Arrange the five numbers in some order. Find the mean of the first two numbers, then find the mean of that with the third number, then the mean of that with the fourth number, and finally the mean of that with the fifth number. What is the difference between the largest and smallest possible values that can be obtained using this procedure? (A) 31 (B) 2 (C) 17 (D) 3 (E) 65 16 8 16
+
+### 5.3 独立性
+
+- **2012 AMC 10A Problem 25**
+  - 考点：把事件关系转化为计数或比例条件。
+  - 标签：独立事件;概率
+  - 题面：Real numbers x, y, and z are chosen independently and at random from the interval [0, n] for some positive integer n. The probability that no two of x, y, and z are within 1 unit of each other is greater than 1 . What is the smallest possible value of n? 2 (A) 7 (B) 8 (C) 9 (D) 10 (E) 11
+
+### 5.4 组合概率
+
+- **2012 AMC 10A Problem 7**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：In a bag of marbles, 3 of the marbles are blue and the rest are red. If the number of red marbles 5 is doubled and the number of blue marbles stays the same, what fraction of the marbles will be red? 2 3 4 3 4 (A) (B) (C) (D) (E) 5 7 7 5 5
+- **2012 AMC 10A Problem 9**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：A pair of six-sided fair dice are labeled so that one die has only even numbers (two each of 2, 4, and 6), and the other die has only odd numbers (two each of 1, 3, and 5). The pair of dice is rolled. What is the probability that the sum of the numbers on top of the two dice is 7? 1 1 1 1 1 (A) (B) (C) (D) (E) 6 5 4 3 2
+- **2012 AMC 10B Problem 4**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：When Ringo places his marbles into bags with 6 marbles per bag, he has 4 marbles left over. When Paul does the same with his marbles, he has 3 marbles left over. Ringo and Paul pool their marbles and place them into as many bags as possible, with 6 marbles per bag. How many marbles will be left over? (A) 1 (B) 2 (C) 3 (D) 4 (E) 5
+- **2012 AMC 10B Problem 18**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：Suppose that one of every 500 people in a certain population has a particular disease, which displays no symptoms. A blood test is available for screening for this disease. For a person who has this disease, the test always turns out positive. For a person who does not have the disease, however, there is a 2% false positive rate; in other words, for such people, 98% of the time the test will turn out negative, but 2% of the time the test will turn out positive and will incorrectly indicate that the person has the disease. Let p be the probability that a person who is chosen at random from the population and gets a positive test result actually has the disease. Which of the following is closest to p? (A) 1 (B) 1 (C) 1 (D) 49 (E) 98 98 9 11 99 99

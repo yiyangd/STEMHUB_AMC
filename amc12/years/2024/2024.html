@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2024 AMC 12 题目分类筛选</title>
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --panel: #ffffff;
+      --ink: #1d252c;
+      --muted: #66727f;
+      --line: #d9ded9;
+      --blue: #2166a5;
+      --green: #4f7d48;
+      --red: #b64e43;
+      --gold: #b98525;
+      --chip: #eef3f7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    header {
+      padding: 28px 32px 20px;
+      background: #17324a;
+      color: white;
+    }
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      letter-spacing: 0;
+    }
+    header p {
+      margin: 0;
+      color: #d7e4ef;
+      max-width: 960px;
+      line-height: 1.55;
+    }
+    main { padding: 24px 32px 40px; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(160px, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 26px;
+      margin-bottom: 4px;
+    }
+    .stat span { color: var(--muted); font-size: 13px; }
+    .dashboard {
+      display: grid;
+      grid-template-columns: minmax(280px, 1fr) minmax(360px, 1.2fr);
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .panel h2 {
+      margin: 0 0 14px;
+      font-size: 18px;
+    }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 86px 1fr 96px;
+      gap: 10px;
+      align-items: center;
+      margin: 10px 0;
+      font-size: 13px;
+      width: 100%;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      padding: 6px;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      transition: background .15s ease, border-color .15s ease;
+    }
+    .bar-row:hover, .bar-row.active {
+      background: #f1f6f2;
+      border-color: #c9d9c4;
+    }
+    .bar-track {
+      height: 10px;
+      background: #e8ece9;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: var(--blue);
+    }
+    .bar-value { color: var(--muted); text-align: right; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 8px 6px;
+      text-align: left;
+    }
+    th { color: var(--muted); font-weight: 650; }
+    .table-action {
+      cursor: pointer;
+      transition: background .15s ease;
+    }
+    .table-action:hover, .table-action.active {
+      background: #f1f6f2;
+    }
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .quick-chip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fbfcfb;
+      color: var(--ink);
+      padding: 8px 10px;
+      text-align: left;
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+      transition: border-color .15s ease, background .15s ease;
+    }
+    .quick-chip strong {
+      color: var(--blue);
+      font-size: 12px;
+    }
+    .quick-chip:hover, .quick-chip.active {
+      border-color: #aac7db;
+      background: #edf6fb;
+    }
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(130px, 1fr));
+      gap: 10px;
+      margin: 18px 0;
+      align-items: end;
+    }
+    label {
+      display: grid;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    select, input {
+      width: 100%;
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 8px 10px;
+      color: var(--ink);
+      background: white;
+      font: inherit;
+    }
+    .clear-button {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #24384b;
+      color: white;
+      padding: 8px 12px;
+      font: inherit;
+      cursor: pointer;
+    }
+    .clear-button:hover {
+      background: #172838;
+    }
+    .result-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin: 12px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 12px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 15px;
+      display: grid;
+      gap: 10px;
+    }
+    .card-top {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .source {
+      font-weight: 750;
+      margin-right: auto;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--chip);
+      font-size: 12px;
+      color: #354250;
+    }
+    .badge.major { background: #e8f0dc; color: #35592f; }
+    .statement {
+      line-height: 1.55;
+      font-size: 14px;
+    }
+    .idea {
+      border-left: 3px solid var(--blue);
+      padding-left: 10px;
+      color: #33414e;
+      line-height: 1.5;
+      font-size: 13px;
+    }
+    .tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .empty {
+      padding: 24px;
+      text-align: center;
+      color: var(--muted);
+      background: var(--panel);
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+    }
+    @media (max-width: 980px) {
+      main { padding: 18px; }
+      header { padding: 24px 18px 18px; }
+      .stats, .dashboard, .controls { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .bar-row { grid-template-columns: 74px 1fr 84px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>2024 AMC 12 题目分类筛选</h1>
+    <p>基于 2024 AMC 12 A 卷与 B 卷共 50 题整理。每道题只归入一个一级分类和一个二级分类；源 PDF 未提供答案表，因此答案字段留空。</p>
+  </header>
+  <main>
+    <section class="stats">
+      <div class="stat"><strong>50</strong><span>总题量</span></div>
+      <div class="stat"><strong>25</strong><span>A 卷题量</span></div>
+      <div class="stat"><strong>25</strong><span>B 卷题量</span></div>
+      <div class="stat"><strong>5</strong><span>一级分类</span></div>
+    </section>
+
+    <section class="dashboard">
+      <div class="panel">
+        <h2>一级分类分布</h2>
+        
+            <button class="bar-row category-action" type="button" data-filter-major="代数" aria-label="筛选代数题目">
+              <div class="bar-label">代数</div>
+              <div class="bar-track"><div class="bar-fill" style="width:38.0%"></div></div>
+              <div class="bar-value">19题 · 38.0%</div>
+            </button>
+            <button class="bar-row category-action" type="button" data-filter-major="几何" aria-label="筛选几何题目">
+              <div class="bar-label">几何</div>
+              <div class="bar-track"><div class="bar-fill" style="width:24.0%"></div></div>
+              <div class="bar-value">12题 · 24.0%</div>
+            </button>
+            <button class="bar-row category-action" type="button" data-filter-major="数论" aria-label="筛选数论题目">
+              <div class="bar-label">数论</div>
+              <div class="bar-track"><div class="bar-fill" style="width:18.0%"></div></div>
+              <div class="bar-value">9题 · 18.0%</div>
+            </button>
+            <button class="bar-row category-action" type="button" data-filter-major="组合数学" aria-label="筛选组合数学题目">
+              <div class="bar-label">组合数学</div>
+              <div class="bar-track"><div class="bar-fill" style="width:6.0%"></div></div>
+              <div class="bar-value">3题 · 6.0%</div>
+            </button>
+            <button class="bar-row category-action" type="button" data-filter-major="概率与统计" aria-label="筛选概率与统计题目">
+              <div class="bar-label">概率与统计</div>
+              <div class="bar-track"><div class="bar-fill" style="width:14.0%"></div></div>
+              <div class="bar-value">7题 · 14.0%</div>
+            </button>
+      </div>
+      <div class="panel">
+        <h2>A/B 卷题型占比</h2>
+        <table>
+          <thead><tr><th>一级分类</th><th>A题量</th><th>A占比</th><th>B题量</th><th>B占比</th></tr></thead>
+          <tbody><tr class="table-action" data-filter-major="代数" title="点击筛选代数">
+                  <td>代数</td><td>11</td><td>44.0%</td><td>8</td><td>32.0%</td>
+                </tr><tr class="table-action" data-filter-major="几何" title="点击筛选几何">
+                  <td>几何</td><td>5</td><td>20.0%</td><td>7</td><td>28.0%</td>
+                </tr><tr class="table-action" data-filter-major="数论" title="点击筛选数论">
+                  <td>数论</td><td>5</td><td>20.0%</td><td>4</td><td>16.0%</td>
+                </tr><tr class="table-action" data-filter-major="组合数学" title="点击筛选组合数学">
+                  <td>组合数学</td><td>1</td><td>4.0%</td><td>2</td><td>8.0%</td>
+                </tr><tr class="table-action" data-filter-major="概率与统计" title="点击筛选概率与统计">
+                  <td>概率与统计</td><td>3</td><td>12.0%</td><td>4</td><td>16.0%</td>
+                </tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>二级分类快速入口</h2>
+      <div class="quick-grid">
+        <button class="quick-chip" type="button" data-filter-major="代数" data-filter-minor="三角恒等式">
+                  <span>代数 / 三角恒等式</span><strong>3</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="代数" data-filter-minor="函数与图像">
+                  <span>代数 / 函数与图像</span><strong>3</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="代数" data-filter-minor="复数">
+                  <span>代数 / 复数</span><strong>1</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="代数" data-filter-minor="多项式与根">
+                  <span>代数 / 多项式与根</span><strong>1</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="代数" data-filter-minor="数列与递推">
+                  <span>代数 / 数列与递推</span><strong>3</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="代数" data-filter-minor="方程与不等式">
+                  <span>代数 / 方程与不等式</span><strong>3</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="代数" data-filter-minor="线性模型">
+                  <span>代数 / 线性模型</span><strong>2</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="代数" data-filter-minor="运算与化简">
+                  <span>代数 / 运算与化简</span><strong>3</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="几何" data-filter-minor="三角形">
+                  <span>几何 / 三角形</span><strong>4</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="几何" data-filter-minor="几何变换">
+                  <span>几何 / 几何变换</span><strong>2</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="几何" data-filter-minor="向量几何">
+                  <span>几何 / 向量几何</span><strong>1</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="几何" data-filter-minor="圆与四边形">
+                  <span>几何 / 圆与四边形</span><strong>1</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="几何" data-filter-minor="坐标几何">
+                  <span>几何 / 坐标几何</span><strong>1</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="几何" data-filter-minor="空间几何">
+                  <span>几何 / 空间几何</span><strong>2</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="几何" data-filter-minor="面积与相似">
+                  <span>几何 / 面积与相似</span><strong>1</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="数论" data-filter-minor="勾股数组">
+                  <span>数论 / 勾股数组</span><strong>1</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="数论" data-filter-minor="平方数">
+                  <span>数论 / 平方数</span><strong>1</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="数论" data-filter-minor="整数构造">
+                  <span>数论 / 整数构造</span><strong>3</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="数论" data-filter-minor="整除与同余">
+                  <span>数论 / 整除与同余</span><strong>1</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="数论" data-filter-minor="质因数分解">
+                  <span>数论 / 质因数分解</span><strong>1</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="数论" data-filter-minor="进制">
+                  <span>数论 / 进制</span><strong>2</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="组合数学" data-filter-minor="周期与递推计数">
+                  <span>组合数学 / 周期与递推计数</span><strong>1</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="组合数学" data-filter-minor="图形计数">
+                  <span>组合数学 / 图形计数</span><strong>1</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="组合数学" data-filter-minor="排列组合">
+                  <span>组合数学 / 排列组合</span><strong>1</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="概率与统计" data-filter-minor="代数概率">
+                  <span>概率与统计 / 代数概率</span><strong>1</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="概率与统计" data-filter-minor="几何概率">
+                  <span>概率与统计 / 几何概率</span><strong>2</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="概率与统计" data-filter-minor="平均数与数据集">
+                  <span>概率与统计 / 平均数与数据集</span><strong>2</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="概率与统计" data-filter-minor="独立性">
+                  <span>概率与统计 / 独立性</span><strong>1</strong>
+                </button><button class="quick-chip" type="button" data-filter-major="概率与统计" data-filter-minor="组合概率">
+                  <span>概率与统计 / 组合概率</span><strong>1</strong>
+                </button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>筛选题目</h2>
+      <div class="controls">
+        <label>卷别
+          <select id="formFilter"><option value="">全部</option><option value="A">A卷</option><option value="B">B卷</option></select>
+        </label>
+        <label>一级分类
+          <select id="majorFilter"><option value="">全部</option></select>
+        </label>
+        <label>二级分类
+          <select id="minorFilter"><option value="">全部</option></select>
+        </label>
+        <label>搜索
+          <input id="searchInput" placeholder="题号、标签、关键词">
+        </label>
+        <button id="clearFilters" class="clear-button" type="button">清除筛选</button>
+      </div>
+      <div class="result-head">
+        <div id="resultCount"></div>
+        <div>点击统计条或二级分类按钮可快速切换题目</div>
+      </div>
+      <div id="cards" class="cards"></div>
+    </section>
+  </main>
+
+  <script>
+    const problems = [{"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 1, "source": "2024 AMC 12A Problem 1", "statement": "What is the value of 9901 * 101 - 99 * 10101?", "answer": "", "major_category": "代数", "minor_category": "运算与化简", "tags": "整数运算;因式分解;算术", "key_idea": "利用乘法分配律和配对化简，避免直接大数计算。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 2, "source": "2024 AMC 12A Problem 2", "statement": "A hiking-time model has the form T = aL + bG. It gives 69 minutes for trails (L,G) = (1.5,800) and (1.2,1100). How many minutes does it estimate for (4.2,4000)?", "answer": "", "major_category": "代数", "minor_category": "线性模型", "tags": "线性方程组;建模;比例", "key_idea": "由两组条件建立线性关系，再求目标线性组合。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 3, "source": "2024 AMC 12A Problem 3", "statement": "The number 2024 is written as the sum of not necessarily distinct two-digit numbers. What is the least number of two-digit numbers needed?", "answer": "", "major_category": "数论", "minor_category": "整数构造", "tags": "两位数;最值;整数拆分", "key_idea": "每个两位数最大为 99，用上界估计并检查可达性。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 4, "source": "2024 AMC 12A Problem 4", "statement": "What is the least value of n such that n! is a multiple of 2024?", "answer": "", "major_category": "数论", "minor_category": "质因数分解", "tags": "阶乘;质因数;整除", "key_idea": "分解 2024 并找出 n! 中首次包含所有所需质因数的位置。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 5, "source": "2024 AMC 12A Problem 5", "statement": "A data set containing 20 numbers, some of which are 6, has mean 45. When all the 6s are removed, the data set has mean 66. How many 6s were in the original data set?", "answer": "", "major_category": "概率与统计", "minor_category": "平均数与数据集", "tags": "平均数;总和;数据删除", "key_idea": "用删除前后的总和建立关于 6 的个数的方程。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 6, "source": "2024 AMC 12A Problem 6", "statement": "The product of three integers is 60. What is the least possible positive sum of the three integers?", "answer": "", "major_category": "数论", "minor_category": "整数构造", "tags": "整数因子;最值;符号", "key_idea": "枚举因子组合并考虑负因子的配对，使总和为正且尽量小。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 7, "source": "2024 AMC 12A Problem 7", "statement": "In right isosceles triangle ABC with angle ABC = 90 degrees and BA = BC = sqrt(2), points P1 through P2024 divide hypotenuse AC into equal parts. What is the length of vector sum BP1 + BP2 + ... + BP2024?", "answer": "", "major_category": "几何", "minor_category": "向量几何", "tags": "向量和;中点;等分点;直角三角形", "key_idea": "等分点的向量和等于点数乘以平均位置，再转化为从 B 到中点的向量。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 8, "source": "2024 AMC 12A Problem 8", "statement": "How many angles theta with 0 <= theta <= 2pi satisfy log(sin(3theta)) + log(cos(2theta)) = 0?", "answer": "", "major_category": "代数", "minor_category": "三角恒等式", "tags": "对数;三角函数;定义域;方程", "key_idea": "先处理对数定义域，再把方程化为 sin(3theta) cos(2theta) = 1。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 9, "source": "2024 AMC 12A Problem 9", "statement": "Let M be the greatest integer such that both M + 1213 and M + 3773 are perfect squares. What is the units digit of M?", "answer": "", "major_category": "数论", "minor_category": "平方数", "tags": "平方差;最大整数;个位数", "key_idea": "两平方数相差 2560，利用平方差分解并选择使 M 最大的因子对。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 10, "source": "2024 AMC 12A Problem 10", "statement": "Let alpha be the smallest angle in a 3-4-5 right triangle and beta the smallest angle in a 7-24-25 right triangle. In terms of alpha, what is beta?", "answer": "", "major_category": "几何", "minor_category": "三角形", "tags": "直角三角形;三角函数;倍角", "key_idea": "比较两组勾股三角形的正切值，并用倍角关系表达角度。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 11, "source": "2024 AMC 12A Problem 11", "statement": "There are exactly K positive integers b with 5 <= b <= 2024 such that the base-b integer 2024_b is divisible by 16. What is the sum of the digits of K?", "answer": "", "major_category": "数论", "minor_category": "进制", "tags": "进制表示;同余;计数", "key_idea": "把 2024_b 转成关于 b 的多项式，再在模 16 下计数。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 12, "source": "2024 AMC 12A Problem 12", "statement": "The first three terms of a geometric sequence are integers a, 720, and b, where a < 720 < b. What is the sum of the digits of the least possible value of b?", "answer": "", "major_category": "代数", "minor_category": "数列与递推", "tags": "等比数列;整数;最小值", "key_idea": "利用 720^2 = ab，寻找大于 720 的最小整数 b 使 a 也为整数。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 13, "source": "2024 AMC 12A Problem 13", "statement": "The graph of y = e^(x+1) + e^(-x) - 2 has an axis of symmetry. What is the reflection of the point (-1, 1/2) over this axis?", "answer": "", "major_category": "代数", "minor_category": "函数与图像", "tags": "指数函数;对称轴;点的反射", "key_idea": "通过指数项配对找出竖直对称轴，再对点做水平反射。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 14, "source": "2024 AMC 12A Problem 14", "statement": "Rows and columns of a 5 by 5 integer array are arithmetic progressions. Given entries (5,5)=0, (2,4)=48, (4,3)=16, and (3,1)=12, what is in position (1,2)?", "answer": "", "major_category": "代数", "minor_category": "线性模型", "tags": "等差数列;二维线性;表格", "key_idea": "行列均为等差数列意味着数组可写成双线性形式，代入已知位置求目标。", "notes": "题面包含 5x5 表格，HTML 中以文字说明保留。"}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 15, "source": "2024 AMC 12A Problem 15", "statement": "The roots of x^3 + 2x^2 - x + 3 are p, q, and r. What is (p^2+4)(q^2+4)(r^2+4)?", "answer": "", "major_category": "代数", "minor_category": "多项式与根", "tags": "韦达定理;多项式;复数代入", "key_idea": "把乘积看作在相关虚数点处的多项式值，或用对称多项式处理。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 16, "source": "2024 AMC 12A Problem 16", "statement": "A set of 12 tokens - 3 red, 2 white, 1 blue, and 6 black - is distributed randomly to 3 players, 4 tokens per player. Find m+n if the probability that one player gets all red tokens, another all white tokens, and the remaining player the blue token is m/n.", "answer": "", "major_category": "概率与统计", "minor_category": "组合概率", "tags": "分配;超几何;条件计数", "key_idea": "分别计数满足颜色集中条件的分配数和总分配数。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 17, "source": "2024 AMC 12A Problem 17", "statement": "Integers a, b, and c satisfy ab+c = 100, bc+a = 87, and ca+b = 60. What is ab+bc+ca?", "answer": "", "major_category": "代数", "minor_category": "方程与不等式", "tags": "整数方程组;对称结构;代换", "key_idea": "利用三式结构消元，转向关于 ab,bc,ca 或 a,b,c 的整数约束。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 18, "source": "2024 AMC 12A Problem 18", "statement": "Identical rectangular cards with sides 1 and 2+sqrt(3) are placed successively so that diagonals line up after clockwise rotations. How many cards are needed until a vertex of a new card lands on vertex B?", "answer": "", "major_category": "几何", "minor_category": "几何变换", "tags": "旋转;矩形;角度;周期", "key_idea": "由矩形长宽比确定对角线角度，追踪每次旋转的角度周期。", "notes": "题面包含卡片叠放图。"}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 19, "source": "2024 AMC 12A Problem 19", "statement": "Cyclic quadrilateral ABCD has BC = CD = 3 and DA = 5 with angle CDA = 120 degrees. What is the length of the shorter diagonal?", "answer": "", "major_category": "几何", "minor_category": "圆与四边形", "tags": "圆内接四边形;余弦定理;对角线", "key_idea": "先在三角形 CDA 中求对角线，再利用同弧或圆内接关系处理另一条对角线。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 20, "source": "2024 AMC 12A Problem 20", "statement": "Points P and Q are chosen uniformly and independently on sides AB and AC of equilateral triangle ABC. Which interval contains the probability that area(APQ) is less than half area(ABC)?", "answer": "", "major_category": "概率与统计", "minor_category": "几何概率", "tags": "几何概率;面积比例;单位正方形", "key_idea": "把两个位置参数化为独立变量，面积条件转化为乘积不等式。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 21, "source": "2024 AMC 12A Problem 21", "statement": "Suppose a1 = 2 and sequence a_n satisfies (a_n - 1)/(n - 1) = (a_{n-1}+1)/n for n >= 2. What is floor(sum_{n=1}^{100} a_n^2)?", "answer": "", "major_category": "代数", "minor_category": "数列与递推", "tags": "递推;望远镜;平方和", "key_idea": "重写递推寻找显式表达式，再估计或精确求平方和的整数部分。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 22, "source": "2024 AMC 12A Problem 22", "statement": "On an 8 by 3 dotted grid of 1-inch squares, toothpicks are placed along grid edges to create a closed non-self-intersecting loop. Each middle-row cell is labeled 1, meaning exactly one side is covered; other cells are unrestricted. How many loops are possible?", "answer": "", "major_category": "组合数学", "minor_category": "图形计数", "tags": "网格路径;闭合回路;状态计数", "key_idea": "按列或状态转移计数满足每个标号格边数限制的简单闭合回路。", "notes": "题面包含 8x3 网格图。"}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 23, "source": "2024 AMC 12A Problem 23", "statement": "What is tan^2(pi/16)tan^2(3pi/16) + tan^2(pi/16)tan^2(5pi/16) + tan^2(3pi/16)tan^2(7pi/16) + tan^2(5pi/16)tan^2(7pi/16)?", "answer": "", "major_category": "代数", "minor_category": "三角恒等式", "tags": "三角函数;恒等式;特殊角", "key_idea": "利用互余角正切倒数关系和四倍角结构化简对称和。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 24, "source": "2024 AMC 12A Problem 24", "statement": "A disphenoid is a tetrahedron whose triangular faces are congruent. What is the least total surface area of a disphenoid whose faces are scalene triangles with integer side lengths?", "answer": "", "major_category": "几何", "minor_category": "空间几何", "tags": "四面体;海伦公式;整数边", "key_idea": "枚举最小的整数不等边三角形面，并用海伦公式比较总表面积。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "A", "problem_no": 25, "source": "2024 AMC 12A Problem 25", "statement": "For how many quadruples of integers (a,b,c,d), with |a|,|b|,|c|,|d| <= 5 and c,d not both 0, is the graph y = (ax+b)/(cx+d) symmetric about the line y=x?", "answer": "", "major_category": "代数", "minor_category": "函数与图像", "tags": "有理函数;反函数;对称;参数计数", "key_idea": "关于 y=x 对称等价于函数与其反函数图像一致，转化为参数条件并计数。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 1, "source": "2024 AMC 12B Problem 1", "statement": "In a long line of people, the 1013th person from the left is also the 1010th person from the right. How many people are in the line?", "answer": "", "major_category": "代数", "minor_category": "运算与化简", "tags": "位置计数;线性关系", "key_idea": "总人数等于左侧位置加右侧位置再减去重复计算的本人。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 2, "source": "2024 AMC 12B Problem 2", "statement": "What is 10! - 7! * 6!?", "answer": "", "major_category": "代数", "minor_category": "运算与化简", "tags": "阶乘;因式分解;算术", "key_idea": "提取 7! 或 6! 作为公因子后快速计算。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 3, "source": "2024 AMC 12B Problem 3", "statement": "For how many integer values of x is |2x| <= 7pi?", "answer": "", "major_category": "代数", "minor_category": "方程与不等式", "tags": "绝对值不等式;整数解;估计", "key_idea": "把不等式化为 |x| <= 7pi/2，再用 pi 的范围确定整数个数。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 4, "source": "2024 AMC 12B Problem 4", "statement": "Balls numbered 1,2,3,... are deposited in five bins A-E in blocks of size 1,2,3,4,... cycling through the bins. In which bin is ball 2024 deposited?", "answer": "", "major_category": "组合数学", "minor_category": "周期与递推计数", "tags": "周期;三角数;分组", "key_idea": "定位 2024 落在哪个连续分组，再按分组编号模 5 判断箱子。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 5, "source": "2024 AMC 12B Problem 5", "statement": "In 1 + 3 + 5 + ... + 97 + 99, Melanie changes some plus signs to minus signs. The new expression is negative. What is the least number of plus signs changed?", "answer": "", "major_category": "数论", "minor_category": "整数构造", "tags": "奇数和;贪心;最值", "key_idea": "原和为 2500，每改一个符号减少两倍该项，优先选择最大奇数。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 6, "source": "2024 AMC 12B Problem 6", "statement": "The national debt is on track to reach 5*10^13 dollars by 2033. How many digits does this number have in base 5? Use log_10 5 approximately 0.7.", "answer": "", "major_category": "数论", "minor_category": "进制", "tags": "进制位数;对数;数量级", "key_idea": "用 base-5 位数公式 floor(log_5 N)+1，并用换底公式估计。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 7, "source": "2024 AMC 12B Problem 7", "statement": "In rectangle WXYZ with WX = 4 and WZ = 8, point M lies on XY, point A lies on YZ, angle WMA is right, and areas of triangles WXM and WAZ are equal. What is area of triangle WMA?", "answer": "", "major_category": "几何", "minor_category": "面积与相似", "tags": "矩形;面积;直角;坐标设元", "key_idea": "用坐标表示 M 和 A，结合直角条件与面积相等求目标面积。", "notes": "题面包含矩形示意图。"}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 8, "source": "2024 AMC 12B Problem 8", "statement": "What value of x satisfies (log_2 x * log_3 x)/(log_2 x + log_3 x) = 2?", "answer": "", "major_category": "代数", "minor_category": "方程与不等式", "tags": "对数;换底;方程", "key_idea": "换底后把表达式化成 log_6 x 的形式求解。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 9, "source": "2024 AMC 12B Problem 9", "statement": "A dartboard is |x|+|y| <= 8. Target T satisfies (x^2+y^2-25)^2 <= 49. A dart is thrown uniformly in the dartboard. The probability is m*pi/n. What is m+n?", "answer": "", "major_category": "概率与统计", "minor_category": "几何概率", "tags": "几何概率;面积;圆环;菱形", "key_idea": "识别目标为圆环区域，并与菱形靶盘比较面积。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 10, "source": "2024 AMC 12B Problem 10", "statement": "A list of 9 real numbers consists of 1, 2.2, 3.2, 5.2, 6.2, 7, and x,y,z with x <= y <= z. The range is 7, and the mean and median are both positive integers. How many ordered triples are possible?", "answer": "", "major_category": "概率与统计", "minor_category": "平均数与数据集", "tags": "平均数;中位数;极差;有序三元组", "key_idea": "由极差限制端点，再枚举中位数和总和的整数条件。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 11, "source": "2024 AMC 12B Problem 11", "statement": "Let x_n = sin^2(n degrees). What is the mean of x_1, x_2, ..., x_90?", "answer": "", "major_category": "代数", "minor_category": "三角恒等式", "tags": "三角函数;配对;平均值", "key_idea": "利用 sin^2 theta 与 sin^2(90-theta) 的配对和为 1。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 12, "source": "2024 AMC 12B Problem 12", "statement": "Suppose z is a complex number with positive imaginary part, real part greater than 1, and |z|=2. Points 0,z,z^2,z^3 form a quadrilateral with area 15. What is the imaginary part of z?", "answer": "", "major_category": "代数", "minor_category": "复数", "tags": "复数平面;面积;极坐标", "key_idea": "用 z = 2(cos theta + i sin theta) 表示各点，并把面积写成 theta 的函数。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 13, "source": "2024 AMC 12B Problem 13", "statement": "There are real numbers x,y,h,k satisfying x^2+y^2-6x-8y=h and x^2+y^2-10x+4y=k. What is the minimum possible value of h+k?", "answer": "", "major_category": "代数", "minor_category": "函数与图像", "tags": "配方;二次函数;最值", "key_idea": "把 h+k 写成关于 x,y 的二次式，通过配方求最小值。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 14, "source": "2024 AMC 12B Problem 14", "statement": "How many different remainders can result when the 100th power of an integer is divided by 125?", "answer": "", "major_category": "数论", "minor_category": "整除与同余", "tags": "模运算;幂剩余;125", "key_idea": "按整数是否被 5 整除分类，再分析模 125 的 100 次幂剩余。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 15, "source": "2024 AMC 12B Problem 15", "statement": "A triangle has vertices A(log_2 1, log_2 2), B(log_2 3, log_2 4), and C(log_2 7, log_2 8). What is its area?", "answer": "", "major_category": "几何", "minor_category": "坐标几何", "tags": "坐标面积;对数;行列式", "key_idea": "把坐标写成简单形式，用行列式或鞋带公式求面积。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 16, "source": "2024 AMC 12B Problem 16", "statement": "A group of 16 people is partitioned into 4 indistinguishable 4-person committees. Each committee has one chairperson and one secretary. The number of assignments is 3^r M with M not divisible by 3. What is r?", "answer": "", "major_category": "组合数学", "minor_category": "排列组合", "tags": "分组;职务安排;质因数指数", "key_idea": "写出分组和职务安排公式，再求其中因子 3 的指数。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 17, "source": "2024 AMC 12B Problem 17", "statement": "Integers a and b are randomly chosen without replacement from integers with absolute value at most 10. What is the probability that x^3 + ax^2 + bx + 6 has 3 distinct integer roots?", "answer": "", "major_category": "概率与统计", "minor_category": "代数概率", "tags": "多项式根;整数根;概率计数", "key_idea": "枚举乘积为 -6 的三 distinct 整数根，并映射到系数 (a,b) 后计数。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 18, "source": "2024 AMC 12B Problem 18", "statement": "The Fibonacci numbers are F1=1, F2=1, and Fn=F_{n-1}+F_{n-2}. What is F2/F1 + F4/F2 + F6/F3 + ... + F20/F10?", "answer": "", "major_category": "代数", "minor_category": "数列与递推", "tags": "斐波那契数列;恒等式;求和", "key_idea": "利用斐波那契恒等式化简各项，寻找望远镜或规律。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 19, "source": "2024 AMC 12B Problem 19", "statement": "Equilateral triangle ABC with side length 14 is rotated about its center by angle theta, 0<theta<60 degrees, to form triangle DEF. Area of hexagon ADBECF is 91sqrt(3). What is tan theta?", "answer": "", "major_category": "几何", "minor_category": "几何变换", "tags": "旋转;正三角形;面积;三角函数", "key_idea": "把旋转后的重叠/外接六边形面积表示为 theta 的函数。", "notes": "题面包含两个正三角形旋转形成的六边形图。"}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 20, "source": "2024 AMC 12B Problem 20", "statement": "Suppose A,B,C are points with AB=40 and AC=42. Let x be the length from A to the midpoint of BC, and f(x) be the area of triangle ABC. The domain is (p,q), and maximum r occurs at x=s. What is p+q+r+s?", "answer": "", "major_category": "几何", "minor_category": "三角形", "tags": "中线;面积;最值;三角形不等式", "key_idea": "用中线长度与第三边关系确定 x 的范围，并求面积最大时的构型。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 21, "source": "2024 AMC 12B Problem 21", "statement": "The smallest angles of three different primitive Pythagorean right triangles sum to 90 degrees. Two are 3-4-5 and 5-12-13. What is the perimeter of the third triangle?", "answer": "", "major_category": "数论", "minor_category": "勾股数组", "tags": "勾股数组;三角函数;角和", "key_idea": "用小角的正切值和角和公式确定第三个勾股三角形。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 22, "source": "2024 AMC 12B Problem 22", "statement": "Let triangle ABC have integer side lengths and angle B = 2 angle A. What is the least possible perimeter?", "answer": "", "major_category": "几何", "minor_category": "三角形", "tags": "倍角;整数边;正弦定理", "key_idea": "由 B=2A 和正弦定理推出边长关系，再搜索最小整数周长。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 23, "source": "2024 AMC 12B Problem 23", "statement": "A right pyramid has regular octagon ABCDEFGH with side length 1 as its base and apex V. Segments AV and DV are perpendicular. What is the square of the height?", "answer": "", "major_category": "几何", "minor_category": "空间几何", "tags": "正八边形;棱锥;空间垂直;高度", "key_idea": "把底面中心到顶点距离与侧棱向量垂直条件结合，解出高度平方。", "notes": ""}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 24, "source": "2024 AMC 12B Problem 24", "statement": "How many ordered triples (a,b,c) of positive integers with a<=b<=c<=9 can be altitudes of a nondegenerate triangle with integer inradius?", "answer": "", "major_category": "几何", "minor_category": "三角形", "tags": "三角形;高;内切圆;整数枚举", "key_idea": "用面积与高、内切圆半径的关系把高度条件转化为可枚举的边长/半周长条件。", "notes": "主要解法是三角形几何关系，带有有限枚举。"}, {"year": 2024, "contest": "AMC 12", "form": "B", "problem_no": 25, "source": "2024 AMC 12B Problem 25", "statement": "Pablo decorates each of 6 identical white balls with striped/dotted pattern and red/blue color, using fair coins for the 12 decisions. A ball is selected randomly. What is the numerator m of the probability that the events selected ball is red and selected ball is striped are independent?", "answer": "", "major_category": "概率与统计", "minor_category": "独立性", "tags": "独立事件;随机配置;计数;二元表", "key_idea": "把结果看作 2x2 列联表，独立性等价于行列乘积条件，再计数所有配置。", "notes": ""}];
+    const filters = {
+      form: document.querySelector("#formFilter"),
+      major: document.querySelector("#majorFilter"),
+      minor: document.querySelector("#minorFilter"),
+      search: document.querySelector("#searchInput"),
+    };
+    const cards = document.querySelector("#cards");
+    const resultCount = document.querySelector("#resultCount");
+    const clearFilters = document.querySelector("#clearFilters");
+
+    function unique(values) {
+      return [...new Set(values.filter(Boolean))].sort((a, b) => String(a).localeCompare(String(b), "zh-CN"));
+    }
+
+    function fillSelect(select, values, keep = "") {
+      const current = keep || select.value;
+      select.innerHTML = '<option value="">全部</option>' + values.map(v => `<option value="${escapeAttr(v)}">${escapeHtml(v)}</option>`).join("");
+      if (values.includes(current)) select.value = current;
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+    }
+    function escapeAttr(value) { return escapeHtml(value); }
+
+    function refreshOptions() {
+      const selectedForm = filters.form.value;
+      const selectedMajor = filters.major.value;
+      const selectedMinor = filters.minor.value;
+      const base = problems.filter(p => !selectedForm || p.form === selectedForm);
+      const majors = unique(base.map(p => p.major_category));
+      fillSelect(filters.major, majors, selectedMajor);
+      if (selectedMajor && !majors.includes(selectedMajor)) filters.major.value = "";
+      const minorBase = base.filter(p => !filters.major.value || p.major_category === filters.major.value);
+      const minors = unique(minorBase.map(p => p.minor_category));
+      fillSelect(filters.minor, minors, selectedMinor);
+      if (selectedMinor && !minors.includes(selectedMinor)) filters.minor.value = "";
+    }
+
+    function matches(p) {
+      const q = filters.search.value.trim().toLowerCase();
+      const haystack = [p.source, p.statement, p.major_category, p.minor_category, p.tags, p.key_idea, p.notes].join(" ").toLowerCase();
+      return (!filters.form.value || p.form === filters.form.value)
+        && (!filters.major.value || p.major_category === filters.major.value)
+        && (!filters.minor.value || p.minor_category === filters.minor.value)
+        && (!q || haystack.includes(q));
+    }
+
+    function syncActiveButtons() {
+      document.querySelectorAll("[data-filter-major]").forEach(el => {
+        const major = el.dataset.filterMajor || "";
+        const minor = el.dataset.filterMinor || "";
+        const active = filters.major.value === major && (!minor || filters.minor.value === minor);
+        el.classList.toggle("active", active);
+      });
+    }
+
+    function applyCategoryFilter(major, minor = "") {
+      filters.major.value = major;
+      filters.search.value = "";
+      refreshOptions();
+      filters.minor.value = minor;
+      render();
+      document.querySelector("#resultCount").scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function resetFilters() {
+      filters.form.value = "";
+      filters.major.value = "";
+      filters.minor.value = "";
+      filters.search.value = "";
+      render();
+    }
+
+    function render() {
+      refreshOptions();
+      const shown = problems.filter(matches).sort((a, b) => a.form.localeCompare(b.form) || a.problem_no - b.problem_no);
+      resultCount.textContent = `当前显示 ${shown.length} / ${problems.length} 题`;
+      syncActiveButtons();
+      if (!shown.length) {
+        cards.innerHTML = '<div class="empty">没有匹配的题目</div>';
+        return;
+      }
+      cards.innerHTML = shown.map(p => `
+        <article class="card">
+          <div class="card-top">
+            <div class="source">${escapeHtml(p.source)}</div>
+            <span class="badge major">${escapeHtml(p.major_category)}</span>
+            <span class="badge">${escapeHtml(p.minor_category)}</span>
+          </div>
+          <div class="statement">${escapeHtml(p.statement)}</div>
+          <div class="idea">${escapeHtml(p.key_idea)}${p.notes ? `<br><strong>备注：</strong>${escapeHtml(p.notes)}` : ""}</div>
+          <div class="tags">${String(p.tags).split(";").map(t => `<span class="badge">${escapeHtml(t)}</span>`).join("")}</div>
+        </article>
+      `).join("");
+    }
+
+    Object.values(filters).forEach(el => el.addEventListener("input", render));
+    document.addEventListener("click", event => {
+      const action = event.target.closest("[data-filter-major]");
+      if (!action) return;
+      applyCategoryFilter(action.dataset.filterMajor || "", action.dataset.filterMinor || "");
+    });
+    clearFilters.addEventListener("click", resetFilters);
+    render();
+  </script>
+</body>
+</html>

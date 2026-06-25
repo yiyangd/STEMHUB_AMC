@@ -1,0 +1,315 @@
+# 2022 AMC 10 分类题集
+
+> 自动批量整理草稿。每道题只归入一个一级分类和一个二级分类；answer 留空表示源 PDF 未提供答案表。
+
+## 统计概览
+
+- 总题量：50
+- A 卷：25 题
+- B 卷：25 题
+
+| 一级分类 | 题量 |
+| --- | ---: |
+| 代数 | 19 |
+| 几何 | 11 |
+| 数论 | 10 |
+| 组合数学 | 4 |
+| 概率与统计 | 6 |
+
+## 1. 代数
+
+### 1.1 三角恒等式
+
+- **2022 AMC 10A Problem 2**
+  - 考点：用三角恒等式、角度关系或特殊角化简。
+  - 标签：三角函数;恒等式
+  - 题面：Mike cycled 15 laps in 57 minutes. Assume he cycled at a constant speed throughout. Approxi- mately how many laps did he complete in the first 27 minutes? (A) 5 (B) 7 (C) 9 (D) 11 (E) 13
+- **2022 AMC 10A Problem 16**
+  - 考点：用三角恒等式、角度关系或特殊角化简。
+  - 标签：三角函数;恒等式
+  - 题面：The roots of the polynomial 10x3 39x2+29x 6 are the height, length, and width of a rectangular − − box (right rectangular prism. A new rectangular box is formed by lengthening each edge of the original box by 2 units. What is the volume of the new box? (A) 24 (B) 42 (C) 81 (D) 30 (E) 48 5 5 5
+
+### 1.2 函数与图像
+
+- **2022 AMC 10B Problem 24**
+  - 考点：分析函数图像、对称、交点或极值条件。
+  - 标签：函数;图像
+  - 题面：Consider functions f that satisfy f (x) f (y) 1 x y for all real numbers x and y. Of all such | − | ≤ 2 | − | functions that also satisfy the equation f (300) = f (900), what is the greatest possible value of f (f (800)) f (f (400))? − (A) 25 (B) 50 (C) 100 (D) 150 (E) 200
+
+### 1.3 对数与指数
+
+- **2022 AMC 10B Problem 11**
+  - 考点：使用换底、指数规律或对数恒等式化简。
+  - 标签：对数;指数
+  - 备注：题面包含图形
+  - 题面：All the high schools in a large school district are involved in a fundraiser selling T-shirts. Which of the choices below is logically equivalent to the statement ”No school bigger than Euclid HS sold more T-shirts than Euclid HS”? (A) All schools smaller than Euclid HS sold fewer T-shirts than Euclid HS. (B) No school that sold more T-shirts than Euclid HS is bigger than Euclid HS. (C) All schools bigger than Euclid HS sold fewer T-shirts than Euclid HS. (D) All schools that sold fewer T-shirts than Euclid HS are smaller than Euclid HS. (E) All schools smaller than Euclid HS sold more T-shirts than Euclid HS.
+
+### 1.4 数列与递推
+
+- **2022 AMC 10B Problem 15**
+  - 考点：从递推式或数列结构中找显式式、周期或求和规律。
+  - 标签：数列;递推
+  - 题面：Let S be the sum of the first n term of an arithmetic sequence that has a common difference n of 2. The quotient S3n does not depend on n. What is S ? Sn 20 (A) 340 (B) 360 (C) 380 (D) 400 (E) 420
+
+### 1.5 方程与不等式
+
+- **2022 AMC 10B Problem 18**
+  - 考点：将题设转化为方程组或不等式并求解。
+  - 标签：方程;不等式
+  - 题面：Consider systems of three linear equations with unknowns x, y, and z, a x + b y + c z = 0 1 1 1 a x + b y + c z = 0 2 2 2 a x + b y + c z = 0 3 3 3 where each of the coefficients is either 0 or 1 and the system has a solution other than x = y = z = 0. For example, one such system is 1x+1y +0z = 0, 0x+1y +1z = 0, 0x+0y +0z = 0 with { } a nonzero solution of x, y, z = 1, 1, 1 . How many such systems are there? (The equations { } { − } in a system need not be distinct, and two systems containing the same equations in a different order are considered different.) (A) 302 (B) 338 (C) 340 (D) 343 (E) 344
+
+### 1.6 运算与化简
+
+- **2022 AMC 10A Problem 1**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：What is the value of 1 3 + ? 3 + 1 3+ 1 3 (A) 31 (B) 49 (C) 33 (D) 109 (E) 15 10 15 10 33 4
+- **2022 AMC 10A Problem 3**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：The sum of three numbers is 96. The first number is 6 times the third number, and the third number is 40 less than the second number. What is the absolute value of the difference between the first and second numbers? (A) 1 (B) 2 (C) 3 (D) 4 (E) 5
+- **2022 AMC 10A Problem 4**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：In some countries, automobile fuel efficiency is measured in liters per 100 kilometers while other countries use miles per gallon. Suppose that 1 kilometer equals m miles, and 1 gallon equals ℓ liters. Which of the following gives the fuel efficiency in liters per 100 kilometers for a car that gets x miles per gallon? (A) x (B) xℓm (C) ℓm (D) 100 (E) 100ℓm 100ℓm 100 100x xℓm x
+- **2022 AMC 10A Problem 6**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Which expression is equal to (cid:12)a 2 (cid:112) (a 1)2(cid:12) for a < 0? (cid:12) (cid:12) − − − (A) 3 2a (B) 1 a (C) 1 (D) a + 1 (E) 3 − −
+- **2022 AMC 10A Problem 11**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 题面：Ted mistakenly wrote 2m 1 as 2 m 1 . What is the sum of all real numbers m for which · 4096 · 4096 these two expressions have the same value? (A) 5 (B) 6 (C) 7 (D) 8 (E) 9
+- **2022 AMC 10A Problem 12**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：On Halloween 31 children walked into the principal’s office asking for candy. They can be clas- sified into three types: Some always lie; some always tell the truth; and some alternately lie and tell the truth. The alternaters arbitrarily choose their first response, either a lie or the truth, but each subsequent statement has the opposite truth value from its predecessor. The principal asked everyone the same three questions in this order. ”Are you a truth-teller?” The principal gave a piece of candy to each of the 22 children who answered yes. ”Are you an alternater?” The principal gave a piece of candy to each of the 15 children who answered yes. ”Are you a liar?” The principal gave a piece of candy to each of the 9 children who answered yes. How many pieces of candy in all did the principal give to the children who always tell the truth? (A) 7 (B) 12 (C) 21 (D) 27 (E) 31
+- **2022 AMC 10A Problem 23**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Isosceles trapezoid ABCD has parallel sides AD and BC, with BC < AD and AB = CD. There is a point P in the plane such that P A = 1, P B = 2, P C = 3, and P D = 4. What is BC ? AD (A) 1 (B) 1 (C) 1 (D) 2 (E) 3 4 3 2 3 4
+- **2022 AMC 10B Problem 1**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 题面：Define x y to be x y for all real numbers x and y. What is the value of ⋄ | − | (1 (2 3)) ((1 2) 3)? ⋄ ⋄ − ⋄ ⋄ (A) 2 (B) 1 (C) 0 (D) 1 (E) 2 − −
+- **2022 AMC 10B Problem 4**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：A donkey suffers an attack of hiccups and the first hiccup happens at 4:00 one afternoon. Sup- pose that the donkey hiccups regularly every 5 seconds. At what time does the donkey’s 700th hiccup occur? (A) 15 seconds after 4:58 (B) 20 seconds after 4:58 (C) 25 seconds after 4:58 (D) 30 seconds after 4:58 (E) 35 seconds after 4:58
+- **2022 AMC 10B Problem 5**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：What is the value of (1+ 1 3 )(1+ 1 5 )(1+ 1 7 ) ? (cid:113) (1− 1 )(1− 1 )(1− 1 ) 32 52 72 (A) √3 (B) 2 (C) √15 (D) 4 (E) √105
+- **2022 AMC 10B Problem 8**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Consider the following 100 sets of 10 elements each: 1, 2, 3, , 10 , { · · · } 11, 12, 13, , 20 , { · · · } 21, 22, 23, , 30 , { · · · } . . . 991, 992, 993, , 1000 . { · · · } How many of these sets contain exactly two multiples of 7? (A)40 (B)42 (C)43 (D)49 (E)50
+- **2022 AMC 10B Problem 14**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Suppose that S is a subset of 1, 2, 3, ..., 25 such that the sum of any two (not necessarily { } distinct) elements of S is never an element of S. What is the maximum number of elements S may contain? (A) 12 (B) 13 (C) 14 (D) 15 (E) 16
+- **2022 AMC 10B Problem 20**
+  - 考点：通过代数化简、配对或基本运算降低计算量。
+  - 标签：代数;化简
+  - 备注：自动分类依据较弱，按代数主线暂归类
+  - 题面：Let ABCD be a rhombus with ∠ADC = 46◦. Let E be the midpoint of CD, and let F be the point on BE such that AF is perpendicular to BE. What is the degree measure of ∠BF C? (A) 110 (B) 111 (C) 112 (D) 113 (E) 114
+
+## 2. 几何
+
+### 2.1 三角形
+
+- **2022 AMC 10A Problem 5**
+  - 考点：运用三角形边角关系、三角函数或面积公式。
+  - 标签：三角形;角度
+  - 题面：Square ABCD has side length 1. Point P , Q, R, and S each lie on a side of ABCD such that AP QCRS is an equilateral convex hexagon with side length s. What is s? √ √ (A) 2 (B) 1 (C) 2 √2 (D) 1 2 (E) 2 3 2 − − 4 3 (cid:12) (cid:12)
+- **2022 AMC 10B Problem 21**
+  - 考点：运用三角形边角关系、三角函数或面积公式。
+  - 标签：三角形;角度
+  - 题面：Let P (x) be a polynomial with rational coefficients such that when P (x) is divided by the poly- nomial x2 + x + 1, the remainder is x + 2, and when P (x) is divided by the polynomial x2 + 1, the remainder is 2x + 1. There is a unique polynomial of least degree with these two properties. What is the sum of the squares of the coefficients of that polynomial? (A) 10 (B) 13 (C) 19 (D) 20 (E) 23
+
+### 2.2 圆与曲线
+
+- **2022 AMC 10A Problem 15**
+  - 考点：利用圆、切线、曲线方程或几何约束求关键量。
+  - 标签：圆;曲线
+  - 题面：Quadrilateral ABCD with side lengths AB = 7, BC = 24, CD = 20, DA = 15 is inscribed in a circle. The area interior to the circle but exterior to the quadrilateral can be written in the form aπ−b , where a, b, and c are positive integers such that a and c have no common prime factor. c What is a + b + c? (A) 260 (B) 855 (C) 1235 (D) 1565 (E) 1997
+
+### 2.3 坐标几何
+
+- **2022 AMC 10A Problem 18**
+  - 考点：建立坐标或使用距离、斜率、面积公式求解。
+  - 标签：坐标;几何
+  - 题面：Let T be the transformation of the coordinate plane that first rotates the plane k degrees k counterclockwise around the origin and then reflects the plane across the y-axis. What is the least positive integer n such that performing the sequence of transformations transformations T , T , T , . . . , T returns the point (1, 0) back to itself? 1 2 3 n (A) 359 (B) 360 (C) 719 (D) 720 (E) 721
+- **2022 AMC 10A Problem 25**
+  - 考点：建立坐标或使用距离、斜率、面积公式求解。
+  - 标签：坐标;几何
+  - 备注：题面包含图形
+  - 题面：Let R, S, and T be squares that have vertices at lattice points (i.e., points whose coordinates are both integers) in the coordinate plane, together with their interiors. The bottom edge of each square is on the x-axis. The left edge of R and the right edge of S are on the y-axis, and R contains 9 as many lattice points as does S. The top two vertices of T are in R S, and T 4 ∪ contains 1 of the lattice points contained in R S. See the figure (not drawn to scale). 4 ∪ y R S T x The fraction of lattice points in S that are in S T is 27 times the fraction of lattice points in ∩ R that are in R T . What is the minimum possible value of the edge length of R plus the edge ∩ length of S plus the edge length of T ? (A) 336 (B) 337 (C) 338 (D) 339 (E) 340
+- **2022 AMC 10B Problem 22**
+  - 考点：建立坐标或使用距离、斜率、面积公式求解。
+  - 标签：坐标;几何
+  - 题面：Let S be the set of circles in the coordinate plane that are tangent to each of the three circles with equations x2 + y2 = 4, x2 + y2 = 64, and (x 5)2 + y2 = 3. What is the sum of the areas of − all circles in S? (A) 48π (B) 68π (C) 96π (D) 102π (E) 136π
+
+### 2.4 空间几何
+
+- **2022 AMC 10B Problem 13**
+  - 考点：用截面、相似、体积或空间距离关系建模。
+  - 标签：空间几何;体积
+  - 题面：The positive difference between a pair of primes is equal to 2, and the positive difference be- tween the cubes of the two primes is 31106. What is the sum of the digits of the least prime that is greater than those two primes? (A) 8 (B) 10 (C) 11 (D) 13 (E) 16
+
+### 2.5 面积与相似
+
+- **2022 AMC 10A Problem 10**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 备注：题面包含图形
+  - 题面：Daniel finds a rectangular index card and measures its diagonal to be 8 centimeters. Daniel then cuts out equal squares of side 1 cm at two opposite corners of the index card and measures the distance between the two closest vertices of these squares to be 4√2 centimeters, as shown below. What is the area of the original index card? 1 8 1 4√2 (A) 14 (B) 10√2 (C) 16 (D) 12√2 (E) 18 (cid:113) (cid:113)
+- **2022 AMC 10A Problem 13**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：Let ABC be a scalene triangle. Point P lies on BC so that AP bisects ∠BAC. The line through △ B perpendicular to AP intersects the line through A parallel to BC at point D. Suppose BP = 2 and P C = 3. What is AD ? (A) 8 (B) 9 (C) 10 (D) 11 (E) 12
+- **2022 AMC 10B Problem 2**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 题面：In rhombus ABCD, point P lies on segment AD such that BP AD, AP = 3, and P D = 2. ⊥ What is the area of ABCD? B C A P D (A) 3√5 (B) 10 (C) 6√5 (D) 20 (E) 25
+- **2022 AMC 10B Problem 16**
+  - 考点：抓住面积比例、相似关系或周长约束建立方程。
+  - 标签：面积;比例
+  - 备注：题面包含图形
+  - 题面：The diagram below shows a rectangle with side lengths 4 and 8 and a square with side length 5. Three vertices of the square lie on three different sides of the rectangle, as shown. What is the area of the region inside both the square and the rectangle? 5 4 8 1 3 1 5 7 (A) 15 (B) 15 (C) 15 (D) 15 (E) 15 8 8 2 8 8
+
+## 3. 数论
+
+### 3.1 整数构造
+
+- **2022 AMC 10A Problem 20**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：A four-term sequence is formed by adding each term of a four-term arithmetic sequence of pos- itive integers to the corresponding term of a four-term geometric sequence of positive integers. The first three terms of the resulting four-term sequence are 57, 60, and 91. What is the fourth term of this sequence? (A) 190 (B) 194 (C) 198 (D) 202 (E) 206
+- **2022 AMC 10B Problem 7**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：For how many values of the constant k will the polynomial x2 + kx + 36 have two distinct integer roots? (A) 6 (B) 8 (C) 9 (D) 14 (E) 16
+- **2022 AMC 10B Problem 9**
+  - 考点：用整数范围、构造和极值条件筛选可能值。
+  - 标签：整数;构造
+  - 题面：The sum 1 2 3 2021 + + + + 2! 3! 4! · · · 2022! can be expressed as a 1 , where a and b are positive integers. What is a + b? − b! (A) 2020 (B) 2021 (C) 2022 (D) 2023 (E) 2024
+
+### 3.2 整除与同余
+
+- **2022 AMC 10A Problem 19**
+  - 考点：把条件转化为同余或余数分类讨论。
+  - 标签：同余;余数
+  - 题面：Define L as the least common multiple of all the integers from 1 to n inclusive. There is a n unique integer h such that 1 + 1 + 1 . . . + 1 = h . What is the remainder when h is divided by 1 2 3 17 L17 17? (A) 1 (B) 3 (C) 5 (D) 7 (E) 9
+- **2022 AMC 10B Problem 25**
+  - 考点：把条件转化为同余或余数分类讨论。
+  - 标签：同余;余数
+  - 题面：Let x , x , x , be a sequence of numbers, where each x is either 0 or 1. For each positive 0 1 2 k · · · integer n, define n−1 (cid:88) S = x 2k n k k=0 Suppose 7S 1 (mod 2n) for all n 1. What is the value of the sum n ≡ ≥ x + 2x + 4x + 8x ? 2019 2020 2021 2022 (A) 6 (B) 7 (C) 12 (D) 14 (E) 15 –
+
+### 3.3 质因数与整除
+
+- **2022 AMC 10B Problem 6**
+  - 考点：分解质因数并检查整除条件。
+  - 标签：质因数;整除
+  - 题面：How many of the first ten numbers of the sequence 121, 11211, 1112111, ... are prime numbers? (A) 0 (B) 1 (C) 2 (D) 3 (E) 4
+- **2022 AMC 10B Problem 17**
+  - 考点：分解质因数并检查整除条件。
+  - 标签：质因数;整除
+  - 题面：One of the following numbers is not divisible by any prime number less than 10. Which is it? (A) 2606 1 (B) 2606 + 1 (C) 2607 1 (D) 2607 + 1 (E) 2607 + 3607 − −
+
+### 3.4 进制与数字
+
+- **2022 AMC 10A Problem 7**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：The least common multiple of a positive integer n and 18 is 180, and the greatest common divisor of n and 45 is 15. What is the sum of the digits of n? (A) 3 (B) 6 (C) 8 (D) 9 (E) 12
+- **2022 AMC 10A Problem 17**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：How many three-digit positive integers a b c are there whose nonzero digits a, b, and c satisfy 1 0.a b c = (0.a + 0.b + 0.c)? 3 (The bar indicates repetition, thus 0.a b c in the infinite repeating decimal 0.a b c a b c ) · · · (A) 9 (B) 10 (C) 11 (D) 13 (E) 14
+- **2022 AMC 10B Problem 3**
+  - 考点：分析数字、位值或进制表示带来的整数约束。
+  - 标签：数字;进制
+  - 题面：How many three-digit positive integers have an odd number of even digits? (A) 150 (B) 250 (C) 350 (D) 450 (E) 550
+
+## 4. 组合数学
+
+### 4.1 图形计数
+
+- **2022 AMC 10B Problem 19**
+  - 考点：把图形限制转化为状态或结构计数。
+  - 标签：网格;计数
+  - 备注：题面包含图形
+  - 题面：Each square in a 5 5 grid is either filled or empty, and has up to eight adjacent neighboring × squares, where neighboring squares share either a side or a corner. The grid is transformed by the following rules: - Any filled square with two or three filled neighbors remains filled. - Any empty square with exactly three filled neighbors becomes a filled square. - All other squares remain empty or become empty. A sample transformation is shown in the figure below. Initial Transformed Suppose the 5 5 grid has a border of empty squares surrounding a 3 3 subgrid. How many × × initial configurations will lead to a transformed grid consisting of a single filled square in the center after a single transformation? (Rotations and reflections of the same configuration are considered different.) ? ? ? ? ? ? ? ? ? Initial Transformed (A) 14 (B) 18 (C) 22 (D) 26 (E) 30
+
+### 4.2 排列组合
+
+- **2022 AMC 10A Problem 14**
+  - 考点：用分组、排列组合或容斥完成计数。
+  - 标签：排列组合;计数
+  - 题面：What is the number of ways the numbers from 1 to 14 can be split into 7 pairs such that for each pair, the greater number is at least 2 times the smaller number? (A) 108 (B) 120 (C) 126 (D) 132 (E) 144
+
+### 4.3 染色与构造
+
+- **2022 AMC 10A Problem 9**
+  - 考点：按颜色/类型分类，使用构造、对称或计数。
+  - 标签：染色;构造
+  - 备注：题面包含图形
+  - 题面：A rectangle is partitioned into 5 regions as shown. Each region is to be painted a solid color - red, orange, yellow, blue, or green - so that regions that touch are painted different colors, and colors can be used more than once. How many different colorings are possible? (A) 120 (B) 270 (C) 360 (D) 540 (E) 720
+
+### 4.4 递推与序列计数
+
+- **2022 AMC 10A Problem 24**
+  - 考点：建立状态递推或寻找周期规律计数。
+  - 标签：递推;序列
+  - 题面：How many strings of length 5 formed from the digits 0,1,2,3,4 are there such that for each j ∈ 1, 2, 3, 4 , at least j of the digits are less than j? (For example, 02214 satisfies the condition { } because it contains at least 1 digit less than 1, at least 2 digits less than 2, at least 3 digits less than 3, and at least 4 digits less than 4. The string 23404 does not satisfy the condition because it does not contain at least 2 digits less than 2.) (A) 500 (B) 625 (C) 1089 (D) 1199 (E) 1296
+
+## 5. 概率与统计
+
+### 5.1 几何概率
+
+- **2022 AMC 10A Problem 21**
+  - 考点：将随机位置参数化，用面积或长度比例计算概率。
+  - 标签：几何概率;面积
+  - 备注：题面包含图形
+  - 题面：A bowl is formed by attaching four regular hexagons of side 1 to a square of side 1. The edges of adjacent hexagons coincide, as shown in the figure. What is the area of the octagon obtained by joining the top eight vertices of the four hexagons, situated on the rim of the bowl? (A) 6 (B) 7 (C) 5 + 2√2 (D) 8 (E) 9
+
+### 5.2 平均数与数据集
+
+- **2022 AMC 10A Problem 8**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：A data set consists of 6 (not distinct) positive integers: 1, 7, 5, 2, 5, and X. The average (arithmetic mean) of the 6 numbers equals a value in the data set. What is the sum of all positive values of X? (A) 10 (B) 26 (C) 32 (D) 36 (E) 40
+- **2022 AMC 10A Problem 22**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 备注：题面包含图形
+  - 题面：Suppose that 13 cards numbered 1, 2, 3, . . . , 13 are arranged in a row. The task is to pick them up in numerically increasing order, working repeatedly from left to right. In the example below, cards 1, 2, 3 are picked up on the first pass, 4 and 5 on the second pass, 6 on the third pass, 7, 8, 9, 10 on the fourth pass, and 11, 12, 13 on the fifth pass. For how many of the 13! possible orderings of the cards will the 13 cards be picked up in exactly two passes? 7 11 8 6 4 5 9 12 1 13 10 2 3 (A) 4082 (B) 4095 (C) 4096 (D) 8178 (E) 8191
+- **2022 AMC 10B Problem 10**
+  - 考点：把平均数、总和或中位数条件转化为代数约束。
+  - 标签：平均数;数据
+  - 题面：Camila writes down five positive integers. The unique mode of these integers is 2 greater than their median, and the median is 2 greater than their arithmetic mean. What is the least possible value for the mode? (A) 5 (B) 7 (C) 9 (D) 11 (E) 13
+
+### 5.3 独立性
+
+- **2022 AMC 10B Problem 23**
+  - 考点：把事件关系转化为计数或比例条件。
+  - 标签：独立事件;概率
+  - 题面：Ant Amelia starts on the number line at 0 and crawls in the following manner. For n = 1, 2, 3, Amelia chooses a time duration t and an increment x independently and uniformly at random n n from the interval (0, 1). During the nth step of the process, Amelia moves x units in the positive n direction, using up t minutes. If the total elapsed time has exceeded 1 minute during the nth n step, she stops at the end of that step; otherwise, she continues with the next step, taking at most 3 steps in all. What is the probability that Amelia’s position when she stops will be greater than 1? (A) 1 (B) 1 (C) 2 (D) 3 (E) 5 3 2 3 4 6
+
+### 5.4 组合概率
+
+- **2022 AMC 10B Problem 12**
+  - 考点：分别计数有利情况与总情况，再化为概率。
+  - 标签：概率;计数
+  - 题面：A pair of fair 6-sided dice is rolled n times. What is the least value of n such that the probability that the sum of the numbers face up on a roll equals 7 at least once is greater than 1 ? 2 (A) 2 (B) 3 (C) 4 (D) 5 (E) 6

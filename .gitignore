@@ -1,0 +1,18 @@
+﻿# Local inputs and temporary outputs
+input/
+output/tmp/
+tmp/
+*.tmp
+*.log
+*.pdf
+.run_start_time
+
+# Local/editor/system files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.agents/
+.codex/
+__pycache__/
+*.pyc
