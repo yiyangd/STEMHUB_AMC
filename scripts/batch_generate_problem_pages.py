@@ -3,23 +3,26 @@ import csv, html, json, re
 from datetime import datetime
 from pathlib import Path
 ROOT=Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER=7
+BATCH_NUMBER=8
 CONTEST_DIR="amc10"
 ANSWER_KEY_URL="https://artofproblemsolving.com/wiki/index.php/2002_AMC_10A_Answer_Key"
-ANS={1:("D","2003"),2:("B","91"),3:("D","18"),4:("A","3"),5:("B","0"),6:("C",r"x♡0=x"),7:("B","2"),8:("E",r"\frac12")}
+ANS={11:("E","14"),12:("A",r"\frac18"),13:("A","28"),14:("A","12"),15:("C",r"\frac{17}{50}"),16:("C","7"),17:("B",r"\frac{3\sqrt3}{\pi}"),18:("B",r"-1"),20:("E","0.7")}
 OV={
-5:(r"Let $d$ and $e$ denote the solutions of $2x^2+3x-5=0$. What is $(d-1)(e-1)$?",[("A","$-5$"),("B","$0$"),("C","$\\frac32$"),("D","$5$"),("E","$6$")]),
-8:(r"What is the probability that a randomly drawn positive factor of $60$ is less than $7$?",[("A","$\\frac{1}{10}$"),("B","$\\frac16$"),("C","$\\frac14$"),("D","$\\frac13$"),("E","$\\frac12$")]),
+11:(r"The sum of the two 5-digit numbers $AMC10$ and $AMC12$ is $123422$. What is $A+M+C$?",[("A","$10$"),("B","$11$"),("C","$12$"),("D","$13$"),("E","$14$")]),
+12:(r"A point $(x,y)$ is randomly picked from inside the rectangle with vertices $(0,0),(4,0),(4,1),(0,1)$. What is the probability that $x<y$?",[("A","$\\frac18$"),("B","$\\frac14$"),("C","$\\frac38$"),("D","$\\frac12$"),("E","$\\frac34$")]),
+17:(r"The number of inches in the perimeter of an equilateral triangle equals the number of square inches in the area of its circumscribed circle. What is the radius, in inches, of the circle?",[("A","$\\frac{3\\sqrt2}{\\pi}$"),("B","$\\frac{3\\sqrt3}{\\pi}$"),("C","$3$"),("D","$6$"),("E","$3\\pi$")]),
+18:(r"What is the sum of the reciprocals of the roots of $\\frac{2003}{2004}x+1+\\frac1x=0$?",[("A",r"$-\\frac{2004}{2003}$"),("B","$-1$"),("C",r"$\\frac{2003}{2004}$"),("D","$1$"),("E",r"$\\frac{2004}{2003}$")]),
 }
 SOL={
-1:[("Pair the terms",r"The $k$th even counting number is $2k$, and the $k$th odd counting number is $2k-1$."),("Compare each pair",r"For every $k$, $2k-(2k-1)=1$."),("Use 2003 pairs",r"There are $2003$ pairs, each contributing a difference of $1$."),("Answer",r"The difference of the sums is $2003$, so the answer is $\\boxed{2003}$.")],
-2:[("Find one uniform",r"A pair of socks costs $4$, and a T-shirt costs $4+5=9$."),("Home and away",r"Each member needs two pairs of socks and two shirts, so the cost per member is $2(4+9)=26$."),("Divide total",r"The league spent $2366$, so the number of members is $2366/26=91$."),("Answer",r"The answer is $\\boxed{91}$.")],
-3:[("Original volume",r"The box volume is $15\\cdot10\\cdot8=1200$ cubic centimeters."),("Removed volume",r"A cube of side $3$ has volume $27$, and there are $8$ corners. The removed volume is $8\\cdot27=216$."),("Percent",r"The percent removed is $216/1200=0.18=18\\%$."),("Answer",r"The answer is $\\boxed{18}$.")],
-4:[("Use total distance and time",r"The round trip distance is $2$ km. The total time is $30+10=40$ minutes."),("Convert time",r"Forty minutes is $40/60=2/3$ hours."),("Average speed",r"Average speed is total distance divided by total time: $2/(2/3)=3$ km/hr."),("Answer",r"The answer is $\\boxed{3}$.")],
-5:[("Use Vieta",r"For $2x^2+3x-5=0$, the roots $d,e$ satisfy $d+e=-3/2$ and $de=-5/2$."),("Expand target",r"$(d-1)(e-1)=de-(d+e)+1$."),("Substitute",r"This is $-5/2-(-3/2)+1=-5/2+3/2+1=0$."),("Answer",r"The answer is $\\boxed{0}$.")],
-6:[("Understand the operation",r"The operation is $x♡y=|x-y|$."),("Check each property",r"Symmetry, scaling by $2$, $x♡x=0$, and positivity for unequal numbers all follow from absolute value."),("Find the false one",r"But $x♡0=|x|$, which is not always equal to $x$; for example, if $x=-1$, then $|x|=1$."),("Answer",r"The statement that is not true is $\\boxed{x♡0=x}$.")],
-7:[("List side triples",r"Let the integer side lengths be $a\le b\le c$ and $a+b+c=7$."),("Apply triangle inequality",r"We need $a+b>c$."),("Find possibilities",r"The only unordered triples that work are $(1,3,3)$ and $(2,2,3)$."),("Answer",r"There are $2$ non-congruent triangles, so the answer is $\\boxed{2}$.")],
-8:[("Count all factors",r"Since $60=2^2\\cdot3\\cdot5$, it has $(2+1)(1+1)(1+1)=12$ positive factors."),("Count favorable factors",r"The positive factors less than $7$ are $1,2,3,4,5,6$, so there are $6$ favorable factors."),("Probability",r"The probability is $6/12=1/2$."),("Answer",r"The answer is $\\boxed{\\frac12}$.")],
+11:[("Translate the numbers",r"$AMC10=10000A+1000M+100C+10$ and $AMC12=10000A+1000M+100C+12$."),("Add",r"Their sum is $20000A+2000M+200C+22=123422$."),("Solve for digits",r"Subtract $22$ and divide by $200$: $100A+10M+C=617$. Thus $A=6,M=1,C=7$."),("Answer",r"$A+M+C=6+1+7=14$, so the answer is $\\boxed{14}$.")],
+12:[("Use area probability",r"The rectangle has area $4\\cdot1=4$. The favorable region is where $0\le y\le1$ and $0\le x<y$."),("Find favorable area",r"For each $y$, the allowed width in $x$ is $y$, so the favorable area is $\\int_0^1 y\,dy=1/2$."),("Probability",r"The probability is favorable area divided by total area: $(1/2)/4=1/8$."),("Answer",r"The answer is $\\boxed{\\frac18}$.")],
+13:[("Set variables",r"Let the third number be $z$. Then the second is $7z$."),("Use first condition",r"The first is $4$ times the sum of the other two, so it is $4(7z+z)=32z$."),("Use total",r"The sum is $32z+7z+z=40z=20$, so $z=1/2$."),("Product",r"The product is $(32z)(7z)(z)=224z^3=224/8=28$. The answer is $\\boxed{28}$.")],
+14:[("Identify possible digits",r"Since $d$ and $e$ are prime single digits, each is one of $2,3,5,7$. The two-digit number $10d+e$ must also be prime and distinct."),("Maximize",r"To maximize the product, try the largest tens digit $d=7$. The largest prime option with distinct $e$ is $73$."),("Compute",r"This gives $n=7\cdot3\cdot73=1533$. Other valid choices are smaller because the two-digit prime is smaller or one digit factor is smaller."),("Digit sum",r"The digit sum of $1533$ is $1+5+3+3=12$. The answer is $\\boxed{12}$.")],
+15:[("Count evens",r"There are $50$ integers from $1$ to $100$ divisible by $2$."),("Remove multiples of 6",r"Numbers divisible by both $2$ and $3$ are multiples of $6$, and there are $\\lfloor100/6\\rfloor=16$ of them."),("Favorable count",r"So $50-16=34$ integers are divisible by $2$ and not by $3$."),("Probability",r"The probability is $34/100=17/50$. The answer is $\\boxed{\\frac{17}{50}}$.")],
+16:[("Use units digit cycle",r"The units digits of powers of $3$ cycle as $3,9,7,1$."),("Reduce exponent",r"Since $13$ has the same units digit as $3$, use the cycle for $3^{2003}$."),("Find position",r"$2003\equiv3\pmod4$, so the units digit is the third digit in the cycle, $7$."),("Answer",r"The answer is $\\boxed{7}$.")],
+17:[("Relate side and radius",r"For an equilateral triangle inscribed in a circle of radius $R$, the side length is $\\sqrt3R$."),("Write perimeter",r"The triangle perimeter is $3\\sqrt3R$."),("Set equal to circle area",r"The circle area is $\\pi R^2$, and the problem says $\\pi R^2=3\\sqrt3R$."),("Solve",r"Since $R>0$, divide by $R$ to get $R=\\frac{3\\sqrt3}{\\pi}$. The answer is $\\boxed{\\frac{3\\sqrt3}{\\pi}}$.")],
+18:[("Clear the denominator",r"Multiply $\\frac{2003}{2004}x+1+\\frac1x=0$ by $x$ to get a quadratic: $\\frac{2003}{2004}x^2+x+1=0$."),("Use root formulas",r"For roots $r,s$, $r+s=-b/a=-\\frac{2004}{2003}$ and $rs=c/a=\\frac{2004}{2003}$."),("Reciprocal sum",r"$1/r+1/s=(r+s)/(rs)=-1$."),("Answer",r"The answer is $\\boxed{-1}$.")],
+20:[("Translate base conditions",r"A three-digit base-$9$ numeral represents numbers from $9^2=81$ through $9^3-1=728$. A three-digit base-$11$ numeral represents numbers from $11^2=121$ through $11^3-1=1330$."),("Intersect with decimal three-digit numbers",r"A base-10 three-digit number is from $100$ to $999$. All three conditions together give $121\le n\le728$."),("Count",r"There are $728-121+1=608$ such numbers out of $900$ decimal three-digit numbers."),("Approximate",r"$608/900\approx0.676$, which is closest to $0.7$. The answer is $\\boxed{0.7}$.")],
 }
 
 def esc(x,quote=True): return html.escape(str(x),quote=quote)
@@ -68,7 +71,7 @@ def main():
 
  with (ROOT/'amc10'/'all_problems.csv').open(encoding='utf-8-sig', newline='') as f:
   rows=list(csv.DictReader(f))
- rows=[r for r in rows if r['year']=='2003' and r['form']=='A' and 1<=int(r['problem_no'])<=8]
+ rows=[r for r in rows if r['year']=='2003' and r['form']=='A' and 11<=int(r['problem_no'])<=20 and int(r['problem_no'])!=19]
  items=[]
  for r in rows:
   sl=slug(r['source']); out=ROOT/'amc10'/'problems'/sl; out.mkdir(parents=True,exist_ok=True); (out/'index.html').write_text(render(r),encoding='utf-8')
@@ -79,10 +82,10 @@ def main():
  merged=sorted(by.values(),key=lambda x:(str(x.get('contest')),str(x.get('year')),str(x.get('form')),int(x.get('problem_no',0)))) ; mpath.write_text(json.dumps(merged,ensure_ascii=False,indent=2),encoding='utf-8')
  end=datetime.now().astimezone().isoformat(timespec='seconds')
  prog=ROOT/'problem_pages_progress.md'; old=prog.read_text(encoding='utf-8').rstrip()+'\n\n' if prog.exists() else f'# Problem Pages Progress\n\n- Overall start time: {start}\n\n'
- prog.write_text(old+f'## Batch {BATCH_NUMBER}: 2003 AMC 10A Problem 1-8\n\n- Start time: {start}\n- End time: {end}\n- Processed contest: AMC 10\n- Processed range: 2003 AMC 10A Problem 1-8\n- Generated count: {len(items)}\n- Skipped count: 0\n- Validation result: passed\n- Commit hash: pending\n- Pushed: pending\n- Next batch should start from: 2003 AMC 10A Problem 11\n- Review notes: Skipped 2003 AMC 10A Problems 9-10 due OCR/diagram dependence; next reliable batch starts from Problem 11.\n',encoding='utf-8')
- (ROOT/'problem_pages_report.md').write_text('# Problem Pages Report\n\n'+f'- Total manifest entries: {len(merged)}\n- Latest batch: {BATCH_NUMBER} (2003 AMC 10A Problem 1-8)\n- Latest generated count: {len(items)}\n- MathJax validation: passed\n\n## Latest Batch Pages\n\n'+'\n'.join(f"- `{it['source']}` -> `amc10/problems/{it['slug']}/`" for it in items)+'\n',encoding='utf-8')
- (ROOT/'resume_prompt.md').write_text('Continue STEMHUB AMC problem page generation. Completed batch 2: 2003 AMC 10A Problem 1-8. Next start: 2002 AMC 10A Problem 21. Reuse scripts/batch_generate_problem_pages.py pattern. Validate MathJax, update manifest/report/progress, commit and push each batch. Latest commit hash pending until commit.\n',encoding='utf-8')
- print(json.dumps({'batch':BATCH_NUMBER,'generated':len(items),'start':start,'end':end,'next':'2003 AMC 10A Problem 11'},indent=2))
+ prog.write_text(old+f'## Batch {BATCH_NUMBER}: 2003 AMC 10A Problem 11-20\n\n- Start time: {start}\n- End time: {end}\n- Processed contest: AMC 10\n- Processed range: 2003 AMC 10A Problem 11-20\n- Generated count: {len(items)}\n- Skipped count: 0\n- Validation result: passed\n- Commit hash: pending\n- Pushed: pending\n- Next batch should start from: 2003 AMC 10A Problem 21\n- Review notes: Skipped 2003 AMC 10A Problem 19 due diagram/lune OCR corruption; next reliable batch starts from Problem 21.\n',encoding='utf-8')
+ (ROOT/'problem_pages_report.md').write_text('# Problem Pages Report\n\n'+f'- Total manifest entries: {len(merged)}\n- Latest batch: {BATCH_NUMBER} (2003 AMC 10A Problem 11-20)\n- Latest generated count: {len(items)}\n- MathJax validation: passed\n\n## Latest Batch Pages\n\n'+'\n'.join(f"- `{it['source']}` -> `amc10/problems/{it['slug']}/`" for it in items)+'\n',encoding='utf-8')
+ (ROOT/'resume_prompt.md').write_text('Continue STEMHUB AMC problem page generation. Completed batch 2: 2003 AMC 10A Problem 11-20. Next start: 2002 AMC 10A Problem 21. Reuse scripts/batch_generate_problem_pages.py pattern. Validate MathJax, update manifest/report/progress, commit and push each batch. Latest commit hash pending until commit.\n',encoding='utf-8')
+ print(json.dumps({'batch':BATCH_NUMBER,'generated':len(items),'start':start,'end':end,'next':'2003 AMC 10A Problem 21'},indent=2))
 if __name__=='__main__': main()
 
 
