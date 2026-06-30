@@ -29,3 +29,31 @@
 - Pushed: pending
 - Next batch should start from: 2002 AMC 10A Problem 21
 - Review notes: Problems 19 and 20 are geometry/diagram-dependent and should be reviewed with the original figures.
+
+## Batch 2: 2002 AMC 10A Problem 11-20
+
+- Start time: 2026-06-30T03:35:51-07:00
+- End time: 2026-06-30T03:35:51-07:00
+- Processed contest: AMC 10
+- Processed range: 2002 AMC 10A Problem 11-20
+- Generated count: 10
+- Skipped count: 0
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2002 AMC 10A Problem 21
+- Review notes: Problems 19 and 20 are geometry/diagram-dependent and should be reviewed with the original figures.
+
+## Batch 3: 2002 AMC 10A Problem 21-25
+
+- Start time: 2026-06-30T03:36:56-07:00
+- End time: 2026-06-30T03:36:57-07:00
+- Processed contest: AMC 10
+- Processed range: 2002 AMC 10A Problem 21-25
+- Generated count: 5
+- Skipped count: 0
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2002 AMC 10B Problem 1
+- Review notes: Problem 25 is diagram-dependent and should be reviewed with the original trapezoid figure.
