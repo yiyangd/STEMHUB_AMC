@@ -1,22 +1,20 @@
 # Problem Pages Report
 
-- Total manifest entries: 146
-- Latest batch: 17 (2004 AMC 10B Problem 11-20)
-- Latest new generated count: 10
+- Total manifest entries: 150
+- Latest batch: 18 (2004 AMC 10B Problem 21-25)
+- Latest new generated count: 4
 - Latest updated existing count: 0
-- Latest skipped count: 0
+- Latest skipped count: 1
 - MathJax validation: passed
 - Answer verification source: AoPS 2003 AMC 10B Answer Key
 
 ## Latest Batch Pages
 
-- `2004 AMC 10B Problem 11` -> `amc10/problems/2004-amc-10b-problem-11/`
-- `2004 AMC 10B Problem 12` -> `amc10/problems/2004-amc-10b-problem-12/`
-- `2004 AMC 10B Problem 13` -> `amc10/problems/2004-amc-10b-problem-13/`
-- `2004 AMC 10B Problem 14` -> `amc10/problems/2004-amc-10b-problem-14/`
-- `2004 AMC 10B Problem 15` -> `amc10/problems/2004-amc-10b-problem-15/`
-- `2004 AMC 10B Problem 16` -> `amc10/problems/2004-amc-10b-problem-16/`
-- `2004 AMC 10B Problem 17` -> `amc10/problems/2004-amc-10b-problem-17/`
-- `2004 AMC 10B Problem 18` -> `amc10/problems/2004-amc-10b-problem-18/`
-- `2004 AMC 10B Problem 19` -> `amc10/problems/2004-amc-10b-problem-19/`
-- `2004 AMC 10B Problem 20` -> `amc10/problems/2004-amc-10b-problem-20/`
+- `2004 AMC 10B Problem 21` -> `amc10/problems/2004-amc-10b-problem-21/`
+- `2004 AMC 10B Problem 22` -> `amc10/problems/2004-amc-10b-problem-22/`
+- `2004 AMC 10B Problem 23` -> `amc10/problems/2004-amc-10b-problem-23/`
+- `2004 AMC 10B Problem 24` -> `amc10/problems/2004-amc-10b-problem-24/`
+
+## Skipped in latest batch
+
+- 2004 AMC 10B Problem 25: shaded two-circle/lens region requires the original figure and choices are missing from OCR.

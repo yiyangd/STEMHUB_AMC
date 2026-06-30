@@ -8,135 +8,78 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 17
+BATCH_NUMBER = 18
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2004_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
-SKIPPED = []
-BATCH_LABEL = "2004 AMC 10B Problem 11-20"
-NEXT_START = "2004 AMC 10B Problem 21"
+TARGET_NUMBERS = {21, 22, 23, 24}
+SKIPPED = ["2004 AMC 10B Problem 25: shaded two-circle/lens region requires the original figure and choices are missing from OCR."]
+BATCH_LABEL = "2004 AMC 10B Problem 21-25"
+NEXT_START = "2005 AMC 10A Problem 1"
 
 ANS = {
-    11: ("C", r"\frac{3}{4}"),
-    12: ("A", r"\pi a^2"),
-    13: ("B", "8"),
-    14: ("C", r"\frac{1}{3}"),
-    15: ("A", r"\$1.15"),
-    16: ("D", r"\frac{3+2\sqrt3}{3}"),
-    17: ("B", "18"),
-    18: ("E", r"\frac{7}{16}"),
-    19: ("C", "0"),
-    20: ("D", r"\frac{4}{11}"),
+    21: ("A", "3722"),
+    22: ("D", r"\frac{\sqrt{65}}{2}"),
+    23: ("B", r"\frac{5}{16}"),
+    24: ("B", r"\frac{5}{3}"),
 }
 
 
 OV = {
-    11: (
-        r"Two eight-sided dice each have faces numbered $1$ through $8$. When the dice are rolled, each face has an equal probability of appearing on the top. What is the probability that the product of the two top numbers is greater than their sum?",
-        [("A", r"$\frac12$"), ("B", r"$\frac{47}{64}$"), ("C", r"$\frac34$"), ("D", r"$\frac{55}{64}$"), ("E", r"$\frac78$")],
+    21: (
+        r"Let $1,4,\ldots$ and $9,16,\ldots$ be two arithmetic progressions. The set $S$ is the union of the first $2004$ terms of each sequence. How many distinct numbers are in $S$?",
+        [("A", "$3722$"), ("B", "$3732$"), ("C", "$3914$"), ("D", "$3924$"), ("E", "$4007$")],
     ),
-    12: (
-        r"An annulus is the region between two concentric circles. The concentric circles have radii $b$ and $c$, with $b>c$. Let $OX$ be a radius of the larger circle, let $XZ$ be tangent to the smaller circle at $Z$, and let $a=XZ$. What is the area of the annulus?",
-        [("A", r"$\pi a^2$"), ("B", r"$\pi b^2$"), ("C", r"$\pi c^2$"), ("D", r"$\pi d^2$"), ("E", r"$\pi e^2$")],
+    22: (
+        r"A triangle with sides $5$, $12$, and $13$ has both an inscribed and a circumscribed circle. What is the distance between the centers of those circles?",
+        [("A", r"$\frac{3\sqrt5}{2}$"), ("B", r"$\frac72$"), ("C", r"$\frac{\sqrt{15}}{2}$"), ("D", r"$\frac{\sqrt{65}}{2}$"), ("E", r"$\frac92$")],
     ),
-    16: (
-        r"Three circles of radius $1$ are externally tangent to each other and internally tangent to a larger circle. What is the radius of the large circle?",
-        [("A", r"$2+\frac{\sqrt6}{3}$"), ("B", "$2$"), ("C", r"$\frac{2+3\sqrt2}{3}$"), ("D", r"$\frac{3+2\sqrt3}{3}$"), ("E", r"$\frac{3+\sqrt3}{2}$")],
+    23: (
+        r"Each face of a cube is painted either red or blue, each with probability $1/2$. The color of each face is determined independently. What is the probability that the painted cube can be placed on a horizontal surface so that the four vertical faces are all the same color?",
+        [("A", r"$\frac14$"), ("B", r"$\frac5{16}$"), ("C", r"$\frac38$"), ("D", r"$\frac7{16}$"), ("E", r"$\frac12$")],
     ),
-    18: (
-        r"In right triangle $\triangle ACE$, we have $AC=12$, $CE=16$, and $EA=20$. Points $B$, $D$, and $F$ are located on $AC$, $CE$, and $EA$, respectively, so that $AB=3$, $CD=4$, and $EF=5$. What is the ratio of the area of $\triangle DBF$ to that of $\triangle ACE$?",
-        [("A", r"$\frac14$"), ("B", r"$\frac13$"), ("C", r"$\frac38$"), ("D", r"$\frac12$"), ("E", r"$\frac{7}{16}$")],
-    ),
-    20: (
-        r"In $\triangle ABC$, points $D$ and $E$ lie on $BC$ and $AC$, respectively. If $AD$ and $BE$ intersect at $T$ so that $AT/DT=3$ and $BT/ET=4$, what is $CD/BD$?",
-        [("A", r"$\frac18$"), ("B", r"$\frac29$"), ("C", r"$\frac3{10}$"), ("D", r"$\frac4{11}$"), ("E", r"$\frac5{12}$")],
+    24: (
+        r"In $\triangle ABC$ we have $AB=7$, $AC=8$, and $BC=9$. Point $D$ is on the circumscribed circle of the triangle so that $AD$ bisects $\angle BAC$. What is the value of $AD/CD$?",
+        [("A", r"$\frac98$"), ("B", r"$\frac53$"), ("C", "$2$"), ("D", r"$\frac{17}{7}$"), ("E", r"$\frac52$")],
     ),
 }
 
+
 KEY_OVERRIDES = {
-    11: "Count the complement of ordered die rolls whose product is not greater than their sum.",
-    12: "Use a tangent radius to create a right triangle whose legs reveal the annulus area.",
-    13: "Use parity and small modular reasoning after scaling coin thicknesses.",
-    14: "Keep the number of blue marbles as a fixed reference amount through each stage.",
-    15: "Compare original and swapped coin values to find the number of nickels and dimes.",
-    16: "Use the equilateral triangle formed by the three small circle centers.",
-    17: "Write the reversed-digit ages algebraically.",
-    18: "Use coordinates in the 12-16-20 right triangle and compute an area by shoelace/base-height.",
-    19: "Detect the explicit odd/even pattern generated by the recurrence.",
-    20: "Apply mass points to two intersecting cevians.",
+    21: "Use inclusion-exclusion on two finite arithmetic progressions.",
+    22: "Place the right triangle on coordinates and locate the incenter and circumcenter.",
+    23: "Count colorings where one pair of opposite faces can be top and bottom.",
+    24: "Use the angle-bisector theorem, power of a point, and Ptolemy's theorem.",
 }
 
 
 SOL = {
-    11: [
-        ("Use the complement", r"There are $8\cdot8=64$ ordered outcomes. It is easier to count when the product is not greater than the sum."),
-        ("Rewrite the inequality", r"We want $ab>a+b$. This is equivalent to $(a-1)(b-1)>1$."),
-        ("Count the bad outcomes", r"If either die shows $1$, then the product is not greater than the sum; this gives $8+8-1=15$ outcomes. Among outcomes with both dice at least $2$, only $(2,2)$ fails, since $(2-1)(2-1)=1$."),
-        ("Find the favorable count", r"There are $16$ bad outcomes, so $64-16=48$ favorable outcomes."),
-        ("Answer", r"The probability is $\frac{48}{64}=\boxed{\frac34}$."),
+    21: [
+        ("Describe the two progressions", r"The first progression is $1,4,7,\ldots$, so its terms are $1+3k$ for $0\le k\le2003$. The second is $9,16,23,\ldots$, so its terms are $9+7j$ for $0\le j\le2003$."),
+        ("Use inclusion-exclusion", r"If there were no overlap, the union would have $2004+2004=4008$ numbers. We need to subtract the common terms."),
+        ("Solve for overlaps", r"A common term satisfies $1+3k=9+7j$, so $3k-7j=8$. Modulo $7$, this gives $3k\equiv1\pmod7$, so $k\equiv5\pmod7$."),
+        ("Count valid k values", r"Thus $k=5+7t$. The condition $k\le2003$ gives $5+7t\le2003$, so $t=0,1,\ldots,285$. That gives $286$ overlaps; the corresponding $j=1+3t$ values are also within range."),
+        ("Compute the union size", r"Therefore $|S|=4008-286=\boxed{3722}$."),
     ],
-    12: [
-        ("Identify the annulus area", r"The annulus area is $\pi b^2-\pi c^2=\pi(b^2-c^2)$. So we need to connect $b^2-c^2$ to the given segment lengths."),
-        ("Use the tangent radius", r"Because $XZ$ is tangent to the smaller circle at $Z$, radius $OZ$ is perpendicular to $XZ$. Thus $\triangle OZX$ is right."),
-        ("Apply the Pythagorean theorem", r"In this triangle, $OX=b$, $OZ=c$, and $XZ=a$. Therefore $a^2+c^2=b^2$, so $b^2-c^2=a^2$."),
-        ("Substitute", r"The annulus area is $\pi(b^2-c^2)=\pi a^2$."),
-        ("Answer", r"The answer is $\boxed{\pi a^2}$."),
+    22: [
+        ("Recognize the right triangle", r"A $5$-$12$-$13$ triangle is right. Put the right angle at the origin, with legs along the axes."),
+        ("Locate the circumcenter", r"For a right triangle, the circumcenter is the midpoint of the hypotenuse. With legs $5$ and $12$, this point is $(5/2,6)$."),
+        ("Locate the incenter", r"The inradius of a right triangle is $r=\frac{5+12-13}{2}=2$. With the right angle at the origin, the incenter is $(2,2)$."),
+        ("Find the distance", r"The distance between $(5/2,6)$ and $(2,2)$ is \[\sqrt{\left(\frac12\right)^2+4^2}=\sqrt{\frac14+16}=\frac{\sqrt{65}}{2}.\]"),
+        ("Answer", r"The distance is $\boxed{\frac{\sqrt{65}}{2}}$."),
     ],
-    13: [
-        ("Scale the measurements", r"Measure thickness in units of $0.05$ mm. Then penny, nickel, dime, and quarter thicknesses are $31,39,27,$ and $35$ units, and the total height is $14/0.05=280$ units."),
-        ("Use parity", r"Each coin contributes an odd number of units. Since $280$ is even, the number of coins must be even. Among the choices, that leaves $8$ or $10$."),
-        ("Rule out 10 coins", r"Ten dimes would have height $10\cdot27=270$ units. Replacing dimes by pennies, quarters, or nickels increases the sum by $4,8,$ or $12$ units. It is impossible to increase by exactly $10$ using these increments."),
-        ("Check 8 coins", r"Eight quarters have height $8\cdot35=280$ units, so $8$ coins is possible."),
-        ("Answer", r"The stack contains $\boxed{8}$ coins."),
+    23: [
+        ("Rephrase the placement condition", r"Choosing how to place the cube means choosing one pair of opposite faces to be top and bottom. The other four faces must all have the same color."),
+        ("Count one axis", r"For a fixed opposite pair chosen as top and bottom, the four remaining faces can all be red or all be blue: $2$ choices. The top and bottom faces are arbitrary: $2^2=4$ choices. So one axis gives $8$ colorings."),
+        ("Use inclusion-exclusion over three axes", r"There are $3$ opposite-face pairs, so the first count is $3\cdot8=24$. If two axes both work, then all six faces must be the same color, giving $2$ colorings. There are $3$ pairwise intersections, and the triple intersection is also those same $2$ colorings."),
+        ("Count favorable colorings", r"By inclusion-exclusion, the number of favorable colorings is $24-3\cdot2+2=20$."),
+        ("Divide by all colorings", r"There are $2^6=64$ total colorings, so the probability is $20/64=\boxed{\frac5{16}}$."),
     ],
-    14: [
-        ("Use blue marbles as the fixed quantity", r"Only red, then yellow, then blue marbles are added. Let the original number of blue marbles be $B$."),
-        ("After adding red marbles", r"When blue marbles are $1/3$ of the total, the total number of marbles is $3B$."),
-        ("After adding yellow marbles", r"When blue marbles are $1/5$ of the total, the total number of marbles is $5B$."),
-        ("Double the blue marbles", r"Finally, another $B$ blue marbles are added. The total becomes $6B$, and the number of blue marbles becomes $2B$."),
-        ("Answer", r"The final blue fraction is $\frac{2B}{6B}=\boxed{\frac13}$."),
-    ],
-    15: [
-        ("Set variables", r"Let $n$ be the number of nickels and $d$ be the number of dimes. Then $n+d=20$."),
-        ("Compare values", r"The original value is $5n+10d$ cents. If nickels and dimes are swapped, the value is $10n+5d$ cents."),
-        ("Use the 70-cent increase", r"The difference is $(10n+5d)-(5n+10d)=5(n-d)=70$, so $n-d=14$."),
-        ("Solve", r"Together with $n+d=20$, we get $n=17$ and $d=3$."),
-        ("Find original value", r"The coins are worth $17\cdot5+3\cdot10=85+30=115$ cents, or $\boxed{\$1.15}$."),
-    ],
-    16: [
-        ("Connect the centers", r"The centers of the three small circles form an equilateral triangle of side $2$, because the circles have radius $1$ and are externally tangent."),
-        ("Find the distance from the triangle center", r"The center of the large circle is the center of this equilateral triangle. The distance from the center of an equilateral triangle of side $2$ to a vertex is $\frac{2}{\sqrt3}$."),
-        ("Add one small radius", r"The large circle's radius equals the distance from its center to a small-circle center plus the small radius $1$."),
-        ("Compute", r"So the large radius is $1+\frac{2}{\sqrt3}=1+\frac{2\sqrt3}{3}=\frac{3+2\sqrt3}{3}$."),
-        ("Answer", r"The answer is $\boxed{\frac{3+2\sqrt3}{3}}$."),
-    ],
-    17: [
-        ("Write the ages as digits", r"Let Jack's age be $10a+b$ and Bill's age be $10b+a$, where the digits are reversed."),
-        ("Use the five-year condition", r"In five years, Jack will be twice Bill's age, so \[10a+b+5=2(10b+a+5).\]"),
-        ("Simplify", r"This becomes $10a+b+5=20b+2a+10$, or $8a-19b=5$."),
-        ("Find digit values", r"Trying digit values gives $b=1$ and $a=3$, so Jack is $31$ and Bill is $13$."),
-        ("Answer", r"Their age difference is $31-13=\boxed{18}$."),
-    ],
-    18: [
-        ("Place the right triangle on axes", r"Let $C=(0,0)$, $A=(12,0)$, and $E=(0,16)$. Then $\triangle ACE$ has area $\frac12\cdot12\cdot16=96$."),
-        ("Locate B, D, and F", r"Since $AB=3$, point $B=(9,0)$. Since $CD=4$, point $D=(0,4)$. Since $EF=5$ along the $20$-unit hypotenuse, $F$ is one quarter of the way from $E$ to $A$, so $F=(3,12)$."),
-        ("Compute area of DBF", r"Using the coordinate area formula for $D=(0,4)$, $B=(9,0)$, and $F=(3,12)$, \[[DBF]=\frac12|0(0-12)+9(12-4)+3(4-0)|=42.\]"),
-        ("Form the ratio", r"The ratio is $42/96=7/16$."),
-        ("Answer", r"The answer is $\boxed{\frac{7}{16}}$."),
-    ],
-    19: [
-        ("Generate a few terms", r"The recurrence gives $2001,2002,2003,2000,2005,1998,2007,1996,\ldots$. The odd-indexed terms increase by $2$, while the even-indexed terms decrease by $2$."),
-        ("Write the even-term pattern", r"For even index $2k$, the term is $2004-2k$. This fits $a_2=2002$, $a_4=2000$, and $a_6=1998$."),
-        ("Use the desired index", r"The $2004$th term has $2k=2004$, so $k=1002$."),
-        ("Compute", r"Thus $a_{2004}=2004-2(1002)=0$."),
-        ("Answer", r"The answer is $\boxed{0}$."),
-    ],
-    20: [
-        ("Use mass points", r"Mass points are useful because the problem gives ratios along two cevians through the same point $T$."),
-        ("Translate the first ratio", r"Since $AT/DT=3$, the mass at $D$ is $3$ times the mass at $A$. Let $m_A=1$, so $m_D=3$."),
-        ("Translate the second ratio", r"Since $BT/ET=4$, the mass at $E$ is $4$ times the mass at $B$."),
-        ("Use combined masses", r"Because $D$ lies on $BC$, $m_D=m_B+m_C=3$. Because $E$ lies on $AC$, $m_E=m_A+m_C=1+m_C=4m_B$. Solving $m_B+m_C=3$ and $1+m_C=4m_B$ gives $m_B=\frac45$ and $m_C=\frac{11}{5}$."),
-        ("Convert masses to side ratio", r"On segment $BC$, lengths are inversely proportional to endpoint masses, so $BD/DC=m_C/m_B=11/4$. Therefore $CD/BD=\boxed{\frac4{11}}$."),
+    24: [
+        ("Use the angle bisector point on BC", r"Let the angle bisector from $A$ meet $BC$ at $E$. By the angle-bisector theorem, $BE:EC=AB:AC=7:8$. Since $BC=9$, we get $BE=21/5$ and $EC=24/5$."),
+        ("Find AE", r"The angle-bisector length formula gives \[AE^2=AB\cdot AC\left(1-\frac{BC^2}{(AB+AC)^2}\right)=56\left(1-\frac{81}{225}\right)=\frac{896}{25}.\] Thus $AE=\frac{8\sqrt{14}}5$."),
+        ("Use power of a point", r"Since chords $AD$ and $BC$ intersect at $E$, we have $EA\cdot ED=EB\cdot EC$. Therefore \[ED=\frac{(21/5)(24/5)}{8\sqrt{14}/5}=\frac{9\sqrt{14}}{10}.\]"),
+        ("Find AD", r"Then $AD=AE+ED=\frac{8\sqrt{14}}5+\frac{9\sqrt{14}}{10}=\frac{5\sqrt{14}}2$."),
+        ("Use Ptolemy", r"Because $AD$ bisects $\angle BAC$, arcs $BD$ and $DC$ are equal, so chords $BD$ and $CD$ are equal. Let each be $x$. Ptolemy on cyclic quadrilateral $ABDC$ gives $AC\cdot BD+AB\cdot CD=AD\cdot BC$, so $8x+7x=9AD$. Hence $x=3AD/5$, and $AD/CD=AD/x=\boxed{\frac53}$."),
     ],
 }
 
@@ -185,7 +128,7 @@ def render(row):
     ans, val = ANS[n]
     tags = "".join(f'<span class="badge">{esc(t)}</span>' for t in (row.get("tags") or "").split(";") if t)
     notes = row.get("notes") or ""
-    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in {20}) else notes
+    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in set()) else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
         f'<li class="choice {"correct" if k == ans else ""}"><span class="choice-key">{esc(k)}</span><span>{esc(v, False)}</span></li>'
@@ -281,7 +224,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {20},
+                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in set(),
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -339,7 +282,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批完成 2004 AMC 10B Problems 11-20，无跳过题。\n"
+        + "本批完成 2004 AMC 10B Problems 21-24；Problem 25 因图形/OCR 缺失跳过。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",

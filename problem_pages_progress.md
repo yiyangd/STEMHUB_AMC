@@ -268,3 +268,19 @@
 - Pushed: pending
 - Next batch should start from: 2004 AMC 10B Problem 21
 - Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.
+
+## Batch 18: 2004 AMC 10B Problem 21-25
+
+- Start time: 2026-06-30T14:58:17-07:00
+- End time: 2026-06-30T14:58:17-07:00
+- Processed contest: AMC 10
+- Processed range: 2004 AMC 10B Problem 21-25
+- Generated count: 4
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2004 AMC 10B Problem 25: shaded two-circle/lens region requires the original figure and choices are missing from OCR.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2005 AMC 10A Problem 1
+- Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.
