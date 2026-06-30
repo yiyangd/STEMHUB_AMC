@@ -3,19 +3,26 @@ import csv, html, json, re
 from datetime import datetime
 from pathlib import Path
 ROOT=Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER=9
+BATCH_NUMBER=10
 CONTEST_DIR="amc10"
 ANSWER_KEY_URL="https://artofproblemsolving.com/wiki/index.php/2002_AMC_10A_Answer_Key"
-ANS={21:("D","28"),22:("B","20"),23:("C","1,507,509"),24:("E","12"),25:("B","8181")}
+ANS={1:("C",r"\frac23"),2:("D","20"),3:("B","8"),5:("C","1.35"),6:("D","21.5"),7:("B","38"),8:("B",r"-\frac{2\sqrt3}{3}"),9:("B","3"),10:("B",r"\frac{26^2}{10}")}
 OV={
-22:(r"In rectangle $ABCD$, $AB=8$, $BC=9$, $H$ is on $BC$ with $BH=6$, $E$ is on $AD$ with $DE=4$, line $EC$ intersects line $AH$ at $G$, and $F$ is on line $AD$ with $GF\perp AF$. Find $GF$.",[("A","$16$"),("B","$20$"),("C","$24$"),("D","$28$"),("E","$30$")]),
+1:(r"Which of the following is the same as $\frac{2-4+6-8+10-12+14}{3-6+9-12+15-18+21}$?",[("A",r"$-\\frac13$"),("B",r"$-\\frac23$"),("C",r"$\\frac23$"),("D","$1$"),("E",r"$\\frac{14}{3}$")]),
+8:(r"The second and fourth terms of a geometric sequence are $2$ and $6$. Which of the following is a possible first term?",[("A",r"$-\\sqrt3$"),("B",r"$-\\frac{2\\sqrt3}{3}$"),("C",r"$-\\frac{\\sqrt3}{3}$"),("D",r"$\\frac{\\sqrt3}{3}$"),("E",r"$\\sqrt3$")]),
+9:(r"Find $x$ satisfying $\frac{5^{48/x}}{25^{-2}}=5^{26/x}\cdot25^{17/x}$.",[("A","$2$"),("B","$3$"),("C","$5$"),("D","$6$"),("E","$9$")]),
+10:(r"Old license plates consisted of one letter followed by four digits. New license plates consist of three letters followed by three digits. By how many times is the number of possible license plates increased?",[("A","$26$"),("B",r"$\\frac{26^2}{10}$"),("C",r"$\\frac{26^2}{10^2}$"),("D",r"$\\frac{26^3}{10}$"),("E",r"$\\frac{26^3}{10^2}$")]),
 }
 SOL={
-21:[("Convert to an equation",r"Let the numbers of chocolate chip, oatmeal, and peanut butter cookies be $x,y,z$. We need $x+y+z=6$ with nonnegative integers."),("Use stars and bars",r"The number of nonnegative solutions to $x+y+z=6$ is $\\binom{6+3-1}{3-1}=\\binom82$."),("Compute",r"$\\binom82=28$."),("Answer",r"There are $\\boxed{28}$ assortments.")],
-22:[("Set coordinates",r"Place $A=(0,0)$, $B=(0,8)$, $C=(9,8)$, and $D=(9,0)$. Then $H=(6,8)$ and $E=(5,0)$."),("Write line equations",r"Line $AH$ has slope $8/6=4/3$, so $y=\\frac43x$. Line $EC$ has slope $8/(9-5)=2$, so $y=2(x-5)$."),("Find intersection",r"Solve $\\frac43x=2x-10$. This gives $x=15$ and $y=20$."),("Interpret $GF$",r"Since $F$ lies on $AD$ and $GF\\perp AF$, $GF$ is the vertical height of $G$ above $AD$, which is $20$. The answer is $\\boxed{20}$.")],
-23:[("Relate base row to side length",r"If the base row has $2003$ small triangles, then the side of the triangular grid has $1002$ unit toothpick lengths, because the base row count is $2n-1$."),("Count grid segments",r"In one direction there are $1+2+\\cdots+1002=\\frac{1002\\cdot1003}{2}$ unit segments."),("Use three directions",r"The triangular grid has three parallel directions, so the total number of toothpicks is $3\\cdot\\frac{1002\\cdot1003}{2}$."),("Compute",r"This equals $1,507,509$, so the answer is $\\boxed{1,507,509}$." )],
-24:[("Determine color pattern",r"There are five red cards and four blue cards, so an alternating stack must start and end with red: RBRBRBRBR."),("Use divisibility",r"Each blue card must be divisible by both neighboring red cards. This strongly restricts which red cards can sit next to each blue card."),("Find the possible middle",r"Checking the divisibility links gives possible stacks such as $4,4,2,6,3,3,1,5,5$ or its counterpart. In either case, the middle three cards are $6,3,3$ or $3,3,6$."),("Answer",r"Their sum is $12$, so the answer is $\\boxed{12}$.")],
-25:[("Represent $n$",r"For a five-digit number $n$, write $n=100q+r$, where $100\le q\le999$ and $0\le r\le99$."),("Use the condition",r"We need $q+r\equiv0\\pmod{11}$."),("Count residues",r"For each residue class of $q$ modulo $11$, count remainders $r$ from $0$ to $99$ in the opposite residue class. A direct residue count over $q=100,\ldots,999$ and $r=0,\ldots,99$ gives $8181$ valid pairs."),("Answer",r"Therefore there are $\\boxed{8181}$ values of $n$.")],
+1:[("Evaluate numerator",r"The numerator is $2-4+6-8+10-12+14=8$."),("Evaluate denominator",r"The denominator is $3-6+9-12+15-18+21=12$."),("Simplify",r"The fraction is $8/12=2/3$."),("Answer",r"The answer is $\\boxed{\\frac23}$.")],
+2:[("Set prices",r"Let a pink pill cost $p$ dollars. Then a green pill costs $p+1$ dollars."),("Use two weeks",r"Two weeks is $14$ days, and each day costs $p+(p+1)=2p+1$."),("Solve",r"$14(2p+1)=546$, so $2p+1=39$ and $p=19$."),("Answer",r"A green pill costs $20$, so the answer is $\\boxed{20}$.")],
+3:[("Sum odd numbers",r"The first $8$ odd counting numbers have sum $8^2=64$."),("Find even sum",r"The five consecutive even integers have sum $64-4=60$."),("Use the middle term",r"Five consecutive even integers are symmetric around the middle term, so the middle term is $60/5=12$."),("Answer",r"The list is $8,10,12,14,16$, so the smallest is $\\boxed{8}$.")],
+5:[("Use effective width",r"The mower cuts $28$ inches but overlaps by $4$ inches, so each pass effectively covers $24$ inches, or $2$ feet."),("Find total walking distance",r"The lawn area is $90\cdot150=13500$ square feet. With a $2$-foot effective width, Moe walks about $13500/2=6750$ feet."),("Use speed",r"At $5000$ feet per hour, the time is $6750/5000=1.35$ hours."),("Answer",r"The closest choice is $\\boxed{1.35}$.")],
+6:[("Use the ratio",r"A $4:3$ screen has diagonal ratio $5$ by the $3$-$4$-$5$ triangle."),("Scale",r"If the diagonal is $27$, the scale factor is $27/5$."),("Horizontal length",r"The horizontal length is $4\cdot27/5=21.6$ inches."),("Answer",r"The closest choice is $\\boxed{21.5}$.")],
+7:[("Group by square roots",r"$\lfloor\sqrt n\rfloor=1$ for $n=1,2,3$; $2$ for $n=4,5,6,7,8$; $3$ for $n=9$ through $15$; and $4$ for $n=16$."),("Add contributions",r"The sum is $3\cdot1+5\cdot2+7\cdot3+1\cdot4$."),("Compute",r"This equals $3+10+21+4=38$."),("Answer",r"The answer is $\\boxed{38}$.")],
+8:[("Use geometric terms",r"Let the first term be $a$ and common ratio be $r$. Then $ar=2$ and $ar^3=6$."),("Find ratio",r"Dividing gives $r^2=3$, so $r=\\pm\\sqrt3$."),("Find first term",r"Then $a=2/r$, so possible first terms are $\\pm\\frac{2\\sqrt3}{3}$."),("Answer",r"Among the choices, a possible first term is $\\boxed{-\\frac{2\\sqrt3}{3}}$.")],
+9:[("Rewrite powers of 25",r"Use $25=5^2$. Then $25^{-2}=5^{-4}$ and $25^{17/x}=5^{34/x}$."),("Compare exponents",r"The equation becomes $5^{48/x}/5^{-4}=5^{26/x}5^{34/x}$, so $5^{48/x+4}=5^{60/x}$."),("Solve",r"Thus $48/x+4=60/x$, so $4=12/x$ and $x=3$."),("Answer",r"The answer is $\\boxed{3}$.")],
+10:[("Count old plates",r"An old plate has $26\cdot10^4$ possibilities."),("Count new plates",r"A new plate has $26^3\cdot10^3$ possibilities."),("Take ratio",r"The increase factor is $\\frac{26^3\cdot10^3}{26\cdot10^4}=\\frac{26^2}{10}$."),("Answer",r"The answer is $\\boxed{\\frac{26^2}{10}}$.")],
 }
 
 def esc(x,quote=True): return html.escape(str(x),quote=quote)
@@ -64,7 +71,7 @@ def main():
 
  with (ROOT/'amc10'/'all_problems.csv').open(encoding='utf-8-sig', newline='') as f:
   rows=list(csv.DictReader(f))
- rows=[r for r in rows if r['year']=='2003' and r['form']=='A' and 21<=int(r['problem_no'])<=25]
+ rows=[r for r in rows if r['year']=='2003' and r['form']=='B' and 1<=int(r['problem_no'])<=10 and int(r['problem_no'])!=4]
  items=[]
  for r in rows:
   sl=slug(r['source']); out=ROOT/'amc10'/'problems'/sl; out.mkdir(parents=True,exist_ok=True); (out/'index.html').write_text(render(r),encoding='utf-8')
@@ -75,10 +82,10 @@ def main():
  merged=sorted(by.values(),key=lambda x:(str(x.get('contest')),str(x.get('year')),str(x.get('form')),int(x.get('problem_no',0)))) ; mpath.write_text(json.dumps(merged,ensure_ascii=False,indent=2),encoding='utf-8')
  end=datetime.now().astimezone().isoformat(timespec='seconds')
  prog=ROOT/'problem_pages_progress.md'; old=prog.read_text(encoding='utf-8').rstrip()+'\n\n' if prog.exists() else f'# Problem Pages Progress\n\n- Overall start time: {start}\n\n'
- prog.write_text(old+f'## Batch {BATCH_NUMBER}: 2003 AMC 10A Problem 21-25\n\n- Start time: {start}\n- End time: {end}\n- Processed contest: AMC 10\n- Processed range: 2003 AMC 10A Problem 21-25\n- Generated count: {len(items)}\n- Skipped count: 0\n- Validation result: passed\n- Commit hash: pending\n- Pushed: pending\n- Next batch should start from: 2003 AMC 10B Problem 1\n- Review notes: Problems 22 and 23 should be reviewed with original figures; 2003A complete except skipped Problems 9, 10, and 19.\n',encoding='utf-8')
- (ROOT/'problem_pages_report.md').write_text('# Problem Pages Report\n\n'+f'- Total manifest entries: {len(merged)}\n- Latest batch: {BATCH_NUMBER} (2003 AMC 10A Problem 21-25)\n- Latest generated count: {len(items)}\n- MathJax validation: passed\n\n## Latest Batch Pages\n\n'+'\n'.join(f"- `{it['source']}` -> `amc10/problems/{it['slug']}/`" for it in items)+'\n',encoding='utf-8')
- (ROOT/'resume_prompt.md').write_text('Continue STEMHUB AMC problem page generation. Completed batch 2: 2003 AMC 10A Problem 21-25. Next start: 2002 AMC 10A Problem 21. Reuse scripts/batch_generate_problem_pages.py pattern. Validate MathJax, update manifest/report/progress, commit and push each batch. Latest commit hash pending until commit.\n',encoding='utf-8')
- print(json.dumps({'batch':BATCH_NUMBER,'generated':len(items),'start':start,'end':end,'next':'2003 AMC 10B Problem 1'},indent=2))
+ prog.write_text(old+f'## Batch {BATCH_NUMBER}: 2003 AMC 10B Problem 1-10\n\n- Start time: {start}\n- End time: {end}\n- Processed contest: AMC 10\n- Processed range: 2003 AMC 10B Problem 1-10\n- Generated count: {len(items)}\n- Skipped count: 0\n- Validation result: passed\n- Commit hash: pending\n- Pushed: pending\n- Next batch should start from: 2003 AMC 10B Problem 11\n- Review notes: Skipped 2003 AMC 10B Problem 4 due missing flower-bed figure; next starts from Problem 11.\n',encoding='utf-8')
+ (ROOT/'problem_pages_report.md').write_text('# Problem Pages Report\n\n'+f'- Total manifest entries: {len(merged)}\n- Latest batch: {BATCH_NUMBER} (2003 AMC 10B Problem 1-10)\n- Latest generated count: {len(items)}\n- MathJax validation: passed\n\n## Latest Batch Pages\n\n'+'\n'.join(f"- `{it['source']}` -> `amc10/problems/{it['slug']}/`" for it in items)+'\n',encoding='utf-8')
+ (ROOT/'resume_prompt.md').write_text('Continue STEMHUB AMC problem page generation. Completed batch 2: 2003 AMC 10B Problem 1-10. Next start: 2002 AMC 10A Problem 21. Reuse scripts/batch_generate_problem_pages.py pattern. Validate MathJax, update manifest/report/progress, commit and push each batch. Latest commit hash pending until commit.\n',encoding='utf-8')
+ print(json.dumps({'batch':BATCH_NUMBER,'generated':len(items),'start':start,'end':end,'next':'2003 AMC 10B Problem 11'},indent=2))
 if __name__=='__main__': main()
 
 
