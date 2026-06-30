@@ -316,3 +316,19 @@
 - Pushed: pending
 - Next batch should start from: 2005 AMC 10A Problem 11
 - Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.
+
+## Batch 21: 2005 AMC 10A Problem 11-20
+
+- Start time: 2026-06-30T15:05:13-07:00
+- End time: 2026-06-30T15:05:13-07:00
+- Processed contest: AMC 10
+- Processed range: 2005 AMC 10A Problem 11-20
+- Generated count: 6
+- Updated existing count: 0
+- Skipped count: 4
+- Skipped reasons: 2005 AMC 10A Problem 12: trefoil area problem depends on the original diagram.; 2005 AMC 10A Problem 17: five-sided star arrangement depends on the original diagram.; 2005 AMC 10A Problem 19: rotated-square placement depends on the original diagram.; 2005 AMC 10A Problem 20: equiangular octagon side lengths are OCR-ambiguous.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2005 AMC 10A Problem 21
+- Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.

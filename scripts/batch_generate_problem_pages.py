@@ -8,68 +8,92 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 20
+BATCH_NUMBER = 21
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {6, 7, 9, 10}
-SKIPPED = ["2005 AMC 10A Problem 8: inner rotated square problem depends on the original diagram; OCR is not sufficient for a reliable teaching page."]
-BATCH_LABEL = "2005 AMC 10A Problem 6-10"
-NEXT_START = "2005 AMC 10A Problem 11"
+TARGET_NUMBERS = {11, 13, 14, 15, 16, 18}
+SKIPPED = ["2005 AMC 10A Problem 12: trefoil area problem depends on the original diagram.", "2005 AMC 10A Problem 17: five-sided star arrangement depends on the original diagram.", "2005 AMC 10A Problem 19: rotated-square placement depends on the original diagram.", "2005 AMC 10A Problem 20: equiangular octagon side lengths are OCR-ambiguous."]
+BATCH_LABEL = "2005 AMC 10A Problem 11-20"
+NEXT_START = "2005 AMC 10A Problem 21"
 
 ANS = {
-    6: ("B", "24"),
-    7: ("B", "5"),
-    9: ("B", r"\frac{1}{10}"),
-    10: ("A", "-16"),
+    11: ("B", "4"),
+    13: ("E", "125"),
+    14: ("E", "45"),
+    15: ("E", "6"),
+    16: ("D", "10"),
+    18: ("A", r"\frac{1}{5}"),
 }
 
 
 OV = {
-    9: (
-        r"Three tiles are marked $X$ and two other tiles are marked $O$. The five tiles are randomly arranged in a row. What is the probability that the arrangement reads $XOXOX$?",
-        [("A", r"$\frac1{12}$"), ("B", r"$\frac1{10}$"), ("C", r"$\frac16$"), ("D", r"$\frac14$"), ("E", r"$\frac13$")],
+    11: (
+        r"A wooden cube $n$ units on a side is painted red on all six faces and then cut into $n^3$ unit cubes. Exactly one-fourth of the total number of faces of the unit cubes are red. What is $n$?",
+        [("A", "$3$"), ("B", "$4$"), ("C", "$5$"), ("D", "$6$"), ("E", "$7$")],
     ),
-    10: (
-        r"There are two values of $a$ for which the equation $4x^2+ax+8x+9=0$ has only one solution for $x$. What is the sum of these values of $a$?",
-        [("A", "$-16$"), ("B", "$-8$"), ("C", "$0$"), ("D", "$8$"), ("E", "$20$")],
+    13: (
+        r"How many positive integers $n$ satisfy $(130n)^{50}>n^{100}>2^{200}$?",
+        [("A", "$0$"), ("B", "$7$"), ("C", "$12$"), ("D", "$65$"), ("E", "$125$")],
+    ),
+    18: (
+        r"Team A and team B play a series. The first team to win three games wins the series. Each team is equally likely to win each game, there are no ties, and the outcomes of the individual games are independent. If team B wins the second game and team A wins the series, what is the probability that team B wins the first game?",
+        [("A", r"$\frac15$"), ("B", r"$\frac14$"), ("C", r"$\frac13$"), ("D", r"$\frac12$"), ("E", r"$\frac23$")],
     ),
 }
 
 
 KEY_OVERRIDES = {
-    6: "Use a weighted average by converting averages back into sums.",
-    7: "Compare distances using time and rate ratios.",
-    9: "Count distinct arrangements of repeated tiles.",
-    10: "Use the discriminant condition for a quadratic to have one solution.",
+    11: "Compare the number of painted unit-square faces with all unit-cube faces.",
+    13: "Take appropriate roots to convert the exponential inequality into bounds on n.",
+    14: "Count digit pairs whose first and last digits have the same parity.",
+    15: "Factor the product and count cube divisors by prime exponents.",
+    16: "Use digit algebra to simplify the subtraction of digit sum from a two-digit number.",
+    18: "Use conditional probability by splitting on whether team B wins the first game.",
 }
 
 
 SOL = {
-    6: [
-        ("Convert averages to sums", r"The first $20$ numbers have average $30$, so their sum is $20\cdot30=600$. The other $30$ numbers have average $20$, so their sum is $30\cdot20=600$."),
-        ("Add the groups", r"Together the $50$ numbers have total sum $600+600=1200$."),
-        ("Find the combined average", r"The average of all $50$ numbers is $1200/50=24$."),
-        ("Answer", r"The answer is $\boxed{24}$."),
+    11: [
+        ("Count red faces after cutting", r"Painting the outside of the large cube creates $6n^2$ red unit-square faces, because each of the $6$ large faces is an $n\times n$ grid."),
+        ("Count all small-cube faces", r"There are $n^3$ unit cubes, and each has $6$ faces, so there are $6n^3$ small-cube faces total."),
+        ("Use the one-fourth condition", r"The problem says $6n^2$ is one-fourth of $6n^3$: \[6n^2=\frac14\cdot6n^3.\]"),
+        ("Solve", r"Cancel $6n^2$ from both sides to get $1=n/4$, so $n=4$."),
+        ("Answer", r"The answer is $\boxed{4}$."),
     ],
-    7: [
-        ("Compare their travel amounts", r"Let Mike's riding time be $t$ and his rate be $r$. Then Mike rides distance $rt$."),
-        ("Use Josh's time and rate", r"Josh rides for twice as long, $2t$, and at four-fifths of Mike's rate, $\frac45r$. So Josh rides $2t\cdot\frac45r=\frac85rt$."),
-        ("Use the total distance", r"Together they cover the $13$ miles between their houses: \[rt+\frac85rt=13.\]"),
-        ("Solve for Mike's distance", r"This gives $\frac{13}{5}rt=13$, so $rt=5$."),
-        ("Answer", r"Mike had ridden $\boxed{5}$ miles when they met."),
+    13: [
+        ("Simplify the right inequality", r"Since $2^{200}=(2^2)^{100}=4^{100}$, the condition $n^{100}>2^{200}$ means $n>4$."),
+        ("Simplify the left inequality", r"The inequality $(130n)^{50}>n^{100}$ has positive quantities, so take the $50$th root: $130n>n^2$. Since $n>0$, this becomes $n<130$."),
+        ("Combine bounds", r"Thus $n$ must be a positive integer with $4<n<130$."),
+        ("Count", r"The possible values are $5,6,\ldots,129$, giving $129-5+1=125$ integers."),
+        ("Answer", r"The answer is $\boxed{125}$."),
     ],
-    9: [
-        ("Count all distinct arrangements", r"The tiles include three identical $X$ tiles and two identical $O$ tiles. The number of distinct rows is \[\frac{5!}{3!2!}=10.\]"),
-        ("Count favorable arrangements", r"Only one arrangement reads exactly $XOXOX$."),
-        ("Form the probability", r"Since each distinct arrangement is equally likely, the probability is $1/10$."),
-        ("Answer", r"The answer is $\boxed{\frac1{10}}$."),
+    14: [
+        ("Write the digit condition", r"Let the three-digit number have digits $a,b,c$, where $a$ is from $1$ to $9$ and $c$ is from $0$ to $9$. The condition is $b=\frac{a+c}{2}$."),
+        ("Decide when b is a digit", r"The average is an integer exactly when $a$ and $c$ have the same parity. The resulting $b$ is automatically between $0$ and $9$."),
+        ("Count same-parity pairs", r"There are $5$ odd choices and $4$ even choices for $a$. There are $5$ odd choices and $5$ even choices for $c$."),
+        ("Add the cases", r"The count is $5\cdot5+4\cdot5=25+20=45$."),
+        ("Answer", r"There are $\boxed{45}$ such numbers."),
     ],
-    10: [
-        ("Combine like terms", r"The equation is $4x^2+(a+8)x+9=0$. It has only one solution exactly when the quadratic has discriminant $0$."),
-        ("Set the discriminant to zero", r"The discriminant is \[(a+8)^2-4(4)(9)=(a+8)^2-144.\] Set this equal to $0$."),
-        ("Solve for a", r"We get $(a+8)^2=144$, so $a+8=12$ or $a+8=-12$. Thus $a=4$ or $a=-20$."),
-        ("Add the two values", r"Their sum is $4+(-20)=-16$."),
-        ("Answer", r"The answer is $\boxed{-16}$."),
+    15: [
+        ("Factor the product", r"We have $3!\cdot5!\cdot7!$. The prime exponents are $2^8\cdot3^4\cdot5^2\cdot7^1$."),
+        ("Understand cube divisors", r"A positive integer cube has prime exponents that are multiples of $3$. For each prime, choose an exponent $0,3,6,\ldots$ not exceeding the exponent in the product."),
+        ("Count choices", r"For prime $2$, the choices are $0,3,6$; for prime $3$, the choices are $0,3$; for primes $5$ and $7$, only $0$ is possible."),
+        ("Multiply", r"The number of cube divisors is $3\cdot2\cdot1\cdot1=6$."),
+        ("Answer", r"The answer is $\boxed{6}$."),
+    ],
+    16: [
+        ("Write the number by digits", r"Let the two-digit number be $10a+b$, where $a$ is from $1$ to $9$ and $b$ is from $0$ to $9$."),
+        ("Subtract the digit sum", r"Subtracting the sum of the digits gives $(10a+b)-(a+b)=9a$. Notice that the units digit depends only on the tens digit $a$."),
+        ("Find the needed tens digit", r"We need the units digit of $9a$ to be $6$. Testing $a=1,2,\ldots,9$, this happens only when $a=4$, since $9\cdot4=36$."),
+        ("Count possible units digits", r"Once $a=4$, the original units digit $b$ can be any of $0,1,\ldots,9$. That gives $10$ numbers."),
+        ("Answer", r"The answer is $\boxed{10}$."),
+    ],
+    18: [
+        ("Name the condition", r"We are told that team B wins game 2 and team A wins the series. We want the conditional probability that B also wins game 1."),
+        ("Case 1: B wins game 1", r"If B wins games 1 and 2, then B leads $2$-$0$. For A to win the series, A must win the next three games. This has probability $(1/2)^3=1/8$, and including B winning game 1 gives joint probability $\frac12\cdot\frac18=\frac1{16}$."),
+        ("Case 2: A wins game 1", r"If A wins game 1 and B wins game 2, the series is tied $1$-$1$. From there, A needs to win two games before B wins two games. This probability is $1/2$, so the joint probability for this case is $\frac12\cdot\frac12=\frac14$."),
+        ("Form the conditional probability", r"Among all cases where B wins game 2 and A wins the series, the total probability is $\frac1{16}+\frac14=\frac5{16}$. The part where B wins game 1 is $\frac1{16}$."),
+        ("Answer", r"The desired probability is $\frac{1/16}{5/16}=\boxed{\frac15}$."),
     ],
 }
 
@@ -272,7 +296,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批完成 2005 AMC 10A Problems 6、7、9、10；Problem 8 因图形/OCR 不足跳过。\n"
+        + "本批完成 2005 AMC 10A Problems 11、13、14、15、16、18；Problems 12、17、19、20 因图形或 OCR 不足跳过。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",
