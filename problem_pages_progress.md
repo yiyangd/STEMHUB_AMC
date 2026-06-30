@@ -156,3 +156,19 @@
 - Pushed: pending
 - Next batch should start from: 2003 AMC 10B Problem 11
 - Review notes: Batch 10 generated Problems 1-3 and 5-10; next starts from Problem 11.
+
+## Batch 11: 2003 AMC 10B Problem 11-20
+
+- Start time: 2026-06-30T14:31:45-07:00
+- End time: 2026-06-30T14:31:46-07:00
+- Processed contest: AMC 10
+- Processed range: 2003 AMC 10B Problem 11-20
+- Generated count: 9
+- Updated existing count: 1
+- Skipped count: 1
+- Skipped reasons: 2003 AMC 10B Problem 19: semicircle shaded-region problem depends on the original diagram and OCR-corrupted choices.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2003 AMC 10B Problem 21
+- Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.
