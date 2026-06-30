@@ -1,22 +1,20 @@
 # Problem Pages Report
 
-- Total manifest entries: 123
-- Latest batch: 14 (2004 AMC 10A Problem 11-20)
-- Latest new generated count: 10
+- Total manifest entries: 126
+- Latest batch: 15 (2004 AMC 10A Problem 21-25)
+- Latest new generated count: 3
 - Latest updated existing count: 0
-- Latest skipped count: 0
+- Latest skipped count: 2
 - MathJax validation: passed
 - Answer verification source: AoPS 2003 AMC 10B Answer Key
 
 ## Latest Batch Pages
 
-- `2004 AMC 10A Problem 11` -> `amc10/problems/2004-amc-10a-problem-11/`
-- `2004 AMC 10A Problem 12` -> `amc10/problems/2004-amc-10a-problem-12/`
-- `2004 AMC 10A Problem 13` -> `amc10/problems/2004-amc-10a-problem-13/`
-- `2004 AMC 10A Problem 14` -> `amc10/problems/2004-amc-10a-problem-14/`
-- `2004 AMC 10A Problem 15` -> `amc10/problems/2004-amc-10a-problem-15/`
-- `2004 AMC 10A Problem 16` -> `amc10/problems/2004-amc-10a-problem-16/`
-- `2004 AMC 10A Problem 17` -> `amc10/problems/2004-amc-10a-problem-17/`
-- `2004 AMC 10A Problem 18` -> `amc10/problems/2004-amc-10a-problem-18/`
-- `2004 AMC 10A Problem 19` -> `amc10/problems/2004-amc-10a-problem-19/`
-- `2004 AMC 10A Problem 20` -> `amc10/problems/2004-amc-10a-problem-20/`
+- `2004 AMC 10A Problem 22` -> `amc10/problems/2004-amc-10a-problem-22/`
+- `2004 AMC 10A Problem 23` -> `amc10/problems/2004-amc-10a-problem-23/`
+- `2004 AMC 10A Problem 25` -> `amc10/problems/2004-amc-10a-problem-25/`
+
+## Skipped in latest batch
+
+- 2004 AMC 10A Problem 21: shaded concentric-circle region depends on the original diagram.
+- 2004 AMC 10A Problem 24: CSV/PDF text is truncated before the recurrence conditions.

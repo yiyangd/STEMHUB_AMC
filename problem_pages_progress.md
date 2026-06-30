@@ -220,3 +220,19 @@
 - Pushed: pending
 - Next batch should start from: 2004 AMC 10A Problem 21
 - Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.
+
+## Batch 15: 2004 AMC 10A Problem 21-25
+
+- Start time: 2026-06-30T14:48:32-07:00
+- End time: 2026-06-30T14:48:33-07:00
+- Processed contest: AMC 10
+- Processed range: 2004 AMC 10A Problem 21-25
+- Generated count: 3
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2004 AMC 10A Problem 21: shaded concentric-circle region depends on the original diagram.; 2004 AMC 10A Problem 24: CSV/PDF text is truncated before the recurrence conditions.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2004 AMC 10B Problem 1
+- Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.
