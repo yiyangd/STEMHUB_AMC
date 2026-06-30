@@ -8,137 +8,94 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 11
+BATCH_NUMBER = 12
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2003_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {10, 11, 12, 13, 14, 15, 16, 17, 18, 20}
-SKIPPED = ["2003 AMC 10B Problem 19: semicircle shaded-region problem depends on the original diagram and OCR-corrupted choices."]
-BATCH_LABEL = "2003 AMC 10B Problem 11-20"
-NEXT_START = "2003 AMC 10B Problem 21"
+TARGET_NUMBERS = {21, 22, 23, 24, 25}
+SKIPPED = []
+BATCH_LABEL = "2003 AMC 10B Problem 21-25"
+NEXT_START = "2004 AMC 10A Problem 1"
 
 ANS = {
-    10: ("C", r"\frac{26^2}{10}"),
-    11: ("A", "2"),
-    12: ("C", "400"),
-    13: ("E", "10"),
-    14: ("D", "407"),
-    15: ("E", "divisible by 11"),
-    16: ("E", "8"),
-    17: ("B", "3:1"),
-    18: ("D", "15"),
-    20: ("D", r"\frac{25}{2}"),
+    21: ("C", r"\frac{9}{32}"),
+    22: ("B", "March 9"),
+    23: ("D", r"\frac{1}{2}"),
+    24: ("E", r"\frac{123}{40}"),
+    25: ("B", "30"),
 }
+
 
 OV = {
-    10: (
-        "Nebraska changed its license plate scheme. Each old license plate consisted of a letter followed by four digits. Each new license plate consists of three letters followed by three digits. By how many times has the number of possible license plates increased?",
-        [("A", r"$\frac{26}{10}$"), ("B", r"$\frac{26^2}{10^2}$"), ("C", r"$\frac{26^2}{10}$"), ("D", r"$\frac{26^3}{10^3}$"), ("E", r"$\frac{26^3}{10^2}$")],
+    21: (
+        r"A bag contains two red beads and two green beads. You reach into the bag and pull out a bead, replacing it with a red bead regardless of the color you pulled out. What is the probability that all beads in the bag are red after three such replacements?",
+        [("A", r"$\frac18$"), ("B", r"$\frac{5}{32}$"), ("C", r"$\frac{9}{32}$"), ("D", r"$\frac38$"), ("E", r"$\frac{7}{16}$")],
     ),
-    11: (
-        r"A line with slope $3$ intersects a line with slope $5$ at the point $(10,15)$. What is the distance between the $x$-intercepts of these two lines?",
-        [("A", "$2$"), ("B", "$5$"), ("C", "$7$"), ("D", "$12$"), ("E", "$20$")],
+    22: (
+        r"A clock chimes once at $30$ minutes past each hour and chimes on the hour according to the hour. For example, at $1$ PM there is one chime and at noon and midnight there are twelve chimes. Starting at $11{:}15$ AM on February $26$, $2003$, on what date will the $2003$rd chime occur?",
+        [("A", "March 8"), ("B", "March 9"), ("C", "March 10"), ("D", "March 20"), ("E", "March 21")],
     ),
-    12: (
-        r"Al, Betty, and Clare split $\$1000$ among them to be invested in different ways. Each begins with a different amount. At the end of one year they have a total of $\$1500$. Betty and Clare have both doubled their money, whereas Al has managed to lose $\$100$. What was Al's original portion?",
-        [("A", r"$\$250$"), ("B", r"$\$350$"), ("C", r"$\$400$"), ("D", r"$\$450$"), ("E", r"$\$500$")],
+    23: (
+        r"A regular octagon $ABCDEFGH$ has area $1$ square unit. What is the area of rectangle $ABEF$?",
+        [("A", r"$1-\frac{\sqrt2}{2}$"), ("B", r"$\frac{\sqrt2}{4}$"), ("C", r"$\frac{\sqrt2-1}{2}$"), ("D", r"$\frac12$"), ("E", r"$\frac{1+\sqrt2}{4}$")],
     ),
-    14: (
-        r"Given that $3^8\cdot 5^2=a^b$, where both $a$ and $b$ are positive integers, find the smallest possible value for $a+b$.",
-        [("A", "$25$"), ("B", "$34$"), ("C", "$351$"), ("D", "$407$"), ("E", "$900$")],
+    24: (
+        r"The first four terms in an arithmetic sequence are $x+y$, $x-y$, $xy$, and $\frac{x}{y}$, in that order. What is the fifth term?",
+        [("A", r"$-\frac{15}{8}$"), ("B", r"$-\frac65$"), ("C", "$0$"), ("D", r"$\frac{27}{20}$"), ("E", r"$\frac{123}{40}$")],
     ),
-    18: (
-        r"What is the largest integer that is a divisor of $(n+1)(n+3)(n+5)(n+7)(n+9)$ for all positive even integers $n$?",
-        [("A", "$3$"), ("B", "$5$"), ("C", "$11$"), ("D", "$15$"), ("E", "$165$")],
-    ),
-    20: (
-        r"In rectangle $ABCD$, $AB=5$ and $BC=3$. Points $F$ and $G$ are on $\overline{CD}$ so that $DF=1$ and $GC=2$. Lines $AF$ and $BG$ intersect at $E$. Find the area of $\triangle AEB$.",
-        [("A", "$10$"), ("B", r"$\frac{21}{2}$"), ("C", "$12$"), ("D", r"$\frac{25}{2}$"), ("E", "$15$")],
+    25: (
+        r"How many distinct four-digit numbers are divisible by $3$ and have $23$ as their last two digits?",
+        [("A", "$27$"), ("B", "$30$"), ("C", "$33$"), ("D", "$81$"), ("E", "$90$")],
     ),
 }
+
 
 KEY_OVERRIDES = {
-    10: "Count old and new plate formats separately, then divide to get the increase factor.",
-    11: "Use the point-slope form of each line and set y=0 to find the x-intercepts.",
-    12: "Let Al's initial amount be the unknown and express the final total in terms of it.",
-    13: "Reduce the condition to possible digit sums, then count two-digit numbers with those sums.",
-    14: "Use prime exponents to decide the largest possible exponent b, which minimizes a+b.",
-    15: "In a single-elimination tournament, every match eliminates exactly one player.",
-    16: "Translate the menu choices into a product and compare with the number of nights in 2003.",
-    17: "Compare the melted sphere volume with the cone volume using the shared radius.",
-    18: "Look for factors guaranteed among any five consecutive odd numbers produced by even n.",
-    20: "Use similar triangles above and below the top side of the rectangle to find the height of E above AB.",
+    21: "Use complement counting on the two original green beads that must both be drawn at least once.",
+    22: "Count chimes in repeated 12-hour or 24-hour blocks, then handle the leftover chimes carefully.",
+    23: "Decompose a regular octagon into a central rectangle and congruent corner triangles.",
+    24: "Use equal common differences to create equations for x and y, then find the next term.",
+    25: "Use the divisibility-by-3 rule and count valid first two digits by residues modulo 3.",
 }
 
+
 SOL = {
-    10: [
-        ("Read the format as a counting problem", r"The old format has one letter and four digits, while the new format has three letters and three digits. Since each position can be chosen independently, multiplication is the natural counting tool."),
-        ("Count the old plates", r"There are $26$ choices for the letter and $10$ choices for each digit. Therefore the number of old plates is $26\cdot 10^4$."),
-        ("Count the new plates", r"The new format has $26^3$ choices for the three letters and $10^3$ choices for the three digits. So the number of new plates is $26^3\cdot 10^3$."),
-        ("Compare by division", r"The question asks how many times larger the new count is, so divide new by old: \[\frac{26^3\cdot 10^3}{26\cdot 10^4}=\frac{26^2}{10}.\]"),
-        ("Choose the matching option", r"The increase factor is $\frac{26^2}{10}$, which is choice $\boxed{\text{C}}$.")
+    21: [
+        ("Identify what must happen", r"A bead becomes red permanently if it is green when drawn, because it is replaced by a red bead. After three draws, all beads are red exactly when both original green beads have been drawn at least once."),
+        ("Use the complement", r"It is easier to count the opposite event: at least one of the two original green beads is never drawn. Then subtract from $1$."),
+        ("Compute the chance one specific green is missed", r"Pick one original green bead. On each draw, as long as we are asking whether this particular bead is avoided, there are $3$ acceptable beads out of $4$. So the probability it is missed for all three draws is $(3/4)^3=27/64$."),
+        ("Correct for double-counting", r"If both original green beads are missed, then every draw must be one of the two original red beads or red replacements. The probability is $(1/2)^3=1/8=8/64$."),
+        ("Apply inclusion-exclusion", r"The probability at least one green is missed is $2\cdot\frac{27}{64}-\frac{8}{64}=\frac{46}{64}$. Therefore the probability both greens are drawn is $1-\frac{46}{64}=\frac{18}{64}=\frac{9}{32}$. The answer is $\boxed{\frac{9}{32}}$."),
     ],
-    11: [
-        ("Focus on what an x-intercept means", r"An $x$-intercept is where a line crosses the $x$-axis, so its $y$-coordinate is $0$. The slopes and the common point give us enough information to write each line."),
-        ("Write the line with slope 3", r"Using point-slope form through $(10,15)$, the first line is $y-15=3(x-10)$. Set $y=0$ because we want the $x$-intercept: $-15=3(x-10)$, so $x=5$."),
-        ("Write the line with slope 5", r"For the second line, $y-15=5(x-10)$. Again set $y=0$: $-15=5(x-10)$, so $x=7$."),
-        ("Take the distance on the x-axis", r"The two intercepts are at $x=5$ and $x=7$. Their distance is $|7-5|=2$."),
-        ("Check the answer", r"The steeper line reaches the $x$-axis over a shorter horizontal distance, which matches the intercept $7$ being closer to $10$ than $5$ is. The answer is $\boxed{2}$.")
+    22: [
+        ("Look for a repeating block", r"The clock pattern repeats every $12$ hours. In a $12$-hour period, the hour chimes add to $1+2+\cdots+12=78$, and there are $12$ half-hour chimes."),
+        ("Count chimes per half-day and per day", r"Thus each $12$-hour block has $78+12=90$ chimes. Each full day has $180$ chimes."),
+        ("Remove full days", r"Starting at $11{:}15$ AM on February $26$, after $11$ full days the clock has chimed $11\cdot180=1980$ times. That brings us to $11{:}15$ AM on March $9$, with $2003-1980=23$ chimes left."),
+        ("Count the remaining chimes", r"From $11{:}15$ AM, the next chimes are: $11{:}30$ gives $1$, noon gives $12$ more for a total of $13$, $12{:}30$ gives $14$, $1{:}00$ gives $15$, $1{:}30$ gives $16$, $2{:}00$ gives $18$, $2{:}30$ gives $19$, $3{:}00$ gives $22$, and $3{:}30$ gives $23$."),
+        ("State the date", r"The $2003$rd chime occurs on March $9$, so the answer is $\boxed{\text{March 9}}$."),
     ],
-    12: [
-        ("Choose one unknown", r"Let Al's original portion be $a$. Then Betty and Clare together originally had $1000-a$, which keeps the setup simple."),
-        ("Translate the final amounts", r"Al loses $100$, so he ends with $a-100$. Betty and Clare both double their money, so together they end with $2(1000-a)$."),
-        ("Use the final total", r"The final total is $1500$, so \[(a-100)+2(1000-a)=1500.\] Simplifying gives $1900-a=1500$, hence $a=400$."),
-        ("Check reasonableness", r"If Al started with $400$, Betty and Clare together started with $600$ and ended with $1200$, while Al ended with $300$. The total is $1500$, so the answer is $\boxed{400}$."),
+    23: [
+        ("Name the side length", r"Let the side length of the regular octagon be $s$. In the usual orientation, $AB$ and $EF$ are horizontal sides of length $s$, and rectangle $ABEF$ has width $s$."),
+        ("Find the rectangle height", r"The slanted sides of the octagon are at $45^\circ$, so the vertical contribution of each slanted side is $s/\sqrt2$. The distance from $AB$ to $EF$ is $s+2\cdot s/\sqrt2=s(1+\sqrt2)$."),
+        ("Write the rectangle area", r"Therefore \[[ABEF]=s\cdot s(1+\sqrt2)=s^2(1+\sqrt2).\]"),
+        ("Relate this to the whole octagon", r"The regular octagon can be divided into this central rectangle plus two congruent strips of right isosceles triangles whose total area equals another $s^2(1+\sqrt2)$. Equivalently, the area of the octagon is $2s^2(1+\sqrt2)$."),
+        ("Use the given octagon area", r"Since the octagon has area $1$, the rectangle has half that area: \[[ABEF]=\frac12.\] The answer is $\boxed{\frac12}$."),
     ],
-    13: [
-        ("Name the digit sum", r"For a two-digit number $x$, the value $\clubsuit(x)$ is the sum of its digits. This sum can range from $1$ to $18$."),
-        ("Find which digit sums work", r"We need $\clubsuit(\clubsuit(x))=3$. Between $1$ and $18$, the numbers whose digit sum is $3$ are $3$ and $12$. So $\clubsuit(x)$ must be either $3$ or $12$."),
-        ("Count two-digit numbers with digit sum 3", r"The tens digit cannot be $0$. The pairs are $(1,2),(2,1),(3,0)$, giving $3$ numbers."),
-        ("Count two-digit numbers with digit sum 12", r"The possible tens digits are $3,4,5,6,7,8,9$, with the ones digit determined each time. That gives $7$ numbers."),
-        ("Combine the cases", r"The total is $3+7=10$, so the answer is $\boxed{10}$."),
+    24: [
+        ("Use equal differences", r"In an arithmetic sequence, consecutive differences are equal. The first difference is $(x-y)-(x+y)=-2y$."),
+        ("Set up equations from the next differences", r"The second difference is $xy-(x-y)=xy-x+y$, so $xy-x+y=-2y$, or $xy-x+3y=0$. The third difference is $\frac{x}{y}-xy$, so $\frac{x}{y}-xy=-2y$."),
+        ("Solve for x in terms of y", r"From $xy-x+3y=0$, we get $x(y-1)=-3y$, so $x=\frac{3y}{1-y}$."),
+        ("Use the third difference", r"Multiplying $\frac{x}{y}-xy=-2y$ by $y$ gives $x-xy^2=-2y^2$. Substitute $x=\frac{3y}{1-y}$ and simplify; this gives $3(1+y)=-2y$, so $y=-\frac35$."),
+        ("Find the fourth and fifth terms", r"Then $x=\frac{3y}{1-y}=-\frac98$, and $\frac{x}{y}=\frac{15}{8}$. The common difference is $-2y=\frac65$, so the fifth term is \[\frac{15}{8}+\frac65=\frac{75}{40}+\frac{48}{40}=\frac{123}{40}.\] The answer is $\boxed{\frac{123}{40}}$."),
     ],
-    14: [
-        ("Interpret the expression as a perfect power", r"The right side is $a^b$, so the left side must be written as a power with integer exponent $b$. Prime exponents tell us which exponents are possible."),
-        ("Look at the prime factorization", r"The expression is already factored: $3^8\cdot 5^2$. If it equals $a^b$, then $b$ must divide both exponents $8$ and $2$."),
-        ("Choose the exponent that can make a small base", r"The common divisors of $8$ and $2$ are $1$ and $2$. Using $b=2$ makes the base much smaller than using $b=1$, so it is the only serious candidate for minimizing $a+b$."),
-        ("Compute the base", r"With $b=2$, we have \[a=3^{8/2}\cdot 5^{2/2}=3^4\cdot 5=81\cdot 5=405.\] Thus $a+b=405+2=407$."),
-        ("Check the other exponent", r"If $b=1$, then $a=3^8\cdot 5^2$, which is far larger. Therefore the smallest possible value is $\boxed{407}$."),
-    ],
-    15: [
-        ("Recognize the key tournament fact", r"In a single-elimination tournament, each match eliminates exactly one player. To end with one unbeaten player from $100$ players, exactly $99$ players must be eliminated."),
-        ("Avoid unnecessary round counting", r"The byes affect when players enter, but they do not change the number of eliminations needed. Every eliminated player corresponds to one match."),
-        ("Find the total number of matches", r"Therefore the tournament has $100-1=99$ matches."),
-        ("Match the divisibility choice", r"The number $99$ is divisible by $11$ because $99=9\cdot 11$. It is not prime, not divisible by $2$, $5$, or $7$. The answer is $\boxed{\text{divisible by }11}$."),
-    ],
-    16: [
-        ("Turn menu choices into multiplication", r"Let the number of main courses be $m$. Then there are $2m$ appetizers and $3$ desserts. A dinner is formed by choosing one item from each category."),
-        ("Write the number of possible dinners", r"The number of different dinners is $(2m)(m)(3)=6m^2$."),
-        ("Use the year correctly", r"The phrase 'each night in the year 2003' means each night of that calendar year, not $2003$ dinners. Since 2003 was not a leap year, there are $365$ nights."),
-        ("Find the least possible m", r"We need $6m^2\ge 365$. Since $m=7$ gives $294$ and $m=8$ gives $384$, the least possible value is $m=8$."),
-        ("Answer", r"The restaurant should offer $\boxed{8}$ main courses."),
-    ],
-    17: [
-        ("Represent both volumes with the same radius", r"The cone and sphere have the same diameter, so they also have the same radius $r$. This makes the volume comparison clean."),
-        ("Find the melted ice cream volume", r"The frozen sphere has volume $\frac{4}{3}\pi r^3$. The melted ice cream occupies $75\%$ of that volume, so its volume is \[\frac34\cdot\frac43\pi r^3=\pi r^3.\]"),
-        ("Set it equal to the cone volume", r"The melted ice cream exactly fills the cone. The cone volume is $\frac13\pi r^2h$, so \[\frac13\pi r^2h=\pi r^3.\]"),
-        ("Solve for the height", r"Cancel $\pi r^2$ from both sides to get $h/3=r$, so $h=3r$."),
-        ("Interpret the ratio", r"The ratio of the cone's height to its radius is $h:r=3r:r=\boxed{3:1}$."),
-    ],
-    18: [
-        ("Understand the sequence", r"Because $n$ is even, the five factors $n+1,n+3,n+5,n+7,n+9$ are five consecutive odd integers."),
-        ("Find a guaranteed factor of 5", r"Among any five consecutive odd integers, the residues modulo $10$ run through the five odd residue classes. One of them must be divisible by $5$."),
-        ("Find a guaranteed factor of 3", r"The terms differ by $2$. Modulo $3$, adding $2$ cycles through all residue classes, so within five terms at least one factor is divisible by $3$."),
-        ("Combine the guaranteed factors", r"Since $3$ and $5$ are relatively prime, the product is always divisible by $15$."),
-        ("Check that a larger listed factor is not guaranteed", r"The tempting larger option is $165=3\cdot5\cdot11$. But if $n=12$, the factors are $13,15,17,19,21$, and none is divisible by $11$. So $11$ is not guaranteed, and the largest listed divisor that always works is $\boxed{15}$."),
-    ],
-    20: [
-        ("Use the diagram information without needing to draw", r"Place the rectangle so $AB$ is the bottom side of length $5$ and $CD$ is the top side. Since $DF=1$ and $GC=2$, the top segment $FG$ has length $5-1-2=2$."),
-        ("Notice the similar triangles", r"Segment $FG$ is parallel to $AB$, so $\triangle EFG$ is similar to $\triangle EAB$. Their corresponding bases are $FG=2$ and $AB=5$."),
-        ("Relate the heights", r"Let $h$ be the height of $E$ above $AB$. The distance from $E$ down to $FG$ is $h-3$, because the rectangle has height $3$. Similarity gives \[\frac{h-3}{h}=\frac{FG}{AB}=\frac25.\]"),
-        ("Solve for the height", r"From $5(h-3)=2h$, we get $5h-15=2h$, so $3h=15$ and $h=5$."),
-        ("Compute the area", r"Triangle $AEB$ has base $AB=5$ and height $5$. Therefore \[[AEB]=\frac12\cdot5\cdot5=\frac{25}{2}.\] The answer is $\boxed{\frac{25}{2}}$."),
+    25: [
+        ("Write the number by its digits", r"Every number has the form $ab23$, where $a$ is from $1$ to $9$ and $b$ is from $0$ to $9$."),
+        ("Use the divisibility rule", r"A number is divisible by $3$ exactly when the sum of its digits is divisible by $3$. Here the digit sum is $a+b+2+3=a+b+5$."),
+        ("Convert to a residue condition", r"We need $a+b+5\equiv0\pmod3$, so $a+b\equiv1\pmod3$."),
+        ("Count residues for a and b", r"Among $1,2,\ldots,9$, the residues $0,1,2$ each occur $3$ times. Among $0,1,\ldots,9$, the residue counts are $4$ for residue $0$ and $3$ each for residues $1$ and $2$."),
+        ("Add the valid cases", r"The pairs with $a+b\equiv1\pmod3$ are $(0,1),(1,0),(2,2)$ by residue. The count is $3\cdot3+3\cdot4+3\cdot3=9+12+9=30$. The answer is $\boxed{30}$."),
     ],
 }
+
 
 
 def esc(x, quote=True):
@@ -184,7 +141,7 @@ def render(row):
     ans, val = ANS[n]
     tags = "".join(f'<span class="badge">{esc(t)}</span>' for t in (row.get("tags") or "").split(";") if t)
     notes = row.get("notes") or ""
-    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n == 20) else notes
+    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in {20, 23}) else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
         f'<li class="choice {"correct" if k == ans else ""}"><span class="choice-key">{esc(k)}</span><span>{esc(v, False)}</span></li>'
@@ -280,7 +237,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": int(r["problem_no"]) == 20,
+                "needs_review": int(r["problem_no"]) in {20, 23},
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -309,7 +266,7 @@ def main():
         + f"- Generated count: {new_count}\n"
         + f"- Updated existing count: {updated_count}\n"
         + f"- Skipped count: {len(SKIPPED)}\n"
-        + f"- Skipped reasons: {skipped_text}\n"
+        + (f"- Skipped reasons: {skipped_text}\n" if SKIPPED else "- Skipped reasons: none\n")
         + "- Validation result: passed\n"
         + "- Commit hash: pending\n"
         + "- Pushed: pending\n"
@@ -331,16 +288,14 @@ def main():
         + "- Answer verification source: AoPS 2003 AMC 10B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
-        + "\n\n## Skipped in latest batch\n\n"
-        + "\n".join(f"- {s}" for s in SKIPPED)
-        + "\n",
+        + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
         encoding="utf-8",
     )
 
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批新增 2003 AMC 10B Problems 11-18 和 20，并修正了 Problem 10 的答案选项；Problem 19 因图形/OCR 问题跳过。\n"
+        + "本批完成 2003 AMC 10B Problems 21-25，至此 2003B 已完成，除 Problem 4 和 19 因图形/OCR 问题跳过。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",
