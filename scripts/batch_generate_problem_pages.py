@@ -8,78 +8,81 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 18
+BATCH_NUMBER = 19
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2004_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {21, 22, 23, 24}
-SKIPPED = ["2004 AMC 10B Problem 25: shaded two-circle/lens region requires the original figure and choices are missing from OCR."]
-BATCH_LABEL = "2004 AMC 10B Problem 21-25"
-NEXT_START = "2005 AMC 10A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_10A_Answer_Key"
+TARGET_NUMBERS = {1, 2, 3, 4, 5}
+SKIPPED = []
+BATCH_LABEL = "2005 AMC 10A Problem 1-5"
+NEXT_START = "2005 AMC 10A Problem 6"
 
 ANS = {
-    21: ("A", "3722"),
-    22: ("D", r"\frac{\sqrt{65}}{2}"),
-    23: ("B", r"\frac{5}{16}"),
-    24: ("B", r"\frac{5}{3}"),
+    1: ("D", "10"),
+    2: ("C", "0"),
+    3: ("B", "-4"),
+    4: ("B", r"\frac{2}{5}x^2"),
+    5: ("A", "100"),
 }
 
 
 OV = {
-    21: (
-        r"Let $1,4,\ldots$ and $9,16,\ldots$ be two arithmetic progressions. The set $S$ is the union of the first $2004$ terms of each sequence. How many distinct numbers are in $S$?",
-        [("A", "$3722$"), ("B", "$3732$"), ("C", "$3914$"), ("D", "$3924$"), ("E", "$4007$")],
+    1: (
+        r"While eating out, Mike and Joe each tipped their server $2$ dollars. Mike tipped $10\%$ of his bill and Joe tipped $20\%$ of his bill. What was the difference, in dollars, between their bills?",
+        [("A", "$2$"), ("B", "$4$"), ("C", "$5$"), ("D", "$10$"), ("E", "$20$")],
     ),
-    22: (
-        r"A triangle with sides $5$, $12$, and $13$ has both an inscribed and a circumscribed circle. What is the distance between the centers of those circles?",
-        [("A", r"$\frac{3\sqrt5}{2}$"), ("B", r"$\frac72$"), ("C", r"$\frac{\sqrt{15}}{2}$"), ("D", r"$\frac{\sqrt{65}}{2}$"), ("E", r"$\frac92$")],
+    2: (
+        r"For each pair of real numbers $a\ne b$, define the operation $\star$ by $a\star b=\frac{a+b}{a-b}$. What is the value of $((1\star2)\star3)$?",
+        [("A", r"$-\frac23$"), ("B", r"$-\frac15$"), ("C", "$0$"), ("D", r"$\frac12$"), ("E", "This value is not defined.")],
     ),
-    23: (
-        r"Each face of a cube is painted either red or blue, each with probability $1/2$. The color of each face is determined independently. What is the probability that the painted cube can be placed on a horizontal surface so that the four vertical faces are all the same color?",
-        [("A", r"$\frac14$"), ("B", r"$\frac5{16}$"), ("C", r"$\frac38$"), ("D", r"$\frac7{16}$"), ("E", r"$\frac12$")],
-    ),
-    24: (
-        r"In $\triangle ABC$ we have $AB=7$, $AC=8$, and $BC=9$. Point $D$ is on the circumscribed circle of the triangle so that $AD$ bisects $\angle BAC$. What is the value of $AD/CD$?",
-        [("A", r"$\frac98$"), ("B", r"$\frac53$"), ("C", "$2$"), ("D", r"$\frac{17}{7}$"), ("E", r"$\frac52$")],
+    4: (
+        r"A rectangle with a diagonal of length $x$ is twice as long as it is wide. What is the area of the rectangle?",
+        [("A", r"$\frac14x^2$"), ("B", r"$\frac25x^2$"), ("C", r"$\frac12x^2$"), ("D", "$x^2$"), ("E", r"$\frac32x^2$")],
     ),
 }
 
 
 KEY_OVERRIDES = {
-    21: "Use inclusion-exclusion on two finite arithmetic progressions.",
-    22: "Place the right triangle on coordinates and locate the incenter and circumcenter.",
-    23: "Count colorings where one pair of opposite faces can be top and bottom.",
-    24: "Use the angle-bisector theorem, power of a point, and Ptolemy's theorem.",
+    1: "Convert tip percentages into original bill amounts.",
+    2: "Evaluate the custom operation from the inside out.",
+    3: "Use the common solution of two linear equations.",
+    4: "Use the Pythagorean theorem with side lengths in a 1:2 ratio.",
+    5: "Compare the number of paid windows when buying separately versus together.",
 }
 
 
 SOL = {
-    21: [
-        ("Describe the two progressions", r"The first progression is $1,4,7,\ldots$, so its terms are $1+3k$ for $0\le k\le2003$. The second is $9,16,23,\ldots$, so its terms are $9+7j$ for $0\le j\le2003$."),
-        ("Use inclusion-exclusion", r"If there were no overlap, the union would have $2004+2004=4008$ numbers. We need to subtract the common terms."),
-        ("Solve for overlaps", r"A common term satisfies $1+3k=9+7j$, so $3k-7j=8$. Modulo $7$, this gives $3k\equiv1\pmod7$, so $k\equiv5\pmod7$."),
-        ("Count valid k values", r"Thus $k=5+7t$. The condition $k\le2003$ gives $5+7t\le2003$, so $t=0,1,\ldots,285$. That gives $286$ overlaps; the corresponding $j=1+3t$ values are also within range."),
-        ("Compute the union size", r"Therefore $|S|=4008-286=\boxed{3722}$."),
+    1: [
+        ("Use the tip to recover each bill", r"A tip is a percentage of the bill. If Mike's $2$ tip is $10\%$ of his bill, then his bill is $2/0.10=20$ dollars."),
+        ("Do the same for Joe", r"Joe's $2$ tip is $20\%$ of his bill, so his bill is $2/0.20=10$ dollars."),
+        ("Find the difference", r"The difference between the bills is $20-10=10$ dollars."),
+        ("Answer", r"The answer is $\boxed{10}$."),
     ],
-    22: [
-        ("Recognize the right triangle", r"A $5$-$12$-$13$ triangle is right. Put the right angle at the origin, with legs along the axes."),
-        ("Locate the circumcenter", r"For a right triangle, the circumcenter is the midpoint of the hypotenuse. With legs $5$ and $12$, this point is $(5/2,6)$."),
-        ("Locate the incenter", r"The inradius of a right triangle is $r=\frac{5+12-13}{2}=2$. With the right angle at the origin, the incenter is $(2,2)$."),
-        ("Find the distance", r"The distance between $(5/2,6)$ and $(2,2)$ is \[\sqrt{\left(\frac12\right)^2+4^2}=\sqrt{\frac14+16}=\frac{\sqrt{65}}{2}.\]"),
-        ("Answer", r"The distance is $\boxed{\frac{\sqrt{65}}{2}}$."),
+    2: [
+        ("Start with the inner operation", r"The expression is nested, so first compute $1\star2$. By the definition, \[1\star2=\frac{1+2}{1-2}=\frac3{-1}=-3.\]"),
+        ("Substitute into the outer operation", r"Now the original expression becomes $(-3)\star3$."),
+        ("Apply the definition again", r"We get \[(-3)\star3=\frac{-3+3}{-3-3}=\frac0{-6}=0.\]"),
+        ("Check that it is defined", r"The denominator in the last step is not zero, so the value is defined."),
+        ("Answer", r"The answer is $\boxed{0}$."),
     ],
-    23: [
-        ("Rephrase the placement condition", r"Choosing how to place the cube means choosing one pair of opposite faces to be top and bottom. The other four faces must all have the same color."),
-        ("Count one axis", r"For a fixed opposite pair chosen as top and bottom, the four remaining faces can all be red or all be blue: $2$ choices. The top and bottom faces are arbitrary: $2^2=4$ choices. So one axis gives $8$ colorings."),
-        ("Use inclusion-exclusion over three axes", r"There are $3$ opposite-face pairs, so the first count is $3\cdot8=24$. If two axes both work, then all six faces must be the same color, giving $2$ colorings. There are $3$ pairwise intersections, and the triple intersection is also those same $2$ colorings."),
-        ("Count favorable colorings", r"By inclusion-exclusion, the number of favorable colorings is $24-3\cdot2+2=20$."),
-        ("Divide by all colorings", r"There are $2^6=64$ total colorings, so the probability is $20/64=\boxed{\frac5{16}}$."),
+    3: [
+        ("Solve the first equation", r"From $2x+7=3$, subtract $7$ to get $2x=-4$, so $x=-2$."),
+        ("Use the same solution in the second equation", r"The second equation has the same solution, so substitute $x=-2$ into $bx-10=-2$."),
+        ("Solve for b", r"This gives $-2b-10=-2$, so $-2b=8$ and $b=-4$."),
+        ("Answer", r"The value of $b$ is $\boxed{-4}$."),
     ],
-    24: [
-        ("Use the angle bisector point on BC", r"Let the angle bisector from $A$ meet $BC$ at $E$. By the angle-bisector theorem, $BE:EC=AB:AC=7:8$. Since $BC=9$, we get $BE=21/5$ and $EC=24/5$."),
-        ("Find AE", r"The angle-bisector length formula gives \[AE^2=AB\cdot AC\left(1-\frac{BC^2}{(AB+AC)^2}\right)=56\left(1-\frac{81}{225}\right)=\frac{896}{25}.\] Thus $AE=\frac{8\sqrt{14}}5$."),
-        ("Use power of a point", r"Since chords $AD$ and $BC$ intersect at $E$, we have $EA\cdot ED=EB\cdot EC$. Therefore \[ED=\frac{(21/5)(24/5)}{8\sqrt{14}/5}=\frac{9\sqrt{14}}{10}.\]"),
-        ("Find AD", r"Then $AD=AE+ED=\frac{8\sqrt{14}}5+\frac{9\sqrt{14}}{10}=\frac{5\sqrt{14}}2$."),
-        ("Use Ptolemy", r"Because $AD$ bisects $\angle BAC$, arcs $BD$ and $DC$ are equal, so chords $BD$ and $CD$ are equal. Let each be $x$. Ptolemy on cyclic quadrilateral $ABDC$ gives $AC\cdot BD+AB\cdot CD=AD\cdot BC$, so $8x+7x=9AD$. Hence $x=3AD/5$, and $AD/CD=AD/x=\boxed{\frac53}$."),
+    4: [
+        ("Represent the side lengths", r"Let the width be $w$. Since the rectangle is twice as long as it is wide, the length is $2w$."),
+        ("Use the diagonal", r"The diagonal, width, and length form a right triangle, so \[w^2+(2w)^2=x^2.\]"),
+        ("Solve for w squared", r"This simplifies to $5w^2=x^2$, so $w^2=\frac{x^2}{5}$."),
+        ("Find the area", r"The rectangle area is $(w)(2w)=2w^2=\frac{2}{5}x^2$."),
+        ("Answer", r"The area is $\boxed{\frac25x^2}$."),
+    ],
+    5: [
+        ("Understand the sale", r"For every $4$ windows purchased, the store gives $1$ additional window free. So buying $4$ paid windows produces $5$ windows total."),
+        ("Compute separate purchases", r"Dave needs $7$ windows, so he can pay for $6$ and receive $1$ free, costing $600$. Doug needs $8$ windows, so he can pay for $7$ and receive $1$ free, costing $700$. Separately they pay $1300$."),
+        ("Compute the combined purchase", r"Together they need $15$ windows. If they pay for $12$, they receive $3$ free windows, for $15$ total. This costs $1200$."),
+        ("Compare", r"They save $1300-1200=100$ dollars by buying together."),
+        ("Answer", r"The answer is $\boxed{100}$."),
     ],
 }
 
@@ -183,7 +186,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2004" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2005" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -282,7 +285,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批完成 2004 AMC 10B Problems 21-24；Problem 25 因图形/OCR 缺失跳过。\n"
+        + "本批完成 2005 AMC 10A Problems 1-5，无跳过题。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",

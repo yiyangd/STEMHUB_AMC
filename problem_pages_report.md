@@ -1,20 +1,17 @@
 # Problem Pages Report
 
-- Total manifest entries: 150
-- Latest batch: 18 (2004 AMC 10B Problem 21-25)
-- Latest new generated count: 4
+- Total manifest entries: 155
+- Latest batch: 19 (2005 AMC 10A Problem 1-5)
+- Latest new generated count: 5
 - Latest updated existing count: 0
-- Latest skipped count: 1
+- Latest skipped count: 0
 - MathJax validation: passed
 - Answer verification source: AoPS 2003 AMC 10B Answer Key
 
 ## Latest Batch Pages
 
-- `2004 AMC 10B Problem 21` -> `amc10/problems/2004-amc-10b-problem-21/`
-- `2004 AMC 10B Problem 22` -> `amc10/problems/2004-amc-10b-problem-22/`
-- `2004 AMC 10B Problem 23` -> `amc10/problems/2004-amc-10b-problem-23/`
-- `2004 AMC 10B Problem 24` -> `amc10/problems/2004-amc-10b-problem-24/`
-
-## Skipped in latest batch
-
-- 2004 AMC 10B Problem 25: shaded two-circle/lens region requires the original figure and choices are missing from OCR.
+- `2005 AMC 10A Problem 1` -> `amc10/problems/2005-amc-10a-problem-1/`
+- `2005 AMC 10A Problem 2` -> `amc10/problems/2005-amc-10a-problem-2/`
+- `2005 AMC 10A Problem 3` -> `amc10/problems/2005-amc-10a-problem-3/`
+- `2005 AMC 10A Problem 4` -> `amc10/problems/2005-amc-10a-problem-4/`
+- `2005 AMC 10A Problem 5` -> `amc10/problems/2005-amc-10a-problem-5/`
