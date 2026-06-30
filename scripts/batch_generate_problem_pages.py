@@ -8,132 +8,139 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 13
+BATCH_NUMBER = 14
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2004_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {1, 2, 3, 4, 6, 7, 8, 9, 10}
-SKIPPED = ["2004 AMC 10A Problem 5: probability question depends on the original grid diagram."]
-BATCH_LABEL = "2004 AMC 10A Problem 1-10"
-NEXT_START = "2004 AMC 10A Problem 11"
+TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
+SKIPPED = []
+BATCH_LABEL = "2004 AMC 10A Problem 11-20"
+NEXT_START = "2004 AMC 10A Problem 21"
 
 ANS = {
-    1: ("A", "250"),
-    2: ("B", r"-\frac{1}{4}"),
-    3: ("E", "29"),
-    4: ("D", r"\frac{3}{2}"),
-    6: ("E", "26"),
-    7: ("C", "100"),
-    8: ("B", "37"),
-    9: ("B", "4"),
-    10: ("D", r"\frac{35}{128}"),
+    11: ("C", "36"),
+    12: ("C", "768"),
+    13: ("D", "18"),
+    14: ("A", "0"),
+    15: ("D", r"\frac{1}{2}"),
+    16: ("D", "19"),
+    17: ("C", "350"),
+    18: ("A", "1"),
+    19: ("C", "240"),
+    20: ("D", "2"),
 }
 
 
 OV = {
-    1: (
-        r"You and five friends need to raise $\$1500$ in donations for a charity, dividing the fundraising equally. How many dollars will each of you need to raise?",
-        [("A", "$250$"), ("B", "$300$"), ("C", "$1500$"), ("D", "$7500$"), ("E", "$9000$")],
+    11: (
+        r"A company sells peanut butter in cylindrical jars. Marketing research suggests that using wider jars will increase sales. If the diameter of the jars is increased by $25\%$ without altering the volume, by what percent must the height be decreased?",
+        [("A", "$10$"), ("B", "$25$"), ("C", "$36$"), ("D", "$50$"), ("E", "$60$")],
     ),
-    2: (
-        r"For any three real numbers $a$, $b$, and $c$, with $b\ne c$, the operation $\otimes$ is defined by $\otimes(a,b,c)=\frac{a}{b-c}$. What is $\otimes(\otimes(1,2,3),\otimes(2,3,1),\otimes(3,1,2))$?",
-        [("A", r"$-\frac12$"), ("B", r"$-\frac14$"), ("C", "$0$"), ("D", r"$\frac14$"), ("E", r"$\frac12$")],
+    12: (
+        r"Henry's Hamburger Heaven orders its hamburgers with the following condiments: ketchup, mustard, mayonnaise, tomato, lettuce, pickles, cheese, and onions. A customer can choose one, two, or three meat patties, and any collection of condiments. How many different kinds of hamburgers can be ordered?",
+        [("A", "$24$"), ("B", "$256$"), ("C", "$768$"), ("D", "$40,320$"), ("E", "$120,960$")],
     ),
-    3: (
-        r"Alicia earns $\$20$ per hour, of which $1.45\%$ is deducted to pay local taxes. How many cents per hour of Alicia's wages are used to pay local taxes?",
-        [("A", "$0.0029$"), ("B", "$0.029$"), ("C", "$0.29$"), ("D", "$2.9$"), ("E", "$29$")],
+    15: (
+        r"Given that $-4\le x\le -2$ and $2\le y\le4$, what is the largest possible value of $\frac{x+y}{x}$?",
+        [("A", "$-1$"), ("B", r"$-\frac12$"), ("C", "$0$"), ("D", r"$\frac12$"), ("E", "$1$")],
     ),
-    4: (
-        r"What is the value of $x$ if $|x-1|=|x-2|$?",
-        [("A", r"$-\frac12$"), ("B", r"$\frac12$"), ("C", "$1$"), ("D", r"$\frac32$"), ("E", "$2$")],
+    16: (
+        r"The $5\times5$ grid shown contains a collection of squares with sizes from $1\times1$ to $5\times5$. How many of these squares contain the black center square?",
+        [("A", "$12$"), ("B", "$15$"), ("C", "$17$"), ("D", "$19$"), ("E", "$20$")],
     ),
-    7: (
-        r"A grocer stacks oranges in a pyramid-like stack whose rectangular base is $5$ oranges by $8$ oranges. Each orange above the first level rests in a pocket formed by four oranges in the level below. The stack is completed by a single row of oranges. How many oranges are in the stack?",
-        [("A", "$96$"), ("B", "$98$"), ("C", "$100$"), ("D", "$101$"), ("E", "$134$")],
+    19: (
+        r"A white cylindrical silo has diameter $30$ feet and height $80$ feet. A red stripe with a horizontal width of $3$ feet is painted on the silo, making two complete revolutions around it. What is the area of the stripe in square feet?",
+        [("A", "$120$"), ("B", "$180$"), ("C", "$240$"), ("D", "$360$"), ("E", "$480$")],
     ),
-    9: (
-        r"In the figure, $\angle EAB$ and $\angle ABC$ are right angles. Also $AB=4$, $BC=6$, $AE=8$, and $AC$ and $BE$ intersect at $D$. What is the difference between the areas of $\triangle ADE$ and $\triangle BDC$?",
-        [("A", "$2$"), ("B", "$4$"), ("C", "$5$"), ("D", "$8$"), ("E", "$9$")],
-    ),
-    10: (
-        r"Coin A is flipped three times and coin B is flipped four times. What is the probability that the number of heads obtained from flipping the two fair coins is the same?",
-        [("A", r"$\frac{19}{128}$"), ("B", r"$\frac{23}{128}$"), ("C", r"$\frac14$"), ("D", r"$\frac{35}{128}$"), ("E", r"$\frac12$")],
+    20: (
+        r"Points $E$ and $F$ are located on square $ABCD$ so that $\triangle BEF$ is equilateral. What is the ratio of the area of $\triangle DEF$ to that of $\triangle ABE$?",
+        [("A", r"$\frac43$"), ("B", r"$\frac32$"), ("C", r"$\sqrt3$"), ("D", "$2$"), ("E", r"$1+\sqrt3$")],
     ),
 }
 
 
 KEY_OVERRIDES = {
-    1: "Divide the total fundraising goal equally among all six people.",
-    2: "Evaluate the custom operation inside-out, keeping the order of the three inputs clear.",
-    3: "Convert a percent of dollars into cents carefully.",
-    4: "Use the meaning of equal distances on a number line.",
-    6: "Set up a simple count of daughters and granddaughters.",
-    7: "Add the rectangular layers of the orange stack as each layer shrinks by one in each direction.",
-    8: "Find the repeating three-round cycle in the token counts.",
-    9: "Use coordinates to compute the two triangle areas from the intersection point.",
-    10: "Sum the probabilities that both coins produce the same number of heads.",
+    11: "Keep cylinder volume constant while the radius is scaled.",
+    12: "Use independent choices: meat patty count times include-or-exclude condiment choices.",
+    13: "Count dance pairings in two ways.",
+    14: "Use the average formula before and after adding one quarter.",
+    15: "Rewrite the expression and use endpoint reasoning with a negative denominator.",
+    16: "Count axis-aligned grid squares of each size that contain the central cell.",
+    17: "Use constant speed ratios between the first and second meetings on a circular track.",
+    18: "Turn arithmetic progression and geometric progression conditions into one quadratic.",
+    19: "Unroll the cylinder and shear the diagonal stripe into a rectangle with the same area.",
+    20: "Relate the square and equilateral triangle with right triangles and equal side lengths.",
 }
 
 
 SOL = {
-    1: [
-        ("Count the people sharing the goal", r"The phrase 'you and five friends' means there are $6$ people total, not $5$. The donations are divided equally among all $6$."),
-        ("Divide the total", r"Each person must raise \[\frac{1500}{6}=250.\]"),
-        ("Check the total", r"If each of the $6$ people raises $250$, the total is $6\cdot250=1500$."),
-        ("Answer", r"Each person needs to raise $\boxed{250}$ dollars."),
+    11: [
+        ("Focus on volume", r"The jar is a cylinder, so its volume is $V=\pi r^2h$. The volume stays the same, so any increase in $r^2$ must be balanced by a decrease in $h$."),
+        ("Convert the diameter change", r"If the diameter increases by $25\%$, then the radius also increases by $25\%$. The new radius is $1.25r=\frac54r$."),
+        ("Find the area factor", r"The circular base area is multiplied by $(\frac54)^2=\frac{25}{16}$."),
+        ("Keep volume constant", r"To keep $\pi r^2h$ unchanged, the height must be multiplied by the reciprocal, $\frac{16}{25}$."),
+        ("Convert to a percent decrease", r"The new height is $64\%$ of the old height, so the decrease is $100\%-64\%=36\%$. The answer is $\boxed{36}$."),
     ],
-    2: [
-        ("Understand the operation", r"The operation takes three inputs and returns the first input divided by the difference of the second and third: $\otimes(a,b,c)=\frac{a}{b-c}$. Since the final expression uses nested operations, start inside."),
-        ("Evaluate the three inner operations", r"We get $\otimes(1,2,3)=\frac{1}{2-3}=-1$, $\otimes(2,3,1)=\frac{2}{3-1}=1$, and $\otimes(3,1,2)=\frac{3}{1-2}=-3$."),
-        ("Substitute into the outer operation", r"The expression becomes $\otimes(-1,1,-3)$. Use the same rule again: \[\otimes(-1,1,-3)=\frac{-1}{1-(-3)}.\]"),
-        ("Finish the calculation", r"The denominator is $4$, so the value is $-\frac14$."),
-        ("Answer", r"The answer is $\boxed{-\frac14}$."),
+    12: [
+        ("Separate the independent choices", r"The customer chooses the number of patties and then chooses condiments. These choices are independent, so we multiply the counts."),
+        ("Count patty choices", r"There are $3$ choices for meat patties: one, two, or three."),
+        ("Count condiment choices", r"There are $8$ condiments. Each condiment is either included or not included, so there are $2^8=256$ possible condiment collections."),
+        ("Multiply", r"The total number of hamburgers is $3\cdot256=768$."),
+        ("Answer", r"The answer is $\boxed{768}$."),
     ],
-    3: [
-        ("Translate the percent", r"The tax rate $1.45\%$ means $0.0145$ of her hourly wage. Percent problems become easier once the percent is written as a decimal."),
-        ("Find the dollar amount", r"Alicia earns $20$ dollars per hour, so the tax is $20\cdot0.0145=0.29$ dollars per hour."),
-        ("Convert dollars to cents", r"Since $1$ dollar is $100$ cents, $0.29$ dollars is $29$ cents."),
-        ("Answer", r"The local tax is $\boxed{29}$ cents per hour."),
+    13: [
+        ("Count the same thing two ways", r"The useful object to count is a dance pairing between one man and one woman."),
+        ("Count from the men's side", r"There are $12$ men, and each danced with exactly $3$ women. That gives $12\cdot3=36$ dance pairings."),
+        ("Count from the women's side", r"If there are $w$ women, and each danced with exactly $2$ men, then the same number of pairings is $2w$."),
+        ("Solve", r"Thus $2w=36$, so $w=18$."),
+        ("Answer", r"There were $\boxed{18}$ women at the party."),
     ],
-    4: [
-        ("Interpret the absolute values", r"The equation $|x-1|=|x-2|$ says that $x$ is the same distance from $1$ and from $2$ on the number line."),
-        ("Use symmetry", r"The point equally distant from $1$ and $2$ is their midpoint."),
-        ("Compute the midpoint", r"The midpoint is \[\frac{1+2}{2}=\frac32.\]"),
-        ("Answer", r"Therefore $x=\boxed{\frac32}$."),
+    14: [
+        ("Set up the original average", r"Let $n$ be the number of coins. Since the average value is $20$ cents, the total value is $20n$ cents."),
+        ("Use the new average", r"After adding one quarter, there are $n+1$ coins and the total value is $20n+25$ cents. The new average is $21$ cents, so \[\frac{20n+25}{n+1}=21.\]"),
+        ("Solve for the number of coins", r"This gives $20n+25=21n+21$, so $n=4$. The original total value was $80$ cents."),
+        ("Determine the coins", r"With four coins totaling $80$ cents, the only way using pennies, nickels, dimes, and quarters is three quarters and one nickel. That uses no dimes."),
+        ("Answer", r"Paula has $\boxed{0}$ dimes."),
     ],
-    6: [
-        ("Define the unknown", r"Bertha has $6$ daughters. Let $d$ be the number of those daughters who each have $6$ daughters."),
-        ("Use the total family count", r"The number of granddaughters is $6d$. The total number of daughters and granddaughters is $6+6d=30$."),
-        ("Solve for d", r"From $6+6d=30$, we get $6d=24$, so $d=4$. Thus $4$ of Bertha's daughters have daughters, and $2$ of her daughters have no daughters."),
-        ("Count people with no daughters", r"All $24$ granddaughters have no daughters because there are no great-granddaughters. Adding the $2$ daughters with no daughters gives $24+2=26$."),
-        ("Answer", r"The answer is $\boxed{26}$."),
+    15: [
+        ("Rewrite the expression", r"We have $\frac{x+y}{x}=1+\frac{y}{x}$. Since $x$ is negative and $y$ is positive, the fraction $\frac{y}{x}$ is negative."),
+        ("Make the negative part as small as possible", r"To maximize the whole expression, we want $\frac{y}{x}$ to be as close to $0$ as possible. That means choose the smallest $y$ and the negative $x$ with largest absolute value."),
+        ("Use the endpoints", r"The best choices are $y=2$ and $x=-4$. Then \[\frac{x+y}{x}=\frac{-4+2}{-4}=\frac{-2}{-4}=\frac12.\]"),
+        ("Answer", r"The largest possible value is $\boxed{\frac12}$."),
     ],
-    7: [
-        ("Visualize the layers", r"The bottom layer is a $5$ by $8$ rectangle of oranges. Each higher layer sits in pockets, so both dimensions shrink by $1$ each time."),
-        ("List the layer sizes", r"The layers are $5\times8$, $4\times7$, $3\times6$, $2\times5$, and $1\times4$. The process stops at the single row $1\times4$."),
-        ("Add the layers", r"The total number of oranges is \[5\cdot8+4\cdot7+3\cdot6+2\cdot5+1\cdot4.\]"),
-        ("Compute", r"This is $40+28+18+10+4=100$."),
-        ("Answer", r"The stack contains $\boxed{100}$ oranges."),
+    16: [
+        ("Count by square size", r"The black square is the center cell of a $5\times5$ grid. Count how many axis-aligned squares of each size contain that center cell."),
+        ("Small sizes", r"For $1\times1$ squares, only the center square works: $1$. For $2\times2$ squares, the center cell can be in any of four positions inside the square, so there are $4$."),
+        ("Middle and large sizes", r"For $3\times3$ squares, there are $3$ possible row positions and $3$ possible column positions, giving $9$. For $4\times4$ squares, there are $2\cdot2=4$. For the $5\times5$ square, there is $1$."),
+        ("Add", r"The total is $1+4+9+4+1=19$."),
+        ("Answer", r"The answer is $\boxed{19}$."),
     ],
-    8: [
-        ("Track the first few rounds", r"The player with the most tokens loses $3$ tokens total: one to each of the other two players and one to the discard pile. Each other player gains $1$."),
-        ("Find the repeating pattern", r"Starting from $(15,14,13)$, after three rounds the counts become $(14,13,12)$. The same order has returned, but each player has one fewer token."),
-        ("Use the cycle", r"Every $3$ rounds, all three players decrease by $1$. After $36$ rounds, which is $12$ cycles, the counts are $(3,2,1)$."),
-        ("Finish one more round", r"At that point A has the most tokens. In round $37$, A gives away three tokens total, so A goes from $3$ to $0$, and the game ends."),
-        ("Answer", r"There are $\boxed{37}$ rounds."),
+    17: [
+        ("Introduce the track length", r"Let the track length be $L$. Since the runners start at opposite points, they are initially $L/2$ meters apart along either direction."),
+        ("Use the first meeting", r"At the first meeting, Brenda has run $100$ meters, so Sally has run $L/2-100$ meters. Their speed ratio is therefore $\frac{100}{L/2-100}$."),
+        ("Use the second meeting", r"Between consecutive meetings while running in opposite directions, together they cover one full lap. From the first to the next meeting, Sally runs $150$ meters, so Brenda runs $L-150$ meters."),
+        ("Set equal speed ratios", r"The speed ratio is constant, so \[\frac{100}{L/2-100}=\frac{L-150}{150}.\] Solving gives $15000=(L-150)(L/2-100)$, which simplifies to $L=350$."),
+        ("Answer", r"The track length is $\boxed{350}$ meters."),
     ],
-    9: [
-        ("Choose coordinates", r"Place $A=(0,0)$, $B=(4,0)$, $C=(4,6)$, and $E=(0,8)$. This matches the two right angles and the given side lengths."),
-        ("Find the intersection D", r"Line $AC$ has slope $6/4=3/2$, so its equation is $y=\frac32x$. Line $BE$ through $(4,0)$ and $(0,8)$ has equation $y=-2x+8$."),
-        ("Solve for D", r"Set the equations equal: $\frac32x=-2x+8$. Then $\frac72x=8$, so $x=\frac{16}{7}$ and $y=\frac{24}{7}$."),
-        ("Compute the two areas", r"Triangle $ADE$ has base $AE=8$ and horizontal height $\frac{16}{7}$, so its area is $\frac12\cdot8\cdot\frac{16}{7}=\frac{64}{7}$. Triangle $BDC$ has base $BC=6$ and horizontal height $4-\frac{16}{7}=\frac{12}{7}$, so its area is $\frac12\cdot6\cdot\frac{12}{7}=\frac{36}{7}$."),
-        ("Subtract", r"The difference is $\frac{64}{7}-\frac{36}{7}=\frac{28}{7}=4$. The answer is $\boxed{4}$."),
+    18: [
+        ("Write the arithmetic progression", r"Let the common difference be $d$. The three original terms are $9$, $9+d$, and $9+2d$."),
+        ("Apply the changes", r"After adding $2$ to the second term and $20$ to the third term, the new terms are $9$, $11+d$, and $29+2d$."),
+        ("Use the geometric progression condition", r"For three terms in a geometric progression, the middle squared equals the product of the first and third: \[(11+d)^2=9(29+2d).\]"),
+        ("Solve for d", r"Expanding gives $d^2+22d+121=261+18d$, so $d^2+4d-140=0$. Thus $d=10$ or $d=-14$."),
+        ("Find the smallest third term", r"The third term of the geometric progression is $29+2d$. The two possibilities are $49$ and $1$, so the smallest possible value is $\boxed{1}$."),
     ],
-    10: [
-        ("Organize by the number of heads", r"Coin A is flipped $3$ times, so it can have $0,1,2,$ or $3$ heads. Coin B is flipped $4$ times, and we need the same number of heads."),
-        ("Count favorable outcomes", r"For each possible $k$, the number of ways is $\binom{3}{k}\binom{4}{k}$. Therefore the favorable count is \[\binom30\binom40+\binom31\binom41+\binom32\binom42+\binom33\binom43.\]"),
-        ("Compute the sum", r"This equals $1\cdot1+3\cdot4+3\cdot6+1\cdot4=1+12+18+4=35$."),
-        ("Count all outcomes", r"There are $2^3$ outcomes for coin A and $2^4$ outcomes for coin B, for a total of $2^7=128$ equally likely outcomes."),
-        ("Answer", r"The probability is $\boxed{\frac{35}{128}}$."),
+    19: [
+        ("Unroll the cylinder", r"Imagine cutting the silo vertically and unrolling it into a rectangle. The red stripe becomes a diagonal band crossing the rectangle while wrapping twice around the cylinder."),
+        ("Use the given horizontal width", r"The stripe has horizontal width $3$ feet. In the unrolled rectangle, a diagonal band of constant horizontal width can be sheared into a vertical rectangle without changing area."),
+        ("Identify the rectangle dimensions", r"After this shear, the equivalent rectangle has width $3$ feet and height equal to the silo height, $80$ feet. The number of revolutions changes the slant, but not this area calculation when the horizontal width is fixed."),
+        ("Compute the area", r"The area is $3\cdot80=240$ square feet."),
+        ("Answer", r"The stripe area is $\boxed{240}$."),
+    ],
+    20: [
+        ("Use a convenient scale", r"Let the side length of the square be $1$. From the diagram, $E$ lies on $AD$ and $F$ lies on $DC$, with $\triangle BEF$ equilateral."),
+        ("Set a helpful variable", r"Let $DE=DF=x$. Then $AE=1-x$. Triangle $DEF$ is a right isosceles triangle, so $EF^2=x^2+x^2=2x^2$."),
+        ("Use the equilateral condition", r"Because $\triangle BEF$ is equilateral, $BE=EF$. Also triangle $ABE$ is right, so $BE^2=AB^2+AE^2=1+(1-x)^2$."),
+        ("Relate x to the square", r"Set $BE^2=EF^2$: \[1+(1-x)^2=2x^2.\] This simplifies to $x^2=2(1-x)$."),
+        ("Compare areas", r"Now $[DEF]=\frac{x^2}{2}$ and $[ABE]=\frac{1-x}{2}$. Their ratio is \[\frac{[DEF]}{[ABE]}=\frac{x^2}{1-x}=2.\] The answer is $\boxed{2}$."),
     ],
 }
 
@@ -182,7 +189,7 @@ def render(row):
     ans, val = ANS[n]
     tags = "".join(f'<span class="badge">{esc(t)}</span>' for t in (row.get("tags") or "").split(";") if t)
     notes = row.get("notes") or ""
-    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in {7, 9}) else notes
+    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in {16, 19, 20}) else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
         f'<li class="choice {"correct" if k == ans else ""}"><span class="choice-key">{esc(k)}</span><span>{esc(v, False)}</span></li>'
@@ -278,7 +285,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": int(r["problem_no"]) in {7, 9},
+                "needs_review": int(r["problem_no"]) in {16, 19, 20},
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -336,7 +343,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批完成 2004 AMC 10A Problems 1-4 和 6-10；Problem 5 因网格图缺失跳过。\n"
+        + "本批完成 2004 AMC 10A Problems 11-20；Problems 16、19、20 标记为图形复核。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",
