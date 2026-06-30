@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import csv
 import html
@@ -8,92 +8,91 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 21
+BATCH_NUMBER = 22
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {11, 13, 14, 15, 16, 18}
-SKIPPED = ["2005 AMC 10A Problem 12: trefoil area problem depends on the original diagram.", "2005 AMC 10A Problem 17: five-sided star arrangement depends on the original diagram.", "2005 AMC 10A Problem 19: rotated-square placement depends on the original diagram.", "2005 AMC 10A Problem 20: equiangular octagon side lengths are OCR-ambiguous."]
-BATCH_LABEL = "2005 AMC 10A Problem 11-20"
-NEXT_START = "2005 AMC 10A Problem 21"
+TARGET_NUMBERS = {21, 22, 23, 24, 25}
+SKIPPED = []
+BATCH_LABEL = "2005 AMC 10A Problem 21-25"
+NEXT_START = "2005 AMC 10B Problem 1"
 
 ANS = {
-    11: ("B", "4"),
-    13: ("E", "125"),
-    14: ("E", "45"),
-    15: ("E", "6"),
-    16: ("D", "10"),
-    18: ("A", r"\frac{1}{5}"),
+    21: ("B", "5"),
+    22: ("D", "668"),
+    23: ("C", r"\frac{1}{3}"),
+    24: ("B", "1"),
+    25: ("D", r"\frac{19}{56}"),
 }
 
 
 OV = {
-    11: (
-        r"A wooden cube $n$ units on a side is painted red on all six faces and then cut into $n^3$ unit cubes. Exactly one-fourth of the total number of faces of the unit cubes are red. What is $n$?",
-        [("A", "$3$"), ("B", "$4$"), ("C", "$5$"), ("D", "$6$"), ("E", "$7$")],
+    21: (
+        r"For how many positive integers $n$ does $1+2+\cdots+n$ evenly divide $6n$?",
+        [("A", "$3$"), ("B", "$5$"), ("C", "$7$"), ("D", "$9$"), ("E", "$11$")],
     ),
-    13: (
-        r"How many positive integers $n$ satisfy $(130n)^{50}>n^{100}>2^{200}$?",
-        [("A", "$0$"), ("B", "$7$"), ("C", "$12$"), ("D", "$65$"), ("E", "$125$")],
+    22: (
+        r"Let $S$ be the set of the $2005$ smallest positive multiples of $4$, and let $T$ be the set of the $2005$ smallest positive multiples of $6$. How many elements are common to $S$ and $T$?",
+        [("A", "$166$"), ("B", "$333$"), ("C", "$500$"), ("D", "$668$"), ("E", "$1001$")],
     ),
-    18: (
-        r"Team A and team B play a series. The first team to win three games wins the series. Each team is equally likely to win each game, there are no ties, and the outcomes of the individual games are independent. If team B wins the second game and team A wins the series, what is the probability that team B wins the first game?",
-        [("A", r"$\frac15$"), ("B", r"$\frac14$"), ("C", r"$\frac13$"), ("D", r"$\frac12$"), ("E", r"$\frac23$")],
+    23: (
+        r"Let $AB$ be a diameter of a circle and $C$ be a point on $AB$ with $2\cdot AC=BC$. Let $D$ and $E$ be points on the circle such that $DC\perp AB$ and $DE$ is a second diameter. What is the ratio of the area of $\triangle DCE$ to the area of $\triangle ABD$?",
+        [("A", r"$\frac16$"), ("B", r"$\frac14$"), ("C", r"$\frac13$"), ("D", r"$\frac12$"), ("E", r"$\frac23$")],
+    ),
+    24: (
+        r"For each positive integer $m>1$, let $P(m)$ denote the greatest prime factor of $m$. For how many positive integers $n$ is it true that both $P(n)=\sqrt n$ and $P(n+48)=\sqrt{n+48}$?",
+        [("A", "$0$"), ("B", "$1$"), ("C", "$3$"), ("D", "$4$"), ("E", "$5$")],
+    ),
+    25: (
+        r"In $\triangle ABC$ we have $AB=25$, $BC=39$, and $AC=42$. Points $D$ and $E$ are on $AB$ and $AC$, respectively, with $AD=19$ and $AE=14$. What is the ratio of the area of triangle $ADE$ to the area of quadrilateral $BCED$?",
+        [("A", r"$\frac{266}{1521}$"), ("B", r"$\frac{19}{75}$"), ("C", r"$\frac13$"), ("D", r"$\frac{19}{56}$"), ("E", r"$\frac12$")],
     ),
 }
 
 
 KEY_OVERRIDES = {
-    11: "Compare the number of painted unit-square faces with all unit-cube faces.",
-    13: "Take appropriate roots to convert the exponential inequality into bounds on n.",
-    14: "Count digit pairs whose first and last digits have the same parity.",
-    15: "Factor the product and count cube divisors by prime exponents.",
-    16: "Use digit algebra to simplify the subtraction of digit sum from a two-digit number.",
-    18: "Use conditional probability by splitting on whether team B wins the first game.",
+    21: "Convert the triangular-number divisibility condition into a divisor condition on n+1.",
+    22: "Use least common multiples and inclusion with finite initial segments.",
+    23: "Choose coordinates on the diameter to compare triangle areas directly.",
+    24: "Interpret the greatest-prime-factor condition as saying the number is a square of a prime.",
+    25: "Use the product of side ratios for triangles sharing an included angle.",
 }
 
 
 SOL = {
-    11: [
-        ("Count red faces after cutting", r"Painting the outside of the large cube creates $6n^2$ red unit-square faces, because each of the $6$ large faces is an $n\times n$ grid."),
-        ("Count all small-cube faces", r"There are $n^3$ unit cubes, and each has $6$ faces, so there are $6n^3$ small-cube faces total."),
-        ("Use the one-fourth condition", r"The problem says $6n^2$ is one-fourth of $6n^3$: \[6n^2=\frac14\cdot6n^3.\]"),
-        ("Solve", r"Cancel $6n^2$ from both sides to get $1=n/4$, so $n=4$."),
-        ("Answer", r"The answer is $\boxed{4}$."),
+    21: [
+        ("Rewrite the divisor", r"The sum $1+2+\cdots+n$ is the triangular number $\frac{n(n+1)}{2}$. The condition is \[\frac{n(n+1)}2 \mid 6n.\]"),
+        ("Cancel the common factor carefully", r"Since $n$ is positive, compare $6n$ with $\frac{n(n+1)}2$: \[\frac{6n}{n(n+1)/2}=\frac{12}{n+1}.\] The divisibility holds exactly when $\frac{12}{n+1}$ is an integer."),
+        ("Count possible n", r"Thus $n+1$ must be a positive divisor of $12$. The divisors are $1,2,3,4,6,12$."),
+        ("Remove the impossible divisor", r"Because $n$ is positive, $n+1>1$, so we use $2,3,4,6,12$. These give $n=1,2,3,5,11$."),
+        ("Answer", r"There are $\boxed{5}$ possible values of $n$."),
     ],
-    13: [
-        ("Simplify the right inequality", r"Since $2^{200}=(2^2)^{100}=4^{100}$, the condition $n^{100}>2^{200}$ means $n>4$."),
-        ("Simplify the left inequality", r"The inequality $(130n)^{50}>n^{100}$ has positive quantities, so take the $50$th root: $130n>n^2$. Since $n>0$, this becomes $n<130$."),
-        ("Combine bounds", r"Thus $n$ must be a positive integer with $4<n<130$."),
-        ("Count", r"The possible values are $5,6,\ldots,129$, giving $129-5+1=125$ integers."),
-        ("Answer", r"The answer is $\boxed{125}$."),
+    22: [
+        ("Describe the two sets", r"The $2005$ smallest positive multiples of $4$ run from $4$ to $4\cdot2005=8020$. The $2005$ smallest positive multiples of $6$ run from $6$ to $6\cdot2005=12030$."),
+        ("Find common multiples", r"A number common to both sets must be a multiple of $\operatorname{lcm}(4,6)=12$."),
+        ("Use the smaller endpoint", r"Since every common element must lie in $S$, it cannot exceed $8020$. Any multiple of $12$ up to $8020$ is also at most $12030$, so it is automatically in $T$."),
+        ("Count", r"The number of positive multiples of $12$ up to $8020$ is \[\left\lfloor\frac{8020}{12}\right\rfloor=668.\]"),
+        ("Answer", r"The two sets have $\boxed{668}$ elements in common."),
     ],
-    14: [
-        ("Write the digit condition", r"Let the three-digit number have digits $a,b,c$, where $a$ is from $1$ to $9$ and $c$ is from $0$ to $9$. The condition is $b=\frac{a+c}{2}$."),
-        ("Decide when b is a digit", r"The average is an integer exactly when $a$ and $c$ have the same parity. The resulting $b$ is automatically between $0$ and $9$."),
-        ("Count same-parity pairs", r"There are $5$ odd choices and $4$ even choices for $a$. There are $5$ odd choices and $5$ even choices for $c$."),
-        ("Add the cases", r"The count is $5\cdot5+4\cdot5=25+20=45$."),
-        ("Answer", r"There are $\boxed{45}$ such numbers."),
+    23: [
+        ("Choose a convenient scale", r"The ratio is unchanged by scaling, so let $AC=1$ and $BC=2$. Then $AB=3$. Put $A=(0,0)$, $C=(1,0)$, and $B=(3,0)$."),
+        ("Find point D", r"The circle has center $(3/2,0)$ and radius $3/2$. Since $DC\perp AB$, point $D$ has $x$-coordinate $1$. Its height is \[\sqrt{\left(\frac32\right)^2-\left(1-\frac32\right)^2}=\sqrt2.\] Thus $D=(1,\sqrt2)$."),
+        ("Use the second diameter", r"Since $DE$ is a diameter, $E$ is opposite $D$ through the center. Therefore $E=(2,-\sqrt2)$."),
+        ("Compute the two areas", r"Triangle $ABD$ has base $AB=3$ and height $\sqrt2$, so its area is $\frac{3\sqrt2}{2}$. Triangle $DCE$ has base $DC=\sqrt2$ and horizontal height $1$, so its area is $\frac{\sqrt2}{2}$."),
+        ("Form the ratio", r"The ratio is \[\frac{[DCE]}{[ABD]}=\frac{\sqrt2/2}{3\sqrt2/2}=\frac13.\] The answer is $\boxed{\frac13}$."),
     ],
-    15: [
-        ("Factor the product", r"We have $3!\cdot5!\cdot7!$. The prime exponents are $2^8\cdot3^4\cdot5^2\cdot7^1$."),
-        ("Understand cube divisors", r"A positive integer cube has prime exponents that are multiples of $3$. For each prime, choose an exponent $0,3,6,\ldots$ not exceeding the exponent in the product."),
-        ("Count choices", r"For prime $2$, the choices are $0,3,6$; for prime $3$, the choices are $0,3$; for primes $5$ and $7$, only $0$ is possible."),
-        ("Multiply", r"The number of cube divisors is $3\cdot2\cdot1\cdot1=6$."),
-        ("Answer", r"The answer is $\boxed{6}$."),
+    24: [
+        ("Interpret the condition", r"If $P(n)=\sqrt n$, then $\sqrt n$ is a prime factor of $n$ and is the greatest prime factor. This means $n$ must be the square of a prime."),
+        ("Set up prime squares", r"Let $n=p^2$ and $n+48=q^2$, where $p$ and $q$ are primes and $q>p$. Then \[q^2-p^2=48.\]"),
+        ("Factor the difference of squares", r"We get $(q-p)(q+p)=48$. Since $p$ and $q$ are primes greater than $2$ in the only viable case, both factors are even."),
+        ("Test factor pairs", r"The even factor pairs for $48$ are $(2,24)$, $(4,12)$, and $(6,8)$. These give $(p,q)=(11,13)$, $(4,8)$, and $(1,7)$ respectively. Only $(11,13)$ uses two primes."),
+        ("Answer", r"Thus there is exactly one value, $n=11^2=121$. The answer is $\boxed{1}$."),
     ],
-    16: [
-        ("Write the number by digits", r"Let the two-digit number be $10a+b$, where $a$ is from $1$ to $9$ and $b$ is from $0$ to $9$."),
-        ("Subtract the digit sum", r"Subtracting the sum of the digits gives $(10a+b)-(a+b)=9a$. Notice that the units digit depends only on the tens digit $a$."),
-        ("Find the needed tens digit", r"We need the units digit of $9a$ to be $6$. Testing $a=1,2,\ldots,9$, this happens only when $a=4$, since $9\cdot4=36$."),
-        ("Count possible units digits", r"Once $a=4$, the original units digit $b$ can be any of $0,1,\ldots,9$. That gives $10$ numbers."),
-        ("Answer", r"The answer is $\boxed{10}$."),
-    ],
-    18: [
-        ("Name the condition", r"We are told that team B wins game 2 and team A wins the series. We want the conditional probability that B also wins game 1."),
-        ("Case 1: B wins game 1", r"If B wins games 1 and 2, then B leads $2$-$0$. For A to win the series, A must win the next three games. This has probability $(1/2)^3=1/8$, and including B winning game 1 gives joint probability $\frac12\cdot\frac18=\frac1{16}$."),
-        ("Case 2: A wins game 1", r"If A wins game 1 and B wins game 2, the series is tied $1$-$1$. From there, A needs to win two games before B wins two games. This probability is $1/2$, so the joint probability for this case is $\frac12\cdot\frac12=\frac14$."),
-        ("Form the conditional probability", r"Among all cases where B wins game 2 and A wins the series, the total probability is $\frac1{16}+\frac14=\frac5{16}$. The part where B wins game 1 is $\frac1{16}$."),
-        ("Answer", r"The desired probability is $\frac{1/16}{5/16}=\boxed{\frac15}$."),
+    25: [
+        ("Notice the shared angle", r"Triangles $ABC$ and $ADE$ share angle $A$. Their areas can be compared using the two sides around that angle."),
+        ("Use side ratios", r"The side ratio on $AB$ is $AD/AB=19/25$. The side ratio on $AC$ is $AE/AC=14/42=1/3$."),
+        ("Find the area fraction", r"Therefore \[\frac{[ADE]}{[ABC]}=\frac{19}{25}\cdot\frac13=\frac{19}{75}.\]"),
+        ("Convert to the requested denominator", r"Quadrilateral $BCED$ is the rest of triangle $ABC$, so \[[BCED]=[ABC]-[ADE]=\frac{56}{75}[ABC].\]"),
+        ("Answer", r"Thus \[\frac{[ADE]}{[BCED]}=\frac{19/75}{56/75}=\frac{19}{56}.\] The answer is $\boxed{\frac{19}{56}}$."),
     ],
 }
 
@@ -296,7 +295,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批完成 2005 AMC 10A Problems 11、13、14、15、16、18；Problems 12、17、19、20 因图形或 OCR 不足跳过。\n"
+        + "本批完成 2005 AMC 10A Problems 21-25，无跳过题；2005A 可可靠处理部分完成。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",
