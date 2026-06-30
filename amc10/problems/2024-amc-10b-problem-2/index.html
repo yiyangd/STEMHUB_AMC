@@ -83,9 +83,23 @@
 
     <section class="section">
       <h2>Solution</h2>
-      <section class="step"><h3>Step 1</h3><p>Rewrite $10!$ so that it has a factor of $7!$: $10!=10\cdot 9\cdot 8\cdot 7!$.</p></section>
-<section class="step"><h3>Step 2</h3><p>Since $10\cdot 9\cdot 8=720=6!$, we have $10!=6!\cdot 7!$.</p></section>
-<section class="step"><h3>Step 3</h3><p>Therefore $10!-7!\cdot 6! = 7!\cdot 6! - 7!\cdot 6! = \boxed{0}$.</p></section>
+      <section class="step"><h3>Step 1: Notice the shared factorial structure</h3><p>The expression $10!-7!\cdot 6!$ looks large, but AMC problems often become simple after factoring. Since one term already contains $7!$, it is natural to rewrite $10!$ in terms of $7!$ instead of evaluating both factorials fully.</p></section>
+<section class="step"><h3>Step 2: Rewrite $10!$ using $7!$</h3><p>Break off the factors above $7$:
+\[
+10! = 10\cdot 9\cdot 8\cdot 7!.
+\]
+This is useful because the second term is also built from $7!$.</p></section>
+<section class="step"><h3>Step 3: Recognize the remaining product</h3><p>The product $10\cdot 9\cdot 8$ equals $720$, and $6!=720$. So we can rewrite
+\[
+10! = 6!\cdot 7!.
+\]
+At this point the two terms are actually identical.</p></section>
+<section class="step"><h3>Step 4: Subtract identical quantities</h3><p>Now the expression becomes
+\[
+10!-7!\cdot 6! = 6!\cdot 7!-7!\cdot 6! = 0.
+\]
+The important idea is not big computation; it is choosing the right factorization.</p></section>
+<section class="step"><h3>Step 5: Confirm the answer choice</h3><p>Since the expression is exactly zero, not just approximately small, the correct answer is $\boxed{0}$.</p></section>
     </section>
 
     <section class="section">

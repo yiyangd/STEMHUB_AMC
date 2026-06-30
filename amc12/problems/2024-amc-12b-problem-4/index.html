@@ -83,9 +83,23 @@
 
     <section class="section">
       <h2>Solution</h2>
-      <section class="step"><h3>Step 1</h3><p>At step $n$, exactly $n$ balls are deposited, so after step $n$ the number of deposited balls is $T_n=\frac{n(n+1)}{2}$.</p></section>
-<section class="step"><h3>Step 2</h3><p>We find $T_{63}=2016$ and $T_{64}=2080$, so ball $2024$ is deposited during step $64$.</p></section>
-<section class="step"><h3>Step 3</h3><p>The bins cycle A, B, C, D, E by step number. Since $64\equiv 4\pmod 5$, step $64$ uses bin D. Thus the answer is $\boxed{D}$.</p></section>
+      <section class="step"><h3>Step 1: Understand the deposit pattern</h3><p>The balls are not placed one at a time into consecutive bins. Instead, the process uses blocks: first $1$ ball, then $2$ balls, then $3$ balls, and so on. The bins cycle by block, not by individual ball, so the main task is to find which block contains ball $2024$.</p></section>
+<section class="step"><h3>Step 2: Use triangular numbers to locate the block</h3><p>After block $n$, the total number of deposited balls is
+\[
+1+2+\cdots+n=\frac{n(n+1)}{2}.
+\]
+This formula helps us avoid listing hundreds of blocks.</p></section>
+<section class="step"><h3>Step 3: Find the block containing ball $2024$</h3><p>Compute nearby triangular numbers:
+\[
+T_{63}=\frac{63\cdot64}{2}=2016, \qquad T_{64}=\frac{64\cdot65}{2}=2080.
+\]
+Since $2016&lt;2024\le 2080$, ball $2024$ is placed during block $64$.</p></section>
+<section class="step"><h3>Step 4: Convert the block number into a bin</h3><p>The bins repeat in the order A, B, C, D, E. Block $1$ goes to A, block $2$ to B, and so on. Since the pattern has length $5$, reduce the block number modulo $5$:
+\[
+64\equiv 4\pmod 5.
+\]
+The fourth bin in the cycle is D.</p></section>
+<section class="step"><h3>Step 5: Check that the reasoning matches the process</h3><p>We found the block first and only then chose the bin, which is important because every ball in block $64$ goes into the same bin. Therefore ball $2024$ is deposited in bin $\boxed{D}$.</p></section>
     </section>
 
     <section class="section">

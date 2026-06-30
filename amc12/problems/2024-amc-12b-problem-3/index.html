@@ -83,9 +83,23 @@
 
     <section class="section">
       <h2>Solution</h2>
-      <section class="step"><h3>Step 1</h3><p>The inequality $|2x|\le 7\pi$ is equivalent to $|x|\le \frac{7\pi}{2}$.</p></section>
-<section class="step"><h3>Step 2</h3><p>Using $3&lt;\pi&lt;\frac{22}{7}$, we get $10.5 &lt; \frac{7\pi}{2} &lt; 11$, so the integer values are $-10,-9,\ldots,9,10$.</p></section>
-<section class="step"><h3>Step 3</h3><p>There are $21$ integers in this list, so the answer is $\boxed{21}$.</p></section>
+      <section class="step"><h3>Step 1: Identify what is being counted</h3><p>The problem asks for the number of integer values of $x$, not for a range length. So after solving the inequality, we must count integers carefully, including both negative and positive values.</p></section>
+<section class="step"><h3>Step 2: Isolate $x$ inside the absolute value inequality</h3><p>The inequality is
+\[
+|2x|\le 7\pi.
+\]
+Because $|2x|=2|x|$, divide both sides by $2$ to get
+\[
+|x|\le \frac{7\pi}{2}.
+\]
+This means $x$ must lie between $-\frac{7\pi}{2}$ and $\frac{7\pi}{2}$.</p></section>
+<section class="step"><h3>Step 3: Estimate the boundary without overdoing decimals</h3><p>We only need to know which integers fit. Since $\pi$ is a little more than $3$, $\frac{7\pi}{2}$ is a little more than $\frac{21}{2}=10.5$. Since $\pi&lt;\frac{22}{7}$, we also have $\frac{7\pi}{2}&lt;11$. So the cutoff is between $10.5$ and $11$.</p></section>
+<section class="step"><h3>Step 4: List the possible integers in a structured way</h3><p>Because the cutoff is greater than $10$ but less than $11$, the allowed integers are
+\[
+-10,-9,\ldots,-1,0,1,\ldots,9,10.
+\]
+That is $10$ negative integers, $0$, and $10$ positive integers.</p></section>
+<section class="step"><h3>Step 5: Count and check the endpoints</h3><p>The total number of integers is $10+1+10=21$. The endpoint $11$ is not allowed because the cutoff is less than $11$, while $10$ is allowed because the cutoff is greater than $10$. Therefore the answer is $\boxed{21}$.</p></section>
     </section>
 
     <section class="section">

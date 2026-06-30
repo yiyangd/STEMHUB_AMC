@@ -67,29 +67,161 @@ for n in range(1, 6):
 
 SOLUTIONS = {
     "2024 AMC 10B Problem 1": [
-        "The named person has $1013-1=1012$ people to the left and $1010-1=1009$ people to the right.",
-        "Counting everyone gives $1012$ people on the left, the person themself, and $1009$ people on the right.",
-        "Thus the total is $1012+1+1009=2022$, so the answer is $\\boxed{2022}$.",
+        (
+            "Read the position information carefully",
+            r"""The sentence gives the same person's position from both ends of the line. From the left, this person is number $1013$; from the right, this person is number $1010$. A common mistake is to add these two numbers directly, but that counts the person twice.""",
+        ),
+        (
+            "Translate positions into people on each side",
+            r"""If someone is the $1013$th person from the left, then there are $1013-1=1012$ people before them. If the same person is the $1010$th person from the right, then there are $1010-1=1009$ people after them. This turns the wording into a simple picture: left side, the person, right side.""",
+        ),
+        (
+            "Count the whole line once",
+            r"""Now count each part exactly once. The total number of people is $1012$ on the left, plus the chosen person, plus $1009$ on the right. Therefore
+\[
+1012+1+1009=2022.
+\]""",
+        ),
+        (
+            "Check why the answer is reasonable",
+            r"""The answer should be a little more than $2000$, because the two given positions are about $1000$ from each side. The value $2022$ matches that expectation and avoids double-counting the middle person. Thus the answer is $\boxed{2022}$.""",
+        ),
     ],
     "2024 AMC 10B Problem 2": [
-        "Rewrite $10!$ so that it has a factor of $7!$: $10!=10\\cdot 9\\cdot 8\\cdot 7!$.",
-        "Since $10\\cdot 9\\cdot 8=720=6!$, we have $10!=6!\\cdot 7!$.",
-        "Therefore $10!-7!\\cdot 6! = 7!\\cdot 6! - 7!\\cdot 6! = \\boxed{0}$.",
+        (
+            "Notice the shared factorial structure",
+            r"""The expression $10!-7!\cdot 6!$ looks large, but AMC problems often become simple after factoring. Since one term already contains $7!$, it is natural to rewrite $10!$ in terms of $7!$ instead of evaluating both factorials fully.""",
+        ),
+        (
+            "Rewrite $10!$ using $7!$",
+            r"""Break off the factors above $7$:
+\[
+10! = 10\cdot 9\cdot 8\cdot 7!.
+\]
+This is useful because the second term is also built from $7!$.""",
+        ),
+        (
+            "Recognize the remaining product",
+            r"""The product $10\cdot 9\cdot 8$ equals $720$, and $6!=720$. So we can rewrite
+\[
+10! = 6!\cdot 7!.
+\]
+At this point the two terms are actually identical.""",
+        ),
+        (
+            "Subtract identical quantities",
+            r"""Now the expression becomes
+\[
+10!-7!\cdot 6! = 6!\cdot 7!-7!\cdot 6! = 0.
+\]
+The important idea is not big computation; it is choosing the right factorization.""",
+        ),
+        (
+            "Confirm the answer choice",
+            r"""Since the expression is exactly zero, not just approximately small, the correct answer is $\boxed{0}$.""",
+        ),
     ],
     "2024 AMC 10B Problem 3": [
-        "The inequality $|2x|\\le 7\\pi$ is equivalent to $|x|\\le \\frac{7\\pi}{2}$.",
-        "Using $3<\\pi<\\frac{22}{7}$, we get $10.5 < \\frac{7\\pi}{2} < 11$, so the integer values are $-10,-9,\\ldots,9,10$.",
-        "There are $21$ integers in this list, so the answer is $\\boxed{21}$.",
+        (
+            "Identify what is being counted",
+            r"""The problem asks for the number of integer values of $x$, not for a range length. So after solving the inequality, we must count integers carefully, including both negative and positive values.""",
+        ),
+        (
+            "Isolate $x$ inside the absolute value inequality",
+            r"""The inequality is
+\[
+|2x|\le 7\pi.
+\]
+Because $|2x|=2|x|$, divide both sides by $2$ to get
+\[
+|x|\le \frac{7\pi}{2}.
+\]
+This means $x$ must lie between $-\frac{7\pi}{2}$ and $\frac{7\pi}{2}$.""",
+        ),
+        (
+            "Estimate the boundary without overdoing decimals",
+            r"""We only need to know which integers fit. Since $\pi$ is a little more than $3$, $\frac{7\pi}{2}$ is a little more than $\frac{21}{2}=10.5$. Since $\pi<\frac{22}{7}$, we also have $\frac{7\pi}{2}<11$. So the cutoff is between $10.5$ and $11$.""",
+        ),
+        (
+            "List the possible integers in a structured way",
+            r"""Because the cutoff is greater than $10$ but less than $11$, the allowed integers are
+\[
+-10,-9,\ldots,-1,0,1,\ldots,9,10.
+\]
+That is $10$ negative integers, $0$, and $10$ positive integers.""",
+        ),
+        (
+            "Count and check the endpoints",
+            r"""The total number of integers is $10+1+10=21$. The endpoint $11$ is not allowed because the cutoff is less than $11$, while $10$ is allowed because the cutoff is greater than $10$. Therefore the answer is $\boxed{21}$.""",
+        ),
     ],
     "2024 AMC 10B Problem 4": [
-        "At step $n$, exactly $n$ balls are deposited, so after step $n$ the number of deposited balls is $T_n=\\frac{n(n+1)}{2}$.",
-        "We find $T_{63}=2016$ and $T_{64}=2080$, so ball $2024$ is deposited during step $64$.",
-        "The bins cycle A, B, C, D, E by step number. Since $64\\equiv 4\\pmod 5$, step $64$ uses bin D. Thus the answer is $\\boxed{D}$.",
+        (
+            "Understand the deposit pattern",
+            r"""The balls are not placed one at a time into consecutive bins. Instead, the process uses blocks: first $1$ ball, then $2$ balls, then $3$ balls, and so on. The bins cycle by block, not by individual ball, so the main task is to find which block contains ball $2024$.""",
+        ),
+        (
+            "Use triangular numbers to locate the block",
+            r"""After block $n$, the total number of deposited balls is
+\[
+1+2+\cdots+n=\frac{n(n+1)}{2}.
+\]
+This formula helps us avoid listing hundreds of blocks.""",
+        ),
+        (
+            "Find the block containing ball $2024$",
+            r"""Compute nearby triangular numbers:
+\[
+T_{63}=\frac{63\cdot64}{2}=2016, \qquad T_{64}=\frac{64\cdot65}{2}=2080.
+\]
+Since $2016<2024\le 2080$, ball $2024$ is placed during block $64$.""",
+        ),
+        (
+            "Convert the block number into a bin",
+            r"""The bins repeat in the order A, B, C, D, E. Block $1$ goes to A, block $2$ to B, and so on. Since the pattern has length $5$, reduce the block number modulo $5$:
+\[
+64\equiv 4\pmod 5.
+\]
+The fourth bin in the cycle is D.""",
+        ),
+        (
+            "Check that the reasoning matches the process",
+            r"""We found the block first and only then chose the bin, which is important because every ball in block $64$ goes into the same bin. Therefore ball $2024$ is deposited in bin $\boxed{D}$.""",
+        ),
     ],
     "2024 AMC 10B Problem 5": [
-        "The original sum of the first $50$ positive odd numbers is $50^2=2500$.",
-        "Changing a plus sign before an odd number $k$ to a minus sign decreases the value by $2k$. To make the expression negative with as few changes as possible, choose the largest odd numbers.",
-        "The largest $14$ odd numbers from $73$ to $99$ sum to $1204$, giving a decrease of $2408$, not enough. Including $71$ gives a sum of $1275$ and a decrease of $2550$, so $15$ changes are enough and necessary. The answer is $\\boxed{15}$.",
+        (
+            "Start with the original sum",
+            r"""The expression adds all positive odd numbers from $1$ to $99$. There are $50$ such numbers, and the sum of the first $50$ positive odd numbers is
+\[
+1+3+5+\cdots+99=50^2=2500.
+\]
+So before any signs are changed, the expression is quite positive.""",
+        ),
+        (
+            "Understand what changing one sign does",
+            r"""If a term $k$ changes from $+k$ to $-k$, the value of the expression decreases by $2k$, not just by $k$. For example, changing $+99$ to $-99$ changes the total by $198$. To make the total negative using as few sign changes as possible, we should change the largest odd numbers first.""",
+        ),
+        (
+            "Set up the target decrease",
+            r"""To make the new expression negative, the total decrease must be more than $2500$. If the changed odd numbers have sum $S$, then the decrease is $2S$. Therefore we need
+\[
+2S>2500, \qquad \text{so} \qquad S>1250.
+\]
+Now the problem becomes: how few of the largest odd numbers can have sum greater than $1250$?""",
+        ),
+        (
+            "Test the largest possible groups",
+            r"""The largest $14$ odd numbers are $73,75,\ldots,99$. Their average is $\frac{73+99}{2}=86$, so their sum is $14\cdot86=1204$. This is not enough, because $1204<1250$.""",
+        ),
+        (
+            "Add one more term and finish",
+            r"""If we also include the next largest odd number, $71$, the sum becomes
+\[
+1204+71=1275>1250.
+\]
+So $15$ sign changes are enough, while $14$ are not enough even in the best possible case. Therefore the least number of plus signs changed is $\boxed{15}$.""",
+        ),
     ],
 }
 for n in range(1, 6):
@@ -195,10 +327,25 @@ def render_detail_page(row: dict[str, str]) -> str:
     ) or '<li class="choice"><span>Choices to be organized.</span></li>'
     tags_html = "".join(f'<span class="badge">{html_text(t)}</span>' for t in tags)
     notes_html = f'<section class="section"><h2>Notes</h2><p>{html_text(notes)}</p></section>' if notes else ""
-    steps_html = "\n".join(
-        f'<section class="step"><h3>Step {i}</h3><p>{render_math_text(step)}</p></section>'
-        for i, step in enumerate(solution_steps, 1)
-    )
+    def render_step(i: int, step) -> str:
+        if isinstance(step, dict):
+            title = str(step.get("title", "")).strip()
+            body = str(step.get("body", "")).strip()
+        elif isinstance(step, (list, tuple)) and len(step) == 2:
+            title = str(step[0]).strip()
+            body = str(step[1]).strip()
+        else:
+            title = ""
+            body = str(step).strip()
+        heading = f"Step {i}: {title}" if title else f"Step {i}"
+        paragraphs = "".join(
+            f"<p>{render_math_text(part.strip())}</p>"
+            for part in re.split(r"\n\s*\n", body)
+            if part.strip()
+        )
+        return f'<section class="step"><h3>{html_text(heading)}</h3>{paragraphs}</section>'
+
+    steps_html = "\n".join(render_step(i, step) for i, step in enumerate(solution_steps, 1))
 
     return f'''<!doctype html>
 <html lang="en">
@@ -415,14 +562,14 @@ def write_reports(manifest: list[dict[str, object]]) -> None:
     lines = [
         "# Problem Pages Report",
         "",
-        "First sample round: 10 per-problem detail pages with English LaTeX solutions.",
+        "First sample round: 10 per-problem detail pages with expanded English teaching solutions and LaTeX.",
         "",
         f"- Total sample pages: {len(manifest)}",
         f"- AMC 10 sample pages: {sum(1 for m in manifest if m['contest'] == 'AMC 10')}",
         f"- AMC 12 sample pages: {sum(1 for m in manifest if m['contest'] == 'AMC 12')}",
         f"- AoPS answer-key verified: {sum(1 for m in manifest if m['aops_verified'])}",
         f"- Pages with choices: {sum(1 for m in manifest if m['has_choices'])}",
-        f"- Pages with complete sample solutions: {sum(1 for m in manifest if m['has_solution'])}",
+        f"- Pages with expanded teaching solutions: {sum(1 for m in manifest if m['has_solution'])}",
         "",
         "## Sample Pages",
         "",
@@ -433,7 +580,7 @@ def write_reports(manifest: list[dict[str, object]]) -> None:
         "",
         "## Notes",
         "",
-        "Solutions are rewritten in original English instructional language. AoPS is used as an answer verification/reference source only.",
+        "Solutions are rewritten in original English instructional language with step titles, reasoning cues, and checks. AoPS is used as an answer verification/reference source only.",
         "This is a sample round; bulk generation for all problems should run after the page structure and solution style are approved.",
     ]
     (ROOT / "problem_pages_report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -450,5 +597,6 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
 

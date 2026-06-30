@@ -1,13 +1,13 @@
 # Problem Pages Report
 
-First sample round: 10 per-problem detail pages with English LaTeX solutions.
+First sample round: 10 per-problem detail pages with expanded English teaching solutions and LaTeX.
 
 - Total sample pages: 10
 - AMC 10 sample pages: 5
 - AMC 12 sample pages: 5
 - AoPS answer-key verified: 10
 - Pages with choices: 10
-- Pages with complete sample solutions: 10
+- Pages with expanded teaching solutions: 10
 
 ## Sample Pages
 
@@ -24,5 +24,5 @@ First sample round: 10 per-problem detail pages with English LaTeX solutions.
 
 ## Notes
 
-Solutions are rewritten in original English instructional language. AoPS is used as an answer verification/reference source only.
+Solutions are rewritten in original English instructional language with step titles, reasoning cues, and checks. AoPS is used as an answer verification/reference source only.
 This is a sample round; bulk generation for all problems should run after the page structure and solution style are approved.

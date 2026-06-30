@@ -83,9 +83,13 @@
 
     <section class="section">
       <h2>Solution</h2>
-      <section class="step"><h3>Step 1</h3><p>The named person has $1013-1=1012$ people to the left and $1010-1=1009$ people to the right.</p></section>
-<section class="step"><h3>Step 2</h3><p>Counting everyone gives $1012$ people on the left, the person themself, and $1009$ people on the right.</p></section>
-<section class="step"><h3>Step 3</h3><p>Thus the total is $1012+1+1009=2022$, so the answer is $\boxed{2022}$.</p></section>
+      <section class="step"><h3>Step 1: Read the position information carefully</h3><p>The sentence gives the same person's position from both ends of the line. From the left, this person is number $1013$; from the right, this person is number $1010$. A common mistake is to add these two numbers directly, but that counts the person twice.</p></section>
+<section class="step"><h3>Step 2: Translate positions into people on each side</h3><p>If someone is the $1013$th person from the left, then there are $1013-1=1012$ people before them. If the same person is the $1010$th person from the right, then there are $1010-1=1009$ people after them. This turns the wording into a simple picture: left side, the person, right side.</p></section>
+<section class="step"><h3>Step 3: Count the whole line once</h3><p>Now count each part exactly once. The total number of people is $1012$ on the left, plus the chosen person, plus $1009$ on the right. Therefore
+\[
+1012+1+1009=2022.
+\]</p></section>
+<section class="step"><h3>Step 4: Check why the answer is reasonable</h3><p>The answer should be a little more than $2000$, because the two given positions are about $1000$ from each side. The value $2022$ matches that expectation and avoids double-counting the middle person. Thus the answer is $\boxed{2022}$.</p></section>
     </section>
 
     <section class="section">
