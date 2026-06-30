@@ -1,4 +1,1 @@
-﻿Continue STEMHUB AMC problem page generation. Completed batch 2: 2002 AMC 10B Problem 11-20. Next start: 2002 AMC 10A Problem 21. Reuse scripts/batch_generate_problem_pages.py pattern. Validate MathJax, update manifest/report/progress, commit and push each batch. Latest commit hash pending until commit.
-
-Skipped so far: 2002 AMC 10B Problem 14 due OCR/exponent mismatch; revisit after source cleanup.
-
+Continue STEMHUB AMC problem page generation. Completed batch 2: 2002 AMC 10B Problem 21-25. Next start: 2002 AMC 10A Problem 21. Reuse scripts/batch_generate_problem_pages.py pattern. Validate MathJax, update manifest/report/progress, commit and push each batch. Latest commit hash pending until commit.

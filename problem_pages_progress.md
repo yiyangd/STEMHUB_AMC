@@ -86,3 +86,16 @@
 - Next batch should start from: 2002 AMC 10B Problem 21
 - Review notes: Skipped Problem 14 because OCR/exponent data conflicts with answer choices; Problem 17 should be reviewed with a diagram if added.
 
+## Batch 6: 2002 AMC 10B Problem 21-25
+
+- Start time: 2026-06-30T03:48:00-07:00
+- End time: 2026-06-30T03:48:01-07:00
+- Processed contest: AMC 10
+- Processed range: 2002 AMC 10B Problem 21-25
+- Generated count: 5
+- Skipped count: 0
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2003 AMC 10A Problem 1
+- Review notes: 2002 AMC 10B Problem 14 remains skipped due OCR/exponent mismatch; next year starts after this batch.

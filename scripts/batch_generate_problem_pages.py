@@ -3,27 +3,19 @@ import csv, html, json, re
 from datetime import datetime
 from pathlib import Path
 ROOT=Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER=5
+BATCH_NUMBER=6
 CONTEST_DIR="amc10"
 ANSWER_KEY_URL="https://artofproblemsolving.com/wiki/index.php/2002_AMC_10A_Answer_Key"
-ANS={11:("B","77"),12:("E","5"),13:("A",r"\frac{3}{2}"),15:("E","prime"),16:("D","4"),17:("C",r"4+3\sqrt2"),18:("D","12"),19:("C","0.01"),20:("B","1")}
+ANS={21:("B","Beth"),22:("B","26"),23:("D","78"),24:("D","10"),25:("A","4")}
 OV={
-12:(r"For which value of $k$ does the equation $\frac{x-1}{x-2}=\frac{x-k}{x-6}$ have no solution for $x$?",[("A","$1$"),("B","$2$"),("C","$3$"),("D","$4$"),("E","$5$")]),
-13:(r"Find the value of $x$ such that $8xy-12y+2x-3=0$ is true for all values of $y$.",[("A","$\\frac32$"),("B","$\\frac32$ or $-\\frac14$"),("C","$-\\frac23$ or $-\\frac14$"),("D","$3$"),("E","$-\\frac34$ or $-\\frac12$")]),
-16:(r"For how many integers $n$ is $\frac{n}{20-n}$ the square of an integer?",[("A","$1$"),("B","$2$"),("C","$3$"),("D","$4$"),("E","$10$")]),
-17:(r"A regular octagon $ABCDEFGH$ has sides of length $2$. Find the area of $\\triangle ADG$.",[("A","$4+2\\sqrt2$"),("B","$6+\\sqrt2$"),("C","$4+3\\sqrt2$"),("D","$3+4\\sqrt2$"),("E","$8+\\sqrt2$")]),
-19:(r"Suppose $\{a_n\}$ is an arithmetic sequence with $a_1+a_2+\cdots+a_{100}=100$ and $a_{101}+a_{102}+\cdots+a_{200}=200$. What is $a_2-a_1$?",[("A","$0.0001$"),("B","$0.001$"),("C","$0.01$"),("D","$0.1$"),("E","$1$")]),
+25:(r"When $15$ is appended to a list of integers, the mean is increased by $2$. When $1$ is appended to the enlarged list, the mean of the enlarged list is decreased by $1$. How many integers were in the original list?",[("A","$4$"),("B","$5$"),("C","$6$"),("D","$7$"),("E","$8$")]),
 }
 SOL={
-11:[("Let the integers be consecutive",r"Write the integers as $n,n+1,n+2$. Their sum is $3n+3$ and their product is $n(n+1)(n+2)$."),("Set up the condition",r"The product is $8$ times the sum, so $n(n+1)(n+2)=8(3n+3)=24(n+1)$."),("Cancel the common factor",r"Since $n+1>0$, divide by $n+1$ to get $n(n+2)=24$, so $n^2+2n-24=0$."),("Finish",r"This gives $n=4$, so the integers are $4,5,6$. Their square sum is $16+25+36=77$, so the answer is $\\boxed{77}$.")],
-12:[("Cross multiply carefully",r"The excluded values are $x=2$ and $x=6$. For other $x$, cross multiply: $(x-1)(x-6)=(x-k)(x-2)$."),("Simplify",r"Expanding gives $x^2-7x+6=x^2-(k+2)x+2k$. Thus $(k-5)x+(6-2k)=0$."),("No solution condition",r"A linear equation has no solution when the coefficient of $x$ is $0$ but the constant is not $0$. That requires $k-5=0$."),("Check",r"For $k=5$, the constant is $6-10=-4$, not $0$. Therefore the answer is $\\boxed{5}$.")],
-13:[("Group by $y$",r"Rewrite the expression as $(8x-12)y+(2x-3)=0$."),("Use 'all values of $y$'",r"For this to be true for every $y$, both the coefficient of $y$ and the constant term must be $0$."),("Solve both conditions",r"$8x-12=0$ gives $x=3/2$, and $2x-3=0$ also gives $x=3/2$."),("Answer",r"The value is $\\boxed{\\frac32}$.")],
-15:[("Use parity",r"The primes $A$, $B$, $A-B$, and $A+B$ are positive. Since $A+B$ is prime, it cannot be an even number greater than $2$."),("Force the even prime",r"Thus one of $A$ and $B$ must be $2$. Since $A-B$ is positive prime, $B=2$."),("Find the possible value",r"Then $A-2$ and $A+2$ must both be prime. The working value is $A=5$, giving $5,2,3,7$."),("Sum",r"Their sum is $17$, which is prime. The answer is $\\boxed{\\text{prime}}$.")],
-16:[("Set the square",r"Let $\frac{n}{20-n}=k^2$ for some integer $k$."),("Solve for $n$",r"Then $n=20k^2/(1+k^2)=20-\frac{20}{1+k^2}$. So $1+k^2$ must divide $20$."),("Test divisors",r"The possible square values are $k^2=0,1,4,9$, giving $n=0,10,16,18$."),("Count",r"There are $4$ integers $n$, so the answer is $\\boxed{4}$.")],
-17:[("Use a coordinate model",r"A regular octagon with side $2$ can be placed symmetrically. The area of $\\triangle ADG$ can be found by dividing the octagon into right isosceles pieces or by coordinates."),("Use the known octagon geometry",r"The diagonal offsets around a side-$2$ regular octagon involve legs of length $\\sqrt2$. Tracking the coordinates of $A,D,G$ gives a base-height calculation."),("Compute the area",r"The resulting area is $4+3\\sqrt2$. Numerically this is about $8.24$, matching the size expected for a triangle spanning most of the octagon."),("Answer",r"The answer is $\\boxed{4+3\\sqrt2}$." )],
-18:[("Pair circles",r"Two distinct circles can intersect in at most $2$ points."),("Count pairs",r"With $4$ circles, there are $\\binom42=6$ pairs of circles."),("Maximize intersections",r"If the circles are positioned so that no three circles pass through the same intersection point, each pair contributes two new points."),("Answer",r"The maximum is $6\\cdot2=12$, so the answer is $\\boxed{12}$.")],
-19:[("Use arithmetic sequence differences",r"Let the common difference be $d=a_2-a_1$."),("Compare blocks",r"Each term from $a_{101}$ to $a_{200}$ is exactly $100d$ more than the corresponding term from $a_1$ to $a_{100}$."),("Use sums",r"The second block sum exceeds the first by $200-100=100$. But it also exceeds it by $100\cdot100d=10000d$."),("Solve",r"So $10000d=100$, giving $d=0.01$. The answer is $\\boxed{0.01}$.")],
-20:[("Solve in terms of one variable",r"From $a-7b+8c=4$, write $a=4+7b-8c$. Substitute into $8a+4b-c=7$."),("Relate $b$ and $c$",r"This gives $32+60b-65c=7$, so $12b-13c=-5$, hence $b=(13c-5)/12$."),("Find $a$",r"Substituting back gives $a=(13-5c)/12$."),("Evaluate the expression",r"Now $a^2-b^2+c^2=\left(\frac{13-5c}{12}\right)^2-\left(\frac{13c-5}{12}\right)^2+c^2=1$. The answer is $\\boxed{1}$.")],
+21:[("Choose units",r"Let Carlos' mowing rate be $1$ unit of area per hour. Then Beth's rate is $2$ and Andy's rate is $3$."),("Choose lawn areas",r"Let Beth's lawn area be $1$. Andy's is twice Beth's, so Andy has area $2$. Since Andy's is three times Carlos', Carlos has area $2/3$."),("Compute times",r"Time equals area divided by rate. Andy takes $2/3$, Beth takes $1/2$, and Carlos takes $(2/3)/1=2/3$."),("Compare",r"Beth has the smallest time, so Beth finishes first. The answer is $\\boxed{\text{Beth}}$.")],
+22:[("Name the legs",r"Let $OX=a$ and $OY=b$. Since $M$ and $N$ are midpoints, $ON=b/2$ and $OM=a/2$."),("Use the two given lengths",r"Right triangles give $XN^2=a^2+(b/2)^2=19^2$ and $YM^2=(a/2)^2+b^2=22^2$."),("Add equations",r"Adding gives $\\frac54(a^2+b^2)=19^2+22^2=845$. Thus $a^2+b^2=676$."),("Find hypotenuse",r"Since $XY^2=a^2+b^2$, we get $XY=\\sqrt{676}=26$. The answer is $\\boxed{26}$.")],
+23:[("Use the recurrence with $1$",r"Set $n=1$. Then $a_{m+1}=a_m+a_1+m=a_m+1+m$."),("Build the pattern",r"Starting from $a_1=1$, each step adds $m+1$. This produces triangular numbers."),("Formula",r"The formula is $a_k=\\frac{k(k+1)}2$. It satisfies $a_1=1$ and the recurrence."),("Evaluate",r"So $a_{12}=\\frac{12\\cdot13}{2}=78$. The answer is $\\boxed{78}$.")],
+24:[("Model the height",r"The Ferris wheel radius is $20$. Starting at the bottom, after central angle $\\theta$, the height above the bottom is $20(1-\\cos\\theta)$."),("Set the target height",r"We need $20(1-\\cos\\theta)=10$, so $\\cos\\theta=1/2$."),("Find the angle",r"The first time this happens is at $\\theta=60^\\circ$, which is $1/6$ of a full revolution."),("Convert to seconds",r"One revolution takes $60$ seconds, so $1/6$ revolution takes $10$ seconds. The answer is $\\boxed{10}$.")],
+25:[("Set variables",r"Let the original list have $n$ integers, sum $S$, and mean $m=S/n$."),("Use adding 15",r"After appending $15$, the mean is $m+2$, so $S+15=(n+1)(m+2)$. This simplifies to $15=m+2n+2$, or $m=13-2n$."),("Use adding 1",r"After appending $1$ to the enlarged list, the new mean is one less than $m+2$, so it is $m+1$. Thus $S+16=(n+2)(m+1)$, which gives $2m+n=14$."),("Solve",r"Substitute $m=13-2n$ into $2m+n=14$: $2(13-2n)+n=14$, so $n=4$. The answer is $\\boxed{4}$.")],
 }
 
 def esc(x,quote=True): return html.escape(str(x),quote=quote)
@@ -72,7 +64,7 @@ def main():
 
  with (ROOT/'amc10'/'all_problems.csv').open(encoding='utf-8-sig', newline='') as f:
   rows=list(csv.DictReader(f))
- rows=[r for r in rows if r['year']=='2002' and r['form']=='B' and 11<=int(r['problem_no'])<=20 and int(r['problem_no'])!=14]
+ rows=[r for r in rows if r['year']=='2002' and r['form']=='B' and 21<=int(r['problem_no'])<=25]
  items=[]
  for r in rows:
   sl=slug(r['source']); out=ROOT/'amc10'/'problems'/sl; out.mkdir(parents=True,exist_ok=True); (out/'index.html').write_text(render(r),encoding='utf-8')
@@ -83,10 +75,10 @@ def main():
  merged=sorted(by.values(),key=lambda x:(str(x.get('contest')),str(x.get('year')),str(x.get('form')),int(x.get('problem_no',0)))) ; mpath.write_text(json.dumps(merged,ensure_ascii=False,indent=2),encoding='utf-8')
  end=datetime.now().astimezone().isoformat(timespec='seconds')
  prog=ROOT/'problem_pages_progress.md'; old=prog.read_text(encoding='utf-8').rstrip()+'\n\n' if prog.exists() else f'# Problem Pages Progress\n\n- Overall start time: {start}\n\n'
- prog.write_text(old+f'## Batch {BATCH_NUMBER}: 2002 AMC 10B Problem 11-20\n\n- Start time: {start}\n- End time: {end}\n- Processed contest: AMC 10\n- Processed range: 2002 AMC 10B Problem 11-20\n- Generated count: {len(items)}\n- Skipped count: 0\n- Validation result: passed\n- Commit hash: pending\n- Pushed: pending\n- Next batch should start from: 2002 AMC 10B Problem 21\n- Review notes: Skipped Problem 14 because OCR/exponent data conflicts with answer choices; Problem 17 should be reviewed with a diagram if added.\n',encoding='utf-8')
- (ROOT/'problem_pages_report.md').write_text('# Problem Pages Report\n\n'+f'- Total manifest entries: {len(merged)}\n- Latest batch: {BATCH_NUMBER} (2002 AMC 10B Problem 11-20)\n- Latest generated count: {len(items)}\n- MathJax validation: passed\n\n## Latest Batch Pages\n\n'+'\n'.join(f"- `{it['source']}` -> `amc10/problems/{it['slug']}/`" for it in items)+'\n',encoding='utf-8')
- (ROOT/'resume_prompt.md').write_text('Continue STEMHUB AMC problem page generation. Completed batch 2: 2002 AMC 10B Problem 11-20. Next start: 2002 AMC 10A Problem 21. Reuse scripts/batch_generate_problem_pages.py pattern. Validate MathJax, update manifest/report/progress, commit and push each batch. Latest commit hash pending until commit.\n',encoding='utf-8')
- print(json.dumps({'batch':BATCH_NUMBER,'generated':len(items),'start':start,'end':end,'next':'2002 AMC 10B Problem 21'},indent=2))
+ prog.write_text(old+f'## Batch {BATCH_NUMBER}: 2002 AMC 10B Problem 21-25\n\n- Start time: {start}\n- End time: {end}\n- Processed contest: AMC 10\n- Processed range: 2002 AMC 10B Problem 21-25\n- Generated count: {len(items)}\n- Skipped count: 0\n- Validation result: passed\n- Commit hash: pending\n- Pushed: pending\n- Next batch should start from: 2003 AMC 10A Problem 1\n- Review notes: 2002 AMC 10B Problem 14 remains skipped due OCR/exponent mismatch; next year starts after this batch.\n',encoding='utf-8')
+ (ROOT/'problem_pages_report.md').write_text('# Problem Pages Report\n\n'+f'- Total manifest entries: {len(merged)}\n- Latest batch: {BATCH_NUMBER} (2002 AMC 10B Problem 21-25)\n- Latest generated count: {len(items)}\n- MathJax validation: passed\n\n## Latest Batch Pages\n\n'+'\n'.join(f"- `{it['source']}` -> `amc10/problems/{it['slug']}/`" for it in items)+'\n',encoding='utf-8')
+ (ROOT/'resume_prompt.md').write_text('Continue STEMHUB AMC problem page generation. Completed batch 2: 2002 AMC 10B Problem 21-25. Next start: 2002 AMC 10A Problem 21. Reuse scripts/batch_generate_problem_pages.py pattern. Validate MathJax, update manifest/report/progress, commit and push each batch. Latest commit hash pending until commit.\n',encoding='utf-8')
+ print(json.dumps({'batch':BATCH_NUMBER,'generated':len(items),'start':start,'end':end,'next':'2003 AMC 10A Problem 1'},indent=2))
 if __name__=='__main__': main()
 
 
