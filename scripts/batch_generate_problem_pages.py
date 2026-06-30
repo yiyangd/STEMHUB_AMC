@@ -8,91 +8,132 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 12
+BATCH_NUMBER = 13
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2003_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {21, 22, 23, 24, 25}
-SKIPPED = []
-BATCH_LABEL = "2003 AMC 10B Problem 21-25"
-NEXT_START = "2004 AMC 10A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2004_AMC_10A_Answer_Key"
+TARGET_NUMBERS = {1, 2, 3, 4, 6, 7, 8, 9, 10}
+SKIPPED = ["2004 AMC 10A Problem 5: probability question depends on the original grid diagram."]
+BATCH_LABEL = "2004 AMC 10A Problem 1-10"
+NEXT_START = "2004 AMC 10A Problem 11"
 
 ANS = {
-    21: ("C", r"\frac{9}{32}"),
-    22: ("B", "March 9"),
-    23: ("D", r"\frac{1}{2}"),
-    24: ("E", r"\frac{123}{40}"),
-    25: ("B", "30"),
+    1: ("A", "250"),
+    2: ("B", r"-\frac{1}{4}"),
+    3: ("E", "29"),
+    4: ("D", r"\frac{3}{2}"),
+    6: ("E", "26"),
+    7: ("C", "100"),
+    8: ("B", "37"),
+    9: ("B", "4"),
+    10: ("D", r"\frac{35}{128}"),
 }
 
 
 OV = {
-    21: (
-        r"A bag contains two red beads and two green beads. You reach into the bag and pull out a bead, replacing it with a red bead regardless of the color you pulled out. What is the probability that all beads in the bag are red after three such replacements?",
-        [("A", r"$\frac18$"), ("B", r"$\frac{5}{32}$"), ("C", r"$\frac{9}{32}$"), ("D", r"$\frac38$"), ("E", r"$\frac{7}{16}$")],
+    1: (
+        r"You and five friends need to raise $\$1500$ in donations for a charity, dividing the fundraising equally. How many dollars will each of you need to raise?",
+        [("A", "$250$"), ("B", "$300$"), ("C", "$1500$"), ("D", "$7500$"), ("E", "$9000$")],
     ),
-    22: (
-        r"A clock chimes once at $30$ minutes past each hour and chimes on the hour according to the hour. For example, at $1$ PM there is one chime and at noon and midnight there are twelve chimes. Starting at $11{:}15$ AM on February $26$, $2003$, on what date will the $2003$rd chime occur?",
-        [("A", "March 8"), ("B", "March 9"), ("C", "March 10"), ("D", "March 20"), ("E", "March 21")],
+    2: (
+        r"For any three real numbers $a$, $b$, and $c$, with $b\ne c$, the operation $\otimes$ is defined by $\otimes(a,b,c)=\frac{a}{b-c}$. What is $\otimes(\otimes(1,2,3),\otimes(2,3,1),\otimes(3,1,2))$?",
+        [("A", r"$-\frac12$"), ("B", r"$-\frac14$"), ("C", "$0$"), ("D", r"$\frac14$"), ("E", r"$\frac12$")],
     ),
-    23: (
-        r"A regular octagon $ABCDEFGH$ has area $1$ square unit. What is the area of rectangle $ABEF$?",
-        [("A", r"$1-\frac{\sqrt2}{2}$"), ("B", r"$\frac{\sqrt2}{4}$"), ("C", r"$\frac{\sqrt2-1}{2}$"), ("D", r"$\frac12$"), ("E", r"$\frac{1+\sqrt2}{4}$")],
+    3: (
+        r"Alicia earns $\$20$ per hour, of which $1.45\%$ is deducted to pay local taxes. How many cents per hour of Alicia's wages are used to pay local taxes?",
+        [("A", "$0.0029$"), ("B", "$0.029$"), ("C", "$0.29$"), ("D", "$2.9$"), ("E", "$29$")],
     ),
-    24: (
-        r"The first four terms in an arithmetic sequence are $x+y$, $x-y$, $xy$, and $\frac{x}{y}$, in that order. What is the fifth term?",
-        [("A", r"$-\frac{15}{8}$"), ("B", r"$-\frac65$"), ("C", "$0$"), ("D", r"$\frac{27}{20}$"), ("E", r"$\frac{123}{40}$")],
+    4: (
+        r"What is the value of $x$ if $|x-1|=|x-2|$?",
+        [("A", r"$-\frac12$"), ("B", r"$\frac12$"), ("C", "$1$"), ("D", r"$\frac32$"), ("E", "$2$")],
     ),
-    25: (
-        r"How many distinct four-digit numbers are divisible by $3$ and have $23$ as their last two digits?",
-        [("A", "$27$"), ("B", "$30$"), ("C", "$33$"), ("D", "$81$"), ("E", "$90$")],
+    7: (
+        r"A grocer stacks oranges in a pyramid-like stack whose rectangular base is $5$ oranges by $8$ oranges. Each orange above the first level rests in a pocket formed by four oranges in the level below. The stack is completed by a single row of oranges. How many oranges are in the stack?",
+        [("A", "$96$"), ("B", "$98$"), ("C", "$100$"), ("D", "$101$"), ("E", "$134$")],
+    ),
+    9: (
+        r"In the figure, $\angle EAB$ and $\angle ABC$ are right angles. Also $AB=4$, $BC=6$, $AE=8$, and $AC$ and $BE$ intersect at $D$. What is the difference between the areas of $\triangle ADE$ and $\triangle BDC$?",
+        [("A", "$2$"), ("B", "$4$"), ("C", "$5$"), ("D", "$8$"), ("E", "$9$")],
+    ),
+    10: (
+        r"Coin A is flipped three times and coin B is flipped four times. What is the probability that the number of heads obtained from flipping the two fair coins is the same?",
+        [("A", r"$\frac{19}{128}$"), ("B", r"$\frac{23}{128}$"), ("C", r"$\frac14$"), ("D", r"$\frac{35}{128}$"), ("E", r"$\frac12$")],
     ),
 }
 
 
 KEY_OVERRIDES = {
-    21: "Use complement counting on the two original green beads that must both be drawn at least once.",
-    22: "Count chimes in repeated 12-hour or 24-hour blocks, then handle the leftover chimes carefully.",
-    23: "Decompose a regular octagon into a central rectangle and congruent corner triangles.",
-    24: "Use equal common differences to create equations for x and y, then find the next term.",
-    25: "Use the divisibility-by-3 rule and count valid first two digits by residues modulo 3.",
+    1: "Divide the total fundraising goal equally among all six people.",
+    2: "Evaluate the custom operation inside-out, keeping the order of the three inputs clear.",
+    3: "Convert a percent of dollars into cents carefully.",
+    4: "Use the meaning of equal distances on a number line.",
+    6: "Set up a simple count of daughters and granddaughters.",
+    7: "Add the rectangular layers of the orange stack as each layer shrinks by one in each direction.",
+    8: "Find the repeating three-round cycle in the token counts.",
+    9: "Use coordinates to compute the two triangle areas from the intersection point.",
+    10: "Sum the probabilities that both coins produce the same number of heads.",
 }
 
 
 SOL = {
-    21: [
-        ("Identify what must happen", r"A bead becomes red permanently if it is green when drawn, because it is replaced by a red bead. After three draws, all beads are red exactly when both original green beads have been drawn at least once."),
-        ("Use the complement", r"It is easier to count the opposite event: at least one of the two original green beads is never drawn. Then subtract from $1$."),
-        ("Compute the chance one specific green is missed", r"Pick one original green bead. On each draw, as long as we are asking whether this particular bead is avoided, there are $3$ acceptable beads out of $4$. So the probability it is missed for all three draws is $(3/4)^3=27/64$."),
-        ("Correct for double-counting", r"If both original green beads are missed, then every draw must be one of the two original red beads or red replacements. The probability is $(1/2)^3=1/8=8/64$."),
-        ("Apply inclusion-exclusion", r"The probability at least one green is missed is $2\cdot\frac{27}{64}-\frac{8}{64}=\frac{46}{64}$. Therefore the probability both greens are drawn is $1-\frac{46}{64}=\frac{18}{64}=\frac{9}{32}$. The answer is $\boxed{\frac{9}{32}}$."),
+    1: [
+        ("Count the people sharing the goal", r"The phrase 'you and five friends' means there are $6$ people total, not $5$. The donations are divided equally among all $6$."),
+        ("Divide the total", r"Each person must raise \[\frac{1500}{6}=250.\]"),
+        ("Check the total", r"If each of the $6$ people raises $250$, the total is $6\cdot250=1500$."),
+        ("Answer", r"Each person needs to raise $\boxed{250}$ dollars."),
     ],
-    22: [
-        ("Look for a repeating block", r"The clock pattern repeats every $12$ hours. In a $12$-hour period, the hour chimes add to $1+2+\cdots+12=78$, and there are $12$ half-hour chimes."),
-        ("Count chimes per half-day and per day", r"Thus each $12$-hour block has $78+12=90$ chimes. Each full day has $180$ chimes."),
-        ("Remove full days", r"Starting at $11{:}15$ AM on February $26$, after $11$ full days the clock has chimed $11\cdot180=1980$ times. That brings us to $11{:}15$ AM on March $9$, with $2003-1980=23$ chimes left."),
-        ("Count the remaining chimes", r"From $11{:}15$ AM, the next chimes are: $11{:}30$ gives $1$, noon gives $12$ more for a total of $13$, $12{:}30$ gives $14$, $1{:}00$ gives $15$, $1{:}30$ gives $16$, $2{:}00$ gives $18$, $2{:}30$ gives $19$, $3{:}00$ gives $22$, and $3{:}30$ gives $23$."),
-        ("State the date", r"The $2003$rd chime occurs on March $9$, so the answer is $\boxed{\text{March 9}}$."),
+    2: [
+        ("Understand the operation", r"The operation takes three inputs and returns the first input divided by the difference of the second and third: $\otimes(a,b,c)=\frac{a}{b-c}$. Since the final expression uses nested operations, start inside."),
+        ("Evaluate the three inner operations", r"We get $\otimes(1,2,3)=\frac{1}{2-3}=-1$, $\otimes(2,3,1)=\frac{2}{3-1}=1$, and $\otimes(3,1,2)=\frac{3}{1-2}=-3$."),
+        ("Substitute into the outer operation", r"The expression becomes $\otimes(-1,1,-3)$. Use the same rule again: \[\otimes(-1,1,-3)=\frac{-1}{1-(-3)}.\]"),
+        ("Finish the calculation", r"The denominator is $4$, so the value is $-\frac14$."),
+        ("Answer", r"The answer is $\boxed{-\frac14}$."),
     ],
-    23: [
-        ("Name the side length", r"Let the side length of the regular octagon be $s$. In the usual orientation, $AB$ and $EF$ are horizontal sides of length $s$, and rectangle $ABEF$ has width $s$."),
-        ("Find the rectangle height", r"The slanted sides of the octagon are at $45^\circ$, so the vertical contribution of each slanted side is $s/\sqrt2$. The distance from $AB$ to $EF$ is $s+2\cdot s/\sqrt2=s(1+\sqrt2)$."),
-        ("Write the rectangle area", r"Therefore \[[ABEF]=s\cdot s(1+\sqrt2)=s^2(1+\sqrt2).\]"),
-        ("Relate this to the whole octagon", r"The regular octagon can be divided into this central rectangle plus two congruent strips of right isosceles triangles whose total area equals another $s^2(1+\sqrt2)$. Equivalently, the area of the octagon is $2s^2(1+\sqrt2)$."),
-        ("Use the given octagon area", r"Since the octagon has area $1$, the rectangle has half that area: \[[ABEF]=\frac12.\] The answer is $\boxed{\frac12}$."),
+    3: [
+        ("Translate the percent", r"The tax rate $1.45\%$ means $0.0145$ of her hourly wage. Percent problems become easier once the percent is written as a decimal."),
+        ("Find the dollar amount", r"Alicia earns $20$ dollars per hour, so the tax is $20\cdot0.0145=0.29$ dollars per hour."),
+        ("Convert dollars to cents", r"Since $1$ dollar is $100$ cents, $0.29$ dollars is $29$ cents."),
+        ("Answer", r"The local tax is $\boxed{29}$ cents per hour."),
     ],
-    24: [
-        ("Use equal differences", r"In an arithmetic sequence, consecutive differences are equal. The first difference is $(x-y)-(x+y)=-2y$."),
-        ("Set up equations from the next differences", r"The second difference is $xy-(x-y)=xy-x+y$, so $xy-x+y=-2y$, or $xy-x+3y=0$. The third difference is $\frac{x}{y}-xy$, so $\frac{x}{y}-xy=-2y$."),
-        ("Solve for x in terms of y", r"From $xy-x+3y=0$, we get $x(y-1)=-3y$, so $x=\frac{3y}{1-y}$."),
-        ("Use the third difference", r"Multiplying $\frac{x}{y}-xy=-2y$ by $y$ gives $x-xy^2=-2y^2$. Substitute $x=\frac{3y}{1-y}$ and simplify; this gives $3(1+y)=-2y$, so $y=-\frac35$."),
-        ("Find the fourth and fifth terms", r"Then $x=\frac{3y}{1-y}=-\frac98$, and $\frac{x}{y}=\frac{15}{8}$. The common difference is $-2y=\frac65$, so the fifth term is \[\frac{15}{8}+\frac65=\frac{75}{40}+\frac{48}{40}=\frac{123}{40}.\] The answer is $\boxed{\frac{123}{40}}$."),
+    4: [
+        ("Interpret the absolute values", r"The equation $|x-1|=|x-2|$ says that $x$ is the same distance from $1$ and from $2$ on the number line."),
+        ("Use symmetry", r"The point equally distant from $1$ and $2$ is their midpoint."),
+        ("Compute the midpoint", r"The midpoint is \[\frac{1+2}{2}=\frac32.\]"),
+        ("Answer", r"Therefore $x=\boxed{\frac32}$."),
     ],
-    25: [
-        ("Write the number by its digits", r"Every number has the form $ab23$, where $a$ is from $1$ to $9$ and $b$ is from $0$ to $9$."),
-        ("Use the divisibility rule", r"A number is divisible by $3$ exactly when the sum of its digits is divisible by $3$. Here the digit sum is $a+b+2+3=a+b+5$."),
-        ("Convert to a residue condition", r"We need $a+b+5\equiv0\pmod3$, so $a+b\equiv1\pmod3$."),
-        ("Count residues for a and b", r"Among $1,2,\ldots,9$, the residues $0,1,2$ each occur $3$ times. Among $0,1,\ldots,9$, the residue counts are $4$ for residue $0$ and $3$ each for residues $1$ and $2$."),
-        ("Add the valid cases", r"The pairs with $a+b\equiv1\pmod3$ are $(0,1),(1,0),(2,2)$ by residue. The count is $3\cdot3+3\cdot4+3\cdot3=9+12+9=30$. The answer is $\boxed{30}$."),
+    6: [
+        ("Define the unknown", r"Bertha has $6$ daughters. Let $d$ be the number of those daughters who each have $6$ daughters."),
+        ("Use the total family count", r"The number of granddaughters is $6d$. The total number of daughters and granddaughters is $6+6d=30$."),
+        ("Solve for d", r"From $6+6d=30$, we get $6d=24$, so $d=4$. Thus $4$ of Bertha's daughters have daughters, and $2$ of her daughters have no daughters."),
+        ("Count people with no daughters", r"All $24$ granddaughters have no daughters because there are no great-granddaughters. Adding the $2$ daughters with no daughters gives $24+2=26$."),
+        ("Answer", r"The answer is $\boxed{26}$."),
+    ],
+    7: [
+        ("Visualize the layers", r"The bottom layer is a $5$ by $8$ rectangle of oranges. Each higher layer sits in pockets, so both dimensions shrink by $1$ each time."),
+        ("List the layer sizes", r"The layers are $5\times8$, $4\times7$, $3\times6$, $2\times5$, and $1\times4$. The process stops at the single row $1\times4$."),
+        ("Add the layers", r"The total number of oranges is \[5\cdot8+4\cdot7+3\cdot6+2\cdot5+1\cdot4.\]"),
+        ("Compute", r"This is $40+28+18+10+4=100$."),
+        ("Answer", r"The stack contains $\boxed{100}$ oranges."),
+    ],
+    8: [
+        ("Track the first few rounds", r"The player with the most tokens loses $3$ tokens total: one to each of the other two players and one to the discard pile. Each other player gains $1$."),
+        ("Find the repeating pattern", r"Starting from $(15,14,13)$, after three rounds the counts become $(14,13,12)$. The same order has returned, but each player has one fewer token."),
+        ("Use the cycle", r"Every $3$ rounds, all three players decrease by $1$. After $36$ rounds, which is $12$ cycles, the counts are $(3,2,1)$."),
+        ("Finish one more round", r"At that point A has the most tokens. In round $37$, A gives away three tokens total, so A goes from $3$ to $0$, and the game ends."),
+        ("Answer", r"There are $\boxed{37}$ rounds."),
+    ],
+    9: [
+        ("Choose coordinates", r"Place $A=(0,0)$, $B=(4,0)$, $C=(4,6)$, and $E=(0,8)$. This matches the two right angles and the given side lengths."),
+        ("Find the intersection D", r"Line $AC$ has slope $6/4=3/2$, so its equation is $y=\frac32x$. Line $BE$ through $(4,0)$ and $(0,8)$ has equation $y=-2x+8$."),
+        ("Solve for D", r"Set the equations equal: $\frac32x=-2x+8$. Then $\frac72x=8$, so $x=\frac{16}{7}$ and $y=\frac{24}{7}$."),
+        ("Compute the two areas", r"Triangle $ADE$ has base $AE=8$ and horizontal height $\frac{16}{7}$, so its area is $\frac12\cdot8\cdot\frac{16}{7}=\frac{64}{7}$. Triangle $BDC$ has base $BC=6$ and horizontal height $4-\frac{16}{7}=\frac{12}{7}$, so its area is $\frac12\cdot6\cdot\frac{12}{7}=\frac{36}{7}$."),
+        ("Subtract", r"The difference is $\frac{64}{7}-\frac{36}{7}=\frac{28}{7}=4$. The answer is $\boxed{4}$."),
+    ],
+    10: [
+        ("Organize by the number of heads", r"Coin A is flipped $3$ times, so it can have $0,1,2,$ or $3$ heads. Coin B is flipped $4$ times, and we need the same number of heads."),
+        ("Count favorable outcomes", r"For each possible $k$, the number of ways is $\binom{3}{k}\binom{4}{k}$. Therefore the favorable count is \[\binom30\binom40+\binom31\binom41+\binom32\binom42+\binom33\binom43.\]"),
+        ("Compute the sum", r"This equals $1\cdot1+3\cdot4+3\cdot6+1\cdot4=1+12+18+4=35$."),
+        ("Count all outcomes", r"There are $2^3$ outcomes for coin A and $2^4$ outcomes for coin B, for a total of $2^7=128$ equally likely outcomes."),
+        ("Answer", r"The probability is $\boxed{\frac{35}{128}}$."),
     ],
 }
 
@@ -141,7 +182,7 @@ def render(row):
     ans, val = ANS[n]
     tags = "".join(f'<span class="badge">{esc(t)}</span>' for t in (row.get("tags") or "").split(";") if t)
     notes = row.get("notes") or ""
-    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in {20, 23}) else notes
+    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in {7, 9}) else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
         f'<li class="choice {"correct" if k == ans else ""}"><span class="choice-key">{esc(k)}</span><span>{esc(v, False)}</span></li>'
@@ -196,7 +237,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2003" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2004" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -237,7 +278,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": int(r["problem_no"]) in {20, 23},
+                "needs_review": int(r["problem_no"]) in {7, 9},
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -295,7 +336,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批完成 2003 AMC 10B Problems 21-25，至此 2003B 已完成，除 Problem 4 和 19 因图形/OCR 问题跳过。\n"
+        + "本批完成 2004 AMC 10A Problems 1-4 和 6-10；Problem 5 因网格图缺失跳过。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",
