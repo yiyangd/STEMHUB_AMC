@@ -8,132 +8,135 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 16
+BATCH_NUMBER = 17
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2004_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
 SKIPPED = []
-BATCH_LABEL = "2004 AMC 10B Problem 1-10"
-NEXT_START = "2004 AMC 10B Problem 11"
+BATCH_LABEL = "2004 AMC 10B Problem 11-20"
+NEXT_START = "2004 AMC 10B Problem 21"
 
 ANS = {
-    1: ("C", "363"),
-    2: ("B", "18"),
-    3: ("A", "3"),
-    4: ("B", "12"),
-    5: ("D", "9"),
-    6: ("C", r"99!\cdot100!"),
-    7: ("A", "5"),
-    8: ("A", "13"),
-    9: ("B", r"100+75\pi"),
-    10: ("D", "10"),
+    11: ("C", r"\frac{3}{4}"),
+    12: ("A", r"\pi a^2"),
+    13: ("B", "8"),
+    14: ("C", r"\frac{1}{3}"),
+    15: ("A", r"\$1.15"),
+    16: ("D", r"\frac{3+2\sqrt3}{3}"),
+    17: ("B", "18"),
+    18: ("E", r"\frac{7}{16}"),
+    19: ("C", "0"),
+    20: ("D", r"\frac{4}{11}"),
 }
 
 
 OV = {
-    1: (
-        r"Each row of the Misty Moon Amphitheater has $33$ seats. Rows $12$ through $22$ are reserved for a youth club. How many seats are reserved for this club?",
-        [("A", "$297$"), ("B", "$330$"), ("C", "$363$"), ("D", "$396$"), ("E", "$726$")],
+    11: (
+        r"Two eight-sided dice each have faces numbered $1$ through $8$. When the dice are rolled, each face has an equal probability of appearing on the top. What is the probability that the product of the two top numbers is greater than their sum?",
+        [("A", r"$\frac12$"), ("B", r"$\frac{47}{64}$"), ("C", r"$\frac34$"), ("D", r"$\frac{55}{64}$"), ("E", r"$\frac78$")],
     ),
-    4: (
-        r"A standard six-sided die is rolled, and $P$ is the product of the five numbers that are visible. What is the largest number that is certain to divide $P$?",
-        [("A", "$6$"), ("B", "$12$"), ("C", "$24$"), ("D", "$144$"), ("E", "$720$")],
+    12: (
+        r"An annulus is the region between two concentric circles. The concentric circles have radii $b$ and $c$, with $b>c$. Let $OX$ be a radius of the larger circle, let $XZ$ be tangent to the smaller circle at $Z$, and let $a=XZ$. What is the area of the annulus?",
+        [("A", r"$\pi a^2$"), ("B", r"$\pi b^2$"), ("C", r"$\pi c^2$"), ("D", r"$\pi d^2$"), ("E", r"$\pi e^2$")],
     ),
-    5: (
-        r"In the expression $c\cdot a^b-d$, the values of $a$, $b$, $c$, and $d$ are $0$, $1$, $2$, and $3$, although not necessarily in that order. What is the maximum possible value of the result?",
-        [("A", "$5$"), ("B", "$6$"), ("C", "$8$"), ("D", "$9$"), ("E", "$10$")],
+    16: (
+        r"Three circles of radius $1$ are externally tangent to each other and internally tangent to a larger circle. What is the radius of the large circle?",
+        [("A", r"$2+\frac{\sqrt6}{3}$"), ("B", "$2$"), ("C", r"$\frac{2+3\sqrt2}{3}$"), ("D", r"$\frac{3+2\sqrt3}{3}$"), ("E", r"$\frac{3+\sqrt3}{2}$")],
     ),
-    6: (
-        r"Which of the following numbers is a perfect square?",
-        [("A", r"$98!\cdot99!$"), ("B", r"$98!\cdot100!$"), ("C", r"$99!\cdot100!$"), ("D", r"$99!\cdot101!$"), ("E", r"$100!\cdot101!$")],
+    18: (
+        r"In right triangle $\triangle ACE$, we have $AC=12$, $CE=16$, and $EA=20$. Points $B$, $D$, and $F$ are located on $AC$, $CE$, and $EA$, respectively, so that $AB=3$, $CD=4$, and $EF=5$. What is the ratio of the area of $\triangle DBF$ to that of $\triangle ACE$?",
+        [("A", r"$\frac14$"), ("B", r"$\frac13$"), ("C", r"$\frac38$"), ("D", r"$\frac12$"), ("E", r"$\frac{7}{16}$")],
     ),
-    9: (
-        r"A square has sides of length $10$, and a circle centered at one of its vertices has radius $10$. What is the area of the union of the regions enclosed by the square and the circle?",
-        [("A", r"$200+25\pi$"), ("B", r"$100+75\pi$"), ("C", r"$75+100\pi$"), ("D", r"$100+100\pi$"), ("E", r"$100+125\pi$")],
+    20: (
+        r"In $\triangle ABC$, points $D$ and $E$ lie on $BC$ and $AC$, respectively. If $AD$ and $BE$ intersect at $T$ so that $AT/DT=3$ and $BT/ET=4$, what is $CD/BD$?",
+        [("A", r"$\frac18$"), ("B", r"$\frac29$"), ("C", r"$\frac3{10}$"), ("D", r"$\frac4{11}$"), ("E", r"$\frac5{12}$")],
     ),
 }
 
-
 KEY_OVERRIDES = {
-    1: "Count inclusive rows, then multiply by the number of seats per row.",
-    2: "Count two-digit numbers containing a 7 without double-counting 77.",
-    3: "Work backward through a doubling sequence.",
-    4: "Take the greatest common divisor of all possible visible products.",
-    5: "Maximize an exponential expression by choosing the base and exponent carefully.",
-    6: "Rewrite one factorial product as an obvious square.",
-    7: "Set up an exchange-rate equation and solve for the original dollar amount.",
-    8: "Model northeast and northwest directions as right-triangle vectors.",
-    9: "Use inclusion-exclusion for the area of a square and a circle.",
-    10: "Use the sum of the first n odd numbers.",
+    11: "Count the complement of ordered die rolls whose product is not greater than their sum.",
+    12: "Use a tangent radius to create a right triangle whose legs reveal the annulus area.",
+    13: "Use parity and small modular reasoning after scaling coin thicknesses.",
+    14: "Keep the number of blue marbles as a fixed reference amount through each stage.",
+    15: "Compare original and swapped coin values to find the number of nickels and dimes.",
+    16: "Use the equilateral triangle formed by the three small circle centers.",
+    17: "Write the reversed-digit ages algebraically.",
+    18: "Use coordinates in the 12-16-20 right triangle and compute an area by shoelace/base-height.",
+    19: "Detect the explicit odd/even pattern generated by the recurrence.",
+    20: "Apply mass points to two intersecting cevians.",
 }
 
 
 SOL = {
-    1: [
-        ("Count the rows carefully", r"Rows $12$ through $22$ are inclusive. That means the number of reserved rows is $22-12+1=11$."),
-        ("Multiply by seats per row", r"Each row has $33$ seats, so the number of reserved seats is $11\cdot33=363$."),
-        ("Check", r"Counting inclusively is the main trap; there are $11$ rows, not $10$."),
-        ("Answer", r"The answer is $\boxed{363}$."),
+    11: [
+        ("Use the complement", r"There are $8\cdot8=64$ ordered outcomes. It is easier to count when the product is not greater than the sum."),
+        ("Rewrite the inequality", r"We want $ab>a+b$. This is equivalent to $(a-1)(b-1)>1$."),
+        ("Count the bad outcomes", r"If either die shows $1$, then the product is not greater than the sum; this gives $8+8-1=15$ outcomes. Among outcomes with both dice at least $2$, only $(2,2)$ fails, since $(2-1)(2-1)=1$."),
+        ("Find the favorable count", r"There are $16$ bad outcomes, so $64-16=48$ favorable outcomes."),
+        ("Answer", r"The probability is $\frac{48}{64}=\boxed{\frac34}$."),
     ],
-    2: [
-        ("Separate the positions", r"A two-digit number has a tens digit from $1$ to $9$ and a ones digit from $0$ to $9$. We want at least one digit to be $7$."),
-        ("Count numbers with tens digit 7", r"The numbers $70$ through $79$ give $10$ possibilities."),
-        ("Count numbers with ones digit 7", r"The numbers ending in $7$ are $17,27,\ldots,97$, giving $9$ possibilities. But $77$ has already been counted."),
-        ("Combine without double-counting", r"The total is $10+9-1=18$."),
-        ("Answer", r"There are $\boxed{18}$ such integers."),
+    12: [
+        ("Identify the annulus area", r"The annulus area is $\pi b^2-\pi c^2=\pi(b^2-c^2)$. So we need to connect $b^2-c^2$ to the given segment lengths."),
+        ("Use the tangent radius", r"Because $XZ$ is tangent to the smaller circle at $Z$, radius $OZ$ is perpendicular to $XZ$. Thus $\triangle OZX$ is right."),
+        ("Apply the Pythagorean theorem", r"In this triangle, $OX=b$, $OZ=c$, and $XZ=a$. Therefore $a^2+c^2=b^2$, so $b^2-c^2=a^2$."),
+        ("Substitute", r"The annulus area is $\pi(b^2-c^2)=\pi a^2$."),
+        ("Answer", r"The answer is $\boxed{\pi a^2}$."),
     ],
-    3: [
-        ("Recognize the doubling pattern", r"Each practice has twice as many free throws as the previous one. To go backward, divide by $2$ each time."),
-        ("Work backward from the fifth practice", r"The fifth practice is $48$, so the fourth is $24$, the third is $12$, the second is $6$, and the first is $3$."),
-        ("Check forward", r"Starting with $3$ gives $3,6,12,24,48$, which matches the fifth practice."),
-        ("Answer", r"Jenny made $\boxed{3}$ free throws at the first practice."),
+    13: [
+        ("Scale the measurements", r"Measure thickness in units of $0.05$ mm. Then penny, nickel, dime, and quarter thicknesses are $31,39,27,$ and $35$ units, and the total height is $14/0.05=280$ units."),
+        ("Use parity", r"Each coin contributes an odd number of units. Since $280$ is even, the number of coins must be even. Among the choices, that leaves $8$ or $10$."),
+        ("Rule out 10 coins", r"Ten dimes would have height $10\cdot27=270$ units. Replacing dimes by pennies, quarters, or nickels increases the sum by $4,8,$ or $12$ units. It is impossible to increase by exactly $10$ using these increments."),
+        ("Check 8 coins", r"Eight quarters have height $8\cdot35=280$ units, so $8$ coins is possible."),
+        ("Answer", r"The stack contains $\boxed{8}$ coins."),
     ],
-    4: [
-        ("List the possible products", r"A standard die shows the numbers $1$ through $6$. If one face is hidden, then $P$ is $720$ divided by the hidden number, since $1\cdot2\cdot3\cdot4\cdot5\cdot6=720$."),
-        ("Compute possible P values", r"The possible products are $720,360,240,180,144,$ and $120$."),
-        ("Find what always divides P", r"The largest number certain to divide every possible $P$ is the greatest common divisor of those values."),
-        ("Calculate the gcd", r"The common divisor is $12$. For example, $24$ does not always work because $180$ is not divisible by $24$."),
-        ("Answer", r"The answer is $\boxed{12}$."),
+    14: [
+        ("Use blue marbles as the fixed quantity", r"Only red, then yellow, then blue marbles are added. Let the original number of blue marbles be $B$."),
+        ("After adding red marbles", r"When blue marbles are $1/3$ of the total, the total number of marbles is $3B$."),
+        ("After adding yellow marbles", r"When blue marbles are $1/5$ of the total, the total number of marbles is $5B$."),
+        ("Double the blue marbles", r"Finally, another $B$ blue marbles are added. The total becomes $6B$, and the number of blue marbles becomes $2B$."),
+        ("Answer", r"The final blue fraction is $\frac{2B}{6B}=\boxed{\frac13}$."),
     ],
-    5: [
-        ("Use the structure of the expression", r"The expression is $c\cdot a^b-d$. To maximize it, we want $d$ as small as possible and $c\cdot a^b$ as large as possible."),
-        ("Choose d", r"Since the available values are $0,1,2,3$, choose $d=0$ so nothing is subtracted."),
-        ("Maximize the power", r"The largest useful power from the remaining numbers is $3^2=9$, using $a=3$ and $b=2$. Then the remaining value for $c$ is $1$."),
-        ("Compute", r"This gives $1\cdot3^2-0=9$. Trying to make $c=2$ leaves only $3^1$, which gives $6$, so $9$ is larger."),
-        ("Answer", r"The maximum possible value is $\boxed{9}$."),
+    15: [
+        ("Set variables", r"Let $n$ be the number of nickels and $d$ be the number of dimes. Then $n+d=20$."),
+        ("Compare values", r"The original value is $5n+10d$ cents. If nickels and dimes are swapped, the value is $10n+5d$ cents."),
+        ("Use the 70-cent increase", r"The difference is $(10n+5d)-(5n+10d)=5(n-d)=70$, so $n-d=14$."),
+        ("Solve", r"Together with $n+d=20$, we get $n=17$ and $d=3$."),
+        ("Find original value", r"The coins are worth $17\cdot5+3\cdot10=85+30=115$ cents, or $\boxed{\$1.15}$."),
     ],
-    6: [
-        ("Look for a factorial relationship", r"A product is a perfect square when every prime factor appears an even number of times. The easiest way is to make the expression visibly equal to something squared."),
-        ("Use the choice with consecutive factorials", r"Since $100!=100\cdot99!$, we have \[99!\cdot100!=99!\cdot100\cdot99!.\]"),
-        ("Rewrite as a square", r"Because $100=10^2$, the product is \[(10\cdot99!)^2.\]"),
-        ("Answer", r"Thus $99!\cdot100!$ is a perfect square, so the answer is $\boxed{99!\cdot100!}$."),
+    16: [
+        ("Connect the centers", r"The centers of the three small circles form an equilateral triangle of side $2$, because the circles have radius $1$ and are externally tangent."),
+        ("Find the distance from the triangle center", r"The center of the large circle is the center of this equilateral triangle. The distance from the center of an equilateral triangle of side $2$ to a vertex is $\frac{2}{\sqrt3}$."),
+        ("Add one small radius", r"The large circle's radius equals the distance from its center to a small-circle center plus the small radius $1$."),
+        ("Compute", r"So the large radius is $1+\frac{2}{\sqrt3}=1+\frac{2\sqrt3}{3}=\frac{3+2\sqrt3}{3}$."),
+        ("Answer", r"The answer is $\boxed{\frac{3+2\sqrt3}{3}}$."),
     ],
-    7: [
-        ("Translate the exchange rate", r"For every $7$ U.S. dollars, Isabella receives $10$ Canadian dollars. If she starts with $d$ U.S. dollars, she receives $\frac{10}{7}d$ Canadian dollars."),
-        ("Use the spending information", r"After spending $60$ Canadian dollars, she has $d$ Canadian dollars left. So \[\frac{10}{7}d-60=d.\]"),
-        ("Solve for d", r"Subtracting $d$ gives $\frac{3}{7}d=60$, so $d=140$."),
-        ("Find the digit sum", r"The sum of the digits of $140$ is $1+4+0=5$."),
-        ("Answer", r"The answer is $\boxed{5}$."),
+    17: [
+        ("Write the ages as digits", r"Let Jack's age be $10a+b$ and Bill's age be $10b+a$, where the digits are reversed."),
+        ("Use the five-year condition", r"In five years, Jack will be twice Bill's age, so \[10a+b+5=2(10b+a+5).\]"),
+        ("Simplify", r"This becomes $10a+b+5=20b+2a+10$, or $8a-19b=5$."),
+        ("Find digit values", r"Trying digit values gives $b=1$ and $a=3$, so Jack is $31$ and Bill is $13$."),
+        ("Answer", r"Their age difference is $31-13=\boxed{18}$."),
     ],
-    8: [
-        ("Represent the directions", r"From the airport, St. Paul is $8$ miles northeast, while Minneapolis is $10$ miles northwest. These directions are perpendicular diagonal directions."),
-        ("Use components", r"The east-west separation is $\frac{8}{\sqrt2}+\frac{10}{\sqrt2}=\frac{18}{\sqrt2}=9\sqrt2$, while the north-south components cancel because both cities are equally northward in direction from the airport."),
-        ("Estimate", r"Since $\sqrt2\approx1.414$, the distance is $9\sqrt2\approx12.7$ miles."),
-        ("Choose the closest value", r"The closest listed value is $\boxed{13}$."),
+    18: [
+        ("Place the right triangle on axes", r"Let $C=(0,0)$, $A=(12,0)$, and $E=(0,16)$. Then $\triangle ACE$ has area $\frac12\cdot12\cdot16=96$."),
+        ("Locate B, D, and F", r"Since $AB=3$, point $B=(9,0)$. Since $CD=4$, point $D=(0,4)$. Since $EF=5$ along the $20$-unit hypotenuse, $F$ is one quarter of the way from $E$ to $A$, so $F=(3,12)$."),
+        ("Compute area of DBF", r"Using the coordinate area formula for $D=(0,4)$, $B=(9,0)$, and $F=(3,12)$, \[[DBF]=\frac12|0(0-12)+9(12-4)+3(4-0)|=42.\]"),
+        ("Form the ratio", r"The ratio is $42/96=7/16$."),
+        ("Answer", r"The answer is $\boxed{\frac{7}{16}}$."),
     ],
-    9: [
-        ("Use inclusion-exclusion", r"The union area is square area plus circle area minus the overlap area."),
-        ("Compute the square and circle areas", r"The square area is $10^2=100$. The circle has radius $10$, so its area is $100\pi$."),
-        ("Find the overlap", r"Since the circle is centered at a vertex of the square, the part of the circle inside the square is exactly one quarter of the circle, with area $25\pi$."),
-        ("Subtract the overlap", r"The union area is \[100+100\pi-25\pi=100+75\pi.\]"),
-        ("Answer", r"The answer is $\boxed{100+75\pi}$."),
+    19: [
+        ("Generate a few terms", r"The recurrence gives $2001,2002,2003,2000,2005,1998,2007,1996,\ldots$. The odd-indexed terms increase by $2$, while the even-indexed terms decrease by $2$."),
+        ("Write the even-term pattern", r"For even index $2k$, the term is $2004-2k$. This fits $a_2=2002$, $a_4=2000$, and $a_6=1998$."),
+        ("Use the desired index", r"The $2004$th term has $2k=2004$, so $k=1002$."),
+        ("Compute", r"Thus $a_{2004}=2004-2(1002)=0$."),
+        ("Answer", r"The answer is $\boxed{0}$."),
     ],
-    10: [
-        ("Identify the row sizes", r"The rows have $1,3,5,\ldots$ cans, increasing by $2$ each row. These are the positive odd numbers."),
-        ("Use the odd-number sum", r"The sum of the first $n$ positive odd numbers is $n^2$."),
-        ("Set up the total", r"If there are $n$ rows and $100$ cans, then $n^2=100$."),
-        ("Solve", r"Thus $n=10$."),
-        ("Answer", r"The display contains $\boxed{10}$ rows."),
+    20: [
+        ("Use mass points", r"Mass points are useful because the problem gives ratios along two cevians through the same point $T$."),
+        ("Translate the first ratio", r"Since $AT/DT=3$, the mass at $D$ is $3$ times the mass at $A$. Let $m_A=1$, so $m_D=3$."),
+        ("Translate the second ratio", r"Since $BT/ET=4$, the mass at $E$ is $4$ times the mass at $B$."),
+        ("Use combined masses", r"Because $D$ lies on $BC$, $m_D=m_B+m_C=3$. Because $E$ lies on $AC$, $m_E=m_A+m_C=1+m_C=4m_B$. Solving $m_B+m_C=3$ and $1+m_C=4m_B$ gives $m_B=\frac45$ and $m_C=\frac{11}{5}$."),
+        ("Convert masses to side ratio", r"On segment $BC$, lengths are inversely proportional to endpoint masses, so $BD/DC=m_C/m_B=11/4$. Therefore $CD/BD=\boxed{\frac4{11}}$."),
     ],
 }
 
@@ -182,7 +185,7 @@ def render(row):
     ans, val = ANS[n]
     tags = "".join(f'<span class="badge">{esc(t)}</span>' for t in (row.get("tags") or "").split(";") if t)
     notes = row.get("notes") or ""
-    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in set()) else notes
+    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in {20}) else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
         f'<li class="choice {"correct" if k == ans else ""}"><span class="choice-key">{esc(k)}</span><span>{esc(v, False)}</span></li>'
@@ -278,7 +281,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": int(r["problem_no"]) in set(),
+                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {20},
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -336,7 +339,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批完成 2004 AMC 10B Problems 1-10，无跳过题。\n"
+        + "本批完成 2004 AMC 10B Problems 11-20，无跳过题。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",
