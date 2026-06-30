@@ -383,7 +383,7 @@ def render_detail_page(row: dict[str, str]) -> str:
     @media (max-width:700px) {{ .site-nav {{ align-items:flex-start; flex-direction:column; }} .site-links {{ width:100%; }} .site-links a {{ flex:1 1 auto; justify-content:center; }} main {{ width:min(100% - 28px, 980px); padding-top:18px; }} .statement {{ font-size:16px; }} }}
   </style>
   <script>
-    window.MathJax = {{ tex: {{ inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['\\[', '\\]']] }} }};
+    window.MathJax = {{ tex: {{ inlineMath: [['$', '$'], ['\\\\(', '\\\\)']], displayMath: [['\\\\[', '\\\\]']] }} }};
   </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
@@ -557,6 +557,26 @@ def update_index(contest_dir: str, manifest: list[dict[str, object]]) -> None:
         )
 
     path.write_text(text, encoding="utf-8")
+
+def validate_generated_mathjax(manifest: list[dict[str, object]]) -> None:
+    failures: list[str] = []
+    for item in manifest:
+        page = Path(str(item["output_path"]))
+        text = page.read_text(encoding="utf-8")
+        main = text.split("<main>", 1)[1].split("</main>", 1)[0] if "<main>" in text else text
+        if "displayMath: [['\\\\[', '\\\\]']]" not in text:
+            failures.append(f"{page}: MathJax displayMath config is not escaped for JavaScript strings")
+        if "\\\\[" in main or "\\\\]" in main:
+            failures.append(f"{page}: body contains double-escaped display math delimiters")
+        if "\\[" in main and "\\]" not in main:
+            failures.append(f"{page}: body has unmatched display math opening delimiter")
+        if "\\]" in main and "\\[" not in main:
+            failures.append(f"{page}: body has unmatched display math closing delimiter")
+        if "\\frac" in main and "\\boxed" not in main:
+            failures.append(f"{page}: expected boxed answer marker is missing")
+    if failures:
+        raise RuntimeError("Generated MathJax validation failed:\n" + "\n".join(failures))
+
 def write_reports(manifest: list[dict[str, object]]) -> None:
     (ROOT / "problem_pages_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     lines = [
@@ -591,12 +611,16 @@ def main() -> None:
     manifest = write_pages(samples)
     update_index("amc10", manifest)
     update_index("amc12", manifest)
+    validate_generated_mathjax(manifest)
     write_reports(manifest)
     print(json.dumps({"generated": len(manifest), "sources": [m["source"] for m in manifest]}, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
     main()
+
+
+
 
 
 
