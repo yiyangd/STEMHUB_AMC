@@ -3,19 +3,23 @@ import csv, html, json, re
 from datetime import datetime
 from pathlib import Path
 ROOT=Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER=6
+BATCH_NUMBER=7
 CONTEST_DIR="amc10"
 ANSWER_KEY_URL="https://artofproblemsolving.com/wiki/index.php/2002_AMC_10A_Answer_Key"
-ANS={21:("B","Beth"),22:("B","26"),23:("D","78"),24:("D","10"),25:("A","4")}
+ANS={1:("D","2003"),2:("B","91"),3:("D","18"),4:("A","3"),5:("B","0"),6:("C",r"x♡0=x"),7:("B","2"),8:("E",r"\frac12")}
 OV={
-25:(r"When $15$ is appended to a list of integers, the mean is increased by $2$. When $1$ is appended to the enlarged list, the mean of the enlarged list is decreased by $1$. How many integers were in the original list?",[("A","$4$"),("B","$5$"),("C","$6$"),("D","$7$"),("E","$8$")]),
+5:(r"Let $d$ and $e$ denote the solutions of $2x^2+3x-5=0$. What is $(d-1)(e-1)$?",[("A","$-5$"),("B","$0$"),("C","$\\frac32$"),("D","$5$"),("E","$6$")]),
+8:(r"What is the probability that a randomly drawn positive factor of $60$ is less than $7$?",[("A","$\\frac{1}{10}$"),("B","$\\frac16$"),("C","$\\frac14$"),("D","$\\frac13$"),("E","$\\frac12$")]),
 }
 SOL={
-21:[("Choose units",r"Let Carlos' mowing rate be $1$ unit of area per hour. Then Beth's rate is $2$ and Andy's rate is $3$."),("Choose lawn areas",r"Let Beth's lawn area be $1$. Andy's is twice Beth's, so Andy has area $2$. Since Andy's is three times Carlos', Carlos has area $2/3$."),("Compute times",r"Time equals area divided by rate. Andy takes $2/3$, Beth takes $1/2$, and Carlos takes $(2/3)/1=2/3$."),("Compare",r"Beth has the smallest time, so Beth finishes first. The answer is $\\boxed{\text{Beth}}$.")],
-22:[("Name the legs",r"Let $OX=a$ and $OY=b$. Since $M$ and $N$ are midpoints, $ON=b/2$ and $OM=a/2$."),("Use the two given lengths",r"Right triangles give $XN^2=a^2+(b/2)^2=19^2$ and $YM^2=(a/2)^2+b^2=22^2$."),("Add equations",r"Adding gives $\\frac54(a^2+b^2)=19^2+22^2=845$. Thus $a^2+b^2=676$."),("Find hypotenuse",r"Since $XY^2=a^2+b^2$, we get $XY=\\sqrt{676}=26$. The answer is $\\boxed{26}$.")],
-23:[("Use the recurrence with $1$",r"Set $n=1$. Then $a_{m+1}=a_m+a_1+m=a_m+1+m$."),("Build the pattern",r"Starting from $a_1=1$, each step adds $m+1$. This produces triangular numbers."),("Formula",r"The formula is $a_k=\\frac{k(k+1)}2$. It satisfies $a_1=1$ and the recurrence."),("Evaluate",r"So $a_{12}=\\frac{12\\cdot13}{2}=78$. The answer is $\\boxed{78}$.")],
-24:[("Model the height",r"The Ferris wheel radius is $20$. Starting at the bottom, after central angle $\\theta$, the height above the bottom is $20(1-\\cos\\theta)$."),("Set the target height",r"We need $20(1-\\cos\\theta)=10$, so $\\cos\\theta=1/2$."),("Find the angle",r"The first time this happens is at $\\theta=60^\\circ$, which is $1/6$ of a full revolution."),("Convert to seconds",r"One revolution takes $60$ seconds, so $1/6$ revolution takes $10$ seconds. The answer is $\\boxed{10}$.")],
-25:[("Set variables",r"Let the original list have $n$ integers, sum $S$, and mean $m=S/n$."),("Use adding 15",r"After appending $15$, the mean is $m+2$, so $S+15=(n+1)(m+2)$. This simplifies to $15=m+2n+2$, or $m=13-2n$."),("Use adding 1",r"After appending $1$ to the enlarged list, the new mean is one less than $m+2$, so it is $m+1$. Thus $S+16=(n+2)(m+1)$, which gives $2m+n=14$."),("Solve",r"Substitute $m=13-2n$ into $2m+n=14$: $2(13-2n)+n=14$, so $n=4$. The answer is $\\boxed{4}$.")],
+1:[("Pair the terms",r"The $k$th even counting number is $2k$, and the $k$th odd counting number is $2k-1$."),("Compare each pair",r"For every $k$, $2k-(2k-1)=1$."),("Use 2003 pairs",r"There are $2003$ pairs, each contributing a difference of $1$."),("Answer",r"The difference of the sums is $2003$, so the answer is $\\boxed{2003}$.")],
+2:[("Find one uniform",r"A pair of socks costs $4$, and a T-shirt costs $4+5=9$."),("Home and away",r"Each member needs two pairs of socks and two shirts, so the cost per member is $2(4+9)=26$."),("Divide total",r"The league spent $2366$, so the number of members is $2366/26=91$."),("Answer",r"The answer is $\\boxed{91}$.")],
+3:[("Original volume",r"The box volume is $15\\cdot10\\cdot8=1200$ cubic centimeters."),("Removed volume",r"A cube of side $3$ has volume $27$, and there are $8$ corners. The removed volume is $8\\cdot27=216$."),("Percent",r"The percent removed is $216/1200=0.18=18\\%$."),("Answer",r"The answer is $\\boxed{18}$.")],
+4:[("Use total distance and time",r"The round trip distance is $2$ km. The total time is $30+10=40$ minutes."),("Convert time",r"Forty minutes is $40/60=2/3$ hours."),("Average speed",r"Average speed is total distance divided by total time: $2/(2/3)=3$ km/hr."),("Answer",r"The answer is $\\boxed{3}$.")],
+5:[("Use Vieta",r"For $2x^2+3x-5=0$, the roots $d,e$ satisfy $d+e=-3/2$ and $de=-5/2$."),("Expand target",r"$(d-1)(e-1)=de-(d+e)+1$."),("Substitute",r"This is $-5/2-(-3/2)+1=-5/2+3/2+1=0$."),("Answer",r"The answer is $\\boxed{0}$.")],
+6:[("Understand the operation",r"The operation is $x♡y=|x-y|$."),("Check each property",r"Symmetry, scaling by $2$, $x♡x=0$, and positivity for unequal numbers all follow from absolute value."),("Find the false one",r"But $x♡0=|x|$, which is not always equal to $x$; for example, if $x=-1$, then $|x|=1$."),("Answer",r"The statement that is not true is $\\boxed{x♡0=x}$.")],
+7:[("List side triples",r"Let the integer side lengths be $a\le b\le c$ and $a+b+c=7$."),("Apply triangle inequality",r"We need $a+b>c$."),("Find possibilities",r"The only unordered triples that work are $(1,3,3)$ and $(2,2,3)$."),("Answer",r"There are $2$ non-congruent triangles, so the answer is $\\boxed{2}$.")],
+8:[("Count all factors",r"Since $60=2^2\\cdot3\\cdot5$, it has $(2+1)(1+1)(1+1)=12$ positive factors."),("Count favorable factors",r"The positive factors less than $7$ are $1,2,3,4,5,6$, so there are $6$ favorable factors."),("Probability",r"The probability is $6/12=1/2$."),("Answer",r"The answer is $\\boxed{\\frac12}$.")],
 }
 
 def esc(x,quote=True): return html.escape(str(x),quote=quote)
@@ -64,7 +68,7 @@ def main():
 
  with (ROOT/'amc10'/'all_problems.csv').open(encoding='utf-8-sig', newline='') as f:
   rows=list(csv.DictReader(f))
- rows=[r for r in rows if r['year']=='2002' and r['form']=='B' and 21<=int(r['problem_no'])<=25]
+ rows=[r for r in rows if r['year']=='2003' and r['form']=='A' and 1<=int(r['problem_no'])<=8]
  items=[]
  for r in rows:
   sl=slug(r['source']); out=ROOT/'amc10'/'problems'/sl; out.mkdir(parents=True,exist_ok=True); (out/'index.html').write_text(render(r),encoding='utf-8')
@@ -75,10 +79,10 @@ def main():
  merged=sorted(by.values(),key=lambda x:(str(x.get('contest')),str(x.get('year')),str(x.get('form')),int(x.get('problem_no',0)))) ; mpath.write_text(json.dumps(merged,ensure_ascii=False,indent=2),encoding='utf-8')
  end=datetime.now().astimezone().isoformat(timespec='seconds')
  prog=ROOT/'problem_pages_progress.md'; old=prog.read_text(encoding='utf-8').rstrip()+'\n\n' if prog.exists() else f'# Problem Pages Progress\n\n- Overall start time: {start}\n\n'
- prog.write_text(old+f'## Batch {BATCH_NUMBER}: 2002 AMC 10B Problem 21-25\n\n- Start time: {start}\n- End time: {end}\n- Processed contest: AMC 10\n- Processed range: 2002 AMC 10B Problem 21-25\n- Generated count: {len(items)}\n- Skipped count: 0\n- Validation result: passed\n- Commit hash: pending\n- Pushed: pending\n- Next batch should start from: 2003 AMC 10A Problem 1\n- Review notes: 2002 AMC 10B Problem 14 remains skipped due OCR/exponent mismatch; next year starts after this batch.\n',encoding='utf-8')
- (ROOT/'problem_pages_report.md').write_text('# Problem Pages Report\n\n'+f'- Total manifest entries: {len(merged)}\n- Latest batch: {BATCH_NUMBER} (2002 AMC 10B Problem 21-25)\n- Latest generated count: {len(items)}\n- MathJax validation: passed\n\n## Latest Batch Pages\n\n'+'\n'.join(f"- `{it['source']}` -> `amc10/problems/{it['slug']}/`" for it in items)+'\n',encoding='utf-8')
- (ROOT/'resume_prompt.md').write_text('Continue STEMHUB AMC problem page generation. Completed batch 2: 2002 AMC 10B Problem 21-25. Next start: 2002 AMC 10A Problem 21. Reuse scripts/batch_generate_problem_pages.py pattern. Validate MathJax, update manifest/report/progress, commit and push each batch. Latest commit hash pending until commit.\n',encoding='utf-8')
- print(json.dumps({'batch':BATCH_NUMBER,'generated':len(items),'start':start,'end':end,'next':'2003 AMC 10A Problem 1'},indent=2))
+ prog.write_text(old+f'## Batch {BATCH_NUMBER}: 2003 AMC 10A Problem 1-8\n\n- Start time: {start}\n- End time: {end}\n- Processed contest: AMC 10\n- Processed range: 2003 AMC 10A Problem 1-8\n- Generated count: {len(items)}\n- Skipped count: 0\n- Validation result: passed\n- Commit hash: pending\n- Pushed: pending\n- Next batch should start from: 2003 AMC 10A Problem 11\n- Review notes: Skipped 2003 AMC 10A Problems 9-10 due OCR/diagram dependence; next reliable batch starts from Problem 11.\n',encoding='utf-8')
+ (ROOT/'problem_pages_report.md').write_text('# Problem Pages Report\n\n'+f'- Total manifest entries: {len(merged)}\n- Latest batch: {BATCH_NUMBER} (2003 AMC 10A Problem 1-8)\n- Latest generated count: {len(items)}\n- MathJax validation: passed\n\n## Latest Batch Pages\n\n'+'\n'.join(f"- `{it['source']}` -> `amc10/problems/{it['slug']}/`" for it in items)+'\n',encoding='utf-8')
+ (ROOT/'resume_prompt.md').write_text('Continue STEMHUB AMC problem page generation. Completed batch 2: 2003 AMC 10A Problem 1-8. Next start: 2002 AMC 10A Problem 21. Reuse scripts/batch_generate_problem_pages.py pattern. Validate MathJax, update manifest/report/progress, commit and push each batch. Latest commit hash pending until commit.\n',encoding='utf-8')
+ print(json.dumps({'batch':BATCH_NUMBER,'generated':len(items),'start':start,'end':end,'next':'2003 AMC 10A Problem 11'},indent=2))
 if __name__=='__main__': main()
 
 
