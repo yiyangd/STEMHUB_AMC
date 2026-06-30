@@ -8,81 +8,68 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 19
+BATCH_NUMBER = 20
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {1, 2, 3, 4, 5}
-SKIPPED = []
-BATCH_LABEL = "2005 AMC 10A Problem 1-5"
-NEXT_START = "2005 AMC 10A Problem 6"
+TARGET_NUMBERS = {6, 7, 9, 10}
+SKIPPED = ["2005 AMC 10A Problem 8: inner rotated square problem depends on the original diagram; OCR is not sufficient for a reliable teaching page."]
+BATCH_LABEL = "2005 AMC 10A Problem 6-10"
+NEXT_START = "2005 AMC 10A Problem 11"
 
 ANS = {
-    1: ("D", "10"),
-    2: ("C", "0"),
-    3: ("B", "-4"),
-    4: ("B", r"\frac{2}{5}x^2"),
-    5: ("A", "100"),
+    6: ("B", "24"),
+    7: ("B", "5"),
+    9: ("B", r"\frac{1}{10}"),
+    10: ("A", "-16"),
 }
 
 
 OV = {
-    1: (
-        r"While eating out, Mike and Joe each tipped their server $2$ dollars. Mike tipped $10\%$ of his bill and Joe tipped $20\%$ of his bill. What was the difference, in dollars, between their bills?",
-        [("A", "$2$"), ("B", "$4$"), ("C", "$5$"), ("D", "$10$"), ("E", "$20$")],
+    9: (
+        r"Three tiles are marked $X$ and two other tiles are marked $O$. The five tiles are randomly arranged in a row. What is the probability that the arrangement reads $XOXOX$?",
+        [("A", r"$\frac1{12}$"), ("B", r"$\frac1{10}$"), ("C", r"$\frac16$"), ("D", r"$\frac14$"), ("E", r"$\frac13$")],
     ),
-    2: (
-        r"For each pair of real numbers $a\ne b$, define the operation $\star$ by $a\star b=\frac{a+b}{a-b}$. What is the value of $((1\star2)\star3)$?",
-        [("A", r"$-\frac23$"), ("B", r"$-\frac15$"), ("C", "$0$"), ("D", r"$\frac12$"), ("E", "This value is not defined.")],
-    ),
-    4: (
-        r"A rectangle with a diagonal of length $x$ is twice as long as it is wide. What is the area of the rectangle?",
-        [("A", r"$\frac14x^2$"), ("B", r"$\frac25x^2$"), ("C", r"$\frac12x^2$"), ("D", "$x^2$"), ("E", r"$\frac32x^2$")],
+    10: (
+        r"There are two values of $a$ for which the equation $4x^2+ax+8x+9=0$ has only one solution for $x$. What is the sum of these values of $a$?",
+        [("A", "$-16$"), ("B", "$-8$"), ("C", "$0$"), ("D", "$8$"), ("E", "$20$")],
     ),
 }
 
 
 KEY_OVERRIDES = {
-    1: "Convert tip percentages into original bill amounts.",
-    2: "Evaluate the custom operation from the inside out.",
-    3: "Use the common solution of two linear equations.",
-    4: "Use the Pythagorean theorem with side lengths in a 1:2 ratio.",
-    5: "Compare the number of paid windows when buying separately versus together.",
+    6: "Use a weighted average by converting averages back into sums.",
+    7: "Compare distances using time and rate ratios.",
+    9: "Count distinct arrangements of repeated tiles.",
+    10: "Use the discriminant condition for a quadratic to have one solution.",
 }
 
 
 SOL = {
-    1: [
-        ("Use the tip to recover each bill", r"A tip is a percentage of the bill. If Mike's $2$ tip is $10\%$ of his bill, then his bill is $2/0.10=20$ dollars."),
-        ("Do the same for Joe", r"Joe's $2$ tip is $20\%$ of his bill, so his bill is $2/0.20=10$ dollars."),
-        ("Find the difference", r"The difference between the bills is $20-10=10$ dollars."),
-        ("Answer", r"The answer is $\boxed{10}$."),
+    6: [
+        ("Convert averages to sums", r"The first $20$ numbers have average $30$, so their sum is $20\cdot30=600$. The other $30$ numbers have average $20$, so their sum is $30\cdot20=600$."),
+        ("Add the groups", r"Together the $50$ numbers have total sum $600+600=1200$."),
+        ("Find the combined average", r"The average of all $50$ numbers is $1200/50=24$."),
+        ("Answer", r"The answer is $\boxed{24}$."),
     ],
-    2: [
-        ("Start with the inner operation", r"The expression is nested, so first compute $1\star2$. By the definition, \[1\star2=\frac{1+2}{1-2}=\frac3{-1}=-3.\]"),
-        ("Substitute into the outer operation", r"Now the original expression becomes $(-3)\star3$."),
-        ("Apply the definition again", r"We get \[(-3)\star3=\frac{-3+3}{-3-3}=\frac0{-6}=0.\]"),
-        ("Check that it is defined", r"The denominator in the last step is not zero, so the value is defined."),
-        ("Answer", r"The answer is $\boxed{0}$."),
+    7: [
+        ("Compare their travel amounts", r"Let Mike's riding time be $t$ and his rate be $r$. Then Mike rides distance $rt$."),
+        ("Use Josh's time and rate", r"Josh rides for twice as long, $2t$, and at four-fifths of Mike's rate, $\frac45r$. So Josh rides $2t\cdot\frac45r=\frac85rt$."),
+        ("Use the total distance", r"Together they cover the $13$ miles between their houses: \[rt+\frac85rt=13.\]"),
+        ("Solve for Mike's distance", r"This gives $\frac{13}{5}rt=13$, so $rt=5$."),
+        ("Answer", r"Mike had ridden $\boxed{5}$ miles when they met."),
     ],
-    3: [
-        ("Solve the first equation", r"From $2x+7=3$, subtract $7$ to get $2x=-4$, so $x=-2$."),
-        ("Use the same solution in the second equation", r"The second equation has the same solution, so substitute $x=-2$ into $bx-10=-2$."),
-        ("Solve for b", r"This gives $-2b-10=-2$, so $-2b=8$ and $b=-4$."),
-        ("Answer", r"The value of $b$ is $\boxed{-4}$."),
+    9: [
+        ("Count all distinct arrangements", r"The tiles include three identical $X$ tiles and two identical $O$ tiles. The number of distinct rows is \[\frac{5!}{3!2!}=10.\]"),
+        ("Count favorable arrangements", r"Only one arrangement reads exactly $XOXOX$."),
+        ("Form the probability", r"Since each distinct arrangement is equally likely, the probability is $1/10$."),
+        ("Answer", r"The answer is $\boxed{\frac1{10}}$."),
     ],
-    4: [
-        ("Represent the side lengths", r"Let the width be $w$. Since the rectangle is twice as long as it is wide, the length is $2w$."),
-        ("Use the diagonal", r"The diagonal, width, and length form a right triangle, so \[w^2+(2w)^2=x^2.\]"),
-        ("Solve for w squared", r"This simplifies to $5w^2=x^2$, so $w^2=\frac{x^2}{5}$."),
-        ("Find the area", r"The rectangle area is $(w)(2w)=2w^2=\frac{2}{5}x^2$."),
-        ("Answer", r"The area is $\boxed{\frac25x^2}$."),
-    ],
-    5: [
-        ("Understand the sale", r"For every $4$ windows purchased, the store gives $1$ additional window free. So buying $4$ paid windows produces $5$ windows total."),
-        ("Compute separate purchases", r"Dave needs $7$ windows, so he can pay for $6$ and receive $1$ free, costing $600$. Doug needs $8$ windows, so he can pay for $7$ and receive $1$ free, costing $700$. Separately they pay $1300$."),
-        ("Compute the combined purchase", r"Together they need $15$ windows. If they pay for $12$, they receive $3$ free windows, for $15$ total. This costs $1200$."),
-        ("Compare", r"They save $1300-1200=100$ dollars by buying together."),
-        ("Answer", r"The answer is $\boxed{100}$."),
+    10: [
+        ("Combine like terms", r"The equation is $4x^2+(a+8)x+9=0$. It has only one solution exactly when the quadratic has discriminant $0$."),
+        ("Set the discriminant to zero", r"The discriminant is \[(a+8)^2-4(4)(9)=(a+8)^2-144.\] Set this equal to $0$."),
+        ("Solve for a", r"We get $(a+8)^2=144$, so $a+8=12$ or $a+8=-12$. Thus $a=4$ or $a=-20$."),
+        ("Add the two values", r"Their sum is $4+(-20)=-16$."),
+        ("Answer", r"The answer is $\boxed{-16}$."),
     ],
 }
 
@@ -285,7 +272,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批完成 2005 AMC 10A Problems 1-5，无跳过题。\n"
+        + "本批完成 2005 AMC 10A Problems 6、7、9、10；Problem 8 因图形/OCR 不足跳过。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",

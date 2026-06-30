@@ -300,3 +300,19 @@
 - Pushed: pending
 - Next batch should start from: 2005 AMC 10A Problem 6
 - Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.
+
+## Batch 20: 2005 AMC 10A Problem 6-10
+
+- Start time: 2026-06-30T15:02:28-07:00
+- End time: 2026-06-30T15:02:29-07:00
+- Processed contest: AMC 10
+- Processed range: 2005 AMC 10A Problem 6-10
+- Generated count: 4
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2005 AMC 10A Problem 8: inner rotated square problem depends on the original diagram; OCR is not sufficient for a reliable teaching page.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2005 AMC 10A Problem 11
+- Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.
