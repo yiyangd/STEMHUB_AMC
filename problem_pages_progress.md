@@ -128,3 +128,16 @@
 - Next batch should start from: 2003 AMC 10A Problem 21
 - Review notes: Skipped 2003 AMC 10A Problem 19 due diagram/lune OCR corruption; next reliable batch starts from Problem 21.
 
+## Batch 9: 2003 AMC 10A Problem 21-25
+
+- Start time: 2026-06-30T03:56:59-07:00
+- End time: 2026-06-30T03:57:00-07:00
+- Processed contest: AMC 10
+- Processed range: 2003 AMC 10A Problem 21-25
+- Generated count: 5
+- Skipped count: 0
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2003 AMC 10B Problem 1
+- Review notes: Problems 22 and 23 should be reviewed with original figures; 2003A complete except skipped Problems 9, 10, and 19.
