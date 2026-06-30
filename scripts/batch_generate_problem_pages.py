@@ -8,65 +8,132 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 15
+BATCH_NUMBER = 16
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2004_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {22, 23, 25}
-SKIPPED = ["2004 AMC 10A Problem 21: shaded concentric-circle region depends on the original diagram.", "2004 AMC 10A Problem 24: CSV/PDF text is truncated before the recurrence conditions."]
-BATCH_LABEL = "2004 AMC 10A Problem 21-25"
-NEXT_START = "2004 AMC 10B Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2004_AMC_10B_Answer_Key"
+TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+SKIPPED = []
+BATCH_LABEL = "2004 AMC 10B Problem 1-10"
+NEXT_START = "2004 AMC 10B Problem 11"
 
 ANS = {
-    22: ("D", r"\frac{5}{2}"),
-    23: ("D", r"\frac{8}{9}"),
-    25: ("B", r"3+\frac{\sqrt{69}}{3}"),
+    1: ("C", "363"),
+    2: ("B", "18"),
+    3: ("A", "3"),
+    4: ("B", "12"),
+    5: ("D", "9"),
+    6: ("C", r"99!\cdot100!"),
+    7: ("A", "5"),
+    8: ("A", "13"),
+    9: ("B", r"100+75\pi"),
+    10: ("D", "10"),
 }
 
 
 OV = {
-    22: (
-        r"Square $ABCD$ has side length $2$. A semicircle with diameter $AB$ is constructed inside the square, and the tangent to the semicircle from $C$ intersects side $AD$ at $E$. What is the length of $CE$?",
-        [("A", r"$\frac{2+\sqrt5}{2}$"), ("B", r"$\sqrt5$"), ("C", r"$\sqrt6$"), ("D", r"$\frac52$"), ("E", r"$5-\sqrt5$")],
+    1: (
+        r"Each row of the Misty Moon Amphitheater has $33$ seats. Rows $12$ through $22$ are reserved for a youth club. How many seats are reserved for this club?",
+        [("A", "$297$"), ("B", "$330$"), ("C", "$363$"), ("D", "$396$"), ("E", "$726$")],
     ),
-    23: (
-        r"Circles $A$, $B$, and $C$ are externally tangent to each other and internally tangent to circle $D$. Circles $B$ and $C$ are congruent. Circle $A$ has radius $1$ and passes through the center of $D$. What is the radius of circle $B$?",
-        [("A", r"$\frac23$"), ("B", r"$\frac34$"), ("C", r"$\frac78$"), ("D", r"$\frac89$"), ("E", r"$1+\frac{\sqrt3}{3}$")],
+    4: (
+        r"A standard six-sided die is rolled, and $P$ is the product of the five numbers that are visible. What is the largest number that is certain to divide $P$?",
+        [("A", "$6$"), ("B", "$12$"), ("C", "$24$"), ("D", "$144$"), ("E", "$720$")],
     ),
-    25: (
-        r"Three mutually tangent spheres of radius $1$ rest on a horizontal plane. A sphere of radius $2$ rests on them. What is the distance from the plane to the top of the larger sphere?",
-        [("A", r"$3+\frac{\sqrt{30}}{2}$"), ("B", r"$3+\frac{\sqrt{69}}{3}$"), ("C", r"$3+\frac{\sqrt{123}}{4}$"), ("D", r"$\frac{\sqrt{52}}{2}$"), ("E", r"$3+\frac{2\sqrt9}{3}$")],
+    5: (
+        r"In the expression $c\cdot a^b-d$, the values of $a$, $b$, $c$, and $d$ are $0$, $1$, $2$, and $3$, although not necessarily in that order. What is the maximum possible value of the result?",
+        [("A", "$5$"), ("B", "$6$"), ("C", "$8$"), ("D", "$9$"), ("E", "$10$")],
+    ),
+    6: (
+        r"Which of the following numbers is a perfect square?",
+        [("A", r"$98!\cdot99!$"), ("B", r"$98!\cdot100!$"), ("C", r"$99!\cdot100!$"), ("D", r"$99!\cdot101!$"), ("E", r"$100!\cdot101!$")],
+    ),
+    9: (
+        r"A square has sides of length $10$, and a circle centered at one of its vertices has radius $10$. What is the area of the union of the regions enclosed by the square and the circle?",
+        [("A", r"$200+25\pi$"), ("B", r"$100+75\pi$"), ("C", r"$75+100\pi$"), ("D", r"$100+100\pi$"), ("E", r"$100+125\pi$")],
     ),
 }
 
 
 KEY_OVERRIDES = {
-    22: "Use coordinate geometry and the distance from a circle center to a tangent line.",
-    23: "Use symmetry and tangency distances between circle centers.",
-    25: "Model the sphere centers as a tetrahedral arrangement over an equilateral triangle.",
+    1: "Count inclusive rows, then multiply by the number of seats per row.",
+    2: "Count two-digit numbers containing a 7 without double-counting 77.",
+    3: "Work backward through a doubling sequence.",
+    4: "Take the greatest common divisor of all possible visible products.",
+    5: "Maximize an exponential expression by choosing the base and exponent carefully.",
+    6: "Rewrite one factorial product as an obvious square.",
+    7: "Set up an exchange-rate equation and solve for the original dollar amount.",
+    8: "Model northeast and northwest directions as right-triangle vectors.",
+    9: "Use inclusion-exclusion for the area of a square and a circle.",
+    10: "Use the sum of the first n odd numbers.",
 }
 
 
 SOL = {
-    22: [
-        ("Set up coordinates", r"Place $A=(0,0)$, $B=(2,0)$, $C=(2,2)$, and $D=(0,2)$. The semicircle has center $(1,0)$ and radius $1$. Let $E=(0,e)$ on side $AD$."),
-        ("Write the tangent line", r"Line $CE$ passes through $(2,2)$ and $(0,e)$. In standard form it is $(2-e)x-2y+2e=0$."),
-        ("Use the tangent condition", r"A tangent line is exactly one radius away from the center. Thus the distance from $(1,0)$ to the line is $1$: \[\frac{|(2-e)+2e|}{\sqrt{(2-e)^2+4}}=1.\]"),
-        ("Solve for E", r"This becomes $\frac{2+e}{\sqrt{(2-e)^2+4}}=1$. Squaring gives $(2+e)^2=(2-e)^2+4$, so $8e=4$ and $e=\frac12$."),
-        ("Find CE", r"Now $CE=\sqrt{(2-0)^2+(2-\frac12)^2}=\sqrt{4+\frac94}=\sqrt{\frac{25}{4}}=\frac52$. The answer is $\boxed{\frac52}$."),
+    1: [
+        ("Count the rows carefully", r"Rows $12$ through $22$ are inclusive. That means the number of reserved rows is $22-12+1=11$."),
+        ("Multiply by seats per row", r"Each row has $33$ seats, so the number of reserved seats is $11\cdot33=363$."),
+        ("Check", r"Counting inclusively is the main trap; there are $11$ rows, not $10$."),
+        ("Answer", r"The answer is $\boxed{363}$."),
     ],
-    23: [
-        ("Find the radius of the large circle", r"Circle $A$ has radius $1$, passes through the center of $D$, and is internally tangent to $D$. Therefore the radius of $D$ is $2$."),
-        ("Use symmetry", r"Let the congruent circles $B$ and $C$ have radius $r$. By symmetry, put their centers at $(x,r)$ and $(x,-r)$, while the center of $D$ is at the origin and the center of $A$ is at $(-1,0)$."),
-        ("Use tangency to circle D", r"Since $B$ is internally tangent to $D$, the distance from its center to the origin is $2-r$. Thus \[x^2+r^2=(2-r)^2,\] so $x^2=4-4r$."),
-        ("Use tangency to circle A", r"Circle $B$ is externally tangent to circle $A$, so the distance between their centers is $1+r$: \[(x+1)^2+r^2=(1+r)^2.\] This simplifies to $x^2+2x=2r$."),
-        ("Solve", r"Using $x^2=4-4r$ in $x^2+2x=2r$ gives $x=3r-2$. Then $(3r-2)^2=4-4r$, so $9r^2-8r=0$. Since $r>0$, $r=\frac89$. The answer is $\boxed{\frac89}$."),
+    2: [
+        ("Separate the positions", r"A two-digit number has a tens digit from $1$ to $9$ and a ones digit from $0$ to $9$. We want at least one digit to be $7$."),
+        ("Count numbers with tens digit 7", r"The numbers $70$ through $79$ give $10$ possibilities."),
+        ("Count numbers with ones digit 7", r"The numbers ending in $7$ are $17,27,\ldots,97$, giving $9$ possibilities. But $77$ has already been counted."),
+        ("Combine without double-counting", r"The total is $10+9-1=18$."),
+        ("Answer", r"There are $\boxed{18}$ such integers."),
     ],
-    25: [
-        ("Look at the centers", r"The centers of the three small spheres form an equilateral triangle of side $2$ in a horizontal plane one unit above the floor."),
-        ("Place the large center above the triangle center", r"By symmetry, the center of the radius-$2$ sphere lies directly above the centroid of that equilateral triangle."),
-        ("Find the horizontal distance", r"In an equilateral triangle of side $2$, the distance from the centroid to a vertex is $\frac{2}{\sqrt3}$."),
-        ("Use the center-to-center distance", r"The large sphere is tangent to each small sphere, so the distance between their centers is $1+2=3$. If the vertical distance between centers is $h$, then \[h^2+\left(\frac{2}{\sqrt3}\right)^2=3^2.\] Thus $h^2=9-\frac43=\frac{23}{3}=\frac{69}{9}$, so $h=\frac{\sqrt{69}}{3}$."),
-        ("Add heights", r"The small-sphere centers are $1$ unit above the plane, so the large-sphere center is $1+\frac{\sqrt{69}}{3}$ above the plane. The top of the large sphere is $2$ more units up, giving $3+\frac{\sqrt{69}}{3}$. The answer is $\boxed{3+\frac{\sqrt{69}}{3}}$."),
+    3: [
+        ("Recognize the doubling pattern", r"Each practice has twice as many free throws as the previous one. To go backward, divide by $2$ each time."),
+        ("Work backward from the fifth practice", r"The fifth practice is $48$, so the fourth is $24$, the third is $12$, the second is $6$, and the first is $3$."),
+        ("Check forward", r"Starting with $3$ gives $3,6,12,24,48$, which matches the fifth practice."),
+        ("Answer", r"Jenny made $\boxed{3}$ free throws at the first practice."),
+    ],
+    4: [
+        ("List the possible products", r"A standard die shows the numbers $1$ through $6$. If one face is hidden, then $P$ is $720$ divided by the hidden number, since $1\cdot2\cdot3\cdot4\cdot5\cdot6=720$."),
+        ("Compute possible P values", r"The possible products are $720,360,240,180,144,$ and $120$."),
+        ("Find what always divides P", r"The largest number certain to divide every possible $P$ is the greatest common divisor of those values."),
+        ("Calculate the gcd", r"The common divisor is $12$. For example, $24$ does not always work because $180$ is not divisible by $24$."),
+        ("Answer", r"The answer is $\boxed{12}$."),
+    ],
+    5: [
+        ("Use the structure of the expression", r"The expression is $c\cdot a^b-d$. To maximize it, we want $d$ as small as possible and $c\cdot a^b$ as large as possible."),
+        ("Choose d", r"Since the available values are $0,1,2,3$, choose $d=0$ so nothing is subtracted."),
+        ("Maximize the power", r"The largest useful power from the remaining numbers is $3^2=9$, using $a=3$ and $b=2$. Then the remaining value for $c$ is $1$."),
+        ("Compute", r"This gives $1\cdot3^2-0=9$. Trying to make $c=2$ leaves only $3^1$, which gives $6$, so $9$ is larger."),
+        ("Answer", r"The maximum possible value is $\boxed{9}$."),
+    ],
+    6: [
+        ("Look for a factorial relationship", r"A product is a perfect square when every prime factor appears an even number of times. The easiest way is to make the expression visibly equal to something squared."),
+        ("Use the choice with consecutive factorials", r"Since $100!=100\cdot99!$, we have \[99!\cdot100!=99!\cdot100\cdot99!.\]"),
+        ("Rewrite as a square", r"Because $100=10^2$, the product is \[(10\cdot99!)^2.\]"),
+        ("Answer", r"Thus $99!\cdot100!$ is a perfect square, so the answer is $\boxed{99!\cdot100!}$."),
+    ],
+    7: [
+        ("Translate the exchange rate", r"For every $7$ U.S. dollars, Isabella receives $10$ Canadian dollars. If she starts with $d$ U.S. dollars, she receives $\frac{10}{7}d$ Canadian dollars."),
+        ("Use the spending information", r"After spending $60$ Canadian dollars, she has $d$ Canadian dollars left. So \[\frac{10}{7}d-60=d.\]"),
+        ("Solve for d", r"Subtracting $d$ gives $\frac{3}{7}d=60$, so $d=140$."),
+        ("Find the digit sum", r"The sum of the digits of $140$ is $1+4+0=5$."),
+        ("Answer", r"The answer is $\boxed{5}$."),
+    ],
+    8: [
+        ("Represent the directions", r"From the airport, St. Paul is $8$ miles northeast, while Minneapolis is $10$ miles northwest. These directions are perpendicular diagonal directions."),
+        ("Use components", r"The east-west separation is $\frac{8}{\sqrt2}+\frac{10}{\sqrt2}=\frac{18}{\sqrt2}=9\sqrt2$, while the north-south components cancel because both cities are equally northward in direction from the airport."),
+        ("Estimate", r"Since $\sqrt2\approx1.414$, the distance is $9\sqrt2\approx12.7$ miles."),
+        ("Choose the closest value", r"The closest listed value is $\boxed{13}$."),
+    ],
+    9: [
+        ("Use inclusion-exclusion", r"The union area is square area plus circle area minus the overlap area."),
+        ("Compute the square and circle areas", r"The square area is $10^2=100$. The circle has radius $10$, so its area is $100\pi$."),
+        ("Find the overlap", r"Since the circle is centered at a vertex of the square, the part of the circle inside the square is exactly one quarter of the circle, with area $25\pi$."),
+        ("Subtract the overlap", r"The union area is \[100+100\pi-25\pi=100+75\pi.\]"),
+        ("Answer", r"The answer is $\boxed{100+75\pi}$."),
+    ],
+    10: [
+        ("Identify the row sizes", r"The rows have $1,3,5,\ldots$ cans, increasing by $2$ each row. These are the positive odd numbers."),
+        ("Use the odd-number sum", r"The sum of the first $n$ positive odd numbers is $n^2$."),
+        ("Set up the total", r"If there are $n$ rows and $100$ cans, then $n^2=100$."),
+        ("Solve", r"Thus $n=10$."),
+        ("Answer", r"The display contains $\boxed{10}$ rows."),
     ],
 }
 
@@ -115,7 +182,7 @@ def render(row):
     ans, val = ANS[n]
     tags = "".join(f'<span class="badge">{esc(t)}</span>' for t in (row.get("tags") or "").split(";") if t)
     notes = row.get("notes") or ""
-    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in {22, 23}) else notes
+    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in set()) else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
         f'<li class="choice {"correct" if k == ans else ""}"><span class="choice-key">{esc(k)}</span><span>{esc(v, False)}</span></li>'
@@ -170,7 +237,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2004" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2004" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -211,7 +278,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": int(r["problem_no"]) in {22, 23},
+                "needs_review": int(r["problem_no"]) in set(),
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -269,7 +336,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批完成 2004 AMC 10A Problems 22、23、25；Problems 21 和 24 因图形/OCR 问题跳过。\n"
+        + "本批完成 2004 AMC 10B Problems 1-10，无跳过题。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",
