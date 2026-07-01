@@ -3,73 +3,73 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 61
+BATCH_NUMBER = 62
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {16,17,18,19,20}
+TARGET_NUMBERS = {21,22,23,24,25}
 SKIPPED = []
-BATCH_LABEL = "2011 AMC 10B Problems 16-20"
-NEXT_START = "2011 AMC 10B Problem 21"
+BATCH_LABEL = "2011 AMC 10B Problems 21-25"
+NEXT_START = "2012 AMC 10A Problem 1"
 
 ANS = {
-    16: ("A", r"\frac{\sqrt2-1}{2}"),
-    17: ("C", "130"),
-    18: ("E", "75"),
-    19: ("A", "-64"),
-    20: ("C", r"\frac{2\sqrt3}{3}"),
+    21: ("B", "31"),
+    22: ("A", r"5\sqrt2-7"),
+    23: ("D", "6"),
+    24: ("B", r"\frac{50}{99}"),
+    25: ("D", r"\frac{1509}{128}"),
 }
 
 OV = {
-    16: (r"A dart board is a regular octagon divided into regions as shown. Suppose that a dart thrown at the board is equally likely to land anywhere on the board. What is the probability that the dart lands within the center square?", [("A",r"\frac{\sqrt2-1}{2}"),("B",r"\frac14"),("C",r"\frac{2-\sqrt2}{2}"),("D",r"\frac{\sqrt2}{4}"),("E",r"2-\sqrt2")]),
-    17: (r"In the given circle, the diameter $\overline{EB}$ is parallel to $\overline{DC}$, and $\overline{AB}$ is parallel to $\overline{ED}$. The angles $\angle AEB$ and $\angle ABE$ are in the ratio $4:5$. What is the degree measure of $\angle BCD$?", [("A","120"),("B","125"),("C","130"),("D","135"),("E","140")]),
-    18: (r"Rectangle $ABCD$ has $AB=6$ and $BC=3$. Point $M$ is chosen on side $AB$ so that $\angle AMD=\angle CMD$. What is the degree measure of $\angle AMD$?", [("A","15"),("B","30"),("C","45"),("D","60"),("E","75")]),
-    19: (r"What is the product of all the roots of the equation \[\sqrt{5|x|+8}=\sqrt{x^2-16}?\]", [("A","-64"),("B","-24"),("C","-9"),("D","24"),("E","576")]),
-    20: (r"Rhombus $ABCD$ has side length $2$ and $\angle B=120^\circ$. Region $R$ consists of all points inside the rhombus that are closer to vertex $B$ than any of the other three vertices. What is the area of $R$?", [("A",r"\frac{\sqrt3}{3}"),("B",r"\frac{\sqrt3}{2}"),("C",r"\frac{2\sqrt3}{3}"),("D",r"1+\frac{\sqrt3}{3}"),("E","2")]),
+    21: (r"Brian writes down four integers $w>x>y>z$ whose sum is $44$. The pairwise positive differences of these numbers are $1,3,4,5,6,$ and $9$. What is the sum of the possible values for $w$?", [("A","16"),("B","31"),("C","48"),("D","62"),("E","93")]),
+    22: (r"A pyramid has a square base with sides of length $1$ and has lateral faces that are equilateral triangles. A cube is placed within the pyramid so that one face is on the base of the pyramid and its opposite face has all its edges on the lateral faces of the pyramid. What is the volume of this cube?", [("A",r"5\sqrt2-7"),("B",r"7-4\sqrt3"),("C",r"\frac{2\sqrt2}{27}"),("D",r"\frac{\sqrt2}{9}"),("E",r"\frac{\sqrt3}{9}")]),
+    23: (r"What is the hundreds digit of $2011^{2011}$?", [("A","1"),("B","4"),("C","5"),("D","6"),("E","9")]),
+    24: (r"A lattice point in an $xy$-coordinate system is any point $(x,y)$ where both $x$ and $y$ are integers. The graph of $y=mx+2$ passes through no lattice point with $0<x\le100$ for all $m$ such that $\frac12<m<a$. What is the maximum possible value of $a$?", [("A",r"\frac{51}{101}"),("B",r"\frac{50}{99}"),("C",r"\frac{51}{100}"),("D",r"\frac{52}{101}"),("E",r"\frac{13}{25}")]),
+    25: (r"Let $T_1$ be a triangle with side lengths $2011,2012,$ and $2013$. For $n\ge1$, if $T_n=\triangle ABC$ and $D,E,F$ are the points of tangency of the incircle of $\triangle ABC$ to the sides $AB,BC,$ and $AC$, respectively, then $T_{n+1}$ is a triangle with side lengths $AD,BE,$ and $CF$, if it exists. What is the perimeter of the last triangle in the sequence $(T_n)$?", [("A",r"\frac{1509}{8}"),("B",r"\frac{1509}{32}"),("C",r"\frac{1509}{64}"),("D",r"\frac{1509}{128}"),("E",r"\frac{1509}{256}")]),
 }
 
 KEY_OVERRIDES = {
-    16: "Use area ratio: center square area divided by total regular-octagon area.",
-    17: "Use the diameter to get a right angle, then use parallel lines and cyclic quadrilateral angles.",
-    18: "Use angle equality and parallel lines to create an isosceles triangle, then finish with a 30-60-90 triangle.",
-    19: "Square both sides and reduce the equation to a quadratic in $|x|$.",
-    20: "Perpendicular bisectors divide each equilateral half of the rhombus into equal-area parts.",
+    21: "Represent the four numbers by adjacent gaps and test the possible gap patterns.",
+    22: "Use a diagonal cross-section of the pyramid so the cube becomes a rectangle inside a 45-45-90 triangle.",
+    23: "Find the last three digits with modular arithmetic, then read the hundreds digit.",
+    24: "The first rational slope greater than $1/2$ with denominator at most $100$ creates the limiting value.",
+    25: "Track how the side lengths change when incircle tangency lengths become the next triangle.",
 }
 
 SOL = {
-    16: [
-        ("Use area as probability", r"Because the dart is equally likely to land anywhere on the board, the desired probability is the area of the center square divided by the area of the whole octagon."),
-        ("Choose a convenient scale", r"Use the scale suggested by the diagram: let the center square have side length $\sqrt2$. Then its area is $2$. The surrounding octagon can be decomposed into the center square, four rectangles, and four right isosceles corner triangles."),
-        ("Compute the octagon area", r"With this scale, the four rectangles have total area $4\sqrt2$, and the four corner triangles have total area $2$. Therefore the whole octagon has area $2+4\sqrt2+2=4+4\sqrt2$."),
-        ("Form the probability", r"The probability is \[\frac{2}{4+4\sqrt2}=\frac{1}{2+2\sqrt2}.\]"),
-        ("Rationalize", r"Multiplying by the conjugate gives \[\frac{1}{2+2\sqrt2}=\frac{\sqrt2-1}{2}.\] Thus the answer is $\boxed{\frac{\sqrt2-1}{2}}$."),
+    21: [
+        ("Use the largest difference", r"Since $w$ is the largest number and $z$ is the smallest, the largest pairwise difference must be $w-z=9$."),
+        ("Think in adjacent gaps", r"Let the adjacent gaps be $w-x$, $x-y$, and $y-z$. These three gaps add to $9$, and all pairwise differences are made by adding consecutive gaps."),
+        ("Find the possible gap patterns", r"The six differences must be $1,3,4,5,6,9$. The adjacent gaps have to be three of these numbers and sum to $9$. The two working orders are $(5,1,3)$ and $(3,1,5)$, which produce exactly the required six differences."),
+        ("Convert each pattern to w", r"For gaps $(5,1,3)$, the numbers are $w,w-5,w-6,w-9$. Their sum is $4w-20=44$, so $w=16$. For gaps $(3,1,5)$, the numbers are $w,w-3,w-4,w-9$, giving $4w-16=44$, so $w=15$."),
+        ("Add possible values", r"The possible values of $w$ are $16$ and $15$, and their sum is $31$. The answer is $\boxed{31}$."),
     ],
-    17: [
-        ("Use the diameter", r"Since $\overline{EB}$ is a diameter, the inscribed angle $\angle EAB$ is a right angle. That makes triangle $AEB$ easier because the other two angles are in the ratio $4:5$."),
-        ("Find the two acute angles", r"Let $\angle AEB=4x$ and $\angle ABE=5x$. Then $4x+5x+90=180$, so $9x=90$ and $x=10$. Therefore $\angle ABE=50^\circ$."),
-        ("Use parallel lines", r"Because $\overline{AB}\parallel\overline{ED}$, the angle $\angle ABE$ equals $\angle BED$ by alternate interior angles. Thus $\angle BED=50^\circ$."),
-        ("Use the cyclic quadrilateral", r"Points $B,E,D,C$ lie on the circle, so quadrilateral $BEDC$ is cyclic. Opposite angles in a cyclic quadrilateral are supplementary, so $\angle BED+\angle BCD=180^\circ$."),
-        ("Finish", r"Therefore $\angle BCD=180^\circ-50^\circ=130^\circ$. The answer is $\boxed{130}$."),
+    22: [
+        ("Take the right cross-section", r"A spatial problem becomes much easier if we slice through the apex and a diagonal of the square base. The cross-section of the pyramid is a $45$-$45$-$90$ triangle with base $\sqrt2$ and equal sides $1$."),
+        ("Describe the cube in the cross-section", r"If the cube has side length $s$, then in this diagonal cross-section it appears as a rectangle of height $s$ and width $s\sqrt2$, because the width is the diagonal of the cube's top face."),
+        ("Use the side triangles", r"The two small triangles on the left and right of the rectangle are also $45$-$45$-$90$ triangles, so each has horizontal leg $s$. Therefore the full base length satisfies \[\sqrt2=s+s\sqrt2+s=(2+\sqrt2)s.\]"),
+        ("Solve for the cube side", r"Thus \[s=\frac{\sqrt2}{2+\sqrt2}=\sqrt2-1.\]"),
+        ("Compute the volume", r"The cube's volume is $s^3=(\sqrt2-1)^3=5\sqrt2-7$. The answer is $\boxed{5\sqrt2-7}$."),
     ],
-    18: [
-        ("Name the target angle", r"Let $\angle AMD=\angle CMD=\theta$. The important idea is that ray $MD$ splits the angle from $MA$ to $MC$ into two equal parts."),
-        ("Use parallel sides of the rectangle", r"Since $AB\parallel DC$, angle $AMD$ equals angle $CDM$ by alternate interior angles. But $\angle AMD=\angle CMD$, so in triangle $CDM$ the angles at $D$ and $M$ are equal."),
-        ("Get an isosceles triangle", r"Equal base angles mean opposite sides are equal, so $CM=CD$. Since the rectangle has $AB=CD=6$, we get $CM=6$."),
-        ("Look at right triangle MBC", r"Triangle $MBC$ is right, with $BC=3$ and hypotenuse $CM=6$. Therefore it is a $30$-$60$-$90$ triangle, and $\angle BMC=30^\circ$."),
-        ("Use the straight angle at M", r"The angles along the straight line $AMB$ add to $180^\circ$. They are $\theta$, another $\theta$, and $30^\circ$, so $2\theta+30=180$. Hence $\theta=75^\circ$. The answer is $\boxed{75}$."),
+    23: [
+        ("Only the last three digits matter", r"The hundreds digit is determined by the number modulo $1000$. Since $2011\equiv11\pmod{1000}$, we need $11^{2011}\pmod{1000}$."),
+        ("Use modulo 8 and 125", r"Because $1000=8\cdot125$, we can work modulo $8$ and modulo $125$. Modulo $8$, $2011\equiv3$, and an odd power of $3$ is $3$ modulo $8$."),
+        ("Compute modulo 125", r"Modulo $125$, $2011\equiv11$. Since powers repeat with period dividing $100$, $11^{2011}\equiv11^{11}\pmod{125}$. Now $11^2\equiv-4$, $11^8\equiv6$, so $11^{11}=11^8\cdot11^2\cdot11\equiv6(-4)(11)\equiv111\pmod{125}$."),
+        ("Combine the congruences", r"So the last three digits have the form $111+125k$. We need $111+125k\equiv3\pmod8$. Since $111\equiv7$ and $125\equiv5$, this gives $7+5k\equiv3\pmod8$, so $k\equiv4\pmod8$."),
+        ("Read the hundreds digit", r"Taking $k=4$ gives $111+500=611$. Therefore the hundreds digit is $\boxed{6}$."),
     ],
-    19: [
-        ("Notice the role of absolute value", r"Both sides are square roots, so after squaring we should try to express everything in terms of $|x|$. This is natural because $x^2=|x|^2$."),
-        ("Square both sides", r"Squaring gives $5|x|+8=x^2-16$. Replacing $x^2$ by $|x|^2$ gives \[|x|^2-5|x|-24=0.\]"),
-        ("Solve the quadratic in $|x|$", r"Factor: \[(|x|-8)(|x|+3)=0.\] Since $|x|$ cannot be negative, the only possible value is $|x|=8$."),
-        ("Convert back to x", r"If $|x|=8$, then $x=8$ or $x=-8$. Both work in the original equation because both sides become $\sqrt{48}$."),
-        ("Compute the product", r"The product of all roots is $8\cdot(-8)=-64$. The answer is $\boxed{-64}$."),
+    24: [
+        ("Translate lattice points into slope fractions", r"The line is $y=mx+2$. Since $2$ is already an integer, a lattice point with integer $x$ occurs exactly when $mx$ is an integer."),
+        ("Connect this to denominators", r"If $m=\frac pq$ in lowest terms and $q\le100$, then choosing $x=q$ makes $mx=p$ an integer, so the line hits a lattice point. Therefore the interval must avoid every rational number greater than $\frac12$ whose reduced denominator is at most $100$."),
+        ("Find the first dangerous slope", r"For an even denominator $q$, the smallest fraction above $\frac12$ is at least $\frac12+\frac1q\ge\frac12+rac1{100}=\frac{51}{100}$. For an odd denominator $q$, it is $\frac{(q+1)/2}{q}=\frac12+rac1{2q}$, minimized by the largest odd $q\le100$, namely $q=99$."),
+        ("Compute that value", r"With $q=99$, the fraction is $\frac{50}{99}$, and it is the first rational slope greater than $\frac12$ that would create a lattice point with $0<x\le100$."),
+        ("Conclude", r"Thus the largest possible upper endpoint is $a=\frac{50}{99}$. The answer is $\boxed{\frac{50}{99}}$."),
     ],
-    20: [
-        ("Break the rhombus into simpler triangles", r"A rhombus with side length $2$ and angle $120^\circ$ can be split by diagonal $BD$ into two equilateral triangles, $ABD$ and $BCD$, each with side length $2$."),
-        ("Understand the 'closer to B' condition", r"Inside an equilateral triangle, the points closer to one vertex than to the other two are cut out by perpendicular bisectors. The medians of an equilateral triangle divide it into $6$ small triangles of equal area, and the region closest to one vertex contains $2$ of those $6$ pieces."),
-        ("Find the fraction in each half", r"So in each equilateral triangle, the region closest to vertex $B$ has one third of that triangle's area. Since the rhombus is made of two such equilateral triangles sharing vertex $B$, region $R$ is one third of the whole rhombus."),
-        ("Compute the rhombus area", r"The area of the rhombus is $s^2\sin120^\circ=2^2\cdot\frac{\sqrt3}{2}=2\sqrt3$."),
-        ("Take one third", r"Thus the area of $R$ is $\frac13\cdot2\sqrt3=\frac{2\sqrt3}{3}$. The answer is $\boxed{\frac{2\sqrt3}{3}}$."),
+    25: [
+        ("Understand one step of the process", r"Suppose a triangle has side lengths $m-1,m,m+1$. Tangent segments from the same vertex to the incircle are equal, so if the new side lengths are $x,y,z$, they satisfy $x+y=m-1$, $x+z=m$, and $y+z=m+1$."),
+        ("Solve the tangent lengths", r"Adding the first two equations and subtracting the third gives $2x=m-2$, so $x=\frac m2-1$. Similarly, $y=\frac m2$ and $z=\frac m2+1$. Thus the next triangle again has side lengths of the form $m'-1,m',m'+1$, where $m'=\frac m2$."),
+        ("Track the middle side", r"The first triangle has middle side $m=2012$. Each valid step halves the middle side: $2012,1006,503,\frac{503}{2},\ldots$."),
+        ("Find when the triangle stops existing", r"A triangle with sides $m-1,m,m+1$ exists exactly when $(m-1)+m>m+1$, which simplifies to $m>2$. The last middle side greater than $2$ is $\frac{503}{128}$; the next would be $\frac{503}{256}<2$."),
+        ("Compute the last perimeter", r"For the last triangle, the side lengths are $\frac{503}{128}-1$, $\frac{503}{128}$, and $\frac{503}{128}+1$. Their sum is $3\cdot\frac{503}{128}=\frac{1509}{128}$. The answer is $\boxed{\frac{1509}{128}}$."),
     ],
 }
 def esc(x, quote=True):
@@ -211,7 +211,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {16,17},
+                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in set(),
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -280,6 +280,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
