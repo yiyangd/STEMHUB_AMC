@@ -412,3 +412,19 @@
 - Pushed: pending
 - Next batch should start from: 2006 AMC 10A Problem 11
 - Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.
+
+## Batch 27: 2006 AMC 10A Problem 11-20
+
+- Start time: 2026-06-30T17:26:42-07:00
+- End time: 2026-06-30T17:26:43-07:00
+- Processed contest: AMC 10
+- Processed range: 2006 AMC 10A Problem 11-20
+- Generated count: 7
+- Updated existing count: 0
+- Skipped count: 3
+- Skipped reasons: 2006 AMC 10A Problem 12: dog rope arrangement depends on preliminary drawings.; 2006 AMC 10A Problem 16: tangent-circles triangle depends on the original diagram.; 2006 AMC 10A Problem 17: WXYZ rectangle/trisection area depends on the original diagram.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2006 AMC 10A Problem 21
+- Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.

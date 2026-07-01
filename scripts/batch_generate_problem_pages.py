@@ -8,129 +8,109 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 26
+BATCH_NUMBER = 27
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2006_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 8, 9, 10}
-SKIPPED = ["2006 AMC 10A Problem 7: rectangle-to-hexagon dissection depends on the original diagram."]
-BATCH_LABEL = "2006 AMC 10A Problem 1-10"
-NEXT_START = "2006 AMC 10A Problem 11"
+TARGET_NUMBERS = {11, 13, 14, 15, 18, 19, 20}
+SKIPPED = ["2006 AMC 10A Problem 12: dog rope arrangement depends on preliminary drawings.", "2006 AMC 10A Problem 16: tangent-circles triangle depends on the original diagram.", "2006 AMC 10A Problem 17: WXYZ rectangle/trisection area depends on the original diagram."]
+BATCH_LABEL = "2006 AMC 10A Problem 11-20"
+NEXT_START = "2006 AMC 10A Problem 21"
 
 ANS = {
-    1: ("A", "31"),
-    2: ("C", "h"),
-    3: ("B", "18"),
-    4: ("E", "23"),
-    5: ("D", "4"),
-    6: ("B", r"\frac{2}{7}"),
-    8: ("E", "11"),
-    9: ("C", "3"),
-    10: ("E", "11"),
+    11: ("C", "two lines"),
+    13: ("D", "60"),
+    14: ("B", "173"),
+    15: ("D", "47"),
+    18: ("C", r"5\cdot10^4\cdot26^2"),
+    19: ("C", "59"),
+    20: ("E", "1"),
 }
 
 
 OV = {
-    1: (
-        r"Sandwiches at Joe's Fast Food cost $3$ dollars each and sodas cost $2$ dollars each. How many dollars will it cost to purchase $5$ sandwiches and $8$ sodas?",
-        [("A", "$31$"), ("B", "$32$"), ("C", "$33$"), ("D", "$34$"), ("E", "$35$")],
+    11: (
+        r"Which of the following describes the graph of the equation $(x+y)^2=x^2+y^2$?",
+        [("A", "the empty set"), ("B", "one point"), ("C", "two lines"), ("D", "a circle"), ("E", "the entire plane")],
     ),
-    2: (
-        r"Define $x\otimes y=x^3-y$. What is $h\otimes(h\otimes h)$?",
-        [("A", "$-h$"), ("B", "$0$"), ("C", "$h$"), ("D", "$2h$"), ("E", "$h^3$")],
+    13: (
+        r"A player pays $5$ dollars to play a game. A die is rolled. If the number on the die is odd, the game is lost. If the number is even, the die is rolled again. In this case the player wins if the second number matches the first and loses otherwise. How much should the player win if the game is fair?",
+        [("A", "$12$"), ("B", "$30$"), ("C", "$50$"), ("D", "$60$"), ("E", "$100$")],
     ),
-    3: (
-        r"The ratio of Mary's age to Alice's age is $3:5$. Alice is $30$ years old. How old is Mary?",
-        [("A", "$15$"), ("B", "$18$"), ("C", "$20$"), ("D", "$24$"), ("E", "$50$")],
+    14: (
+        r"A number of linked rings, each $1$ cm thick, are hanging on a peg. The top ring has an outside diameter of $20$ cm. The outside diameter of each of the other rings is $1$ cm less than that of the ring above it. The bottom ring has an outside diameter of $3$ cm. What is the distance, in cm, from the top of the top ring to the bottom of the bottom ring?",
+        [("A", "$171$"), ("B", "$173$"), ("C", "$182$"), ("D", "$188$"), ("E", "$210$")],
     ),
-    4: (
-        r"A digital watch displays hours and minutes with AM and PM. What is the largest possible sum of the digits in the display?",
-        [("A", "$17$"), ("B", "$19$"), ("C", "$21$"), ("D", "$22$"), ("E", "$23$")],
+    18: (
+        r"A license plate in a certain state consists of $4$ digits, not necessarily distinct, and $2$ letters, also not necessarily distinct. These six characters may appear in any order, except that the two letters must appear next to each other. How many distinct license plates are possible?",
+        [("A", r"$10^4\cdot26^2$"), ("B", r"$10^3\cdot26^3$"), ("C", r"$5\cdot10^4\cdot26^2$"), ("D", r"$10^2\cdot26^4$"), ("E", r"$5\cdot10^3\cdot26^3$")],
     ),
-    6: (
-        r"What non-zero real value for $x$ satisfies $(7x)^{14}=(14x)^7$?",
-        [("A", r"$\frac17$"), ("B", r"$\frac27$"), ("C", "$1$"), ("D", "$7$"), ("E", "$14$")],
-    ),
-    10: (
-        r"For how many positive integer values of $x$ is $\sqrt{120-x}$ an integer?",
-        [("A", "$3$"), ("B", "$6$"), ("C", "$9$"), ("D", "$10$"), ("E", "$11$")],
+    20: (
+        r"Six distinct positive integers are randomly chosen between $1$ and $2006$, inclusive. What is the probability that some pair of these integers has a difference that is a multiple of $5$?",
+        [("A", r"$\frac12$"), ("B", r"$\frac35$"), ("C", r"$\frac23$"), ("D", r"$\frac45$"), ("E", "$1$")],
     ),
 }
 
 
 KEY_OVERRIDES = {
-    1: "Multiply each item cost by the quantity and add.",
-    2: "Evaluate the custom operation from the inside out.",
-    3: "Use a ratio to scale Mary's age from Alice's age.",
-    4: "Maximize the digit sum of a valid 12-hour digital time.",
-    5: "Split the pizza cost according to which slices were eaten.",
-    6: "Use exponent rules and the nonzero condition to solve for x.",
-    8: "Use symmetry of equal y-values on a parabola.",
-    9: "List possible lengths of consecutive positive integer sums.",
-    10: "Count square values that keep x positive.",
+    11: "Expand and simplify the equation to identify the coordinate axes.",
+    13: "Compute the probability of winning and set expected payout equal to the cost.",
+    14: "Add the vertical contributions of linked rings using outside and inside radii.",
+    15: "Compare angular speeds on two circular lanes moving in opposite directions.",
+    18: "Treat the adjacent letters as one block, then arrange with the four digits.",
+    19: "An arithmetic progression of triangle angles must have middle angle 60 degrees.",
+    20: "Use the pigeonhole principle on residues modulo 5.",
 }
 
 
 SOL = {
-    1: [
-        ("Compute sandwich cost", r"Each sandwich costs $3$ dollars, so $5$ sandwiches cost $5\cdot3=15$ dollars."),
-        ("Compute soda cost", r"Each soda costs $2$ dollars, so $8$ sodas cost $8\cdot2=16$ dollars."),
-        ("Add the costs", r"The total cost is $15+16=31$ dollars."),
-        ("Answer", r"The answer is $\boxed{31}$."),
+    11: [
+        ("Expand the left side", r"The equation is $(x+y)^2=x^2+y^2$. Expanding gives $x^2+2xy+y^2=x^2+y^2$."),
+        ("Simplify", r"Subtract $x^2+y^2$ from both sides to get $2xy=0$."),
+        ("Interpret the product", r"The equation $2xy=0$ means $x=0$ or $y=0$."),
+        ("Identify the graph", r"The set $x=0$ is the $y$-axis, and the set $y=0$ is the $x$-axis. Together these are two lines."),
+        ("Answer", r"The graph is $\boxed{\text{two lines}}$."),
     ],
-    2: [
-        ("Start inside", r"The expression is nested, so first compute $h\otimes h$. By definition, $h\otimes h=h^3-h$."),
-        ("Substitute into the outside operation", r"Now $h\otimes(h\otimes h)=h\otimes(h^3-h)$."),
-        ("Apply the definition again", r"Using $x\otimes y=x^3-y$, this becomes $h^3-(h^3-h)$."),
-        ("Simplify", r"The $h^3$ terms cancel, leaving $h$."),
-        ("Answer", r"The value is $\boxed{h}$."),
+    13: [
+        ("Find the probability of reaching the second roll", r"The first roll must be even. A fair die has $3$ even faces out of $6$, so this happens with probability $1/2$."),
+        ("Find the probability of matching", r"Once the first roll is fixed, the second roll must match that exact number. This has probability $1/6$."),
+        ("Find the win probability", r"Therefore the probability of winning is $\frac12\cdot\frac16=\frac1{12}$."),
+        ("Use fairness", r"For a fair game, expected winnings equal the $5$ dollar cost. If the prize is $W$, then $\frac1{12}W=5$."),
+        ("Answer", r"Solving gives $W=60$, so the player should win $\boxed{60}$ dollars."),
     ],
-    3: [
-        ("Use the ratio", r"Mary's age to Alice's age is $3:5$, so Mary is $3/5$ as old as Alice."),
-        ("Substitute Alice's age", r"Alice is $30$, so Mary's age is $\frac35\cdot30=18$."),
-        ("Check", r"The ratio $18:30$ simplifies to $3:5$, matching the problem."),
-        ("Answer", r"Mary is $\boxed{18}$ years old."),
+    14: [
+        ("Count the rings", r"The outside diameters are $20,19,18,\ldots,3$, so there are $18$ rings."),
+        ("Use inside radii", r"Each ring is $1$ cm thick, so a ring with outside diameter $D$ has inside radius $D/2-1$."),
+        ("Find center-to-center drops", r"For two linked rings with outside diameters $D_i$ and $D_{i+1}$, their centers are separated vertically by the sum of their inside radii: $(D_i/2-1)+(D_{i+1}/2-1)$."),
+        ("Add top and bottom radii", r"The total distance is the top outside radius $10$, plus all $17$ center-to-center drops, plus the bottom outside radius $3/2$."),
+        ("Compute", r"This gives $10+\sum_{D=20}^{4}\left((D/2-1)+((D-1)/2-1)\right)+\frac32=173$. The answer is $\boxed{173}$."),
     ],
-    4: [
-        ("Think about valid times", r"The watch uses a $12$-hour display, so the hour can be from $1$ to $12$ and the minutes from $00$ to $59$."),
-        ("Maximize the minute digits", r"The largest possible minute digit sum is from $59$, which gives $5+9=14$."),
-        ("Maximize the hour digit with that", r"The hour with the largest digit sum is $9$, giving digit sum $9$. Times like $19:59$ are not valid on a $12$-hour watch."),
-        ("Add", r"At $9:59$, the digit sum is $9+5+9=23$."),
-        ("Answer", r"The largest possible sum is $\boxed{23}$."),
+    15: [
+        ("Convert speeds to angular speeds", r"Odell's angular speed is $250/50=5$ radians per minute. Kershaw's angular speed is $300/60=5$ radians per minute."),
+        ("Use opposite directions", r"Since they run in opposite directions, their relative angular speed is $5+5=10$ radians per minute."),
+        ("Find total relative angle", r"In $30$ minutes, the relative angular distance is $30\cdot10=300$ radians."),
+        ("Count meetings after the start", r"They pass whenever the relative angular distance reaches a positive multiple of $2\pi$. The count is $\left\lfloor\frac{300}{2\pi}\right\rfloor$."),
+        ("Answer", r"Since $\frac{300}{2\pi}\approx47.7$, they pass $\boxed{47}$ times after the start."),
     ],
-    5: [
-        ("Find the total pizza cost", r"The plain pizza costs $8$, and anchovies on half add $2$, so the whole pizza costs $10$."),
-        ("Separate plain and anchovy halves", r"The plain half costs $4$. The anchovy half costs the other $4$ of plain pizza plus the $2$ topping charge, so it costs $6$."),
-        ("Assign Dave's cost", r"Dave ate all $4$ anchovy slices, worth $6$, and one plain slice. Since the plain half has $4$ slices costing $4$, one plain slice costs $1$. Dave pays $7$."),
-        ("Assign Doug's cost", r"Doug ate the remaining $3$ plain slices, worth $3$."),
-        ("Answer", r"Dave paid $7-3=\boxed{4}$ dollars more than Doug."),
+    18: [
+        ("Treat the two letters as a block", r"Because the two letters must be next to each other, view them as one letter-block plus four separate digit positions. That makes $5$ objects to arrange."),
+        ("Place the letter block", r"The block can occupy any of $5$ positions among the six characters."),
+        ("Choose characters", r"The four digits have $10^4$ choices because repetition is allowed. The two letters have $26^2$ choices because repetition is also allowed and order matters inside the block."),
+        ("Multiply", r"The total number of plates is $5\cdot10^4\cdot26^2$."),
+        ("Answer", r"The answer is $\boxed{5\cdot10^4\cdot26^2}$."),
     ],
-    6: [
-        ("Use the nonzero condition", r"Because $x\ne0$, we can divide by powers of $x$ without losing a solution."),
-        ("Expand the powers", r"The equation is $7^{14}x^{14}=14^7x^7$. Dividing by $x^7$ gives $7^{14}x^7=14^7$."),
-        ("Solve for x to the seventh", r"Since $14^7=(2\cdot7)^7=2^7\cdot7^7$, we get \[x^7=\frac{2^7\cdot7^7}{7^{14}}=\left(\frac27\right)^7.\]"),
-        ("Take the seventh root", r"The seventh root preserves the real value, so $x=\frac27$."),
-        ("Answer", r"The answer is $\boxed{\frac27}$."),
+    19: [
+        ("Use the arithmetic progression structure", r"If three angles are in arithmetic progression, write them as $60-d$, $60$, and $60+d$, because their sum must be $180$."),
+        ("Apply positivity", r"The smallest angle must be positive, so $60-d>0$. Thus $d<60$."),
+        ("Apply distinctness", r"The angles are distinct, so $d$ must be a positive integer."),
+        ("Count d values", r"Therefore $d$ can be $1,2,\ldots,59$, giving $59$ different angle triples."),
+        ("Answer", r"Each different angle triple gives a non-similar triangle, so the answer is $\boxed{59}$."),
     ],
-    8: [
-        ("Use the equal y-values", r"The points $(2,3)$ and $(4,3)$ have the same $y$-value on the parabola. For a parabola, equal heights occur at points symmetric about the axis of symmetry."),
-        ("Find the axis", r"The midpoint of $x=2$ and $x=4$ is $x=3$, so the axis of symmetry is $x=3$."),
-        ("Relate this to b", r"For $y=x^2+bx+c$, the axis is $x=-b/2$. Thus $-b/2=3$, so $b=-6$."),
-        ("Solve for c", r"Use point $(2,3)$: $3=2^2-6(2)+c=4-12+c$, so $c=11$."),
-        ("Answer", r"The answer is $\boxed{11}$."),
-    ],
-    9: [
-        ("List by length", r"We need sums of two or more consecutive positive integers that equal $15$. Checking by length is organized and avoids missing cases."),
-        ("Find the examples", r"With length $2$, $7+8=15$. With length $3$, $4+5+6=15$. With length $5$, $1+2+3+4+5=15$."),
-        ("Rule out other lengths", r"Length $4$ would have average $15/4$, not halfway between two middle integers. Lengths $6$ or more already exceed $15$ if they start at $1$."),
-        ("Count", r"There are $3$ valid sets."),
-        ("Answer", r"The answer is $\boxed{3}$."),
-    ],
-    10: [
-        ("Translate the square-root condition", r"For $\sqrt{120-x}$ to be an integer, the quantity $120-x$ must be a perfect square."),
-        ("Use positivity of x", r"Because $x$ is a positive integer, we need $120-x\ge0$, so the square can be $0^2,1^2,2^2,\ldots,10^2$."),
-        ("Count the squares", r"The next square, $11^2=121$, would make $x=120-121=-1$, which is not positive. So there are $11$ possible squares, from $0^2$ through $10^2$."),
-        ("Get x values", r"Each square gives exactly one value $x=120-k^2$."),
-        ("Answer", r"There are $\boxed{11}$ possible positive integer values of $x$."),
+    20: [
+        ("Think modulo 5", r"Two integers have a difference that is a multiple of $5$ exactly when they have the same remainder modulo $5$."),
+        ("Use pigeonhole principle", r"There are only $5$ possible remainders modulo $5$: $0,1,2,3,4$."),
+        ("Place six integers into five classes", r"Choosing $6$ distinct integers forces at least two of them to have the same remainder modulo $5$."),
+        ("Conclude", r"That pair has a difference divisible by $5$, no matter which six integers were chosen."),
+        ("Answer", r"The probability is therefore $\boxed{1}$."),
     ],
 }
 
@@ -333,7 +313,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批完成 2006 AMC 10A Problems 1-6 和 8-10；Problem 7 因图形依赖跳过。\n"
+        + "本批完成 2006 AMC 10A Problems 11、13、14、15、18、19、20；Problems 12、16、17 因图形依赖跳过。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",
