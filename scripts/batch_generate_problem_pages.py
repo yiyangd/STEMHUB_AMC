@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 171
+BATCH_NUMBER = 172
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2006_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16,17,18,19,20}
+TARGET_NUMBERS = {21,22,23,24,25}
 SKIPPED = []
-BATCH_LABEL = "2006 AMC 12A Problems 11-20"
-NEXT_START = "2006 AMC 12A Problem 21"
+BATCH_LABEL = "2006 AMC 12A Problems 21-25"
+NEXT_START = "2006 AMC 12B Problem 1"
 
-ANS={11:("C","two lines"),12:("B","173"),13:("E",r"14\pi"),14:("C",r"\$30"),15:("A",r"\frac{\pi}{6}"),16:("B",r"\frac{44}{3}"),17:("B",r"\frac{5}{9}"),18:("E",r"\{-1,1\}"),19:("E",r"\frac{912}{119}"),20:("C",r"\frac{2}{243}")}
+ANS={21:("E","102"),22:("D",r"3\sqrt2+\sqrt6"),23:("B",r"\sqrt2-1"),24:("D","1,008,016"),25:("E","405")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1239,6 +1239,33 @@ SOL.update({
 18:[("Use the closure condition",r"If \(x\) is in the domain, then \(\frac1x\) is also in the domain. This means the same functional equation must also hold when the input is \(\frac1x\)."),("Write the equation for x",r"The original equation gives \[f(x)+f\left(\frac1x\right)=x.\]"),("Write the equation for 1/x",r"Substituting \(\frac1x\) as the input gives \[f\left(\frac1x\right)+f(x)=\frac1x.\]"),("Compare the same left side",r"The left sides are identical, so their right sides must be equal. Hence \[x=\frac1x,\] so \(x^2=1\)."),("List the possible domain values",r"The only possible real values are \(x=1\) and \(x=-1\). Both are allowed because each is its own reciprocal."),("Conclude",r"The largest possible domain is \(\boxed{\{-1,1\}}\)."),],
 19:[("Use distance from a point to a line",r"A tangent line is at a distance equal to the circle's radius from its center. For the line \(y=mx+b\), write it as \(mx-y+b=0\)."),("Set the distance equations",r"For the center \((2,4)\) with radius \(4\), \[\frac{2m-4+b}{\sqrt{m^2+1}}=4.\] For the center \((14,9)\) with radius \(9\), \[\frac{14m-9+b}{\sqrt{m^2+1}}=9.\]"),("Eliminate b",r"Subtracting the first equation from the second gives \[\frac{12m-5}{\sqrt{m^2+1}}=5.\]"),("Solve for m",r"Squaring gives \[(12m-5)^2=25(m^2+1).\] This simplifies to \(119m^2-120m=0\), so the positive slope is \[m=\frac{120}{119}.\]"),("Find b",r"Then \(\sqrt{m^2+1}=\frac{169}{119}\). Using the first distance equation, \[2m-4+b=4\cdot\frac{169}{119},\] so \[b=\frac{676-240+476}{119}=\frac{912}{119}.\]"),("Conclude",r"The answer is \(\boxed{\frac{912}{119}}\)."),],
 20:[("Count all possible walks",r"At each of the \(7\) moves, the bug has \(3\) equally likely edge choices. So there are \[3^7=2187\] possible move sequences."),("Translate the target event",r"Visiting every vertex exactly once in \(7\) moves means the bug follows a Hamiltonian path of the cube graph starting from its initial vertex."),("Use symmetry for the first moves",r"The first move has \(3\) choices. After that, the second move cannot go back to the starting vertex, so it has \(2\) useful choices if the path is to remain self-avoiding."),("Count completions after two moves",r"Once the first two moves are fixed, the remaining shape of the cube leaves exactly \(3\) ways to finish a Hamiltonian path through the remaining five vertices. This can be checked by following the two possible side faces and the one path that crosses to the opposite face earlier."),("Compute favorable paths",r"Thus the number of favorable paths is \[3\cdot2\cdot3=18.\]"),("Find the probability",r"The probability is \[\frac{18}{2187}=\frac{2}{243}.\] The answer is \(\boxed{\frac{2}{243}}\)."),],
+})
+OV.update({
+21:(r"Let \[S_1=\{(x,y)\mid \log_{10}(1+x^2+y^2)\le 1+\log_{10}(x+y)\}\] and \[S_2=\{(x,y)\mid \log_{10}(2+x^2+y^2)\le 2+\log_{10}(x+y)\}.\] What is the ratio of the area of \(S_2\) to the area of \(S_1\)?",[("A","98"),("B","99"),("C","100"),("D","101"),("E","102")]),
+22:(r"A circle of radius \(r\) is concentric with and outside a regular hexagon of side length \(2\). The probability that three entire sides of the hexagon are visible from a randomly chosen point on the circle is \(\frac12\). What is \(r\)?",[("A",r"\(2\sqrt2+2\sqrt3\)"),("B",r"\(3\sqrt3+\sqrt2\)"),("C",r"\(2\sqrt6+\sqrt3\)"),("D",r"\(3\sqrt2+\sqrt6\)"),("E",r"\(6\sqrt2-\sqrt3\)")]),
+23:(r"Given a finite sequence \(S=(a_1,a_2,\ldots,a_n)\) of \(n\) real numbers, let \(A(S)\) be the sequence \[\left(\frac{a_1+a_2}{2},\frac{a_2+a_3}{2},\ldots,\frac{a_{n-1}+a_n}{2}\right)\] of \(n-1\) real numbers. Define \(A^1(S)=A(S)\), and for \(2\le m\le n-1\), define \(A^m(S)=A(A^{m-1}(S))\). Suppose \(x>0\), and let \(S=(1,x,x^2,\ldots,x^{100})\). If \(A^{100}(S)=\left(\frac1{2^{50}}\right)\), then what is \(x\)?",[("A",r"\(1-\frac{\sqrt2}{2}\)"),("B",r"\(\sqrt2-1\)"),("C",r"\(\frac12\)"),("D",r"\(2-\sqrt2\)"),("E",r"\(\frac{\sqrt2}{2}\)")]),
+24:(r"The expression \((x+y+z)^{2006}+(x-y-z)^{2006}\) is simplified by expanding it and combining like terms. How many terms are in the simplified expression?",[("A","6018"),("B","671,676"),("C","1,007,514"),("D","1,008,016"),("E","2,015,028")]),
+25:(r"How many non-empty subsets \(S\) of \(\{1,2,3,\ldots,15\}\) have the following two properties? (1) No two consecutive integers belong to \(S\). (2) If \(S\) contains \(k\) elements, then \(S\) contains no number less than \(k\).",[("A","277"),("B","311"),("C","376"),("D","377"),("E","405")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Convert logarithmic inequalities into disk inequalities and compare areas.",
+22:"Convert the visibility probability into equal arcs, then use a 15-degree right-triangle relation.",
+23:"Recognize repeated averaging as binomial coefficients applied to a geometric sequence.",
+24:"Count monomials whose \(y,z\) total degree is even.",
+25:"Count subsets by size using the standard no-consecutive-elements transformation.",
+})
+
+NOTES_OVERRIDES.update({
+22:"This problem contains a diagram. The concentric circle, regular hexagon, and visibility arcs are described in the text; please refer to the original PDF or AoPS page for the figure.",
+})
+
+SOL.update({
+21:[("Remove the logarithms carefully",r"Because \(\log_{10}\) is increasing, each inequality can be converted into an ordinary inequality after matching powers of \(10\)."),("Analyze S1",r"For \(S_1\), \[\log_{10}(1+x^2+y^2)\le \log_{10}(10(x+y)),\] so \[1+x^2+y^2\le10x+10y.\] Completing the square gives \[(x-5)^2+(y-5)^2\le49.\] Thus \(S_1\) is a disk of radius \(7\)."),("Analyze S2",r"For \(S_2\), \[\log_{10}(2+x^2+y^2)\le \log_{10}(100(x+y)),\] so \[2+x^2+y^2\le100x+100y.\] Completing the square gives \[(x-50)^2+(y-50)^2\le4998.\]"),("Compare areas",r"The area of a disk is proportional to the square of its radius. Therefore \[\frac{[S_2]}{[S_1]}=\frac{4998}{49}=102.\]"),("Conclude",r"The ratio is \(\boxed{102}\)."),],
+22:[("Turn probability into arc length",r"The random point is chosen on a circle, so probability corresponds to total arc measure. The event has probability \(\frac12\), so the favorable arcs total \(180^\circ\)."),("Use symmetry",r"There are \(6\) symmetric favorable arcs, one for each appropriate pair of non-adjacent visible sides. Therefore each such arc has measure \[180^\circ\div6=30^\circ.\]"),("Set up the key triangle",r"Let \(A\) and \(B\) be the endpoints of one favorable arc and \(O\) the common center. Then \(\angle AOB=30^\circ\), so the half-angle at \(O\) is \(15^\circ\)."),("Relate the radius to the hexagon",r"The relevant perpendicular distance from \(O\) to the projected side intersection is \(2\sqrt3\). In the right triangle, \[\cos15^\circ=\frac{r/2}{2\sqrt3}=\frac{r}{4\sqrt3}.\]"),("Compute r",r"Using \[\cos15^\circ=\frac{\sqrt6+\sqrt2}{4},\] we get \[r=4\sqrt3\cos15^\circ=\sqrt3(\sqrt6+\sqrt2)=3\sqrt2+\sqrt6.\]"),("Conclude",r"The radius is \(\boxed{3\sqrt2+\sqrt6}\)."),],
+23:[("Understand what averaging does",r"Each application of \(A\) replaces adjacent terms by their average. Repeating this process creates binomial coefficients, much like Pascal's triangle."),("Check the pattern",r"After one averaging, the terms contain factors \(\frac{1+x}{2}\). After two averagings, the first term becomes \[\frac{1+2x+x^2}{2^2}=\frac{(1+x)^2}{2^2}.\]"),("Generalize to 100 steps",r"For the geometric sequence \(1,x,x^2,\ldots,x^{100}\), after \(100\) steps only one term remains: \[A^{100}(S)=\left(\frac{(1+x)^{100}}{2^{100}}\right).\]"),("Use the given value",r"The problem says this equals \(\frac1{2^{50}}\), so \[\frac{(1+x)^{100}}{2^{100}}=\frac1{2^{50}}.\] Hence \[(1+x)^{100}=2^{50}.\]"),("Solve for x",r"Taking the positive \(100\)th root gives \[1+x=2^{1/2}=\sqrt2.\] Since \(x>0\), \[x=\sqrt2-1.\]"),("Conclude",r"The answer is \(\boxed{\sqrt2-1}\)."),],
+24:[("Look at one monomial",r"A term in the expansion has the form \(x^a y^b z^c\), where \(a+b+c=2006\). The same monomial appears in both expanded expressions."),("Find when it survives",r"In \((x+y+z)^{2006}\) the coefficient is positive. In \((x-y-z)^{2006}\), the sign is \((-1)^{b+c}\). Thus the two coefficients cancel when \(b+c\) is odd and add when \(b+c\) is even."),("Count by t=b+c",r"Let \(t=b+c\). We need \(t\) even, with \(0\le t\le2006\). For a fixed \(t\), \(a=2006-t\), and there are \(t+1\) choices for \((b,c)\)."),("Sum over even t",r"Write \(t=2j\), where \(j=0,1,\ldots,1003\). The number of surviving terms is \[\sum_{j=0}^{1003}(2j+1).\]"),("Evaluate the sum",r"The sum of the first \(1004\) odd positive integers is \(1004^2\). Therefore the number of terms is \[1004^2=1{,}008{,}016.\]"),("Conclude",r"The answer is \(\boxed{1{,}008{,}016}\)."),],
+25:[("Count by subset size",r"Suppose \(S\) has \(k\) elements. Condition (2) says every chosen number must be at least \(k\), so the available set is \(\{k,k+1,\ldots,15\}\), which has \(16-k\) elements."),("Use the no-consecutive formula",r"The number of ways to choose \(k\) elements from \(n\) ordered elements with no two consecutive is \[\binom{n-k+1}{k}.\] This comes from shifting the \(i\)th chosen element down by \(i-1\)."),("Apply it to this problem",r"Here \(n=16-k\), so the count for size \(k\) is \[\binom{(16-k)-k+1}{k}=\binom{17-2k}{k}.\]"),("Find possible k values",r"We need \(17-2k\ge k\), so \(17\ge3k\). Thus \(k=1,2,3,4,5\)."),("Add the cases",r"The total is \[\binom{15}{1}+\binom{13}{2}+\binom{11}{3}+\binom{9}{4}+\binom{7}{5}.\] This equals \[15+78+165+126+21=405.\]"),("Conclude",r"There are \(\boxed{405}\) subsets."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
