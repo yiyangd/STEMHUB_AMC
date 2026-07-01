@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import csv
 import html
@@ -8,69 +8,64 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 39
+BATCH_NUMBER = 40
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2008_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
-SKIPPED = []
-BATCH_LABEL = "2008 AMC 10A Problems 11-20"
-NEXT_START = "2008 AMC 10A Problem 21"
+TARGET_NUMBERS = {22, 23, 24}
+SKIPPED = [
+    "2008 AMC 10A Problem 21 skipped: diagram-dependent cube cross-section problem",
+    "2008 AMC 10A Problem 25 skipped: diagram-dependent circular table/place-mat problem",
+]
+BATCH_LABEL = "2008 AMC 10A Problems 22-24"
+NEXT_START = "2008 AMC 10B Problem 1"
 
 ANS = {
-    11: ("D", "8"),
-    12: ("C", "3.4r"),
-    13: ("D", r"(\frac15+\frac17)(t-1)=1"),
-    14: ("D", "2.7"),
-    15: ("D", "150"),
-    16: ("B", r"\frac19"),
-    17: ("B", r"54+9\pi"),
-    18: ("B", r"\frac{59}{4}"),
-    19: ("C", r"(3+\sqrt{10})\pi"),
-    20: ("D", "98"),
+    22: ("D", r"\frac{5}{8}"),
+    23: ("B", "40"),
+    24: ("A", "0"),
 }
 
 
 OV = {
-    11: (r"While Steve and LeRoy are fishing $1$ mile from shore, their boat springs a leak, and water comes in at a constant rate of $10$ gallons per minute. The boat will sink if it takes in more than $30$ gallons of water. Steve starts rowing toward the shore at a constant rate of $4$ miles per hour while LeRoy bails water out of the boat. What is the slowest rate, in gallons per minute, at which LeRoy can bail if they are to reach the shore without sinking?", [("A", "$2$"), ("B", "$4$"), ("C", "$6$"), ("D", "$8$"), ("E", "$10$")]),
-    12: (r"In a collection of red, blue, and green marbles, there are $25\%$ more red marbles than blue marbles, and there are $60\%$ more green marbles than red marbles. Suppose that there are $r$ red marbles. What is the total number of marbles in that collection?", [("A", "$2.85r$"), ("B", "$3r$"), ("C", "$3.4r$"), ("D", "$3.85r$"), ("E", "$4.25r$")]),
-    13: (r"Doug can paint a room in $5$ hours. Dave can paint the same room in $7$ hours. Doug and Dave paint the room together and take a one-hour break for lunch. Let $t$ be the total time, in hours, required for them to complete the job working together, including lunch. Which of the following equations is satisfied by $t$?", [("A", r"$(\frac15+\frac17)(t+1)=1$"), ("B", r"$(\frac15+\frac17)t+1=1$"), ("C", r"$(\frac15+\frac17)t=1$"), ("D", r"$(\frac15+\frac17)(t-1)=1$"), ("E", r"$(5+7)t=1$")]),
-    14: (r"Older television screens have aspect ratio $4:3$. A movie has aspect ratio $2:1$ and is shown on an older television screen with a $27$-inch diagonal by letterboxing, using dark strips of equal height at the top and bottom. What is the height, in inches, of each darkened strip?", [("A", "$2$"), ("B", "$2.25$"), ("C", "$2.5$"), ("D", "$2.7$"), ("E", "$3$")]),
-    15: (r"Yesterday Han drove $1$ hour longer than Ian at an average speed $5$ miles per hour faster than Ian. Jan drove $2$ hours longer than Ian at an average speed $10$ miles per hour faster than Ian. Han drove $70$ miles more than Ian. How many more miles did Jan drive than Ian?", [("A", "$120$"), ("B", "$130$"), ("C", "$140$"), ("D", "$150$"), ("E", "$160$")]),
-    16: (r"Points $A$ and $B$ lie on a circle centered at $O$, and $\angle AOB=60^\circ$. A second circle is internally tangent to the first and tangent to both $OA$ and $OB$. What is the ratio of the area of the smaller circle to that of the larger circle?", [("A", r"$\frac1{16}$"), ("B", r"$\frac19$"), ("C", r"$\frac18$"), ("D", r"$\frac16$"), ("E", r"$\frac14$")]),
-    17: (r"An equilateral triangle has side length $6$. What is the area of the region containing all points that are outside the triangle and not more than $3$ units from a point of the triangle?", [("A", r"$36+24\sqrt3$"), ("B", r"$54+9\pi$"), ("C", r"$54+18\sqrt3+6\pi$"), ("D", r"$(2\sqrt3+3)^2\pi$"), ("E", r"$9(\sqrt3+1)^2\pi$")]),
-    18: (r"A right triangle has perimeter $32$ and area $20$. What is the length of its hypotenuse?", [("A", r"$\frac{57}{4}$"), ("B", r"$\frac{59}{4}$"), ("C", r"$\frac{61}{4}$"), ("D", r"$\frac{63}{4}$"), ("E", r"$\frac{65}{4}$")]),
-    19: (r"Rectangle $PQRS$ lies in a plane with $PQ=RS=2$ and $QR=SP=6$. The rectangle is rotated $90^\circ$ clockwise about $R$, then rotated $90^\circ$ clockwise about the point that $S$ moved to after the first rotation. What is the length of the path traveled by point $P$?", [("A", r"$(2\sqrt3+5)\pi$"), ("B", r"$6\pi$"), ("C", r"$(3+\sqrt{10})\pi$"), ("D", r"$(\sqrt3+2\sqrt5)\pi$"), ("E", r"$2\sqrt{10}\pi$")]),
-    20: (r"Trapezoid $ABCD$ has bases $AB$ and $CD$ and diagonals intersecting at $K$. Suppose that $AB=9$, $DC=12$, and the area of $\triangle AKD$ is $24$. What is the area of trapezoid $ABCD$?", [("A", "$92$"), ("B", "$94$"), ("C", "$96$"), ("D", "$98$"), ("E", "$100$")]),
+    22: (r"Jacob uses the following procedure to write down a sequence of numbers. First he chooses the first term to be $6$. To generate each succeeding term, he flips a fair coin. If it comes up heads, he doubles the previous term and subtracts $1$. If it comes up tails, he takes half of the previous term and subtracts $1$. What is the probability that the fourth term in Jacob's sequence is an integer?", [("A", r"$\frac{1}{6}$"), ("B", r"$\frac{1}{3}$"), ("C", r"$\frac{1}{2}$"), ("D", r"$\frac{5}{8}$"), ("E", r"$\frac{3}{4}$")]),
+    23: (r"Two subsets of the set $S=\{a,b,c,d,e\}$ are to be chosen so that their union is $S$ and their intersection contains exactly two elements. In how many ways can this be done, assuming that the order in which the subsets are chosen does not matter?", [("A", "$20$"), ("B", "$40$"), ("C", "$60$"), ("D", "$160$"), ("E", "$320$")]),
+    24: (r"Let $k=2008^2+2^{2008}$. What is the units digit of $k^2+2k$?", [("A", "$0$"), ("B", "$2$"), ("C", "$4$"), ("D", "$6$"), ("E", "$8$")]),
 }
 
 
 KEY_OVERRIDES = {
-    11: "Balance leaking and bailing over the rowing time so the water stays at or below 30 gallons.",
-    12: "Write blue and green counts in terms of the red count r.",
-    13: "Subtract the lunch break from total time to get actual painting time.",
-    14: "Use a 3-4-5 television screen and compare the movie height with the screen height.",
-    15: "Set up Ian's time and speed, then reuse Han's condition to compute Jan's extra distance.",
-    16: "Use the angle bisector and tangency distances in a 60-degree sector.",
-    17: "Use the outer offset area formula: perimeter times radius plus a full circle of corner arcs.",
-    18: "Use area and perimeter relations for the legs and hypotenuse of a right triangle.",
-    19: "Add two quarter-circle arc lengths with different rotation centers.",
-    20: "Use diagonal intersection ratios in a trapezoid to relate triangle area to trapezoid height.",
+    22: "Track only whether each term is an integer; a tail move can create fractions depending on parity.",
+    23: "Classify each element by whether it belongs to both subsets or to exactly one subset, then account for unordered pairs.",
+    24: "Use units digits and modular arithmetic instead of computing large powers.",
 }
 
 
 SOL = {
-    11: [("Find the rowing time", r"The boat is $1$ mile from shore and rows at $4$ miles per hour, so the trip takes $\frac14$ hour, or $15$ minutes."), ("Find the incoming water", r"Water enters at $10$ gallons per minute for $15$ minutes, so $150$ gallons would enter without bailing."), ("Limit the net water", r"The boat can take at most $30$ gallons, so LeRoy must remove at least $150-30=120$ gallons during the $15$ minutes."), ("Compute the rate", r"The slowest bailing rate is $120/15=8$ gallons per minute."), ("Answer", r"The answer is $\boxed{8}$." )],
-    12: [("Express blue in terms of red", r"There are $25\%$ more red marbles than blue marbles, so $r=1.25b$. Therefore $b=\frac{r}{1.25}=0.8r$."), ("Express green in terms of red", r"There are $60\%$ more green marbles than red marbles, so $g=1.6r$."), ("Add the three colors", r"The total is $r+0.8r+1.6r=3.4r$."), ("Answer", r"The total number of marbles is $\boxed{3.4r}$." )],
-    13: [("Find the combined work rate", r"Doug paints $\frac15$ of the room per hour, and Dave paints $\frac17$ of the room per hour. Together their rate is $\frac15+\frac17$."), ("Account for lunch", r"The total time is $t$, but one hour is lunch, so the actual painting time is $t-1$."), ("Set completed work equal to 1", r"Rate times working time equals one full room: $(\frac15+\frac17)(t-1)=1$."), ("Answer", r"The correct equation is $\boxed{(\frac15+\frac17)(t-1)=1}$." )],
-    14: [("Find screen dimensions", r"A $4:3$ screen with diagonal $27$ is a scaled $3$-$4$-$5$ triangle. The scale factor is $27/5=5.4$, so the screen width is $21.6$ and height is $16.2$."), ("Fit the movie width", r"The movie has aspect ratio $2:1$ and uses the full screen width $21.6$, so its height is $21.6/2=10.8$."), ("Find total dark height", r"The unused vertical height is $16.2-10.8=5.4$ inches."), ("Split into two strips", r"The top and bottom strips have equal height, so each is $5.4/2=2.7$ inches."), ("Answer", r"Each strip is $\boxed{2.7}$ inches high." )],
-    15: [("Let Ian's time and speed be variables", r"Let Ian drive for $t$ hours at $v$ miles per hour. Ian's distance is $tv$."), ("Use Han's information", r"Han drives for $t+1$ hours at speed $v+5$, and he drives $70$ more miles than Ian. Thus $(t+1)(v+5)-tv=70$."), ("Simplify Han's equation", r"Expanding gives $v+5t+5=70$, so $v+5t=65$."), ("Compute Jan's extra distance", r"Jan's extra distance over Ian is $(t+2)(v+10)-tv=2v+10t+20=2(v+5t)+20=2\cdot65+20=150$."), ("Answer", r"Jan drove $\boxed{150}$ more miles than Ian." )],
-    16: [("Use symmetry", r"The smaller circle tangent to both rays $OA$ and $OB$ has its center on the angle bisector of the $60^\circ$ angle."), ("Relate radius to distance from O", r"If the smaller circle has radius $r$ and its center is distance $x$ from $O$, then $r=x\sin30^\circ=\frac{x}{2}$, so $x=2r$."), ("Use internal tangency", r"Let the larger circle have radius $R$. Internal tangency gives $x+r=R$. Since $x=2r$, we get $3r=R$."), ("Compare areas", r"The area ratio is $\frac{r^2}{R^2}=\frac{r^2}{(3r)^2}=\frac19$."), ("Answer", r"The answer is $\boxed{\frac19}$." )],
-    17: [("Think of expanding the triangle", r"The desired region is the outside band within distance $3$ of the triangle. For a convex figure, this outside area equals perimeter times the distance plus the area of a circle of that radius from the rounded corners."), ("Compute the side bands", r"The equilateral triangle has perimeter $18$. With distance $3$, the rectangular side bands contribute $18\cdot3=54$."), ("Compute the corner arcs", r"The three rounded corner sectors together make one full circle of radius $3$, contributing $\pi\cdot3^2=9\pi$."), ("Add", r"The outside region has area $54+9\pi$."), ("Answer", r"The answer is $\boxed{54+9\pi}$." )],
-    18: [("Name the sides", r"Let the legs be $a$ and $b$, and let the hypotenuse be $c$. The area condition gives $\frac12ab=20$, so $ab=40$."), ("Use the perimeter", r"The perimeter is $a+b+c=32$, so $a+b=32-c$."), ("Use the Pythagorean relation", r"Because $c^2=a^2+b^2=(a+b)^2-2ab$, we have $c^2=(32-c)^2-80$."), ("Solve", r"Expanding and simplifying gives $64c=944$, so $c=\frac{944}{64}=\frac{59}{4}$."), ("Answer", r"The hypotenuse is $\boxed{\frac{59}{4}}$." )],
-    19: [("Break the path into two arcs", r"Point $P$ moves along a quarter-circle during each $90^\circ$ rotation. We need the radius of each arc."), ("First rotation", r"In the original rectangle, $PR=\sqrt{2^2+6^2}=2\sqrt{10}$. A quarter-circle with this radius has length $\frac{\pi}{2}\cdot2\sqrt{10}=\pi\sqrt{10}$."), ("Second rotation", r"After the first rotation, the new center is where $S$ moved. The distance from that point to the moved point $P$ is $6$, so the second quarter-circle has length $\frac{\pi}{2}\cdot6=3\pi$."), ("Add arcs", r"The total path length is $\pi\sqrt{10}+3\pi=(3+\sqrt{10})\pi$."), ("Answer", r"The answer is $\boxed{(3+\sqrt{10})\pi}$." )],
-    20: [("Use the diagonal ratio", r"In a trapezoid, the diagonals divide each other in the ratio of the bases. Since $AB:CD=9:12=3:4$, point $K$ is $\frac37$ of the way from $A$ to $C$."), ("Relate K to the height", r"Let the trapezoid height be $h$. Then $K$ is at height $\frac47h$ above base $CD$."), ("Compute triangle AKD area", r"Using coordinates or equivalent base-height reasoning, the area of $\triangle AKD$ is $\frac{18h}{7}$. We are given this area is $24$, so $\frac{18h}{7}=24$."), ("Find h and the trapezoid area", r"Thus $h=\frac{28}{3}$. The trapezoid area is $\frac12(9+12)h=\frac{21}{2}\cdot\frac{28}{3}=98$."), ("Answer", r"The area is $\boxed{98}$." )],
+    22: [
+        ("Focus on the property that matters", r"The question does not ask for the actual fourth term; it only asks whether that term is an integer. So we should track the type of each term, especially whether halving it will still give an integer."),
+        ("List the three coin flips", r"The first term is fixed at $6$, and we need the fourth term, so there are exactly three flips. Each flip is either $H$ or $T$, giving $2^3=8$ equally likely sequences."),
+        ("Understand the two operations", r"The heads operation sends $x$ to $2x-1$. If $x$ is an integer, then $2x-1$ is still an integer, and it is odd. The tails operation sends $x$ to $\frac{x}{2}-1$, which is an integer only when $x$ is even."),
+        ("Check the eight short cases efficiently", r"Starting from $6$, the possible flip sequences are short enough to organize directly. The sequences $HHH, HHT, HTH, THH,$ and $THT$ give integer fourth terms. The sequences $HTT, TTH,$ and $TTT$ produce non-integers at the fourth term."),
+        ("Convert the count to a probability", r"There are $5$ successful sequences out of $8$ equally likely sequences, so the probability is $\frac{5}{8}$."),
+        ("Answer", r"Therefore the probability is $\boxed{\frac{5}{8}}$."),
+    ],
+    23: [
+        ("Translate the set conditions into roles", r"For each element of $S$, there are three possible roles: it can be in both subsets, only in the first subset, or only in the second subset. The union being $S$ means no element is allowed to be in neither subset."),
+        ("Choose the intersection first", r"The intersection must contain exactly two elements. We choose those two shared elements in $\binom{5}{2}=10$ ways."),
+        ("Place the remaining elements", r"The other $3$ elements must be in exactly one of the two subsets. If the two subsets were ordered, each of these $3$ elements would have $2$ choices, so there would be $2^3=8$ ordered assignments."),
+        ("Remove the ordering", r"The problem says the order of the two subsets does not matter. Since the remaining $3$ elements cannot all switch to the same assignment under a swap, every unordered pair is counted exactly twice in the ordered count."),
+        ("Compute the final count", r"Thus the number of unordered choices is $10\cdot \frac{8}{2}=40$."),
+        ("Answer", r"The answer is $\boxed{40}$."),
+    ],
+    24: [
+        ("Work only with units digits", r"The expression asks for the units digit, so we do not need the full value of $k$. We only need $k$ modulo $10$."),
+        ("Find the units digit of $2008^2$", r"The units digit of $2008$ is $8$, so the units digit of $2008^2$ is the units digit of $8^2=64$, which is $4$."),
+        ("Find the units digit of $2^{2008}$", r"Powers of $2$ repeat in units digit with cycle $2,4,8,6$. Since $2008$ is divisible by $4$, the units digit of $2^{2008}$ is the fourth digit in the cycle, $6$."),
+        ("Find the units digit of $k$", r"Therefore $k=2008^2+2^{2008}$ has units digit $4+6=10$, so $k$ is congruent to $0$ modulo $10$."),
+        ("Use that in the final expression", r"If $k\equiv 0\pmod{10}$, then $k^2\equiv 0\pmod{10}$ and $2k\equiv 0\pmod{10}$. Hence $k^2+2k$ also has units digit $0$."),
+        ("Answer", r"The units digit is $\boxed{0}$."),
+    ],
 }
-
 
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -280,3 +275,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

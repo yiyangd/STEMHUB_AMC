@@ -620,3 +620,19 @@
 - Pushed: pending
 - Next batch should start from: 2008 AMC 10A Problem 21
 - Review notes: none.
+
+## Batch 40: 2008 AMC 10A Problems 22-24
+
+- Start time: 2026-06-30T19:30:25-07:00
+- End time: 2026-06-30T19:30:26-07:00
+- Processed contest: AMC 10
+- Processed range: 2008 AMC 10A Problems 22-24
+- Generated count: 3
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2008 AMC 10A Problem 21 skipped: diagram-dependent cube cross-section problem; 2008 AMC 10A Problem 25 skipped: diagram-dependent circular table/place-mat problem
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2008 AMC 10B Problem 1
+- Review notes: none.

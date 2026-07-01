@@ -1,22 +1,20 @@
 # Problem Pages Report
 
-- Total manifest entries: 296
-- Latest batch: 39 (2008 AMC 10A Problems 11-20)
-- Latest new generated count: 10
+- Total manifest entries: 299
+- Latest batch: 40 (2008 AMC 10A Problems 22-24)
+- Latest new generated count: 3
 - Latest updated existing count: 0
-- Latest skipped count: 0
+- Latest skipped count: 2
 - MathJax validation: passed
 - Answer verification source: AoPS 2008 AMC 10A Answer Key
 
 ## Latest Batch Pages
 
-- `2008 AMC 10A Problem 11` -> `amc10/problems/2008-amc-10a-problem-11/`
-- `2008 AMC 10A Problem 12` -> `amc10/problems/2008-amc-10a-problem-12/`
-- `2008 AMC 10A Problem 13` -> `amc10/problems/2008-amc-10a-problem-13/`
-- `2008 AMC 10A Problem 14` -> `amc10/problems/2008-amc-10a-problem-14/`
-- `2008 AMC 10A Problem 15` -> `amc10/problems/2008-amc-10a-problem-15/`
-- `2008 AMC 10A Problem 16` -> `amc10/problems/2008-amc-10a-problem-16/`
-- `2008 AMC 10A Problem 17` -> `amc10/problems/2008-amc-10a-problem-17/`
-- `2008 AMC 10A Problem 18` -> `amc10/problems/2008-amc-10a-problem-18/`
-- `2008 AMC 10A Problem 19` -> `amc10/problems/2008-amc-10a-problem-19/`
-- `2008 AMC 10A Problem 20` -> `amc10/problems/2008-amc-10a-problem-20/`
+- `2008 AMC 10A Problem 22` -> `amc10/problems/2008-amc-10a-problem-22/`
+- `2008 AMC 10A Problem 23` -> `amc10/problems/2008-amc-10a-problem-23/`
+- `2008 AMC 10A Problem 24` -> `amc10/problems/2008-amc-10a-problem-24/`
+
+## Skipped in latest batch
+
+- 2008 AMC 10A Problem 21 skipped: diagram-dependent cube cross-section problem
+- 2008 AMC 10A Problem 25 skipped: diagram-dependent circular table/place-mat problem
