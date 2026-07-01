@@ -3,70 +3,73 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 60
+BATCH_NUMBER = 61
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15}
+TARGET_NUMBERS = {16,17,18,19,20}
 SKIPPED = []
-BATCH_LABEL = "2011 AMC 10B Problems 11-15"
-NEXT_START = "2011 AMC 10B Problem 16"
+BATCH_LABEL = "2011 AMC 10B Problems 16-20"
+NEXT_START = "2011 AMC 10B Problem 21"
 
 ANS = {
-    11: ("D", "5"),
-    12: ("A", r"\frac{\pi}{3}"),
-    13: ("D", r"\frac{5}{9}"),
-    14: ("C", "62"),
-    15: ("E", "II and III only"),
+    16: ("A", r"\frac{\sqrt2-1}{2}"),
+    17: ("C", "130"),
+    18: ("E", "75"),
+    19: ("A", "-64"),
+    20: ("C", r"\frac{2\sqrt3}{3}"),
 }
 
 OV = {
-    11: (r"There are $52$ people in a room. What is the largest value of $n$ such that the statement 'At least $n$ people in this room have birthdays falling in the same month' is always true?", [("A","2"),("B","3"),("C","4"),("D","5"),("E","12")]),
-    12: (r"Keiko walks once around a track at exactly the same constant speed every day. The sides of the track are straight, and the ends are semicircles. The track has width $6$ meters, and it takes her $36$ seconds longer to walk around the outside edge of the track than around the inside edge. What is Keiko's speed in meters per second?", [("A",r"\frac{\pi}{3}"),("B",r"\frac{2\pi}{3}"),("C",r"\pi"),("D",r"\frac{4\pi}{3}"),("E",r"\frac{5\pi}{3}")]),
-    13: (r"Two real numbers are selected independently at random from the interval $[-20,10]$. What is the probability that the product of those numbers is greater than zero?", [("A",r"\frac19"),("B",r"\frac13"),("C",r"\frac49"),("D",r"\frac59"),("E",r"\frac23")]),
-    14: (r"A rectangular parking lot has a diagonal of $25$ meters and an area of $168$ square meters. In meters, what is the perimeter of the parking lot?", [("A","52"),("B","58"),("C","62"),("D","68"),("E","70")]),
-    15: (r"Let $@$ denote the 'averaged with' operation: $a@b=\frac{a+b}{2}$. Which of the following distributive laws hold for all numbers $x,y,z$? I. $x@(y+z)=(x@y)+(x@z)$ II. $x+(y@z)=(x+y)@(x+z)$ III. $x@(y@z)=(x@y)@(x@z)$", [("A","I only"),("B","II only"),("C","III only"),("D","I and III only"),("E","II and III only")]),
+    16: (r"A dart board is a regular octagon divided into regions as shown. Suppose that a dart thrown at the board is equally likely to land anywhere on the board. What is the probability that the dart lands within the center square?", [("A",r"\frac{\sqrt2-1}{2}"),("B",r"\frac14"),("C",r"\frac{2-\sqrt2}{2}"),("D",r"\frac{\sqrt2}{4}"),("E",r"2-\sqrt2")]),
+    17: (r"In the given circle, the diameter $\overline{EB}$ is parallel to $\overline{DC}$, and $\overline{AB}$ is parallel to $\overline{ED}$. The angles $\angle AEB$ and $\angle ABE$ are in the ratio $4:5$. What is the degree measure of $\angle BCD$?", [("A","120"),("B","125"),("C","130"),("D","135"),("E","140")]),
+    18: (r"Rectangle $ABCD$ has $AB=6$ and $BC=3$. Point $M$ is chosen on side $AB$ so that $\angle AMD=\angle CMD$. What is the degree measure of $\angle AMD$?", [("A","15"),("B","30"),("C","45"),("D","60"),("E","75")]),
+    19: (r"What is the product of all the roots of the equation \[\sqrt{5|x|+8}=\sqrt{x^2-16}?\]", [("A","-64"),("B","-24"),("C","-9"),("D","24"),("E","576")]),
+    20: (r"Rhombus $ABCD$ has side length $2$ and $\angle B=120^\circ$. Region $R$ consists of all points inside the rhombus that are closer to vertex $B$ than any of the other three vertices. What is the area of $R$?", [("A",r"\frac{\sqrt3}{3}"),("B",r"\frac{\sqrt3}{2}"),("C",r"\frac{2\sqrt3}{3}"),("D",r"1+\frac{\sqrt3}{3}"),("E","2")]),
 }
 
 KEY_OVERRIDES = {
-    11: "Use the pigeonhole principle with 52 people and 12 months.",
-    12: "The outside track is longer only because the two semicircular ends have larger radius.",
-    13: "The product is positive when both selected numbers have the same sign.",
-    14: "Use side product and diagonal information to find the sum of side lengths.",
-    15: "Expand the averaging operation algebraically and compare both sides of each identity.",
+    16: "Use area ratio: center square area divided by total regular-octagon area.",
+    17: "Use the diameter to get a right angle, then use parallel lines and cyclic quadrilateral angles.",
+    18: "Use angle equality and parallel lines to create an isosceles triangle, then finish with a 30-60-90 triangle.",
+    19: "Square both sides and reduce the equation to a quadratic in $|x|$.",
+    20: "Perpendicular bisectors divide each equilateral half of the rhombus into equal-area parts.",
 }
 
 SOL = {
-    11: [
-        ("Use the pigeonhole principle", r"Birth months are the boxes, and the $52$ people are the objects being placed into those boxes. There are $12$ months."),
-        ("Find the forced minimum", r"If we tried to keep every month at $4$ or fewer birthdays, we could place at most $12\cdot4=48$ people. But there are $52$ people."),
-        ("Increase the guarantee", r"Since $48$ is not enough, at least one month must contain at least $5$ people."),
-        ("Check that 6 is not guaranteed", r"It is possible to distribute $52$ people as four months with $5$ birthdays and eight months with $4$ birthdays. Then no month has $6$ people, so $6$ is not guaranteed."),
-        ("Conclude", r"The largest guaranteed value of $n$ is $\boxed{5}$."),
+    16: [
+        ("Use area as probability", r"Because the dart is equally likely to land anywhere on the board, the desired probability is the area of the center square divided by the area of the whole octagon."),
+        ("Choose a convenient scale", r"Use the scale suggested by the diagram: let the center square have side length $\sqrt2$. Then its area is $2$. The surrounding octagon can be decomposed into the center square, four rectangles, and four right isosceles corner triangles."),
+        ("Compute the octagon area", r"With this scale, the four rectangles have total area $4\sqrt2$, and the four corner triangles have total area $2$. Therefore the whole octagon has area $2+4\sqrt2+2=4+4\sqrt2$."),
+        ("Form the probability", r"The probability is \[\frac{2}{4+4\sqrt2}=\frac{1}{2+2\sqrt2}.\]"),
+        ("Rationalize", r"Multiplying by the conjugate gives \[\frac{1}{2+2\sqrt2}=\frac{\sqrt2-1}{2}.\] Thus the answer is $\boxed{\frac{\sqrt2-1}{2}}$."),
     ],
-    12: [
-        ("Compare inside and outside tracks", r"The straight parts of the inside and outside paths have the same lengths in pairs; the extra distance comes from the rounded ends."),
-        ("Use the semicircles", r"Two semicircles make one full circle. The outside rounded path has radius $6$ meters more than the inside rounded path, so the difference in curved length is the difference of two circumferences: $2\pi\cdot6=12\pi$."),
-        ("Use time equals distance over speed", r"Keiko takes $36$ seconds longer to walk the extra $12\pi$ meters. Since her speed is constant, \[\text{speed}=\frac{12\pi}{36}=\frac{\pi}{3}.\]"),
-        ("Conclude", r"Her speed is $\boxed{\frac{\pi}{3}}$ meters per second."),
+    17: [
+        ("Use the diameter", r"Since $\overline{EB}$ is a diameter, the inscribed angle $\angle EAB$ is a right angle. That makes triangle $AEB$ easier because the other two angles are in the ratio $4:5$."),
+        ("Find the two acute angles", r"Let $\angle AEB=4x$ and $\angle ABE=5x$. Then $4x+5x+90=180$, so $9x=90$ and $x=10$. Therefore $\angle ABE=50^\circ$."),
+        ("Use parallel lines", r"Because $\overline{AB}\parallel\overline{ED}$, the angle $\angle ABE$ equals $\angle BED$ by alternate interior angles. Thus $\angle BED=50^\circ$."),
+        ("Use the cyclic quadrilateral", r"Points $B,E,D,C$ lie on the circle, so quadrilateral $BEDC$ is cyclic. Opposite angles in a cyclic quadrilateral are supplementary, so $\angle BED+\angle BCD=180^\circ$."),
+        ("Finish", r"Therefore $\angle BCD=180^\circ-50^\circ=130^\circ$. The answer is $\boxed{130}$."),
     ],
-    13: [
-        ("Identify when the product is positive", r"A product of two real numbers is positive when both numbers are positive or both numbers are negative. The probability of selecting exactly zero is $0$, so it does not affect the answer."),
-        ("Find the interval lengths", r"The full interval $[-20,10]$ has length $30$. The negative part has length $20$, and the positive part has length $10$."),
-        ("Compute same-sign probability", r"The probability both numbers are negative is $\left(\frac{20}{30}\right)^2=\frac49$. The probability both are positive is $\left(\frac{10}{30}\right)^2=\frac19$."),
-        ("Add the cases", r"The total probability is $\frac49+\frac19=\frac59$. The answer is $\boxed{\frac59}$."),
+    18: [
+        ("Name the target angle", r"Let $\angle AMD=\angle CMD=\theta$. The important idea is that ray $MD$ splits the angle from $MA$ to $MC$ into two equal parts."),
+        ("Use parallel sides of the rectangle", r"Since $AB\parallel DC$, angle $AMD$ equals angle $CDM$ by alternate interior angles. But $\angle AMD=\angle CMD$, so in triangle $CDM$ the angles at $D$ and $M$ are equal."),
+        ("Get an isosceles triangle", r"Equal base angles mean opposite sides are equal, so $CM=CD$. Since the rectangle has $AB=CD=6$, we get $CM=6$."),
+        ("Look at right triangle MBC", r"Triangle $MBC$ is right, with $BC=3$ and hypotenuse $CM=6$. Therefore it is a $30$-$60$-$90$ triangle, and $\angle BMC=30^\circ$."),
+        ("Use the straight angle at M", r"The angles along the straight line $AMB$ add to $180^\circ$. They are $\theta$, another $\theta$, and $30^\circ$, so $2\theta+30=180$. Hence $\theta=75^\circ$. The answer is $\boxed{75}$."),
     ],
-    14: [
-        ("Name the side lengths", r"Let the rectangle have side lengths $x$ and $y$. The area gives $xy=168$, and the diagonal gives $x^2+y^2=25^2=625$."),
-        ("Look for the perimeter", r"The perimeter is $2(x+y)$, so we do not need $x$ and $y$ separately. We only need $x+y$."),
-        ("Use the identity", r"Since $(x+y)^2=x^2+y^2+2xy$, we get \[(x+y)^2=625+2\cdot168=625+336=961.\]"),
-        ("Finish", r"Thus $x+y=31$, and the perimeter is $2\cdot31=62$. The answer is $\boxed{62}$."),
+    19: [
+        ("Notice the role of absolute value", r"Both sides are square roots, so after squaring we should try to express everything in terms of $|x|$. This is natural because $x^2=|x|^2$."),
+        ("Square both sides", r"Squaring gives $5|x|+8=x^2-16$. Replacing $x^2$ by $|x|^2$ gives \[|x|^2-5|x|-24=0.\]"),
+        ("Solve the quadratic in $|x|$", r"Factor: \[(|x|-8)(|x|+3)=0.\] Since $|x|$ cannot be negative, the only possible value is $|x|=8$."),
+        ("Convert back to x", r"If $|x|=8$, then $x=8$ or $x=-8$. Both work in the original equation because both sides become $\sqrt{48}$."),
+        ("Compute the product", r"The product of all roots is $8\cdot(-8)=-64$. The answer is $\boxed{-64}$."),
     ],
-    15: [
-        ("Translate the operation", r"The operation $a@b$ means $\frac{a+b}{2}$. The safest way to test these laws is to expand both sides."),
-        ("Test statement I", r"The left side is $x@(y+z)=\frac{x+y+z}{2}$. The right side is $(x@y)+(x@z)=\frac{x+y}{2}+\frac{x+z}{2}=x+\frac{y+z}{2}$. These are not always equal, so I is false."),
-        ("Test statement II", r"The left side is $x+(y@z)=x+\frac{y+z}{2}$. The right side is $(x+y)@(x+z)=\frac{x+y+x+z}{2}=x+\frac{y+z}{2}$. These match, so II is true."),
-        ("Test statement III", r"The left side is $x@(y@z)=\frac{x+\frac{y+z}{2}}{2}=\frac{x}{2}+\frac{y}{4}+\frac{z}{4}$. The right side is $(x@y)@(x@z)=\frac{\frac{x+y}{2}+\frac{x+z}{2}}{2}=\frac{x}{2}+\frac{y}{4}+\frac{z}{4}$. These match, so III is true."),
-        ("Conclude", r"Exactly statements II and III hold. The answer is $\boxed{\text{II and III only}}$."),
+    20: [
+        ("Break the rhombus into simpler triangles", r"A rhombus with side length $2$ and angle $120^\circ$ can be split by diagonal $BD$ into two equilateral triangles, $ABD$ and $BCD$, each with side length $2$."),
+        ("Understand the 'closer to B' condition", r"Inside an equilateral triangle, the points closer to one vertex than to the other two are cut out by perpendicular bisectors. The medians of an equilateral triangle divide it into $6$ small triangles of equal area, and the region closest to one vertex contains $2$ of those $6$ pieces."),
+        ("Find the fraction in each half", r"So in each equilateral triangle, the region closest to vertex $B$ has one third of that triangle's area. Since the rhombus is made of two such equilateral triangles sharing vertex $B$, region $R$ is one third of the whole rhombus."),
+        ("Compute the rhombus area", r"The area of the rhombus is $s^2\sin120^\circ=2^2\cdot\frac{\sqrt3}{2}=2\sqrt3$."),
+        ("Take one third", r"Thus the area of $R$ is $\frac13\cdot2\sqrt3=\frac{2\sqrt3}{3}$. The answer is $\boxed{\frac{2\sqrt3}{3}}$."),
     ],
 }
 def esc(x, quote=True):
@@ -112,7 +115,7 @@ def render(row):
     ans, val = ANS[n]
     tags = "".join(f'<span class="badge">{esc(t)}</span>' for t in (row.get("tags") or "").split(";") if t)
     notes = row.get("notes") or ""
-    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in {9}) else notes
+    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in {16,17}) else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
         f'<li class="choice {"correct" if k == ans else ""}"><span class="choice-key">{esc(k)}</span><span>{esc(v, False)}</span></li>'
@@ -208,7 +211,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in set(),
+                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {16,17},
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -277,6 +280,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
 
 
