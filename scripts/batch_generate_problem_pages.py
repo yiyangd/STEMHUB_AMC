@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 141
+BATCH_NUMBER = 142
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2024_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {11,13,14,15,17,18,19,20}
-SKIPPED = ["2024 AMC 10A Problem 12 skipped: bar-chart data depends on the missing figure.", "2024 AMC 10A Problem 16 skipped: rectangle layout depends on the missing figure."]
-BATCH_LABEL = "2024 AMC 10A Problems 11,13-15,17-20"
-NEXT_START = "2024 AMC 10A Problem 21"
+TARGET_NUMBERS = {21,23,24}
+SKIPPED = ["2024 AMC 10A Problem 22 skipped: kite polygon area depends on the missing figure.", "2024 AMC 10A Problem 25 skipped: toothpick loop count depends on the missing grid figure."]
+BATCH_LABEL = "2024 AMC 10A Problems 21,23,24"
+NEXT_START = "2024 AMC 10B Problem 1"
 
-ANS={11:("D","4"),13:("C","3"),14:("D","75"),15:("E","8"),17:("E","14"),18:("D","20"),19:("E","21"),20:("C","608")}
+ANS={21:("C","29"),23:("D","276"),24:("B",r"\frac7{54}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -262,6 +262,24 @@ SOL.update({
 18:[("Convert the base-b number",r"The base-$b$ integer $2024_b$ has value \[2b^3+0b^2+2b+4=2b^3+2b+4.\]"),("Reduce the divisibility condition",r"We need \[2b^3+2b+4\equiv0\pmod{16}.\] Dividing by $2$, this is equivalent to \[b^3+b+2\equiv0\pmod8.\]"),("Check residues modulo 8",r"If $b$ is odd, then $b^3\equiv b\pmod8$, so the condition becomes \[2b+2\equiv0\pmod8,\] which gives $b\equiv3$ or $7\pmod8$. If $b$ is even, checking $0,2,4,6$ modulo $8$ shows only $b\equiv6\pmod8$ works."),("Count b values",r"So the valid residues are \[3,6,7\pmod8.\] From $5$ through $2024$, there are $2020$ integers, which is $252$ complete blocks of $8$ plus $4$ extra integers."),("Finish the count",r"Each full block contributes $3$ valid residues, giving $252\cdot3=756$. The extra residues are $5,6,7,0$, contributing $2$ more. Thus $K=758$."),("Conclude",r"The sum of the digits of $758$ is \[7+5+8=20.\] The answer is $\boxed{20}$."),],
 19:[("Use the geometric-sequence relation",r"For three consecutive terms $a,720,b$ in a geometric sequence, the middle term squared equals the product of the neighboring terms: \[720^2=ab.\]"),("Turn the problem into a divisor search",r"Since $a$ and $b$ are integers, $b$ must be a divisor of $720^2$, and we need the least such divisor greater than $720$."),("Factor the square",r"We have \[720=2^4\cdot3^2\cdot5,\] so \[720^2=2^8\cdot3^4\cdot5^2.\]"),("Find the next divisor above 720",r"Checking divisors just above $720$, the least divisor of $720^2$ greater than $720$ is \[768=2^8\cdot3.\]"),("Compute the digit sum",r"The sum of the digits of $768$ is \[7+6+8=21.\]"),("Conclude",r"The answer is $\boxed{21}$."),],
 20:[("Find an upper bound in short blocks",r"In any block of $10$ consecutive integers, we claim at most $3$ elements can be chosen. Four chosen numbers would need to be at least $3$ apart, forcing a pattern like \[x,\ x+3,\ x+6,\ x+9.\]"),("Use the odd-number restriction",r"In such a four-number pattern, either $x$ and $x+6$ are both odd, or $x+3$ and $x+9$ are both odd. That would give two selected odd numbers only $6$ apart, which is not allowed."),("Apply the block bound",r"The numbers $1$ through $2020$ form $202$ blocks of $10$, so they contribute at most \[202\cdot3=606\] selected elements."),("Handle the final four numbers",r"The remaining numbers are $2021,2022,2023,2024$. Because any two selected elements must differ by more than $2$, at most $2$ of these can be selected."),("Construct a set that reaches the bound",r"Choose numbers congruent to $1$, $4$, or $8$ modulo $10$, from $1$ through $2024$. This gives $608$ numbers, and the spacing conditions are satisfied."),("Conclude",r"The maximum possible size is $\boxed{608}$."),],
+})
+
+OV.update({
+21:(r"The numbers, in order, of each row and the numbers, in order, of each column of a $5\times5$ array of integers form arithmetic progressions of length $5$. The numbers in positions $(5,5)$, $(2,4)$, $(4,3)$, and $(3,1)$ are $0$, $48$, $16$, and $12$, respectively. What number is in position $(1,2)$?",[("A","19"),("B","24"),("C","29"),("D","34"),("E","39")]),
+23:(r"Integers $a$, $b$, and $c$ satisfy \[ab+c=100,\qquad bc+a=87,\qquad ca+b=60.\] What is $ab+bc+ca$?",[("A","212"),("B","247"),("C","258"),("D","276"),("E","284")]),
+24:(r"A bee is moving in three-dimensional space. A fair six-sided die has faces labeled $A+$, $A-$, $B+$, $B-$, $C+$, and $C-$. If the bee occupies $(a,b,c)$, then $A+$ moves it to $(a+1,b,c)$, $A-$ moves it to $(a-1,b,c)$, and analogous moves are made for the other four outcomes. The bee starts at $(0,0,0)$ and the die is rolled four times. What is the probability that the bee traverses four distinct edges of some unit cube?",[("A",r"$\frac1{54}$"),("B",r"$\frac7{54}$"),("C",r"$\frac16$"),("D",r"$\frac5{18}$"),("E",r"$\frac25$")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Model a grid with arithmetic rows and columns as a bilinear expression.",
+23:"Subtract equations to create factored integer constraints.",
+24:"Count four-step lattice paths whose distinct edges lie on one unit cube.",
+})
+
+SOL.update({
+21:[("Write a general form for the array",r"If every row is arithmetic, then each row is linear in the column number. If every column is also arithmetic, the most general form is \[x_{i,j}=p+qi+rj+sij,\] where $(i,j)$ is the row-column position."),("Use the four given entries",r"The conditions give \[x_{5,5}=0,\quad x_{2,4}=48,\quad x_{4,3}=16,\quad x_{3,1}=12.\] Substituting these into $p+qi+rj+sij$ gives four linear equations."),("Solve the linear system",r"Solving those equations gives \[p=-10,\quad q=5,\quad r=22,\quad s=-5.\]"),("Evaluate the requested position",r"Now compute \[x_{1,2}=p+q(1)+r(2)+s(1)(2).\] Substituting the values gives \[-10+5+44-10=29.\]"),("Conclude",r"The entry in position $(1,2)$ is $\boxed{29}$."),],
+23:[("Subtract two equations to reveal a factor",r"Subtract the second equation from the first: \[(ab+c)-(bc+a)=100-87.\] This simplifies to \[(a-c)(b-1)=13.\]"),("Use the prime factor 13",r"Since $13$ is prime, the factor pairs for \((a-c)(b-1)\) are limited. In particular, $a-c$ must be one of \(\pm1,\pm13\)."),("Test the compatible case",r"The case \(a-c=-1\) gives \(b-1=-13\), so \(b=-12\) and \(c=a+1\). Substituting into \(ab+c=100\) gives \[-12a+(a+1)=100,\] so \[-11a=99\] and \(a=-9\). Thus \(c=-8\)."),("Check the equations",r"With \[(a,b,c)=(-9,-12,-8),\] the three equations are satisfied: \[ab+c=108-8=100,\quad bc+a=96-9=87,\quad ca+b=72-12=60.\]"),("Compute the requested sum",r"Therefore \[ab+bc+ca=108+96+72=276.\]"),("Conclude",r"The answer is $\boxed{276}$."),],
+24:[("Translate the problem into paths on a cube",r"Each die roll moves the bee along one coordinate-axis edge of the three-dimensional grid. We need four distinct traversed edges that all belong to one unit cube."),("Count paths using exactly two axes",r"If the path uses two axes twice each, the two axes must alternate, forming four edges around one square face. Choose the two axes in \(\binom32=3\) ways, choose one of two alternating orders, and choose the initial signs for the two axes in \(2^2\) ways. This gives \[3\cdot2\cdot4=24\] paths."),("Count paths using all three axes",r"Now suppose one axis is used twice and the other two axes once each. Choose the repeated axis in $3$ ways. Its two appearances cannot be adjacent, so there are $6$ valid axis-order patterns. The repeated axis must be used once in each direction, and the two single axes have arbitrary signs, giving \(2^3=8\) sign choices."),("Add the favorable paths",r"This second case contributes \[3\cdot6\cdot8=144\] paths. The total number of favorable paths is \[24+144=168.\]"),("Divide by all possible rolls",r"There are \[6^4=1296\] equally likely sequences of four die rolls. Thus the probability is \[\frac{168}{1296}=\frac7{54}.\]"),("Conclude",r"The answer is $\boxed{\frac7{54}}$."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
