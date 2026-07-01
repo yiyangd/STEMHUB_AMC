@@ -1,20 +1,22 @@
 # Problem Pages Report
 
-- Total manifest entries: 1025
-- Latest batch: 139 (2023 AMC 10B Problems 21-24)
-- Latest new generated count: 4
+- Total manifest entries: 1035
+- Latest batch: 140 (2024 AMC 10A Problems 1-10)
+- Latest new generated count: 10
 - Latest updated existing count: 0
-- Latest skipped count: 1
+- Latest skipped count: 0
 - MathJax validation: passed
-- Answer verification source: AoPS 2023 AMC 10B Answer Key
+- Answer verification source: AoPS 2024 AMC 10A Answer Key
 
 ## Latest Batch Pages
 
-- `2023 AMC 10B Problem 21` -> `amc10/problems/2023-amc-10b-problem-21/`
-- `2023 AMC 10B Problem 22` -> `amc10/problems/2023-amc-10b-problem-22/`
-- `2023 AMC 10B Problem 23` -> `amc10/problems/2023-amc-10b-problem-23/`
-- `2023 AMC 10B Problem 24` -> `amc10/problems/2023-amc-10b-problem-24/`
-
-## Skipped in latest batch
-
-- 2023 AMC 10B Problem 25 skipped: folded-pentagon area depends on the missing fold-line diagram.
+- `2024 AMC 10A Problem 1` -> `amc10/problems/2024-amc-10a-problem-1/`
+- `2024 AMC 10A Problem 2` -> `amc10/problems/2024-amc-10a-problem-2/`
+- `2024 AMC 10A Problem 3` -> `amc10/problems/2024-amc-10a-problem-3/`
+- `2024 AMC 10A Problem 4` -> `amc10/problems/2024-amc-10a-problem-4/`
+- `2024 AMC 10A Problem 5` -> `amc10/problems/2024-amc-10a-problem-5/`
+- `2024 AMC 10A Problem 6` -> `amc10/problems/2024-amc-10a-problem-6/`
+- `2024 AMC 10A Problem 7` -> `amc10/problems/2024-amc-10a-problem-7/`
+- `2024 AMC 10A Problem 8` -> `amc10/problems/2024-amc-10a-problem-8/`
+- `2024 AMC 10A Problem 9` -> `amc10/problems/2024-amc-10a-problem-9/`
+- `2024 AMC 10A Problem 10` -> `amc10/problems/2024-amc-10a-problem-10/`
