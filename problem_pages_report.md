@@ -1,20 +1,22 @@
 # Problem Pages Report
 
-- Total manifest entries: 959
-- Latest batch: 129 (2022 AMC 10A Problems 22-24)
-- Latest new generated count: 3
+- Total manifest entries: 969
+- Latest batch: 130 (2022 AMC 10B Problems 1-10)
+- Latest new generated count: 10
 - Latest updated existing count: 0
-- Latest skipped count: 2
+- Latest skipped count: 0
 - MathJax validation: passed
-- Answer verification source: AoPS 2022 AMC 10A Answer Key
+- Answer verification source: AoPS 2022 AMC 10B Answer Key
 
 ## Latest Batch Pages
 
-- `2022 AMC 10A Problem 22` -> `amc10/problems/2022-amc-10a-problem-22/`
-- `2022 AMC 10A Problem 23` -> `amc10/problems/2022-amc-10a-problem-23/`
-- `2022 AMC 10A Problem 24` -> `amc10/problems/2022-amc-10a-problem-24/`
-
-## Skipped in latest batch
-
-- 2022 AMC 10A Problem 21 skipped: bowl-rim octagon area depends on the missing hexagon diagram.
-- 2022 AMC 10A Problem 25 skipped: lattice-square intersection problem strongly depends on the missing diagram and exact layout.
+- `2022 AMC 10B Problem 1` -> `amc10/problems/2022-amc-10b-problem-1/`
+- `2022 AMC 10B Problem 2` -> `amc10/problems/2022-amc-10b-problem-2/`
+- `2022 AMC 10B Problem 3` -> `amc10/problems/2022-amc-10b-problem-3/`
+- `2022 AMC 10B Problem 4` -> `amc10/problems/2022-amc-10b-problem-4/`
+- `2022 AMC 10B Problem 5` -> `amc10/problems/2022-amc-10b-problem-5/`
+- `2022 AMC 10B Problem 6` -> `amc10/problems/2022-amc-10b-problem-6/`
+- `2022 AMC 10B Problem 7` -> `amc10/problems/2022-amc-10b-problem-7/`
+- `2022 AMC 10B Problem 8` -> `amc10/problems/2022-amc-10b-problem-8/`
+- `2022 AMC 10B Problem 9` -> `amc10/problems/2022-amc-10b-problem-9/`
+- `2022 AMC 10B Problem 10` -> `amc10/problems/2022-amc-10b-problem-10/`
