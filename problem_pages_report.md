@@ -1,7 +1,7 @@
 # Problem Pages Report
 
-- Total manifest entries: 1012
-- Latest batch: 137 (2023 AMC 10B Problems 1-6,8-10)
+- Total manifest entries: 1021
+- Latest batch: 138 (2023 AMC 10B Problems 11-19)
 - Latest new generated count: 9
 - Latest updated existing count: 0
 - Latest skipped count: 1
@@ -10,16 +10,16 @@
 
 ## Latest Batch Pages
 
-- `2023 AMC 10B Problem 1` -> `amc10/problems/2023-amc-10b-problem-1/`
-- `2023 AMC 10B Problem 2` -> `amc10/problems/2023-amc-10b-problem-2/`
-- `2023 AMC 10B Problem 3` -> `amc10/problems/2023-amc-10b-problem-3/`
-- `2023 AMC 10B Problem 4` -> `amc10/problems/2023-amc-10b-problem-4/`
-- `2023 AMC 10B Problem 5` -> `amc10/problems/2023-amc-10b-problem-5/`
-- `2023 AMC 10B Problem 6` -> `amc10/problems/2023-amc-10b-problem-6/`
-- `2023 AMC 10B Problem 8` -> `amc10/problems/2023-amc-10b-problem-8/`
-- `2023 AMC 10B Problem 9` -> `amc10/problems/2023-amc-10b-problem-9/`
-- `2023 AMC 10B Problem 10` -> `amc10/problems/2023-amc-10b-problem-10/`
+- `2023 AMC 10B Problem 11` -> `amc10/problems/2023-amc-10b-problem-11/`
+- `2023 AMC 10B Problem 12` -> `amc10/problems/2023-amc-10b-problem-12/`
+- `2023 AMC 10B Problem 13` -> `amc10/problems/2023-amc-10b-problem-13/`
+- `2023 AMC 10B Problem 14` -> `amc10/problems/2023-amc-10b-problem-14/`
+- `2023 AMC 10B Problem 15` -> `amc10/problems/2023-amc-10b-problem-15/`
+- `2023 AMC 10B Problem 16` -> `amc10/problems/2023-amc-10b-problem-16/`
+- `2023 AMC 10B Problem 17` -> `amc10/problems/2023-amc-10b-problem-17/`
+- `2023 AMC 10B Problem 18` -> `amc10/problems/2023-amc-10b-problem-18/`
+- `2023 AMC 10B Problem 19` -> `amc10/problems/2023-amc-10b-problem-19/`
 
 ## Skipped in latest batch
 
-- 2023 AMC 10B Problem 7 skipped: rotated-square angle depends on the missing diagram and vertex placement.
+- 2023 AMC 10B Problem 20 skipped: sphere semicircle curve length depends on the missing 3D diagram.
