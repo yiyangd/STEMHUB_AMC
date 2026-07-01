@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 189
+BATCH_NUMBER = 190
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2009_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16,17,18,19}
-SKIPPED = ["2009 AMC 12A Problem 20: skipped because the local CSV statement is truncated and mixed with another problem's figure labels."]
-BATCH_LABEL = "2009 AMC 12A Problems 11-19"
-NEXT_START = "2009 AMC 12A Problem 21"
+TARGET_NUMBERS = {21,22,23}
+SKIPPED = ["2009 AMC 12A Problem 24: skipped for separate review because the tower/log notation is OCR-fragile.", "2009 AMC 12A Problem 25: skipped for separate review because the tangent-recursion notation is OCR-fragile."]
+BATCH_LABEL = "2009 AMC 12A Problems 21-23"
+NEXT_START = "2009 AMC 12B Problem 1"
 
-ANS={11:("E","761"),12:("B","1"),13:("D","[700,800]"),14:("B",r"-\frac16"),15:("D","97"),16:("D","8"),17:("C","1"),18:("B","7"),19:("C","A=B")}
+ANS={21:("C","8"),22:("E","14"),23:("D","752")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1868,6 +1868,24 @@ SOL.update({
 17:[("Write the sum formula",r"For an infinite geometric series with first term \(a\) and ratio \(r\), the sum is \(\frac{a}{1-r}\). The problem says this sum equals \(r\)."),("Create the equation for each ratio",r"Thus each ratio \(r\) satisfies \[\frac{a}{1-r}=r,\] or \[r^2-r+a=0.\]"),("Use the fact that the two ratios are different",r"The two different ratios \(r_1\) and \(r_2\) are the two roots of the same quadratic equation \(r^2-r+a=0\)."),("Use sum of roots",r"The sum of the roots is \(1\). Therefore \[r_1+r_2=1.\]"),("Conclude",r"The answer is \(\boxed{1}\)."),],
 18:[("Write Ik algebraically",r"The number \(I_k\) is \[I_k=10^{k+2}+64.\] We want the largest possible exponent of \(2\) dividing this number."),("Factor out an initial 4",r"\[I_k=4\left(25\cdot10^k+16\right).\] The outer factor contributes \(2\) factors of \(2\)."),("Check small k and the stable case",r"For \(k=1,2,3\), the inner factor contributes \(1,2,3\) more factors of \(2\), respectively. For \(k\ge5\), the inner factor has exactly \(4\) factors of \(2\), because after factoring \(16\), the remaining parenthesis is odd."),("Check the exceptional k=4",r"When \(k=4\), \[25\cdot10^4+16=16(25\cdot5^4+1).\] The parenthesis is even but not divisible by \(4\), so the inner factor contributes \(5\) factors of \(2\)."),("Find the maximum",r"Together with the outside factor \(4\), the maximum number of factors of \(2\) is \[2+5=7.\]"),("Conclude",r"The answer is \(\boxed{7}\)."),],
 19:[("Use a regular polygon side",r"For a regular polygon with side length \(2\), let \(R\) be the circumradius and \(r\) be the inradius. Connect the center to the midpoint of a side and to an endpoint of that side."),("Apply the right triangle",r"The half-side length is \(1\), so the right triangle has legs \(r\) and \(1\), and hypotenuse \(R\). Therefore \[R^2-r^2=1.\]"),("Find the annulus area",r"The area between the circumscribed and inscribed circles is \[\pi R^2-\pi r^2=\pi(R^2-r^2)=\pi.\]"),("Notice independence from number of sides",r"This calculation did not depend on whether the polygon was a pentagon or a heptagon. It only used the side length \(2\)."),("Conclude",r"The two areas are equal, so \(\boxed{A=B}\)."),],
+})
+
+OV.update({
+21:(r"Let \(p(x)=x^3+ax^2+bx+c\), where \(a\), \(b\), and \(c\) are complex numbers. Suppose that \[p(2009+9002\pi i)=p(2009)=p(9002)=0.\] What is the number of nonreal zeros of \[x^{12}+ax^8+bx^4+c?\]",[("A","4"),("B","6"),("C","8"),("D","10"),("E","12")]),
+22:(r"A regular octahedron has side length \(1\). A plane parallel to two opposite faces cuts the octahedron into two congruent solids. The polygon formed by the intersection of the plane and the octahedron has area \(\frac{a\sqrt b}{c}\), where \(a\), \(b\), and \(c\) are positive integers, \(a\) and \(c\) are relatively prime, and \(b\) is not divisible by the square of any prime. What is \(a+b+c\)?",[("A","10"),("B","11"),("C","12"),("D","13"),("E","14")]),
+23:(r"Functions \(f\) and \(g\) are quadratic, \(g(x)=-f(100-x)\), and the graph of \(g\) contains the vertex of the graph of \(f\). The four \(x\)-intercepts on the two graphs have \(x\)-coordinates \(x_1,x_2,x_3,x_4\), in increasing order, and \(x_3-x_2=150\). The value of \(x_4-x_1\) is \(m+n\sqrt p\), where \(m,n,p\) are positive integers and \(p\) is squarefree. What is \(m+n+p\)?",[("A","602"),("B","652"),("C","702"),("D","752"),("E","802")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Recognize the polynomial as \(p(x^4)\) and count nonreal fourth roots.",
+22:"Use the midsection of a regular octahedron, which is a regular hexagon.",
+23:"Use the symmetry \(g(x)=-f(100-x)\) to relate the two pairs of roots.",
+})
+
+SOL.update({
+21:[("Recognize the composition",r"The polynomial \[x^{12}+ax^8+bx^4+c\] is exactly \(p(x^4)\), because \(p(t)=t^3+at^2+bt+c\)."),("Translate zeros",r"The zeros occur when \[x^4=2009+9002\pi i,\quad x^4=2009,\quad\text{or}\quad x^4=9002.\]"),("Count roots from the nonreal value",r"The equation \(x^4=2009+9002\pi i\) has four fourth roots. Since the right side is nonreal, none of these four roots is real."),("Count roots from each positive real value",r"For \(x^4=2009\), there are two real roots and two nonreal roots. The same is true for \(x^4=9002\)."),("Add nonreal roots",r"The total number of nonreal zeros is \[4+2+2=8.\]"),("Conclude",r"The answer is \(\boxed{8}\)."),],
+22:[("Understand the cut",r"A regular octahedron can be viewed as two congruent square pyramids base-to-base, or equivalently as having opposite parallel triangular faces. A plane halfway between two opposite faces and parallel to them cuts the octahedron into two congruent solids."),("Identify the cross-section",r"That middle cross-section passes through the midpoints of the six edges not lying on the two opposite faces. By symmetry, the cross-section is a regular hexagon."),("Find its side length",r"The octahedron side length is \(1\), and the cross-section connects midpoints of edges, so each side of the hexagon has length \(\frac12\)."),("Compute the hexagon area",r"A regular hexagon is made of \(6\) equilateral triangles. With side length \(\frac12\), its area is \[6\cdot\frac{\sqrt3}{4}\left(\frac12\right)^2=\frac{3\sqrt3}{8}.\]"),("Extract a, b, c",r"Thus \(a=3\), \(b=3\), and \(c=8\)."),("Conclude",r"\[a+b+c=3+3+8=14.\] The answer is \(\boxed{14}\)."),],
+23:[("Use the symmetry between f and g",r"The relation \(g(x)=-f(100-x)\) means the graph of \(g\) is obtained from the graph of \(f\) by a half-turn around \((50,0)\). Therefore the roots of \(g\) are \(100\) minus the roots of \(f\)."),("Place the middle two roots",r"By symmetry, the middle two intercepts satisfy \[x_2+x_3=100.\] Since \(x_3-x_2=150\), we get \(x_2=-25\) and \(x_3=125\)."),("Let h be the vertex x-coordinate of f",r"Assume the roots of \(f\) are \(x_1\) and \(x_3=125\). Then the vertex of \(f\) has \(x\)-coordinate \[h=\frac{x_1+125}{2},\] so \(x_1=2h-125\). By symmetry, \(x_4=100-x_1=225-2h\)."),("Use that g contains the vertex of f",r"Write \(f(x)=A(x-x_1)(x-125)\). Then \(g(x)=-f(100-x)\). Substituting the vertex point \((h,f(h))\) into \(g\) gives an equation that simplifies to \[h=-25-75\sqrt2.\] The other sign places the roots in the wrong order."),("Find x4 minus x1",r"Now \[x_4-x_1=(225-2h)-(2h-125)=350-4h.\] With \(h=-25-75\sqrt2\), this becomes \[350-4(-25-75\sqrt2)=450+300\sqrt2.\]"),("Finish",r"Thus \(m=450\), \(n=300\), and \(p=2\), so \[m+n+p=752.\]"),("Conclude",r"The answer is \(\boxed{752}\)."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)

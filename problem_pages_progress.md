@@ -3084,3 +3084,19 @@
 - Pushed: pending
 - Next batch should start from: 2009 AMC 12A Problem 21
 - Review notes: none.
+
+## Batch 190: 2009 AMC 12A Problems 21-23
+
+- Start time: 2026-07-01T07:15:28-07:00
+- End time: 2026-07-01T07:15:29-07:00
+- Processed contest: AMC 10
+- Processed range: 2009 AMC 12A Problems 21-23
+- Generated count: 3
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2009 AMC 12A Problem 24: skipped for separate review because the tower/log notation is OCR-fragile.; 2009 AMC 12A Problem 25: skipped for separate review because the tangent-recursion notation is OCR-fragile.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2009 AMC 12B Problem 1
+- Review notes: none.
