@@ -3020,3 +3020,19 @@
 - Pushed: pending
 - Next batch should start from: 2008 AMC 12B Problem 11
 - Review notes: none.
+
+## Batch 186: 2008 AMC 12B Problems 11-14, 16-20
+
+- Start time: 2026-07-01T07:05:58-07:00
+- End time: 2026-07-01T07:05:59-07:00
+- Processed contest: AMC 10
+- Processed range: 2008 AMC 12B Problems 11-14, 16-20
+- Generated count: 9
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2008 AMC 12B Problem 15: skipped because the second-layer equilateral-triangle construction depends strongly on the original diagram.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2008 AMC 12B Problem 21
+- Review notes: none.
