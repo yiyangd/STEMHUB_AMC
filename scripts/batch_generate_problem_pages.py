@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 199
+BATCH_NUMBER = 200
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15}
+TARGET_NUMBERS = {16,17,18,19,20}
 SKIPPED = []
-BATCH_LABEL = "2010 AMC 12B Problems 11-15"
-NEXT_START = "2010 AMC 12B Problem 16"
+BATCH_LABEL = "2010 AMC 12B Problems 16-20"
+NEXT_START = "2010 AMC 12B Problem 21"
 
-ANS={11:("E",r"\frac15"),12:("D","256"),13:("A","2"),14:("B","671"),15:("D","225")}
+ANS={16:("E",r"\frac{13}{27}"),17:("D","42"),18:("C",r"\frac14"),19:("E","34"),20:("E","8")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2195,6 +2195,35 @@ SOL.update({
 14:[("Think of M as an upper bound",r"If $M$ is the largest adjacent-pair sum, then \[a+b\le M,\quad b+c\le M,\quad c+d\le M,\quad d+e\le M.\] We want the smallest $M$ that still allows the total sum to be $2010$."),("Maximize the total for a fixed M",r"For a fixed $M$, make $a$ and $e$ as large as possible: $a\le M-b$ and $e\le M-d$. Also $c\le M-b$ and $c\le M-d$, so \[c\le M-\max(b,d).\]"),("Use positivity",r"Because $b$ and $d$ are positive integers, $\max(b,d)\ge1$. Therefore the largest possible total is at most \[(M-b)+b+(M-1)+d+(M-d)=3M-1.\]"),("Get a lower bound for M",r"We need \[2010\le3M-1,\] so \[3M\ge2011.\] Thus $M\ge671$."),("Show M=671 works",r"Take \[a=670,\ b=1,\ c=670,\ d=1,\ e=668.\] Then the adjacent sums are \[671,671,671,669,\] and the total is $2010$. So $M=671$ is attainable."),("Conclude",r"The smallest possible value is $\boxed{671}$."),
 ],
 15:[("Name the three values",r"Let \[A=i^x,\quad B=(1+i)^y,\quad C=z.\] We need exactly two distinct elements among $A,B,C$, so exactly one pair is equal while the third value is different."),("Count A=B",r"The value $i^x$ always has magnitude $1$. The value $(1+i)^y$ has magnitude $(\sqrt2)^y$, so $A=B$ is possible only when $y=0$, giving $B=1$. Then $i^x=1$, so $x\equiv0\pmod4$, giving $5$ choices for $x$. To avoid all three being equal, choose $z\ne1$, giving $19$ choices. This case contributes \[5\cdot19=95.\]"),("Count A=C",r"Since $z$ is a nonnegative integer and $i^x$ has magnitude $1$, equality $A=C$ is possible only when $i^x=1$ and $z=1$. There are $5$ choices for $x$. We need $B\ne1$, so $y\ne0$, giving $19$ choices. This case contributes \[5\cdot19=95.\]"),("Count B=C",r"We need $(1+i)^y$ to be a nonnegative integer less than $20$. This happens for $y=0$, giving $1$, and for $y=8$, giving $16$. If $y=0,z=1$, then $x$ must not make $A=1$, giving $15$ choices. If $y=8,z=16$, then $A$ is never $16$, giving $20$ choices. This case contributes \[15+20=35.\]"),("Add the disjoint cases",r"The three cases are disjoint because exactly one pair is equal. The total is \[95+95+35=225.\]"),("Conclude",r"The answer is $\boxed{225}$."),
+],
+})
+
+OV.update({
+16:(r"Positive integers $a,b,$ and $c$ are randomly and independently selected with replacement from the set $\{1,2,3,\ldots,2010\}$. What is the probability that \[abc+ab+a\] is divisible by $3$?",[("A",r"$\frac13$"),("B",r"$\frac{29}{81}$"),("C",r"$\frac{31}{81}$"),("D",r"$\frac{11}{27}$"),("E",r"$\frac{13}{27}$")]),
+17:(r"The entries in a $3\times3$ array include all the digits from $1$ through $9$, arranged so that the entries in every row and column are in increasing order. How many such arrays are there?",[("A","18"),("B","24"),("C","36"),("D","42"),("E","60")]),
+18:(r"A frog makes $3$ jumps, each exactly $1$ meter long. The directions of the jumps are chosen independently and at random. What is the probability the frog's final position is no more than $1$ meter from its starting position?",[("A",r"$\frac16$"),("B",r"$\frac15$"),("C",r"$\frac14$"),("D",r"$\frac13$"),("E",r"$\frac12$")]),
+19:(r"A high school basketball game between the Raiders and Wildcats was tied at the end of the first quarter. The number of points scored by the Raiders in each of the four quarters formed an increasing geometric sequence, and the number of points scored by the Wildcats in each of the four quarters formed an increasing arithmetic sequence. At the end of the fourth quarter, the Raiders had won by one point. Neither team scored more than $100$ points. What was the total number of points scored by the two teams in the first half?",[("A","30"),("B","31"),("C","32"),("D","33"),("E","34")]),
+20:(r"A geometric sequence $(a_n)$ has $a_1=\sin x$, $a_2=\cos x$, and $a_3=\tan x$ for some real number $x$. For what value of $n$ does \[a_n=1+\cos x?\]",[("A","4"),("B","5"),("C","6"),("D","7"),("E","8")]),
+})
+
+KEY_OVERRIDES.update({
+16:"Work modulo 3 and count residue triples.",
+17:"Use the hook-length formula for a 3 by 3 standard Young tableau.",
+18:"Reinterpret three random directions on a circle and use the semicircle criterion.",
+19:"Parametrize the integer geometric sequence and test the arithmetic-sequence condition.",
+20:"Use the geometric-sequence condition to relate sine and cosine powers.",
+})
+
+SOL.update({
+16:[("Factor the expression",r"We have \[abc+ab+a=a(bc+b+1)=a(b(c+1)+1).\] Since divisibility by $3$ only depends on residues modulo $3$, reduce everything modulo $3$."),("Use the distribution of residues",r"The set $\{1,2,\ldots,2010\}$ has exactly the same number of integers in each residue class modulo $3$, because $2010$ is divisible by $3$. Thus $a,b,c$ are each uniformly distributed among $0,1,2$ modulo $3$."),("Handle a divisible by 3",r"If $a\equiv0\pmod3$, then the whole product is divisible by $3$. This contributes probability $\frac13$."),("Handle a not divisible by 3",r"If $a\not\equiv0\pmod3$, then we need \[b(c+1)+1\equiv0\pmod3.\] Among the $9$ pairs $(b,c)$ modulo $3$, this happens for $(b,c)=(1,1)$ and $(2,0)$, so it has probability $\frac29$."),("Combine the cases",r"The total probability is \[\frac13+\frac23\cdot\frac29=\frac13+\frac4{27}=\frac{13}{27}.\]"),("Conclude",r"The answer is \[\boxed{\frac{13}{27}}.\]"),
+],
+17:[("Recognize the structure",r"Putting $1$ through $9$ into a $3\times3$ grid with rows and columns increasing is the same as forming a standard Young tableau of shape $3\times3$."),("Use the hook lengths",r"For a $3\times3$ grid, the hook lengths are \[\begin{matrix}5&4&3\\4&3&2\\3&2&1\end{matrix}.\] The hook-length formula says the number of fillings is \[\frac{9!}{5\cdot4\cdot3\cdot4\cdot3\cdot2\cdot3\cdot2\cdot1}.\]"),("Compute the denominator",r"The denominator is \[5\cdot4\cdot3\cdot4\cdot3\cdot2\cdot3\cdot2\cdot1=8640.\]"),("Divide",r"Since $9!=362880$, the number of arrays is \[\frac{362880}{8640}=42.\]"),("Conclude",r"The answer is $\boxed{42}$."),
+],
+18:[("Think of directions as points on a circle",r"Each jump is a unit vector in a random direction. We need the length of the sum of the three unit vectors to be at most $1$."),("Use a geometric criterion",r"For three unit vectors, the sum has length at most $1$ exactly when the three directions are not all contained in one open semicircle. If they are all in one semicircle, their pull is too concentrated in one direction; if not, they wrap around the origin enough to keep the resultant within distance $1$."),("Count the complement",r"For $3$ random points on a circle, the probability that all lie in some semicircle is \[\frac{3}{2^{3-1}}=\frac34.\] One way to see this is to choose which of the three points is the first endpoint of a semicircle containing the other two."),("Take the complement",r"Therefore the probability that the directions are not all in a semicircle is \[1-\frac34=\frac14.\]"),("Conclude",r"The answer is \[\boxed{\frac14}.\]"),
+],
+19:[("Set up the sequences",r"Let the Raiders' quarter scores be an increasing geometric sequence and the Wildcats' scores be an increasing arithmetic sequence. Since the first quarter was tied, both teams scored the same first-quarter value."),("Use the Wildcats' form",r"If the first-quarter score is $a$ and the Wildcats' common difference is $d$, then their scores are \[a,\ a+d,\ a+2d,\ a+3d,\] with total \[4a+6d.\]"),("Search the Raiders' integer geometric scores efficiently",r"The Raiders' scores are increasing positive integers in a geometric sequence and have total less than $100$. A bounded check of such integer geometric sequences, together with the condition that the Raiders' total is one more than the Wildcats' total, leaves the unique possibility \[5,10,20,40.\]"),("Find the Wildcats' sequence",r"The Raiders' total is $75$, so the Wildcats' total is $74$. Their first quarter score is also $5$, so \[4\cdot5+6d=74.\] Thus $6d=54$ and $d=9$, giving Wildcats scores \[5,14,23,32.\]"),("Compute the first-half total",r"In the first half, the Raiders scored \[5+10=15,\] and the Wildcats scored \[5+14=19.\] The combined first-half total is \[15+19=34.\]"),("Conclude",r"The answer is $\boxed{34}$."),
+],
+20:[("Use the geometric-sequence condition",r"Since $a_1,a_2,a_3$ are consecutive terms of a geometric sequence, \[a_2^2=a_1a_3.\] Therefore \[\cos^2x=\sin x\tan x=\frac{\sin^2x}{\cos x}.\]"),("Convert to one variable",r"Multiplying by $\cos x$ gives \[\cos^3x=\sin^2x.\] Let $c=\cos x$. Since $\sin^2x=1-c^2$, we get \[c^3=1-c^2,\] or \[c^2(1+c)=1.\]"),("Find the common ratio",r"Also \[\sin^2x=c^3,\] so $\sin x=c^{3/2}$ in the relevant positive case. The common ratio is \[r=\frac{\cos x}{\sin x}=\frac{c}{c^{3/2}}=c^{-1/2}.\]"),("Write the nth term",r"Thus \[a_n=a_1r^{n-1}=c^{3/2}\cdot c^{-(n-1)/2}=c^{(4-n)/2}.\]"),("Match the target value",r"From $c^2(1+c)=1$, we have \[1+c=c^{-2}.\] So we need \[c^{(4-n)/2}=c^{-2}.\] Hence \[\frac{4-n}{2}=-2,\] giving $n=8$."),("Conclude",r"The answer is $\boxed{8}$."),
 ],
 })
 
