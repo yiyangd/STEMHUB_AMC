@@ -1884,3 +1884,19 @@
 - Pushed: pending
 - Next batch should start from: 2020 AMC 10A Problem 11
 - Review notes: none.
+
+## Batch 116: 2020 AMC 10A Problems 11-18,20
+
+- Start time: 2026-07-01T03:10:55-07:00
+- End time: 2026-07-01T03:10:56-07:00
+- Processed contest: AMC 10
+- Processed range: 2020 AMC 10A Problems 11-18,20
+- Generated count: 9
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2020 AMC 10A Problem 19 skipped: path counting depends on the missing dodecahedron face adjacency figure.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2020 AMC 10A Problem 21
+- Review notes: none.
