@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 151
+BATCH_NUMBER = 152
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2002_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2003_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
 SKIPPED = []
-BATCH_LABEL = "2002 AMC 12B Problems 21-25"
-NEXT_START = "2003 AMC 12A Problem 1"
+BATCH_LABEL = "2003 AMC 12A Problems 1-10"
+NEXT_START = "2003 AMC 12A Problem 11"
 
-ANS={21:("A","448"),22:("B","-1"),23:("C",r"\sqrt2"),24:("E",r"4(36+\sqrt{113})"),25:("E","25")}
+ANS={1:("D","2003"),2:("B","91"),3:("D","18"),4:("A","3"),5:("E","14"),6:("C",r"x\heartsuit0=x"),7:("B","2"),8:("E",r"\frac12"),9:("D","8"),10:("D",r"\frac5{18}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -551,6 +551,45 @@ SOL.update({
 24:[("Break the quadrilateral into four triangles",r"The area of \(ABCD\) is the sum of the areas of \(\triangle APB\), \(\triangle BPC\), \(\triangle CPD\), and \(\triangle DPA\)." ),("Use the maximum possible area",r"For two fixed sides \(r\) and \(s\), the triangle area is at most \(\frac12rs\), with equality when the included angle is \(90^\circ\)." ),("Compute the maximum total",r"The maximum possible total area is \[\frac12(24\cdot32+32\cdot28+28\cdot45+45\cdot24)=\frac12(4004)=2002.\] This equals the given area, so all four included angles at \(P\) are right angles."),("Find the side lengths",r"Thus \[AB=\sqrt{24^2+32^2}=40,\quad BC=\sqrt{32^2+28^2}=4\sqrt{113},\] \[CD=\sqrt{28^2+45^2}=53,\quad DA=\sqrt{45^2+24^2}=51.\]"),("Add the perimeter",r"The perimeter is \[40+4\sqrt{113}+53+51=144+4\sqrt{113}=4(36+\sqrt{113}).\]"),("Conclude",r"The answer is $\boxed{4(36+\sqrt{113})}$."),],
 25:[("Complete the square",r"We have \[f(x)=x^2+6x+1=(x+3)^2-8.\] Let \(u=x+3\) and \(v=y+3\)." ),("Rewrite the first inequality",r"The condition \(f(x)+f(y)\le0\) becomes \[(u^2-8)+(v^2-8)\le0,\] so \[u^2+v^2\le16.\] This is a disk of radius \(4\)." ),("Rewrite the second inequality",r"The condition \(f(x)-f(y)\le0\) becomes \[u^2-v^2\le0,\] or \[|u|\le |v|.\]"),("Find the area fraction",r"The lines \(v=u\) and \(v=-u\) divide the disk into four equal \(45^\circ\)-based sectors. The condition \(|u|\le|v|\) selects two opposite sectors, exactly half the disk."),("Compute the area",r"The area is \[\frac12\pi(4^2)=8\pi\approx25.13.\] The closest listed integer is \(25\)." ),("Conclude",r"The answer is $\boxed{25}$."),],
 })
+
+OV.update({
+1:(r"What is the difference between the sum of the first \(2003\) even counting numbers and the sum of the first \(2003\) odd counting numbers?",[("A","0"),("B","1"),("C","2"),("D","2003"),("E","4006")]),
+2:(r"Members of the Rockham Soccer League buy socks and T-shirts. Socks cost \(\$4\) per pair, and each T-shirt costs \(\$5\) more than a pair of socks. Each member needs one pair of socks and a shirt for home games and another pair of socks and a shirt for away games. If the total cost is \(\$2366\), how many members are in the League?",[("A","77"),("B","91"),("C","143"),("D","182"),("E","286")]),
+3:(r"A solid box is \(15\) cm by \(10\) cm by \(8\) cm. A new solid is formed by removing a cube \(3\) cm on a side from each corner of this box. What percent of the original volume is removed?",[("A","4.5"),("B","9"),("C","12"),("D","18"),("E","24")]),
+4:(r"It takes Mary \(30\) minutes to walk uphill \(1\) km from her home to school, but it takes her only \(10\) minutes to walk from school to home along the same route. What is her average speed, in km/hr, for the round trip?",[("A","3"),("B","3.125"),("C","3.5"),("D","4"),("E","4.5")]),
+5:(r"The sum of the two five-digit numbers \(\text{AMC10}\) and \(\text{AMC12}\) is \(123422\). What is \(A+M+C\)?",[("A","10"),("B","11"),("C","12"),("D","13"),("E","14")]),
+6:(r"Define \(x\heartsuit y\) to be \(|x-y|\) for all real numbers \(x\) and \(y\). Which of the following statements is not true?",[("A",r"\(x\heartsuit y=y\heartsuit x\) for all \(x,y\)"),("B",r"\(2(x\heartsuit y)=(2x)\heartsuit(2y)\) for all \(x,y\)"),("C",r"\(x\heartsuit0=x\) for all \(x\)"),("D",r"\(x\heartsuit x=0\) for all \(x\)"),("E",r"\(x\heartsuit y>0\) if \(x\ne y\)")]),
+7:(r"How many non-congruent triangles with perimeter \(7\) have integer side lengths?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+8:(r"What is the probability that a randomly drawn positive factor of \(60\) is less than \(7\)?",[("A",r"\(\frac1{10}\)"),("B",r"\(\frac16\)"),("C",r"\(\frac14\)"),("D",r"\(\frac13\)"),("E",r"\(\frac12\)")]),
+9:(r"A set \(S\) of points in the \(xy\)-plane is symmetric about the origin, both coordinate axes, and the line \(y=x\). If \((2,3)\) is in \(S\), what is the smallest number of points in \(S\)?",[("A","1"),("B","2"),("C","4"),("D","8"),("E","16")]),
+10:(r"Al, Bert, and Carl are the winners of a school drawing for a pile of Halloween candy, which they are to divide in a ratio of \(3:2:1\), respectively. Due to confusion they come at different times to claim their prizes, and each assumes he is the first to arrive. If each takes what he believes to be his correct share of the candy remaining, what fraction of the candy goes unclaimed?",[("A",r"\(\frac1{18}\)"),("B",r"\(\frac16\)"),("C",r"\(\frac29\)"),("D",r"\(\frac5{18}\)"),("E",r"\(\frac5{12}\)")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Pair each even counting number with the corresponding odd counting number.",
+2:"Compute the per-member equipment cost.",
+3:"Compare the removed corner-cube volume with the original box volume.",
+4:"Use total distance divided by total time for average speed.",
+5:"Set up a digit equation for AMC10 plus AMC12.",
+6:"Test the absolute-value operation on negative inputs.",
+7:"List integer side triples satisfying the triangle inequality.",
+8:"Count divisors of 60 and favorable small divisors.",
+9:"Apply all requested symmetries to one starting point.",
+10:"Multiply the fractions left after each mistaken claim.",
+})
+
+SOL.update({
+1:[("Pair corresponding terms",r"The first even counting numbers are \(2,4,6,\ldots,2\cdot2003\). The first odd counting numbers are \(1,3,5,\ldots,2\cdot2003-1\)." ),("Compare each pair",r"For each \(k=1,2,\ldots,2003\), the even number \(2k\) exceeds the corresponding odd number \(2k-1\) by \(1\)." ),("Add the differences",r"There are \(2003\) pairs, each contributing a difference of \(1\). Thus the total difference is \(2003\)." ),("Conclude",r"The answer is $\boxed{2003}$."),],
+2:[("Find the cost of one outfit",r"A pair of socks costs \(\$4\). A T-shirt costs \(\$4+\$5=\$9\)." ),("Find the cost per member",r"Each member needs two pairs of socks and two shirts, so the cost per member is \[2(4+9)=26.\]"),("Divide the total cost",r"The number of members is \[\frac{2366}{26}=91.\]"),("Conclude",r"There are $\boxed{91}$ members."),],
+3:[("Compute the original volume",r"The original box has volume \[15\cdot10\cdot8=1200\text{ cm}^3.\]"),("Compute the removed volume",r"A cube of side length \(3\) has volume \(27\). There are \(8\) corners, so the removed volume is \[8\cdot27=216.\]"),("Convert to a percent",r"The fraction removed is \[\frac{216}{1200}=0.18.\]"),("Conclude",r"The percent removed is $\boxed{18\%}$."),],
+4:[("Use total distance",r"Mary walks \(1\) km uphill and \(1\) km downhill, so the round-trip distance is \(2\) km."),("Use total time",r"The total time is \(30+10=40\) minutes, which is \(\frac{2}{3}\) hour."),("Compute average speed",r"Average speed is total distance divided by total time: \[2\div\frac23=3.\]"),("Conclude",r"The average speed is \(\boxed{3}\) km/hr."),],
+5:[("Translate the numbers",r"The five-digit number \(\text{AMC10}\) is \(10000A+1000M+100C+10\). The number \(\text{AMC12}\) is \(10000A+1000M+100C+12\)." ),("Add them",r"The sum is \[20000A+2000M+200C+22=123422.\]"),("Simplify",r"Subtract \(22\) and divide by \(200\): \[100A+10M+C=617.\]"),("Read the digits",r"Therefore \(A=6\), \(M=1\), and \(C=7\)." ),("Conclude",r"\[A+M+C=6+1+7=14.\] The answer is $\boxed{14}$."),],
+6:[("Check the true statements",r"The operation \(x\heartsuit y=|x-y|\) is symmetric, so statement A is true. Scaling both inputs by \(2\) doubles the absolute difference, so B is true."),("Check the zero statement",r"Statement C says \(x\heartsuit0=x\), but \(x\heartsuit0=|x|\). This equals \(x\) only when \(x\ge0\)." ),("Use a counterexample",r"For example, if \(x=-1\), then \[-1\heartsuit0=|-1|=1\ne -1.\]"),("Confirm the rest",r"Statement D is true because \(|x-x|=0\), and E is true because \(|x-y|>0\) when \(x\ne y\)." ),("Conclude",r"The statement that is not true is $\boxed{x\heartsuit0=x}$."),],
+7:[("List possible side triples",r"Let the integer side lengths be \(a\le b\le c\) with \(a+b+c=7\)." ),("Use the triangle inequality",r"We need \(a+b>c\). Since \(c=7-a-b\), this means \(a+b>7-a-b\), or \(2(a+b)>7\)." ),("Check small cases",r"The possible unordered triples are \[(1,3,3),\quad(2,2,3).\] Other partitions either fail the triangle inequality or are the same up to congruence."),("Conclude",r"There are $\boxed{2}$ non-congruent triangles."),],
+8:[("List the divisors",r"The positive divisors of \(60\) are \[1,2,3,4,5,6,10,12,15,20,30,60.\] There are \(12\) total."),("Count favorable divisors",r"The divisors less than \(7\) are \[1,2,3,4,5,6,\] so there are \(6\)." ),("Compute probability",r"The probability is \[\frac6{12}=\frac12.\]"),("Conclude",r"The answer is $\boxed{\frac12}$."),],
+9:[("Apply sign symmetries",r"Symmetry about the \(x\)-axis and \(y\)-axis gives \[(2,3),(2,-3),(-2,3),(-2,-3).\]"),("Apply reflection over y equals x",r"Reflection across \(y=x\) swaps coordinates, giving points such as \((3,2)\)." ),("Generate the full orbit",r"Combining coordinate swaps and sign changes gives \[(\pm2,\pm3)\quad\text{and}\quad(\pm3,\pm2).\]"),("Count distinct points",r"Since \(2\ne3\) and neither coordinate is \(0\), all \(8\) points are distinct."),("Conclude",r"The smallest possible number of points is $\boxed{8}$."),],
+10:[("Identify each person's believed share",r"The ratio \(3:2:1\) means Al believes he should take \(\frac12\), Bert \(\frac13\), and Carl \(\frac16\)." ),("Track what remains",r"Because each person thinks he is first, each takes that fraction of whatever candy is present when he arrives."),("Multiply the leftover fractions",r"After Al's claim, \(\frac12\) remains. After Bert's claim, \(\frac23\) of that remains. After Carl's claim, \(\frac56\) of that remains."),("Compute",r"The unclaimed fraction is \[\frac12\cdot\frac23\cdot\frac56=\frac5{18}.\]"),("Conclude",r"The answer is $\boxed{\frac5{18}}$."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -657,7 +696,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2002" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2003" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -746,7 +785,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2002 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2003 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
