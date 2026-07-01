@@ -3,29 +3,32 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 70
+BATCH_NUMBER = 71
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2013_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {6,7,8,9,10}
+TARGET_NUMBERS = {11,12,13,14,15}
 SKIPPED = []
-BATCH_LABEL = "2013 AMC 10A Problems 6-10"
-NEXT_START = "2013 AMC 10A Problem 11"
+BATCH_LABEL = "2013 AMC 10A Problems 11-15"
+NEXT_START = "2013 AMC 10A Problem 16"
 
-ANS = {6:("D","11"),7:("C","9"),8:("C",r"\frac53"),9:("B","18"),10:("E","70")}
+ANS = {11:("A","10"),12:("C","56"),13:("B","60"),14:("D","84"),15:("D","12")}
+
 OV = {
-6:(r"Joey and his five brothers are ages $3,5,7,9,11,$ and $13$. One afternoon two brothers whose ages sum to $16$ went to the movies, two brothers younger than $10$ went to play baseball, and Joey and the $5$-year-old stayed home. How old is Joey?",[("A","3"),("B","7"),("C","9"),("D","11"),("E","13")]),
-7:(r"A student must choose a program of four courses from English, Algebra, Geometry, History, Art, and Latin. This program must contain English and at least one mathematics course. In how many ways can this program be chosen?",[("A","6"),("B","8"),("C","9"),("D","12"),("E","16")]),
-8:(r"What is the value of $\frac{2^{2014}+2^{2012}}{2^{2014}-2^{2012}}$?",[("A",r"-1"),("B","1"),("C",r"\frac53"),("D","2013"),("E",r"2^{4024}")]),
-9:(r"In a basketball game, Shenille attempted only three-point shots and two-point shots. She was successful on $20\%$ of her three-point shots and $30\%$ of her two-point shots. Shenille attempted $30$ shots. How many points did she score?",[("A","12"),("B","18"),("C","24"),("D","30"),("E","36")]),
-10:(r"A bouquet contains pink roses, red roses, pink carnations, and red carnations. One third of the pink flowers are roses, three fourths of the red flowers are carnations, and six tenths of the flowers are pink. What percent of the flowers are carnations?",[("A","15"),("B","30"),("C","40"),("D","60"),("E","70")]),
+11:(r"A student council must select a two-person welcoming committee and a three-person planning committee from among its members. There are exactly $10$ ways to select a two-person team for the welcoming committee. It is possible for students to serve on both committees. In how many different ways can a three-person planning committee be selected?",[("A","10"),("B","12"),("C","15"),("D","18"),("E","25")]),
+12:(r"In $\triangle ABC$, $AB=AC=28$ and $BC=20$. Points $D,E,F$ are on sides $AB,BC,AC$, respectively, such that $DE\parallel AC$ and $EF\parallel AB$. What is the perimeter of parallelogram $ADEF$?",[("A","48"),("B","52"),("C","56"),("D","60"),("E","72")]),
+13:(r"How many three-digit numbers are not divisible by $5$, have digits that sum to less than $20$, and have the first digit equal to the third digit?",[("A","52"),("B","60"),("C","66"),("D","68"),("E","70")]),
+14:(r"A solid cube of side length $1$ is removed from each corner of a solid cube of side length $3$. How many edges does the remaining solid have?",[("A","36"),("B","60"),("C","72"),("D","84"),("E","108")]),
+15:(r"Two sides of a triangle have lengths $10$ and $15$. The length of the altitude to the third side is the average of the lengths of the altitudes to the two given sides. How long is the third side?",[("A","6"),("B","8"),("C","9"),("D","12"),("E","18")]),
 }
-KEY_OVERRIDES={6:"Use the activity clues to eliminate possible ages for Joey.",7:"Choose English and then count valid choices among the remaining courses.",8:"Factor out the common power of 2.",9:"Both shot types contribute the same expected points per attempt.",10:"Use a convenient total and split pink/red flowers by the given fractions."}
+
+KEY_OVERRIDES={11:"Recover the number of students from the number of two-person committees, then choose three.",12:"Use similarity on the two small triangles inside the isosceles triangle.",13:"Count numbers of the form $aba$ under a digit-sum restriction.",14:"Count physical edges after all eight corner cubes are removed.",15:"Express all altitudes in terms of the same triangle area."}
+
 SOL={
-6:[("List possible movie pairs",r"The ages summing to $16$ are $(3,13)$, $(5,11)$, and $(7,9)$."),("Use who stayed home",r"Joey and the $5$-year-old stayed home, so the $5$-year-old did not go to the movies or baseball."),("Use baseball clue",r"Two brothers younger than $10$ went to baseball. The ages younger than $10$ are $3,5,7,9$, but $5$ stayed home, so baseball must be two of $3,7,9$."),("Find consistent arrangement",r"If the movie pair is $(3,13)$ or $(7,9)$, there are not enough remaining younger-than-$10$ brothers besides $5$ for baseball. The movie pair must be $(5,11)$, but $5$ stayed home, so Joey must be $11$. The answer is $\boxed{11}$."),],
-7:[("Include English",r"English is required, so choose it first. We need $3$ more courses from Algebra, Geometry, History, Art, and Latin."),("Count all choices",r"There are $\binom53=10$ ways to choose the remaining three courses."),("Subtract choices with no math",r"The only way to choose no mathematics course is to choose History, Art, and Latin. So subtract $1$."),("Conclude",r"There are $10-1=9$ programs. The answer is $\boxed{9}$."),],
-8:[("Factor the common power",r"Both numerator and denominator contain $2^{2012}$. Factor it out."),("Simplify",r"The expression becomes $\frac{2^{2012}(2^2+1)}{2^{2012}(2^2-1)}=\frac{4+1}{4-1}$."),("Finish",r"This equals $\frac53$."),("Conclude",r"The answer is $\boxed{\frac53}$."),],
-9:[("Let the shot counts vary",r"Let Shenille attempt $a$ three-point shots and $b$ two-point shots. Then $a+b=30$."),("Find points from each type",r"She makes $20\%$ of the three-point shots, so those are worth $0.20a\cdot3=0.6a$ points. She makes $30\%$ of the two-point shots, worth $0.30b\cdot2=0.6b$ points."),("Use total attempts",r"Her total points are $0.6a+0.6b=0.6(a+b)=0.6\cdot30=18$."),("Conclude",r"She scored $\boxed{18}$ points."),],
-10:[("Choose a total",r"Use $100$ flowers. Then $60$ are pink and $40$ are red."),("Split pink flowers",r"One third of the pink flowers are roses, so $20$ pink flowers are roses and $40$ pink flowers are carnations."),("Split red flowers",r"Three fourths of the red flowers are carnations, so $30$ red flowers are carnations."),("Count carnations",r"There are $40+30=70$ carnations out of $100$ flowers. The answer is $\boxed{70}$."),],
+11:[("Find the number of council members",r"If there are $n$ members, the number of two-person welcoming committees is $\binom n2=10$."),("Solve for n",r"The equation $\frac{n(n-1)}2=10$ gives $n(n-1)=20$, so $n=5$."),("Choose the planning committee",r"Students may serve on both committees, so the planning committee is chosen independently from the same $5$ members."),("Compute",r"The number of three-person planning committees is $\binom53=10$. The answer is $\boxed{10}$."),],
+12:[("Name one side of the parallelogram",r"Let $AD=x$. Since $AB=28$, we have $DB=28-x$."),("Use the triangle near B",r"Because $DE\parallel AC$, triangle $DBE$ is similar to triangle $ABC$. Thus $\frac{BE}{BC}=\frac{DB}{AB}=\frac{28-x}{28}$."),("Find the other side indirectly",r"This gives $BE=20\cdot\frac{28-x}{28}$. Hence $CE=20-BE=20\cdot\frac{x}{28}$. Since $EF\parallel AB$, triangle $CEF$ is similar to $CBA$, so $CF=28\cdot\frac{CE}{20}=x$."),("Finish the perimeter",r"Then $AF=AC-CF=28-x$. The parallelogram sides are $x$ and $28-x$, so its perimeter is $2(x+28-x)=56$. The answer is $\boxed{56}$."),],
+13:[("Write the number form",r"The number has first digit equal to third digit, so it has form $aba$. The digit $a$ is from $1$ to $9$, and $b$ is from $0$ to $9$."),("Use divisibility by 5",r"A number is divisible by $5$ if its last digit is $0$ or $5$. Here the last digit is $a$, so $a$ cannot be $5$ and cannot be $0$ anyway."),("Use the digit-sum condition",r"The digit sum is $2a+b$, and we need $2a+b<20$. For $a=1,2,3,4$, all $10$ choices of $b$ work. For $a=6,7,8,9$, the allowed counts for $b$ are $8,6,4,2$."),("Add",r"The total is $10+10+10+10+8+6+4+2=60$. The answer is $\boxed{60}$."),],
+14:[("Separate types of edges",r"Removing the eight corner unit cubes creates a notched solid. It is easiest to count edges by type instead of trying to visualize the whole object at once."),("Count old outer-edge pieces",r"Each original edge of the $3\times3\times3$ cube keeps its middle unit segment after the two corner cubes are removed. There are $12$ original cube edges, so this contributes $12$ edges."),("Count outer-to-inner edges",r"On each of the $6$ faces, the remaining visible squares form a plus shape. Around the missing corner squares, each face contributes $8$ edges where an outer face meets a newly exposed inner face. This gives $6\cdot8=48$ such edges."),("Count inner corner edges",r"Each removed corner exposes three mutually perpendicular square faces. These three inner faces meet along $3$ reentrant edges. With $8$ removed corners, this gives $8\cdot3=24$ more edges."),("Add",r"The total is $12+48+24=84$. The answer is $\boxed{84}$."),],
+15:[("Use one common area",r"Let the triangle have area $K$, and let the third side have length $x$. The altitude to a side of length $s$ is $\frac{2K}{s}$."),("Write the three altitudes",r"The altitudes to the sides $10$ and $15$ are $\frac{2K}{10}=\frac K5$ and $\frac{2K}{15}$. The altitude to the third side is $\frac{2K}{x}$."),("Use the average condition",r"The condition says \[\frac{2K}{x}=\frac12\left(\frac K5+\frac{2K}{15}\right).\] The right side is $\frac12\left(\frac{3K}{15}+\frac{2K}{15}\right)=\frac K6$."),("Solve for x",r"So $\frac{2K}{x}=\frac K6$. Since $K>0$, cancel $K$ to get $\frac2x=\frac16$, hence $x=12$. The answer is $\boxed{12}$."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -235,6 +238,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
