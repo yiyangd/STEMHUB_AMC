@@ -3,114 +3,122 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 56
+BATCH_NUMBER = 57
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+TARGET_NUMBERS = {11,12,13,14,15,16,17,18,19,20}
 SKIPPED = []
-BATCH_LABEL = "2011 AMC 10A Problems 1-10"
-NEXT_START = "2011 AMC 10A Problem 11"
+BATCH_LABEL = "2011 AMC 10A Problems 11-20"
+NEXT_START = "2011 AMC 10A Problem 21"
 
 ANS = {
-    1: ("D", r"\$28.00"),
-    2: ("E", "15"),
-    3: ("D", r"\frac{7}{18}"),
-    4: ("A", "92"),
-    5: ("C", r"\frac{88}{7}"),
-    6: ("C", "20"),
-    7: ("B", r"|-3x|+5=0"),
-    8: ("C", "40"),
-    9: ("A", r"ac+ad+bc+bd"),
-    10: ("B", "11"),
+    11: ("B", r"\frac{25}{32}"),
+    12: ("A", "13"),
+    13: ("A", "12"),
+    14: ("B", r"\frac{1}{12}"),
+    15: ("C", "440"),
+    16: ("B", r"2\sqrt{6}"),
+    17: ("C", "25"),
+    18: ("C", "2"),
+    19: ("E", "62"),
+    20: ("D", r"\frac{1}{3}"),
 }
 
 OV = {
-    1: (r"A cell phone plan costs $\$20$ each month, plus $5$ cents per text message sent, plus $10$ cents for each minute used over $30$ hours. In January Michelle sent $100$ text messages and talked for $30.5$ hours. How much did she have to pay?", [("A", r"\$24.00"),("B", r"\$24.50"),("C", r"\$25.50"),("D", r"\$28.00"),("E", r"\$30.00")]),
-    2: (r"A small bottle of shampoo can hold $35$ milliliters, whereas a large bottle can hold $500$ milliliters. Jasmine wants to buy the minimum number of small bottles necessary to completely fill a large bottle. How many bottles must she buy?", [("A","11"),("B","12"),("C","13"),("D","14"),("E","15")]),
-    3: (r"Suppose $[a\ b]$ denotes the average of $a$ and $b$, and $\{a\ b\ c\}$ denotes the average of $a,b,c$. What is $\{\{1\ 1\ 0\}\ [0\ 1]\ 0\}$?", [("A",r"\frac{2}{9}"),("B",r"\frac{5}{18}"),("C",r"\frac{1}{3}"),("D",r"\frac{7}{18}"),("E",r"\frac{2}{3}")]),
-    4: (r"Let $X$ and $Y$ be the following sums of arithmetic sequences: $X=10+12+14+\cdots+100$ and $Y=12+14+16+\cdots+102$. What is the value of $Y-X$?", [("A","92"),("B","98"),("C","100"),("D","102"),("E","112")]),
-    5: (r"At an elementary school, the students in third grade, fourth grade, and fifth grade run an average of $12$, $15$, and $10$ minutes per day, respectively. There are twice as many third graders as fourth graders, and twice as many fourth graders as fifth graders. What is the average number of minutes run per day by these students?", [("A","12"),("B",r"\frac{37}{3}"),("C",r"\frac{88}{7}"),("D","13"),("E","14")]),
-    6: (r"Set $A$ has $20$ elements, and set $B$ has $15$ elements. What is the smallest possible number of elements in $A\cup B$, the union of $A$ and $B$?", [("A","5"),("B","15"),("C","20"),("D","35"),("E","300")]),
-    7: (r"Which of the following equations does NOT have a solution?", [("A",r"(x+7)^2=0"),("B",r"|-3x|+5=0"),("C",r"\sqrt{-x}-2=0"),("D",r"\sqrt{x}-8=0"),("E",r"|-3x|-4=0")]),
-    8: (r"Last summer $30\%$ of the birds living on Town Lake were geese, $25\%$ were swans, $10\%$ were herons, and $35\%$ were ducks. What percent of the birds that were not swans were geese?", [("A","20"),("B","30"),("C","40"),("D","50"),("E","60")]),
-    9: (r"A rectangular region is bounded by the graphs of $y=a$, $y=-b$, $x=-c$, and $x=d$, where $a,b,c,d$ are all positive numbers. Which expression represents the area of this region?", [("A",r"ac+ad+bc+bd"),("B",r"ac-ad+bc-bd"),("C",r"ac+ad-bc-bd"),("D",r"-ac-ad+bc+bd"),("E",r"ac-ad-bc+bd")]),
-    10: (r"A majority of the $30$ students in Ms. Deameanor's class bought pencils at the school bookstore. Each of these students bought the same number of pencils, and this number was greater than $1$. The cost of a pencil in cents was greater than the number of pencils each student bought, and the total cost of all the pencils was $\$17.71$. What was the cost of a pencil in cents?", [("A","7"),("B","11"),("C","17"),("D","23"),("E","77")]),
+    11: (r"Square $EFGH$ has one vertex on each side of square $ABCD$. Point $E$ is on $\overline{AB}$ with $AE=7\cdot EB$. What is the ratio of the area of $EFGH$ to the area of $ABCD$?", [("A",r"\frac{49}{64}"),("B",r"\frac{25}{32}"),("C",r"\frac{7\sqrt2}{8}"),("D",r"\frac{5}{8}"),("E",r"\frac{14}{4}")]),
+    12: (r"The players on a basketball team made some three-point shots, some two-point shots, and some one-point free throws. They scored as many points with two-point shots as with three-point shots. Their number of successful free throws was one more than their number of successful two-point shots. The team's total score was $61$ points. How many free throws did they make?", [("A","13"),("B","14"),("C","15"),("D","16"),("E","17")]),
+    13: (r"How many even integers are there between $200$ and $700$ whose digits are all different and come from the set $\{1,2,5,7,8,9\}$?", [("A","12"),("B","20"),("C","72"),("D","120"),("E","200")]),
+    14: (r"A pair of standard $6$-sided fair dice is rolled once. The sum of the numbers rolled determines the diameter of a circle. What is the probability that the numerical value of the area of the circle is less than the numerical value of the circle's circumference?", [("A",r"\frac{1}{36}"),("B",r"\frac{1}{12}"),("C",r"\frac{1}{6}"),("D",r"\frac{1}{4}"),("E",r"\frac{5}{18}")]),
+    15: (r"Roy bought a new battery-gasoline hybrid car. On a trip the car ran exclusively on its battery for the first $40$ miles, then ran exclusively on gasoline for the rest of the trip, using gasoline at a rate of $0.02$ gallons per mile. On the whole trip he averaged $55$ miles per gallon. How long was the trip in miles?", [("A","140"),("B","240"),("C","440"),("D","640"),("E","840")]),
+    16: (r"Which of the following is equal to $\sqrt{9-6\sqrt2}+\sqrt{9+6\sqrt2}$?", [("A",r"3\sqrt2"),("B",r"2\sqrt6"),("C",r"7\sqrt2"),("D",r"3\sqrt3"),("E",r"6\sqrt2")]),
+    17: (r"In the eight-term sequence $A,B,C,D,E,F,G,H$, the value of $C$ is $5$ and the sum of any three consecutive terms is $30$. What is $A+H$?", [("A","17"),("B","18"),("C","25"),("D","26"),("E","43")]),
+    18: (r"Circles $A$, $B$, and $C$ each have radius $1$. Circles $A$ and $B$ share one point of tangency. Circle $C$ has a point of tangency with the midpoint of $\overline{AB}$. What is the area inside circle $C$ but outside circles $A$ and $B$?", [("A",r"3-\frac{\pi}{2}"),("B",r"\frac{\pi}{2}"),("C","2"),("D",r"\frac{3\pi}{4}"),("E",r"1+\frac{\pi}{2}")]),
+    19: (r"In 1991 the population of a town was a perfect square. Ten years later, after an increase of $150$ people, the population was $9$ more than a perfect square. Now, in 2011, with an increase of another $150$ people, the population is once again a perfect square. Which of the following is closest to the percent growth of the town's population during this twenty-year period?", [("A","42"),("B","47"),("C","52"),("D","57"),("E","62")]),
+    20: (r"Two points on the circumference of a circle of radius $r$ are selected independently and at random. From each point a chord of length $r$ is drawn in a clockwise direction. What is the probability that the two chords intersect?", [("A",r"\frac{1}{6}"),("B",r"\frac{1}{5}"),("C",r"\frac{1}{4}"),("D",r"\frac{1}{3}"),("E",r"\frac{1}{2}")]),
 }
 
 KEY_OVERRIDES = {
-    1: "Break the monthly bill into base cost, text-message cost, and extra-minute cost.",
-    2: "Use ceiling division because a partial bottle still requires buying a whole bottle.",
-    3: "Evaluate nested averages from the inside outward.",
-    4: "Compare two shifted arithmetic sums term by term.",
-    5: "Use a weighted average because the grade levels have different numbers of students.",
-    6: "The smallest union occurs when the smaller set is entirely contained in the larger set.",
-    7: "Check whether each equation can reach zero using squares, square roots, and absolute values.",
-    8: "Condition on the group that is not swans, then compute the geese fraction inside that group.",
-    9: "Find the rectangle's width and height from coordinate boundaries, then multiply.",
-    10: "Factor the total cost into students, pencils per student, and cents per pencil.",
+    11: "Use coordinates for the rotated inner square and compare side lengths.",
+    12: "Translate point totals into variables for made shots and solve a linear equation.",
+    13: "Count by hundreds digit and units digit, since the number must be even and in range.",
+    14: "Convert the area-versus-circumference condition into a condition on the dice sum.",
+    15: "Use total miles divided by gasoline gallons to express the overall miles per gallon.",
+    16: "Recognize each radical as a square of a binomial radical.",
+    17: "Use equal three-term sums to show the sequence repeats with period three.",
+    18: "Compute circular overlap areas using the geometry of unit circles whose centers are $\sqrt2$ apart.",
+    19: "Turn the population statements into square equations and factor the total growth.",
+    20: "A chord of length equal to the radius subtends a $60^\circ$ arc; count starting positions that interleave endpoints.",
 }
 
 SOL = {
-    1: [
-        ("Separate the parts of the bill", r"The plan has three possible costs: the fixed monthly cost, text messages, and minutes over $30$ hours. Listing these pieces prevents us from mixing hours and minutes."),
-        ("Compute the text-message cost", r"Michelle sent $100$ text messages. At $5$ cents each, the text cost is $100\cdot5=500$ cents, or $\$5.00$."),
-        ("Compute the extra-minute cost", r"She talked for $30.5$ hours, which is $0.5$ hour over the included $30$ hours. Since $0.5$ hour is $30$ minutes, the extra-minute cost is $30\cdot10=300$ cents, or $\$3.00$."),
-        ("Add the costs", r"The total is $\$20.00+\$5.00+\$3.00=\$28.00$. The answer is $\boxed{\$28.00}$."),
+    11: [
+        ("Choose a scale", r"Because the question asks for an area ratio, we can choose a convenient scale. Let $EB=1$, so $AE=7$ and the side length of square $ABCD$ is $8$."),
+        ("Place the first vertex", r"Put $A=(0,8)$, $B=(8,8)$, $C=(8,0)$, and $D=(0,0)$. Then $E=(7,8)$. If $F$ lies on side $BC$, the horizontal change from $E$ to $F$ is $1$."),
+        ("Use the square rotation", r"For the rotated square to land one vertex on each side, the vertical drop from $E$ to $F$ is $7$. Thus the side vector of the inner square can be taken as $(1,-7)$. Its squared side length is $1^2+7^2=50$."),
+        ("Compare areas", r"The area of square $EFGH$ is $50$. The area of square $ABCD$ is $8^2=64$. So the ratio is $\frac{50}{64}=\frac{25}{32}$."),
+        ("Conclude", r"The answer is $\boxed{\frac{25}{32}}$."),
     ],
-    2: [
-        ("Translate the question", r"Each small bottle contributes $35$ milliliters. Jasmine needs enough small bottles so that their total capacity is at least $500$ milliliters."),
-        ("Divide to estimate", r"Compute $500\div35$. Since $35\cdot14=490$, fourteen bottles are close but not enough."),
-        ("Remember whole bottles", r"Jasmine cannot buy a fraction of a bottle. Because $14$ bottles hold only $490$ milliliters, she needs one more bottle."),
-        ("Conclude", r"The minimum number is $15$. The answer is $\boxed{15}$."),
+    12: [
+        ("Name the made shots", r"Let $x$ be the number of made three-point shots and $y$ be the number of made two-point shots. The number of free throws is then $y+1$."),
+        ("Use the equal point condition", r"The team scored as many points from two-point shots as from three-point shots, so $2y=3x$. This means the points from three-point shots are also $2y$."),
+        ("Write the total score", r"The total score is points from threes plus points from twos plus free throws: $2y+2y+(y+1)=61$."),
+        ("Solve", r"This gives $5y+1=61$, so $5y=60$ and $y=12$. Therefore the number of free throws is $y+1=13$."),
+        ("Conclude", r"The answer is $\boxed{13}$."),
     ],
-    3: [
-        ("Work from the inside outward", r"The notation is nested, so we first evaluate the expressions inside the outer braces. The average of $1,1,0$ is $\frac{1+1+0}{3}=\frac23$."),
-        ("Evaluate the bracketed average", r"Next, $[0\ 1]$ means the average of $0$ and $1$, which is $\frac12$."),
-        ("Use the outer average", r"Now the full expression is the average of $\frac23$, $\frac12$, and $0$: \[\frac{\frac23+\frac12+0}{3}.\]"),
-        ("Calculate carefully", r"Since $\frac23+\frac12=\frac76$, dividing by $3$ gives $\frac76\cdot\frac13=\frac7{18}$. The answer is $\boxed{\frac7{18}}$."),
+    13: [
+        ("Use the range first", r"The number is between $200$ and $700$, so its hundreds digit can only be $2$ or $5$ from the allowed set. A hundreds digit of $1$ is too small, and $7,8,9$ are too large."),
+        ("Use evenness", r"The units digit must be even. From the allowed digits, the even choices are $2$ and $8$. Digits also have to be different."),
+        ("Count when the hundreds digit is 2", r"If the hundreds digit is $2$, then the units digit cannot also be $2$, so it must be $8$. The tens digit can be any of $1,5,7,9$, giving $4$ numbers."),
+        ("Count when the hundreds digit is 5", r"If the hundreds digit is $5$, then the units digit can be $2$ or $8$. After choosing the units digit, there are $4$ choices left for the tens digit, giving $2\cdot4=8$ numbers."),
+        ("Add the cases", r"The total is $4+8=12$. The answer is $\boxed{12}$."),
     ],
-    4: [
-        ("Compare the sums instead of evaluating both", r"The two sums have the same number of terms, and most terms overlap. This is a good sign that subtracting term by term will be faster than finding each sum separately."),
-        ("Identify what changes", r"The sum $X$ starts with $10$ and ends with $100$. The sum $Y$ starts with $12$ and ends with $102$. All the middle even terms from $12$ through $100$ appear in both sums."),
-        ("Cancel the common terms", r"When we compute $Y-X$, the common terms cancel. What remains is $102-10$."),
-        ("Finish", r"Therefore $Y-X=92$. The answer is $\boxed{92}$."),
+    14: [
+        ("Translate diameter into radius", r"Let the dice sum be $s$. Then the circle has diameter $s$ and radius $\frac{s}{2}$."),
+        ("Compare area and circumference", r"The area is $\pi\left(\frac{s}{2}\right)^2=\frac{\pi s^2}{4}$, and the circumference is $\pi s$. We need $\frac{\pi s^2}{4}<\pi s$."),
+        ("Simplify the inequality", r"Since $s$ is positive, divide by $\pi s$ to get $\frac{s}{4}<1$, so $s<4$. The only possible dice sums are therefore $2$ and $3$."),
+        ("Count dice outcomes", r"There is $1$ way to roll a sum of $2$ and $2$ ways to roll a sum of $3$, for $3$ favorable outcomes out of $36$ total."),
+        ("Compute the probability", r"The probability is $\frac{3}{36}=\frac{1}{12}$. The answer is $\boxed{\frac{1}{12}}$."),
     ],
-    5: [
-        ("Choose convenient group sizes", r"The fifth grade is the smallest group. Let there be $n$ fifth graders. Then there are $2n$ fourth graders and $4n$ third graders."),
-        ("Compute total running time", r"The third graders contribute $4n\cdot12=48n$ minutes. The fourth graders contribute $2n\cdot15=30n$ minutes. The fifth graders contribute $n\cdot10=10n$ minutes."),
-        ("Compute total students", r"The total number of students is $4n+2n+n=7n$. The total running time is $48n+30n+10n=88n$."),
-        ("Find the weighted average", r"The average is $\frac{88n}{7n}=\frac{88}{7}$. The answer is $\boxed{\frac{88}{7}}$."),
+    15: [
+        ("Let the total distance be unknown", r"Let the whole trip length be $D$ miles. The first $40$ miles use no gasoline, so only $D-40$ miles use gasoline."),
+        ("Write the gasoline used", r"The car uses gasoline at $0.02$ gallons per mile, so the gasoline used is $0.02(D-40)$ gallons."),
+        ("Use miles per gallon", r"The whole-trip average is $55$ miles per gallon, so \[\frac{D}{0.02(D-40)}=55.\] This equation uses total miles divided by gasoline gallons."),
+        ("Solve", r"Multiply both sides by the denominator: $D=55\cdot0.02(D-40)=1.1(D-40)$. Thus $D=1.1D-44$, so $0.1D=44$ and $D=440$."),
+        ("Conclude", r"The trip was $\boxed{440}$ miles long."),
     ],
-    6: [
-        ("Think about overlap", r"The union $A\cup B$ contains everything that is in either set. To make the union as small as possible, we want the two sets to overlap as much as possible."),
-        ("Use the smaller set", r"Set $B$ has only $15$ elements, while set $A$ has $20$. The greatest possible overlap happens when every element of $B$ is already inside $A$."),
-        ("Find the union size", r"If $B\subseteq A$, then adding $B$ contributes no new elements beyond the $20$ already in $A$. So the smallest possible union has $20$ elements."),
-        ("Conclude", r"The answer is $\boxed{20}$."),
+    16: [
+        ("Look for squared binomials", r"Expressions like $9\pm6\sqrt2$ often come from squaring $\sqrt a\pm\sqrt b$, because $(\sqrt a\pm\sqrt b)^2=a+b\pm2\sqrt{ab}$."),
+        ("Match the numbers", r"We need $a+b=9$ and $2\sqrt{ab}=6\sqrt2$, so $ab=18$. The pair $a=6$, $b=3$ works."),
+        ("Rewrite each radical", r"Therefore $9+6\sqrt2=(\sqrt6+\sqrt3)^2$ and $9-6\sqrt2=(\sqrt6-\sqrt3)^2$. Both square roots are nonnegative, so the square roots are $\sqrt6+\sqrt3$ and $\sqrt6-\sqrt3$."),
+        ("Add", r"The sum is $(\sqrt6-\sqrt3)+(\sqrt6+\sqrt3)=2\sqrt6$. The answer is $\boxed{2\sqrt6}$."),
     ],
-    7: [
-        ("Use basic output facts", r"Squares are always nonnegative, square roots are always nonnegative, and absolute values are always nonnegative. The equation that cannot reach zero will usually be the one that adds a positive number to something nonnegative."),
-        ("Check choice B first", r"For choice B, $|-3x|\ge0$ for every real $x$. Therefore $|-3x|+5\ge5$, so it can never equal $0$. This already shows B has no solution."),
-        ("Confirm the others are solvable", r"Choice A works with $x=-7$. Choice C works with $x=-4$, since $\sqrt{-(-4)}-2=0$. Choice D works with $x=64$. Choice E works when $|-3x|=4$, such as $x=\frac43$."),
-        ("Conclude", r"Only choice B has no solution. The answer is $\boxed{|-3x|+5=0}$."),
+    17: [
+        ("Compare neighboring sums", r"The sums $A+B+C$ and $B+C+D$ are both $30$. Subtracting the common $B+C$ shows $A=D$."),
+        ("See the repeating pattern", r"Similarly, comparing $B+C+D$ with $C+D+E$ gives $B=E$, and comparing $C+D+E$ with $D+E+F$ gives $C=F$. So the sequence repeats every three terms."),
+        ("Use the value of C", r"Since $C=5$, we also have $F=5$. The sequence has the form $A,B,5,A,B,5,A,B$."),
+        ("Use one three-term sum", r"Because $A+B+C=30$, we have $A+B+5=30$, so $A+B=25$."),
+        ("Find A plus H", r"The eighth term $H$ is $B$, so $A+H=A+B=25$. The answer is $\boxed{25}$."),
     ],
-    8: [
-        ("Identify the new denominator", r"The question is not asking what percent of all birds were geese. It asks what percent of the birds that were not swans were geese. So we must remove the swans from the denominator."),
-        ("Find the non-swan group", r"Since $25\%$ were swans, the non-swan birds make up $100\%-25\%=75\%$ of the birds."),
-        ("Compare geese to non-swans", r"Geese are $30\%$ of all birds. Among the non-swans, the geese fraction is $\frac{30}{75}$."),
-        ("Convert to a percent", r"The fraction $\frac{30}{75}=\frac25=40\%$. The answer is $\boxed{40}$."),
+    18: [
+        ("Reconstruct the geometry", r"Circles $A$ and $B$ are unit circles tangent to each other. Circle $C$ is a unit circle tangent at the midpoint between their centers, so the center of $C$ is one unit above that midpoint in the diagram."),
+        ("Find the overlap with one circle", r"The distance from the center of circle $C$ to the center of circle $A$ is $\sqrt2$. For two unit circles with center distance $\sqrt2$, the overlap consists of two $90^\circ$ sectors minus a square-like pair of right triangles. Its area is $\frac{\pi}{2}-1$."),
+        ("Use symmetry", r"Circle $C$ overlaps circle $A$ and circle $B$ in two congruent regions. These two overlap regions do not overlap each other except at a boundary point, so the total area of circle $C$ covered by circles $A$ or $B$ is $2\left(\frac{\pi}{2}-1\right)=\pi-2$."),
+        ("Subtract from circle C", r"Circle $C$ has area $\pi$. The area inside circle $C$ but outside circles $A$ and $B$ is $\pi-(\pi-2)=2$."),
+        ("Conclude", r"The answer is $\boxed{2}$."),
     ],
-    9: [
-        ("Find the vertical distance", r"The top boundary is $y=a$ and the bottom boundary is $y=-b$. The height is the difference $a-(-b)=a+b$."),
-        ("Find the horizontal distance", r"The left boundary is $x=-c$ and the right boundary is $x=d$. The width is $d-(-c)=c+d$."),
-        ("Multiply width and height", r"The rectangle's area is $(a+b)(c+d)$. Expanding gives \[(a+b)(c+d)=ac+ad+bc+bd.\]"),
-        ("Conclude", r"The answer is $\boxed{ac+ad+bc+bd}$."),
+    19: [
+        ("Name the square populations", r"Let the 1991 population be $n^2$ and the 2011 population be $p^2$. Since the population increased by $300$ over the twenty years, we have $p^2-n^2=300$."),
+        ("Factor the difference of squares", r"The equation becomes $(p-n)(p+n)=300$. The two factors must have the same parity, so the useful factor pairs are $(2,150)$, $(6,50)$, and $(10,30)$."),
+        ("Test the middle-year condition", r"These pairs give possible $(n,p)$ values $(74,76)$, $(22,28)$, and $(10,20)$. The 2001 population is $n^2+150$, and it must be $9$ more than a square, so $n^2+141$ must be a square. Only $n=22$ works, since $22^2+141=625=25^2$."),
+        ("Compute percent growth", r"The initial population was $22^2=484$ and the total increase was $300$. The percent growth is $\frac{300}{484}\cdot100\%\approx61.98\%$."),
+        ("Choose the closest answer", r"The closest choice is $62$. The answer is $\boxed{62}$."),
     ],
-    10: [
-        ("Translate total cost into factors", r"The total cost was $\$17.71$, or $1771$ cents. This equals \[(\text{number of students})(\text{pencils per student})(\text{cents per pencil}).\]"),
-        ("Use the majority condition", r"A majority of $30$ students means more than $15$ students bought pencils. So the number of buying students is an integer factor of $1771$ greater than $15$."),
-        ("Factor the total", r"The number factors as $1771=23\cdot77=23\cdot7\cdot11$. Since the pencil cost must be one of the answer choices, we can test which choice leaves a product that can include more than $15$ students and more than $1$ pencil per student."),
-        ("Find the consistent choice", r"If the cost is $11$ cents, then $1771\div11=161=23\cdot7$. This works: $23$ students each bought $7$ pencils, and $11>7$."),
-        ("Conclude", r"The cost of one pencil was $\boxed{11}$ cents."),
+    20: [
+        ("Convert chord length to arc size", r"In a circle of radius $r$, a chord of length $r$ forms an equilateral triangle with the two radii to its endpoints. Therefore each chord subtends a $60^\circ$ central angle."),
+        ("Fix the first chord", r"Because the circle is symmetric, fix the first starting point at angle $0^\circ$. Its clockwise chord ends at $60^\circ$. Now only the starting angle of the second chord is random."),
+        ("Use endpoint interleaving", r"Two chords intersect inside the circle exactly when their endpoints alternate around the circle. For the fixed chord with endpoints $0^\circ$ and $60^\circ$, this happens if exactly one endpoint of the second chord lies on the arc from $0^\circ$ to $60^\circ$."),
+        ("Count favorable starting angles", r"The second starting angle works if it lies between $0^\circ$ and $60^\circ$, or if its ending angle lies there, which means the starting angle lies between $300^\circ$ and $360^\circ$. These intervals have total length $120^\circ$."),
+        ("Compute the probability", r"The probability is $\frac{120}{360}=\frac13$. The answer is $\boxed{\frac13}$."),
     ],
 }
 def esc(x, quote=True):
@@ -156,7 +164,7 @@ def render(row):
     ans, val = ANS[n]
     tags = "".join(f'<span class="badge">{esc(t)}</span>' for t in (row.get("tags") or "").split(";") if t)
     notes = row.get("notes") or ""
-    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in set()) else notes
+    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in {18}) else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
         f'<li class="choice {"correct" if k == ans else ""}"><span class="choice-key">{esc(k)}</span><span>{esc(v, False)}</span></li>'
@@ -252,7 +260,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in set(),
+                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {18},
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -321,6 +329,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
 
 
