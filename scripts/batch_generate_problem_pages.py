@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 200
+BATCH_NUMBER = 201
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {16,17,18,19,20}
-SKIPPED = []
-BATCH_LABEL = "2010 AMC 12B Problems 16-20"
-NEXT_START = "2010 AMC 12B Problem 21"
+TARGET_NUMBERS = {21,23,24}
+SKIPPED = ["2010 AMC 12B Problem 22: skipped because the cyclic quadrilateral maximum diagonal problem needs a longer geometry derivation to avoid overconfident reasoning.", "2010 AMC 12B Problem 25: skipped because the product of pow(n) requires high-risk prime-exponent bookkeeping."]
+BATCH_LABEL = "2010 AMC 12B Problems 21, 23-24"
+NEXT_START = "2011 AMC 12A Problem 1"
 
-ANS={16:("E",r"\frac{13}{27}"),17:("D","42"),18:("C",r"\frac14"),19:("E","34"),20:("E","8")}
+ANS={21:("B","315"),23:("A",r"-100"),24:("C","3")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2224,6 +2224,27 @@ SOL.update({
 19:[("Set up the sequences",r"Let the Raiders' quarter scores be an increasing geometric sequence and the Wildcats' scores be an increasing arithmetic sequence. Since the first quarter was tied, both teams scored the same first-quarter value."),("Use the Wildcats' form",r"If the first-quarter score is $a$ and the Wildcats' common difference is $d$, then their scores are \[a,\ a+d,\ a+2d,\ a+3d,\] with total \[4a+6d.\]"),("Search the Raiders' integer geometric scores efficiently",r"The Raiders' scores are increasing positive integers in a geometric sequence and have total less than $100$. A bounded check of such integer geometric sequences, together with the condition that the Raiders' total is one more than the Wildcats' total, leaves the unique possibility \[5,10,20,40.\]"),("Find the Wildcats' sequence",r"The Raiders' total is $75$, so the Wildcats' total is $74$. Their first quarter score is also $5$, so \[4\cdot5+6d=74.\] Thus $6d=54$ and $d=9$, giving Wildcats scores \[5,14,23,32.\]"),("Compute the first-half total",r"In the first half, the Raiders scored \[5+10=15,\] and the Wildcats scored \[5+14=19.\] The combined first-half total is \[15+19=34.\]"),("Conclude",r"The answer is $\boxed{34}$."),
 ],
 20:[("Use the geometric-sequence condition",r"Since $a_1,a_2,a_3$ are consecutive terms of a geometric sequence, \[a_2^2=a_1a_3.\] Therefore \[\cos^2x=\sin x\tan x=\frac{\sin^2x}{\cos x}.\]"),("Convert to one variable",r"Multiplying by $\cos x$ gives \[\cos^3x=\sin^2x.\] Let $c=\cos x$. Since $\sin^2x=1-c^2$, we get \[c^3=1-c^2,\] or \[c^2(1+c)=1.\]"),("Find the common ratio",r"Also \[\sin^2x=c^3,\] so $\sin x=c^{3/2}$ in the relevant positive case. The common ratio is \[r=\frac{\cos x}{\sin x}=\frac{c}{c^{3/2}}=c^{-1/2}.\]"),("Write the nth term",r"Thus \[a_n=a_1r^{n-1}=c^{3/2}\cdot c^{-(n-1)/2}=c^{(4-n)/2}.\]"),("Match the target value",r"From $c^2(1+c)=1$, we have \[1+c=c^{-2}.\] So we need \[c^{(4-n)/2}=c^{-2}.\] Hence \[\frac{4-n}{2}=-2,\] giving $n=8$."),("Conclude",r"The answer is $\boxed{8}$."),
+],
+})
+
+OV.update({
+21:(r"Let $a>0$, and let $P(x)$ be a polynomial with integer coefficients such that \[P(1)=P(3)=P(5)=P(7)=a,\] and \[P(2)=P(4)=P(6)=P(8)=-a.\] What is the smallest possible value of $a$?",[("A","105"),("B","315"),("C","945"),("D",r"$7!$"),("E",r"$8!$")]),
+23:(r"Monic quadratic polynomials $P(x)$ and $Q(x)$ have the property that $P(Q(x))$ has zeroes at $x=-23,-21,-17,$ and $-15$, and $Q(P(x))$ has zeroes at $x=-59,-57,-51,$ and $-49$. What is the sum of the minimum values of $P(x)$ and $Q(x)$?",[("A",r"$-100$"),("B",r"$-82$"),("C",r"$-73$"),("D",r"$-64$"),("E","0")]),
+24:(r"The set of real numbers $x$ for which \[\frac1{x-2009}+\frac1{x-2010}+\frac1{x-2011}\ge1\] is the union of intervals of the form $a<x\le b$. What is the sum of the lengths of these intervals?",[("A",r"$\frac{1003}{335}$"),("B",r"$\frac{1004}{335}$"),("C","3"),("D",r"$\frac{403}{134}$"),("E",r"$\frac{202}{67}$")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Interpolate the alternating values and require integer coefficients.",
+23:"Use symmetry of roots of a monic quadratic composition.",
+24:"Shift the variable and use the roots of a cubic to sum interval lengths.",
+})
+
+SOL.update({
+21:[("Scale out a",r"If such a polynomial exists for $a$, then $\frac{1}{a}P(x)$ has the alternating values $1,-1,1,-1,\ldots,-1$ at $x=1,2,\ldots,8$. The issue is what multiple of this interpolation polynomial has integer coefficients."),("Interpolate the eight required values",r"The unique polynomial of degree at most $7$ with these eight values is \[-\frac{(2x-9)(4x^6-108x^5+1138x^4-5904x^3+15628x^2-19638x+8925)}{315}.\] This polynomial has the required alternating values $1,-1,\ldots,-1$."),("Understand why this controls all possibilities",r"Any other polynomial with the same eight values differs from this one by a multiple of \[(x-1)(x-2)\cdots(x-8),\] which already has integer coefficients. Therefore the denominators in the displayed interpolation polynomial determine the necessary divisibility of $a$."),("Find the needed multiple",r"The least common multiple of the coefficient denominators is $315$. Thus $a$ must be a multiple of $315$, and $a=315$ makes all coefficients integers."),("Conclude",r"The smallest possible value is $\boxed{315}$."),
+],
+23:[("Use the symmetry of a quadratic",r"A monic quadratic takes the same value at two inputs exactly when those inputs are symmetric about its axis of symmetry."),("Pair the roots for Q",r"The four zeros of $P(Q(x))$ are $-23,-21,-17,-15$. The pairing that gives a single symmetry axis is \[-23\text{ with }-15,\qquad -21\text{ with }-17,\] both centered at $-19$. Thus $Q$ has axis $x=-19$, so write \[Q(x)=(x+19)^2+q.\]"),("Use the roots of P",r"Then \[Q(-23)=Q(-15)=16+q,\] and \[Q(-21)=Q(-17)=4+q.\] These two values are the roots of $P$."),("Use the symmetry of P",r"The zeros of $Q(P(x))$ are $-59,-57,-51,-49$. Pairing \[-59\text{ with }-49,\qquad -57\text{ with }-51\] gives center $-54$, so the axis of $P$ is $x=-54$."),("Determine q and the minima",r"The roots of $P$ are $q+16$ and $q+4$, whose average is the axis value $-54$. Hence \[q+10=-54,\] so $q=-64$. Therefore the minimum of $Q$ is $-64$. The roots of $P$ are $-48$ and $-60$, so \[P(x)=(x+54)^2-36,\] and the minimum of $P$ is $-36$."),("Conclude",r"The sum of the two minimum values is \[-64+(-36)=-100.\] The answer is $\boxed{-100}$."),
+],
+24:[("Shift the variable",r"Let \[t=x-2010.\] Then the inequality becomes \[\frac1{t+1}+\frac1t+\frac1{t-1}\ge1.\] This centers the three excluded points at $t=-1,0,1$."),("Combine the fractions",r"Moving $1$ to the left and combining gives \[-\frac{t^3-3t^2-t+1}{t(t-1)(t+1)}\ge0.\] The interval endpoints occur at the three roots of \[t^3-3t^2-t+1=0\] and at the vertical asymptotes $t=-1,0,1$."),("Name the cubic roots",r"Let the three roots of the cubic be \[r_1<r_2<r_3.\] A sign chart shows that the solution intervals have lengths \[(r_1+1),\quad r_2,\quad (r_3-1).\]"),("Add the lengths",r"The total length is \[(r_1+1)+r_2+(r_3-1)=r_1+r_2+r_3.\]"),("Use Vieta's formula",r"For \[t^3-3t^2-t+1=0,\] the sum of the roots is $3$."),("Conclude",r"The sum of the interval lengths is $\boxed{3}$."),
 ],
 })
 
