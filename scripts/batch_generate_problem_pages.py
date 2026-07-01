@@ -8,30 +8,42 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 52
+BATCH_NUMBER = 53
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {21, 22, 23, 25}
-SKIPPED = ["2010 AMC 10A Problem 24 skipped: last two nonzero digits of 90! needs careful modular arithmetic write-up"]
-BATCH_LABEL = "2010 AMC 10A Problems 21-23, 25"
-NEXT_START = "2010 AMC 10B Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_10B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2010 AMC 10B Problems 1-10"
+NEXT_START = "2010 AMC 10B Problem 11"
 
-ANS={21:("A","78"),22:("A","28"),23:("A","45"),25:("B","3")}
+ANS={1:("C","-297"),2:("C","25"),3:("C","5"),4:("C","10"),5:("B","3"),6:("B","25"),7:("D","32"),8:("E","5"),9:("D","3"),10:("C","24")}
 
 OV={
-21:(r"The polynomial $x^3-ax^2+bx-2010$ has three positive integer zeros. What is the smallest possible value of $a$?",[("A","$78$"),("B","$88$"),("C","$98$"),("D","$108$"),("E","$118$")]),
-22:(r"Eight points are chosen on a circle, and chords are drawn connecting every pair of points. No three chords intersect in a single point inside the circle. How many triangles with all three vertices in the interior of the circle are created?",[("A","$28$"),("B","$56$"),("C","$70$"),("D","$84$"),("E","$140$")]),
-23:(r"Each of $2010$ boxes in a line contains a single red marble, and for $1\le k\le2010$, the box in the $k$th position also contains $k$ white marbles. Isabella begins at the first box and successively draws a single marble at random from each box, in order. She stops when she first draws a red marble. Let $P(n)$ be the probability that Isabella stops after drawing exactly $n$ marbles. What is the smallest value of $n$ for which $P(n)<\frac1{2010}$?",[("A","$45$"),("B","$63$"),("C","$64$"),("D","$201$"),("E","$1005$")]),
-25:(r"Jim starts with a positive integer $n$ and creates a sequence of numbers. Each successive number is obtained by subtracting the largest possible integer square less than or equal to the current number until zero is reached. Let $N$ be the smallest number for which Jim's sequence has $8$ numbers. What is the units digit of $N$?",[("A","$1$"),("B","$3$"),("C","$5$"),("D","$7$"),("E","$9$")]),
+1:(r"What is $100(100-3)-(100\cdot100-3)$?",[("A",r"$-20{,}000$"),("B",r"$-10{,}000$"),("C",r"$-297$"),("D",r"$-6$"),("E","$0$")]),
+2:(r"Makayla attended two meetings during her $9$-hour work day. The first meeting took $45$ minutes and the second meeting took twice as long. What percent of her work day was spent attending meetings?",[("A","$15$"),("B","$20$"),("C","$25$"),("D","$30$"),("E","$35$")]),
+3:(r"A drawer contains red, green, blue, and white socks with at least $2$ of each color. What is the minimum number of socks that must be pulled from the drawer to guarantee a matching pair?",[("A","$3$"),("B","$4$"),("C","$5$"),("D","$8$"),("E","$9$")]),
+4:(r"For a real number $x$, define $\heartsuit(x)$ to be the average of $x$ and $x^2$. What is $\heartsuit(1)+\heartsuit(2)+\heartsuit(3)$?",[("A","$3$"),("B","$6$"),("C","$10$"),("D","$12$"),("E","$20$")]),
+5:(r"A month with $31$ days has the same number of Mondays and Wednesdays. How many of the seven days of the week could be the first day of this month?",[("A","$2$"),("B","$3$"),("C","$4$"),("D","$5$"),("E","$6$")]),
+6:(r"A circle is centered at $O$, $AB$ is a diameter, and $C$ is a point on the circle with $\angle COB=50^\circ$. What is the degree measure of $\angle CAB$?",[("A","$20$"),("B","$25$"),("C","$45$"),("D","$50$"),("E","$65$")]),
+7:(r"A triangle has side lengths $10$, $10$, and $12$. A rectangle has width $4$ and area equal to the area of the triangle. What is the perimeter of this rectangle?",[("A","$16$"),("B","$24$"),("C","$28$"),("D","$32$"),("E","$36$")]),
+8:(r"A ticket to a school play costs $x$ dollars, where $x$ is a whole number. A group of 9th graders buys tickets costing a total of $48$, and a group of 10th graders buys tickets costing a total of $64$. How many values of $x$ are possible?",[("A","$1$"),("B","$2$"),("C","$3$"),("D","$4$"),("E","$5$")]),
+9:(r"Larry's teacher asked him to substitute numbers for $a,b,c,d,$ and $e$ in $a-(b-(c-(d+e)))$. Larry ignored the parentheses but added and subtracted correctly and obtained the correct result by coincidence. The numbers substituted for $a,b,c,$ and $d$ were $1,2,3,$ and $4$, respectively. What number did Larry substitute for $e$?",[("A",r"$-5$"),("B",r"$-3$"),("C","$0$"),("D","$3$"),("E","$5$")]),
+10:(r"Shelby drives her scooter at $30$ miles per hour if it is not raining, and $20$ miles per hour if it is raining. Today she drove in the sun in the morning and in the rain in the evening, for a total of $16$ miles in $40$ minutes. How many minutes did she drive in the rain?",[("A","$18$"),("B","$21$"),("C","$24$"),("D","$27$"),("E","$30$")]),
 }
 
-KEY_OVERRIDES={21:"Use Vieta's formulas and factor 2010 into three positive integer roots with minimum sum.",22:"Each interior triangle corresponds to choosing six circle points.",23:"The probability telescopes when drawing whites before the first red marble.",25:"Work backward to find the smallest starting number producing a sequence of a given length."}
+KEY_OVERRIDES={1:"Expand carefully and keep the parentheses separate.",2:"Convert all time to minutes and compare meeting time with the full workday.",3:"Use the pigeonhole principle with four sock colors.",4:"Evaluate the defined average for each input.",5:"A 31-day month has three extra weekdays beyond four full weeks.",6:"Use the inscribed angle theorem.",7:"Find the isosceles triangle's height, then match rectangle area.",8:"The ticket price must divide both total costs.",9:"Compare the correct expression with the expression Larry evaluated without parentheses.",10:"Use time variables and distance equals rate times time."}
 
 SOL={
-21:[("Use Vieta's formulas",r"If the three positive integer roots are $r,s,t$, then the polynomial has product $rst=2010$ and sum $r+s+t=a$."),("Factor 2010",r"We factor $2010=2\cdot3\cdot5\cdot67$. To make the sum small, the three factors should be as balanced as possible, but the factor $67$ must be in one root."),("Group the small factors",r"The best grouping is $5$, $6$, and $67$, since $5\cdot6\cdot67=2010$ and nearby groupings such as $3,10,67$ have larger sum."),("Compute a",r"Thus the smallest possible sum is $5+6+67=78$."),("Answer",r"The smallest possible value of $a$ is $\boxed{78}$.")],
-22:[("Look for a way to create an interior triangle",r"An interior triangle is formed by three chord-intersection points. Such a triangle uses three chords whose endpoints are six distinct points on the circle."),("Choose the six circle points",r"Once six points are chosen on the circle, there is exactly one way to pair opposite points around the circle to make the three chords whose intersections form the central triangle."),("Use the no-three-chords condition",r"The condition that no three chords meet at one interior point ensures that each choice of six points gives a genuine, unique triangle."),("Count",r"Therefore the number of triangles is $\binom86=28$."),("Answer",r"There are $\boxed{28}$ such triangles.")],
-23:[("Write the stopping event",r"To stop after exactly $n$ marbles, Isabella must draw white marbles from boxes $1$ through $n-1$, then draw a red marble from box $n$."),("Compute the white probabilities",r"In box $k$, there are $k$ white marbles and $1$ red marble, so the probability of white is $\frac{k}{k+1}$. Thus the product through box $n-1$ is $\frac12\cdot\frac23\cdot\frac34\cdots\frac{n-1}{n}=\frac1n$."),("Include the red draw",r"In box $n$, the probability of red is $\frac1{n+1}$. So $P(n)=\frac1n\cdot\frac1{n+1}=\frac1{n(n+1)}$."),("Solve the inequality",r"We need $\frac1{n(n+1)}<\frac1{2010}$, so $n(n+1)>2010$."),("Find the first n",r"Since $44\cdot45=1980$ and $45\cdot46=2070$, the smallest such $n$ is $45$."),("Answer",r"The answer is $\boxed{45}$.")],
-25:[("Reverse the process",r"To find the smallest starting number for a given sequence length, it is easier to work backward from $0$."),("Build the smallest predecessors",r"The smallest number that goes to $0$ is $1$. The smallest number that goes to $1$ is $2$, then the smallest that goes to $2$ is $3$."),("Use the rule carefully",r"If the next smaller number is $m$, we need the smallest $q^2+m$ for which $q^2$ is still the largest square not exceeding the number. This requires $m<2q+1$."),("Continue the chain",r"Starting from $0$, the smallest values for increasing sequence lengths are $1,2,3,7,23,167,7223$."),("Read the needed value",r"A sequence with $8$ numbers has smallest starting value $N=7223$."),("Answer",r"The units digit of $N$ is $\boxed{3}$.")],
+1:[("Evaluate the first part",r"The first expression is $100(100-3)=100\cdot97=9700$."),("Evaluate the second part",r"The expression in parentheses is $100\cdot100-3=10000-3=9997$."),("Subtract",r"So the value is $9700-9997=-297$."),("Answer",r"The answer is $\boxed{-297}$.")],
+2:[("Find meeting time",r"The first meeting took $45$ minutes. The second took twice as long, so it took $90$ minutes."),("Add meeting time",r"The total meeting time was $45+90=135$ minutes."),("Convert the workday",r"A $9$-hour workday is $9\cdot60=540$ minutes."),("Find the percent",r"The fraction of the day spent in meetings is $\frac{135}{540}=\frac14$, or $25\%$."),("Answer",r"She spent $\boxed{25\%}$ of her workday in meetings.")],
+3:[("Think worst case",r"To avoid a matching pair as long as possible, we could pull one sock of each color."),("Use four colors",r"There are four colors, so it is possible to pull $4$ socks without a match: one red, one green, one blue, and one white."),("Force the match",r"The next sock, the fifth sock, must match one of those four colors."),("Answer",r"The minimum number is $\boxed{5}$ socks.")],
+4:[("Write the operation",r"The value $\heartsuit(x)$ is the average of $x$ and $x^2$, so $\heartsuit(x)=\frac{x+x^2}{2}$."),("Evaluate each term",r"We get $\heartsuit(1)=1$, $\heartsuit(2)=\frac{2+4}{2}=3$, and $\heartsuit(3)=\frac{3+9}{2}=6$."),("Add",r"The sum is $1+3+6=10$."),("Answer",r"The answer is $\boxed{10}$.")],
+5:[("Use full weeks",r"A $31$-day month contains four full weeks, accounting for $28$ days. Each weekday occurs at least four times."),("Look at the extra days",r"The remaining $3$ days are consecutive weekdays starting with the first day of the month. Only these extra days can make weekday counts differ."),("Require Mondays and Wednesdays to match",r"The extra three-day block must contain both Monday and Wednesday, or contain neither of them."),("Count starts",r"Starting on Monday gives Monday-Tuesday-Wednesday, which contains both. Starting on Thursday gives Thursday-Friday-Saturday, and starting on Friday gives Friday-Saturday-Sunday, which contain neither. These are $3$ possibilities."),("Answer",r"There are $\boxed{3}$ possible first weekdays.")],
+6:[("Identify the arc",r"The central angle $\angle COB=50^\circ$ measures the minor arc $CB$."),("Use the inscribed angle theorem",r"Angle $\angle CAB$ is an inscribed angle that intercepts the same arc $CB$."),("Take half",r"An inscribed angle has half the measure of its intercepted arc, so $\angle CAB=\frac12\cdot50^\circ=25^\circ$."),("Answer",r"The angle measure is $\boxed{25^\circ}$.")],
+7:[("Find the triangle height",r"The triangle is isosceles with equal sides $10$ and base $12$. The altitude to the base splits the base into two segments of length $6$."),("Use the Pythagorean theorem",r"The height is $\sqrt{10^2-6^2}=\sqrt{100-36}=8$."),("Find the triangle area",r"The area is $\frac12\cdot12\cdot8=48$."),("Find the rectangle length",r"The rectangle has width $4$ and area $48$, so its length is $12$."),("Compute perimeter",r"The perimeter is $2(4+12)=32$."),("Answer",r"The rectangle's perimeter is $\boxed{32}$.")],
+8:[("Interpret x",r"The ticket price $x$ must be a whole number of dollars."),("Use both groups",r"Since one group spent $48$ dollars and the other spent $64$ dollars, $x$ must divide both $48$ and $64$."),("Find common divisors",r"The common divisors are the divisors of $\gcd(48,64)=16$: $1,2,4,8,16$."),("Count",r"There are $5$ possible values of $x$."),("Answer",r"The answer is $\boxed{5}$.")],
+9:[("Evaluate the correct expression",r"With $a=1$, $b=2$, $c=3$, and $d=4$, the correct expression is $1-(2-(3-(4+e)))$. This simplifies to $-2-e$."),("Evaluate Larry's expression",r"Ignoring parentheses but keeping the signs in order gives $1-2-3-4+e=e-8$."),("Set them equal",r"Larry got the correct result by coincidence, so $e-8=-2-e$."),("Solve",r"Then $2e=6$, so $e=3$."),("Answer",r"Larry substituted $\boxed{3}$ for $e$.")],
+10:[("Use hours",r"Forty minutes is $\frac23$ hour. Let $t$ be the number of hours Shelby drove in the rain."),("Write the sunny time",r"Then she drove for $\frac23-t$ hours in the sun."),("Write the distance equation",r"The total distance is $20t+30(\frac23-t)=16$."),("Solve",r"This becomes $20t+20-30t=16$, so $10t=4$ and $t=0.4$ hours."),("Convert to minutes",r"The time in rain was $0.4\cdot60=24$ minutes."),("Answer",r"She drove in the rain for $\boxed{24}$ minutes.")],
 }
 
 def esc(x, quote=True):
@@ -132,7 +144,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2010" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2010" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -221,7 +233,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2010 AMC 10A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2010 AMC 10B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
@@ -242,6 +254,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
