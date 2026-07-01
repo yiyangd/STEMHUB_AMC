@@ -8,65 +8,67 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 38
+BATCH_NUMBER = 39
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2008_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 10}
-SKIPPED = [
-    "2008 AMC 10A Problem 9 skipped: OCR makes the fractional expression unreliable.",
-]
-BATCH_LABEL = "2008 AMC 10A Problems 1-8, 10"
-NEXT_START = "2008 AMC 10A Problem 11"
+TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
+SKIPPED = []
+BATCH_LABEL = "2008 AMC 10A Problems 11-20"
+NEXT_START = "2008 AMC 10A Problem 21"
 
 ANS = {
-    1: ("D", "4:30 PM"),
-    2: ("A", "12.5"),
-    3: ("A", "6"),
-    4: ("C", "3"),
-    5: ("B", "502"),
-    6: ("D", "6"),
-    7: ("E", "9"),
-    8: ("A", "750"),
-    10: ("E", "4"),
+    11: ("D", "8"),
+    12: ("C", "3.4r"),
+    13: ("D", r"(\frac15+\frac17)(t-1)=1"),
+    14: ("D", "2.7"),
+    15: ("D", "150"),
+    16: ("B", r"\frac19"),
+    17: ("B", r"54+9\pi"),
+    18: ("B", r"\frac{59}{4}"),
+    19: ("C", r"(3+\sqrt{10})\pi"),
+    20: ("D", "98"),
 }
 
 
 OV = {
-    1: (r"A bakery owner turns on his doughnut machine at $8{:}30$ AM. At $11{:}10$ AM the machine has completed one third of the day's job. At what time will the doughnut machine complete the job?", [("A", "1:50 PM"), ("B", "3:00 PM"), ("C", "3:30 PM"), ("D", "4:30 PM"), ("E", "5:50 PM")]),
-    2: (r"A square is drawn inside a rectangle. The ratio of the width of the rectangle to a side of the square is $2:1$. The ratio of the rectangle's length to its width is $2:1$. What percent of the rectangle's area is inside the square?", [("A", "$12.5$"), ("B", "$25$"), ("C", "$50$"), ("D", "$75$"), ("E", "$87.5$")]),
-    3: (r"For the positive integer $n$, let $\langle n\rangle$ denote the sum of all the positive divisors of $n$ with the exception of $n$ itself. For example, $\langle4\rangle=1+2=3$ and $\langle12\rangle=1+2+3+4+6=16$. What is $\langle\langle\langle6\rangle\rangle\rangle$?", [("A", "$6$"), ("B", "$12$"), ("C", "$24$"), ("D", "$32$"), ("E", "$36$")]),
-    4: (r"Suppose that $\frac{2}{3}$ of $10$ bananas are worth as much as $8$ oranges. How many oranges are worth as much as $\frac{1}{2}$ of $5$ bananas?", [("A", "$2$"), ("B", r"$\frac52$"), ("C", "$3$"), ("D", r"$\frac72$"), ("E", "$4$")]),
-    5: (r"Which of the following is equal to the product $\frac84\cdot\frac{12}{8}\cdot\frac{16}{12}\cdots\frac{2008}{2004}$?", [("A", "$251$"), ("B", "$502$"), ("C", "$1004$"), ("D", "$2008$"), ("E", "$4016$")]),
-    6: (r"A triathlete competes in a triathlon in which the swimming, biking, and running segments are all of the same length. The triathlete swims at $3$ kilometers per hour, bikes at $20$ kilometers per hour, and runs at $10$ kilometers per hour. Which of the following is closest to the triathlete's average speed, in kilometers per hour, for the entire race?", [("A", "$3$"), ("B", "$4$"), ("C", "$5$"), ("D", "$6$"), ("E", "$7$")]),
-    7: (r"The fraction $\frac{(3^{2008})^2-(3^{2006})^2}{(3^{2007})^2-(3^{2005})^2}$ simplifies to which of the following?", [("A", r"$\frac14$"), ("B", r"$\frac94$"), ("C", "$3$"), ("D", r"$\frac92$"), ("E", "$9$")]),
-    8: (r"Heather compares the price of a new computer at two different stores. Store A offers $15\%$ off the sticker price followed by a $\$90$ rebate, and store B offers $25\%$ off the same sticker price with no rebate. Heather saves $\$15$ by buying the computer at store A instead of store B. What is the sticker price of the computer, in dollars?", [("A", "$750$"), ("B", "$900$"), ("C", "$1000$"), ("D", "$1050$"), ("E", "$1500$")]),
-    10: (r"Each of the sides of a square $S_1$ with area $16$ is bisected, and a smaller square $S_2$ is constructed using the bisection points as vertices. The same process is carried out on $S_2$ to construct an even smaller square $S_3$. What is the area of $S_3$?", [("A", r"$\frac12$"), ("B", "$1$"), ("C", "$2$"), ("D", "$3$"), ("E", "$4$")]),
+    11: (r"While Steve and LeRoy are fishing $1$ mile from shore, their boat springs a leak, and water comes in at a constant rate of $10$ gallons per minute. The boat will sink if it takes in more than $30$ gallons of water. Steve starts rowing toward the shore at a constant rate of $4$ miles per hour while LeRoy bails water out of the boat. What is the slowest rate, in gallons per minute, at which LeRoy can bail if they are to reach the shore without sinking?", [("A", "$2$"), ("B", "$4$"), ("C", "$6$"), ("D", "$8$"), ("E", "$10$")]),
+    12: (r"In a collection of red, blue, and green marbles, there are $25\%$ more red marbles than blue marbles, and there are $60\%$ more green marbles than red marbles. Suppose that there are $r$ red marbles. What is the total number of marbles in that collection?", [("A", "$2.85r$"), ("B", "$3r$"), ("C", "$3.4r$"), ("D", "$3.85r$"), ("E", "$4.25r$")]),
+    13: (r"Doug can paint a room in $5$ hours. Dave can paint the same room in $7$ hours. Doug and Dave paint the room together and take a one-hour break for lunch. Let $t$ be the total time, in hours, required for them to complete the job working together, including lunch. Which of the following equations is satisfied by $t$?", [("A", r"$(\frac15+\frac17)(t+1)=1$"), ("B", r"$(\frac15+\frac17)t+1=1$"), ("C", r"$(\frac15+\frac17)t=1$"), ("D", r"$(\frac15+\frac17)(t-1)=1$"), ("E", r"$(5+7)t=1$")]),
+    14: (r"Older television screens have aspect ratio $4:3$. A movie has aspect ratio $2:1$ and is shown on an older television screen with a $27$-inch diagonal by letterboxing, using dark strips of equal height at the top and bottom. What is the height, in inches, of each darkened strip?", [("A", "$2$"), ("B", "$2.25$"), ("C", "$2.5$"), ("D", "$2.7$"), ("E", "$3$")]),
+    15: (r"Yesterday Han drove $1$ hour longer than Ian at an average speed $5$ miles per hour faster than Ian. Jan drove $2$ hours longer than Ian at an average speed $10$ miles per hour faster than Ian. Han drove $70$ miles more than Ian. How many more miles did Jan drive than Ian?", [("A", "$120$"), ("B", "$130$"), ("C", "$140$"), ("D", "$150$"), ("E", "$160$")]),
+    16: (r"Points $A$ and $B$ lie on a circle centered at $O$, and $\angle AOB=60^\circ$. A second circle is internally tangent to the first and tangent to both $OA$ and $OB$. What is the ratio of the area of the smaller circle to that of the larger circle?", [("A", r"$\frac1{16}$"), ("B", r"$\frac19$"), ("C", r"$\frac18$"), ("D", r"$\frac16$"), ("E", r"$\frac14$")]),
+    17: (r"An equilateral triangle has side length $6$. What is the area of the region containing all points that are outside the triangle and not more than $3$ units from a point of the triangle?", [("A", r"$36+24\sqrt3$"), ("B", r"$54+9\pi$"), ("C", r"$54+18\sqrt3+6\pi$"), ("D", r"$(2\sqrt3+3)^2\pi$"), ("E", r"$9(\sqrt3+1)^2\pi$")]),
+    18: (r"A right triangle has perimeter $32$ and area $20$. What is the length of its hypotenuse?", [("A", r"$\frac{57}{4}$"), ("B", r"$\frac{59}{4}$"), ("C", r"$\frac{61}{4}$"), ("D", r"$\frac{63}{4}$"), ("E", r"$\frac{65}{4}$")]),
+    19: (r"Rectangle $PQRS$ lies in a plane with $PQ=RS=2$ and $QR=SP=6$. The rectangle is rotated $90^\circ$ clockwise about $R$, then rotated $90^\circ$ clockwise about the point that $S$ moved to after the first rotation. What is the length of the path traveled by point $P$?", [("A", r"$(2\sqrt3+5)\pi$"), ("B", r"$6\pi$"), ("C", r"$(3+\sqrt{10})\pi$"), ("D", r"$(\sqrt3+2\sqrt5)\pi$"), ("E", r"$2\sqrt{10}\pi$")]),
+    20: (r"Trapezoid $ABCD$ has bases $AB$ and $CD$ and diagonals intersecting at $K$. Suppose that $AB=9$, $DC=12$, and the area of $\triangle AKD$ is $24$. What is the area of trapezoid $ABCD$?", [("A", "$92$"), ("B", "$94$"), ("C", "$96$"), ("D", "$98$"), ("E", "$100$")]),
 }
 
 
 KEY_OVERRIDES = {
-    1: "Use constant work rate: one third of the job determines the full time.",
-    2: "Express rectangle dimensions in terms of the square side and compare areas.",
-    3: "Iterate the proper-divisor-sum function carefully.",
-    4: "Convert both fruit values through a common banana-to-orange ratio.",
-    5: "Use telescoping cancellation in a product of fractions.",
-    6: "For equal distances, average speed is total distance divided by total time, not the arithmetic mean of speeds.",
-    7: "Factor differences of squares and cancel common powers.",
-    8: "Translate discounts and rebates into equations in the sticker price.",
-    10: "Joining side midpoints of a square creates a new square with half the area.",
+    11: "Balance leaking and bailing over the rowing time so the water stays at or below 30 gallons.",
+    12: "Write blue and green counts in terms of the red count r.",
+    13: "Subtract the lunch break from total time to get actual painting time.",
+    14: "Use a 3-4-5 television screen and compare the movie height with the screen height.",
+    15: "Set up Ian's time and speed, then reuse Han's condition to compute Jan's extra distance.",
+    16: "Use the angle bisector and tangency distances in a 60-degree sector.",
+    17: "Use the outer offset area formula: perimeter times radius plus a full circle of corner arcs.",
+    18: "Use area and perimeter relations for the legs and hypotenuse of a right triangle.",
+    19: "Add two quarter-circle arc lengths with different rotation centers.",
+    20: "Use diagonal intersection ratios in a trapezoid to relate triangle area to trapezoid height.",
 }
 
 
 SOL = {
-    1: [("Find the time for one third", r"From $8{:}30$ AM to $11{:}10$ AM is $2$ hours $40$ minutes, or $160$ minutes. That is one third of the job."), ("Scale to the whole job", r"If $160$ minutes is one third, then the full job takes $3\cdot160=480$ minutes, which is $8$ hours."), ("Add to the start time", r"Starting at $8{:}30$ AM, adding $8$ hours gives $4{:}30$ PM."), ("Answer", r"The machine completes the job at $\boxed{4{:}30\text{ PM}}$." )],
-    2: [("Choose a convenient square side", r"Let the side of the square be $s$. The rectangle's width is twice that, so its width is $2s$."), ("Find the rectangle length", r"The rectangle's length is twice its width, so the length is $4s$."), ("Compare areas", r"The square area is $s^2$, and the rectangle area is $(2s)(4s)=8s^2$."), ("Convert to percent", r"The fraction inside the square is $\frac{s^2}{8s^2}=\frac18=12.5\%$."), ("Answer", r"The answer is $\boxed{12.5\%}$." )],
-    3: [("Evaluate the first layer", r"The proper positive divisors of $6$ are $1,2,3$, and their sum is $1+2+3=6$. Thus $\langle6\rangle=6$."), ("Notice the fixed value", r"Since applying the operation to $6$ gives $6$ again, every additional application also gives $6$."), ("Apply all three brackets", r"Therefore $\langle\langle\langle6\rangle\rangle\rangle=6$."), ("Answer", r"The answer is $\boxed{6}$." )],
-    4: [("Find the banana amount equivalent to 8 oranges", r"Two thirds of $10$ bananas is $\frac{2}{3}\cdot10=\frac{20}{3}$ bananas. This is worth $8$ oranges."), ("Find the target banana amount", r"One half of $5$ bananas is $\frac52$ bananas."), ("Scale the value", r"The number of oranges equivalent to $\frac52$ bananas is $8\cdot\frac{(5/2)}{(20/3)}=8\cdot\frac{15}{40}=3$."), ("Answer", r"The answer is $\boxed{3}$ oranges." )],
-    5: [("Recognize the telescoping pattern", r"The product is $\frac84\cdot\frac{12}{8}\cdot\frac{16}{12}\cdots\frac{2008}{2004}$. Every numerator after the first cancels with the next denominator."), ("Cancel", r"After cancellation, only the final numerator and first denominator remain: $\frac{2008}{4}$."), ("Compute", r"$\frac{2008}{4}=502$."), ("Answer", r"The product is $\boxed{502}$." )],
-    6: [("Use equal segment lengths", r"Let each segment have length $d$. The total distance is $3d$."), ("Compute total time", r"The total time is $\frac d3+\frac d{20}+\frac d{10}=d\left(\frac13+rac1{20}+rac1{10}\right)=d\cdot\frac{29}{60}$."), ("Find average speed", r"Average speed is total distance divided by total time, so it is $\frac{3d}{29d/60}=\frac{180}{29}\approx6.2$."), ("Choose the closest option", r"The closest listed speed is $6$ kilometers per hour."), ("Answer", r"The answer is $\boxed{6}$." )],
-    7: [("Use difference of squares", r"Both numerator and denominator have the form $A^2-B^2=(A-B)(A+B)$, but factoring powers of $3$ is even faster."), ("Factor the numerator", r"$(3^{2008})^2-(3^{2006})^2=3^{4016}-3^{4012}=3^{4012}(3^4-1)$."), ("Factor the denominator", r"$(3^{2007})^2-(3^{2005})^2=3^{4014}-3^{4010}=3^{4010}(3^4-1)$."), ("Cancel", r"The common factor $(3^4-1)$ cancels, leaving $3^{4012}/3^{4010}=3^2=9$."), ("Answer", r"The expression simplifies to $\boxed{9}$." )],
-    8: [("Let the sticker price be x", r"Store A's final price is $0.85x-90$. Store B's final price is $0.75x$."), ("Use the savings statement", r"Heather saves $15$ by buying at Store A, so Store B's price is $15$ more than Store A's price: $0.75x-(0.85x-90)=15$."), ("Solve", r"This gives $-0.10x+90=15$, so $0.10x=75$, and $x=750$."), ("Answer", r"The sticker price is $\boxed{750}$ dollars." )],
-    10: [("Understand the midpoint square", r"When the side midpoints of a square are connected, the new square has diagonals equal to the side length of the original square."), ("Compare areas", r"A square whose diagonal is $d$ has area $\frac{d^2}{2}$. Therefore the midpoint square has half the area of the original square."), ("Apply twice", r"Starting from area $16$, the first new square has area $8$, and the second new square has area $4$."), ("Answer", r"The area of $S_3$ is $\boxed{4}$." )],
+    11: [("Find the rowing time", r"The boat is $1$ mile from shore and rows at $4$ miles per hour, so the trip takes $\frac14$ hour, or $15$ minutes."), ("Find the incoming water", r"Water enters at $10$ gallons per minute for $15$ minutes, so $150$ gallons would enter without bailing."), ("Limit the net water", r"The boat can take at most $30$ gallons, so LeRoy must remove at least $150-30=120$ gallons during the $15$ minutes."), ("Compute the rate", r"The slowest bailing rate is $120/15=8$ gallons per minute."), ("Answer", r"The answer is $\boxed{8}$." )],
+    12: [("Express blue in terms of red", r"There are $25\%$ more red marbles than blue marbles, so $r=1.25b$. Therefore $b=\frac{r}{1.25}=0.8r$."), ("Express green in terms of red", r"There are $60\%$ more green marbles than red marbles, so $g=1.6r$."), ("Add the three colors", r"The total is $r+0.8r+1.6r=3.4r$."), ("Answer", r"The total number of marbles is $\boxed{3.4r}$." )],
+    13: [("Find the combined work rate", r"Doug paints $\frac15$ of the room per hour, and Dave paints $\frac17$ of the room per hour. Together their rate is $\frac15+\frac17$."), ("Account for lunch", r"The total time is $t$, but one hour is lunch, so the actual painting time is $t-1$."), ("Set completed work equal to 1", r"Rate times working time equals one full room: $(\frac15+\frac17)(t-1)=1$."), ("Answer", r"The correct equation is $\boxed{(\frac15+\frac17)(t-1)=1}$." )],
+    14: [("Find screen dimensions", r"A $4:3$ screen with diagonal $27$ is a scaled $3$-$4$-$5$ triangle. The scale factor is $27/5=5.4$, so the screen width is $21.6$ and height is $16.2$."), ("Fit the movie width", r"The movie has aspect ratio $2:1$ and uses the full screen width $21.6$, so its height is $21.6/2=10.8$."), ("Find total dark height", r"The unused vertical height is $16.2-10.8=5.4$ inches."), ("Split into two strips", r"The top and bottom strips have equal height, so each is $5.4/2=2.7$ inches."), ("Answer", r"Each strip is $\boxed{2.7}$ inches high." )],
+    15: [("Let Ian's time and speed be variables", r"Let Ian drive for $t$ hours at $v$ miles per hour. Ian's distance is $tv$."), ("Use Han's information", r"Han drives for $t+1$ hours at speed $v+5$, and he drives $70$ more miles than Ian. Thus $(t+1)(v+5)-tv=70$."), ("Simplify Han's equation", r"Expanding gives $v+5t+5=70$, so $v+5t=65$."), ("Compute Jan's extra distance", r"Jan's extra distance over Ian is $(t+2)(v+10)-tv=2v+10t+20=2(v+5t)+20=2\cdot65+20=150$."), ("Answer", r"Jan drove $\boxed{150}$ more miles than Ian." )],
+    16: [("Use symmetry", r"The smaller circle tangent to both rays $OA$ and $OB$ has its center on the angle bisector of the $60^\circ$ angle."), ("Relate radius to distance from O", r"If the smaller circle has radius $r$ and its center is distance $x$ from $O$, then $r=x\sin30^\circ=\frac{x}{2}$, so $x=2r$."), ("Use internal tangency", r"Let the larger circle have radius $R$. Internal tangency gives $x+r=R$. Since $x=2r$, we get $3r=R$."), ("Compare areas", r"The area ratio is $\frac{r^2}{R^2}=\frac{r^2}{(3r)^2}=\frac19$."), ("Answer", r"The answer is $\boxed{\frac19}$." )],
+    17: [("Think of expanding the triangle", r"The desired region is the outside band within distance $3$ of the triangle. For a convex figure, this outside area equals perimeter times the distance plus the area of a circle of that radius from the rounded corners."), ("Compute the side bands", r"The equilateral triangle has perimeter $18$. With distance $3$, the rectangular side bands contribute $18\cdot3=54$."), ("Compute the corner arcs", r"The three rounded corner sectors together make one full circle of radius $3$, contributing $\pi\cdot3^2=9\pi$."), ("Add", r"The outside region has area $54+9\pi$."), ("Answer", r"The answer is $\boxed{54+9\pi}$." )],
+    18: [("Name the sides", r"Let the legs be $a$ and $b$, and let the hypotenuse be $c$. The area condition gives $\frac12ab=20$, so $ab=40$."), ("Use the perimeter", r"The perimeter is $a+b+c=32$, so $a+b=32-c$."), ("Use the Pythagorean relation", r"Because $c^2=a^2+b^2=(a+b)^2-2ab$, we have $c^2=(32-c)^2-80$."), ("Solve", r"Expanding and simplifying gives $64c=944$, so $c=\frac{944}{64}=\frac{59}{4}$."), ("Answer", r"The hypotenuse is $\boxed{\frac{59}{4}}$." )],
+    19: [("Break the path into two arcs", r"Point $P$ moves along a quarter-circle during each $90^\circ$ rotation. We need the radius of each arc."), ("First rotation", r"In the original rectangle, $PR=\sqrt{2^2+6^2}=2\sqrt{10}$. A quarter-circle with this radius has length $\frac{\pi}{2}\cdot2\sqrt{10}=\pi\sqrt{10}$."), ("Second rotation", r"After the first rotation, the new center is where $S$ moved. The distance from that point to the moved point $P$ is $6$, so the second quarter-circle has length $\frac{\pi}{2}\cdot6=3\pi$."), ("Add arcs", r"The total path length is $\pi\sqrt{10}+3\pi=(3+\sqrt{10})\pi$."), ("Answer", r"The answer is $\boxed{(3+\sqrt{10})\pi}$." )],
+    20: [("Use the diagonal ratio", r"In a trapezoid, the diagonals divide each other in the ratio of the bases. Since $AB:CD=9:12=3:4$, point $K$ is $\frac37$ of the way from $A$ to $C$."), ("Relate K to the height", r"Let the trapezoid height be $h$. Then $K$ is at height $\frac47h$ above base $CD$."), ("Compute triangle AKD area", r"Using coordinates or equivalent base-height reasoning, the area of $\triangle AKD$ is $\frac{18h}{7}$. We are given this area is $24$, so $\frac{18h}{7}=24$."), ("Find h and the trapezoid area", r"Thus $h=\frac{28}{3}$. The trapezoid area is $\frac12(9+12)h=\frac{21}{2}\cdot\frac{28}{3}=98$."), ("Answer", r"The area is $\boxed{98}$." )],
 }
 
 
@@ -243,7 +245,7 @@ def main():
         + "- Commit hash: pending\n"
         + "- Pushed: pending\n"
         + f"- Next batch should start from: {NEXT_START}\n"
-        + "- Review notes: Skipped Problem 9 because OCR makes the fractional expression unreliable.\n",
+        + "- Review notes: none.\n",
         encoding="utf-8",
     )
 
@@ -267,7 +269,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批跳过 2008 AMC 10A Problem 9：OCR 中分式结构不可靠。\n"
+        + "本批无跳过题。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题；遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 teaching steps 后 commit/push。\n",
         encoding="utf-8",
