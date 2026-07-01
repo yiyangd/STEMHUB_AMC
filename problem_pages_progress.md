@@ -2044,3 +2044,19 @@
 - Pushed: pending
 - Next batch should start from: 2021 Spring AMC 10B Problem 21
 - Review notes: none.
+
+## Batch 126: 2021 Spring AMC 10B Problems 22,24,25
+
+- Start time: 2026-07-01T03:47:03-07:00
+- End time: 2026-07-01T03:47:04-07:00
+- Processed contest: AMC 10
+- Processed range: 2021 Spring AMC 10B Problems 22,24,25
+- Generated count: 3
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2021 Spring AMC 10B Problem 21 skipped: folding geometry depends on the missing paper-folding figure.; 2021 Spring AMC 10B Problem 23 skipped: coin-overlap probability depends on the missing shaded-region diagram.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2021 Fall AMC 10A Problem 1
+- Review notes: none.
