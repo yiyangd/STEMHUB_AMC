@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 165
+BATCH_NUMBER = 166
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16,18,19,20}
-SKIPPED = ["2005 AMC 12A Problem 17 skipped: the cube-cutting volume question strongly depends on the missing figures."]
-BATCH_LABEL = "2005 AMC 12A Problems 11-16,18-20"
-NEXT_START = "2005 AMC 12A Problem 21"
+TARGET_NUMBERS = {21,22,23,24,25}
+SKIPPED = []
+BATCH_LABEL = "2005 AMC 12A Problems 21-25"
+NEXT_START = "2005 AMC 12B Problem 1"
 
-ANS={11:("E","45"),12:("D","8"),13:("D","12"),14:("D",r"\frac{11}{21}"),15:("C",r"\frac13"),16:("D","9"),18:("A","100"),19:("B","1462"),20:("E",r"2^{2005}")}
+ANS={21:("C","2"),22:("B","10"),23:("B",r"\frac{31}{300}"),24:("B","22"),25:("C","80")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1036,6 +1036,29 @@ SOL.update({
 18:[("Count numbers not divisible by 2, 3, or 5",r"By inclusion-exclusion, the positive integers less than \(1000\) not divisible by \(2,3,\) or \(5\) number \[999-499-333-199+166+99+66-33=266.\]"),("Remove primes",r"Among the \(168\) primes less than \(1000\), the primes \(2,3,\) and \(5\) were not included in the \(266\). So \(165\) included numbers are prime."),("Remove 1",r"The number \(1\) is also included in the \(266\), but it is not composite."),("Compute composite count",r"The prime-looking numbers are therefore \[266-165-1=100.\]"),("Conclude",r"The answer is \(\boxed{100}\)."),],
 19:[("Recognize the odometer system",r"Since the odometer skips the digit \(4\), each digit position effectively has \(9\) possible symbols: \(0,1,2,3,5,6,7,8,9\)."),("Map displayed digits to base-9 values",r"Displayed digits \(0,1,2,3\) keep their values, while \(5,6,7,8,9\) represent values \(4,5,6,7,8\)."),("Convert the reading",r"The reading \(002005\) corresponds to base-\(9\) digits \(0,0,2,0,0,4\)."),("Evaluate",r"Thus the actual mileage is \[2\cdot9^3+4=2\cdot729+4=1462.\]"),("Conclude",r"The answer is \(\boxed{1462}\)."),],
 20:[("Understand one inverse step",r"The function is the tent map. For any value strictly between \(0\) and \(1\), there are exactly two preimages, one on each linear branch."),("Start with the target",r"The value \(\frac12\) is strictly between \(0\) and \(1\), so \(f(x)=\frac12\) has two solutions: \(x=\frac14\) and \(x=\frac34\)."),("Iterate the idea",r"Each additional inverse step doubles the number of solutions, because each existing target value lies in \((0,1)\) and has two preimages."),("Apply 2005 iterations",r"Therefore the equation \(f^{[2005]}(x)=\frac12\) has \[2^{2005}\] solutions in \([0,1]\)."),("Conclude",r"The answer is \(\boxed{2^{2005}}\)."),],
+})
+OV.update({
+21:(r"How many ordered triples of integers \((a,b,c)\), with \(a\ge2\), \(b\ge1\), and \(c\ge0\), satisfy both \(\log_a b=c^{2005}\) and \(a+b+c=2005\)?",[("A","0"),("B","1"),("C","2"),("D","3"),("E","4")]),
+22:(r"A rectangular box \(P\) is inscribed in a sphere of radius \(r\). The surface area of \(P\) is \(384\), and the sum of the lengths of its \(12\) edges is \(112\). What is \(r\)?",[("A","8"),("B","10"),("C","12"),("D","14"),("E","16")]),
+23:(r"Two distinct numbers \(a\) and \(b\) are chosen randomly from the set \(\{2,2^2,2^3,\ldots,2^{25}\}\). What is the probability that \(\log_a b\) is an integer?",[("A",r"\(\frac2{25}\)"),("B",r"\(\frac{31}{300}\)"),("C",r"\(\frac{13}{100}\)"),("D",r"\(\frac7{50}\)"),("E",r"\(\frac12\)")]),
+24:(r"Let \(P(x)=(x-1)(x-2)(x-3)\). For how many polynomials \(Q(x)\) does there exist a polynomial \(R(x)\) of degree \(3\) such that \(P(Q(x))=P(x)\cdot R(x)\)?",[("A","19"),("B","22"),("C","24"),("D","27"),("E","32")]),
+25:(r"Let \(S\) be the set of all points with coordinates \((x,y,z)\), where \(x,y,\) and \(z\) are each chosen from the set \(\{0,1,2\}\). How many equilateral triangles have all their vertices in \(S\)?",[("A","72"),("B","76"),("C","80"),("D","84"),("E","88")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Split into the cases \(c=0\), \(c=1\), and \(c\ge2\).",
+22:"Use surface area and edge sum to find the space diagonal.",
+23:"Write \(a=2^i\) and \(b=2^j\), then count divisibility \(i\mid j\).",
+24:"Use interpolation values at \(x=1,2,3\) and exclude linear \(Q\).",
+25:"Classify lattice equilateral triangles by squared side length.",
+})
+
+SOL.update({
+21:[("Rewrite the logarithm",r"The equation \(\log_a b=c^{2005}\) means \[b=a^{c^{2005}}.\]"),("Check c equals 0",r"If \(c=0\), then \(b=a^0=1\). The sum condition gives \(a+1=2005\), so \(a=2004\). This is one valid triple."),("Check c equals 1",r"If \(c=1\), then \(b=a\). The sum condition gives \(a+a+1=2005\), so \(a=b=1002\). This is another valid triple."),("Rule out c at least 2",r"If \(c\ge2\), then \(c^{2005}\) is enormous, and with \(a\ge2\), \(b=a^{c^{2005}}\) is far greater than \(2005\). This cannot satisfy \(a+b+c=2005\)."),("Conclude",r"There are \(\boxed{2}\) ordered triples."),],
+22:[("Name the side lengths",r"Let the side lengths of the box be \(x,y,z\). The surface area condition gives \[2(xy+yz+zx)=384,\] so \(xy+yz+zx=192\)."),("Use the edge sum",r"The \(12\) edges consist of four copies of each side length, so \[4(x+y+z)=112,\] giving \(x+y+z=28\)."),("Find the space diagonal",r"The square of the space diagonal is \[x^2+y^2+z^2=(x+y+z)^2-2(xy+yz+zx)=28^2-2\cdot192=400.\]"),("Relate to the sphere",r"For a rectangular box inscribed in a sphere, the space diagonal is the diameter of the sphere."),("Compute r",r"The space diagonal is \(20\), so \(2r=20\) and \(r=10\)."),("Conclude",r"The answer is \(\boxed{10}\)."),],
+23:[("Convert to exponents",r"Write \(a=2^i\) and \(b=2^j\), where \(i,j\in\{1,2,\ldots,25\}\) and \(i\ne j\). Then \[\log_a b=\log_{2^i}2^j=\frac{j}{i}.\]"),("Set the integer condition",r"The value \(\frac{j}{i}\) is an integer exactly when \(i\mid j\)."),("Count ordered choices",r"There are \(25\cdot24=600\) ordered choices for \((a,b)\). For each \(i\), the number of valid \(j\ne i\) is \(\left\lfloor\frac{25}{i}\right\rfloor-1\)."),("Sum valid choices",r"The sum \[\sum_{i=1}^{25}\left(\left\lfloor\frac{25}{i}\right\rfloor-1\right)=62.\]"),("Compute probability",r"The probability is \[\frac{62}{600}=\frac{31}{300}.\]"),("Conclude",r"The answer is $\boxed{\frac{31}{300}}$."),],
+24:[("Use divisibility by P(x)",r"The equation \(P(Q(x))=P(x)R(x)\) means \(P(Q(x))\) must be divisible by \(P(x)=(x-1)(x-2)(x-3)\)."),("Evaluate at the roots of P",r"For \(x=1,2,3\), we need \(P(Q(x))=0\). Therefore each of \(Q(1),Q(2),Q(3)\) must be one of \(1,2,3\)."),("Count possible value triples",r"There are \(3^3=27\) possible triples \((Q(1),Q(2),Q(3))\), and each determines a unique polynomial \(Q\) of degree at most \(2\)."),("Use the degree of R",r"Since \(R\) must have degree \(3\), \(P(Q(x))\) must have degree \(6\). Thus \(Q\) must be truly quadratic, not linear or constant."),("Exclude linear triples",r"The interpolation is linear exactly when the three values form an arithmetic progression. Among values in \(\{1,2,3\}\), the arithmetic triples are \((1,1,1),(2,2,2),(3,3,3),(1,2,3),(3,2,1)\), five triples."),("Conclude",r"The number of valid polynomials is \(27-5=\boxed{22}\)."),],
+25:[("Classify by side length",r"All vertices lie in the \(3\times3\times3\) lattice. A coordinate-difference check shows that equilateral triangles can occur only with squared side lengths \(2,6,\) or \(8\)."),("Count side squared 2",r"Triangles with side squared \(2\) lie inside one of the \(8\) unit cubes. Each unit cube contains \(8\) such triangles, the faces of two complementary regular tetrahedra. This gives \(8\cdot8=64\) triangles."),("Count side squared 8",r"Scaling the same unit-cube configuration to the whole \(2\times2\times2\) cube gives \(8\) triangles with side squared \(8\)."),("Count side squared 6",r"For side squared \(6\), each coordinate \(0,1,2\) appears once among the three vertices, so the centroid is \((1,1,1)\). Ordering the vertices by their \(x\)-coordinate, a direct permutation check for the \(y\)- and \(z\)-coordinates gives \(8\) such triangles."),("Add the cases",r"The total number is \[64+8+8=80.\]"),("Conclude",r"The answer is \(\boxed{80}\)."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
