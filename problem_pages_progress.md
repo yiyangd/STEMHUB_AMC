@@ -2364,3 +2364,19 @@
 - Pushed: pending
 - Next batch should start from: 2002 AMC 12A Problem 1
 - Review notes: none.
+
+## Batch 146: 2002 AMC 12A Problems 1-4,6,7,9,10
+
+- Start time: 2026-07-01T04:53:54-07:00
+- End time: 2026-07-01T04:53:55-07:00
+- Processed contest: AMC 10
+- Processed range: 2002 AMC 12A Problems 1-4,6,7,9,10
+- Generated count: 8
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2002 AMC 12A Problem 5 skipped: shaded-circle region depends on the missing figure.; 2002 AMC 12A Problem 8 skipped: flag-area comparison depends on the missing figure.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2002 AMC 12A Problem 11
+- Review notes: none.

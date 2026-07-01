@@ -1,20 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 1063
-- Latest batch: 145 (2024 AMC 10B Problems 22-24)
-- Latest new generated count: 3
+- Total manifest entries: 1071
+- Latest batch: 146 (2002 AMC 12A Problems 1-4,6,7,9,10)
+- Latest new generated count: 8
 - Latest updated existing count: 0
 - Latest skipped count: 2
 - MathJax validation: passed
-- Answer verification source: AoPS 2024 AMC 10B Answer Key
+- Answer verification source: AoPS 2002 AMC 12A Answer Key
 
 ## Latest Batch Pages
 
-- `2024 AMC 10B Problem 22` -> `amc10/problems/2024-amc-10b-problem-22/`
-- `2024 AMC 10B Problem 23` -> `amc10/problems/2024-amc-10b-problem-23/`
-- `2024 AMC 10B Problem 24` -> `amc10/problems/2024-amc-10b-problem-24/`
+- `2002 AMC 12A Problem 1` -> `amc10/problems/2002-amc-12a-problem-1/`
+- `2002 AMC 12A Problem 2` -> `amc10/problems/2002-amc-12a-problem-2/`
+- `2002 AMC 12A Problem 3` -> `amc10/problems/2002-amc-12a-problem-3/`
+- `2002 AMC 12A Problem 4` -> `amc10/problems/2002-amc-12a-problem-4/`
+- `2002 AMC 12A Problem 6` -> `amc10/problems/2002-amc-12a-problem-6/`
+- `2002 AMC 12A Problem 7` -> `amc10/problems/2002-amc-12a-problem-7/`
+- `2002 AMC 12A Problem 9` -> `amc10/problems/2002-amc-12a-problem-9/`
+- `2002 AMC 12A Problem 10` -> `amc10/problems/2002-amc-12a-problem-10/`
 
 ## Skipped in latest batch
 
-- 2024 AMC 10B Problem 21 skipped: PDF text is truncated and omits key pipe-radius and geometry information.
-- 2024 AMC 10B Problem 25 skipped: 3D brick reconfiguration depends on the missing figure.
+- 2002 AMC 12A Problem 5 skipped: shaded-circle region depends on the missing figure.
+- 2002 AMC 12A Problem 8 skipped: flag-area comparison depends on the missing figure.
