@@ -8,67 +8,64 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 41
+BATCH_NUMBER = 42
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2008_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
 SKIPPED = []
-BATCH_LABEL = "2008 AMC 10B Problems 1-10"
-NEXT_START = "2008 AMC 10B Problem 11"
+BATCH_LABEL = "2008 AMC 10B Problems 11-20"
+NEXT_START = "2008 AMC 10B Problem 21"
 
 ANS = {
-    1: ("E", "6"),
-    2: ("B", "4"),
-    3: ("D", "x^{1/2}"),
-    4: ("C", "400000"),
-    5: ("A", "0"),
-    6: ("C", r"\frac{1}{10}"),
-    7: ("C", "100"),
-    8: ("C", "9"),
-    9: ("A", "1"),
-    10: ("A", r"\sqrt{10}"),
+    11: ("B", "53"),
+    12: ("A", "2500"),
+    13: ("B", "4015"),
+    14: ("B", r"(-\frac{5\sqrt3}{3},5)"),
+    15: ("A", "6"),
+    16: ("A", r"\frac{3}{8}"),
+    17: ("B", "0.189"),
+    18: ("B", "900"),
+    19: ("E", r"48\pi-36\sqrt3"),
+    20: ("B", r"\frac{7}{18}"),
 }
-
 
 OV = {
-    1: (r"A basketball player made $5$ baskets during a game. Each basket was worth either $2$ or $3$ points. How many different numbers could represent the total points scored by the player?", [("A", "$2$"), ("B", "$3$"), ("C", "$4$"), ("D", "$5$"), ("E", "$6$")]),
-    2: (r"A $4\times4$ block of calendar dates is shown: $\begin{matrix}1&2&3&4\\8&9&10&11\\15&16&17&18\\22&23&24&25\end{matrix}$. The order of the numbers in the second row is to be reversed. Then the order of the numbers in the fourth row is to be reversed. Finally, the numbers on each diagonal are to be added. What will be the positive difference between the two diagonal sums?", [("A", "$2$"), ("B", "$4$"), ("C", "$6$"), ("D", "$8$"), ("E", "$10$")]),
-    3: (r"Assume that $x$ is a positive real number. Which is equivalent to $\sqrt[3]{x\sqrt{x}}$?", [("A", r"$x^{1/6}$"), ("B", r"$x^{1/4}$"), ("C", r"$x^{3/8}$"), ("D", r"$x^{1/2}$"), ("E", "$x$")]),
-    4: (r"A semipro baseball league has teams with $21$ players each. League rules state that a player must be paid at least $\$15{,}000$, and that the total of all players' salaries for each team cannot exceed $\$700{,}000$. What is the maximum possible salary, in dollars, for a single player?", [("A", "$270{,}000$"), ("B", "$385{,}000$"), ("C", "$400{,}000$"), ("D", "$430{,}000$"), ("E", "$700{,}000$")]),
-    5: (r"For real numbers $a$ and $b$, define $a\$b=(a-b)^2$. What is $(x-y)^2\$(y-x)^2$?", [("A", "$0$"), ("B", "$x^2+y^2$"), ("C", "$2x^2$"), ("D", "$2y^2$"), ("E", "$4xy$")]),
-    6: (r"Points $B$ and $C$ lie on $\overline{AD}$. The length of $AB$ is $4$ times the length of $BD$, and the length of $AC$ is $9$ times the length of $CD$. The length of $BC$ is what fraction of the length of $AD$?", [("A", r"$\frac{1}{36}$"), ("B", r"$\frac{1}{13}$"), ("C", r"$\frac{1}{10}$"), ("D", r"$\frac{5}{36}$"), ("E", r"$\frac{1}{5}$")]),
-    7: (r"An equilateral triangle of side length $10$ is completely filled in by non-overlapping equilateral triangles of side length $1$. How many small triangles are required?", [("A", "$10$"), ("B", "$25$"), ("C", "$100$"), ("D", "$250$"), ("E", "$1000$")]),
-    8: (r"A class collects $\$50$ to buy flowers for a classmate who is in the hospital. Roses cost $\$3$ each, and carnations cost $\$2$ each. No other flowers are to be used. How many different bouquets could be purchased for exactly $\$50$?", [("A", "$1$"), ("B", "$7$"), ("C", "$9$"), ("D", "$16$"), ("E", "$17$")]),
-    9: (r"A quadratic equation $ax^2-2ax+b=0$ has two real solutions. What is the average of the solutions?", [("A", "$1$"), ("B", "$2$"), ("C", r"$\frac{b}{a}$"), ("D", r"$\frac{2b}{a}$"), ("E", r"$\frac{2b-a}{a}$")]),
-    10: (r"Points $A$ and $B$ are on a circle of radius $5$ and $AB=6$. Point $C$ is the midpoint of the minor arc $AB$. What is the length of the line segment $AC$?", [("A", r"$\sqrt{10}$"), ("B", r"$\sqrt{7}$"), ("C", r"$\sqrt{14}$"), ("D", r"$\sqrt{15}$"), ("E", r"$4\sqrt{2}$")]),
+    11: (r"Suppose that $(u_n)$ is a sequence of real numbers satisfying $u_{n+2}=2u_{n+1}+u_n$, and that $u_3=9$ and $u_6=128$. What is $u_5$?", [("A", "$40$"), ("B", "$53$"), ("C", "$68$"), ("D", "$88$"), ("E", "$104$")]),
+    12: (r"Postman Pete has a pedometer to count his steps. The pedometer records up to $99999$ steps, then flips over to $00000$ on the next step. Pete plans to determine his mileage for a year. On January 1 Pete sets the pedometer to $00000$. During the year, the pedometer flips from $99999$ to $00000$ forty-four times. On December 31 the pedometer reads $50000$. Pete takes $1800$ steps per mile. Which of the following is closest to the number of miles Pete walked during the year?", [("A", "$2500$"), ("B", "$3000$"), ("C", "$3500$"), ("D", "$4000$"), ("E", "$4500$")]),
+    13: (r"For each positive integer $n$, the mean of the first $n$ terms of a sequence is $n$. What is the $2008$th term of the sequence?", [("A", "$2008$"), ("B", "$4015$"), ("C", "$4016$"), ("D", "$4{,}030{,}056$"), ("E", "$4{,}032{,}064$")]),
+    14: (r"Triangle $OAB$ has $O=(0,0)$, $B=(5,0)$, and $A$ in the first quadrant. In addition, $\angle ABO=90^\circ$ and $\angle AOB=30^\circ$. Suppose that $\overline{OA}$ is rotated $90^\circ$ counterclockwise about $O$. What are the coordinates of the image of $A$?", [("A", r"$(-\frac{10\sqrt3}{3},5)$"), ("B", r"$(-\frac{5\sqrt3}{3},5)$"), ("C", r"$(\sqrt3,5)$"), ("D", r"$(\frac{5\sqrt3}{3},5)$"), ("E", r"$(\frac{10\sqrt3}{3},5)$")]),
+    15: (r"How many right triangles have integer leg lengths $a$ and $b$ and a hypotenuse of length $b+1$, where $b<100$?", [("A", "$6$"), ("B", "$7$"), ("C", "$8$"), ("D", "$9$"), ("E", "$10$")]),
+    16: (r"Two fair coins are to be tossed once. For each head that results, one fair die is to be rolled. What is the probability that the sum of the die rolls is odd? Note that if no die is rolled, their sum is $0$.", [("A", r"$\frac{3}{8}$"), ("B", r"$\frac{1}{2}$"), ("C", r"$\frac{43}{72}$"), ("D", r"$\frac{5}{8}$"), ("E", r"$\frac{2}{3}$")]),
+    17: (r"A poll shows that $70\%$ of all voters approve of the mayor's work. On three separate occasions a pollster selects a voter at random. What is the probability that on exactly one of these three occasions the voter approves of the mayor's work?", [("A", "$0.063$"), ("B", "$0.189$"), ("C", "$0.233$"), ("D", "$0.333$"), ("E", "$0.441$")]),
+    18: (r"Bricklayer Brenda would take $9$ hours to build a chimney alone, and bricklayer Brandon would take $10$ hours to build it alone. When they work together they talk a lot, and their combined output is decreased by $10$ bricks per hour. Working together, they build the chimney in $5$ hours. How many bricks are in the chimney?", [("A", "$500$"), ("B", "$900$"), ("C", "$950$"), ("D", "$1000$"), ("E", "$1900$")]),
+    19: (r"A cylindrical tank with radius $4$ feet and height $9$ feet is lying on its side. The tank is filled with water to a depth of $2$ feet. What is the volume of the water, in cubic feet?", [("A", r"$24\pi-36\sqrt2$"), ("B", r"$24\pi-24\sqrt3$"), ("C", r"$36\pi-36\sqrt3$"), ("D", r"$36\pi-24\sqrt2$"), ("E", r"$48\pi-36\sqrt3$")]),
+    20: (r"The faces of a cubical die are marked with the numbers $1,2,2,3,3,$ and $4$. The faces of a second cubical die are marked with the numbers $1,3,4,5,6,$ and $8$. Both dice are thrown. What is the probability that the sum of the two top numbers will be $5$, $7$, or $9$?", [("A", r"$\frac{5}{18}$"), ("B", r"$\frac{7}{18}$"), ("C", r"$\frac{11}{18}$"), ("D", r"$\frac{3}{4}$"), ("E", r"$\frac{8}{9}$")]),
 }
-
 
 KEY_OVERRIDES = {
-    1: "Count possible totals by tracking how many 3-point baskets were made.",
-    2: "Update only the diagonal entries after reversing the two rows.",
-    3: "Convert radicals to fractional exponents and simplify.",
-    4: "Maximize one salary by minimizing the other 20 salaries.",
-    5: "Notice that $(x-y)^2$ and $(y-x)^2$ are equal before applying the operation.",
-    6: "Normalize the whole segment length and locate B and C as fractions of AD.",
-    7: "Use area scaling for similar equilateral triangles.",
-    8: "Count nonnegative integer solutions to a two-variable cost equation.",
-    9: "Use Vieta's formula for the sum of roots.",
-    10: "Use chord length and half-angle geometry in the circle.",
+    11: "Use the recurrence backward from u6 and u3 to solve for u5.",
+    12: "Translate pedometer rollovers into total steps, then divide by steps per mile.",
+    13: "Convert mean information into partial sums, then subtract consecutive sums.",
+    14: "Find A by trigonometry, then apply the 90-degree coordinate rotation rule.",
+    15: "Use the Pythagorean theorem to turn the condition into a count of odd integers.",
+    16: "Condition on how many heads occur, then compute when the die-roll sum is odd.",
+    17: "Use the binomial probability for exactly one approval in three independent selections.",
+    18: "Set the combined work rate equal to the sum of individual rates minus 10 bricks per hour.",
+    19: "Compute a circular segment area and multiply by the tank length.",
+    20: "Count favorable ordered die-face pairs with repeated labels treated as distinct faces.",
 }
 
-
 SOL = {
-    1: [("Identify the flexible choice", r"The player made exactly $5$ baskets. The only thing that can change is how many of those baskets were worth $3$ points instead of $2$ points."), ("Start from the lowest possible total", r"If all $5$ baskets were worth $2$ points, the total would be $5\cdot2=10$ points."), ("See how each 3-point basket changes the total", r"Changing one basket from $2$ points to $3$ points adds exactly $1$ point. If the player made $k$ three-point baskets, where $k=0,1,2,3,4,5$, the total is $10+k$."), ("Count the possible values", r"The six possible totals are $10,11,12,13,14,15$."), ("Answer", r"There are $\boxed{6}$ different possible totals.")],
-    2: [("Write the rows after the reversals", r"The first and third rows stay the same. The second row becomes $11,10,9,8$, and the fourth row becomes $25,24,23,22$."), ("Find one diagonal sum", r"The diagonal from upper left to lower right is $1+10+17+22=50$."), ("Find the other diagonal sum", r"The diagonal from upper right to lower left is $4+9+16+25=54$."), ("Take the positive difference", r"The problem asks for the positive difference, so we compute $54-50=4$."), ("Answer", r"The difference is $\boxed{4}.")],
-    3: [("Convert the square root first", r"Because $x$ is positive, we can safely use exponent rules. The expression inside the cube root is $x\sqrt{x}=x\cdot x^{1/2}$."), ("Combine the exponents inside", r"Multiplying powers with the same base means adding exponents, so $x\cdot x^{1/2}=x^{3/2}$."), ("Apply the cube root", r"Taking a cube root is the same as raising to the power $\frac13$. Thus $\sqrt[3]{x^{3/2}}=(x^{3/2})^{1/3}$."), ("Simplify the exponent", r"When a power is raised to a power, multiply exponents: $\frac32\cdot\frac13=\frac12$."), ("Answer", r"The expression is $\boxed{x^{1/2}}$.")],
-    4: [("Understand how to maximize one player", r"To make one player's salary as large as possible, the other $20$ players should be paid as little as the rules allow."), ("Compute the minimum total for the other players", r"Each of the other $20$ players must receive at least $\$15{,}000$, so together they must receive at least $20\cdot15{,}000=300{,}000$ dollars."), ("Use the team salary cap", r"The team total cannot exceed $\$700{,}000$. After reserving $\$300{,}000$ for the other players, the most left for one player is $700{,}000-300{,}000=400{,}000$."), ("Check that this is possible", r"This salary is allowed because the other $20$ players can each be paid exactly $\$15{,}000$, making the total exactly $\$700{,}000$."), ("Answer", r"The maximum possible salary is $\boxed{400{,}000}$ dollars.")],
-    5: [("Compare the two inputs to the operation", r"The expression uses $(x-y)^2$ and $(y-x)^2$. Since $y-x=-(x-y)$, their squares are equal."), ("Name the common value", r"Let $u=(x-y)^2$. Then $(y-x)^2$ is also $u$."), ("Apply the definition carefully", r"The operation is $a\$b=(a-b)^2$. Therefore $(x-y)^2\$(y-x)^2=u\$u=(u-u)^2$."), ("Finish", r"Since $u-u=0$, the result is $0^2=0$."), ("Answer", r"The value is $\boxed{0}$.")],
-    6: [("Normalize the segment", r"Fractions are easier if we let $AD=1$. Then all positions can be measured as distances from $A$."), ("Locate B", r"We know $AB=4BD$ and $AB+BD=AD=1$. So $4BD+BD=1$, giving $BD=\frac15$ and $AB=\frac45$."), ("Locate C", r"Similarly, $AC=9CD$ and $AC+CD=1$. Thus $9CD+CD=1$, so $CD=\frac1{10}$ and $AC=\frac9{10}$."), ("Find BC", r"Both $B$ and $C$ are measured from $A$, so $BC=AC-AB=\frac9{10}-\frac45=\frac9{10}-\frac8{10}=\frac1{10}$."), ("Answer", r"The length of $BC$ is $\boxed{\frac1{10}}$ of $AD$.")],
-    7: [("Use similarity instead of drawing every triangle", r"All the small triangles are equilateral and have side length $1$, while the large triangle has side length $10$. The triangles are similar."), ("Convert side scale to area scale", r"Area scales by the square of the side-length scale. Since the side-length ratio is $10:1$, the area ratio is $10^2:1^2=100:1$."), ("Interpret the area ratio", r"Because the large triangle is completely filled without overlap, the number of small triangles equals the ratio of the large area to one small area."), ("Answer", r"The required number of small triangles is $\boxed{100}$.")],
-    8: [("Set up the cost equation", r"Let $r$ be the number of roses and $c$ be the number of carnations. The total cost condition is $3r+2c=50$."), ("Think about possible rose counts", r"Both $r$ and $c$ must be nonnegative integers. Also, $50-3r$ must be even because it equals $2c$."), ("Use parity", r"Since $50$ is even and $3r$ has the same parity as $r$, the number $r$ must be even."), ("List the valid rose counts", r"The largest possible $r$ is $16$, since $3\cdot17>50$. The even values from $0$ to $16$ are $0,2,4,6,8,10,12,14,16$, giving $9$ choices."), ("Answer", r"There are $\boxed{9}$ different bouquets.")],
-    9: [("Recall what the average of roots needs", r"If the two solutions are $r_1$ and $r_2$, their average is $\frac{r_1+r_2}{2}$. So we only need the sum of the roots."), ("Use Vieta's formula", r"For $Ax^2+Bx+C=0$, the sum of the roots is $-\frac{B}{A}$. Here $A=a$ and $B=-2a$."), ("Compute the sum", r"The sum of the two solutions is $-\frac{-2a}{a}=2$, assuming $a\ne0$ as required for a quadratic equation."), ("Find the average", r"The average is $\frac{2}{2}=1$."), ("Answer", r"The average of the solutions is $\boxed{1}$.")],
-    10: [("Relate the chord to a central angle", r"Let $O$ be the center of the circle. Since $AB=6$ in a circle of radius $5$, half the chord has length $3$. If $\angle AOC=\theta$, then the midpoint $C$ of the minor arc means $\angle AOB=2\theta$."), ("Use the right triangle from the chord", r"Dropping a perpendicular from $O$ to chord $AB$ gives a right triangle with hypotenuse $5$ and half-chord $3$. Thus $\sin\theta=\frac35$ and $\cos\theta=\frac45$."), ("Find the chord AC", r"The segment $AC$ is a chord subtending central angle $\theta$, so $AC=2\cdot5\sin(\theta/2)$."), ("Use the half-angle formula", r"Since $\cos\theta=\frac45$, we get $\sin(\theta/2)=\sqrt{\frac{1-\cos\theta}{2}}=\sqrt{\frac{1/5}{2}}=\frac1{\sqrt{10}}$."), ("Finish", r"Therefore $AC=10\cdot\frac1{\sqrt{10}}=\sqrt{10}$."), ("Answer", r"The length of $AC$ is $\boxed{\sqrt{10}}$.")],
+    11: [("Choose nearby unknowns", r"The recurrence relates three consecutive terms, and the question asks for $u_5$ while giving $u_3$ and $u_6$. So let $u_4=y$ and $u_5=x$."), ("Write equations from the recurrence", r"Using $u_5=2u_4+u_3$, we get $x=2y+9$. Using $u_6=2u_5+u_4$, we get $128=2x+y$."), ("Solve the two equations", r"Substitute $x=2y+9$ into $128=2x+y$: $128=2(2y+9)+y=5y+18$. Thus $5y=110$ and $y=22$."), ("Find the requested term", r"Now $x=2y+9=2\cdot22+9=53$."), ("Answer", r"Therefore $u_5=\boxed{53}$.")],
+    12: [("Understand one rollover", r"The pedometer flips after recording $99999$ and taking one more step, so each full flip represents $100000$ steps."), ("Count total steps", r"There were $44$ full flips and then the display ended at $50000$. That means Pete walked $44\cdot100000+50000=4{,}450{,}000$ steps."), ("Convert steps to miles", r"At $1800$ steps per mile, the distance is $\frac{4{,}450{,}000}{1800}\approx2472.2$ miles."), ("Choose the closest option", r"Among the choices, $2500$ is closest to $2472.2$."), ("Answer", r"The closest number of miles is $\boxed{2500}$.")],
+    13: [("Translate mean into sum", r"If the mean of the first $n$ terms is $n$, then the sum of the first $n$ terms is $n\cdot n=n^2$."), ("Use consecutive partial sums", r"The $2008$th term is the sum of the first $2008$ terms minus the sum of the first $2007$ terms."), ("Compute the difference", r"So the term is $2008^2-2007^2$. Use the difference of squares: $(2008-2007)(2008+2007)=1\cdot4015=4015$."), ("Answer", r"The $2008$th term is $\boxed{4015}$.")],
+    14: [("Locate point A", r"Because $\angle ABO=90^\circ$ and $B=(5,0)$, segment $AB$ is vertical, so $A$ has $x$-coordinate $5$."), ("Use the 30-degree angle", r"The line $OA$ makes a $30^\circ$ angle with the positive $x$-axis. Therefore $\tan30^\circ=\frac{y}{5}$, so $y=5\tan30^\circ=\frac{5\sqrt3}{3}$."), ("Apply the rotation rule", r"A $90^\circ$ counterclockwise rotation about the origin sends $(x,y)$ to $(-y,x)$."), ("Substitute A's coordinates", r"Thus $A=(5,\frac{5\sqrt3}{3})$ maps to $(-\frac{5\sqrt3}{3},5)$."), ("Answer", r"The image is $\boxed{(-\frac{5\sqrt3}{3},5)}$.")],
+    15: [("Start with the Pythagorean theorem", r"The legs are $a$ and $b$, and the hypotenuse is $b+1$, so $a^2+b^2=(b+1)^2$."), ("Simplify", r"Expanding gives $a^2+b^2=b^2+2b+1$, so $a^2=2b+1$. Therefore $b=\frac{a^2-1}{2}$."), ("Find which a-values work", r"For $b$ to be an integer, $a$ must be odd. Also $b<100$ means $\frac{a^2-1}{2}<100$, so $a^2<201$."), ("Count positive leg lengths", r"The positive odd values greater than $1$ with square less than $201$ are $3,5,7,9,11,13$. The value $a=1$ would give $b=0$, not a triangle leg."), ("Answer", r"There are $\boxed{6}$ such right triangles.")],
+    16: [("Condition on the number of heads", r"The number of dice rolled equals the number of heads among two coins. We consider $0$, $1$, or $2$ heads."), ("Handle zero heads", r"If there are no heads, no die is rolled and the sum is $0$, which is even. This case contributes no success."), ("Handle one head", r"Exactly one head occurs with probability $\frac12$. Then one die is rolled, and it is odd with probability $\frac12$, contributing $\frac12\cdot\frac12=\frac14$."), ("Handle two heads", r"Two heads occur with probability $\frac14$. Two dice have an odd sum when one die is odd and the other is even, which has probability $\frac12$. This contributes $\frac14\cdot\frac12=\frac18$."), ("Add the successful cases", r"The total probability is $\frac14+\frac18=\frac38$."), ("Answer", r"The probability is $\boxed{\frac38}$.")],
+    17: [("Identify success and failure", r"An approval has probability $0.7$, and a non-approval has probability $0.3$. We want exactly one approval in three selections."), ("Choose where the approval happens", r"The one approval can occur in any one of the $3$ selections."), ("Compute one pattern", r"For a fixed pattern such as approve, not approve, not approve, the probability is $0.7(0.3)^2$."), ("Multiply by the number of patterns", r"Thus the probability is $3\cdot0.7\cdot(0.3)^2=3\cdot0.7\cdot0.09=0.189$."), ("Answer", r"The probability is $\boxed{0.189}$.")],
+    18: [("Let the chimney size be N", r"Let $N$ be the number of bricks in the chimney. Brenda's rate is $\frac{N}{9}$ bricks per hour, and Brandon's rate is $\frac{N}{10}$ bricks per hour."), ("Account for the lost output", r"Together, their actual rate is decreased by $10$ bricks per hour, so it is $\frac{N}{9}+\frac{N}{10}-10$."), ("Use the five-hour completion time", r"Since they finish $N$ bricks in $5$ hours, their actual rate is also $\frac{N}{5}$. Therefore $\frac{N}{9}+\frac{N}{10}-10=\frac{N}{5}$."), ("Solve", r"The left rate before subtracting is $\frac{19N}{90}$. So $\frac{19N}{90}-\frac{18N}{90}=10$, giving $\frac{N}{90}=10$ and $N=900$."), ("Answer", r"The chimney contains $\boxed{900}$ bricks.")],
+    19: [("Look at the circular cross-section", r"Because the tank lies on its side, the water volume equals the area of a circular segment in the end circle times the tank length $9$."), ("Find the segment geometry", r"The radius is $4$, and the water depth is $2$ from the bottom. So the water line is $2$ feet below the center, making the distance from the center to the chord equal to $2$."), ("Find the central angle", r"In the right triangle from the center to the chord midpoint, $\cos\theta=\frac{2}{4}=\frac12$, so $\theta=60^\circ$. The full sector angle for the water segment is $120^\circ=\frac{2\pi}{3}$."), ("Compute the segment area", r"The sector area is $\frac12\cdot4^2\cdot\frac{2\pi}{3}=\frac{16\pi}{3}$. The triangle area is $\frac12\cdot4^2\sin120^\circ=4\sqrt3$. So the segment area is $\frac{16\pi}{3}-4\sqrt3$."), ("Multiply by the tank length", r"The volume is $9(\frac{16\pi}{3}-4\sqrt3)=48\pi-36\sqrt3$."), ("Answer", r"The volume is $\boxed{48\pi-36\sqrt3}$ cubic feet.")],
+    20: [("Treat repeated labels as separate faces", r"Each die has $6$ faces, so there are $36$ equally likely ordered outcomes. The repeated numbers on the first die count as separate faces."), ("Count outcomes from the first die face 1", r"If the first die shows $1$, the second die must show $4$, $6$, or $8$, giving $3$ favorable outcomes."), ("Count outcomes from the two faces labeled 2 and 3", r"For each face labeled $2$, the second die can show $3$ or $5$, giving $2\cdot2=4$ outcomes. For each face labeled $3$, the second die can show $4$ or $6$, giving another $4$ outcomes."), ("Count outcomes from the first die face 4", r"If the first die shows $4$, the second die can show $1$, $3$, or $5$, giving $3$ outcomes."), ("Compute the probability", r"There are $3+4+4+3=14$ favorable outcomes out of $36$, so the probability is $\frac{14}{36}=\frac{7}{18}$."), ("Answer", r"The probability is $\boxed{\frac{7}{18}}$.")],
 }
 
 def esc(x, quote=True):
@@ -279,6 +276,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
