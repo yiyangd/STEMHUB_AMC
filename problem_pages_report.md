@@ -1,20 +1,17 @@
 # Problem Pages Report
 
-- Total manifest entries: 515
-- Latest batch: 68 (2012 AMC 10B Problems 21-24; skipped 25)
-- Latest new generated count: 4
+- Total manifest entries: 520
+- Latest batch: 69 (2013 AMC 10A Problems 1-5)
+- Latest new generated count: 5
 - Latest updated existing count: 0
-- Latest skipped count: 1
+- Latest skipped count: 0
 - MathJax validation: passed
-- Answer verification source: AoPS 2012 AMC 10B Answer Key
+- Answer verification source: AoPS 2013 AMC 10A Answer Key
 
 ## Latest Batch Pages
 
-- `2012 AMC 10B Problem 21` -> `amc10/problems/2012-amc-10b-problem-21/`
-- `2012 AMC 10B Problem 22` -> `amc10/problems/2012-amc-10b-problem-22/`
-- `2012 AMC 10B Problem 23` -> `amc10/problems/2012-amc-10b-problem-23/`
-- `2012 AMC 10B Problem 24` -> `amc10/problems/2012-amc-10b-problem-24/`
-
-## Skipped in latest batch
-
-- 2012 AMC 10B Problem 25 skipped: hexagonal lattice path count depends on original diagram and directed edges.
+- `2013 AMC 10A Problem 1` -> `amc10/problems/2013-amc-10a-problem-1/`
+- `2013 AMC 10A Problem 2` -> `amc10/problems/2013-amc-10a-problem-2/`
+- `2013 AMC 10A Problem 3` -> `amc10/problems/2013-amc-10a-problem-3/`
+- `2013 AMC 10A Problem 4` -> `amc10/problems/2013-amc-10a-problem-4/`
+- `2013 AMC 10A Problem 5` -> `amc10/problems/2013-amc-10a-problem-5/`

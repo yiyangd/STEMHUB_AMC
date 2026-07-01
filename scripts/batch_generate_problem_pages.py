@@ -3,30 +3,32 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 68
+BATCH_NUMBER = 69
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2012_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24}
-SKIPPED = ["2012 AMC 10B Problem 25 skipped: hexagonal lattice path count depends on original diagram and directed edges."]
-BATCH_LABEL = "2012 AMC 10B Problems 21-24; skipped 25"
-NEXT_START = "2013 AMC 10A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2013_AMC_10A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5}
+SKIPPED = []
+BATCH_LABEL = "2013 AMC 10A Problems 1-5"
+NEXT_START = "2013 AMC 10A Problem 6"
 
-ANS = {21:("A",r"\sqrt3"),22:("B","512"),23:("E",r"\frac{2\sqrt3}{3}"),24:("B","132")}
+ANS = {1:("C",r"\$2.75"),2:("B","10"),3:("E","8"),4:("C","45"),5:("B","20")}
 
 OV = {
-21:(r"Four distinct points are arranged in a plane so that the segments connecting them have lengths $a,a,a,a,2a,$ and $b$. What is the ratio of $b$ to $a$?",[("A",r"\sqrt3"),("B","2"),("C",r"\sqrt5"),("D","3"),("E",r"\pi")]),
-22:(r"Let $(a_1,a_2,\ldots,a_{10})$ be a list of the first $10$ positive integers such that for each $2\le i\le10$, either $a_i+1$ or $a_i-1$ or both appear somewhere before $a_i$ in the list. How many such lists are there?",[("A","120"),("B","512"),("C","1024"),("D","181440"),("E","362880")]),
-23:(r"A solid tetrahedron is sliced off a solid wooden unit cube by a plane passing through two non-adjacent vertices on one face and one vertex on the opposite face not adjacent to either of the first two vertices. The tetrahedron is discarded and the remaining portion of the cube is placed on a table with the cut surface face down. What is the height of this object?",[("A",r"\frac{\sqrt3}{2}"),("B",r"\frac{\sqrt2}{3}"),("C","1"),("D",r"\frac{2\sqrt2}{3}"),("E",r"\frac{2\sqrt3}{3}")]),
-24:(r"Amy, Beth, and Jo listen to four different songs and discuss which ones they like. No song is liked by all three. Furthermore, for each of the three pairs of girls, there is at least one song liked by those two girls but disliked by the third. In how many different ways is this possible?",[("A","108"),("B","132"),("C","671"),("D","846"),("E","1105")]),
+1:(r"A taxi ride costs $\$1.50$ plus $\$0.25$ per mile traveled. How much does a $5$-mile taxi ride cost?",[("A",r"\$2.25"),("B",r"\$2.50"),("C",r"\$2.75"),("D",r"\$3.00"),("E",r"\$3.25")]),
+2:(r"Alice is making a batch of cookies and needs $2\frac12$ cups of sugar. Unfortunately, her measuring cup holds only $\frac14$ cup of sugar. How many times must she fill that cup to get the correct amount of sugar?",[("A","8"),("B","10"),("C","12"),("D","16"),("E","20")]),
+3:(r"Square $ABCD$ has side length $10$. Point $E$ is on $BC$, and the area of $\triangle ABE$ is $40$. What is $BE$?",[("A","4"),("B","5"),("C","6"),("D","7"),("E","8")]),
+4:(r"A softball team played ten games, scoring $1,2,3,4,5,6,7,8,9,$ and $10$ runs. They lost by one run in exactly five games. In each of the other games, they scored twice as many runs as their opponent. How many total runs did their opponents score?",[("A","35"),("B","40"),("C","45"),("D","50"),("E","55")]),
+5:(r"Tom, Dorothy, and Sammy went on a vacation and agreed to split the costs evenly. Tom paid $\$105$, Dorothy paid $\$125$, and Sammy paid $\$175$. To share costs equally, Tom gave Sammy $t$ dollars and Dorothy gave Sammy $d$ dollars. What is $t-d$?",[("A","15"),("B","20"),("C","25"),("D","30"),("E","35")]),
 }
 
-KEY_OVERRIDES={21:"Realize the configuration as an equilateral triangle plus a 30-60-90 triangle.",22:"The already chosen numbers must grow as a consecutive interval.",23:"Use coordinates and distance from a plane to find the height when the cut face is placed down.",24:"Use inclusion-exclusion on the three required pair-only song types."}
+KEY_OVERRIDES={1:"Add the fixed taxi fee and the per-mile charge.",2:"Divide the needed amount by the measuring-cup size.",3:"Use triangle area with base $BE$ and height $10$.",4:"Choose which five scores were losses to satisfy the scoring conditions.",5:"Find each person's fair share and compare to what each paid."}
 
 SOL={
-21:[("Look for structure",r"With four points, there are six connecting segments. Four have length $a$, one has length $2a$, and one has length $b$. The length $2a$ suggests that three of the points may be collinear with two adjacent segments of length $a$."),("Build the configuration",r"Place three points so two adjacent segments are each $a$ and the long segment between the endpoints is $2a$. The fourth point can be placed so it forms an equilateral triangle of side $a$ with one of those unit segments."),("Find b",r"The remaining distance is then the long side of a $30$-$60$-$90$ triangle with short leg $a$, so it equals $a\sqrt3$."),("Conclude",r"Thus $\frac ba=\boxed{\sqrt3}$."),],
-22:[("Think about the chosen set",r"After some numbers have appeared, the condition says a new number must be adjacent to at least one earlier number. Starting from the first number, the set of chosen numbers must always be a consecutive interval."),("Choose the first number",r"Suppose the first number is $k$. Eventually we must add $1,2,\ldots,k-1$ on the left and $k+1,k+2,\ldots,10$ on the right."),("Count left-right choices",r"At each later step, we choose whether to extend the current interval to the left or to the right, until all $9$ remaining numbers are added. There are $k-1$ left extensions and $10-k$ right extensions, giving $\binom9{k-1}$ lists for this starting $k$."),("Sum over k",r"The total is $\sum_{k=1}^{10}\binom9{k-1}=2^9=512$. The answer is $\boxed{512}$."),],
-23:[("Set up coordinates",r"Use a unit cube. A representative cutting plane can pass through $(0,0,0)$, $(1,1,0)$, and $(1,0,1)$. These match the condition of two non-adjacent vertices on one face and one suitable vertex on the opposite face."),("Find the plane",r"The plane through these points has equation $x-y-z=0$. Its normal vector is $(1,-1,-1)$, whose length is $\sqrt3$."),("Find the farthest remaining point",r"When the cut face is placed on the table, the height is the largest perpendicular distance from this plane to a remaining cube vertex. The farthest relevant vertex is $(0,1,1)$, for which $|x-y-z|=2$."),("Compute height",r"The distance is $\frac{2}{\sqrt3}=\frac{2\sqrt3}{3}$. The answer is $\boxed{\frac{2\sqrt3}{3}}$."),],
-24:[("Classify one song",r"For each song, the set of girls who like it can be any subset except the set of all three girls. So each song has $7$ possible like-patterns."),("Identify required patterns",r"The condition requires at least one song of each pair-only type: Amy-Beth only, Amy-Jo only, and Beth-Jo only."),("Use inclusion-exclusion",r"For four labeled songs, start with $7^4$ assignments. Subtract those missing at least one required pair type: $3\cdot6^4$. Add back assignments missing two required pair types: $3\cdot5^4$. Subtract assignments missing all three required pair types: $4^4$."),("Calculate",r"The count is $7^4-3\cdot6^4+3\cdot5^4-4^4=2401-3888+1875-256=132$. The answer is $\boxed{132}$."),],
+1:[("Separate fixed and variable cost",r"The ride has a fixed cost of $\$1.50$ plus a per-mile cost."),("Compute mileage cost",r"For $5$ miles, the mileage charge is $5\cdot\$0.25=\$1.25$."),("Add",r"The total is $\$1.50+\$1.25=\$2.75$."),("Conclude",r"The answer is $\boxed{\$2.75}$."),],
+2:[("Convert the mixed number",r"Alice needs $2\frac12=\frac52$ cups of sugar."),("Use the cup size",r"Each fill gives $\frac14$ cup."),("Divide",r"The number of fills is $\frac52\div\frac14=\frac52\cdot4=10$."),("Conclude",r"She must fill the cup $\boxed{10}$ times."),],
+3:[("Choose base and height",r"Use $BE$ as the base of $\triangle ABE$. Since $AB$ is perpendicular to $BC$, the height from $A$ to line $BE$ is $AB=10$."),("Set up area",r"The area is $\frac12\cdot BE\cdot10=5BE$."),("Solve",r"Since the area is $40$, we have $5BE=40$, so $BE=8$."),("Conclude",r"The answer is $\boxed{8}$."),],
+4:[("Understand opponent scores",r"If the team lost by one run in a game where it scored $s$, the opponent scored $s+1$. If it scored twice the opponent's runs, the opponent scored $s/2$, so $s$ must be even."),("Choose the wins",r"The five games that are not losses must therefore have even scores $2,4,6,8,10$. Opponent scores in those games are $1,2,3,4,5$, summing to $15$."),("Count loss games",r"The loss games have scores $1,3,5,7,9$, so opponents scored $2,4,6,8,10$, summing to $30$."),("Add",r"Total opponent runs are $15+30=45$. The answer is $\boxed{45}$."),],
+5:[("Find total and fair share",r"The total cost is $105+125+175=405$, so each person's fair share is $405/3=135$."),("Compare Tom",r"Tom paid $105$, which is $30$ less than his share, so he gives Sammy $t=30$."),("Compare Dorothy",r"Dorothy paid $125$, which is $10$ less than her share, so she gives Sammy $d=10$."),("Subtract",r"Thus $t-d=30-10=20$. The answer is $\boxed{20}$."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -126,7 +128,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2012" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2013" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -215,7 +217,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2012 AMC 10B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2013 AMC 10A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
@@ -236,6 +238,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
