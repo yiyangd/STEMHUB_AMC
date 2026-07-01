@@ -1052,3 +1052,19 @@
 - Pushed: pending
 - Next batch should start from: 2012 AMC 10A Problem 11
 - Review notes: none.
+
+## Batch 64: 2012 AMC 10A Problems 11-20 excluding 15 and 18
+
+- Start time: 2026-06-30T23:57:48-07:00
+- End time: 2026-06-30T23:57:51-07:00
+- Processed contest: AMC 10
+- Processed range: 2012 AMC 10A Problems 11-20 excluding 15 and 18
+- Generated count: 8
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2012 AMC 10A Problem 15 skipped: diagram-dependent area problem; original figure needed for reliable teaching solution.; 2012 AMC 10A Problem 18 skipped: diagram-dependent circular-arc region; original figure needed for reliable teaching solution.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2012 AMC 10A Problem 21
+- Review notes: none.

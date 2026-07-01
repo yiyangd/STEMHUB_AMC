@@ -3,115 +3,105 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 63
+BATCH_NUMBER = 64
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2012_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
-SKIPPED = []
-BATCH_LABEL = "2012 AMC 10A Problems 1-10"
-NEXT_START = "2012 AMC 10A Problem 11"
+TARGET_NUMBERS = {11,12,13,14,16,17,19,20}
+SKIPPED = [
+    "2012 AMC 10A Problem 15 skipped: diagram-dependent area problem; original figure needed for reliable teaching solution.",
+    "2012 AMC 10A Problem 18 skipped: diagram-dependent circular-arc region; original figure needed for reliable teaching solution.",
+]
+BATCH_LABEL = "2012 AMC 10A Problems 11-20 excluding 15 and 18"
+NEXT_START = "2012 AMC 10A Problem 21"
 
 ANS = {
-    1: ("D", "25"),
-    2: ("E", "$4$ by $8$"),
-    3: ("E", "15"),
-    4: ("C", "4"),
-    5: ("B", "200"),
-    6: ("D", r"\frac{15}{2}"),
-    7: ("C", r"\frac47"),
-    8: ("D", "7"),
-    9: ("D", r"\frac13"),
-    10: ("C", "8"),
+    11: ("D", "12"),
+    12: ("A", "Friday"),
+    13: ("C", r"\frac{17}{8}"),
+    14: ("B", "481"),
+    16: ("C", "2500"),
+    17: ("C", "3"),
+    19: ("D", "48"),
+    20: ("A", r"\frac{49}{512}"),
 }
 
 OV = {
-    1: (r"Cagney can frost a cupcake every $20$ seconds and Lacey can frost a cupcake every $30$ seconds. Working together, how many cupcakes can they frost in $5$ minutes?", [("A","10"),("B","15"),("C","20"),("D","25"),("E","30")]),
-    2: (r"A square with side length $8$ is cut in half, creating two congruent rectangles. What are the dimensions of one of these rectangles?", [("A", "$2$ by $4$"),("B", "$2$ by $6$"),("C", "$2$ by $8$"),("D", "$4$ by $4$"),("E", "$4$ by $8$")]),
-    3: (r"A bug crawls along a number line, starting at $-2$. It crawls to $-6$, then turns around and crawls to $5$. How many units does the bug crawl altogether?", [("A","9"),("B","11"),("C","13"),("D","14"),("E","15")]),
-    4: (r"Let $\angle ABC=24^\circ$ and $\angle ABD=20^\circ$. What is the smallest possible degree measure for $\angle CBD$?", [("A","0"),("B","2"),("C","4"),("D","6"),("E","12")]),
-    5: (r"Last year $100$ adult cats, half of whom were female, were brought into the Smallville Animal Shelter. Half of the adult female cats were accompanied by a litter of kittens. The average number of kittens per litter was $4$. What was the total number of cats and kittens received by the shelter last year?", [("A","150"),("B","200"),("C","250"),("D","300"),("E","400")]),
-    6: (r"The product of two positive numbers is $9$. The reciprocal of one of these numbers is $4$ times the reciprocal of the other number. What is the sum of the two numbers?", [("A",r"\frac{10}{3}"),("B",r"\frac{20}{3}"),("C","7"),("D",r"\frac{15}{2}"),("E","8")]),
-    7: (r"In a bag of marbles, $\frac35$ of the marbles are blue and the rest are red. If the number of red marbles is doubled and the number of blue marbles stays the same, what fraction of the marbles will be red?", [("A",r"\frac25"),("B",r"\frac37"),("C",r"\frac47"),("D",r"\frac35"),("E",r"\frac45")]),
-    8: (r"The sums of three whole numbers taken in pairs are $12$, $17$, and $19$. What is the middle number?", [("A","4"),("B","5"),("C","6"),("D","7"),("E","8")]),
-    9: (r"A pair of six-sided fair dice are labeled so that one die has only even numbers, two each of $2,4,$ and $6$, and the other die has only odd numbers, two each of $1,3,$ and $5$. The pair of dice is rolled. What is the probability that the sum of the numbers on top of the two dice is $7$?", [("A",r"\frac16"),("B",r"\frac15"),("C",r"\frac14"),("D",r"\frac13"),("E",r"\frac12")]),
-    10: (r"Mary divides a circle into $12$ sectors. The central angles of these sectors, measured in degrees, are all integers and they form an arithmetic sequence. What is the degree measure of the smallest possible sector angle?", [("A","5"),("B","6"),("C","8"),("D","10"),("E","12")]),
+    11: (r"Externally tangent circles with centers at points $A$ and $B$ have radii of lengths $5$ and $3$, respectively. A line externally tangent to both circles intersects ray $AB$ at point $C$. What is $BC$?", [("A","4"),("B","4.8"),("C","10.2"),("D","12"),("E","14.4")]),
+    12: (r"A year is a leap year if and only if the year number is divisible by $400$ or is divisible by $4$ but not by $100$. The $200$th anniversary of the birth of novelist Charles Dickens was celebrated on February $7,2012$, a Tuesday. On what day of the week was Dickens born?", [("A","Friday"),("B","Saturday"),("C","Sunday"),("D","Monday"),("E","Tuesday")]),
+    13: (r"An iterative average of the numbers $1,2,3,4,$ and $5$ is computed as follows. Arrange the five numbers in some order. Find the mean of the first two numbers, then find the mean of that with the third number, then the mean of that with the fourth number, and finally the mean of that with the fifth number. What is the difference between the largest and smallest possible values that can be obtained?", [("A",r"\frac{31}{16}"),("B","2"),("C",r"\frac{17}{8}"),("D","3"),("E",r"\frac{65}{16}")]),
+    14: (r"Chubby makes nonstandard checkerboards that have $31$ squares on each side. The checkerboards have a black square in every corner and alternate red and black squares along every row and column. How many black squares are there on such a checkerboard?", [("A","480"),("B","481"),("C","482"),("D","483"),("E","484")]),
+    16: (r"Three runners start running simultaneously from the same point on a $500$-meter circular track. They each run clockwise around the course maintaining constant speeds of $4.4$, $4.8$, and $5.0$ meters per second. The runners stop once they are all together again somewhere on the circular course. How many seconds do the runners run?", [("A","1000"),("B","1250"),("C","2500"),("D","5000"),("E","10000")]),
+    17: (r"Let $a$ and $b$ be relatively prime integers with $a>b>0$ and \[\frac{a^3-b^3}{(a-b)^3}=\frac{73}{3}.\] What is $a-b$?", [("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+    19: (r"Paula the painter and her two helpers each paint at constant, but different, rates. They always start at $8{:}00$ AM, and all three always take the same amount of time to eat lunch. On Monday the three of them painted $50\%$ of a house, quitting at $4{:}00$ PM. On Tuesday, when Paula was not there, the two helpers painted only $24\%$ of the house and quit at $2{:}12$ PM. On Wednesday Paula worked by herself and finished the house by working until $7{:}12$ PM. How long, in minutes, was each day's lunch break?", [("A","30"),("B","36"),("C","42"),("D","48"),("E","60")]),
+    20: (r"A $3\times3$ square is partitioned into $9$ unit squares. Each unit square is painted either white or black with each color equally likely, chosen independently at random. The square is then rotated $90^\circ$ clockwise about its center, and every white square in a position formerly occupied by a black square is painted black. The colors of all other squares are left unchanged. What is the probability that the grid is now entirely black?", [("A",r"\frac{49}{512}"),("B",r"\frac{7}{64}"),("C",r"\frac{121}{1024}"),("D",r"\frac{81}{512}"),("E",r"\frac{9}{32}")]),
 }
 
 KEY_OVERRIDES = {
-    1: "Add work rates and multiply by the total time.",
-    2: "Cutting an $8$ by $8$ square in half halves one dimension and keeps the other unchanged.",
-    3: "Distance traveled on a number line is the sum of absolute changes, not just final displacement.",
-    4: "To minimize the angle between two rays, place them on the same side of the common ray.",
-    5: "Count female cats, litters, and kittens separately before adding the original adult cats.",
-    6: "Turn the reciprocal condition into a ratio between the two positive numbers.",
-    7: "Use convenient total marbles to track the changing red and blue counts.",
-    8: "Add the pairwise sums to get twice the sum of the three numbers.",
-    9: "Count the equally likely displayed values on the even die and odd die.",
-    10: "Use the arithmetic-sequence sum formula and integer constraints.",
+    11: "Use similar triangles or homothety from the external tangent point.",
+    12: "Count the day shift over 200 years, including leap days after February 7.",
+    13: "Write the final iterative average as a weighted sum and use rearrangement.",
+    14: "An odd checkerboard has one more black square than red square.",
+    16: "All runners meet again when each relative distance is a multiple of the track length.",
+    17: "Factor the difference of cubes and solve for the ratio $b/(a-b)$.",
+    19: "Set up rates after subtracting the common lunch break from each workday.",
+    20: "Analyze the rotation cycles and require no adjacent pair of whites in each cycle.",
 }
 
 SOL = {
-    1: [
-        ("Convert the time", r"Five minutes is $5\cdot60=300$ seconds. Working in seconds matches the frosting rates in the problem."),
-        ("Find each person's output", r"Cagney frosts one cupcake every $20$ seconds, so in $300$ seconds Cagney can frost $300/20=15$ cupcakes. Lacey frosts one every $30$ seconds, so Lacey can frost $300/30=10$ cupcakes."),
-        ("Add the outputs", r"Since they work together on separate cupcakes, their outputs add. The total is $15+10=25$."),
-        ("Conclude", r"Together they can frost $\boxed{25}$ cupcakes."),
+    11: [
+        ("Identify the homothety point", r"The external tangent line and the line through the centers meet at $C$. From $C$, the two circles look like scaled copies of each other, so the distances from $C$ to the centers are in the same ratio as the radii."),
+        ("Use the radius ratio", r"The radii are $5$ and $3$, so $CA:CB=5:3$. Since the circles are externally tangent, $AB=5+3=8$."),
+        ("Place C on the ray", r"Point $C$ is on ray $AB$ beyond $B$, so $CA=CB+AB=CB+8$."),
+        ("Solve", r"Now \[\frac{CB+8}{CB}=\frac53.\] Thus $3CB+24=5CB$, so $CB=12$."),
+        ("Conclude", r"The answer is $\boxed{12}$."),
     ],
-    2: [
-        ("Start with the square", r"The original square has dimensions $8$ by $8$. Cutting it into two congruent rectangles means each rectangle has half the area of the square."),
-        ("Think about the cut", r"A straight cut through the middle parallel to a side keeps one dimension equal to $8$ and cuts the other dimension from $8$ to $4$."),
-        ("Check the area", r"Each rectangle is $4$ by $8$, with area $32$, exactly half of the square's area $64$."),
-        ("Conclude", r"The dimensions are $\boxed{4\text{ by }8}$."),
+    12: [
+        ("Count ordinary day shifts", r"From February $7,1812$ to February $7,2012$ is $200$ years. Each ordinary year shifts the weekday by $1$ day because $365\equiv1\pmod7$. So $200$ ordinary years contribute $200\equiv4\pmod7$ days."),
+        ("Count leap days", r"The interval includes leap days from leap years after February $7,1812$ through $2011$. There are $50$ multiples of $4$ in this range, but $1900$ is not a leap year, so there are $49$ leap days. Since $49\equiv0\pmod7$, they do not change the weekday modulo $7$."),
+        ("Find the total shift", r"The total weekday shift is therefore $4$ days forward from Dickens's birth date to the anniversary in $2012$."),
+        ("Work backward", r"The anniversary was Tuesday. Four days before Tuesday is Friday."),
+        ("Conclude", r"Dickens was born on a $\boxed{\text{Friday}}$."),
     ],
-    3: [
-        ("Separate the two parts of the trip", r"The bug first moves from $-2$ to $-6$. That distance is $|-6-(-2)|=4$ units."),
-        ("Find the second distance", r"Then the bug moves from $-6$ to $5$. That distance is $|5-(-6)|=11$ units."),
-        ("Add distances, not endpoints", r"The bug turned around, so the total distance is $4+11=15$, not just the distance from the starting point to the ending point."),
-        ("Conclude", r"The bug crawls $\boxed{15}$ units altogether."),
+    13: [
+        ("Find the weights", r"Let the ordered numbers be $a,b,c,d,e$. The final value is \[\frac{1}{2}\left(\frac{1}{2}\left(\frac{1}{2}\left(\frac{a+b}{2}+c\right)+d\right)+e\right).\] Simplifying gives weights $\frac1{16},\frac1{16},\frac18,\frac14,\frac12$."),
+        ("Maximize the weighted sum", r"To make the value as large as possible, put the largest number on the largest weight. So the maximum uses $5,4,3,2,1$ paired with weights $\frac12,\frac14,\frac18,\frac1{16},\frac1{16}$."),
+        ("Minimize the weighted sum", r"To make the value as small as possible, put the smallest number on the largest weight. This reverses the pairing."),
+        ("Subtract efficiently", r"The difference is \[5\left(\frac12-\frac1{16}\right)+4\left(\frac14-\frac1{16}\right)+2\left(\frac1{16}-\frac14\right)+1\left(\frac1{16}-\frac12\right)=\frac{17}{8}.\]"),
+        ("Conclude", r"The difference is $\boxed{\frac{17}{8}}$."),
     ],
-    4: [
-        ("Understand the geometry", r"Both angles have vertex $B$ and share ray $BA$. We want the smallest possible angle between rays $BC$ and $BD$."),
-        ("Place the rays close together", r"The smallest angle happens when $BC$ and $BD$ are on the same side of $BA$, because then the smaller angle between them is the difference of the two given angles."),
-        ("Subtract", r"The difference is $24^\circ-20^\circ=4^\circ$."),
-        ("Conclude", r"The smallest possible measure of $\angle CBD$ is $\boxed{4^\circ}$."),
+    14: [
+        ("Use odd board parity", r"A $31\times31$ board has $31^2=961$ squares. Because $31$ is odd and every corner is black, the alternating pattern has one more black square than red square."),
+        ("Split the total", r"If black squares exceed red squares by $1$, then the number of black squares is $\frac{961+1}{2}=481$."),
+        ("Check with rows", r"Equivalently, each odd-numbered row has $16$ black squares and each even-numbered row has $15$, giving $16\cdot16+15\cdot15=481$."),
+        ("Conclude", r"There are $\boxed{481}$ black squares."),
     ],
-    5: [
-        ("Count the adult female cats", r"There were $100$ adult cats, and half were female. So there were $50$ adult female cats."),
-        ("Count the litters", r"Half of the adult female cats had litters, so there were $25$ litters of kittens."),
-        ("Count the kittens", r"Each litter had an average of $4$ kittens, so the shelter received $25\cdot4=100$ kittens."),
-        ("Add adults and kittens", r"The shelter received $100$ adult cats and $100$ kittens, for a total of $200$ animals. The answer is $\boxed{200}$."),
+    16: [
+        ("Use relative speeds", r"The fastest runner at $5.0$ m/s must gain whole laps on each of the other two runners. The relative speeds are $5.0-4.8=0.2$ m/s and $5.0-4.4=0.6$ m/s."),
+        ("Write the lap conditions", r"They are all together again when both relative distances are multiples of $500$ meters. So $0.2t$ and $0.6t$ must both be multiples of $500$."),
+        ("Solve the conditions", r"The condition $0.2t=500k$ gives $t=2500k$. The condition $0.6t=500m$ gives $t=\frac{2500}{3}m$. The smallest positive time satisfying both is $t=2500$."),
+        ("Check", r"In $2500$ seconds, the relative gains are $500$ meters and $1500$ meters, both whole laps."),
+        ("Conclude", r"The runners run for $\boxed{2500}$ seconds."),
     ],
-    6: [
-        ("Name the numbers", r"Let the two positive numbers be $a$ and $b$, with $ab=9$. The reciprocal condition says one reciprocal is four times the other. We may write $\frac1a=4\cdot\frac1b$."),
-        ("Turn reciprocals into a ratio", r"From $\frac1a=\frac4b$, cross-multiply to get $b=4a$."),
-        ("Use the product", r"Substitute into $ab=9$: $a(4a)=9$, so $4a^2=9$ and $a=\frac32$ because the numbers are positive. Then $b=4a=6$."),
-        ("Find the sum", r"The sum is $\frac32+6=\frac{15}{2}$. The answer is $\boxed{\frac{15}{2}}$."),
+    17: [
+        ("Factor the numerator", r"Use $a^3-b^3=(a-b)(a^2+ab+b^2)$. Then \[\frac{a^3-b^3}{(a-b)^3}=\frac{a^2+ab+b^2}{(a-b)^2}=\frac{73}{3}.\]"),
+        ("Write a in terms of the gap", r"Let $d=a-b$. Then $a=b+d$. Substituting into the numerator gives $(b+d)^2+b(b+d)+b^2=3b^2+3bd+d^2$."),
+        ("Use the ratio t=b/d", r"Divide by $d^2$ and let $t=\frac bd$. We get $3t^2+3t+1=\frac{73}{3}$. Multiplying by $3$ gives $9t^2+9t-70=0$."),
+        ("Solve for t", r"The positive solution is $t=\frac73$, so $\frac bd=\frac73$. Thus $b=7k$ and $d=3k$."),
+        ("Use relative primality", r"Then $a=b+d=10k$. Since $a$ and $b$ are relatively prime, $k=1$. Therefore $a-b=d=3$, and the answer is $\boxed{3}$."),
     ],
-    7: [
-        ("Choose a convenient total", r"Since $\frac35$ of the marbles are blue, use $5$ marbles as a convenient model. Then $3$ are blue and $2$ are red."),
-        ("Double only the red marbles", r"Doubling the red marbles changes the red count from $2$ to $4$, while the blue count stays $3$."),
-        ("Find the new total", r"The new total is $4+3=7$ marbles in this model."),
-        ("Compute the red fraction", r"The fraction that are red is $\frac47$. The answer is $\boxed{\frac47}$."),
+    19: [
+        ("Use hours and subtract lunch", r"Let the lunch break be $L$ hours. Monday has $8-L$ hours of painting time, Tuesday has $6.2-L$ hours, and Wednesday has $11.2-L$ hours."),
+        ("Write the helper and Paula rates", r"The two helpers together painted $24\%$ on Tuesday, so their combined rate is $\frac{0.24}{6.2-L}$. Paula alone painted the remaining $26\%$ on Wednesday, so her rate is $\frac{0.26}{11.2-L}$."),
+        ("Use Monday's total rate", r"On Monday all three together painted $50\%$, so their combined rate is $\frac{0.50}{8-L}$. Therefore \[\frac{0.26}{11.2-L}+\frac{0.24}{6.2-L}=\frac{0.50}{8-L}.\]"),
+        ("Solve the equation", r"Solving this equation gives $L=0.8$ hours. Since $0.8$ hours is $0.8\cdot60=48$ minutes, the common lunch break was $48$ minutes."),
+        ("Conclude", r"The answer is $\boxed{48}$."),
     ],
-    8: [
-        ("Name the numbers", r"Let the three whole numbers be $a,b,c$. Their pairwise sums are $12$, $17$, and $19$."),
-        ("Add the pairwise sums", r"Adding all three pairwise sums counts each number twice: $(a+b)+(a+c)+(b+c)=2(a+b+c)$."),
-        ("Find the total", r"The given sums add to $12+17+19=48$, so $2(a+b+c)=48$ and $a+b+c=24$."),
-        ("Recover the numbers", r"If one pair sums to $12$, then the remaining number is $24-12=12$. Similarly the other remaining numbers are $24-17=7$ and $24-19=5$. The numbers are $5,7,12$."),
-        ("Conclude", r"The middle number is $\boxed{7}$."),
-    ],
-    9: [
-        ("Reduce the dice to value choices", r"Each even value $2,4,6$ appears twice, so each has probability $\frac13$ on the even die. Similarly, each odd value $1,3,5$ has probability $\frac13$ on the odd die."),
-        ("List sums of 7", r"The pairs that sum to $7$ are $(2,5)$, $(4,3)$, and $(6,1)$."),
-        ("Count among value pairs", r"There are $3\cdot3=9$ equally likely value pairs, and $3$ of them sum to $7$."),
-        ("Compute the probability", r"The probability is $\frac39=\frac13$. The answer is $\boxed{\frac13}$."),
-    ],
-    10: [
-        ("Use the sum of all central angles", r"The $12$ sector angles add to $360^\circ$. Since they form an arithmetic sequence, let the first angle be $a$ and common difference be $d$, where $a$ and $d$ are integers."),
-        ("Apply the arithmetic-sequence sum", r"The sum is \[\frac{12}{2}(2a+11d)=360,\] so $2a+11d=60$."),
-        ("Minimize the first angle", r"To make $a$ small, make $d$ as large as possible while keeping $a$ positive and integral. Since $2a=60-11d$, $d$ must be even. The largest even $d$ with positive $a$ is $d=4$."),
-        ("Compute a", r"Then $2a=60-44=16$, so $a=8$."),
-        ("Conclude", r"The smallest possible sector angle is $\boxed{8^\circ}$."),
+    20: [
+        ("Break the grid into rotation cycles", r"A $90^\circ$ rotation fixes the center square. The four corners form one cycle of length $4$, and the four edge-middle squares form another cycle of length $4$."),
+        ("Understand the final color rule", r"A square is black after the operation if it was already black or if the square rotated into its position was black. So around each 4-cycle, we need every position to have itself or its predecessor black."),
+        ("Count valid colorings of one 4-cycle", r"Equivalently, a 4-cycle cannot have two adjacent white squares cyclically. The valid patterns are: all black, exactly one white, or two opposite whites. That gives $1+4+2=7$ valid patterns out of $16$."),
+        ("Include both cycles and the center", r"The corner cycle has $7$ valid patterns, the edge-middle cycle also has $7$, and the center must originally be black, which has probability $\frac12$."),
+        ("Compute the probability", r"The probability is \[\frac{7}{16}\cdot\frac{7}{16}\cdot\frac12=\frac{49}{512}.\] The answer is $\boxed{\frac{49}{512}}$."),
     ],
 }
 def esc(x, quote=True):
@@ -322,6 +312,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
