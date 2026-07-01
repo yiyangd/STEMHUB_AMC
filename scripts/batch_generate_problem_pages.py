@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 197
+BATCH_NUMBER = 198
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
-SKIPPED = []
-BATCH_LABEL = "2010 AMC 12A Problems 21-25"
-NEXT_START = "2010 AMC 12B Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,3,4,5,6,7,8,9,10}
+SKIPPED = ["2010 AMC 12B Problem 2: skipped because the L-shaped region depends on the original diagram."]
+BATCH_LABEL = "2010 AMC 12B Problems 1, 3-10"
+NEXT_START = "2010 AMC 12B Problem 11"
 
-ANS={21:("A","4"),22:("A","49"),23:("A","12"),24:("B","12"),25:("C","568")}
+ANS={1:("C","25"),3:("E","5"),4:("B","3"),5:("D","3"),6:("D","60"),7:("C","24"),8:("B","23"),9:("E","7"),10:("B",r"\frac{50}{101}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2124,6 +2124,51 @@ SOL.update({
 ],
 })
 
+OV.update({
+1:(r"Makayla attended two meetings during her $9$-hour work day. The first meeting took $45$ minutes and the second meeting took twice as long. What percent of her work day was spent attending meetings?",[("A","15"),("B","20"),("C","25"),("D","30"),("E","35")]),
+3:(r"A ticket to a school play costs $x$ dollars, where $x$ is a whole number. A group of 9th graders buys tickets costing a total of $\$48$, and a group of 10th graders buys tickets costing a total of $\$64$. How many values of $x$ are possible?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+4:(r"A month with $31$ days has the same number of Mondays and Wednesdays. How many of the seven days of the week could be the first day of this month?",[("A","2"),("B","3"),("C","4"),("D","5"),("E","6")]),
+5:(r"Lucky Larry's teacher asked him to substitute numbers for $a,b,c,d,$ and $e$ in the expression \[a-(b-(c-(d+e)))\] and evaluate the result. Larry ignored the parentheses but added and subtracted correctly and obtained the correct result by coincidence. The numbers Larry substituted for $a,b,c,$ and $d$ were $1,2,3,$ and $4$, respectively. What number did Larry substitute for $e$?",[("A",r"$-5$"),("B",r"$-3$"),("C","0"),("D","3"),("E","5")]),
+6:(r"At the beginning of the school year, $50\%$ of all students in Mr. Well's math class answered \"Yes\" to the question \"Do you love math?\" and $50\%$ answered \"No.\" At the end of the school year, $70\%$ answered \"Yes\" and $30\%$ answered \"No.\" Altogether, $x\%$ of the students gave a different answer at the beginning and end of the school year. What is the difference between the maximum and minimum possible values of $x$?",[("A","0"),("B","20"),("C","40"),("D","60"),("E","80")]),
+7:(r"Shelby drives her scooter at a speed of $30$ miles per hour if it is not raining, and $20$ miles per hour if it is raining. Today she drove in the sun in the morning and in the rain in the evening, for a total of $16$ miles in $40$ minutes. How many minutes did she drive in the rain?",[("A","18"),("B","21"),("C","24"),("D","27"),("E","30")]),
+8:(r"Every high school in the city of Euclid sent a team of $3$ students to a math contest. Each participant in the contest received a different score. Andrea's score was the median among all students, and hers was the highest score on her team. Andrea's teammates Beth and Carla placed $37$th and $64$th, respectively. How many schools are in the city?",[("A","22"),("B","23"),("C","24"),("D","25"),("E","26")]),
+9:(r"Let $n$ be the smallest positive integer such that $n$ is divisible by $20$, $n^2$ is a perfect cube, and $n^3$ is a perfect square. What is the number of digits of $n$?",[("A","3"),("B","4"),("C","5"),("D","6"),("E","7")]),
+10:(r"The average of the numbers $1,2,3,\ldots,98,99,$ and $x$ is $100x$. What is $x$?",[("A","49"),("B",r"$\frac{50}{101}$"),("C",r"$\frac1{101}$"),("D",r"$\frac12$"),("E",r"$\frac{51}{99}$")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Convert all times to minutes and compute the percentage of the work day.",
+3:"The ticket price must divide both total costs.",
+4:"Use the three extra weekdays in a 31-day month.",
+5:"Compare the intended expression with Larry's expression without parentheses.",
+6:"Track how many students switch from No to Yes and from Yes to No.",
+7:"Use rates in miles per minute and solve for rainy driving time.",
+8:"Use median rank and team-rank information to determine the number of schools.",
+9:"Use prime-exponent conditions for powers to be squares and cubes.",
+10:"Set up the average equation and solve for x.",
+})
+
+SOL.update({
+1:[("Find the total meeting time",r"The first meeting lasted $45$ minutes. The second lasted twice as long, so it lasted $90$ minutes. Together the meetings took \[45+90=135\] minutes."),("Convert the work day to minutes",r"A $9$-hour work day has \[9\cdot60=540\] minutes."),("Form the fraction",r"The fraction of the day spent in meetings is \[\frac{135}{540}=\frac14.\]"),("Convert to a percent",r"One fourth of a day is $25\%$."),("Conclude",r"The answer is $\boxed{25}$."),
+],
+3:[("Interpret the ticket price",r"If each ticket costs $x$ dollars and the total cost is a whole-dollar amount, then $x$ must divide the total cost for each grade."),("Find the common divisors",r"The price $x$ must divide both $48$ and $64$, so $x$ must divide \[\gcd(48,64)=16.\]"),("List the possible values",r"The positive divisors of $16$ are \[1,2,4,8,16.\] Each one gives a whole number of tickets for both groups."),("Count",r"There are $5$ possible values of $x$."),("Conclude",r"The answer is $\boxed{5}$."),
+],
+4:[("Use the structure of a 31-day month",r"A $31$-day month has $4$ complete weeks plus $3$ extra days. Every weekday occurs at least $4$ times, and the first three weekdays of the month occur one extra time."),("Focus on Monday and Wednesday",r"The month has the same number of Mondays and Wednesdays exactly when Monday and Wednesday are either both among the three extra days or neither is among the three extra days."),("List starts where both are extra",r"If the month starts on Monday, the three extra days are Monday, Tuesday, and Wednesday. This works."),("List starts where neither is extra",r"If the month starts on Thursday, the extra days are Thursday, Friday, and Saturday. If it starts on Friday, the extra days are Friday, Saturday, and Sunday. Both work."),("Count the possibilities",r"The possible starting weekdays are Monday, Thursday, and Friday, for a total of $3$."),("Conclude",r"The answer is $\boxed{3}$."),
+],
+5:[("Evaluate the intended expression",r"Substitute $a=1,b=2,c=3,d=4$. The intended expression is \[1-(2-(3-(4+e))).\] Work outward: \[3-(4+e)=-1-e,\] so \[2-(-1-e)=3+e,\] and the whole expression is \[1-(3+e)=-2-e.\]"),("Write Larry's mistaken expression",r"If Larry ignored the parentheses but kept the plus and minus signs in order, he computed \[1-2-3-4+e=e-8.\]"),("Use the coincidence",r"The two results were equal, so \[e-8=-2-e.\]"),("Solve for e",r"This gives \[2e=6,\] so $e=3$."),("Conclude",r"The answer is $\boxed{3}$."),
+],
+6:[("Name the switching groups",r"Let $a$ be the percent who changed from Yes to No, and let $b$ be the percent who changed from No to Yes. These are exactly the students who gave different answers, so \[x=a+b.\]"),("Use the net change",r"The Yes percentage increased from $50\%$ to $70\%$, a net gain of $20\%$. Therefore \[b-a=20.\]"),("Find the minimum",r"To minimize switching, take $a=0$ and $b=20$. Then $x=20$."),("Find the maximum",r"At most $50\%$ of students started as No, so $b\le50$. With $b=a+20$, the largest possible $b$ is $50$, giving $a=30$ and \[x=30+50=80.\]"),("Take the difference",r"The difference between the maximum and minimum possible values is \[80-20=60.\]"),("Conclude",r"The answer is $\boxed{60}$."),
+],
+7:[("Use minutes as the time unit",r"Let $r$ be the number of minutes Shelby drove in the rain. Then she drove for $40-r$ minutes in the sun."),("Convert speeds to miles per minute",r"In the sun she drives $30$ miles per hour, which is $\frac12$ mile per minute. In the rain she drives $20$ miles per hour, which is $\frac13$ mile per minute."),("Write the distance equation",r"The total distance is \[\frac12(40-r)+\frac13r=16.\]"),("Solve",r"This simplifies to \[20-\frac{r}{2}+\frac{r}{3}=16,\] so \[20-\frac{r}{6}=16.\] Hence $\frac{r}{6}=4$ and $r=24$."),("Conclude",r"She drove in the rain for $\boxed{24}$ minutes."),
+],
+8:[("Translate the rankings",r"Each school sent $3$ students, so if there are $s$ schools, then there are $3s$ students. Andrea's score is the median, so the total number of students must be odd; therefore $s$ must be odd."),("Use Andrea's team information",r"Andrea had the highest score on her team, while Beth and Carla placed $37$th and $64$th. Thus Andrea placed better than $37$th."),("Use the median rank",r"With $3s$ students, the median rank is \[\frac{3s+1}{2}.\] Since Andrea is the median and placed better than $37$th, \[\frac{3s+1}{2}<37,\] so $3s+1<74$ and $s\le24$."),("Use Carla's rank",r"Carla placed $64$th, so there must be at least $64$ students. Thus \[3s\ge64,\] so $s\ge22$."),("Combine with oddness",r"The only odd number of schools between $22$ and $24$ is $23$."),("Conclude",r"The answer is $\boxed{23}$."),
+],
+9:[("Use prime exponents",r"Write \[n=\prod p^{e_p}.\] The condition that $n^2$ is a perfect cube means each exponent $2e_p$ is divisible by $3$, so each $e_p$ is divisible by $3$."),("Use the square condition",r"The condition that $n^3$ is a perfect square means each exponent $3e_p$ is even. Since $3$ is odd, each $e_p$ must be even."),("Combine the exponent conditions",r"Each exponent in $n$ must be divisible by both $3$ and $2$, so each exponent must be a multiple of $6$."),("Include divisibility by 20",r"Because $20=2^2\cdot5$, the number $n$ must include prime factors $2$ and $5$. The smallest allowed exponents are therefore $6$ for both primes."),("Find n and its digits",r"The smallest possible $n$ is \[2^6\cdot5^6=(2\cdot5)^6=10^6.\] This number is $1{,}000{,}000$, which has $7$ digits."),("Conclude",r"The answer is $\boxed{7}$."),
+],
+10:[("Write the average equation",r"There are $100$ numbers total: the numbers $1$ through $99$, and $x$. The average is \[100x.\]"),("Compute the known sum",r"The sum \[1+2+\cdots+99=\frac{99\cdot100}{2}=4950.\]"),("Set up the equation",r"The average equation is \[\frac{4950+x}{100}=100x.\] Multiplying by $100$ gives \[4950+x=10000x.\]"),("Solve",r"Thus \[4950=9999x,\] so \[x=\frac{4950}{9999}=\frac{50}{101}.\]"),("Conclude",r"The answer is \[\boxed{\frac{50}{101}}.\]"),
+],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -2230,7 +2275,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2010" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2010" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -2319,7 +2364,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2010 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2010 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
