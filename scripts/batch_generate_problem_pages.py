@@ -1,51 +1,128 @@
-﻿from __future__ import annotations
-
-import csv
-import html
-import json
-import re
-from datetime import datetime
+﻿import csv, json, html, re
 from pathlib import Path
+from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 53
+BATCH_NUMBER = 54
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+TARGET_NUMBERS = {11,12,13,14,15,16,17,18,19,20}
 SKIPPED = []
-BATCH_LABEL = "2010 AMC 10B Problems 1-10"
-NEXT_START = "2010 AMC 10B Problem 11"
+BATCH_LABEL = "2010 AMC 10B Problems 11-20"
+NEXT_START = "2010 AMC 10B Problem 21"
 
-ANS={1:("C","-297"),2:("C","25"),3:("C","5"),4:("C","10"),5:("B","3"),6:("B","25"),7:("D","32"),8:("E","5"),9:("D","3"),10:("C","24")}
-
-OV={
-1:(r"What is $100(100-3)-(100\cdot100-3)$?",[("A",r"$-20{,}000$"),("B",r"$-10{,}000$"),("C",r"$-297$"),("D",r"$-6$"),("E","$0$")]),
-2:(r"Makayla attended two meetings during her $9$-hour work day. The first meeting took $45$ minutes and the second meeting took twice as long. What percent of her work day was spent attending meetings?",[("A","$15$"),("B","$20$"),("C","$25$"),("D","$30$"),("E","$35$")]),
-3:(r"A drawer contains red, green, blue, and white socks with at least $2$ of each color. What is the minimum number of socks that must be pulled from the drawer to guarantee a matching pair?",[("A","$3$"),("B","$4$"),("C","$5$"),("D","$8$"),("E","$9$")]),
-4:(r"For a real number $x$, define $\heartsuit(x)$ to be the average of $x$ and $x^2$. What is $\heartsuit(1)+\heartsuit(2)+\heartsuit(3)$?",[("A","$3$"),("B","$6$"),("C","$10$"),("D","$12$"),("E","$20$")]),
-5:(r"A month with $31$ days has the same number of Mondays and Wednesdays. How many of the seven days of the week could be the first day of this month?",[("A","$2$"),("B","$3$"),("C","$4$"),("D","$5$"),("E","$6$")]),
-6:(r"A circle is centered at $O$, $AB$ is a diameter, and $C$ is a point on the circle with $\angle COB=50^\circ$. What is the degree measure of $\angle CAB$?",[("A","$20$"),("B","$25$"),("C","$45$"),("D","$50$"),("E","$65$")]),
-7:(r"A triangle has side lengths $10$, $10$, and $12$. A rectangle has width $4$ and area equal to the area of the triangle. What is the perimeter of this rectangle?",[("A","$16$"),("B","$24$"),("C","$28$"),("D","$32$"),("E","$36$")]),
-8:(r"A ticket to a school play costs $x$ dollars, where $x$ is a whole number. A group of 9th graders buys tickets costing a total of $48$, and a group of 10th graders buys tickets costing a total of $64$. How many values of $x$ are possible?",[("A","$1$"),("B","$2$"),("C","$3$"),("D","$4$"),("E","$5$")]),
-9:(r"Larry's teacher asked him to substitute numbers for $a,b,c,d,$ and $e$ in $a-(b-(c-(d+e)))$. Larry ignored the parentheses but added and subtracted correctly and obtained the correct result by coincidence. The numbers substituted for $a,b,c,$ and $d$ were $1,2,3,$ and $4$, respectively. What number did Larry substitute for $e$?",[("A",r"$-5$"),("B",r"$-3$"),("C","$0$"),("D","$3$"),("E","$5$")]),
-10:(r"Shelby drives her scooter at $30$ miles per hour if it is not raining, and $20$ miles per hour if it is raining. Today she drove in the sun in the morning and in the rain in the evening, for a total of $16$ miles in $40$ minutes. How many minutes did she drive in the rain?",[("A","$18$"),("B","$21$"),("C","$24$"),("D","$27$"),("E","$30$")]),
+ANS = {
+    11: ("A", "50"),
+    12: ("D", "60"),
+    13: ("C", "92"),
+    14: ("B", r"\frac{50}{101}"),
+    15: ("C", "29"),
+    16: ("B", r"\frac{2\pi}{9}-\frac{\sqrt{3}}{3}"),
+    17: ("B", "23"),
+    18: ("E", r"\frac{13}{27}"),
+    19: ("B", "6"),
+    20: ("D", "81"),
 }
 
-KEY_OVERRIDES={1:"Expand carefully and keep the parentheses separate.",2:"Convert all time to minutes and compare meeting time with the full workday.",3:"Use the pigeonhole principle with four sock colors.",4:"Evaluate the defined average for each input.",5:"A 31-day month has three extra weekdays beyond four full weeks.",6:"Use the inscribed angle theorem.",7:"Find the isosceles triangle's height, then match rectangle area.",8:"The ticket price must divide both total costs.",9:"Compare the correct expression with the expression Larry evaluated without parentheses.",10:"Use time variables and distance equals rate times time."}
-
-SOL={
-1:[("Evaluate the first part",r"The first expression is $100(100-3)=100\cdot97=9700$."),("Evaluate the second part",r"The expression in parentheses is $100\cdot100-3=10000-3=9997$."),("Subtract",r"So the value is $9700-9997=-297$."),("Answer",r"The answer is $\boxed{-297}$.")],
-2:[("Find meeting time",r"The first meeting took $45$ minutes. The second took twice as long, so it took $90$ minutes."),("Add meeting time",r"The total meeting time was $45+90=135$ minutes."),("Convert the workday",r"A $9$-hour workday is $9\cdot60=540$ minutes."),("Find the percent",r"The fraction of the day spent in meetings is $\frac{135}{540}=\frac14$, or $25\%$."),("Answer",r"She spent $\boxed{25\%}$ of her workday in meetings.")],
-3:[("Think worst case",r"To avoid a matching pair as long as possible, we could pull one sock of each color."),("Use four colors",r"There are four colors, so it is possible to pull $4$ socks without a match: one red, one green, one blue, and one white."),("Force the match",r"The next sock, the fifth sock, must match one of those four colors."),("Answer",r"The minimum number is $\boxed{5}$ socks.")],
-4:[("Write the operation",r"The value $\heartsuit(x)$ is the average of $x$ and $x^2$, so $\heartsuit(x)=\frac{x+x^2}{2}$."),("Evaluate each term",r"We get $\heartsuit(1)=1$, $\heartsuit(2)=\frac{2+4}{2}=3$, and $\heartsuit(3)=\frac{3+9}{2}=6$."),("Add",r"The sum is $1+3+6=10$."),("Answer",r"The answer is $\boxed{10}$.")],
-5:[("Use full weeks",r"A $31$-day month contains four full weeks, accounting for $28$ days. Each weekday occurs at least four times."),("Look at the extra days",r"The remaining $3$ days are consecutive weekdays starting with the first day of the month. Only these extra days can make weekday counts differ."),("Require Mondays and Wednesdays to match",r"The extra three-day block must contain both Monday and Wednesday, or contain neither of them."),("Count starts",r"Starting on Monday gives Monday-Tuesday-Wednesday, which contains both. Starting on Thursday gives Thursday-Friday-Saturday, and starting on Friday gives Friday-Saturday-Sunday, which contain neither. These are $3$ possibilities."),("Answer",r"There are $\boxed{3}$ possible first weekdays.")],
-6:[("Identify the arc",r"The central angle $\angle COB=50^\circ$ measures the minor arc $CB$."),("Use the inscribed angle theorem",r"Angle $\angle CAB$ is an inscribed angle that intercepts the same arc $CB$."),("Take half",r"An inscribed angle has half the measure of its intercepted arc, so $\angle CAB=\frac12\cdot50^\circ=25^\circ$."),("Answer",r"The angle measure is $\boxed{25^\circ}$.")],
-7:[("Find the triangle height",r"The triangle is isosceles with equal sides $10$ and base $12$. The altitude to the base splits the base into two segments of length $6$."),("Use the Pythagorean theorem",r"The height is $\sqrt{10^2-6^2}=\sqrt{100-36}=8$."),("Find the triangle area",r"The area is $\frac12\cdot12\cdot8=48$."),("Find the rectangle length",r"The rectangle has width $4$ and area $48$, so its length is $12$."),("Compute perimeter",r"The perimeter is $2(4+12)=32$."),("Answer",r"The rectangle's perimeter is $\boxed{32}$.")],
-8:[("Interpret x",r"The ticket price $x$ must be a whole number of dollars."),("Use both groups",r"Since one group spent $48$ dollars and the other spent $64$ dollars, $x$ must divide both $48$ and $64$."),("Find common divisors",r"The common divisors are the divisors of $\gcd(48,64)=16$: $1,2,4,8,16$."),("Count",r"There are $5$ possible values of $x$."),("Answer",r"The answer is $\boxed{5}$.")],
-9:[("Evaluate the correct expression",r"With $a=1$, $b=2$, $c=3$, and $d=4$, the correct expression is $1-(2-(3-(4+e)))$. This simplifies to $-2-e$."),("Evaluate Larry's expression",r"Ignoring parentheses but keeping the signs in order gives $1-2-3-4+e=e-8$."),("Set them equal",r"Larry got the correct result by coincidence, so $e-8=-2-e$."),("Solve",r"Then $2e=6$, so $e=3$."),("Answer",r"Larry substituted $\boxed{3}$ for $e$.")],
-10:[("Use hours",r"Forty minutes is $\frac23$ hour. Let $t$ be the number of hours Shelby drove in the rain."),("Write the sunny time",r"Then she drove for $\frac23-t$ hours in the sun."),("Write the distance equation",r"The total distance is $20t+30(\frac23-t)=16$."),("Solve",r"This becomes $20t+20-30t=16$, so $10t=4$ and $t=0.4$ hours."),("Convert to minutes",r"The time in rain was $0.4\cdot60=24$ minutes."),("Answer",r"She drove in the rain for $\boxed{24}$ minutes.")],
+OV = {
+    11: r"A shopper plans to purchase an item with listed price greater than $\$100$ and may use one coupon. Coupon A gives $15\%$ off the listed price, Coupon B gives $\$30$ off the listed price, and Coupon C gives $25\%$ off the amount by which the listed price exceeds $\$100$. Let $x$ and $y$ be the smallest and largest prices for which Coupon A saves at least as many dollars as Coupon B or Coupon C. What is $y-x$?",
+    12: r"At the beginning of the school year, $50\%$ of the students in Mr. Well's class answered \"Yes\" to \"Do you love math?\" and $50\%$ answered \"No.\" At the end of the year, $70\%$ answered \"Yes\" and $30\%$ answered \"No.\" Altogether, $x\%$ of the students gave a different answer at the beginning and end. What is the difference between the maximum and minimum possible values of $x$?",
+    13: r"What is the sum of all solutions of $x=\left|2x-|60-2x|\right|$?",
+    14: r"The average of the numbers $1,2,3,\ldots,98,99,$ and $x$ is $100x$. What is $x$?",
+    15: r"On a $50$-question multiple choice math contest, students receive $4$ points for a correct answer, $0$ points for a blank answer, and $-1$ point for an incorrect answer. Jesse's total score was $99$. What is the maximum number of questions that Jesse could have answered correctly?",
+    16: r"A square of side length $1$ and a circle of radius $\frac{\sqrt{3}}{3}$ share the same center. What is the area inside the circle, but outside the square?",
+    17: r"Every high school in the city of Euclid sent a team of $3$ students to a math contest. Each participant received a different score. Andrea's score was the median among all students, and hers was the highest score on her team. Andrea's teammates Beth and Carla placed $37^{\text{th}}$ and $64^{\text{th}}$, respectively. How many schools are in the city?",
+    18: r"Positive integers $a,b,c$ are randomly and independently selected with replacement from the set $\{1,2,3,\ldots,2010\}$. What is the probability that $abc+ab+a$ is divisible by $3$?",
+    19: r"A circle with center $O$ has area $156\pi$. Triangle $ABC$ is equilateral, $BC$ is a chord of the circle, $OA=4\sqrt{3}$, and point $O$ is outside $\triangle ABC$. What is the side length of $\triangle ABC$?",
+    20: r"Two circles lie outside regular hexagon $ABCDEF$. The first is tangent to $\overline{AB}$, and the second is tangent to $\overline{DE}$. Both are tangent to lines $BC$ and $FA$. What is the ratio of the area of the second circle to that of the first circle?",
 }
 
+OV = {k: (v, None) for k, v in OV.items()}
+
+KEY_OVERRIDES = {
+    11: "Translate coupon savings into inequalities and find the interval of listed prices.",
+    12: "Compare two yes/no distributions by matching as many students as possible, then as few as possible.",
+    13: "Break an absolute value equation at the points where the inside expressions change sign.",
+    14: "Turn the average statement into an equation using the sum of an arithmetic sequence.",
+    15: "Use variables and an inequality to maximize correct answers under the scoring rule.",
+    16: "Find one repeated circular segment using symmetry, then multiply by four.",
+    17: "Use Andrea's median rank and teammate ranks to pin down the total number of students.",
+    18: "Work modulo $3$ and count residue classes instead of individual integers.",
+    19: "Relate the chord length, circle radius, and equilateral-triangle height with the Pythagorean theorem.",
+    20: "View the tangent circles as incircles in the same $60^\circ$ angle and compare their radii.",
+}
+
+SOL = {
+    11: [
+        ("Represent the price clearly", r"Let the listed price be $P$. The problem is not asking for the best coupon for one fixed price; it asks for all prices where Coupon A saves at least as much as each of the other two coupons. So we should write the three savings as expressions in $P$."),
+        ("Write the three savings", r"Coupon A saves $0.15P$. Coupon B saves $30$. Coupon C saves $25\%$ of the amount above $100$, so it saves $0.25(P-100)$. Coupon A must be at least as good as both, so it must satisfy two inequalities."),
+        ("Compare A with B", r"From $0.15P\ge 30$, multiply by $100$ or divide by $0.15$ to get $P\ge 200$. This gives the left endpoint: below $200$, a flat $30$ discount beats Coupon A."),
+        ("Compare A with C", r"Now compare Coupon A with Coupon C: $0.15P\ge 0.25(P-100)$. This becomes $0.15P\ge 0.25P-25$, so $25\ge 0.10P$ and therefore $P\le 250$. This gives the right endpoint."),
+        ("Find the requested difference", r"The valid prices run from $x=200$ to $y=250$. Therefore $y-x=250-200=50$, so the answer is $\boxed{50}$."),
+    ],
+    12: [
+        ("Convert the percentages into groups", r"Think of $100$ students, since all percentages then become counts. At the beginning there are $50$ Yes and $50$ No. At the end there are $70$ Yes and $30$ No."),
+        ("Find the minimum number who changed", r"To make as few students change as possible, keep all $50$ original Yes students as Yes. The class still needs $20$ more Yes answers at the end, so $20$ No students must change to Yes. Thus the minimum possible value of $x$ is $20$."),
+        ("Find the maximum number who changed", r"To make as many students change as possible, change all $50$ original Yes students to No if possible. But the end has only $30$ No answers, so only $30$ of them can switch to No. Also all $50$ original No students can switch to Yes, giving $30+50=80$ students who changed."),
+        ("Compare the extremes", r"The maximum possible value of $x$ is $80$, and the minimum possible value is $20$. The requested difference is $80-20=60$, so the answer is $\boxed{60}$."),
+    ],
+    13: [
+        ("Locate where the absolute values change", r"The expression has two absolute values. The inner one, $|60-2x|$, changes form at $x=30$. After that, another absolute value may change depending on the simplified expression, so a case approach is the cleanest way to avoid guessing."),
+        ("Case 1: $x<30$", r"If $x<30$, then $|60-2x|=60-2x$. The equation becomes $x=|2x-(60-2x)|=|4x-60|$. This new absolute value changes at $x=15$."),
+        ("Solve the subcases below $30$", r"For $15\le x<30$, we have $|4x-60|=4x-60$, so $x=4x-60$ and $x=20$. For $x<15$, we have $|4x-60|=60-4x$, so $x=60-4x$ and $x=12$. Both values fit their subcases."),
+        ("Case 2: $x\ge 30$", r"If $x\ge 30$, then $|60-2x|=2x-60$. The equation becomes $x=|2x-(2x-60)|=|60|=60$. This solution fits $x\ge 30$."),
+        ("Add the solutions", r"The solutions are $12$, $20$, and $60$. Their sum is $12+20+60=92$, so the answer is $\boxed{92}$."),
+    ],
+    14: [
+        ("Translate average into total sum", r"An average is total divided by number of terms. Here there are the $99$ numbers from $1$ to $99$, plus the extra number $x$, so there are $100$ terms altogether."),
+        ("Sum the known numbers", r"The sum $1+2+\cdots+99$ is $\frac{99\cdot100}{2}=99\cdot50$. Therefore the total sum of all $100$ terms is $99\cdot50+x$."),
+        ("Set up the average equation", r"Since the average is $100x$, we write \[\frac{99\cdot50+x}{100}=100x.\] Multiplying by $100$ gives $99\cdot50+x=10000x$."),
+        ("Solve for $x$ cleanly", r"Move the $x$ term to the right: $99\cdot50=9999x$. Since $9999=99\cdot101$, we get \[x=\frac{99\cdot50}{99\cdot101}=\frac{50}{101}.\]"),
+        ("Check the size", r"The value is about $0.495$, which is plausible because the average $100x$ is about $49.5$, near the average of $1$ through $99$. The answer is $\boxed{\frac{50}{101}}$."),
+    ],
+    15: [
+        ("Name the quantities", r"Let $c$ be the number correct, $w$ the number wrong, and $b$ the number blank. Then $c+w+b=50$. The score equation is $4c-w=99$."),
+        ("Focus on maximizing correct answers", r"Blank answers do not change the score, so to make $c$ large we mainly need to know whether there are enough remaining questions to absorb the necessary wrong answers. From $4c-w=99$, we get $w=4c-99$."),
+        ("Use the total number of questions", r"The number answered either correctly or incorrectly is $c+w$, and this cannot exceed $50$. Substitute $w=4c-99$: \[c+(4c-99)\le 50.\] This gives $5c\le149$, so $c\le29.8$."),
+        ("Use integrality", r"Because $c$ is an integer, the largest possible value is $c=29$. This is actually possible because then $w=4(29)-99=17$ and $b=50-29-17=4$."),
+        ("Conclude", r"So Jesse could have answered at most $29$ questions correctly. The answer is $\boxed{29}$."),
+    ],
+    16: [
+        ("Understand the overlap", r"The circle and square have the same center. The radius is $\frac{\sqrt3}{3}$, while half the square's side is $\frac12$. The circle crosses each side of the square, so the desired region consists of four identical circular segments outside the square."),
+        ("Study one side of the square", r"Look at the top side of the square. From the center to that side is distance $\frac12$. If half the chord cut by the circle on that side is $a$, then \[a^2+\left(\frac12\right)^2=\left(\frac{\sqrt3}{3}\right)^2.\] Thus $a^2=\frac13-rac14=\frac1{12}$, so $a=\frac{\sqrt3}{6}$."),
+        ("Identify the central angle", r"The full chord length is $2a=\frac{\sqrt3}{3}$, which equals the radius. A chord equal to the radius subtends a $60^\circ$ central angle. That tells us the outside piece above one side is one $60^\circ$ sector minus an equilateral triangle."),
+        ("Compute one segment", r"The sector area is \[\frac{60}{360}\pi\left(\frac{\sqrt3}{3}\right)^2=\frac{\pi}{18}.\] The equilateral triangle has side $\frac{\sqrt3}{3}$, so its area is \[\frac{\sqrt3}{4}\left(\frac{\sqrt3}{3}\right)^2=\frac{\sqrt3}{12}.\]"),
+        ("Multiply by four", r"There are four identical segments, one on each side of the square. The total area is $4\left(\frac{\pi}{18}-\frac{\sqrt3}{12}\right)=\frac{2\pi}{9}-\frac{\sqrt3}{3}$. The answer is $\boxed{\frac{2\pi}{9}-\frac{\sqrt3}{3}}$."),
+    ],
+    17: [
+        ("Translate schools into students", r"Let there be $n$ schools. Since each school sends $3$ students, there are $3n$ contestants. Because all scores are different, the median is a single middle rank, so $3n$ must be odd and the median rank is $\frac{3n+1}{2}$."),
+        ("Use Andrea's team condition", r"Andrea has the highest score on her own team, while Beth and Carla placed $37$th and $64$th. Therefore Andrea's rank is better than both teammates, so her rank is less than $37$."),
+        ("Use the existence of the 64th-place teammate", r"There must be at least $64$ contestants, so $3n\ge64$. This gives $n\ge22$. Since $3n$ must be odd, $n$ must be odd, so possible nearby values begin with $23,25,\ldots$."),
+        ("Test the median rank", r"If $n=23$, then there are $69$ students and the median rank is $35$, which is less than $37$. That works with Andrea being ahead of Beth and Carla. If $n=25$, the median rank is $38$, which is not better than Beth's $37$th place, so it fails."),
+        ("Conclude", r"The only possible number of schools is $23$. Therefore the answer is $\boxed{23}$."),
+    ],
+    18: [
+        ("Reduce the expression modulo 3", r"We only care whether $abc+ab+a$ is divisible by $3$. Factor the expression as \[abc+ab+a=a(bc+b+1)=a\bigl(b(c+1)+1\bigr).\] A product is $0$ modulo $3$ if at least one factor is $0$ modulo $3$."),
+        ("Use uniform residues", r"The set $\{1,2,\ldots,2010\}$ has the same number of integers in each residue class modulo $3$, because $2010$ is divisible by $3$. So $a,b,c$ are each equally likely to be $0,1,$ or $2$ modulo $3$."),
+        ("Count when the first factor works", r"If $a\equiv0\pmod3$, the expression is automatically divisible by $3$. This happens with probability $\frac13$."),
+        ("Count when the second factor works", r"If $a\not\equiv0\pmod3$, we need $b(c+1)+1\equiv0\pmod3$. Among the $9$ possible residue pairs $(b,c)$, this happens for $(b,c)=(1,1)$ and $(2,0)$, so the probability is $\frac29$."),
+        ("Combine the cases", r"The cases are disjoint by whether $a$ is $0$ modulo $3$. Thus the probability is \[\frac13+\frac23\cdot\frac29=\frac13+\frac4{27}=\frac{13}{27}.\] The answer is $\boxed{\frac{13}{27}}$."),
+    ],
+    19: [
+        ("Turn the area into a radius", r"The circle has area $156\pi$, so its radius $R$ satisfies $\pi R^2=156\pi$. Thus $R^2=156$. We will use $R^2$ directly instead of simplifying the radical."),
+        ("Let the triangle side be $s$", r"Since $ABC$ is equilateral, the altitude from $A$ to $BC$ is $\frac{s\sqrt3}{2}$. The chord $BC$ has length $s$, so if the distance from $O$ to chord $BC$ is $d$, then the right triangle from the circle center to the midpoint of the chord gives \[\left(\frac{s}{2}\right)^2+d^2=156.\]"),
+        ("Use the position of $O$", r"Point $O$ is outside the equilateral triangle, and $OA=4\sqrt3$. In this configuration the center lies beyond side $BC$ from vertex $A$, so the distance from $O$ to $BC$ is the triangle altitude plus $OA$: \[d=\frac{s\sqrt3}{2}+4\sqrt3.\]"),
+        ("Solve the equation", r"Substitute this into the chord equation: \[\frac{s^2}{4}+\left(\frac{s\sqrt3}{2}+4\sqrt3\right)^2=156.\] This simplifies to $s^2+12s+48=156$, so $s^2+12s-108=0$."),
+        ("Choose the positive root", r"Factoring gives $(s-6)(s+18)=0$. A side length must be positive, so $s=6$. The answer is $\boxed{6}$."),
+    ],
+    20: [
+        ("Use a convenient scale", r"The ratio of areas will not depend on the size of the regular hexagon, so let the side length be $1$. The lines $BC$ and $FA$ meet at a $60^\circ$ angle outside the hexagon."),
+        ("Find the small circle radius", r"The first circle is tangent to lines $BC$ and $FA$ and also to side $AB$. In the $60^\circ$ angle, its center lies on the angle bisector. The distance from the angle vertex to line $AB$ is the altitude of an equilateral triangle of side $1$, namely $\frac{\sqrt3}{2}$. For a circle inside this small triangular region, that distance equals $3r_1$, so $r_1=\frac{\sqrt3}{6}$."),
+        ("Find the large circle radius", r"The second circle is tangent to the same two lines but to the opposite side $DE$. The distance from the angle vertex down to line $DE$ is three times as large, $\frac{3\sqrt3}{2}$. Since this circle lies on the far side of $DE$, the distance to its center is $2r_2$, and the last radius reaches back to $DE$, so $2r_2=\frac{3\sqrt3}{2}+r_2$. Thus $r_2=\frac{3\sqrt3}{2}$."),
+        ("Compare radii", r"The ratio of the radii is \[\frac{r_2}{r_1}=\frac{\frac{3\sqrt3}{2}}{\frac{\sqrt3}{6}}=9.\] Since circle areas scale with the square of the radius, the area ratio is $9^2=81$."),
+        ("Conclude", r"Therefore the ratio of the area of the second circle to that of the first circle is $\boxed{81}$."),
+    ],
+}
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -254,6 +331,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
 
 
 
