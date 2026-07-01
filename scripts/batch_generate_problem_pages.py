@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 169
+BATCH_NUMBER = 170
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
-SKIPPED = []
-BATCH_LABEL = "2005 AMC 12B Problems 21-25"
-NEXT_START = "2006 AMC 12A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2006_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,7,8,9,10}
+SKIPPED = ["2006 AMC 12A Problem 6 - skipped because the problem depends on the missing diagram showing the rectangle cut into congruent hexagons."]
+BATCH_LABEL = "2006 AMC 12A Problems 1-5, 7-10"
+NEXT_START = "2006 AMC 12A Problem 11"
 
-ANS={21:("C","2"),22:("E",r"2^{2005}"),23:("B",r"\frac{29}{2}"),24:("A","14"),25:("A",r"\frac5{256}")}
+ANS={1:("A","31"),2:("C","h"),3:("B","18"),4:("E","23"),5:("D","4"),7:("B","8"),8:("C","3"),9:("A","10"),10:("E","11")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1159,6 +1159,41 @@ SOL.update({
 24:[("Use the side with slope 2",r"Let the endpoints of the side with slope \(2\) have \(x\)-coordinates \(1-t\) and \(1+t\). This works because the slope between two parabola points is the sum of their \(x\)-coordinates, so the sum must be \(2\)."),("Write the side vector",r"The two points differ by \((2t,4t)\). The midpoint of the side is \((1,1+t^2)\)."),("Find the third vertex",r"Rotating half the side by \(90^\circ\) and scaling by \(\sqrt3\), the third vertex has coordinates \[(1-2\sqrt3\,t,\ 1+t^2+\sqrt3\,t)\] or the reflected version."),("Put the third vertex on the parabola",r"Using \(y=x^2\), \[1+t^2+\sqrt3\,t=(1-2\sqrt3\,t)^2.\] This simplifies to \(t(11t-5\sqrt3)=0\). Since the triangle is nondegenerate, \(t=\frac{5\sqrt3}{11}\)."),("Sum the x-coordinates",r"The three \(x\)-coordinates sum to \[(1-t)+(1+t)+(1-2\sqrt3\,t)=3-2\sqrt3\cdot\frac{5\sqrt3}{11}=\frac{3}{11}.\]"),("Conclude",r"Thus \(m=3\), \(n=11\), and \(m+n=\boxed{14}\)."),],
 25:[("Pair opposite vertices",r"A regular octahedron has \(3\) pairs of opposite vertices. Each ant can move to any vertex except its starting vertex and the opposite vertex, so each ant has \(4\) choices."),("Count total outcomes",r"There are \(4^6=4096\) total movement outcomes."),("Require a permutation",r"No two ants arriving at the same vertex means the six arrivals form a permutation of the six vertices."),("Count by opposite pairs",r"At the level of the \(3\) opposite pairs, each source pair must send two ants to the two other destination pairs, with each destination pair receiving two ants. There are two types: all off-diagonal pair transfers are \(1\)'s, or one of the two directed \(3\)-cycles has transfer \(2\)'s."),("Count the two types",r"In the all-\(1\) type, choosing which ant goes to which destination pair gives \(2^3\) choices, and assigning incoming ants to the two vertices in each destination pair gives another \(2^3\), for \(64\). In the two directed-cycle types, each contributes \(2^3=8\), for \(16\) more."),("Compute probability",r"There are \(64+16=80\) favorable outcomes, so the probability is \[\frac{80}{4096}=\frac5{256}.\] The answer is $\boxed{\frac5{256}}$."),],
 })
+OV.update({
+1:(r"Sandwiches at Joe's Fast Food cost \(\$3\) each and sodas cost \(\$2\) each. How many dollars will it cost to purchase \(5\) sandwiches and \(8\) sodas?",[("A","31"),("B","32"),("C","33"),("D","34"),("E","35")]),
+2:(r"Define \(x\otimes y=x^3-y\). What is \(h\otimes(h\otimes h)\)?",[("A",r"\(-h\)"),("B","0"),("C",r"\(h\)"),("D",r"\(2h\)"),("E",r"\(h^3\)")]),
+3:(r"The ratio of Mary's age to Alice's age is \(3:5\). Alice is \(30\) years old. How old is Mary?",[("A","15"),("B","18"),("C","20"),("D","24"),("E","50")]),
+4:(r"A digital watch displays hours and minutes. What is the largest possible sum of the digits in the display?",[("A","17"),("B","19"),("C","21"),("D","22"),("E","23")]),
+5:(r"Doug and Dave shared a pizza with \(8\) equally-sized slices. Doug wanted a plain pizza, but Dave wanted anchovies on half the pizza. The cost of a plain pizza was \(\$8\), and there was an additional cost of \(\$2\) for putting anchovies on one half. Dave ate all the slices of anchovy pizza and one plain slice. Doug ate the remainder. Each paid for what he had eaten. How many more dollars did Dave pay than Doug?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+7:(r"Mary is \(20\%\) older than Sally, and Sally is \(40\%\) younger than Danielle. The sum of their ages is \(23.2\) years. How old will Mary be on her next birthday?",[("A","7"),("B","8"),("C","9"),("D","10"),("E","11")]),
+8:(r"How many sets of two or more consecutive positive integers have a sum of \(15\)?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+9:(r"Oscar buys \(13\) pencils and \(3\) erasers for \(\$1.00\). A pencil costs more than an eraser, and both items cost a whole number of cents. What is the total cost, in cents, of one pencil and one eraser?",[("A","10"),("B","12"),("C","15"),("D","18"),("E","20")]),
+10:(r"For how many real values of \(x\) is \(\sqrt{120-\sqrt{x}}\) an integer?",[("A","3"),("B","6"),("C","9"),("D","10"),("E","11")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Separate the total cost into sandwiches and sodas, then add.",
+2:"Evaluate the inside custom operation first, then substitute it into the outside operation.",
+3:"Use the ratio as parts to scale from Alice's known age.",
+4:"Maximize the digit sum by checking the largest possible hour and minute digits.",
+5:"Price the anchovy half and plain half separately, then assign slices to each person.",
+7:"Use one variable for Danielle's age and translate the percentage relationships.",
+8:"List possible lengths of consecutive positive integer sums and solve for the starting term.",
+9:"Use a linear cents equation with positive integer costs.",
+10:"Turn the outer square root being an integer into a list of possible perfect squares.",
+})
+
+SOL.update({
+1:[("Identify the two costs",r"The problem has two independent purchases: sandwiches and sodas. A good first move is to compute each subtotal separately so the arithmetic stays organized."),("Compute the sandwich subtotal",r"Each sandwich costs \(\$3\), and there are \(5\) sandwiches, so the sandwich cost is \[5\cdot3=15.\]"),("Compute the soda subtotal",r"Each soda costs \(\$2\), and there are \(8\) sodas, so the soda cost is \[8\cdot2=16.\]"),("Add the subtotals",r"The total cost is \[15+16=31.\]"),("Conclude",r"It will cost \(\boxed{31}\) dollars."),],
+2:[("Start inside the parentheses",r"Custom operations are handled like ordinary functions: evaluate the inner expression first. Here the inner expression is \(h\otimes h\)."),("Evaluate the inner operation",r"Using \(x\otimes y=x^3-y\), we get \[h\otimes h=h^3-h.\]"),("Use that result as the second input",r"Now the expression becomes \[h\otimes(h^3-h).\] The first input is \(h\), and the second input is \(h^3-h\)."),("Apply the definition again",r"Therefore \[h\otimes(h^3-h)=h^3-(h^3-h)=h.\]"),("Conclude",r"The value is \(\boxed{h}\)."),],
+3:[("Read the ratio as parts",r"The ratio \(3:5\) means Mary's age is \(3\) equal parts while Alice's age is \(5\) equal parts. Since Alice's actual age is known, we can find the size of one part."),("Find one part",r"Alice's \(5\) parts equal \(30\), so one part is \[30\div5=6.\]"),("Find Mary's age",r"Mary has \(3\) parts, so her age is \[3\cdot6=18.\]"),("Check the ratio",r"The ratio \(18:30\) simplifies by dividing by \(6\), giving \(3:5\), so it matches the problem."),("Conclude",r"Mary is \(\boxed{18}\) years old."),],
+4:[("Understand the display",r"The goal is not to find the latest time. It is to choose a possible time whose displayed digits have the largest sum."),("Maximize the minute digits",r"The minute part can be as large as \(59\), whose digit sum is \(5+9=14\). This is better than any smaller minute with first digit at most \(5\)."),("Maximize the hour digit contribution",r"On a standard digital watch display, the one-digit hour \(9\) contributes digit sum \(9\), which is larger than \(10,11,\) or \(12\) because those have digit sums \(1,2,\) and \(3\)."),("Combine the best choices",r"The time \(9:59\) is possible, and its digit sum is \[9+5+9=23.\]"),("Conclude",r"The largest possible digit sum is \(\boxed{23}\)."),],
+5:[("Split the pizza into two halves",r"The topping is placed on exactly half of the pizza. So it is natural to price the anchovy half and the plain half separately."),("Price the plain half",r"A plain pizza costs \(\$8\), so half of the plain base cost is \(\$4\). The plain half has \(4\) slices, so each plain slice costs \(\$1\)."),("Price the anchovy half",r"The anchovy half has the same \(\$4\) base cost plus \(\$2\) for anchovies, for a total of \(\$6\). Since it has \(4\) slices, those slices together cost \(\$6\)."),("Find what Dave paid",r"Dave ate all \(4\) anchovy slices, costing \(\$6\), and one plain slice, costing \(\$1\). So Dave paid \(\$7\)."),("Find what Doug paid and compare",r"Doug ate the remaining \(3\) plain slices, costing \(\$3\). The difference is \[7-3=4.\]"),("Conclude",r"Dave paid \(\boxed{4}\) more dollars than Doug."),],
+7:[("Choose the most convenient variable",r"The relationships describe both Mary and Sally in terms of Danielle, so let Danielle's age be \(D\). This keeps the percentages from chaining in too many directions."),("Translate Sally's age",r"Sally is \(40\%\) younger than Danielle, so Sally is \(60\%\) of Danielle's age: \[S=0.6D.\]"),("Translate Mary's age",r"Mary is \(20\%\) older than Sally, so \[M=1.2S=1.2(0.6D)=0.72D.\]"),("Use the total age",r"The sum is \(D+0.6D+0.72D=2.32D=23.2\). Hence \(D=10\)."),("Find Mary's current age and next birthday",r"Mary's current age is \[M=0.72(10)=7.2.\] On her next birthday she will turn \(8\)."),("Conclude",r"Mary will be \(\boxed{8}\) on her next birthday."),],
+8:[("Think in terms of length",r"A set of consecutive positive integers is determined by its length and its first term. Since the total is only \(15\), only a few lengths can work."),("Write a general sum",r"If the set has length \(k\ge2\) and starts at \(a\), then its sum is \[a+(a+1)+\cdots+(a+k-1)=ka+\frac{k(k-1)}2.\]"),("Test possible lengths",r"The smallest sum for length \(k\) is \(1+2+\cdots+k=\frac{k(k+1)}2\). This is at most \(15\) only for \(k=2,3,4,\) or \(5\)."),("Find valid starts",r"For \(k=2\), \(2a+1=15\), so \(a=7\). For \(k=3\), \(3a+3=15\), so \(a=4\). For \(k=4\), \(4a+6=15\), not an integer \(a\). For \(k=5\), \(5a+10=15\), so \(a=1\)."),("Count the sets",r"The valid sets are \(\{7,8\}\), \(\{4,5,6\}\), and \(\{1,2,3,4,5\}\)."),("Conclude",r"There are \(\boxed{3}\) such sets."),],
+9:[("Set up cents variables",r"Let a pencil cost \(p\) cents and an eraser cost \(e\) cents. Using cents avoids decimals."),("Write the total-cost equation",r"Oscar buys \(13\) pencils and \(3\) erasers for \(100\) cents, so \[13p+3e=100.\]"),("Use modular arithmetic to restrict p",r"Reducing modulo \(3\), we get \(13p\equiv100\pmod3\). Since \(13\equiv1\) and \(100\equiv1\), this gives \(p\equiv1\pmod3\)."),("Test positive possibilities",r"The possible positive \(p\)-values below \(100/13\) are \(1,4,7\). Because a pencil costs more than an eraser, we test the viable values. If \(p=7\), then \[3e=100-91=9,\] so \(e=3\)."),("Check the condition",r"With \(p=7\) and \(e=3\), the total is \(13\cdot7+3\cdot3=91+9=100\), and the pencil costs more."),("Conclude",r"One pencil and one eraser cost \(7+3=\boxed{10}\) cents."),],
+10:[("Translate the integer condition",r"For \(\sqrt{120-\sqrt{x}}\) to be an integer, the quantity inside the outer square root must be a perfect square."),("Name the integer value",r"Let \(\sqrt{120-\sqrt{x}}=n\), where \(n\) is a nonnegative integer. Then \[120-\sqrt{x}=n^2.\]"),("Find possible n values",r"Because \(\sqrt{x}\ge0\), we must have \(120-\sqrt{x}\le120\), so \(n^2\le120\). The nonnegative integers satisfying this are \[n=0,1,2,\ldots,10.\]"),("Show each one gives one x",r"For each such \(n\), \(\sqrt{x}=120-n^2\), which is nonnegative. Therefore \[x=(120-n^2)^2\] gives exactly one real value of \(x\)."),("Count",r"There are \(11\) possible integers \(n\), from \(0\) through \(10\), and each gives one value of \(x\)."),("Conclude",r"The number of real values of \(x\) is \(\boxed{11}\)."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -1265,7 +1300,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2005" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2006" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -1354,7 +1389,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2005 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2006 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
