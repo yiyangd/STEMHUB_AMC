@@ -3,30 +3,42 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 120
+BATCH_NUMBER = 121
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2020_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {22,23,24,25}
-SKIPPED = ["2020 AMC 10B Problem 21 skipped: area question depends on the missing square diagram with points E,F,G,H,I,J."]
-BATCH_LABEL = "2020 AMC 10B Problems 22-25"
-NEXT_START = "2021 Spring AMC 10A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2021_AMC_10A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2021 Spring AMC 10A Problems 1-10"
+NEXT_START = "2021 Spring AMC 10A Problem 11"
 
-ANS={22:("D","201"),23:("C",r"2^{38}"),24:("C","6"),25:("A","112")}
+ANS={1:("D","8"),2:("C","1950"),3:("D","14238"),4:("D","3195"),5:("B",r"\frac{8k-168}{k-12}"),6:("A",r"\frac{12}{13}"),7:("D","Happy snakes are not purple."),8:("E","75"),9:("D","1"),10:("C",r"3^{128}-2^{128}")}
 
 OV={
-22:(r"What is the remainder when $2^{202}+202$ is divided by $2^{101}+2^{51}+1$?",[("A","100"),("B","101"),("C","200"),("D","201"),("E","202")]),
-23:(r"Square $ABCD$ in the coordinate plane has vertices at $A(1,1)$, $B(-1,1)$, $C(-1,-1)$, and $D(1,-1)$. Consider the transformations $L$ and $R$, rotations by $90^\circ$ counterclockwise and clockwise around the origin, and $H$ and $V$, reflections across the $x$-axis and $y$-axis. How many sequences of $20$ transformations chosen from $\{L,R,H,V\}$ send all labeled vertices back to their original positions?",[("A",r"$2^{37}$"),("B",r"$3\cdot2^{36}$"),("C",r"$2^{38}$"),("D",r"$3\cdot2^{37}$"),("E",r"$2^{39}$")]),
-24:(r"How many positive integers $n$ satisfy \[\frac{n+1000}{70}=\lfloor\sqrt n\rfloor?\] Recall that $\lfloor x\rfloor$ is the greatest integer not exceeding $x$.",[("A","2"),("B","4"),("C","6"),("D","30"),("E","32")]),
-25:(r"Let $D(n)$ denote the number of ways of writing the positive integer $n$ as a product \[n=f_1\cdot f_2\cdots f_k,\] where $k\ge1$, the $f_i$ are integers strictly greater than $1$, and the order of the factors matters. For example, $D(6)=3$ because $6$, $2\cdot3$, and $3\cdot2$ are counted. What is $D(96)$?",[("A","112"),("B","128"),("C","144"),("D","172"),("E","184")]),
+1:(r"What is the value of \[(2^2-2)-(3^2-3)+(4^2-4)?\]",[("A","1"),("B","2"),("C","5"),("D","8"),("E","12")]),
+2:(r"Portia's high school has $3$ times as many students as Lara's high school. The two high schools have a total of $2600$ students. How many students does Portia's high school have?",[("A","600"),("B","650"),("C","1950"),("D","2000"),("E","2050")]),
+3:(r"The sum of two natural numbers is $17,402$. One of the two numbers is divisible by $10$. If the units digit of that number is erased, the other number is obtained. What is the difference of these two numbers?",[("A","10272"),("B","11700"),("C","13362"),("D","14238"),("E","15426")]),
+4:(r"A cart rolls down a hill, traveling $5$ inches the first second and accelerating so that each successive $1$-second interval it travels $7$ inches more than during the previous $1$-second interval. The cart takes $30$ seconds to reach the bottom of the hill. How far, in inches, does it travel?",[("A","215"),("B","360"),("C","2992"),("D","3195"),("E","3242")]),
+5:(r"The quiz scores of a class with $k>12$ students have a mean of $8$. The mean of a collection of $12$ of these quiz scores is $14$. What is the mean of the remaining quiz scores in terms of $k$?",[("A",r"$\frac{14-8}{k-12}$"),("B",r"$\frac{8k-168}{k-12}$"),("C",r"$\frac{14}{12}-\frac{8}{k}$"),("D",r"$\frac{14(k-12)}{k^2}$"),("E",r"$\frac{14(k-12)}{8k}$")]),
+6:(r"Chantal and Jean start hiking from a trailhead toward a fire tower. Jean is wearing a heavy backpack and walks slower. Chantal starts walking at $4$ miles per hour. Halfway to the tower, the trail becomes really steep, and Chantal slows down to $2$ miles per hour. After reaching the tower, she immediately turns around and descends the steep part of the trail at $3$ miles per hour. She meets Jean at the halfway point. What was Jean's average speed, in miles per hour, until they meet?",[("A",r"$\frac{12}{13}$"),("B","1"),("C",r"$\frac{13}{12}$"),("D",r"$\frac{24}{13}$"),("E","2")]),
+7:(r"Tom has a collection of $13$ snakes, $4$ of which are purple and $5$ of which are happy. He observes that all of his happy snakes can add, none of his purple snakes can subtract, and all of his snakes that cannot subtract also cannot add. Which of these conclusions can be drawn about Tom's snakes?",[("A","Purple snakes can add."),("B","Purple snakes are happy."),("C","Snakes that can add are purple."),("D","Happy snakes are not purple."),("E","Happy snakes cannot subtract.")]),
+8:(r"When a student multiplied the number $66$ by the repeating decimal $1.\overline{ab}$, where $a$ and $b$ are digits, he did not notice the notation and just multiplied $66$ times $1.ab$. Later he found that his answer is $0.5$ less than the correct answer. What is the two-digit integer $ab$?",[("A","15"),("B","30"),("C","45"),("D","60"),("E","75")]),
+9:(r"What is the least possible value of $(xy-1)^2+(x+y)^2$ for real numbers $x$ and $y$?",[("A","0"),("B",r"$\frac14$"),("C",r"$\frac12$"),("D","1"),("E","2")]),
+10:(r"Which of the following is equivalent to \[(2+3)(2^2+3^2)(2^4+3^4)(2^8+3^8)(2^{16}+3^{16})(2^{32}+3^{32})(2^{64}+3^{64})?\]",[("A",r"$3^{127}+2^{127}$"),("B",r"$3^{127}+2^{127}+2\cdot3^{63}+3\cdot2^{63}$"),("C",r"$3^{128}-2^{128}$"),("D",r"$3^{128}+2^{128}$"),("E",r"$5^{127}$")]),
 }
 
-KEY_OVERRIDES={22:"Rewrite the numerator as a multiple of the divisor plus a small remainder.",23:"Use the symmetry group structure and count one-step extensions.",24:"Replace the floor value by an integer parameter.",25:"Use a recurrence for ordered factorizations of $2^a3^b$."}
+KEY_OVERRIDES={1:"Evaluate powers and signs carefully.",2:"Use a simple ratio model for the two schools.",3:"Represent the erased-units relationship algebraically.",4:"Sum an arithmetic sequence.",5:"Convert means to total sums.",6:"Choose a convenient distance and compare time traveled.",7:"Use implications and their contrapositives carefully.",8:"Compare a repeating decimal with its truncated version.",9:"Expand and use nonnegative squares.",10:"Use repeated difference-of-squares telescoping."}
 
 SOL={
-22:[("Look for the divisor inside the numerator",r"The divisor is \[2^{101}+2^{51}+1.\] Since the numerator contains $2^{202}=(2^{101})^2$, we try to rewrite $2^{202}+202$ as a multiple of this divisor plus a small leftover."),("Use a difference of squares",r"Notice that \[(2^{101}-2^{51}+1)(2^{101}+2^{51}+1)=(2^{101}+1)^2-(2^{51})^2.\] The two middle terms cancel because $2\cdot2^{101}=2^{102}=(2^{51})^2$."),("Rewrite the numerator",r"Therefore \[(2^{101}-2^{51}+1)(2^{101}+2^{51}+1)=2^{202}+1,\] so \[2^{202}+202=(2^{101}-2^{51}+1)(2^{101}+2^{51}+1)+201.\]"),("Identify the remainder",r"The leftover is $201$, and $201$ is smaller than the divisor. Therefore it is the actual remainder."),("Conclude",r"The answer is $\boxed{201}$."),],
-23:[("Think of configurations, not individual coordinates",r"Each transformation sends the labeled square to another labeled configuration of the same square. The question asks for sequences whose final configuration is the original one."),("Use the last move idea",r"A useful way to count is to choose the first $19$ transformations freely, then ask whether there is a final transformation that returns the square to its starting labeled position."),("Why the final move is unique",r"After an odd number of moves, the square is always one allowed move away from the original configuration. Among $L,R,H,V$, exactly one transformation sends that current configuration back to the original."),("Count prefixes",r"There are $4$ choices for each of the first $19$ transformations, and each such prefix has exactly one valid final choice. Thus the number of valid sequences is \[4^{19}=2^{38}.\]"),("Conclude",r"The answer is $\boxed{2^{38}}$."),],
-24:[("Name the floor value",r"Let \[k=\lfloor\sqrt n\rfloor.\] The equation becomes \[\frac{n+1000}{70}=k,\] so \[n=70k-1000.\]"),("Translate the floor condition",r"The condition $k=\lfloor\sqrt n\rfloor$ means \[k^2\le n<(k+1)^2.\] Substitute $n=70k-1000$ into both inequalities."),("Use the left inequality",r"From $k^2\le70k-1000$, we get \[k^2-70k+1000\le0,\] or \[(k-20)(k-50)\le0.\] Thus $20\le k\le50$."),("Use the right inequality",r"From $70k-1000<(k+1)^2$, we get \[k^2-68k+1001>0.\] The roots are between $21$ and $22$, and between $46$ and $47$, so this holds for integer $k\le21$ or $k\ge47$."),("Count valid k values",r"Combining the ranges gives \[k=20,21,47,48,49,50,\] for $6$ values. Each gives one positive integer $n=70k-1000$."),("Conclude",r"The answer is $\boxed{6}$."),],
-25:[("Factor the number first",r"The number is \[96=2^5\cdot3.\] Ordered factorizations can be counted by tracking how the powers of $2$ and the single power of $3$ are distributed among ordered factors."),("Set up a recurrence",r"Let $F(a,b)$ be the number of ordered factorizations of $2^a3^b$, with $F(0,0)=1$ representing the empty product used inside the recurrence. The first factor can take any nonzero part of the exponents, and the rest is counted recursively."),("Handle powers of two",r"For pure powers of two, \[F(a,0)=2^{a-1}\quad(a\ge1),\] and $F(0,0)=1$. So \[F(0,0),F(1,0),\ldots,F(5,0)=1,1,2,4,8,16.\]"),("Compute the values with one factor of 3",r"Let $G_a=F(a,1)$. Then \[G_a=\sum_{t=0}^{a-1}G_t+\sum_{t=0}^{a}F(t,0).\] Starting with $G_0=1$, this gives \[G_1=3,\quad G_2=8,\quad G_3=20,\quad G_4=48,\quad G_5=112.\]"),("Apply to 96",r"Because $96=2^5\cdot3$, we need $F(5,1)=G_5=112$."),("Conclude",r"The answer is $\boxed{112}$."),],
+1:[("Evaluate each parenthesis first",r"The safest first step is not to combine signs too quickly. Compute each grouped expression: \[2^2-2=2,\quad 3^2-3=6,\quad 4^2-4=12.\]"),("Keep the middle minus sign",r"The original expression subtracts the second group, so it becomes \[2-6+12.\]"),("Finish the arithmetic",r"Now \[2-6+12=-4+12=8.\]"),("Conclude",r"The answer is $\boxed{8}$."),],
+2:[("Set up the smaller school first",r"Let Lara's high school have $x$ students. Portia's school has $3x$ students."),("Use the total",r"Together they have $x+3x=4x$ students, and this total is $2600$."),("Solve for x",r"So \[4x=2600,\] giving \[x=650.\]"),("Find Portia's school size",r"Portia has \[3x=3\cdot650=1950\] students."),("Conclude",r"The answer is $\boxed{1950}$."),],
+3:[("Represent the digit erasing",r"If erasing the units digit of the number divisible by $10$ gives the other number, then the larger number is $10x$ and the other number is $x$."),("Use the sum",r"Their sum is \[10x+x=11x=17402.\]"),("Solve for x",r"Thus \[x=\frac{17402}{11}=1582.\]"),("Find the difference",r"The difference between the two numbers is \[10x-x=9x=9\cdot1582=14238.\]"),("Conclude",r"The answer is $\boxed{14238}$."),],
+4:[("Recognize the distance pattern",r"The cart travels $5$ inches in the first second, then $12$, then $19$, and so on. These distances form an arithmetic sequence with first term $5$ and common difference $7$."),("Use the arithmetic sequence sum",r"There are $30$ one-second intervals. The sum is \[S_{30}=\frac{30}{2}\left(2\cdot5+29\cdot7\right).\]"),("Compute the inside",r"The expression inside the parentheses is \[10+203=213.\]"),("Finish the sum",r"So \[S_{30}=15\cdot213=3195.\]"),("Conclude",r"The answer is $\boxed{3195}$."),],
+5:[("Translate means into totals",r"A mean is a total divided by the number of scores. Since the whole class has $k$ students with mean $8$, the total score is \[8k.\]"),("Find the known subgroup total",r"The $12$ selected scores have mean $14$, so their total is \[12\cdot14=168.\]"),("Subtract to get the remaining total",r"The remaining students therefore have total score \[8k-168.\]"),("Divide by the number remaining",r"There are $k-12$ remaining students, so their mean is \[\frac{8k-168}{k-12}.\]"),("Conclude",r"The answer is $\boxed{\frac{8k-168}{k-12}}$."),],
+6:[("Choose a convenient distance",r"Because only ratios of speed matter, choose the halfway distance to be $12$ miles. Then the full trip to the tower is $24$ miles."),("Compute Chantal's time to the halfway point",r"Chantal walks the first $12$ miles at $4$ miles per hour, taking \[\frac{12}{4}=3\] hours."),("Compute the steep uphill and downhill time",r"She then walks $12$ miles uphill at $2$ mph, taking $6$ hours, and comes back down $12$ miles at $3$ mph, taking $4$ hours."),("Find Jean's distance and time",r"When they meet at the halfway point, Jean has walked $12$ miles. The total time is \[3+6+4=13\] hours."),("Compute Jean's average speed",r"Jean's average speed is \[\frac{12}{13}\] miles per hour."),("Conclude",r"The answer is $\boxed{\frac{12}{13}}$."),],
+7:[("Translate each statement into logic",r"Happy snakes can add means $H\Rightarrow A$. Purple snakes cannot subtract means $P\Rightarrow \text{not }S$. Snakes that cannot subtract also cannot add means $\text{not }S\Rightarrow \text{not }A$."),("Combine the purple statements",r"If a snake is purple, then it cannot subtract. If it cannot subtract, then it cannot add. Therefore \[P\Rightarrow \text{not }A.\]"),("Compare with happy snakes",r"If a snake is happy, then it can add. But purple snakes cannot add, so a happy snake cannot be purple."),("Choose the conclusion",r"The conclusion that must be true is: happy snakes are not purple."),("Conclude",r"The answer is $\boxed{\text{Happy snakes are not purple}}$."),],
+8:[("Write the two decimals algebraically",r"Let $x$ be the two-digit number $ab$. Then \[1.\overline{ab}=1+\frac{x}{99}\] and \[1.ab=1+\frac{x}{100}.\]"),("Find the difference before multiplying",r"The difference between the correct number and the mistaken number is \[\frac{x}{99}-\frac{x}{100}=\frac{x}{9900}.\]"),("Use the given product difference",r"After multiplying by $66$, the student's answer is $0.5$ too small, so \[66\cdot\frac{x}{9900}=\frac12.\]"),("Solve for x",r"Since $\frac{66}{9900}=\frac{1}{150}$, we get \[\frac{x}{150}=\frac12,\] so $x=75$."),("Conclude",r"The answer is $\boxed{75}$."),],
+9:[("Expand both squares",r"The expression is \[(xy-1)^2+(x+y)^2=x^2y^2-2xy+1+x^2+2xy+y^2.\]"),("Notice the cancellation",r"The terms $-2xy$ and $2xy$ cancel, leaving \[x^2y^2+x^2+y^2+1.\]"),("Use nonnegative squares",r"The terms $x^2y^2$, $x^2$, and $y^2$ are all nonnegative for real $x,y$. Therefore the expression is at least $1$."),("Check that the bound is attainable",r"At $x=0$ and $y=0$, the expression equals \[0+0+0+1=1.\]"),("Conclude",r"The least possible value is $\boxed{1}$."),],
+10:[("Look for a telescoping product",r"The factors have the form $2^{2^m}+3^{2^m}$. Such expressions pair naturally with difference of squares."),("Multiply by a harmless factor",r"Since $3-2=1$, multiplying the product by $3-2$ does not change its value."),("Collapse the first few factors",r"We get \[(3-2)(3+2)=3^2-2^2,\] then \[(3^2-2^2)(3^2+2^2)=3^4-2^4.\] The same pattern continues."),("Continue through the final factor",r"After multiplying through the factor $3^{64}+2^{64}$, the product becomes \[3^{128}-2^{128}.\]"),("Conclude",r"The answer is $\boxed{3^{128}-2^{128}}$."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -60,7 +72,14 @@ def split_choices(st: str):
 
 
 def aops(row):
-    return f"https://artofproblemsolving.com/wiki/index.php/{row['year']}_{row['contest'].replace(' ', '_')}{row['form']}_Problems/Problem_{row['problem_no']}"
+    year_label = row["year"]
+    if year_label == "2021 Spring":
+        year_part = "2021"
+    elif year_label == "2021 Fall":
+        year_part = "2021_Fall"
+    else:
+        year_part = year_label.replace(" ", "_")
+    return f"https://artofproblemsolving.com/wiki/index.php/{year_part}_{row['contest'].replace(' ', '_')}{row['form']}_Problems/Problem_{row['problem_no']}"
 
 
 def render(row):
@@ -126,7 +145,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2020" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2021 Spring" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -215,7 +234,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2020 AMC 10B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2021 AMC 10A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
