@@ -1980,3 +1980,19 @@
 - Pushed: pending
 - Next batch should start from: 2021 Spring AMC 10A Problem 11
 - Review notes: none.
+
+## Batch 122: 2021 Spring AMC 10A Problems 11,13-20
+
+- Start time: 2026-07-01T03:34:10-07:00
+- End time: 2026-07-01T03:34:11-07:00
+- Processed contest: AMC 10
+- Processed range: 2021 Spring AMC 10A Problems 11,13-20
+- Generated count: 9
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2021 Spring AMC 10A Problem 12 skipped: liquid-rise cone problem depends on the missing cone diagram.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2021 Spring AMC 10A Problem 21
+- Review notes: none.
