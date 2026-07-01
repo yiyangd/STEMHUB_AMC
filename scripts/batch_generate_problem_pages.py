@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 149
+BATCH_NUMBER = 150
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2002_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+TARGET_NUMBERS = {11,12,13,14,15,16,17,18,19,20}
 SKIPPED = []
-BATCH_LABEL = "2002 AMC 12B Problems 1-10"
-NEXT_START = "2002 AMC 12B Problem 11"
+BATCH_LABEL = "2002 AMC 12B Problems 11-20"
+NEXT_START = "2002 AMC 12B Problem 21"
 
-ANS={1:("A","0"),2:("D","11"),3:("B","one"),4:("E",r"n>84"),5:("D","108"),6:("C",r"(1,-2)"),7:("B","77"),8:("D","Thursday"),9:("C",r"\frac14"),10:("A","13")}
+ANS={11:("E","prime"),12:("D","4"),13:("B","225"),14:("D","12"),15:("D","7"),16:("C",r"\frac12"),17:("B","Beth"),18:("D",r"\frac34"),19:("D","720"),20:("B","26")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -487,6 +487,45 @@ SOL.update({
 8:[("Know the 31-day pattern",r"In a $31$-day month, the first three weekdays of the month occur five times."),("List possible July starts",r"If July has five Mondays, then July 1 must be Saturday, Sunday, or Monday."),("Move to August",r"Since July has \(31\equiv3\pmod7\) days, August 1 is three weekdays after July 1. So August 1 is Tuesday, Wednesday, or Thursday."),("Find the common five-time weekday",r"If August starts Tuesday, its five-time weekdays are Tuesday, Wednesday, Thursday. If it starts Wednesday, they are Wednesday, Thursday, Friday. If it starts Thursday, they are Thursday, Friday, Saturday."),("Conclude",r"The weekday that must occur five times is $\boxed{\text{Thursday}}$."),],
 9:[("Write the arithmetic sequence",r"Let the common difference be \(r>0\). Then \[a,\ b,\ c,\ d=a,\ a+r,\ a+2r,\ a+3r.\]"),("Use the geometric condition",r"The terms \(a,b,d\) form a geometric sequence, so \[b^2=ad.\]"),("Substitute",r"This gives \[(a+r)^2=a(a+3r).\] Expanding, \[a^2+2ar+r^2=a^2+3ar.\]"),("Solve for r",r"Since \(r>0\), we get \(r^2=ar\), so \(r=a\)." ),("Find the ratio",r"Then \(d=a+3r=4a\), so \[\frac{a}{d}=\frac14.\]"),("Conclude",r"The answer is $\boxed{\frac14}$."),],
 10:[("Use the arithmetic progression structure",r"The set is \(\{1,4,7,10,13,16,19\}\), an arithmetic progression with common difference \(3\)." ),("Represent selected elements",r"Choosing three distinct members is the same as choosing three distinct indices from \(0,1,\ldots,6\), giving a sum of the form \[3(i+j+k)+3.\]"),("Find possible index sums",r"The smallest index sum is \(0+1+2=3\), and the largest is \(4+5+6=15\). Every integer from \(3\) through \(15\) can occur as a sum of three distinct indices."),("Count",r"That gives \[15-3+1=13\] different sums."),("Conclude",r"The answer is $\boxed{13}$."),],
+})
+
+OV.update({
+11:(r"The positive integers \(A\), \(B\), \(A-B\), and \(A+B\) are all prime numbers. The sum of these four primes is:",[("A","even"),("B","divisible by 3"),("C","divisible by 5"),("D","divisible by 7"),("E","prime")]),
+12:(r"For how many integers \(n\) is \(\frac{n}{20-n}\) the square of an integer?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","10")]),
+13:(r"The sum of \(18\) consecutive positive integers is a perfect square. What is the smallest possible value of this sum?",[("A","169"),("B","225"),("C","289"),("D","361"),("E","441")]),
+14:(r"Four distinct circles are drawn in a plane. What is the maximum number of points where at least two of the circles intersect?",[("A","8"),("B","9"),("C","10"),("D","12"),("E","16")]),
+15:(r"How many four-digit numbers \(N\) have the property that the three-digit number obtained by removing the leftmost digit is one ninth of \(N\)?",[("A","4"),("B","5"),("C","6"),("D","7"),("E","8")]),
+16:(r"Juan rolls a fair regular octahedral die marked with the numbers \(1\) through \(8\). Then Amal rolls a fair six-sided die. What is the probability that the product of the two rolls is a multiple of \(3\)?",[("A",r"$\frac1{12}$"),("B",r"$\frac13$"),("C",r"$\frac12$"),("D",r"$\frac7{12}$"),("E",r"$\frac23$")]),
+17:(r"Andy’s lawn has twice as much area as Beth’s lawn and three times as much area as Carlos’ lawn. Carlos’ lawn mower cuts half as fast as Beth’s mower and one third as fast as Andy’s mower. If they all start to mow their lawns at the same time, who will finish first?",[("A","Andy"),("B","Beth"),("C","Carlos"),("D","Andy and Carlos tie for first"),("E","All three tie")]),
+18:(r"A point \(P\) is randomly selected from the rectangular region with vertices \((0,0)\), \((2,0)\), \((2,1)\), and \((0,1)\). What is the probability that \(P\) is closer to the origin than it is to the point \((3,1)\)?",[("A",r"$\frac12$"),("B",r"$\frac23$"),("C",r"$\frac35$"),("D",r"$\frac34$"),("E",r"$\frac45$")]),
+19:(r"If \(a,b,c\) are positive real numbers such that \[a(b+c)=152,\quad b(c+a)=162,\quad c(a+b)=170,\] then what is \(abc\)?",[("A","672"),("B","688"),("C","704"),("D","720"),("E","750")]),
+20:(r"Let \(\triangle XOY\) be a right triangle with \(\angle XOY=90^\circ\). Let \(M\) and \(N\) be the midpoints of legs \(OX\) and \(OY\), respectively. Given that \(XN=19\) and \(YM=22\), find \(XY\).",[("A","24"),("B","26"),("C","28"),("D","30"),("E","32")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Use parity and divisibility by 3 to force the only possible prime set.",
+12:"Solve n over 20 minus n equals a square.",
+13:"Express the sum of 18 consecutive integers.",
+14:"Each pair of circles intersects in at most two points.",
+15:"Write the four-digit number in terms of its leading digit and remaining part.",
+16:"Use complement counting for factors not divisible by 3.",
+17:"Compare mowing time as area divided by rate.",
+18:"Use the perpendicular-bisector half-plane and area in a rectangle.",
+19:"Substitute x equals ab, y equals bc, z equals ca.",
+20:"Use coordinates and midpoint distances.",
+})
+
+SOL.update({
+11:[("Use parity first",r"If \(A\) and \(B\) were both odd primes, then \(A+B\) would be even and greater than $2$, not prime. So one of \(A,B\) must be \(2\)." ),("Decide which one can be 2",r"Since \(A-B\) is a positive prime, we need \(A>B\). Thus \(B=2\)." ),("Use divisibility by 3",r"Now \(A-2\), \(A\), and \(A+2\) must all be prime. Among three numbers spaced by $2$, one is divisible by $3$. Therefore the middle number must be \(A=5\)." ),("List the primes",r"The four primes are \[A=5,\quad B=2,\quad A-B=3,\quad A+B=7.\] Their sum is \(17\)." ),("Conclude",r"The sum is $\boxed{\text{prime}}$."),],
+12:[("Set the square equal to k squared",r"Let \[\frac{n}{20-n}=k^2,\] where \(k\) is an integer."),("Solve for n",r"Then \[n=k^2(20-n),\] so \[n(1+k^2)=20k^2,\quad n=20-\frac{20}{k^2+1}.\]"),("Force integrality",r"For \(n\) to be an integer, \(k^2+1\) must divide \(20\)." ),("List possibilities",r"The divisors of \(20\) that are one more than a perfect square are \[1,2,5,10.\] They correspond to \(k^2=0,1,4,9\)." ),("Count n values",r"These give \[n=0,10,16,18,\] four integer values."),("Conclude",r"The answer is $\boxed{4}$."),],
+13:[("Write the sum",r"Let the first integer be \(a\). The $18$ consecutive integers run from \(a\) to \(a+17\), so their sum is \[\frac{18(a+a+17)}{2}=9(2a+17).\]"),("Use the square condition",r"The sum is a perfect square and is divisible by \(9\), so write it as \((3k)^2=9k^2\)." ),("Solve for a",r"We need \[2a+17=k^2.\] Since \(a\ge1\), we need \(k^2\ge19\). Also \(2a+17\) is odd, so \(k\) is odd."),("Choose the smallest k",r"The smallest odd \(k\) with \(k^2\ge19\) is \(5\). Then the sum is \[(3k)^2=15^2=225.\]"),("Conclude",r"The smallest possible sum is $\boxed{225}$."),],
+14:[("Use pairwise intersections",r"Two distinct circles can intersect in at most two points."),("Count circle pairs",r"With four circles, there are \[\binom42=6\] pairs of circles."),("Maximize without overlaps",r"If no three circles pass through the same intersection point and every pair intersects twice, then all these intersection points are distinct."),("Compute the maximum",r"The maximum number is \[6\cdot2=12.\]"),("Conclude",r"The answer is $\boxed{12}$."),],
+15:[("Separate the leading digit",r"Write the four-digit number as \(N=1000a+r\), where \(a\) is the leftmost digit and \(r\) is the three-digit number left after removing it."),("Use the condition",r"The condition says \[r=\frac{N}{9}=\frac{1000a+r}{9}.\]"),("Solve for r",r"Then \[9r=1000a+r,\] so \[8r=1000a,\quad r=125a.\]"),("Count valid leading digits",r"The digit \(a\) can be \(1,2,\ldots,9\), but \(r=125a\) must be at most \(999\). This works for \(a=1,2,\ldots,7\), and fails for \(a=8,9\)." ),("Conclude",r"There are $\boxed{7}$ such numbers."),],
+16:[("Use the complement",r"The product is a multiple of \(3\) unless neither die shows a multiple of \(3\)." ),("Count nonmultiples of 3",r"On the octahedral die \(1\) through \(8\), there are \(6\) numbers not divisible by \(3\). On the six-sided die, there are \(4\) numbers not divisible by \(3\)." ),("Compute the complement probability",r"The probability that neither roll is divisible by \(3\) is \[\frac68\cdot\frac46=\frac12.\]"),("Subtract from 1",r"Therefore the probability that the product is a multiple of \(3\) is \[1-\frac12=\frac12.\]"),("Conclude",r"The answer is $\boxed{\frac12}$."),],
+17:[("Choose units",r"Let Beth's lawn area be \(1\). Then Andy's area is \(2\), and Carlos' area is \(\frac23\)." ),("Choose mowing rates",r"Let Carlos' mowing rate be \(c\). Then Beth's rate is \(2c\), and Andy's rate is \(3c\)." ),("Compute times",r"Time equals area divided by rate. Andy's time is \[\frac{2}{3c},\] Beth's time is \[\frac{1}{2c},\] and Carlos' time is \[\frac{2/3}{c}=\frac{2}{3c}.\]"),("Compare",r"Beth's time \(\frac{1}{2c}\) is less than \(\frac{2}{3c}\), so Beth finishes first."),("Conclude",r"The answer is $\boxed{\text{Beth}}$."),],
+18:[("Translate closer-than condition",r"A point \((x,y)\) is closer to \((0,0)\) than to \((3,1)\) when \[x^2+y^2<(x-3)^2+(y-1)^2.\]"),("Simplify",r"Expanding and canceling gives \[6x+2y<10,\] or \[3x+y<5.\]"),("Find the favorable area",r"In the rectangle \(0\le x\le2\), \(0\le y\le1\), the line \(3x+y=5\) crosses the top edge at \(x=\frac43\) and the bottom edge at \(x=\frac53\). The favorable area is a rectangle of area \(\frac43\) plus a right triangle of area \(\frac16\)." ),("Compute probability",r"The favorable area is \[\frac43+\frac16=\frac32.\] The rectangle area is \(2\), so the probability is \[\frac{3/2}{2}=\frac34.\]"),("Conclude",r"The answer is $\boxed{\frac34}$."),],
+19:[("Introduce pair products",r"Let \[x=ab,\quad y=bc,\quad z=ca.\] Then the equations become \[x+z=152,\quad x+y=162,\quad y+z=170.\]"),("Solve the linear system",r"Adding the first two equations and subtracting the third gives \[2x=144,\] so \(x=72\). Then \(y=90\) and \(z=80\)." ),("Relate to abc",r"We have \[xyz=(ab)(bc)(ca)=(abc)^2.\]"),("Compute",r"Thus \[(abc)^2=72\cdot90\cdot80=518400=720^2.\] Since \(a,b,c\) are positive, \(abc=720\)." ),("Conclude",r"The answer is $\boxed{720}$."),],
+20:[("Set coordinates",r"Let \(O=(0,0)\), \(X=(a,0)\), and \(Y=(0,b)\). Then \(XY^2=a^2+b^2\)." ),("Use the midpoints",r"The midpoint of \(OY\) is \(N=(0,\frac b2)\), so \[XN^2=a^2+\left(\frac b2\right)^2=19^2.\] The midpoint of \(OX\) is \(M=(\frac a2,0)\), so \[YM^2=\left(\frac a2\right)^2+b^2=22^2.\]"),("Add the equations",r"Adding gives \[\frac54(a^2+b^2)=19^2+22^2=361+484=845.\]"),("Solve for XY",r"Therefore \[a^2+b^2=\frac45\cdot845=676,\] so \[XY=\sqrt{676}=26.\]"),("Conclude",r"The answer is $\boxed{26}$."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
