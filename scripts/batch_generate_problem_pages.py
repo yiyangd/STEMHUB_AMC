@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 183
+BATCH_NUMBER = 184
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2008_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16,17,18,19,20}
-SKIPPED = []
-BATCH_LABEL = "2008 AMC 12A Problems 11-20"
-NEXT_START = "2008 AMC 12A Problem 21"
+TARGET_NUMBERS = {21,23,24,25}
+SKIPPED = ["2008 AMC 12A Problem 22: skipped because the rectangular placemat configuration depends strongly on the original diagram."]
+BATCH_LABEL = "2008 AMC 12A Problems 21, 23-25"
+NEXT_START = "2008 AMC 12B Problem 1"
 
-ANS={11:("C","164"),12:("B",r"[-1,1],[0,1]"),13:("B",r"\frac19"),14:("A","3"),15:("D","6"),16:("D","112"),17:("D","502"),18:("C",r"\sqrt{95}"),19:("C","224"),20:("E",r"\frac3{28}(10-\sqrt2)")}
+ANS={21:("D","48"),23:("D",r"2^{5/4}"),24:("D",r"\frac{\sqrt3}{4\sqrt2-3}"),25:("D",r"\frac{1}{2^{98}}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1671,6 +1671,27 @@ SOL.update({
 18:[("Place the vertices on the axes",r"Let the intercept lengths be \(x\), \(y\), and \(z\), so the vertices are \((x,0,0)\), \((0,y,0)\), and \((0,0,z)\). The volume of tetrahedron \(OABC\) is \(\frac{xyz}{6}\)."),("Use pairwise distances",r"The squared side lengths of triangle \(ABC\) are \[x^2+y^2,\quad y^2+z^2,\quad z^2+x^2.\] These are \(25\), \(36\), and \(49\) in some order."),("Solve for the squared intercepts",r"Using the three equations, the squared intercepts are \[\frac{25+36-49}{2}=6,\quad \frac{25+49-36}{2}=19,\quad \frac{36+49-25}{2}=30.\]"),("Find xyz",r"Thus \[x^2y^2z^2=6\cdot19\cdot30=3420,\] so \(xyz=\sqrt{3420}=6\sqrt{95}\)."),("Compute the volume",r"The tetrahedron volume is \[\frac{xyz}{6}=\frac{6\sqrt{95}}{6}=\sqrt{95}.\]"),("Conclude",r"The answer is \(\boxed{\sqrt{95}}\)."),],
 19:[("Translate the coefficient into a counting problem",r"The coefficient of \(x^{28}\) counts triples \((a,b,c)\) such that \[a+b+c=28,\] where \(0\le a\le27\) and \(0\le b,c\le14\)."),("Ignore the first factor briefly",r"The pair \((b,c)\) can be any pair from \(0\) to \(14\). There are \(15\cdot15=225\) such pairs total."),("Use the condition on a",r"For each pair \((b,c)\), the value of \(a\) is forced to be \(28-b-c\). We need \(0\le a\le27\), which means \(1\le b+c\le28\)."),("Find the only excluded pair",r"The maximum \(b+c\) is \(28\), so the upper bound is automatic. The only excluded case is \(b+c=0\), namely \((b,c)=(0,0)\), because then \(a=28\), too large."),("Count",r"Therefore the coefficient is \[225-1=224.\]"),("Conclude",r"The answer is \(\boxed{224}\)."),],
 20:[("Use the angle bisector theorem",r"The triangle is a \(3\)-\(4\)-\(5\) right triangle, with the right angle at \(C\). Since \(\overline{CD}\) bisects \(\angle C\), the angle bisector theorem gives \[\frac{AD}{DB}=\frac{AC}{BC}=\frac34.\] Because \(AB=5\), we get \(AD=\frac{15}{7}\) and \(DB=\frac{20}{7}\)."),("Find the angle bisector length",r"The angle bisector length from the right angle is \[CD^2=AC\cdot BC\left(1-\frac{AB^2}{(AC+BC)^2}\right)=12\left(1-\frac{25}{49}\right)=\frac{288}{49}.\] Thus \(CD=\frac{12\sqrt2}{7}\)."),("Find the two smaller areas",r"The two smaller triangles share the same altitude to \(\overline{AB}\), so their areas are in the ratio \(AD:DB=3:4\). Since the total area is \(6\), we have \([ADC]=\frac{18}{7}\) and \([BCD]=\frac{24}{7}\)."),("Compute each semiperimeter",r"For \(\triangle ADC\), \[s_a=\frac{3+\frac{15}{7}+\frac{12\sqrt2}{7}}{2}=\frac{6(3+\sqrt2)}{7}.\] For \(\triangle BCD\), \[s_b=\frac{4+\frac{20}{7}+\frac{12\sqrt2}{7}}{2}=\frac{6(4+\sqrt2)}{7}.\]"),("Use r equals area over semiperimeter",r"Thus \[r_a=\frac{18/7}{6(3+\sqrt2)/7}=\frac{3}{3+\sqrt2},\] and \[r_b=\frac{24/7}{6(4+\sqrt2)/7}=\frac{4}{4+\sqrt2}.\]"),("Take the ratio and simplify",r"\[\frac{r_a}{r_b}=\frac{3}{3+\sqrt2}\cdot\frac{4+\sqrt2}{4}=\frac{3}{28}(10-\sqrt2).\]"),("Conclude",r"The answer is \(\boxed{\frac3{28}(10-\sqrt2)}\)."),],
+})
+
+OV.update({
+21:(r"A permutation \((a_1,a_2,a_3,a_4,a_5)\) of \((1,2,3,4,5)\) is heavy-tailed if \[a_1+a_2<a_4+a_5.\] What is the number of heavy-tailed permutations?",[("A","36"),("B","40"),("C","44"),("D","48"),("E","52")]),
+23:(r"The solutions of the equation \[z^4+4z^3i-6z^2-4zi-i=0\] are the vertices of a convex polygon in the complex plane. What is the area of the polygon?",[("A",r"\(2^{5/8}\)"),("B",r"\(2^{3/4}\)"),("C","2"),("D",r"\(2^{5/4}\)"),("E",r"\(2^{3/2}\)")]),
+24:(r"Triangle \(ABC\) has \(\angle C=60^\circ\) and \(BC=4\). Point \(D\) is the midpoint of \(\overline{BC}\). What is the largest possible value of \(\tan\angle BAD\)?",[("A",r"\(\frac{\sqrt3}{6}\)"),("B",r"\(\frac{\sqrt3}{3}\)"),("C",r"\(\frac{\sqrt3}{2\sqrt2}\)"),("D",r"\(\frac{\sqrt3}{4\sqrt2-3}\)"),("E","1")]),
+25:(r"A sequence \((a_1,b_1),(a_2,b_2),(a_3,b_3),\ldots\) of points in the coordinate plane satisfies \[(a_{n+1},b_{n+1})=(\sqrt3a_n-b_n,\sqrt3b_n+a_n)\] for \(n=1,2,3,\ldots\). Suppose that \((a_{100},b_{100})=(2,4)\). What is \(a_1+b_1\)?",[("A",r"\(\frac1{2^{97}}\)"),("B",r"\(\frac1{2^{99}}\)"),("C","0"),("D",r"\(\frac1{2^{98}}\)"),("E",r"\(\frac1{2^{96}}\)")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Condition on the middle entry and use symmetry between the first and last pairs.",
+23:"Recognize \((z+i)^4\), then use the geometry of fourth roots.",
+24:"Place coordinates and maximize a tangent expression in one variable.",
+25:"Represent the recurrence as multiplication by \(\sqrt3+i\) in the complex plane.",
+})
+
+SOL.update({
+21:[("Condition on the middle position",r"Choose the value of \(a_3\). Then the other four numbers are arranged into the first pair \((a_1,a_2)\) and the last pair \((a_4,a_5)\). For a fixed \(a_3\), there are \(4!=24\) arrangements."),("Use symmetry",r"If \(a_1+a_2<a_4+a_5\), then swapping the first pair with the last pair gives an arrangement with \(a_1+a_2>a_4+a_5\). So, except for equal-sum cases, the arrangements split evenly between heavy-tailed and not heavy-tailed."),("Count equal-sum cases",r"For the remaining four numbers, equal pair sums occur when the four numbers can be split into two pairs with the same sum. This happens when \(a_3=1,3,\) or \(5\), giving \(8\) ordered equal-sum arrangements each time. It does not happen when \(a_3=2\) or \(4\)."),("Count for each middle value",r"When there are \(8\) equal cases, the heavy-tailed count is \(\frac{24-8}{2}=8\). When there are no equal cases, the count is \(\frac{24}{2}=12\)."),("Add the cases",r"There are three middle values of the first type and two of the second type, so the total is \[3\cdot8+2\cdot12=24+24=48.\]"),("Conclude",r"The answer is \(\boxed{48}\)."),],
+23:[("Look for a fourth-power pattern",r"The expression almost matches the binomial expansion of \((z+i)^4\): \[(z+i)^4=z^4+4z^3i-6z^2-4zi+1.\]"),("Rewrite the equation",r"The given equation says \[z^4+4z^3i-6z^2-4zi-i=0.\] Adding \(1+i\) to both sides of the polynomial expression gives \[(z+i)^4=1+i.\]"),("Understand the roots geometrically",r"Let \(w=z+i\). Then \(w^4=1+i\). The four values of \(w\) are equally spaced fourth roots of the same complex number, so they form a square centered at the origin."),("Find the radius",r"The modulus of \(1+i\) is \(\sqrt2=2^{1/2}\). Therefore \[|w|=(2^{1/2})^{1/4}=2^{1/8}.\]"),("Find the square area",r"A square whose vertices lie on a circle of radius \(r\) has diagonal \(2r\), so its area is \(\frac{(2r)^2}{2}=2r^2\). Here \(r=2^{1/8}\), so the area is \[2(2^{1/8})^2=2\cdot2^{1/4}=2^{5/4}.\]"),("Conclude",r"The translation \(z=w-i\) does not change area, so the answer is \(\boxed{2^{5/4}}\)."),],
+24:[("Set up coordinates",r"Place \(C=(0,0)\), \(B=(2,2\sqrt3)\), so \(BC=4\) and the ray \(CB\) makes a \(60^\circ\) angle with the positive \(x\)-axis. Let \(A=(x,0)\) with \(x>0\). Since \(D\) is the midpoint of \(BC\), \(D=(1,\sqrt3)\)."),("Express the angle as a difference",r"From point \(A\), the slopes of \(\overline{AD}\) and \(\overline{AB}\) are \[\frac{\sqrt3}{1-x}\quad\text{and}\quad \frac{2\sqrt3}{2-x}.\] The tangent of \(\angle BAD\) can be computed with the tangent subtraction formula."),("Compute the tangent expression",r"Using \(\tan(\alpha-\beta)=\frac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}\), the expression simplifies to \[\tan\angle BAD=\frac{\sqrt3\,x}{x^2-3x+8}.\]"),("Maximize the one-variable expression",r"Now maximize \(f(x)=\frac{x}{x^2-3x+8}\) for \(x>0\). Its derivative has numerator \[x^2-3x+8-x(2x-3)=8-x^2,\] so the maximum occurs at \(x=2\sqrt2\)."),("Evaluate at the maximum",r"Substituting \(x=2\sqrt2\), \[\tan\angle BAD=\frac{2\sqrt6}{16-6\sqrt2}=\frac{\sqrt3}{4\sqrt2-3}.\]"),("Conclude",r"The largest possible value is \(\boxed{\frac{\sqrt3}{4\sqrt2-3}}\)."),],
+25:[("Use complex numbers",r"Let \(z_n=a_n+b_ni\). The recurrence becomes \[z_{n+1}=(a_n+b_ni)(\sqrt3+i)=z_n(\sqrt3+i).\]"),("Write the multiplier in polar form",r"\(\sqrt3+i=2\left(\cos\frac{\pi}{6}+i\sin\frac{\pi}{6}\right)\). Each step multiplies the modulus by \(2\) and rotates by \(30^\circ\)."),("Relate z100 to z1",r"Since going from \(z_1\) to \(z_{100}\) takes \(99\) multiplications, \[z_{100}=z_1(\sqrt3+i)^{99}.\]"),("Simplify the 99th power",r"\[(\sqrt3+i)^{99}=2^{99}\left(\cos\frac{99\pi}{6}+i\sin\frac{99\pi}{6}\right)=2^{99}i,\] because \(\frac{99\pi}{6}=\frac{33\pi}{2}\)."),("Solve for z1",r"Given \(z_{100}=2+4i\), \[z_1=\frac{2+4i}{2^{99}i}=\frac{4-2i}{2^{99}}.\] Thus \(a_1=\frac4{2^{99}}\) and \(b_1=-\frac2{2^{99}}\)."),("Add the coordinates",r"\[a_1+b_1=\frac{4-2}{2^{99}}=\frac2{2^{99}}=\frac1{2^{98}}.\]"),("Conclude",r"The answer is \(\boxed{\frac1{2^{98}}}\)."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)

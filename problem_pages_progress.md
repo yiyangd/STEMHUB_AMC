@@ -2988,3 +2988,19 @@
 - Pushed: pending
 - Next batch should start from: 2008 AMC 12A Problem 21
 - Review notes: none.
+
+## Batch 184: 2008 AMC 12A Problems 21, 23-25
+
+- Start time: 2026-07-01T07:00:15-07:00
+- End time: 2026-07-01T07:00:16-07:00
+- Processed contest: AMC 10
+- Processed range: 2008 AMC 12A Problems 21, 23-25
+- Generated count: 4
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2008 AMC 12A Problem 22: skipped because the rectangular placemat configuration depends strongly on the original diagram.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2008 AMC 12B Problem 1
+- Review notes: none.
