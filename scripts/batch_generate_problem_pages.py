@@ -8,47 +8,65 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 37
+BATCH_NUMBER = 38
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2007_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {21, 22, 23, 24, 25}
-SKIPPED = []
-BATCH_LABEL = "2007 AMC 10B Problems 21-25"
-NEXT_START = "2008 AMC 10A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2008_AMC_10A_Answer_Key"
+TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 10}
+SKIPPED = [
+    "2008 AMC 10A Problem 9 skipped: OCR makes the fractional expression unreliable.",
+]
+BATCH_LABEL = "2008 AMC 10A Problems 1-8, 10"
+NEXT_START = "2008 AMC 10A Problem 11"
 
 ANS = {
-    21: ("B", r"\frac{60}{37}"),
-    22: ("B", r"-\frac{1}{16}"),
-    23: ("E", r"4+2\sqrt2"),
-    24: ("C", "4944"),
-    25: ("A", "4"),
+    1: ("D", "4:30 PM"),
+    2: ("A", "12.5"),
+    3: ("A", "6"),
+    4: ("C", "3"),
+    5: ("B", "502"),
+    6: ("D", "6"),
+    7: ("E", "9"),
+    8: ("A", "750"),
+    10: ("E", "4"),
 }
 
 
 OV = {
-    21: (r"Right $\triangle ABC$ has $AB=3$, $BC=4$, and $AC=5$. Square $XYZW$ is inscribed in $\triangle ABC$ with $X$ and $Y$ on $AC$, $W$ on $AB$, and $Z$ on $BC$. What is the side length of the square?", [("A", r"$\frac32$"), ("B", r"$\frac{60}{37}$"), ("C", r"$\frac{12}{7}$"), ("D", r"$\frac{23}{13}$"), ("E", "$2$")]),
-    22: (r"A player chooses one of the numbers $1$ through $4$. After the choice has been made, two regular four-sided tetrahedral dice are rolled, with the sides numbered $1$ through $4$. If the number chosen appears on the bottom of exactly one die, the player wins $\$1$. If it appears on the bottom of both dice, the player wins $\$2$. If it does not appear on the bottom of either die, the player loses $\$1$. What is the expected return to the player, in dollars, for one roll of the dice?", [("A", r"$-\frac18$"), ("B", r"$-\frac1{16}$"), ("C", "$0$"), ("D", r"$\frac1{16}$"), ("E", r"$\frac18$")]),
-    23: (r"A pyramid with a square base is cut by a plane that is parallel to its base and is $2$ units from the base. The surface area of the smaller pyramid that is cut from the top is half the surface area of the original pyramid. What is the altitude of the original pyramid?", [("A", "$2$"), ("B", r"$2+\sqrt2$"), ("C", r"$1+2\sqrt2$"), ("D", "$4$"), ("E", r"$4+2\sqrt2$")]),
-    24: (r"Let $n$ denote the smallest positive integer that is divisible by both $4$ and $9$, and whose base-$10$ representation consists only of $4$'s and $9$'s, with at least one of each. What are the last four digits of $n$?", [("A", "$4444$"), ("B", "$4494$"), ("C", "$4944$"), ("D", "$9444$"), ("E", "$9944$")]),
-    25: (r"How many pairs of positive integers $(a,b)$ are there such that $\gcd(a,b)=1$ and $\frac{a}{b}+\frac{14b}{9a}$ is an integer?", [("A", "$4$"), ("B", "$6$"), ("C", "$9$"), ("D", "$12$"), ("E", "infinitely many")]),
+    1: (r"A bakery owner turns on his doughnut machine at $8{:}30$ AM. At $11{:}10$ AM the machine has completed one third of the day's job. At what time will the doughnut machine complete the job?", [("A", "1:50 PM"), ("B", "3:00 PM"), ("C", "3:30 PM"), ("D", "4:30 PM"), ("E", "5:50 PM")]),
+    2: (r"A square is drawn inside a rectangle. The ratio of the width of the rectangle to a side of the square is $2:1$. The ratio of the rectangle's length to its width is $2:1$. What percent of the rectangle's area is inside the square?", [("A", "$12.5$"), ("B", "$25$"), ("C", "$50$"), ("D", "$75$"), ("E", "$87.5$")]),
+    3: (r"For the positive integer $n$, let $\langle n\rangle$ denote the sum of all the positive divisors of $n$ with the exception of $n$ itself. For example, $\langle4\rangle=1+2=3$ and $\langle12\rangle=1+2+3+4+6=16$. What is $\langle\langle\langle6\rangle\rangle\rangle$?", [("A", "$6$"), ("B", "$12$"), ("C", "$24$"), ("D", "$32$"), ("E", "$36$")]),
+    4: (r"Suppose that $\frac{2}{3}$ of $10$ bananas are worth as much as $8$ oranges. How many oranges are worth as much as $\frac{1}{2}$ of $5$ bananas?", [("A", "$2$"), ("B", r"$\frac52$"), ("C", "$3$"), ("D", r"$\frac72$"), ("E", "$4$")]),
+    5: (r"Which of the following is equal to the product $\frac84\cdot\frac{12}{8}\cdot\frac{16}{12}\cdots\frac{2008}{2004}$?", [("A", "$251$"), ("B", "$502$"), ("C", "$1004$"), ("D", "$2008$"), ("E", "$4016$")]),
+    6: (r"A triathlete competes in a triathlon in which the swimming, biking, and running segments are all of the same length. The triathlete swims at $3$ kilometers per hour, bikes at $20$ kilometers per hour, and runs at $10$ kilometers per hour. Which of the following is closest to the triathlete's average speed, in kilometers per hour, for the entire race?", [("A", "$3$"), ("B", "$4$"), ("C", "$5$"), ("D", "$6$"), ("E", "$7$")]),
+    7: (r"The fraction $\frac{(3^{2008})^2-(3^{2006})^2}{(3^{2007})^2-(3^{2005})^2}$ simplifies to which of the following?", [("A", r"$\frac14$"), ("B", r"$\frac94$"), ("C", "$3$"), ("D", r"$\frac92$"), ("E", "$9$")]),
+    8: (r"Heather compares the price of a new computer at two different stores. Store A offers $15\%$ off the sticker price followed by a $\$90$ rebate, and store B offers $25\%$ off the same sticker price with no rebate. Heather saves $\$15$ by buying the computer at store A instead of store B. What is the sticker price of the computer, in dollars?", [("A", "$750$"), ("B", "$900$"), ("C", "$1000$"), ("D", "$1050$"), ("E", "$1500$")]),
+    10: (r"Each of the sides of a square $S_1$ with area $16$ is bisected, and a smaller square $S_2$ is constructed using the bisection points as vertices. The same process is carried out on $S_2$ to construct an even smaller square $S_3$. What is the area of $S_3$?", [("A", r"$\frac12$"), ("B", "$1$"), ("C", "$2$"), ("D", "$3$"), ("E", "$4$")]),
 }
 
 
 KEY_OVERRIDES = {
-    21: "Use similar triangles: the width parallel to the hypotenuse decreases linearly with distance from the hypotenuse.",
-    22: "Compute expected value by separating exactly-one, both, and neither outcomes.",
-    23: "Surface areas of similar pyramids scale as the square of the linear scale factor.",
-    24: "Use divisibility by 4 and 9 together with smallest-number digit placement.",
-    25: "Use coprimality to force divisibility conditions on a and b, then check the finite candidates.",
+    1: "Use constant work rate: one third of the job determines the full time.",
+    2: "Express rectangle dimensions in terms of the square side and compare areas.",
+    3: "Iterate the proper-divisor-sum function carefully.",
+    4: "Convert both fruit values through a common banana-to-orange ratio.",
+    5: "Use telescoping cancellation in a product of fractions.",
+    6: "For equal distances, average speed is total distance divided by total time, not the arithmetic mean of speeds.",
+    7: "Factor differences of squares and cancel common powers.",
+    8: "Translate discounts and rebates into equations in the sticker price.",
+    10: "Joining side midpoints of a square creates a new square with half the area.",
 }
 
 
 SOL = {
-    21: [("Use the hypotenuse as the base", r"The square has one side $XY$ on the hypotenuse $AC$, so it is natural to view the triangle with base $AC=5$. The altitude from the right angle to the hypotenuse is $\frac{3\cdot4}{5}=\frac{12}{5}$."), ("Let the square side be s", r"The side $WZ$ of the square is parallel to $AC$ and lies $s$ units away from $AC$. A cross-section parallel to the hypotenuse shrinks linearly as we move toward vertex $B$."), ("Set up similarity", r"At distance $s$ from the hypotenuse, the available width is $5\left(1-\frac{s}{12/5}\right)$. This width must equal the square side length $s$."), ("Solve", r"So $s=5\left(1-\frac{5s}{12}\right)=5-\frac{25s}{12}$. Thus $\frac{37s}{12}=5$, and $s=\frac{60}{37}$."), ("Answer", r"The side length is $\boxed{\frac{60}{37}}$." )],
-    22: [("Focus on the chosen number", r"The player chooses a number first, but by symmetry every chosen number has the same probabilities. For each die, the chance that the chosen number appears on the bottom is $\frac14$."), ("Compute exactly one match", r"Exactly one die shows the chosen number with probability $2\cdot\frac14\cdot\frac34=\frac38$. This pays $1$ dollar."), ("Compute two matches", r"Both dice show the chosen number with probability $\frac14\cdot\frac14=\frac1{16}$. This pays $2$ dollars."), ("Compute no matches", r"Neither die shows the chosen number with probability $\frac34\cdot\frac34=\frac9{16}$. This loses $1$ dollar."), ("Find expected value", r"The expected return is $1\cdot\frac38+2\cdot\frac1{16}-1\cdot\frac9{16}=\frac6{16}+\frac2{16}-\frac9{16}=-\frac1{16}$."), ("Answer", r"The expected return is $\boxed{-\frac1{16}}$ dollars." )],
-    23: [("Use similarity", r"The cutting plane is parallel to the base, so the small top pyramid is similar to the original pyramid."), ("Convert surface-area ratio to length ratio", r"The smaller pyramid has half the surface area of the original. Surface area scales as the square of the linear scale factor, so the linear scale factor is $\frac{1}{\sqrt2}$."), ("Relate altitudes", r"Let the original altitude be $H$. Since the plane is $2$ units above the base, the smaller top pyramid has altitude $H-2$. Therefore $\frac{H-2}{H}=\frac1{\sqrt2}$."), ("Solve for H", r"We have $H-2=\frac{H}{\sqrt2}$, so $H\left(1-\frac1{\sqrt2}\right)=2$. Hence $H=\frac{2}{1-1/\sqrt2}=4+2\sqrt2$."), ("Answer", r"The altitude is $\boxed{4+2\sqrt2}$." )],
-    24: [("Use divisibility by 4", r"A number is divisible by $4$ if its last two digits form a number divisible by $4$. With digits only $4$ and $9$, the possible endings are $44,49,94,99$, and only $44$ is divisible by $4$."), ("Use divisibility by 9", r"A number is divisible by $9$ when its digit sum is divisible by $9$. If the number has $t$ digits equal to $4$ and the rest equal to $9$, its digit sum is congruent to $4t$ modulo $9$. Thus $t$ must be a multiple of $9$."), ("Make the number as short as possible", r"The number must contain at least one $9$, so it cannot have exactly nine digits all equal to $4$. The shortest possibility has ten digits: nine $4$'s and one $9$."), ("Make the number as small as possible", r"To make the ten-digit number as small as possible, put the single $9$ as far to the right as possible, but the last two digits must be $44$. So the ending is $4944$."), ("Answer", r"The last four digits are $\boxed{4944}$." )],
-    25: [("Start from the integer condition", r"We need $\frac{a}{b}+\frac{14b}{9a}$ to be an integer, with $\gcd(a,b)=1$. Combining fractions gives $\frac{9a^2+14b^2}{9ab}$."), ("Use divisibility by b", r"For this fraction to be an integer, $b$ must divide the numerator. Modulo $b$, the numerator is congruent to $9a^2$. Since $\gcd(a,b)=1$, this forces $b\mid9$."), ("Use divisibility by a", r"Similarly, modulo $a$, the numerator is congruent to $14b^2$. Since $\gcd(a,b)=1$, this forces $a\mid14$."), ("Check finite candidates", r"Thus $a\in\{1,2,7,14\}$ and $b\in\{1,3,9\}$, with $\gcd(a,b)=1$. Checking these finite possibilities in the original expression leaves four pairs: $(1,9),(2,9),(7,1),(14,1)$."), ("Answer", r"There are $\boxed{4}$ pairs." )],
+    1: [("Find the time for one third", r"From $8{:}30$ AM to $11{:}10$ AM is $2$ hours $40$ minutes, or $160$ minutes. That is one third of the job."), ("Scale to the whole job", r"If $160$ minutes is one third, then the full job takes $3\cdot160=480$ minutes, which is $8$ hours."), ("Add to the start time", r"Starting at $8{:}30$ AM, adding $8$ hours gives $4{:}30$ PM."), ("Answer", r"The machine completes the job at $\boxed{4{:}30\text{ PM}}$." )],
+    2: [("Choose a convenient square side", r"Let the side of the square be $s$. The rectangle's width is twice that, so its width is $2s$."), ("Find the rectangle length", r"The rectangle's length is twice its width, so the length is $4s$."), ("Compare areas", r"The square area is $s^2$, and the rectangle area is $(2s)(4s)=8s^2$."), ("Convert to percent", r"The fraction inside the square is $\frac{s^2}{8s^2}=\frac18=12.5\%$."), ("Answer", r"The answer is $\boxed{12.5\%}$." )],
+    3: [("Evaluate the first layer", r"The proper positive divisors of $6$ are $1,2,3$, and their sum is $1+2+3=6$. Thus $\langle6\rangle=6$."), ("Notice the fixed value", r"Since applying the operation to $6$ gives $6$ again, every additional application also gives $6$."), ("Apply all three brackets", r"Therefore $\langle\langle\langle6\rangle\rangle\rangle=6$."), ("Answer", r"The answer is $\boxed{6}$." )],
+    4: [("Find the banana amount equivalent to 8 oranges", r"Two thirds of $10$ bananas is $\frac{2}{3}\cdot10=\frac{20}{3}$ bananas. This is worth $8$ oranges."), ("Find the target banana amount", r"One half of $5$ bananas is $\frac52$ bananas."), ("Scale the value", r"The number of oranges equivalent to $\frac52$ bananas is $8\cdot\frac{(5/2)}{(20/3)}=8\cdot\frac{15}{40}=3$."), ("Answer", r"The answer is $\boxed{3}$ oranges." )],
+    5: [("Recognize the telescoping pattern", r"The product is $\frac84\cdot\frac{12}{8}\cdot\frac{16}{12}\cdots\frac{2008}{2004}$. Every numerator after the first cancels with the next denominator."), ("Cancel", r"After cancellation, only the final numerator and first denominator remain: $\frac{2008}{4}$."), ("Compute", r"$\frac{2008}{4}=502$."), ("Answer", r"The product is $\boxed{502}$." )],
+    6: [("Use equal segment lengths", r"Let each segment have length $d$. The total distance is $3d$."), ("Compute total time", r"The total time is $\frac d3+\frac d{20}+\frac d{10}=d\left(\frac13+rac1{20}+rac1{10}\right)=d\cdot\frac{29}{60}$."), ("Find average speed", r"Average speed is total distance divided by total time, so it is $\frac{3d}{29d/60}=\frac{180}{29}\approx6.2$."), ("Choose the closest option", r"The closest listed speed is $6$ kilometers per hour."), ("Answer", r"The answer is $\boxed{6}$." )],
+    7: [("Use difference of squares", r"Both numerator and denominator have the form $A^2-B^2=(A-B)(A+B)$, but factoring powers of $3$ is even faster."), ("Factor the numerator", r"$(3^{2008})^2-(3^{2006})^2=3^{4016}-3^{4012}=3^{4012}(3^4-1)$."), ("Factor the denominator", r"$(3^{2007})^2-(3^{2005})^2=3^{4014}-3^{4010}=3^{4010}(3^4-1)$."), ("Cancel", r"The common factor $(3^4-1)$ cancels, leaving $3^{4012}/3^{4010}=3^2=9$."), ("Answer", r"The expression simplifies to $\boxed{9}$." )],
+    8: [("Let the sticker price be x", r"Store A's final price is $0.85x-90$. Store B's final price is $0.75x$."), ("Use the savings statement", r"Heather saves $15$ by buying at Store A, so Store B's price is $15$ more than Store A's price: $0.75x-(0.85x-90)=15$."), ("Solve", r"This gives $-0.10x+90=15$, so $0.10x=75$, and $x=750$."), ("Answer", r"The sticker price is $\boxed{750}$ dollars." )],
+    10: [("Understand the midpoint square", r"When the side midpoints of a square are connected, the new square has diagonals equal to the side length of the original square."), ("Compare areas", r"A square whose diagonal is $d$ has area $\frac{d^2}{2}$. Therefore the midpoint square has half the area of the original square."), ("Apply twice", r"Starting from area $16$, the first new square has area $8$, and the second new square has area $4$."), ("Answer", r"The area of $S_3$ is $\boxed{4}$." )],
 }
 
 
@@ -150,7 +168,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2007" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2008" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -225,7 +243,7 @@ def main():
         + "- Commit hash: pending\n"
         + "- Pushed: pending\n"
         + f"- Next batch should start from: {NEXT_START}\n"
-        + "- Review notes: Problem 25 statement corrected from OCR using AoPS reference.\n",
+        + "- Review notes: Skipped Problem 9 because OCR makes the fractional expression unreliable.\n",
         encoding="utf-8",
     )
 
@@ -239,7 +257,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2007 AMC 10B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2008 AMC 10A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
@@ -249,8 +267,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批无跳过题；Problem 25 已根据 AoPS 修正 OCR 漏掉的分数线。\n"
-        + "2007 AMC 10B 已完成可可靠生成部分。\n"
+        + "本批跳过 2008 AMC 10A Problem 9：OCR 中分式结构不可靠。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题；遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 teaching steps 后 commit/push。\n",
         encoding="utf-8",
