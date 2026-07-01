@@ -1,7 +1,7 @@
 # Problem Pages Report
 
-- Total manifest entries: 760
-- Latest batch: 103 (2018 AMC 10A Problems 1-8, 10)
+- Total manifest entries: 769
+- Latest batch: 104 (2018 AMC 10A Problems 11-12, 14-20)
 - Latest new generated count: 9
 - Latest updated existing count: 0
 - Latest skipped count: 1
@@ -10,16 +10,16 @@
 
 ## Latest Batch Pages
 
-- `2018 AMC 10A Problem 1` -> `amc10/problems/2018-amc-10a-problem-1/`
-- `2018 AMC 10A Problem 2` -> `amc10/problems/2018-amc-10a-problem-2/`
-- `2018 AMC 10A Problem 3` -> `amc10/problems/2018-amc-10a-problem-3/`
-- `2018 AMC 10A Problem 4` -> `amc10/problems/2018-amc-10a-problem-4/`
-- `2018 AMC 10A Problem 5` -> `amc10/problems/2018-amc-10a-problem-5/`
-- `2018 AMC 10A Problem 6` -> `amc10/problems/2018-amc-10a-problem-6/`
-- `2018 AMC 10A Problem 7` -> `amc10/problems/2018-amc-10a-problem-7/`
-- `2018 AMC 10A Problem 8` -> `amc10/problems/2018-amc-10a-problem-8/`
-- `2018 AMC 10A Problem 10` -> `amc10/problems/2018-amc-10a-problem-10/`
+- `2018 AMC 10A Problem 11` -> `amc10/problems/2018-amc-10a-problem-11/`
+- `2018 AMC 10A Problem 12` -> `amc10/problems/2018-amc-10a-problem-12/`
+- `2018 AMC 10A Problem 14` -> `amc10/problems/2018-amc-10a-problem-14/`
+- `2018 AMC 10A Problem 15` -> `amc10/problems/2018-amc-10a-problem-15/`
+- `2018 AMC 10A Problem 16` -> `amc10/problems/2018-amc-10a-problem-16/`
+- `2018 AMC 10A Problem 17` -> `amc10/problems/2018-amc-10a-problem-17/`
+- `2018 AMC 10A Problem 18` -> `amc10/problems/2018-amc-10a-problem-18/`
+- `2018 AMC 10A Problem 19` -> `amc10/problems/2018-amc-10a-problem-19/`
+- `2018 AMC 10A Problem 20` -> `amc10/problems/2018-amc-10a-problem-20/`
 
 ## Skipped in latest batch
 
-- 2018 AMC 10A Problem 9 skipped: similar-triangle area question depends on the missing diagram subdivision.
+- 2018 AMC 10A Problem 13 skipped: folding crease length depends on the missing triangle diagram.
