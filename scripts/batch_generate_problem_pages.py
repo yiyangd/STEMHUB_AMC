@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 166
+BATCH_NUMBER = 167
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
 SKIPPED = []
-BATCH_LABEL = "2005 AMC 12A Problems 21-25"
-NEXT_START = "2005 AMC 12B Problem 1"
+BATCH_LABEL = "2005 AMC 12B Problems 1-10"
+NEXT_START = "2005 AMC 12B Problem 11"
 
-ANS={21:("C","2"),22:("B","10"),23:("B",r"\frac{31}{300}"),24:("B","22"),25:("C","80")}
+ANS={1:("A","100"),2:("D","20"),3:("C",r"\frac25"),4:("B","2"),5:("A",r"80-20\pi"),6:("A","3"),7:("D","24"),8:("C","2"),9:("B","1"),10:("E","250")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1060,6 +1060,44 @@ SOL.update({
 24:[("Use divisibility by P(x)",r"The equation \(P(Q(x))=P(x)R(x)\) means \(P(Q(x))\) must be divisible by \(P(x)=(x-1)(x-2)(x-3)\)."),("Evaluate at the roots of P",r"For \(x=1,2,3\), we need \(P(Q(x))=0\). Therefore each of \(Q(1),Q(2),Q(3)\) must be one of \(1,2,3\)."),("Count possible value triples",r"There are \(3^3=27\) possible triples \((Q(1),Q(2),Q(3))\), and each determines a unique polynomial \(Q\) of degree at most \(2\)."),("Use the degree of R",r"Since \(R\) must have degree \(3\), \(P(Q(x))\) must have degree \(6\). Thus \(Q\) must be truly quadratic, not linear or constant."),("Exclude linear triples",r"The interpolation is linear exactly when the three values form an arithmetic progression. Among values in \(\{1,2,3\}\), the arithmetic triples are \((1,1,1),(2,2,2),(3,3,3),(1,2,3),(3,2,1)\), five triples."),("Conclude",r"The number of valid polynomials is \(27-5=\boxed{22}\)."),],
 25:[("Classify by side length",r"All vertices lie in the \(3\times3\times3\) lattice. A coordinate-difference check shows that equilateral triangles can occur only with squared side lengths \(2,6,\) or \(8\)."),("Count side squared 2",r"Triangles with side squared \(2\) lie inside one of the \(8\) unit cubes. Each unit cube contains \(8\) such triangles, the faces of two complementary regular tetrahedra. This gives \(8\cdot8=64\) triangles."),("Count side squared 8",r"Scaling the same unit-cube configuration to the whole \(2\times2\times2\) cube gives \(8\) triangles with side squared \(8\)."),("Count side squared 6",r"For side squared \(6\), each coordinate \(0,1,2\) appears once among the three vertices, so the centroid is \((1,1,1)\). Ordering the vertices by their \(x\)-coordinate, a direct permutation check for the \(y\)- and \(z\)-coordinates gives \(8\) such triangles."),("Add the cases",r"The total number is \[64+8+8=80.\]"),("Conclude",r"The answer is \(\boxed{80}\)."),],
 })
+OV.update({
+1:(r"A scout troop buys \(1000\) candy bars at a price of five for \(\$2\). They sell all the candy bars at a price of two for \(\$1\). What was their profit, in dollars?",[("A","100"),("B","200"),("C","300"),("D","400"),("E","500")]),
+2:(r"A positive number \(x\) has the property that \(x\%\) of \(x\) is \(4\). What is \(x\)?",[("A","2"),("B","4"),("C","10"),("D","20"),("E","40")]),
+3:(r"Brianna is using part of the money she earned on her weekend job to buy several equally-priced CDs. She used one fifth of her money to buy one third of the CDs. What fraction of her money will she have left after she buys all the CDs?",[("A",r"\(\frac15\)"),("B",r"\(\frac13\)"),("C",r"\(\frac25\)"),("D",r"\(\frac23\)"),("E",r"\(\frac45\)")]),
+4:(r"At the beginning of the school year, Lisa's goal was to earn an A on at least \(80\%\) of her \(50\) quizzes for the year. She earned an A on \(22\) of the first \(30\) quizzes. If she is to achieve her goal, on at most how many of the remaining quizzes can she earn a grade lower than an A?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+5:(r"An \(8\)-foot by \(10\)-foot floor is tiled with square tiles of size \(1\) foot by \(1\) foot. Each tile has a pattern consisting of four white quarter circles of radius \(\frac12\) foot centered at each corner of the tile. The remaining portion of the tile is shaded. How many square feet of the floor are shaded?",[("A",r"\(80-20\pi\)"),("B",r"\(60-10\pi\)"),("C",r"\(80-10\pi\)"),("D",r"\(60+10\pi\)"),("E",r"\(80+10\pi\)")]),
+6:(r"In \(\triangle ABC\), we have \(AC=BC=7\) and \(AB=2\). Suppose that \(D\) is a point on line \(AB\) such that \(B\) lies between \(A\) and \(D\) and \(CD=8\). What is \(BD\)?",[("A","3"),("B",r"\(2\sqrt3\)"),("C","4"),("D","5"),("E",r"\(4\sqrt2\)")]),
+7:(r"What is the area enclosed by the graph of \(|3x|+|4y|=12\)?",[("A","6"),("B","12"),("C","16"),("D","24"),("E","25")]),
+8:(r"For how many values of \(a\) is it true that the line \(y=x+a\) passes through the vertex of the parabola \(y=x^2+a^2\)?",[("A","0"),("B","1"),("C","2"),("D","10"),("E","infinitely many")]),
+9:(r"On a certain math exam, \(10\%\) of the students got \(70\) points, \(25\%\) got \(80\) points, \(20\%\) got \(85\) points, \(15\%\) got \(90\) points, and the rest got \(95\) points. What is the difference between the mean and the median score on this exam?",[("A","0"),("B","1"),("C","2"),("D","4"),("E","5")]),
+10:(r"The first term of a sequence is \(2005\). Each succeeding term is the sum of the cubes of the digits of the previous term. What is the \(2005\)th term of the sequence?",[("A","29"),("B","55"),("C","85"),("D","133"),("E","250")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Compare total cost and total revenue.",
+2:"Translate \(x\%\) of \(x\) into \(x^2/100\).",
+3:"Scale from one third of the CDs to all CDs.",
+4:"Use the required total number of A grades.",
+5:"Compute shaded area per tile and multiply by \(80\).",
+6:"Use coordinates or the Pythagorean Theorem in an isosceles triangle.",
+7:"Find the intercepts of the absolute-value diamond.",
+8:"Force the line to pass through the parabola's vertex.",
+9:"Compute the weighted mean and locate the median from cumulative percentages.",
+10:"Find the digit-cube cycle.",
+})
+
+SOL.update({
+1:[("Find the cost per candy bar",r"Five candy bars cost \(\$2\), so each bar costs \(\$0.40\). For \(1000\) bars, the troop pays \(\$400\)."),("Find the selling price per candy bar",r"Two bars sell for \(\$1\), so each bar sells for \(\$0.50\). For \(1000\) bars, the troop receives \(\$500\)."),("Compute profit",r"Profit is revenue minus cost: \[500-400=100.\]"),("Conclude",r"The answer is \(\boxed{100}\)."),],
+2:[("Translate the statement",r"\(x\%\) of \(x\) means \(\frac{x}{100}\cdot x\). The condition is \[\frac{x^2}{100}=4.\]"),("Solve for x squared",r"Multiplying by \(100\) gives \(x^2=400\)."),("Use positivity",r"Since \(x\) is positive, \(x=20\)."),("Conclude",r"The answer is \(\boxed{20}\)."),],
+3:[("Relate money to CDs",r"One fifth of Brianna's money buys one third of the CDs. Since all CDs have the same price, buying all the CDs costs three times as much."),("Compute total cost fraction",r"The total cost is \[3\cdot\frac15=\frac35\] of her money."),("Find what remains",r"If she spends \(\frac35\), she has \(1-\frac35=\frac25\) left."),("Conclude",r"The answer is $\boxed{\frac25}$."),],
+4:[("Find the goal",r"Lisa wants A grades on at least \(80\%\) of \(50\) quizzes, which is \[0.80\cdot50=40\] quizzes."),("Find how many more A grades she needs",r"She already has \(22\) A grades, so she needs \(40-22=18\) more."),("Count remaining quizzes",r"There are \(50-30=20\) quizzes remaining."),("Find how many can be below A",r"If she needs \(18\) A grades among the remaining \(20\), then at most \(20-18=2\) can be below A."),("Conclude",r"The answer is \(\boxed{2}\)."),],
+5:[("Compute one tile's white area",r"Four quarter circles of radius \(\frac12\) make one full circle of radius \(\frac12\). The white area on one tile is \[\pi\left(\frac12\right)^2=\frac{\pi}{4}.\]"),("Compute one tile's shaded area",r"Each tile has area \(1\), so the shaded area per tile is \(1-\frac{\pi}{4}\)."),("Count tiles",r"The floor has area \(8\cdot10=80\), so it contains \(80\) unit tiles."),("Multiply",r"The shaded area is \[80\left(1-\frac{\pi}{4}\right)=80-20\pi.\]"),("Conclude",r"The answer is \(\boxed{80-20\pi}\)."),],
+6:[("Place the isosceles triangle",r"Let \(A=(-1,0)\), \(B=(1,0)\), so \(AB=2\). Since \(AC=BC=7\), point \(C\) lies above the midpoint of \(AB\)."),("Find the height of C",r"The height is \[\sqrt{7^2-1^2}=\sqrt{48}=4\sqrt3,\] so \(C=(0,4\sqrt3)\)."),("Place D beyond B",r"Let \(BD=t\), so \(D=(1+t,0)\). The condition \(CD=8\) gives \[(1+t)^2+(4\sqrt3)^2=8^2.\]"),("Solve for t",r"This becomes \((1+t)^2+48=64\), so \((1+t)^2=16\). Since \(t>0\), \(1+t=4\), so \(t=3\)."),("Conclude",r"\(BD=\boxed{3}\)."),],
+7:[("Find intercepts",r"When \(y=0\), \(|3x|=12\), so \(x=\pm4\). When \(x=0\), \(|4y|=12\), so \(y=\pm3\)."),("Recognize the shape",r"The graph is a diamond with horizontal diagonal \(8\) and vertical diagonal \(6\)."),("Use diamond area",r"The area is \[\frac12\cdot8\cdot6=24.\]"),("Conclude",r"The answer is \(\boxed{24}\)."),],
+8:[("Find the vertex",r"The parabola \(y=x^2+a^2\) has vertex \((0,a^2)\)."),("Put the vertex on the line",r"The line \(y=x+a\) passes through \((0,a^2)\) exactly when \[a^2=0+a=a.\]"),("Solve for a",r"The equation \(a^2=a\) gives \(a(a-1)=0\), so \(a=0\) or \(a=1\)."),("Count values",r"There are \(2\) possible values of \(a\)."),("Conclude",r"The answer is \(\boxed{2}\)."),],
+9:[("Find the median",r"The cumulative percentages are \(10\%\) at \(70\), \(35\%\) at \(80\), and \(55\%\) at \(85\). Therefore the median score is \(85\)."),("Compute the mean",r"The remaining percentage is \(30\%\), so the mean is \[0.10(70)+0.25(80)+0.20(85)+0.15(90)+0.30(95)=86.\]"),("Compare",r"The difference between the mean and median is \(86-85=1\)."),("Conclude",r"The answer is \(\boxed{1}\)."),],
+10:[("Generate the first few terms",r"The first term is \(2005\). The next term is \(2^3+0^3+0^3+5^3=8+125=133\)."),("Continue to see the pattern",r"From \(133\), the next term is \(1^3+3^3+3^3=55\). From \(55\), the next term is \(5^3+5^3=250\). From \(250\), the next term is \(2^3+5^3+0^3=133\)."),("Identify the cycle",r"After the first term, the sequence cycles through \[133,\ 55,\ 250\] with period \(3\)."),("Locate the 2005th term",r"Term \(2\) is \(133\). Since \(2005-2=2003\), and \(2003\equiv2\pmod3\), the \(2005\)th term is the third entry in the cycle, \(250\)."),("Conclude",r"The answer is \(\boxed{250}\)."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -1166,7 +1204,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2005" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2005" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -1255,7 +1293,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2005 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2005 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
