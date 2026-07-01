@@ -3,72 +3,42 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 65
+BATCH_NUMBER = 66
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2012_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2012_AMC_10B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
 SKIPPED = []
-BATCH_LABEL = "2012 AMC 10A Problems 21-25"
-NEXT_START = "2012 AMC 10B Problem 1"
+BATCH_LABEL = "2012 AMC 10B Problems 1-10"
+NEXT_START = "2012 AMC 10B Problem 11"
 
-ANS = {
-    21: ("C", r"\frac{3\sqrt5}{4}"),
-    22: ("A", "255"),
-    23: ("B", "170"),
-    24: ("E", "253"),
-    25: ("D", "10"),
-}
+ANS = {1:("C","64"),2:("E","200"),3:("B",r"(1000,1988)"),4:("A","1"),5:("D",r"\$22"),6:("A",r"larger than $x-y$"),7:("D","48"),8:("B","12"),9:("A","1"),10:("D","9")}
 
 OV = {
-    21: (r"Let points $A=(0,0,0)$, $B=(1,0,0)$, $C=(0,2,0)$, and $D=(0,0,3)$. Points $E,F,G,H$ are midpoints of $BD,AB,AC,DC$, respectively. What is the area of $EFGH$?", [("A",r"\sqrt2"),("B",r"\frac{2\sqrt5}{3}"),("C",r"\frac{3\sqrt5}{4}"),("D",r"\sqrt3"),("E",r"\frac{2\sqrt7}{3}")]),
-    22: (r"The sum of the first $m$ positive odd integers is $212$ more than the sum of the first $n$ positive even integers. What is the sum of all possible values of $n$?", [("A","255"),("B","256"),("C","257"),("D","258"),("E","259")]),
-    23: (r"Adam, Benin, Chiang, Deshawn, Esther, and Fiona have internet accounts. Some, but not all, of them are internet friends with each other, and none has a friend outside this group. Each has the same number of internet friends. In how many different ways can this happen?", [("A","60"),("B","170"),("C","290"),("D","320"),("E","660")]),
-    24: (r"Let $a,b,c$ be positive integers with $a\ge b\ge c$ such that $a^2-b^2-c^2+ab=2011$ and $a^2+3b^2+3c^2-3ab-2ac-2bc=-1997$. What is $a$?", [("A","249"),("B","250"),("C","251"),("D","252"),("E","253")]),
-    25: (r"Real numbers $x,y,z$ are chosen independently and at random from $[0,n]$ for some positive integer $n$. The probability that no two of $x,y,z$ are within $1$ unit of each other is greater than $\frac12$. What is the smallest possible value of $n$?", [("A","7"),("B","8"),("C","9"),("D","10"),("E","11")]),
+1:(r"Each third-grade classroom at Pearl Creek Elementary has $18$ students and $2$ pet rabbits. How many more students than rabbits are there in all $4$ third-grade classrooms?",[("A","48"),("B","56"),("C","64"),("D","72"),("E","80")]),
+2:(r"A circle of radius $5$ is inscribed in a rectangle as shown. The ratio of the length of the rectangle to its width is $2:1$. What is the area of the rectangle?",[("A","50"),("B","100"),("C","125"),("D","150"),("E","200")]),
+3:(r"The point $(1000,2012)$ is reflected across the line $y=2000$. What are the coordinates of the reflected point?",[("A",r"(998,2012)"),("B",r"(1000,1988)"),("C",r"(1000,2024)"),("D",r"(1000,4012)"),("E",r"(1012,2012)")]),
+4:(r"When Ringo places his marbles into bags with $6$ marbles per bag, he has $4$ marbles left over. When Paul does the same, he has $3$ marbles left over. Ringo and Paul pool their marbles and place them into as many bags as possible, with $6$ marbles per bag. How many marbles will be left over?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+5:(r"Anna eats dinner at a restaurant where the sales tax is $10\%$. She leaves a $15\%$ tip on the meal price before tax, and tax is calculated on the pre-tip amount. She spends $\$27.50$ total. What is the cost of her dinner without tax or tip?",[("A",r"\$18"),("B",r"\$20"),("C",r"\$21"),("D",r"\$22"),("E",r"\$24")]),
+6:(r"To estimate $x-y$, where $x>y>0$, Xiaoli rounded $x$ up by a small amount, rounded $y$ down by the same amount, and then subtracted her values. Which statement is necessarily correct?",[("A",r"Her estimate is larger than $x-y$"),("B",r"Her estimate is smaller than $x-y$"),("C",r"Her estimate equals $x-y$"),("D",r"Her estimate equals $y-x$"),("E",r"Her estimate is $0$")]),
+7:(r"For a science project, Sammy observed a chipmunk and a squirrel stashing acorns in holes. The chipmunk hid $3$ acorns in each hole. The squirrel hid $4$ acorns in each hole. They each hid the same number of acorns, although the squirrel needed $4$ fewer holes. How many acorns did the chipmunk hide?",[("A","30"),("B","36"),("C","42"),("D","48"),("E","54")]),
+8:(r"What is the sum of all integer solutions to $1<(x-2)^2<25$?",[("A","10"),("B","12"),("C","15"),("D","19"),("E","25")]),
+9:(r"Two integers have a sum of $26$. When two more integers are added to the first two, the sum is $41$. Finally, when two more integers are added to the previous four, the sum is $57$. What is the minimum number of even integers among the $6$ integers?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+10:(r"How many ordered pairs of positive integers $(M,N)$ satisfy the equation $\frac{M}{6}=\frac{6}{N}$?",[("A","6"),("B","7"),("C","8"),("D","9"),("E","10")]),
 }
 
-KEY_OVERRIDES = {
-    21: "Use midpoint coordinates to identify a rectangle and compute its side lengths.",
-    22: "Convert sums to formulas and factor a difference of squares.",
-    23: "Count labeled regular graphs on six vertices by possible degree.",
-    24: "Add the equations to force the small differences among $a,b,c$.",
-    25: "Order the three random numbers and use a volume ratio.",
-}
+KEY_OVERRIDES = {1:"Compare total students and rabbits across four classrooms.",2:"Use the circle diameter as the rectangle width, then apply the 2:1 ratio.",3:"Reflecting across a horizontal line preserves x and mirrors y.",4:"Add remainders modulo 6.",5:"Tax and tip are both percentages of the pre-tax meal price.",6:"Track the effect of increasing the first number and decreasing the second.",7:"Use equal total acorns and a difference of four holes.",8:"Solve the compound inequality for integer values.",9:"Use parity of each added pair sum.",10:"Cross-multiply and count divisors of 36."}
 
 SOL = {
-    21: [
-        ("Compute the midpoints", r"The midpoints are $E=(\frac12,0,\frac32)$, $F=(\frac12,0,0)$, $G=(0,1,0)$, and $H=(0,1,\frac32)$. Coordinates let us avoid guessing the shape."),
-        ("Find side lengths", r"The vector $\overrightarrow{EF}=(0,0,-\frac32)$, so $EF=\frac32$. Also $\overrightarrow{FG}=(-\frac12,1,0)$, so $FG=\sqrt{\frac14+1}=\frac{\sqrt5}{2}$."),
-        ("Check the angle", r"The dot product of $\overrightarrow{EF}$ and $\overrightarrow{FG}$ is $0$, so the adjacent sides are perpendicular. Thus $EFGH$ is a rectangle."),
-        ("Compute the area", r"The area is $EF\cdot FG=\frac32\cdot\frac{\sqrt5}{2}=\frac{3\sqrt5}{4}$. The answer is $\boxed{\frac{3\sqrt5}{4}}$."),
-    ],
-    22: [
-        ("Use sum formulas", r"The first $m$ odd integers sum to $m^2$, and the first $n$ positive even integers sum to $2(1+2+\cdots+n)=n(n+1)$. So $m^2=n(n+1)+212$."),
-        ("Complete the square", r"Multiply by $4$: $4m^2=4n^2+4n+848=(2n+1)^2+847$. Hence \[(2m-(2n+1))(2m+(2n+1))=847.\]"),
-        ("Use factor pairs", r"The positive factor pairs of $847=7\cdot11^2$ are $(1,847)$, $(7,121)$, and $(11,77)$. For each pair, $2n+1$ is half the difference of the two factors."),
-        ("Find n values", r"These give $2n+1=423,57,33$, so $n=211,28,16$. Their sum is $211+28+16=255$. The answer is $\boxed{255}$."),
-    ],
-    23: [
-        ("Translate to graphs", r"Represent each person as a vertex and each friendship as an edge. The condition says the graph on $6$ labeled vertices is regular, but not empty and not complete."),
-        ("List possible degrees", r"The common degree can be $1,2,3,$ or $4$. Degree $0$ would be no friendships, and degree $5$ would be all possible friendships."),
-        ("Count degrees 1 and 4", r"A $1$-regular graph is a perfect matching: $5\cdot3\cdot1=15$ ways. A $4$-regular graph is the complement of a $1$-regular graph, so it also gives $15$ ways."),
-        ("Count degrees 2 and 3", r"A $2$-regular graph is either one $6$-cycle or two $3$-cycles. There are $\frac{5!}{2}=60$ labeled $6$-cycles and $\frac{\binom63}{2}=10$ pairs of triangles, for $70$ total. Complements give $70$ graphs of degree $3$."),
-        ("Add", r"The total is $15+15+70+70=170$. The answer is $\boxed{170}$."),
-    ],
-    24: [
-        ("Add the equations", r"Adding the two equations gives \[2a^2+2b^2+2c^2-2ab-2ac-2bc=14.\] This is useful because it becomes a sum of squared differences."),
-        ("Rewrite as squares", r"The left side is $(a-b)^2+(a-c)^2+(b-c)^2$, so \[(a-b)^2+(a-c)^2+(b-c)^2=14.\]"),
-        ("Find the differences", r"Since $a\ge b\ge c$, the largest difference is $a-c$. The only possible square decomposition is $14=9+4+1$, so $a-c=3$ and the adjacent gaps are $1$ and $2$ in some order."),
-        ("Test the two cases", r"Either $(a,b,c)=(a,a-1,a-3)$ or $(a,a-2,a-3)$. Substituting into $a^2-b^2-c^2+ab=2011$, the first case gives $7a=2021$, not integral; the second gives $8a=2024$."),
-        ("Conclude", r"Thus $a=253$. The answer is $\boxed{253}$."),
-    ],
-    25: [
-        ("Order the three numbers", r"There are $6$ possible orders for $x,y,z$, all equally likely except on boundary cases of probability zero. Work with one order, say $0\le z\le y\le x\le n$, and multiply is unnecessary because the ratio is the same in every order."),
-        ("Find the total ordered volume", r"The region $0\le z\le y\le x\le n$ is one sixth of the cube $[0,n]^3$, so its volume is $\frac{n^3}{6}$."),
-        ("Impose the spacing", r"In this order, no two numbers are within $1$ unit means $y-z>1$ and $x-y>1$. Shift by setting $z'=z$, $y'=y-1$, and $x'=x-2$. Then $0\le z'\le y'\le x'\le n-2$."),
-        ("Compute the favorable ratio", r"The favorable ordered volume is $\frac{(n-2)^3}{6}$. Therefore the probability is \[\frac{(n-2)^3}{n^3}.\]"),
-        ("Test the threshold", r"For $n=9$, this is $\frac{7^3}{9^3}=\frac{343}{729}<\frac12$. For $n=10$, it is $\frac{8^3}{10^3}=\frac{512}{1000}>\frac12$. So the smallest possible $n$ is $\boxed{10}$."),
-    ],
+1:[("Count one classroom",r"One classroom has $18$ students and $2$ rabbits, so it has $18-2=16$ more students than rabbits."),("Scale to four classrooms",r"There are $4$ identical classrooms, so the total difference is $4\cdot16=64$."),("Check by totals",r"There are $72$ students and $8$ rabbits in all, and $72-8=64$."),("Conclude",r"The answer is $\boxed{64}$."),],
+2:[("Use the inscribed circle",r"The circle is inscribed, so its diameter equals the rectangle's width. The radius is $5$, so the diameter is $10$."),("Use the ratio",r"The rectangle's length-to-width ratio is $2:1$, so if the width is $10$, the length is $20$."),("Find area",r"The area is $10\cdot20=200$."),("Conclude",r"The answer is $\boxed{200}$."),],
+3:[("Understand the mirror line",r"The line $y=2000$ is horizontal, so reflection across it keeps the $x$-coordinate unchanged."),("Measure vertical distance",r"The point has $y=2012$, which is $12$ units above $2000$. Its reflection will be $12$ units below $2000$."),("Find new y",r"The reflected $y$-coordinate is $2000-12=1988$."),("Conclude",r"The reflected point is $\boxed{(1000,1988)}$."),],
+4:[("Use remainders",r"Ringo's marble count is congruent to $4$ modulo $6$, and Paul's is congruent to $3$ modulo $6$."),("Add the remainders",r"Together their count is congruent to $4+3=7$ modulo $6$."),("Reduce modulo 6",r"A remainder of $7$ is the same as a remainder of $1$ after making one more full bag."),("Conclude",r"There will be $\boxed{1}$ marble left over."),],
+5:[("Let the meal price be p",r"Let $p$ be the cost before tax and tip. The tax is $10\%$ of $p$, and the tip is $15\%$ of $p$."),("Write the total",r"The total is $p+0.10p+0.15p=1.25p$."),("Solve",r"Since $1.25p=27.50$, we get $p=27.50/1.25=22$."),("Conclude",r"The meal cost before tax and tip was $\boxed{\$22}$."),],
+6:[("Model the rounding",r"Suppose Xiaoli rounds $x$ up by $d$ and rounds $y$ down by the same $d$, where $d>0$."),("Write her estimate",r"Her estimate is $(x+d)-(y-d)=x-y+2d$."),("Compare",r"Because $2d>0$, her estimate is larger than $x-y$."),("Conclude",r"The necessarily correct statement is $\boxed{\text{her estimate is larger than }x-y}$."),],
+7:[("Name the number of chipmunk holes",r"Let the chipmunk dig $h$ holes. Then it hides $3h$ acorns."),("Use the squirrel's holes",r"The squirrel uses $4$ fewer holes, so it uses $h-4$ holes and hides $4(h-4)$ acorns."),("Set equal totals",r"They hid the same number of acorns, so $3h=4(h-4)$. This gives $3h=4h-16$, so $h=16$."),("Find acorns",r"The chipmunk hid $3\cdot16=48$ acorns. The answer is $\boxed{48}$."),],
+8:[("Convert the upper bound",r"The inequality $(x-2)^2<25$ means $-5<x-2<5$, so $-3<x<7$."),("Use the lower bound",r"The inequality $1<(x-2)^2$ means $|x-2|>1$, so $x<1$ or $x>3$."),("List integer solutions",r"Combining these gives $x=-2,-1,0,4,5,6$."),("Add",r"Their sum is $-2-1+0+4+5+6=12$. The answer is $\boxed{12}$."),],
+9:[("Look at sums in pairs",r"The first two integers sum to $26$, an even number. The next two add $41-26=15$, an odd number. The last two add $57-41=16$, an even number."),("Minimize evens",r"An even sum can be made by two odd integers, giving no even integers. An odd sum must be made by one even and one odd integer, giving at least one even integer."),("Apply to the three pairs",r"Choose the first pair both odd, the second pair one even and one odd, and the third pair both odd. This is possible and uses only one even integer."),("Conclude",r"The minimum number of even integers is $\boxed{1}$."),],
+10:[("Cross-multiply",r"From $\frac{M}{6}=\frac{6}{N}$, cross-multiplication gives $MN=36$."),("Turn the problem into divisor counting",r"For each positive divisor $M$ of $36$, there is exactly one positive integer $N=36/M$."),("Count divisors",r"Since $36=2^2\cdot3^2$, it has $(2+1)(2+1)=9$ positive divisors."),("Conclude",r"There are $\boxed{9}$ ordered pairs."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -168,7 +138,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2012" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2012" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -257,7 +227,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2012 AMC 10A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2012 AMC 10B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
@@ -278,6 +248,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
