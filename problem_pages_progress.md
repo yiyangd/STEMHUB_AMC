@@ -1292,3 +1292,19 @@
 - Pushed: pending
 - Next batch should start from: 2014 AMC 10A Problem 11
 - Review notes: none.
+
+## Batch 79: 2014 AMC 10A Problems 11-20 excluding 16 and 19
+
+- Start time: 2026-07-01T01:03:29-07:00
+- End time: 2026-07-01T01:03:29-07:00
+- Processed contest: AMC 10
+- Processed range: 2014 AMC 10A Problems 11-20 excluding 16 and 19
+- Generated count: 8
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2014 AMC 10A Problem 16 skipped: shaded region depends on missing diagram; 2014 AMC 10A Problem 19 skipped: cube stack line segment depends on missing diagram
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2014 AMC 10A Problem 21
+- Review notes: none.
