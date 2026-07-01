@@ -8,32 +8,40 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 46
+BATCH_NUMBER = 47
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2009_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {21, 22, 23, 24, 25}
-SKIPPED = []
-BATCH_LABEL = "2009 AMC 10A Problems 21-25"
-NEXT_START = "2009 AMC 10B Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2009_AMC_10B_Answer_Key"
+TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 10}
+SKIPPED = ["2009 AMC 10B Problem 9 skipped: diagram-dependent angle configuration"]
+BATCH_LABEL = "2009 AMC 10B Problems 1-8, 10"
+NEXT_START = "2009 AMC 10B Problem 11"
 
-ANS={21:("C",r"4(3-2\sqrt2)"),22:("D",r"\frac{2}{11}"),23:("E","6"),24:("C",r"\frac{4}{7}"),25:("B","7")}
+ANS={1:("B","2"),2:("C",r"\frac12"),3:("C","15"),4:("C",r"\frac15"),5:("D","36"),6:("D","18"),7:("C","4"),8:("B","17"),10:("E","2.4")}
 
 OV={
-21:(r"Many Gothic cathedrals have windows with portions containing a ring of congruent circles that are circumscribed by a larger circle. In the figure shown, the number of smaller circles is four. What is the ratio of the sum of the areas of the four smaller circles to the area of the larger circle?",[("A",r"$3-2\sqrt2$"),("B",r"$2-\sqrt2$"),("C",r"$4(3-2\sqrt2)$"),("D",r"$\frac12(3-\sqrt2)$"),("E",r"$2\sqrt2-2$")]),
-22:(r"Two cubical dice each have removable numbers $1$ through $6$. The twelve numbers on the two dice are removed, put into a bag, then drawn one at a time and randomly reattached to the faces of the cubes, one number to each face. The dice are then rolled and the numbers on the two top faces are added. What is the probability that the sum is $7$?",[("A",r"$\frac19$"),("B",r"$\frac18$"),("C",r"$\frac16$"),("D",r"$\frac{2}{11}$"),("E",r"$\frac15$")]),
-23:(r"Convex quadrilateral $ABCD$ has $AB=9$ and $CD=12$. Diagonals $AC$ and $BD$ intersect at $E$, $AC=14$, and $\triangle AED$ and $\triangle BEC$ have equal areas. What is $AE$?",[("A",r"$\frac92$"),("B",r"$\frac{50}{11}$"),("C",r"$\frac{21}{4}$"),("D",r"$\frac{17}{3}$"),("E","$6$")]),
-24:(r"Three distinct vertices of a cube are chosen at random. What is the probability that the plane determined by these three vertices contains points inside the cube?",[("A",r"$\frac14$"),("B",r"$\frac38$"),("C",r"$\frac47$"),("D",r"$\frac57$"),("E",r"$\frac34$")]),
-25:(r"For $k>0$, let $I_k=10\ldots064$, where there are $k$ zeros between the $1$ and the $6$. Let $N(k)$ be the number of factors of $2$ in the prime factorization of $I_k$. What is the maximum value of $N(k)$?",[("A","$6$"),("B","$7$"),("C","$8$"),("D","$9$"),("E","$10$")]),
+1:(r"Each morning of her five-day workweek, Jane bought either a $50$-cent muffin or a $75$-cent bagel. Her total cost for the week was a whole number of dollars. How many bagels did she buy?",[("A","$1$"),("B","$2$"),("C","$3$"),("D","$4$"),("E","$5$")]),
+2:(r"Which of the following is equal to $\dfrac{\frac13-\frac14}{\frac12-\frac13}$?",[("A",r"$\frac14$"),("B",r"$\frac13$"),("C",r"$\frac12$"),("D",r"$\frac23$"),("E",r"$\frac34$")]),
+3:(r"Paula the painter had just enough paint for $30$ identically sized rooms. Unfortunately, on the way to work, three cans of paint fell off her truck, so she had only enough paint for $25$ rooms. How many cans of paint did she use for the $25$ rooms?",[("A","$10$"),("B","$12$"),("C","$15$"),("D","$18$"),("E","$25$")]),
+4:(r"A rectangular yard contains two flower beds in the shape of congruent isosceles right triangles. The remainder of the yard has a trapezoidal shape. The parallel sides of the trapezoid have lengths $15$ and $25$ meters. What fraction of the yard is occupied by the flower beds?",[("A",r"$\frac18$"),("B",r"$\frac16$"),("C",r"$\frac15$"),("D",r"$\frac14$"),("E",r"$\frac13$")]),
+5:(r"Twenty percent less than $60$ is one-third more than what number?",[("A","$16$"),("B","$30$"),("C","$32$"),("D","$36$"),("E","$48$")]),
+6:(r"Kiana has two older twin brothers. The product of their three ages is $128$. What is the sum of their three ages?",[("A","$10$"),("B","$12$"),("C","$16$"),("D","$18$"),("E","$24$")]),
+7:(r"By inserting parentheses, it is possible to give the expression $2\times3+4\times5$ several values. How many different values can be obtained?",[("A","$2$"),("B","$3$"),("C","$4$"),("D","$5$"),("E","$6$")]),
+8:(r"In a certain year the price of gasoline rose by $20\%$ during January, fell by $20\%$ during February, rose by $25\%$ during March, and fell by $x\%$ during April. The price of gasoline at the end of April was the same as it had been at the beginning of January. To the nearest integer, what is $x$?",[("A","$12$"),("B","$17$"),("C","$20$"),("D","$25$"),("E","$35$")]),
+10:(r"A flagpole is originally $5$ meters tall. A hurricane snaps the flagpole at a point $x$ meters above the ground so that the upper part, still attached to the stump, touches the ground $1$ meter away from the base. What is $x$?",[("A","$2.0$"),("B","$2.1$"),("C","$2.2$"),("D","$2.3$"),("E","$2.4$")]),
 }
 
-KEY_OVERRIDES={21:"Relate the small circle radius to the large circle radius using the square formed by the four centers.",22:"Treat the two top faces as two drawn number labels from the twelve labels without replacement.",23:"Use equal areas to get a ratio on one diagonal, then compare similar scale factors from AB and CD.",24:"Count triples of cube vertices, excluding triples that lie on a face plane.",25:"Use 2-adic valuation of 10^(k+2)+64 and check the special case when powers of 2 match."}
+KEY_OVERRIDES={1:"Use modular cents to force the weekly total to be a whole number of dollars.",2:"Simplify the numerator and denominator separately before dividing.",3:"Use the lost paint to find how many rooms one can paints.",4:"Use the trapezoid bases to identify the triangular flower-bed legs and compare areas.",5:"Translate percent phrases into equations.",6:"Use the fact that the two older brothers are twins, so their ages are equal.",7:"Evaluate all possible parenthesizations and count distinct values.",8:"Multiply percentage change factors and solve for the final decrease.",10:"Use the snapped pole as a right triangle."}
 
 SOL={
-21:[("Name the radii",r"Let each small circle have radius $r$, and let the large circle have radius $R$."),("Use the four-circle geometry",r"The centers of the four small circles form a square. Adjacent small circles are tangent, so the side length of this square is $2r$. The distance from the center of the large circle to a small-circle center is half the diagonal, or $r\sqrt2$."),("Find the large radius",r"The large radius reaches from the center of the large circle to a small-circle center, then one more small radius to the outer tangency point. Thus $R=r\sqrt2+r=r(1+\sqrt2)$."),("Compare areas",r"The sum of the four small areas is $4\pi r^2$, and the large area is $\pi R^2=\pi r^2(1+\sqrt2)^2$. The ratio is $\frac{4}{(1+\sqrt2)^2}$."),("Simplify",r"Since $(1+\sqrt2)^2=3+2\sqrt2$, the ratio is $\frac{4}{3+2\sqrt2}=4(3-2\sqrt2)$."),("Answer",r"The ratio is $\boxed{4(3-2\sqrt2)}$.")],
-22:[("Model the top labels",r"After the labels are randomly attached, the two top faces are like two labels chosen from the twelve labels without replacement, one from each die after labeling."),("Count all ordered possibilities",r"There are $12$ choices for the first top label and $11$ remaining choices for the second, so $132$ ordered label choices."),("Count sums of 7",r"The ordered value pairs that sum to $7$ are $(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)$. For each ordered value pair, there are $2$ copies of the first value and $2$ copies of the second, giving $4$ label choices."),("Compute favorable choices",r"There are $6\cdot4=24$ favorable ordered choices."),("Find the probability",r"The probability is $\frac{24}{132}=\frac{2}{11}$."),("Answer",r"The answer is $\boxed{\frac{2}{11}}$.")],
-23:[("Use the equal-area condition",r"Triangles $AED$ and $BEC$ share the vertical angle at $E$. Their areas are proportional to $AE\cdot DE$ and $BE\cdot CE$. Equal areas give $AE\cdot DE=BE\cdot CE$."),("Turn that into a ratio",r"So $\frac{DE}{BE}=\frac{CE}{AE}$. This means the scale from triangle $ABE$ to triangle $CDE$ is reciprocal along both diagonals."),("Compare AB and CD",r"Using the law of cosines with the same included angle at $E$, this ratio implies $\frac{AE}{CE}=\frac{AB}{CD}=\frac{9}{12}=\frac34$."),("Use AC=14",r"Let $AE=x$, so $CE=14-x$. Then $\frac{x}{14-x}=\frac34$."),("Solve",r"We get $4x=3(14-x)$, so $7x=42$ and $x=6$."),("Answer",r"Therefore $AE=\boxed{6}$.")],
-24:[("Count all triples",r"There are $\binom83=56$ ways to choose three distinct vertices of a cube."),("Identify the bad triples",r"A plane through three vertices fails to contain interior points of the cube exactly when those three vertices lie on one face of the cube. Then the plane is just a face plane."),("Count face triples",r"Each of the $6$ faces has $4$ vertices, and choosing any $3$ of them gives $\binom43=4$ triples. A three-vertex set lies on only one face, so there are $6\cdot4=24$ bad triples."),("Subtract",r"The favorable triples are $56-24=32$."),("Compute the probability",r"The probability is $\frac{32}{56}=\frac47$."),("Answer",r"The answer is $\boxed{\frac47}$.")],
-25:[("Write the number algebraically",r"The number $I_k$ has digits $1$, then $k$ zeros, then $64$, so $I_k=10^{k+2}+64$."),("Factor powers of 2",r"This is $2^{k+2}5^{k+2}+2^6$. The number of factors of $2$ depends on which of $k+2$ and $6$ is smaller, except when they are equal."),("Handle k less than 4",r"If $k<4$, then $k+2<6$, and factoring out $2^{k+2}$ leaves an odd number. So $N(k)=k+2\le5$."),("Handle k greater than 4",r"If $k>4$, factoring out $2^6$ leaves an odd number, so $N(k)=6$."),("Check the special case",r"When $k=4$, the two terms have the same power $2^6$: $I_4=2^6(5^6+1)$. Since $5^6+1=15626$ is divisible by $2$ but not by $4$, this gives $N(4)=7$."),("Answer",r"The maximum value is $\boxed{7}$.")],
+1:[("Let b be the number of bagels",r"Jane buys $5$ items total. If she buys $b$ bagels, she buys $5-b$ muffins."),("Write the cost in cents",r"The total cost is $75b+50(5-b)=250+25b$ cents."),("Use whole dollars",r"A whole number of dollars means the number of cents is divisible by $100$. So $250+25b=25(10+b)$ must be divisible by $100$."),("Solve the divisibility",r"This requires $10+b$ to be divisible by $4$. Since $b$ is between $0$ and $5$, only $b=2$ works."),("Answer",r"Jane bought $\boxed{2}$ bagels.")],
+2:[("Simplify the numerator",r"The numerator is $\frac13-\frac14=\frac{4-3}{12}=\frac1{12}$."),("Simplify the denominator",r"The denominator is $\frac12-\frac13=\frac{3-2}{6}=\frac16$."),("Divide the fractions",r"The whole expression is $\frac{1/12}{1/6}=\frac1{12}\cdot6=\frac12$."),("Answer",r"The value is $\boxed{\frac12}$.")],
+3:[("Interpret the lost paint",r"Before losing paint, Paula had enough for $30$ rooms. After losing $3$ cans, she had enough for $25$ rooms."),("Find what 3 cans represent",r"The lost $3$ cans would have painted $30-25=5$ rooms."),("Find cans per room",r"So $3$ cans paint $5$ rooms."),("Scale to 25 rooms",r"Painting $25$ rooms is $5$ times as many rooms, so it requires $5\cdot3=15$ cans."),("Answer",r"She used $\boxed{15}$ cans.")],
+4:[("Read the geometry",r"The trapezoid has parallel sides $15$ and $25$. The extra length $25-15=10$ is split equally by two congruent isosceles right triangle flower beds."),("Find each triangle leg",r"Each flower bed contributes $5$ meters of horizontal difference, and because the triangles are isosceles right triangles, their vertical leg is also $5$ meters."),("Compute flower-bed area",r"Each triangle has area $\frac12\cdot5\cdot5=12.5$, so together the flower beds have area $25$."),("Compute yard area",r"The whole rectangular yard has dimensions $25$ by $5$, so its area is $125$."),("Find the fraction",r"The fraction occupied by flower beds is $\frac{25}{125}=\frac15$."),("Answer",r"The answer is $\boxed{\frac15}$.")],
+5:[("Compute twenty percent less than 60",r"Twenty percent less than $60$ is $80\%$ of $60$, which is $0.8\cdot60=48$."),("Translate one-third more",r"If the unknown number is $n$, then one-third more than it is $n+\frac13n=\frac43n$."),("Set up the equation",r"We need $\frac43n=48$."),("Solve",r"Multiplying by $\frac34$ gives $n=48\cdot\frac34=36$."),("Answer",r"The number is $\boxed{36}$.")],
+6:[("Use the twin condition",r"Let each older twin brother be $t$ years old, and let Kiana be $k$ years old."),("Use the product",r"The product of their ages is $kt^2=128$."),("Test square factors",r"Since $t^2$ must divide $128=2^7$, possible square factors include $4,16,$ and $64$. Because the brothers are older than Kiana, $t=8$ and $k=2$ is the valid choice."),("Add ages",r"The sum is $8+8+2=18$."),("Answer",r"Their ages sum to $\boxed{18}$.")],
+7:[("List possible structures",r"The order of the numbers and operations stays fixed; only parentheses change. We can evaluate the possible full parenthesizations."),("Compute the values",r"They give $((2\times3)+4)\times5=50$, $(2\times(3+4))\times5=70$, $(2\times3)+(4\times5)=26$, $2\times((3+4)\times5)=70$, and $2\times(3+(4\times5))=46$."),("Remove duplicates",r"The distinct values are $26,46,50,$ and $70$."),("Answer",r"There are $\boxed{4}$ different values.")],
+8:[("Use a starting price",r"Let the starting price be $1$ unit. After January it is multiplied by $1.20$."),("Apply February and March",r"After February and March, the factor is $1.20\cdot0.80\cdot1.25$. Since $0.80\cdot1.25=1$, the price is $1.20$ times the original."),("Set up April",r"After a decrease of $x\%$, the factor is $1.20(1-\frac{x}{100})$. This must equal $1$."),("Solve",r"So $1-\frac{x}{100}=\frac{1}{1.20}=\frac56$, which gives $x=\frac{100}{6}\approx16.67$."),("Round",r"To the nearest integer, $x=17$."),("Answer",r"The answer is $\boxed{17}$.")],
+10:[("Draw the right triangle mentally",r"The stump has height $x$, the ground distance is $1$, and the broken upper part has length $5-x$."),("Use the Pythagorean theorem",r"These form a right triangle, so $x^2+1^2=(5-x)^2$."),("Solve",r"Expanding gives $x^2+1=25-10x+x^2$. Cancel $x^2$ to get $1=25-10x$."),("Find x",r"Thus $10x=24$, so $x=2.4$."),("Answer",r"The snap point is $\boxed{2.4}$ meters above the ground.")],
 }
 
 def esc(x, quote=True):
@@ -134,7 +142,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2009" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2009" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -175,7 +183,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {21},
+                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {4},
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -223,7 +231,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2009 AMC 10A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2009 AMC 10B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
@@ -244,6 +252,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
