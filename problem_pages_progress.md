@@ -1948,3 +1948,19 @@
 - Pushed: pending
 - Next batch should start from: 2020 AMC 10B Problem 21
 - Review notes: none.
+
+## Batch 120: 2020 AMC 10B Problems 22-25
+
+- Start time: 2026-07-01T03:27:34-07:00
+- End time: 2026-07-01T03:27:35-07:00
+- Processed contest: AMC 10
+- Processed range: 2020 AMC 10B Problems 22-25
+- Generated count: 4
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2020 AMC 10B Problem 21 skipped: area question depends on the missing square diagram with points E,F,G,H,I,J.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2021 Spring AMC 10A Problem 1
+- Review notes: none.
