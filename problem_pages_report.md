@@ -1,20 +1,22 @@
 # Problem Pages Report
 
-- Total manifest entries: 1084
-- Latest batch: 148 (2002 AMC 12A Problems 21-24)
-- Latest new generated count: 4
+- Total manifest entries: 1094
+- Latest batch: 149 (2002 AMC 12B Problems 1-10)
+- Latest new generated count: 10
 - Latest updated existing count: 0
-- Latest skipped count: 1
+- Latest skipped count: 0
 - MathJax validation: passed
-- Answer verification source: AoPS 2002 AMC 12A Answer Key
+- Answer verification source: AoPS 2002 AMC 12B Answer Key
 
 ## Latest Batch Pages
 
-- `2002 AMC 12A Problem 21` -> `amc10/problems/2002-amc-12a-problem-21/`
-- `2002 AMC 12A Problem 22` -> `amc10/problems/2002-amc-12a-problem-22/`
-- `2002 AMC 12A Problem 23` -> `amc10/problems/2002-amc-12a-problem-23/`
-- `2002 AMC 12A Problem 24` -> `amc10/problems/2002-amc-12a-problem-24/`
-
-## Skipped in latest batch
-
-- 2002 AMC 12A Problem 25 skipped: answer choices are graph images and cannot be reconstructed reliably from text.
+- `2002 AMC 12B Problem 1` -> `amc10/problems/2002-amc-12b-problem-1/`
+- `2002 AMC 12B Problem 2` -> `amc10/problems/2002-amc-12b-problem-2/`
+- `2002 AMC 12B Problem 3` -> `amc10/problems/2002-amc-12b-problem-3/`
+- `2002 AMC 12B Problem 4` -> `amc10/problems/2002-amc-12b-problem-4/`
+- `2002 AMC 12B Problem 5` -> `amc10/problems/2002-amc-12b-problem-5/`
+- `2002 AMC 12B Problem 6` -> `amc10/problems/2002-amc-12b-problem-6/`
+- `2002 AMC 12B Problem 7` -> `amc10/problems/2002-amc-12b-problem-7/`
+- `2002 AMC 12B Problem 8` -> `amc10/problems/2002-amc-12b-problem-8/`
+- `2002 AMC 12B Problem 9` -> `amc10/problems/2002-amc-12b-problem-9/`
+- `2002 AMC 12B Problem 10` -> `amc10/problems/2002-amc-12b-problem-10/`

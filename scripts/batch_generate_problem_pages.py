@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 148
+BATCH_NUMBER = 149
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2002_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24}
-SKIPPED = ["2002 AMC 12A Problem 25 skipped: answer choices are graph images and cannot be reconstructed reliably from text."]
-BATCH_LABEL = "2002 AMC 12A Problems 21-24"
-NEXT_START = "2002 AMC 12B Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2002_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2002 AMC 12B Problems 1-10"
+NEXT_START = "2002 AMC 12B Problem 11"
 
-ANS={21:("B","1999"),22:("C",r"1-\frac{\sqrt3}{3}"),23:("D",r"14\sqrt5"),24:("E","2004")}
+ANS={1:("A","0"),2:("D","11"),3:("B","one"),4:("E",r"n>84"),5:("D","108"),6:("C",r"(1,-2)"),7:("B","77"),8:("D","Thursday"),9:("C",r"\frac14"),10:("A","13")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -449,6 +449,45 @@ SOL.update({
 23:[("Use the perpendicular bisector",r"Since \(D\) lies on the perpendicular bisector of \(BC\), it is equidistant from \(B\) and \(C\). Thus \[BD=DC=7.\]"),("Use the angle bisector theorem",r"Because \(BD\) bisects \(\angle ABC\), \[\frac{AB}{BC}=\frac{AD}{DC}=\frac97.\] Let \(BC=x\), so \(AB=\frac97x\)." ),("Use the angle-bisector length formula",r"For an angle bisector from \(B\), \[BD^2=AB\cdot BC\left(1-\frac{AC^2}{(AB+BC)^2}\right).\] Here \(BD=7\) and \(AC=AD+DC=16\)." ),("Solve for BC and AB",r"Substituting \(BC=x\) and \(AB=\frac97x\) gives \(x=\frac{28}{3}\), so \[AB=12.\]"),("Find the area of triangle ABD",r"Triangle \(ABD\) has side lengths \(AD=9\), \(BD=7\), and \(AB=12\). By Heron's formula, with semiperimeter \(14\), \[[ABD]=\sqrt{14(14-12)(14-9)(14-7)}=14\sqrt5.\]"),("Conclude",r"The answer is $\boxed{14\sqrt5}$."),],
 24:[("Use complex notation",r"Let \(z=a+bi\). Then \(a-bi=\overline z\), so the equation is \[z^{2002}=\overline z.\]"),("Handle zero separately",r"If \(z=0\), the equation is true, giving one ordered pair \((0,0)\)." ),("Use polar form for nonzero z",r"For \(z\ne0\), write \(z=re^{i\theta}\). The equation becomes \[r^{2002}e^{i2002\theta}=re^{-i\theta}.\]"),("Compare magnitudes",r"The magnitudes give \[r^{2002}=r.\] Since \(r>0\), this means \[r^{2001}=1,\] so \(r=1\)." ),("Compare angles",r"With \(r=1\), the angles must satisfy \[2002\theta\equiv-\theta\pmod{2\pi},\] so \[2003\theta\equiv0\pmod{2\pi}.\] This gives \(2003\) distinct points on the unit circle."),("Add the zero solution",r"Together with \(z=0\), there are \[2003+1=2004\] ordered pairs \((a,b)\)." ),("Conclude",r"The answer is $\boxed{2004}$."),],
 })
+
+OV.update({
+1:(r"The arithmetic mean of the nine numbers in the set \(\{9,99,999,9999,\ldots,999999999\}\) is a $9$-digit number \(M\), all of whose digits are distinct. Which digit does \(M\) not contain?",[("A","0"),("B","2"),("C","4"),("D","6"),("E","8")]),
+2:(r"What is the value of \[(3x-2)(4x+1)-(3x-2)4x+1\] when \(x=4\)?",[("A","0"),("B","1"),("C","10"),("D","11"),("E","12")]),
+3:(r"For how many positive integers \(n\) is \(n^2-3n+2\) a prime number?",[("A","none"),("B","one"),("C","two"),("D","more than two, but finitely many"),("E","infinitely many")]),
+4:(r"Let \(n\) be a positive integer such that \[\frac12+\frac13+\frac17+\frac1n\] is an integer. Which of the following statements is not true?",[("A","2 divides \(n\)"),("B","3 divides \(n\)"),("C","6 divides \(n\)"),("D","7 divides \(n\)"),("E",r"\(n>84\)")]),
+5:(r"Let \(v,w,x,y,z\) be the degree measures of the five angles of a pentagon. Suppose \(v<w<x<y<z\) and \(v,w,x,y,z\) form an arithmetic sequence. Find \(x\).",[("A","72"),("B","84"),("C","90"),("D","108"),("E","120")]),
+6:(r"Suppose that \(a\) and \(b\) are nonzero real numbers, and that the equation \[x^2+ax+b=0\] has solutions \(a\) and \(b\). What is the pair \((a,b)\)?",[("A",r"$(-2,-1)$"),("B",r"$(-1,-2)$"),("C",r"$(1,-2)$"),("D",r"$(2,-1)$"),("E",r"$(4,4)$")]),
+7:(r"The product of three consecutive positive integers is \(8\) times their sum. What is the sum of their squares?",[("A","50"),("B","77"),("C","110"),("D","149"),("E","194")]),
+8:(r"Suppose July of year \(N\) has five Mondays. Which of the following must occur five times in August of year \(N\)? Both months have \(31\) days.",[("A","Monday"),("B","Tuesday"),("C","Wednesday"),("D","Thursday"),("E","Friday")]),
+9:(r"If \(a,b,c,d\) are positive real numbers such that \(a,b,c,d\) form an increasing arithmetic sequence and \(a,b,d\) form a geometric sequence, what is \(\frac{a}{d}\)?",[("A",r"$\frac1{12}$"),("B",r"$\frac16$"),("C",r"$\frac14$"),("D",r"$\frac13$"),("E",r"$\frac12$")]),
+10:(r"How many different integers can be expressed as the sum of three distinct members of the set \(\{1,4,7,10,13,16,19\}\)?",[("A","13"),("B","16"),("C","24"),("D","30"),("E","35")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Compute the mean of repunit-like numbers.",
+2:"Substitute carefully and preserve operation order.",
+3:"Factor the quadratic and check when a product is prime.",
+4:"Solve the unit-fraction integrality condition.",
+5:"Use the average angle of a pentagon.",
+6:"Apply Vieta's formulas when the coefficients are also roots.",
+7:"Divide by the middle consecutive integer.",
+8:"Track which weekdays occur five times in consecutive 31-day months.",
+9:"Combine arithmetic and geometric sequence conditions.",
+10:"Use the arithmetic-progression structure of the set.",
+})
+
+SOL.update({
+1:[("Write the numbers in a useful way",r"The numbers are \(10^1-1,10^2-1,\ldots,10^9-1\)." ),("Add them",r"Their sum is \[(10+10^2+\cdots+10^9)-9.\] Dividing by $9$ gives the mean."),("Compute the mean",r"Directly, the sum of the nine numbers is \(1111111101\), so \[M=\frac{1111111101}{9}=123456789.\]"),("Identify the missing digit",r"The number \(123456789\) contains every nonzero digit exactly once and does not contain \(0\)." ),("Conclude",r"The answer is $\boxed{0}$."),],
+2:[("Substitute x equals 4",r"When \(x=4\), we have \(3x-2=10\), \(4x+1=17\), and \(4x=16\)." ),("Evaluate the expression",r"The expression becomes \[10\cdot17-10\cdot16+1.\]"),("Compute",r"This is \[170-160+1=11.\]"),("Conclude",r"The answer is $\boxed{11}$."),],
+3:[("Factor the expression",r"We have \[n^2-3n+2=(n-1)(n-2).\]"),("Know when a product is prime",r"A positive integer product is prime only if one factor is \(1\) and the other factor is prime."),("Check possible n",r"The factor \(n-2\) equals \(1\) when \(n=3\), and then the expression is \(2\), which is prime. The factor \(n-1\) equals \(1\) when \(n=2\), but then the expression is \(0\), not prime."),("Conclude",r"Exactly one positive integer \(n\) works. The answer is $\boxed{\text{one}}$."),],
+4:[("Add the fixed fractions",r"First, \[\frac12+\frac13+\frac17=\frac{21+14+6}{42}=\frac{41}{42}.\]"),("Force the total to be an integer",r"Since \(\frac{41}{42}<1\) and \(\frac1n>0\), the only possible integer value is \(1\). Therefore \[\frac{41}{42}+\frac1n=1.\]"),("Solve for n",r"This gives \[\frac1n=\frac1{42},\] so \(n=42\)." ),("Check the statements",r"The number \(42\) is divisible by \(2\), \(3\), \(6\), and \(7\), but \(42>84\) is false."),("Conclude",r"The statement that is not true is $\boxed{n>84}$."),],
+5:[("Use the angle sum",r"The interior angles of a pentagon sum to \[(5-2)180^\circ=540^\circ.\]"),("Use the arithmetic sequence average",r"For five terms in an arithmetic sequence, the middle term equals the average of all five terms."),("Compute the middle angle",r"Thus \[x=\frac{540}{5}=108.\]"),("Conclude",r"The answer is $\boxed{108}$."),],
+6:[("Use Vieta's formulas",r"If the roots are \(a\) and \(b\), then for \(x^2+ax+b=0\), Vieta's formulas give \[a+b=-a,\qquad ab=b.\]"),("Use b nonzero",r"Since \(b\ne0\), the equation \(ab=b\) gives \(a=1\)." ),("Find b",r"Substitute into \(a+b=-a\): \[1+b=-1,\] so \(b=-2\)." ),("Conclude",r"The pair is $\boxed{(1,-2)}$."),],
+7:[("Name the integers",r"Let the three consecutive positive integers be \(n,n+1,n+2\)." ),("Set up the equation",r"The condition is \[n(n+1)(n+2)=8(n+n+1+n+2)=8(3n+3)=24(n+1).\]"),("Divide by the middle factor",r"Since \(n+1>0\), divide both sides by \(n+1\): \[n(n+2)=24.\]"),("Solve",r"This gives \[n^2+2n-24=0,\] so \(n=4\). The integers are \(4,5,6\)." ),("Sum squares",r"The sum of their squares is \[4^2+5^2+6^2=16+25+36=77.\]"),("Conclude",r"The answer is $\boxed{77}$."),],
+8:[("Know the 31-day pattern",r"In a $31$-day month, the first three weekdays of the month occur five times."),("List possible July starts",r"If July has five Mondays, then July 1 must be Saturday, Sunday, or Monday."),("Move to August",r"Since July has \(31\equiv3\pmod7\) days, August 1 is three weekdays after July 1. So August 1 is Tuesday, Wednesday, or Thursday."),("Find the common five-time weekday",r"If August starts Tuesday, its five-time weekdays are Tuesday, Wednesday, Thursday. If it starts Wednesday, they are Wednesday, Thursday, Friday. If it starts Thursday, they are Thursday, Friday, Saturday."),("Conclude",r"The weekday that must occur five times is $\boxed{\text{Thursday}}$."),],
+9:[("Write the arithmetic sequence",r"Let the common difference be \(r>0\). Then \[a,\ b,\ c,\ d=a,\ a+r,\ a+2r,\ a+3r.\]"),("Use the geometric condition",r"The terms \(a,b,d\) form a geometric sequence, so \[b^2=ad.\]"),("Substitute",r"This gives \[(a+r)^2=a(a+3r).\] Expanding, \[a^2+2ar+r^2=a^2+3ar.\]"),("Solve for r",r"Since \(r>0\), we get \(r^2=ar\), so \(r=a\)." ),("Find the ratio",r"Then \(d=a+3r=4a\), so \[\frac{a}{d}=\frac14.\]"),("Conclude",r"The answer is $\boxed{\frac14}$."),],
+10:[("Use the arithmetic progression structure",r"The set is \(\{1,4,7,10,13,16,19\}\), an arithmetic progression with common difference \(3\)." ),("Represent selected elements",r"Choosing three distinct members is the same as choosing three distinct indices from \(0,1,\ldots,6\), giving a sum of the form \[3(i+j+k)+3.\]"),("Find possible index sums",r"The smallest index sum is \(0+1+2=3\), and the largest is \(4+5+6=15\). Every integer from \(3\) through \(15\) can occur as a sum of three distinct indices."),("Count",r"That gives \[15-3+1=13\] different sums."),("Conclude",r"The answer is $\boxed{13}$."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -555,7 +594,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2002" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2002" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -644,7 +683,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2002 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2002 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
