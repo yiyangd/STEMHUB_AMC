@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 163
+BATCH_NUMBER = 164
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2004_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
 SKIPPED = []
-BATCH_LABEL = "2004 AMC 12B Problems 21-25"
-NEXT_START = "2005 AMC 12A Problem 1"
+BATCH_LABEL = "2005 AMC 12A Problems 1-10"
+NEXT_START = "2005 AMC 12A Problem 11"
 
-ANS={21:("C",r"\frac72"),22:("C","35"),23:("C","250,500"),24:("B",r"\frac{50}{3}"),25:("B","195")}
+ANS={1:("D","10"),2:("B","-4"),3:("B",r"\frac25x^2"),4:("A","100"),5:("B","24"),6:("B","5"),7:("C","36"),8:("D","4"),9:("A","-16"),10:("B","4")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -954,6 +954,48 @@ SOL.update({
 24:[("Set angle variables",r"Let \(\alpha=\angle DBE\) and \(\beta=\angle DBC\). Then \(\angle CBE=\alpha-\beta\), and because \(AB=BC\), \(\angle ABE=\alpha+\beta\)."),("Use the geometric progression",r"The tangent values form a geometric progression, so \[\tan(\alpha-\beta)\tan(\alpha+\beta)=\tan^2\alpha.\] Let \(u=\tan\alpha\) and \(v=\tan\beta\). Using tangent formulas, this simplifies to \(u^4=1\), so \(u=1\)."),("Use the arithmetic progression",r"The cotangent values form an arithmetic progression: \[2\cot(\alpha-\beta)=\cot\alpha+\cot\beta.\] Since \(\tan\alpha=1\), this becomes \[2\cdot\frac{1+v}{1-v}=1+\frac1v,\] so \(v=\frac13\)."),("Translate to lengths",r"In right triangle \(BDE\), \(\tan\alpha=\frac{DE}{BD}=1\), so \(DE=BD\). Since \(BE=10\), this is a \(45^\circ-45^\circ-90^\circ\) triangle, and \(BD=5\sqrt2\)."),("Find the base and area",r"Also \(\tan\beta=\frac{DC}{BD}=\frac13\), so \(DC=\frac{BD}{3}\). Because \(AB=BC\), \(D\) is the midpoint of \(AC\), so \(AC=2DC=\frac{2BD}{3}\)."),("Conclude",r"The area is \[\frac12\cdot AC\cdot BD=\frac12\cdot\frac{2BD}{3}\cdot BD=\frac{BD^2}{3}=\frac{50}{3}.\] The answer is $\boxed{\frac{50}{3}}$."),],
 25:[("Use digit-length blocks",r"Since \(2^{2004}\) is a \(604\)-digit number beginning with \(1\), the powers \(2^0,2^1,\ldots,2^{2003}\) cover digit lengths \(1\) through \(603\). For each digit length, the first power of \(2\) with that length begins with \(1\). Thus \(603\) elements begin with \(1\)."),("Double leading digits",r"Doubling a number beginning with \(1\) produces a number beginning with \(2\) or \(3\). Doubling again produces a number beginning with \(4,5,6,\) or \(7\)."),("Count three large groups",r"Therefore \(603\) elements begin with \(1\), \(603\) begin with \(2\) or \(3\), and \(603\) begin with \(4,5,6,\) or \(7\)."),("Find the remaining group",r"The set has \(2004\) elements, so the number beginning with \(8\) or \(9\) is \[2004-3\cdot603=195.\]"),("Relate 4 to 8 or 9",r"A power of \(2\) begins with \(4\) exactly when the next power begins with \(8\) or \(9\). This pairing stays inside the given range."),("Conclude",r"Thus \(195\) elements begin with \(4\), so the answer is \(\boxed{195}\)."),],
 })
+OV.update({
+1:(r"Two is \(10\%\) of \(x\) and \(20\%\) of \(y\). What is \(x-y\)?",[("A","1"),("B","2"),("C","5"),("D","10"),("E","20")]),
+2:(r"The equations \(2x+7=3\) and \(bx-10=-2\) have the same solution for \(x\). What is the value of \(b\)?",[("A","-8"),("B","-4"),("C","-2"),("D","4"),("E","8")]),
+3:(r"A rectangle with a diagonal of length \(x\) is twice as long as it is wide. What is the area of the rectangle?",[("A",r"\(\frac14x^2\)"),("B",r"\(\frac25x^2\)"),("C",r"\(\frac12x^2\)"),("D",r"\(x^2\)"),("E",r"\(\frac32x^2\)")]),
+4:(r"A store normally sells windows at \(\$100\) each. This week the store is offering one free window for each purchase of four. Dave needs seven windows and Doug needs eight windows. How many dollars will they save if they purchase the windows together rather than separately?",[("A","100"),("B","200"),("C","300"),("D","400"),("E","500")]),
+5:(r"The average (mean) of \(20\) numbers is \(30\), and the average of \(30\) other numbers is \(20\). What is the average of all \(50\) numbers?",[("A","23"),("B","24"),("C","25"),("D","26"),("E","27")]),
+6:(r"Josh and Mike live \(13\) miles apart. Yesterday, Josh started to ride his bicycle toward Mike's house. A little later Mike started to ride his bicycle toward Josh's house. When they met, Josh had ridden for twice the length of time as Mike and at four-fifths of Mike's rate. How many miles had Mike ridden when they met?",[("A","4"),("B","5"),("C","6"),("D","7"),("E","8")]),
+7:(r"Square \(EFGH\) is inside square \(ABCD\) so that each side of \(EFGH\) can be extended to pass through a vertex of \(ABCD\). Square \(ABCD\) has side length \(\sqrt{50}\) and \(BE=1\). What is the area of the inner square \(EFGH\)?",[("A","25"),("B","32"),("C","36"),("D","40"),("E","42")]),
+8:(r"Let \(A,M,\) and \(C\) be digits with \[(100A+10M+C)(A+M+C)=2005.\] What is \(A\)?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+9:(r"There are two values of \(a\) for which the equation \(4x^2+ax+8x+9=0\) has only one solution for \(x\). What is the sum of these values of \(a\)?",[("A","-16"),("B","-8"),("C","0"),("D","8"),("E","20")]),
+10:(r"A wooden cube \(n\) units on a side is painted red on all six faces and then cut into \(n^3\) unit cubes. Exactly one-fourth of the total number of faces of the unit cubes are red. What is \(n\)?",[("A","3"),("B","4"),("C","5"),("D","6"),("E","7")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Convert percent statements into equations.",
+2:"Solve the common value of \(x\), then substitute.",
+3:"Use the Pythagorean Theorem with side ratio \(1:2\).",
+4:"Compare separate purchase groups with one combined purchase group.",
+5:"Use weighted averages through total sums.",
+6:"Compare distances using rate times time.",
+7:"Relate the outer square side to the inner square side using the corner right triangle.",
+8:"Factor \(2005\) and use the digit-sum factor.",
+9:"Set the quadratic discriminant equal to zero.",
+10:"Compare painted faces with all small-cube faces.",
+})
+
+NOTES_OVERRIDES.update({
+7:"This problem contains a diagram. The side-extension configuration and \(BE=1\) are shown in the original PDF; please refer to the original PDF or AoPS page for the figure.",
+})
+
+SOL.update({
+1:[("Translate the percent statements",r"\(10\%\) of \(x\) is \(2\), so \(0.10x=2\). Also \(20\%\) of \(y\) is \(2\), so \(0.20y=2\)."),("Solve for x",r"From \(0.10x=2\), we get \(x=20\)."),("Solve for y",r"From \(0.20y=2\), we get \(y=10\)."),("Subtract",r"Therefore \(x-y=20-10=10\)."),("Conclude",r"The answer is \(\boxed{10}\)."),],
+2:[("Solve the first equation",r"The equation \(2x+7=3\) gives \(2x=-4\), so \(x=-2\)."),("Use the same solution",r"The second equation has the same solution, so substitute \(x=-2\) into \(bx-10=-2\)."),("Solve for b",r"We get \[-2b-10=-2,\] so \(-2b=8\) and \(b=-4\)."),("Check",r"If \(b=-4\), then \(bx-10=-2\) becomes \(-4x-10=-2\), whose solution is also \(x=-2\)."),("Conclude",r"The answer is \(\boxed{-4}\)."),],
+3:[("Name the width",r"Let the width be \(w\). Then the length is \(2w\)."),("Use the diagonal",r"The diagonal is the hypotenuse of a right triangle with legs \(w\) and \(2w\), so \[x^2=w^2+(2w)^2=5w^2.\]"),("Solve for w squared",r"Thus \(w^2=\frac{x^2}{5}\)."),("Compute the area",r"The rectangle area is \(w(2w)=2w^2=2\cdot\frac{x^2}{5}=\frac25x^2.\]"),("Conclude",r"The answer is $\boxed{\frac25x^2}$."),],
+4:[("Understand the sale",r"For every \(5\) windows received, a customer pays for only \(4\)."),("Cost separately",r"Dave needs \(7\) windows, so he pays for \(6\), costing \(\$600\). Doug needs \(8\) windows, so he pays for \(7\), costing \(\$700\). Separately they pay \(\$1300\)."),("Cost together",r"Together they need \(15\) windows. They can pay for \(12\) and receive \(3\) free, costing \(\$1200\)."),("Compare",r"The savings is \(1300-1200=100\) dollars."),("Conclude",r"The answer is \(\boxed{100}\)."),],
+5:[("Convert averages to sums",r"The \(20\) numbers with average \(30\) have sum \(20\cdot30=600\)."),("Compute the other sum",r"The \(30\) other numbers with average \(20\) have sum \(30\cdot20=600\)."),("Combine",r"All \(50\) numbers have total sum \(600+600=1200\)."),("Find the combined average",r"The average is \[\frac{1200}{50}=24.\]"),("Conclude",r"The answer is \(\boxed{24}\)."),],
+6:[("Compare Mike's distance to Josh's",r"Let Mike's rate be \(r\) and his riding time be \(t\). Then Mike rode \(rt\) miles."),("Use Josh's rate and time",r"Josh rode for \(2t\) at rate \(\frac45r\), so Josh's distance was \[\frac45r\cdot2t=\frac85rt.\]"),("Use total distance",r"Their distances add to \(13\), so \[rt+\frac85rt=13.\]"),("Solve for Mike's distance",r"This is \(\frac{13}{5}rt=13\), so \(rt=5\)."),("Conclude",r"Mike had ridden \(\boxed{5}\) miles."),],
+7:[("Let the inner side be s",r"Let \(s\) be the side length of square \(EFGH\). The corner segments formed by extending the sides of the inner square are congruent in opposite pairs because both figures are squares."),("Use the given short segment",r"The diagram gives \(BE=1\). This creates a right triangle along a side of the outer square whose perpendicular components have lengths \(s+1\) and \(1\)."),("Use the outer side length",r"The side length of square \(ABCD\) is \(\sqrt{50}\), so \[(s+1)^2+1^2=50.\]"),("Solve for s",r"This gives \((s+1)^2=49\), so \(s+1=7\) and \(s=6\)."),("Find the area",r"The area of the inner square is \(s^2=6^2=36\)."),("Conclude",r"The answer is \(\boxed{36}\)."),],
+8:[("Factor 2005",r"We have \(2005=5\cdot401\). The factor \(A+M+C\) is a digit sum, so it must be between \(1\) and \(27\)."),("Identify the digit sum",r"Among the factors of \(2005\), the only possible digit sum in this range that can pair with a three-digit number is \(5\)."),("Find the three-digit number",r"Therefore \(100A+10M+C=401\)."),("Read A",r"The hundreds digit of \(401\) is \(4\), so \(A=4\)."),("Conclude",r"The answer is \(\boxed{4}\)."),],
+9:[("Combine like terms",r"The equation is \[4x^2+(a+8)x+9=0.\]"),("Use the one-solution condition",r"A quadratic has only one real solution when its discriminant is zero."),("Set the discriminant to zero",r"Thus \[(a+8)^2-4\cdot4\cdot9=0,\] so \[(a+8)^2=144.\]"),("Find the two a values",r"Then \(a+8=\pm12\), giving \(a=4\) or \(a=-20\)."),("Add them",r"The sum is \(4+(-20)=-16\)."),("Conclude",r"The answer is \(\boxed{-16}\)."),],
+10:[("Count red faces",r"Painting the original cube colors \(6n^2\) unit-square faces red, because each of the \(6\) large faces contains \(n^2\) small faces."),("Count all small-cube faces",r"After cutting, there are \(n^3\) unit cubes, each with \(6\) faces, so there are \(6n^3\) total small-cube faces."),("Use the fraction condition",r"Exactly one-fourth of all small-cube faces are red, so \[6n^2=\frac14(6n^3).\]"),("Solve",r"Canceling \(6n^2\) gives \(1=\frac{n}{4}\), so \(n=4\)."),("Conclude",r"The answer is \(\boxed{4}\)."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -1060,7 +1102,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2004" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2005" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -1149,7 +1191,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2004 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2005 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
