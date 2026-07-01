@@ -1340,3 +1340,19 @@
 - Pushed: pending
 - Next batch should start from: 2014 AMC 10B Problem 11
 - Review notes: none.
+
+## Batch 82: 2014 AMC 10B Problems 11-20 excluding 13
+
+- Start time: 2026-07-01T01:13:04-07:00
+- End time: 2026-07-01T01:13:05-07:00
+- Processed contest: AMC 10
+- Processed range: 2014 AMC 10B Problems 11-20 excluding 13
+- Generated count: 9
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2014 AMC 10B Problem 13 skipped: labels A, B, C depend on missing hexagon diagram
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2014 AMC 10B Problem 21
+- Review notes: none.
