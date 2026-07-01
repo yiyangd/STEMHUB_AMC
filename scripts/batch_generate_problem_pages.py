@@ -3,30 +3,32 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 86
+BATCH_NUMBER = 87
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2015_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {17,18,19,20}
+TARGET_NUMBERS = {21,22,23,24,25}
 SKIPPED = []
-BATCH_LABEL = "2015 AMC 10A Problems 17-20"
-NEXT_START = "2015 AMC 10A Problem 21"
+BATCH_LABEL = "2015 AMC 10A Problems 21-25"
+NEXT_START = "2015 AMC 10B Problem 1"
 
-ANS={17:("D",r"3+2\sqrt3"),18:("E","21"),19:("D",r"\frac{50-25\sqrt3}{2}"),20:("B","102")}
+ANS={21:("C",r"\frac{24}{5}"),22:("A",r"\frac{47}{256}"),23:("C","16"),24:("B","31"),25:("A","59")}
 
 OV={
-17:(r"A line that passes through the origin intersects both the line $x=1$ and the line $y=1+\frac{x}{\sqrt3}$. The three lines create an equilateral triangle. What is the perimeter of the triangle?",[("A",r"2\sqrt6"),("B",r"2+2\sqrt3"),("C","6"),("D",r"3+2\sqrt3"),("E",r"6+3\sqrt3")]),
-18:(r"Hexadecimal (base-$16$) numbers are written using numeric digits $0$ through $9$ as well as the letters $A$ through $F$ to represent $10$ through $15$. Among the first $1000$ positive integers, there are $n$ whose hexadecimal representation contains only numeric digits. What is the sum of the digits of $n$?",[("A","17"),("B","18"),("C","19"),("D","20"),("E","21")]),
-19:(r"The isosceles right triangle $ABC$ has right angle at $C$ and area $12.5$. The rays trisecting $\angle ACB$ intersect $AB$ at $D$ and $E$. What is the area of $\triangle CDE$?",[("A",r"5\sqrt2"),("B",r"\frac{50\sqrt3-75}{4}"),("C",r"\frac{15\sqrt3}{2}"),("D",r"\frac{50-25\sqrt3}{2}"),("E",r"\frac{25\sqrt3}{6}")]),
-20:(r"A rectangle with positive integer side lengths has area $A$ square centimeters and perimeter $P$ centimeters. Which of the following numbers cannot equal $A+P$?",[("A","100"),("B","102"),("C","104"),("D","106"),("E","108")]),
+21:(r"Tetrahedron $ABCD$ has $AB=5$, $AC=3$, $BC=4$, $BD=4$, $AD=3$, and $CD=\frac{12\sqrt2}{5}$. What is the volume of the tetrahedron?",[("A",r"3\sqrt2"),("B",r"2\sqrt5"),("C",r"\frac{24}{5}"),("D",r"3\sqrt3"),("E",r"\frac{24\sqrt2}{5}")]),
+22:(r"Eight people are sitting around a circular table, each holding a fair coin. All eight people flip their coins, and those who flip heads stand while those who flip tails remain seated. What is the probability that no two adjacent people will stand?",[("A",r"\frac{47}{256}"),("B",r"\frac3{16}"),("C",r"\frac{49}{256}"),("D",r"\frac{25}{128}"),("E",r"\frac{51}{256}")]),
+23:(r"The zeroes of the function $f(x)=x^2-ax+2a$ are integers. What is the sum of all possible values of $a$?",[("A","7"),("B","8"),("C","16"),("D","17"),("E","18")]),
+24:(r"For some positive integers $p$, there is a quadrilateral $ABCD$ with positive integer side lengths, perimeter $p$, right angles at $B$ and $C$, $AB=2$, and $CD=AD$. How many different values of $p<2015$ are possible?",[("A","30"),("B","31"),("C","61"),("D","62"),("E","63")]),
+25:(r"Let $S$ be a square of side length $1$. Two points are chosen independently at random on the sides of $S$. The probability that the straight-line distance between the points is at least $\frac12$ is $\frac{a-b\pi}{c}$, where $a$, $b$, and $c$ are positive integers and $\gcd(a,b,c)=1$. What is $a+b+c$?",[("A","59"),("B","60"),("C","61"),("D","62"),("E","63")]),
 }
 
-KEY_OVERRIDES={17:"Use the 60-degree angle between the given lines to identify the third line.",18:"Count hexadecimal representations with only decimal digits.",19:"Place the right isosceles triangle on coordinate axes and use trisection slopes.",20:"Rewrite A+P as (a+2)(b+2)-4 for integer side lengths."}
+KEY_OVERRIDES={21:"Use coordinates for the two 3-4-5 faces and compute height.",22:"Count binary circular strings of length 8 with no adjacent heads.",23:"Use Vieta's formulas and factor a shifted product.",24:"Parameterize the right-angle quadrilateral to get a square condition.",25:"Break the boundary choices into same, adjacent, and opposite side cases."}
 
 SOL={
-17:[("Use the angle between the fixed lines",r"The line $x=1$ is vertical, and the line $y=1+\frac{x}{\sqrt3}$ has slope $\frac1{\sqrt3}$, so it makes a $30^\circ$ angle with the $x$-axis. The angle between these two lines is $60^\circ$."),("Choose the third line",r"For the triangle to be equilateral, the third line through the origin must make a $60^\circ$ angle with each of the other two lines. This gives the line $y=-\frac{x}{\sqrt3}$."),("Find the vertical side length",r"On $x=1$, the slanted upper line has $y=1+\frac1{\sqrt3}$, while the line through the origin has $y=-\frac1{\sqrt3}$. The side length is \[1+\frac2{\sqrt3}.\]"),("Find the perimeter",r"The triangle is equilateral, so the perimeter is \[3\left(1+\frac2{\sqrt3}\right)=3+2\sqrt3.\]"),("Conclude",r"The answer is $\boxed{3+2\sqrt3}$."),],
-18:[("Translate the bound",r"The first $1000$ positive integers go up to decimal $1000$, which is hexadecimal $3E8$."),("Count one- and two-digit hexadecimal numbers",r"With only numeric digits, there are $9$ one-digit positive numbers and $9\cdot10=90$ two-digit numbers."),("Count three-digit numbers",r"For three-digit hexadecimal numbers up to $3E8$, the first digit can be $1$, $2$, or $3$. Since the other allowed digits are only $0$ through $9$, all $3\cdot100=300$ such numbers are below $3E8$."),("Find n",r"Thus $n=9+90+300=399$."),("Sum the digits",r"The sum of the decimal digits of $399$ is $3+9+9=21$."),("Conclude",r"The answer is $\boxed{21}$."),],
-19:[("Place the triangle on axes",r"Since the triangle is isosceles right with area $12.5$, its legs have length $5$. Put $C=(0,0)$, $A=(5,0)$, and $B=(0,5)$, so $AB$ is $x+y=5$."),("Use the trisecting rays",r"The rays trisecting the right angle have slopes $\tan30^\circ=\frac1{\sqrt3}$ and $\tan60^\circ=\sqrt3$."),("Find the intersection points",r"The first ray meets $AB$ at \[\left(\frac{5\sqrt3}{\sqrt3+1},\frac5{\sqrt3+1}\right),\] and the second meets $AB$ at \[\left(\frac5{\sqrt3+1},\frac{5\sqrt3}{\sqrt3+1}\right).\]"),("Compute area with a determinant",r"The absolute determinant of these two point vectors is \[\frac{25(3-1)}{(\sqrt3+1)^2}=\frac{25}{2+\sqrt3}.\] The triangle area is half of that."),("Simplify",r"Thus \[[CDE]=\frac{25}{2(2+\sqrt3)}=\frac{25(2-\sqrt3)}2=\frac{50-25\sqrt3}{2}.\]"),("Conclude",r"The answer is $\boxed{\frac{50-25\sqrt3}{2}}$."),],
-20:[("Use the corrected integer-side version",r"Let the positive integer side lengths be $a$ and $b$. Then $A=ab$ and $P=2a+2b$."),("Factor A plus P",r"\[A+P=ab+2a+2b=(a+2)(b+2)-4.\] Thus $A+P+4$ must factor into two integers greater than $2$."),("Test the choices by adding 4",r"The choices become $104,106,108,110,112$ after adding $4$."),("Find the impossible one",r"$106=2\cdot53$ has no factorization into two integers both greater than $2$. The others do: for example, $104=4\cdot26$, $108=6\cdot18$, $110=5\cdot22$, and $112=4\cdot28$."),("Conclude",r"Therefore $A+P$ cannot be $\boxed{102}$."),],
+21:[("Place one face in the xy-plane",r"Let $A=(0,0,0)$ and $B=(5,0,0)$. Since $AC=3$ and $BC=4$, we can put $C=\left(\frac95,\frac{12}{5},0\right)$."),("Use the equal distances to A and B",r"Because $AD=3$ and $BD=4$, point $D$ has the same $x$-coordinate as $C$, namely $\frac95$. Write $D=\left(\frac95,y,z\right)$."),("Use AD and CD",r"From $AD=3$, we get $y^2+z^2=\left(\frac{12}{5}\right)^2$. From $CD=\frac{12\sqrt2}{5}$, we get \[(y-\frac{12}{5})^2+z^2=\frac{288}{25}.\]"),("Solve for the height",r"Subtracting the equations gives $y=0$, so $z=\frac{12}{5}$. This $z$-value is the height above the plane of $\triangle ABC$."),("Compute volume",r"The area of $\triangle ABC$ is $\frac12\cdot3\cdot4=6$. Thus the tetrahedron volume is \[\frac13\cdot6\cdot\frac{12}{5}=\frac{24}{5}.\]"),("Conclude",r"The answer is $\boxed{\frac{24}{5}}$."),],
+22:[("Model heads and tails as binary strings",r"Each coin flip outcome is a circular string of length $8$, where heads means a person stands. There are $2^8=256$ total outcomes."),("Count by number of standing people",r"With no adjacent standing people on a circle of $8$, there can be $0$, $1$, $2$, $3$, or $4$ people standing."),("Use circular spacing counts",r"The counts are $1$ for zero heads, $8$ for one head, $20$ for two heads, $16$ for three heads, and $2$ for four heads."),("Add favorable outcomes",r"The total favorable count is $1+8+20+16+2=47$."),("Compute probability",r"The probability is $\frac{47}{256}$."),("Conclude",r"The answer is $\boxed{\frac{47}{256}}$."),],
+23:[("Use Vieta's formulas",r"Let the integer zeroes be $r$ and $s$. Then $r+s=a$ and $rs=2a$."),("Eliminate a",r"Substitute $a=r+s$ into $rs=2a$ to get \[rs=2r+2s.\]"),("Factor by shifting",r"Rearrange as \[rs-2r-2s=0,\] then add $4$ to get \[(r-2)(s-2)=4.\]"),("List integer factor pairs",r"The factor pairs for $4$ are $(1,4),(2,2),(4,1),(-1,-4),(-2,-2),(-4,-1)$. These give possible $a=r+s$ values $9,8,9,-1,0,-1$."),("Add distinct a values",r"The possible values of $a$ are $-1,0,8,9$. Their sum is $16$."),("Conclude",r"The answer is $\boxed{16}$."),],
+24:[("Set coordinates",r"Let $B=(0,0)$ and $C=(x,0)$, where $BC=x$ is a positive integer. Since $AB=2$ and the angle at $B$ is right, put $A=(0,2)$."),("Use CD equal to AD",r"Let $CD=h$, so $D=(x,h)$ and $AD=h$. The equation $AD^2=h^2$ gives \[x^2+(h-2)^2=h^2.\]"),("Simplify to a square condition",r"This becomes $x^2=4h-4=4(h-1)$. Hence $x$ must be even; write $x=2k$. Then $h=k^2+1$."),("Write the perimeter",r"The perimeter is \[p=AB+BC+CD+AD=2+2k+2(k^2+1)=2k^2+2k+4.\]"),("Count possible k",r"We need $2k^2+2k+4<2015$. This holds for $k=1,2,\ldots,31$ and fails for $k=32$."),("Conclude",r"There are $\boxed{31}$ possible perimeters."),],
+25:[("Separate side relationships",r"Choose the side of the first point. The second point is on the same side with probability $\frac14$, on an adjacent side with probability $\frac12$, and on the opposite side with probability $\frac14$."),("Same side",r"If both points are on the same side, their positions are two independent numbers in $[0,1]$. The probability their distance is at least $\frac12$ is the area where $|x-y|\ge\frac12$, which is $\frac14$."),("Adjacent sides",r"If the points are on adjacent sides meeting at a corner, their distance is $\sqrt{x^2+y^2}$. The bad region for distance less than $\frac12$ is a quarter circle of radius $\frac12$, with area $\frac{\pi}{16}$, so the good probability is $1-\frac{\pi}{16}$."),("Opposite sides",r"If the points are on opposite sides, their distance is always at least $1$, so it is certainly at least $\frac12$."),("Combine cases",r"The total probability is \[\frac14\cdot\frac14+\frac12\left(1-\frac{\pi}{16}\right)+\frac14=\frac{26-\pi}{32}.\]"),("Conclude",r"Thus $(a,b,c)=(26,1,32)$, so $a+b+c=\boxed{59}$."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -73,8 +75,8 @@ def render(row):
     notes = row.get("notes") or ""
     if n in {10,17} and notes == "题面包含图形":
         notes = ""
-    if n == 20:
-        notes = "This page uses the corrected practice version with positive integer side lengths; the original wording was ambiguous."
+    if n == 25:
+        notes = "This page uses the corrected distance threshold $1/2$; the CSV OCR text omitted the denominator."
     note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if n in set() else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
@@ -171,7 +173,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": int(r["problem_no"]) in {20},
+                "needs_review": int(r["problem_no"]) in {25},
                 "batch_number": BATCH_NUMBER,
             }
         )
