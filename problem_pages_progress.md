@@ -524,3 +524,19 @@
 - Pushed: pending
 - Next batch should start from: 2007 AMC 10A Problem 21
 - Review notes: Skipped Problems 15, 18, and 19 because they require diagrams.
+
+## Batch 34: 2007 AMC 10A Problems 21-23, 25
+
+- Start time: 2026-06-30T18:25:23-07:00
+- End time: 2026-06-30T18:25:23-07:00
+- Processed contest: AMC 10
+- Processed range: 2007 AMC 10A Problems 21-23, 25
+- Generated count: 4
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2007 AMC 10A Problem 24 skipped: statement depends on a diagram for the shaded circle-tangent region.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2007 AMC 10B Problem 1
+- Review notes: Skipped Problem 24 because it requires a diagram.

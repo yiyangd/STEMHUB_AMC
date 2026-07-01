@@ -8,59 +8,45 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 33
+BATCH_NUMBER = 34
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2007_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {11, 12, 13, 14, 16, 17, 20}
+TARGET_NUMBERS = {21, 22, 23, 25}
 SKIPPED = [
-    "2007 AMC 10A Problem 15 skipped: statement depends on a diagram.",
-    "2007 AMC 10A Problem 18 skipped: statement depends on a diagram.",
-    "2007 AMC 10A Problem 19 skipped: statement depends on a diagram.",
+    "2007 AMC 10A Problem 24 skipped: statement depends on a diagram for the shaded circle-tangent region.",
 ]
-BATCH_LABEL = "2007 AMC 10A Problems 11-14, 16, 17, 20"
-NEXT_START = "2007 AMC 10A Problem 21"
+BATCH_LABEL = "2007 AMC 10A Problems 21-23, 25"
+NEXT_START = "2007 AMC 10B Problem 1"
 
 ANS = {
-    11: ("C", "18"),
-    12: ("D", "62"),
-    13: ("B", r"\frac{3}{4}"),
-    14: ("A", "8.64"),
-    16: ("E", r"\frac{5}{8}"),
-    17: ("D", "60"),
-    20: ("D", "194"),
+    21: ("C", "8"),
+    22: ("D", "37"),
+    23: ("B", "4"),
+    25: ("D", "4"),
 }
 
 
 OV = {
-    11: (r"The numbers from $1$ to $8$ are placed at the vertices of a cube in such a manner that the sum of the four numbers on each face is the same. What is this common sum?", [("A", "$14$"), ("B", "$16$"), ("C", "$18$"), ("D", "$20$"), ("E", "$24$")]),
-    12: (r"Two tour guides are leading six tourists. The guides decide to split up. Each tourist must choose one of the guides, but with the stipulation that each guide must take at least one tourist. How many different groupings of guides and tourists are possible?", [("A", "$56$"), ("B", "$58$"), ("C", "$60$"), ("D", "$62$"), ("E", "$64$")]),
-    13: (r"Yan is somewhere between his home and the stadium. To get to the stadium he can walk directly to the stadium, or else he can walk home and then ride his bicycle to the stadium. He rides $7$ times as fast as he walks, and both choices require the same amount of time. What is the ratio of Yan's distance from his home to his distance from the stadium?", [("A", r"$\frac23$"), ("B", r"$\frac34$"), ("C", r"$\frac45$"), ("D", r"$\frac56$"), ("E", r"$\frac67$")]),
-    14: (r"A triangle with side lengths in the ratio $3:4:5$ is inscribed in a circle of radius $3$. What is the area of the triangle?", [("A", "$8.64$"), ("B", "$12$"), ("C", r"$5\pi$"), ("D", "$17.28$"), ("E", "$18$")]),
-    16: (r"Integers $a,b,c,$ and $d$, not necessarily distinct, are chosen independently and at random from $0$ to $2007$, inclusive. What is the probability that $ad-bc$ is even?", [("A", r"$\frac38$"), ("B", r"$\frac7{16}$"), ("C", r"$\frac12$"), ("D", r"$\frac9{16}$"), ("E", r"$\frac58$")]),
-    17: (r"Suppose that $m$ and $n$ are positive integers such that $75m=n^3$. What is the minimum possible value of $m+n$?", [("A", "$15$"), ("B", "$30$"), ("C", "$50$"), ("D", "$60$"), ("E", "$5700$")]),
-    20: (r"Suppose that the number $a$ satisfies the equation $4=a+a^{-1}$. What is the value of $a^4+a^{-4}$?", [("A", "$164$"), ("B", "$172$"), ("C", "$192$"), ("D", "$194$"), ("E", "$212$")]),
+    21: (r"A sphere is inscribed in a cube that has a surface area of $24$ square meters. A second cube is then inscribed within the sphere. What is the surface area in square meters of the inner cube?", [("A", "$3$"), ("B", "$6$"), ("C", "$8$"), ("D", "$9$"), ("E", "$12$")]),
+    22: (r"A finite sequence of three-digit integers has the property that the tens and units digits of each term are, respectively, the hundreds and tens digits of the next term, and the tens and units digits of the last term are, respectively, the hundreds and tens digits of the first term. For example, such a sequence might begin with terms $247,475,756$ and end with the term $824$. Let $S$ be the sum of all the terms in the sequence. What is the largest prime number that always divides $S$?", [("A", "$3$"), ("B", "$7$"), ("C", "$13$"), ("D", "$37$"), ("E", "$43$")]),
+    23: (r"How many ordered pairs $(m,n)$ of positive integers, with $m>n$, have the property that their squares differ by $96$?", [("A", "$3$"), ("B", "$4$"), ("C", "$6$"), ("D", "$9$"), ("E", "$12$")]),
+    25: (r"For each positive integer $n$, let $S(n)$ denote the sum of the digits of $n$. For how many values of $n$ is $n+S(n)+S(S(n))=2007$?", [("A", "$1$"), ("B", "$2$"), ("C", "$3$"), ("D", "$4$"), ("E", "$5$")]),
 }
 
 
 KEY_OVERRIDES = {
-    11: "Double-count face sums on a cube: each vertex belongs to exactly three faces.",
-    12: "Count all assignments to two guides, then subtract the two invalid all-one-guide cases.",
-    13: "Translate equal travel times into an equation using distance and speed.",
-    14: "Recognize the 3-4-5 triangle as right and use the circumradius as half the hypotenuse.",
-    16: "Use parity: a product is odd exactly when both factors are odd.",
-    17: "Use prime exponents to make 75m a perfect cube with minimum n.",
-    20: "Use repeated squaring on a+a^{-1} to get a^4+a^{-4} without solving for a.",
+    21: "Relate cube surface area, sphere diameter, and the space diagonal of the inner cube.",
+    22: "Use cyclic digit overlap to show that each digit contributes once in each place value.",
+    23: "Factor the difference of squares and count compatible factor pairs.",
+    25: "Use digit-sum bounds to restrict n, then test the few possible values systematically.",
 }
 
 
 SOL = {
-    11: [("Count total vertex value", r"The numbers at the vertices are $1$ through $8$, whose sum is $36$."), ("Double-count face sums", r"There are $6$ faces, each with common sum $S$, so the total of all face sums is $6S$."), ("Notice how often each vertex is counted", r"Each vertex of a cube lies on exactly $3$ faces. Therefore, when all face sums are added, each vertex number is counted $3$ times."), ("Solve for the common sum", r"Thus $6S=3\cdot36=108$, so $S=18$."), ("Answer", r"The common face sum is $\boxed{18}$." )],
-    12: [("Start with all choices", r"Each of the $6$ tourists has $2$ choices: guide 1 or guide 2. That gives $2^6=64$ assignments."), ("Remove invalid assignments", r"The only invalid cases are when all tourists choose the first guide or all tourists choose the second guide. In those cases, one guide has no tourists."), ("Subtract", r"So the number of valid groupings is $64-2=62$."), ("Check interpretation", r"The guides are distinct people, so assigning a particular tourist to guide 1 is different from assigning that tourist to guide 2."), ("Answer", r"The answer is $\boxed{62}$." )],
-    13: [("Define the two distances", r"Let $x$ be Yan's distance from home, and let $y$ be his distance from the stadium. We want the ratio $x:y$."), ("Compare times", r"Walking directly to the stadium takes time proportional to $y$. Walking home takes time proportional to $x$, and then biking from home to the stadium, a distance $x+y$, takes time proportional to $\frac{x+y}{7}$."), ("Set the times equal", r"Since both choices take the same time, $y=x+\frac{x+y}{7}$. Multiplying by $7$ gives $7y=7x+x+y$."), ("Solve the ratio", r"So $6y=8x$, which gives $\frac{x}{y}=\frac{6}{8}=\frac34$."), ("Answer", r"The answer is $\boxed{\frac34}$." )],
-    14: [("Recognize the triangle type", r"A triangle with side ratio $3:4:5$ is a right triangle, with the side corresponding to $5$ as the hypotenuse."), ("Use the circumradius", r"For a right triangle, the hypotenuse is the diameter of the circumcircle. The circle radius is $3$, so the diameter and hypotenuse are $6$."), ("Find the scale factor", r"If the hypotenuse is $5k=6$, then $k=\frac65$. The legs are $3k=\frac{18}{5}$ and $4k=\frac{24}{5}$."), ("Compute the area", r"The area is $\frac12\cdot\frac{18}{5}\cdot\frac{24}{5}=\frac{216}{25}=8.64$."), ("Answer", r"The answer is $\boxed{8.64}$." )],
-    16: [("Reduce to parity", r"The expression $ad-bc$ is even exactly when $ad$ and $bc$ have the same parity."), ("Find product parity", r"From $0$ to $2007$ there are equally many even and odd integers: $1004$ each. A product is odd only if both factors are odd, so $P(ad\text{ odd})=\frac12\cdot\frac12=\frac14$. Thus $P(ad\text{ even})=\frac34$."), ("Match the two parities", r"The products $ad$ and $bc$ are independent and have the same parity distribution. The probability they match is $\left(\frac14\right)^2+\left(\frac34\right)^2$."), ("Compute", r"This is $\frac1{16}+\frac9{16}=\frac{10}{16}=\frac58$."), ("Answer", r"The answer is $\boxed{\frac58}$." )],
-    17: [("Factor the condition", r"The equation $75m=n^3$ means $75m$ must be a perfect cube. Since $75=3\cdot5^2$, the prime exponents in $75m$ must all become multiples of $3$."), ("Choose the smallest possible $n$", r"For $n^3$ to be divisible by $75$, $n$ must contain at least one factor of $3$ and one factor of $5$. The smallest such $n$ is $15$."), ("Find the corresponding $m$", r"With $n=15$, we have $n^3=3375$. Then $m=\frac{3375}{75}=45$."), ("Compute the sum", r"So $m+n=45+15=60$."), ("Answer", r"The minimum possible value is $\boxed{60}$." )],
-    20: [("Use the given symmetric expression", r"We are given $a+a^{-1}=4$. Expressions like $a^4+a^{-4}$ can be reached by squaring, without solving for $a$."), ("Square once", r"$(a+a^{-1})^2=a^2+2+a^{-2}=16$, so $a^2+a^{-2}=14$."), ("Square again", r"Now square $a^2+a^{-2}$: $(a^2+a^{-2})^2=a^4+2+a^{-4}=14^2=196$."), ("Subtract the middle term", r"Therefore $a^4+a^{-4}=196-2=194$."), ("Answer", r"The answer is $\boxed{194}$." )],
+    21: [("Find the outer cube side length", r"If the outer cube has side length $s$, its surface area is $6s^2=24$. Thus $s^2=4$ and $s=2$."), ("Relate the sphere to the outer cube", r"A sphere inscribed in a cube has diameter equal to the cube side length. So the sphere has diameter $2$ and radius $1$."), ("Relate the inner cube to the sphere", r"A cube inscribed in a sphere has its space diagonal equal to the sphere's diameter. If the inner cube has side length $x$, then its space diagonal is $x\sqrt3$."), ("Solve for the inner side length", r"So $x\sqrt3=2$, which gives $x=\frac{2}{\sqrt3}$."), ("Compute surface area", r"The inner cube's surface area is $6x^2=6\cdot\frac{4}{3}=8$."), ("Answer", r"The answer is $\boxed{8}$." )],
+    22: [("Describe the overlapping digits", r"Think of the sequence as coming from a cycle of digits. If one term is $100a+10b+c$, the next begins with digits $b,c$, and the process eventually cycles back."), ("Add by place value", r"When all the terms are added, each digit that appears in the cycle contributes once as a hundreds digit, once as a tens digit, and once as a units digit."), ("Factor the contribution", r"Therefore the total sum has the form $S=(100+10+1)T=111T$, where $T$ is the sum of the digits in one full cycle."), ("Find the prime divisor", r"Since $111=3\cdot37$, the sum $S$ is always divisible by $37$. It is not always divisible by a larger listed prime such as $43$."), ("Answer", r"The largest prime that always divides $S$ is $\boxed{37}$." )],
+    23: [("Factor the difference of squares", r"The condition is $m^2-n^2=96$, so $(m-n)(m+n)=96$."), ("Use parity", r"The two factors $m-n$ and $m+n$ have the same parity. Since their product is even and their sum/difference must give integer $m,n$, both factors must be even."), ("List factor pairs", r"The positive even factor pairs of $96$ with smaller factor first are $(2,48),(4,24),(6,16),(8,12)$."), ("Check that each pair works", r"For each pair $(u,v)$, set $m-n=u$ and $m+n=v$. Then $m=\frac{u+v}{2}$ and $n=\frac{v-u}{2}$ are positive integers because $u$ and $v$ are even."), ("Count", r"There are $4$ such pairs, hence $4$ ordered pairs $(m,n)$ with $m>n$."), ("Answer", r"The answer is $\boxed{4}$." )],
+    25: [("Estimate where n must be", r"Since $S(n)$ and $S(S(n))$ are positive but small compared with $2007$, the number $n$ must be close to $2007$. For numbers below $2007$, the digit sum is at most in the twenties."), ("Rewrite as a deficit", r"Let $d=2007-n$. Then the equation becomes $d=S(n)+S(S(n))$. So we only need to check values of $n$ whose distance from $2007$ could equal a digit-sum expression."), ("Search the limited range", r"Testing the plausible nearby values gives four solutions: $n=1977,1980,1983,$ and $2001$. For example, $1977+24+6=2007$, and $2001+3+3=2007$."), ("Verify no others are missed", r"If $n$ is much smaller, then $2007-n$ is too large to be matched by $S(n)+S(S(n))$. The digit-sum bound keeps the search finite and close to $2007$."), ("Count the solutions", r"There are exactly $4$ values of $n$ satisfying the equation."), ("Answer", r"The answer is $\boxed{4}$." )],
 }
 
 
@@ -237,7 +223,7 @@ def main():
         + "- Commit hash: pending\n"
         + "- Pushed: pending\n"
         + f"- Next batch should start from: {NEXT_START}\n"
-        + "- Review notes: Skipped Problems 15, 18, and 19 because they require diagrams.\n",
+        + "- Review notes: Skipped Problem 24 because it requires a diagram.\n",
         encoding="utf-8",
     )
 
@@ -261,7 +247,8 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批跳过 2007 AMC 10A Problems 15, 18, 19：题面依赖图形。\n"
+        + "本批跳过 2007 AMC 10A Problem 24：题面依赖图形。\n"
+        + "2007 AMC 10A 已完成可可靠生成部分。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题；遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 teaching steps 后 commit/push。\n",
         encoding="utf-8",
