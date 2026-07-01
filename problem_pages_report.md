@@ -1,17 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 751
-- Latest batch: 102 (2017 AMC 10B Problems 21-25)
-- Latest new generated count: 5
+- Total manifest entries: 760
+- Latest batch: 103 (2018 AMC 10A Problems 1-8, 10)
+- Latest new generated count: 9
 - Latest updated existing count: 0
-- Latest skipped count: 0
+- Latest skipped count: 1
 - MathJax validation: passed
-- Answer verification source: AoPS 2017 AMC 10B Answer Key
+- Answer verification source: AoPS 2018 AMC 10A Answer Key
 
 ## Latest Batch Pages
 
-- `2017 AMC 10B Problem 21` -> `amc10/problems/2017-amc-10b-problem-21/`
-- `2017 AMC 10B Problem 22` -> `amc10/problems/2017-amc-10b-problem-22/`
-- `2017 AMC 10B Problem 23` -> `amc10/problems/2017-amc-10b-problem-23/`
-- `2017 AMC 10B Problem 24` -> `amc10/problems/2017-amc-10b-problem-24/`
-- `2017 AMC 10B Problem 25` -> `amc10/problems/2017-amc-10b-problem-25/`
+- `2018 AMC 10A Problem 1` -> `amc10/problems/2018-amc-10a-problem-1/`
+- `2018 AMC 10A Problem 2` -> `amc10/problems/2018-amc-10a-problem-2/`
+- `2018 AMC 10A Problem 3` -> `amc10/problems/2018-amc-10a-problem-3/`
+- `2018 AMC 10A Problem 4` -> `amc10/problems/2018-amc-10a-problem-4/`
+- `2018 AMC 10A Problem 5` -> `amc10/problems/2018-amc-10a-problem-5/`
+- `2018 AMC 10A Problem 6` -> `amc10/problems/2018-amc-10a-problem-6/`
+- `2018 AMC 10A Problem 7` -> `amc10/problems/2018-amc-10a-problem-7/`
+- `2018 AMC 10A Problem 8` -> `amc10/problems/2018-amc-10a-problem-8/`
+- `2018 AMC 10A Problem 10` -> `amc10/problems/2018-amc-10a-problem-10/`
+
+## Skipped in latest batch
+
+- 2018 AMC 10A Problem 9 skipped: similar-triangle area question depends on the missing diagram subdivision.

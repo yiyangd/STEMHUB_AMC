@@ -3,32 +3,40 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 102
+BATCH_NUMBER = 103
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2017_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
-SKIPPED = []
-BATCH_LABEL = "2017 AMC 10B Problems 21-25"
-NEXT_START = "2018 AMC 10A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2018_AMC_10A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,10}
+SKIPPED = ["2018 AMC 10A Problem 9 skipped: similar-triangle area question depends on the missing diagram subdivision."]
+BATCH_LABEL = "2018 AMC 10A Problems 1-8, 10"
+NEXT_START = "2018 AMC 10A Problem 11"
 
-ANS={21:("D",r"\frac{17}{6}"),22:("D",r"\frac{140}{37}"),23:("C","9"),24:("C","108"),25:("E","100")}
+ANS={1:("B",r"\frac{11}{7}"),2:("A","Liliane has 20% more soda than Alice."),3:("E","February 12"),4:("E","24"),5:("D","(5,6)"),6:("B","300"),7:("E","9"),8:("C","2"),10:("A","8")}
 
 OV={
-21:(r"In $\triangle ABC$, $AB=6$, $AC=8$, $BC=10$, and $D$ is the midpoint of $BC$. What is the sum of the radii of the circles inscribed in $\triangle ADB$ and $\triangle ADC$?",[("A",r"$\frac54$"),("B",r"$\frac{11}{6}$"),("C",r"$2\sqrt2$"),("D",r"$\frac{17}{6}$"),("E","3")]),
-22:(r"The diameter $AB$ of a circle of radius $2$ is extended to a point $D$ outside the circle so that $BD=3$. Point $E$ is chosen so that $ED=5$ and line $ED$ is perpendicular to line $AD$. Segment $AE$ intersects the circle at point $C$ between $A$ and $E$. What is the area of $\triangle ABC$?",[("A",r"$\frac{120}{37}$"),("B",r"$\frac{140}{39}$"),("C",r"$\frac{145}{39}$"),("D",r"$\frac{140}{37}$"),("E",r"$\frac{120}{31}$")]),
-23:(r"Let $N=123456789101112\cdots4344$ be the $79$-digit number formed by writing the integers from $1$ to $44$ in order, one after the other. What is the remainder when $N$ is divided by $45$?",[("A","1"),("B","4"),("C","9"),("D","18"),("E","44")]),
-24:(r"The vertices of an equilateral triangle lie on the hyperbola $xy=1$, and a vertex of this hyperbola is the centroid of the triangle. What is the square of the area of the triangle?",[("A","48"),("B","60"),("C","108"),("D","120"),("E","169")]),
-25:(r"Last year Isabella took $7$ math tests and received $7$ different scores, each an integer between $91$ and $100$, inclusive. After each test she noticed that the average of her test scores was an integer. Her score on the seventh test was $95$. What was her score on the sixth test?",[("A","92"),("B","94"),("C","96"),("D","98"),("E","100")]),
+1:(r"What is the value of $\left(\left((2+1)^{-1}+1\right)^{-1}+1\right)^{-1}+1$?",[("A",r"$\frac58$"),("B",r"$\frac{11}{7}$"),("C",r"$\frac85$"),("D",r"$\frac{18}{11}$"),("E",r"$\frac{15}{8}$")]),
+2:(r"Liliane has $50\%$ more soda than Jacqueline, and Alice has $25\%$ more soda than Jacqueline. What is the relationship between the amounts of soda that Liliane and Alice have?",[("A","Liliane has 20% more soda than Alice."),("B","Liliane has 25% more soda than Alice."),("C","Liliane has 45% more soda than Alice."),("D","Liliane has 75% more soda than Alice."),("E","Liliane has 100% more soda than Alice.")]),
+3:(r"A unit of blood expires after $10!=10\cdot9\cdot8\cdots1$ seconds. Yasin donates a unit of blood at noon on January $1$. On what day does his unit of blood expire?",[("A","January 2"),("B","January 12"),("C","January 22"),("D","February 11"),("E","February 12")]),
+4:(r"How many ways can a student schedule $3$ mathematics courses, algebra, geometry, and number theory, in a $6$-period day if no two mathematics courses can be taken in consecutive periods?",[("A","3"),("B","6"),("C","12"),("D","18"),("E","24")]),
+5:(r"Alice, Bob, and Charlie were on a hike and were wondering how far away the nearest town was. Alice said, 'We are at least $6$ miles away.' Bob replied, 'We are at most $5$ miles away.' Charlie remarked, 'The nearest town is at most $4$ miles away.' It turned out that none of the three statements was true. Let $d$ be the distance in miles to the nearest town. Which interval is the set of all possible values of $d$?",[("A","(0,4)"),("B","(4,5)"),("C","(4,6)"),("D","(5,6)"),("E",r"$(5,\infty)$")]),
+6:(r"Sangho uploaded a video to a website where viewers can vote that they like or dislike a video. Each video begins with score $0$, and the score increases by $1$ for each like vote and decreases by $1$ for each dislike vote. At one point his video had score $90$, and $65\%$ of the votes were like votes. How many votes had been cast?",[("A","200"),("B","300"),("C","400"),("D","500"),("E","600")]),
+7:(r"For how many not necessarily positive integer values of $n$ is $4000\left(\frac25\right)^n$ an integer?",[("A","3"),("B","4"),("C","6"),("D","8"),("E","9")]),
+8:(r"Joe has a collection of $23$ coins, consisting of $5$-cent coins, $10$-cent coins, and $25$-cent coins. He has $3$ more $10$-cent coins than $5$-cent coins, and the total value is $320$ cents. How many more $25$-cent coins does Joe have than $5$-cent coins?",[("A","0"),("B","1"),("C","2"),("D","3"),("E","4")]),
+10:(r"Suppose that real number $x$ satisfies $\sqrt{49-x^2}-\sqrt{25-x^2}=3$. What is the value of $\sqrt{49-x^2}+\sqrt{25-x^2}$?",[("A","8"),("B",r"$\sqrt{33}+8$"),("C","9"),("D",r"$2\sqrt{10}+4$"),("E","12")]),
 }
 
-KEY_OVERRIDES={21:"Use area over semiperimeter to find inradii of the two subtriangles.",22:"Use coordinates and circle-line intersection.",23:"Use the Chinese remainder theorem modulo 5 and modulo 9.",24:"Center the triangle at the hyperbola vertex and rotate coordinates by 120 degrees.",25:"Use divisibility of prefix sums by the number of tests."}
+KEY_OVERRIDES={1:"Work from the innermost reciprocal outward.",2:"Compare both amounts to the same baseline.",3:"Convert factorial seconds into days.",4:"Choose nonconsecutive periods, then arrange the courses.",5:"Negate each statement and intersect the resulting inequalities.",6:"Convert like and dislike percentages into net score percentage.",7:"Use prime exponents in $4000(2/5)^n$.",8:"Set variables for coin counts and use total number and value.",10:"Use conjugates: product of sum and difference of radicals."}
 
 SOL={
-21:[("Notice the right triangle",r"Since $6^2+8^2=10^2$, triangle $ABC$ is right at $A$. The midpoint $D$ of the hypotenuse is $5$ units from each vertex, so $AD=BD=CD=5$."),("Find the first inradius",r"Triangle $ADB$ has side lengths $5,5,6$. Its area is half of rectangle-style base $6$ and height $4$, so the area is $12$. Its semiperimeter is \[\frac{5+5+6}{2}=8.\] Thus its inradius is \[\frac{12}{8}=\frac32.\]"),("Find the second inradius",r"Triangle $ADC$ has side lengths $5,5,8$. Its height to side $8$ is $3$, so its area is also $12$. Its semiperimeter is \[\frac{5+5+8}{2}=9.\] Thus its inradius is \[\frac{12}{9}=\frac43.\]"),("Add",r"The sum of the two radii is \[\frac32+\frac43=\frac{9+8}{6}=\frac{17}{6}.\]"),("Conclude",r"The answer is $\boxed{\frac{17}{6}}$."),],
-22:[("Set coordinates",r"Let the circle be centered at the origin, with $A=(-2,0)$ and $B=(2,0)$. Since $BD=3$, point $D=(5,0)$."),("Place E",r"Line $AD$ is horizontal, so $ED$ is vertical. Since $ED=5$, take $E=(5,5)$; the reflected choice would give the same area."),("Find line AE",r"Parametrize segment $AE$ by \[(x,y)=(-2,0)+t(7,5).\] The point $A$ corresponds to $t=0$."),("Intersect with the circle",r"The circle is $x^2+y^2=4$. Substituting $x=-2+7t$, $y=5t$ gives the second intersection at \[t=\frac{14}{37}.\] Thus \[C=\left(\frac{24}{37},\frac{70}{37}\right).\]"),("Compute area",r"Using $AB=4$ as the base, the height of $C$ above $AB$ is $\frac{70}{37}$. Therefore \[[ABC]=\frac12\cdot4\cdot\frac{70}{37}=\frac{140}{37}.\]"),("Conclude",r"The answer is $\boxed{\frac{140}{37}}$."),],
-23:[("Work modulo 5 and 9",r"Since $45=5\cdot9$, find the remainder modulo $5$ and modulo $9$."),("Modulo 5",r"The last digit of $N$ is $4$, because the final integer written is $44$. So \[N\equiv4\pmod5.\]"),("Modulo 9",r"A number is congruent modulo $9$ to the sum of its digits. The digit sum of $N$ is congruent to \[1+2+\cdots+44=\frac{44\cdot45}{2}=990,\] which is divisible by $9$."),("Combine the conditions",r"We need a number less than $45$ that is $0$ modulo $9$ and $4$ modulo $5$. The multiples of $9$ are $0,9,18,27,36$, and only $9$ is congruent to $4$ modulo $5$."),("Conclude",r"The remainder is $\boxed{9}$."),],
-24:[("Center at the hyperbola vertex",r"The vertex of the branch $xy=1$ in the first quadrant is $(1,1)$. Let this be the centroid of the equilateral triangle."),("Describe one vertex by a vector",r"Write one triangle vertex as $(1+u,1+v)$. Because it lies on $xy=1$, \[(1+u)(1+v)=1,\] or \[u+v+uv=0.\]"),("Rotate for the other vertices",r"The other two vertices are obtained by rotating vector $(u,v)$ by $120^\circ$ and $240^\circ$ about the centroid. Requiring those two rotated points to also satisfy $xy=1$ gives the same type of equation for the two rotated vectors."),("Solve the system",r"The nondegenerate solutions give \[u^2+v^2=8.\] This is the squared distance from the centroid to each vertex."),("Convert radius to area",r"If the distance from the centroid to a vertex is $r$, then an equilateral triangle has side length $\sqrt3\,r$ and area \[\frac{\sqrt3}{4}(\sqrt3 r)^2=\frac{3\sqrt3}{4}r^2.\] With $r^2=8$, the area is $6\sqrt3$."),("Square the area",r"The square of the area is \[(6\sqrt3)^2=108.\]"),("Conclude",r"The answer is $\boxed{108}$."),],
-25:[("Translate averages into divisibility",r"After each of the first $k$ tests, the average is an integer, so the sum of the first $k$ scores is divisible by $k$."),("Use the seventh score",r"Let $S_6$ be the sum of the first six scores. Since the seventh score is $95$, the total $S_6+95$ is divisible by $7$. Also $S_6$ is divisible by $6$."),("Find S6",r"The first six scores are six distinct integers from $91$ through $100$, excluding $95$. Their sum must be between $563$ and $584$. The multiples of $6$ in this range are $564,570,576,582$. Only $570$ makes $S_6+95$ divisible by $7$."),("Use the fifth average",r"Let the sixth score be $s_6$. The sum after five tests is $S_6-s_6$, and it must be divisible by $5$. Since $S_6=570$ is divisible by $5$, $s_6$ must also be divisible by $5$."),("Use distinct scores",r"The seventh score is already $95$, and scores are distinct. The only remaining score between $91$ and $100$ divisible by $5$ is $100$."),("Conclude",r"Her sixth test score was $\boxed{100}$."),],
+1:[("Start inside",r"The expression is built from repeated operations of taking a reciprocal and adding $1$. First, $2+1=3$."),("First reciprocal layer",r"\[(2+1)^{-1}+1=\frac13+1=\frac43.\]"),("Second reciprocal layer",r"\[\left(\frac43\right)^{-1}+1=\frac34+1=\frac74.\]"),("Third reciprocal layer",r"\[\left(\frac74\right)^{-1}+1=\frac47+1=\frac{11}{7}.\]"),("Conclude",r"The value is $\boxed{\frac{11}{7}}$."),],
+2:[("Use Jacqueline as the baseline",r"Let Jacqueline have $J$ units of soda. Then Liliane has $1.50J$ and Alice has $1.25J$."),("Compare Liliane to Alice",r"The ratio is \[\frac{1.50J}{1.25J}=\frac{1.50}{1.25}=1.2.\]"),("Interpret the ratio",r"A ratio of $1.2$ means Liliane has $20\%$ more soda than Alice."),("Conclude",r"The answer is $\boxed{\text{Liliane has 20% more soda than Alice.}}$."),],
+3:[("Convert seconds to days",r"There are $60\cdot60\cdot24=86400$ seconds in a day. We need \[\frac{10!}{86400}\] days."),("Simplify",r"Since $10!=3,628,800$, \[\frac{3,628,800}{86,400}=42.\] So the blood expires after $42$ days."),("Count from January 1 noon",r"After $31$ days it is noon on February $1$. There are $42-31=11$ more days."),("Find the date",r"Eleven days after February $1$ is February $12$."),("Conclude",r"The answer is $\boxed{\text{February 12}}$."),],
+4:[("Choose the periods first",r"We need choose $3$ periods from $1$ through $6$ with no two consecutive. The possible sets are \[(1,3,5),(1,3,6),(1,4,6),(2,4,6).\]"),("Arrange the courses",r"For each valid set of periods, the three courses algebra, geometry, and number theory can be arranged in $3!=6$ orders."),("Multiply",r"There are $4$ valid period sets and $6$ course orders for each, giving \[4\cdot6=24.\]"),("Conclude",r"The answer is $\boxed{24}$."),],
+5:[("Negate Alice's statement",r"Alice said $d\ge6$. Since her statement was false, we must have $d<6$."),("Negate Bob's statement",r"Bob said $d\le5$. Since that was false, we must have $d>5$."),("Negate Charlie's statement",r"Charlie said $d\le4$. Since that was false, we must have $d>4$, which is already implied by $d>5$."),("Combine",r"The possible distances satisfy \[5<d<6.\]"),("Conclude",r"The interval is $\boxed{(5,6)}$."),],
+6:[("Let total votes be V",r"If $65\%$ of the votes were likes, then $35\%$ were dislikes."),("Convert to score",r"Each like contributes $+1$ and each dislike contributes $-1$, so the score is \[(0.65-0.35)V=0.30V.\]"),("Use the score 90",r"We are told $0.30V=90$, so \[V=\frac{90}{0.30}=300.\]"),("Conclude",r"There had been $\boxed{300}$ votes."),],
+7:[("Factor the expression",r"Write \[4000=2^5\cdot5^3.\] Then \[4000\left(\frac25\right)^n=2^{5+n}5^{3-n}.\]"),("Require nonnegative exponents",r"For this to be an integer, both exponents must be nonnegative: \[5+n\ge0,\quad 3-n\ge0.\]"),("Solve the range",r"Thus \[-5\le n\le3.\]"),("Count integers",r"The integers from $-5$ through $3$ inclusive are $9$ values."),("Conclude",r"The answer is $\boxed{9}$."),],
+8:[("Set variables",r"Let $x$ be the number of $5$-cent coins. Then the number of $10$-cent coins is $x+3$."),("Use the total number of coins",r"The number of $25$-cent coins is \[23-x-(x+3)=20-2x.\]"),("Use the total value",r"The total value is \[5x+10(x+3)+25(20-2x)=320.\]"),("Solve",r"Simplifying gives \[530-35x=320,\] so $x=6$."),("Answer the comparison",r"The number of $25$-cent coins is $20-2(6)=8$, which is $2$ more than the $6$ five-cent coins."),("Conclude",r"The answer is $\boxed{2}$."),],
+10:[("Name the radicals",r"Let \[A=\sqrt{49-x^2},\quad B=\sqrt{25-x^2}.\] The problem tells us $A-B=3$."),("Use conjugates",r"We want $A+B$. The product \[(A-B)(A+B)=A^2-B^2\] removes the square roots."),("Compute the difference of squares",r"\[A^2-B^2=(49-x^2)-(25-x^2)=24.\]"),("Solve for the sum",r"Since $A-B=3$, \[3(A+B)=24,\] so $A+B=8$."),("Conclude",r"The answer is $\boxed{8}$."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -128,7 +136,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2017" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2018" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -217,7 +225,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2017 AMC 10B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2018 AMC 10A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
