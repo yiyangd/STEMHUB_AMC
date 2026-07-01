@@ -3292,3 +3292,19 @@
 - Pushed: pending
 - Next batch should start from: 2011 AMC 12A Problem 11
 - Review notes: none.
+
+## Batch 203: 2011 AMC 12A Problems 12-14, 16, 18-20
+
+- Start time: 2026-07-01T07:59:31-07:00
+- End time: 2026-07-01T07:59:32-07:00
+- Processed contest: AMC12
+- Processed range: 2011 AMC 12A Problems 12-14, 16, 18-20
+- Generated count: 7
+- Updated existing count: 0
+- Skipped count: 3
+- Skipped reasons: 2011 AMC 12A Problem 11: skipped because the circle-overlap region depends on the original diagram.; 2011 AMC 12A Problem 15: skipped because the hemisphere-pyramid tangency needs a careful 3D diagram derivation.; 2011 AMC 12A Problem 17: skipped because the triangle of tangency points needs a diagram-sensitive geometry derivation.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2011 AMC 12A Problem 21
+- Review notes: none.

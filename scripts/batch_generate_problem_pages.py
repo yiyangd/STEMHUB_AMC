@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 202
+BATCH_NUMBER = 203
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,3,4,5,6,7,8,9,10}
-SKIPPED = ["2011 AMC 12A Problem 2: skipped because the coin stacking order depends on the original diagram."]
-BATCH_LABEL = "2011 AMC 12A Problems 1, 3-10"
-NEXT_START = "2011 AMC 12A Problem 11"
+TARGET_NUMBERS = {12,13,14,16,18,19,20}
+SKIPPED = ["2011 AMC 12A Problem 11: skipped because the circle-overlap region depends on the original diagram.", "2011 AMC 12A Problem 15: skipped because the hemisphere-pyramid tangency needs a careful 3D diagram derivation.", "2011 AMC 12A Problem 17: skipped because the triangle of tangency points needs a diagram-sensitive geometry derivation."]
+BATCH_LABEL = "2011 AMC 12A Problems 12-14, 16, 18-20"
+NEXT_START = "2011 AMC 12A Problem 21"
 
-ANS={1:("D","28.00"),3:("E","15"),4:("C",r"\frac{88}{7}"),5:("C","40"),6:("A","13"),7:("B","11"),8:("C","25"),9:("B","441"),10:("B",r"\frac1{12}")}
+ANS={12:("D","4.5"),13:("B","30"),14:("E",r"\frac{19}{81}"),16:("C","3120"),18:("D","8"),19:("C","154"),20:("C","3")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2290,6 +2290,43 @@ SOL.update({
 9:[("Count the people",r"There are $9$ sets of twins, so $18$ twins. There are $6$ sets of triplets, so $18$ triplets."),("Count twin-twin handshakes",r"Among all twins there are \[\binom{18}{2}=153\] pairs, but the $9$ sibling pairs do not shake hands. So twin-twin handshakes contribute \[153-9=144.\]"),("Count triplet-triplet handshakes",r"Among all triplets there are \[\binom{18}{2}=153\] pairs. In each triplet family, the $3$ sibling pairs do not shake hands, so subtract \[6\cdot3=18.\] This gives \[153-18=135.\]"),("Count twin-triplet handshakes",r"Each of the $18$ twins shook hands with half of the $18$ triplets, so the cross handshakes contribute \[18\cdot9=162.\]"),("Add all types",r"The total is \[144+135+162=441.\]"),("Conclude",r"The answer is $\boxed{441}$."),
 ],
 10:[("Write area and circumference using diameter",r"If the diameter is $d$, then the radius is $\frac d2$. The area is \[\pi\left(\frac d2\right)^2=\frac{\pi d^2}{4},\] and the circumference is \[\pi d.\]"),("Compare the two quantities",r"We need \[\frac{\pi d^2}{4}<\pi d.\] Since $d>0$, divide by $\pi d$ to get \[\frac d4<1,\] so $d<4$."),("Translate to dice sums",r"The diameter is the sum of the dice, so we need a sum less than $4$. The possible sums are $2$ and $3$."),("Count outcomes",r"There is $1$ way to roll a sum of $2$ and $2$ ways to roll a sum of $3$, for $3$ favorable outcomes out of $36$ total."),("Compute the probability",r"The probability is \[\frac3{36}=\frac1{12}.\]"),("Conclude",r"The answer is \[\boxed{\frac1{12}}.\]"),
+],
+})
+
+OV.update({
+12:(r"A power boat and a raft both left dock $A$ on a river and headed downstream. The raft drifted at the speed of the river current. The power boat maintained a constant speed with respect to the river. The power boat reached dock $B$ downriver, then immediately turned and traveled back upriver. It eventually met the raft on the river $9$ hours after leaving dock $A$. How many hours did it take the power boat to go from $A$ to $B$?",[("A","3"),("B","3.5"),("C","4"),("D","4.5"),("E","5")]),
+13:(r"Triangle $ABC$ has side lengths $AB=12$, $BC=24$, and $AC=18$. The line through the incenter of $\triangle ABC$ parallel to $\overline{BC}$ intersects $\overline{AB}$ at $M$ and $\overline{AC}$ at $N$. What is the perimeter of $\triangle AMN$?",[("A","27"),("B","30"),("C","33"),("D","36"),("E","42")]),
+14:(r"Suppose $a$ and $b$ are single-digit positive integers chosen independently and at random. What is the probability that the point $(a,b)$ lies above the parabola $y=ax^2-bx$?",[("A",r"$\frac{11}{81}$"),("B",r"$\frac{13}{81}$"),("C",r"$\frac5{27}$"),("D",r"$\frac{17}{81}$"),("E",r"$\frac{19}{81}$")]),
+16:(r"Each vertex of convex pentagon $ABCDE$ is to be assigned a color. There are $6$ colors to choose from, and the ends of each diagonal must have different colors. How many different colorings are possible?",[("A","2520"),("B","2880"),("C","3120"),("D","3250"),("E","3750")]),
+18:(r"Suppose that \[|x+y|+|x-y|=2.\] What is the maximum possible value of \[x^2-6x+y^2?\]",[("A","5"),("B","6"),("C","7"),("D","8"),("E","9")]),
+19:(r"At a competition with $N$ players, the number of players given elite status is equal to \[2^{1+\lfloor\log_2(N-1)\rfloor}-N.\] Suppose that $19$ players are given elite status. What is the sum of the two smallest possible values of $N$?",[("A","38"),("B","90"),("C","154"),("D","406"),("E","1024")]),
+20:(r"Let $f(x)=ax^2+bx+c$, where $a,b,$ and $c$ are integers. Suppose that $f(1)=0$, $50<f(7)<60$, $70<f(8)<80$, and $5000k<f(100)<5000(k+1)$ for some integer $k$. What is $k$?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+})
+
+KEY_OVERRIDES.update({
+12:"Use downstream and upstream positions with current speed and boat speed.",
+13:"Use similarity and the ratio r/h from the inradius to the altitude.",
+14:"Substitute the random point into the parabola inequality and count pairs.",
+16:"Count pentagon vertex colorings where only adjacent vertices may repeat colors.",
+18:"Convert the absolute-value condition into a square boundary.",
+19:"Analyze the floor-log interval for N.",
+20:"Use divisibility from f(7) and f(8) to determine the quadratic.",
+})
+
+SOL.update({
+12:[("Name the speeds",r"Let the river current speed be $c$ and the boat's speed relative to the water be $v$. Let $t$ be the time, in hours, that the boat takes to travel from $A$ to $B$ downstream."),("Write the distance to B",r"The downstream speed of the boat is $v+c$, so the distance from $A$ to $B$ is \[D=(v+c)t.\]"),("Use the meeting after 9 hours",r"After $9$ hours, the raft has drifted $9c$ from dock $A$. The boat has returned upstream for $9-t$ hours at speed $v-c$, so its position is \[D-(v-c)(9-t).\]"),("Set the positions equal",r"At the meeting point, \[(v+c)t-(v-c)(9-t)=9c.\] Expanding gives \[vt+ct-9v+9c+vt-ct=9c,\] so \[2vt-9v=0.\]"),("Solve for t",r"Since $v>0$, we get \[2t=9,\] so \[t=4.5.\]"),("Conclude",r"The boat took $\boxed{4.5}$ hours to go from $A$ to $B$."),
+],
+13:[("Use similarity",r"Because $\overline{MN}\parallel\overline{BC}$, triangle $AMN$ is similar to triangle $ABC$. So its perimeter is a fixed scale factor times the perimeter of $\triangle ABC$."),("Find the scale factor",r"The line through the incenter is parallel to $BC$. The distance from this line to $BC$ is the inradius $r$, while the altitude from $A$ to $BC$ is $h$. Therefore the scale factor is \[\frac{h-r}{h}=1-\frac rh.\]"),("Compute r/h",r"The area of the triangle is both $rs$ and $\frac12\cdot BC\cdot h$, where $s$ is the semiperimeter. Here \[s=\frac{12+18+24}{2}=27.\] Thus \[\frac rh=\frac{\Delta/s}{2\Delta/24}=\frac{12}{27}=\frac49.\]"),("Compute the scale factor",r"The scale factor is \[1-\frac49=\frac59.\]"),("Scale the perimeter",r"The perimeter of $\triangle ABC$ is \[12+18+24=54.\] Therefore the perimeter of $\triangle AMN$ is \[\frac59\cdot54=30.\]"),("Conclude",r"The answer is $\boxed{30}$."),
+],
+14:[("Substitute the point",r"The point is $(a,b)$, so plug $x=a$ and $y=b$ into the condition of lying above the parabola: \[b>a\cdot a^2-ba.\] This is \[b>a^3-ab.\]"),("Rearrange the inequality",r"Move the $ab$ term to the left: \[b+ab>a^3,\] so \[b(a+1)>a^3.\]"),("Count b values for each a",r"For $a=1$, all $9$ values of $b$ work. For $a=2$, values $b=3,4,\ldots,9$ work, giving $7$. For $a=3$, values $b=7,8,9$ work, giving $3$. For $a\ge4$, no single-digit positive $b$ is large enough."),("Add favorable pairs",r"The number of favorable pairs is \[9+7+3=19.\]"),("Compute the probability",r"There are $9\cdot9=81$ equally likely pairs $(a,b)$."),("Conclude",r"The probability is \[\boxed{\frac{19}{81}}.\]"),
+],
+16:[("Understand the restriction",r"In a pentagon, each vertex is connected by diagonals to the two non-adjacent vertices. The condition says non-adjacent vertices must have different colors. Adjacent vertices may have the same color."),("Count by color pattern",r"First choose colors for vertices $A,B,C,D,E$ in order. Vertex $A$ has $6$ choices, and $C$ and $D$ must both differ from $A$ in the appropriate diagonal constraints."),("Use a cleaner equivalent count",r"The allowed colorings are exactly proper colorings of the complement of a $5$-cycle, which is also a $5$-cycle. Thus we are counting proper colorings of a cycle of length $5$ with $6$ colors."),("Apply the cycle-coloring formula",r"The number of proper colorings of a cycle with $n$ vertices using $q$ colors is \[(q-1)^n+(-1)^n(q-1).\] With $n=5$ and $q=6$, this gives \[5^5-5=3125-5=3120.\]"),("Conclude",r"The answer is $\boxed{3120}$."),
+],
+18:[("Simplify the absolute-value condition",r"A useful identity is \[|x+y|+|x-y|=2\max(|x|,|y|).\] Therefore the condition becomes \[\max(|x|,|y|)=1.\] This is the boundary of the square $-1\le x\le1$, $-1\le y\le1$."),("Rewrite the expression",r"The expression is \[x^2-6x+y^2=(x-3)^2+y^2-9.\] So we want the point on the square boundary farthest from $(3,0)$."),("Choose the farthest boundary point",r"The farthest possible $x$ is $x=-1$, and then the largest value of $y^2$ on the square boundary is $1$."),("Compute the maximum",r"At $x=-1$ and $y=\pm1$, the value is \[(-1)^2-6(-1)+1=1+6+1=8.\]"),("Conclude",r"The maximum possible value is $\boxed{8}$."),
+],
+19:[("Introduce the floor value",r"Let \[m=\lfloor\log_2(N-1)\rfloor.\] Then \[2^m\le N-1<2^{m+1}.\] The elite count equation becomes \[2^{m+1}-N=19,\] so \[N=2^{m+1}-19.\]"),("Apply the floor condition",r"Substitute this expression for $N$: \[2^m\le 2^{m+1}-20<2^{m+1}.\] The right inequality is automatic, and the left inequality gives \[2^m\ge20.\]"),("Find the two smallest m values",r"The smallest possible $m$ is $5$, then the next is $6$."),("Compute the corresponding N values",r"For $m=5$, \[N=2^6-19=64-19=45.\] For $m=6$, \[N=2^7-19=128-19=109.\]"),("Add them",r"The sum of the two smallest possible values is \[45+109=154.\]"),("Conclude",r"The answer is $\boxed{154}$."),
+],
+20:[("Use f(1)=0",r"Since $f(1)=a+b+c=0$, the values $f(n)$ for $n\ne1$ can be written as \[f(n)=a(n^2-1)+b(n-1)=(n-1)(a(n+1)+b).\]"),("Use f(7)",r"We have \[f(7)=6(8a+b).\] The only multiple of $6$ strictly between $50$ and $60$ is $54$, so \[8a+b=9.\]"),("Use f(8)",r"We have \[f(8)=7(9a+b).\] The only multiple of $7$ strictly between $70$ and $80$ is $77$, so \[9a+b=11.\]"),("Solve for a and b",r"Subtracting the equations gives $a=2$. Then $8a+b=9$ gives $b=-7$. Since $a+b+c=0$, we get $c=5$."),("Compute f(100)",r"Now \[f(100)=2(100)^2-7(100)+5=20000-700+5=19305.\] This lies between $15000$ and $20000$, so $k=3$."),("Conclude",r"The answer is $\boxed{3}$."),
 ],
 })
 
