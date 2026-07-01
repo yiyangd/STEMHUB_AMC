@@ -1,25 +1,22 @@
 # Problem Pages Report
 
-- Total manifest entries: 356
-- Latest batch: 47 (2009 AMC 10B Problems 1-8, 10)
-- Latest new generated count: 9
+- Total manifest entries: 366
+- Latest batch: 48 (2009 AMC 10B Problems 11-20)
+- Latest new generated count: 10
 - Latest updated existing count: 0
-- Latest skipped count: 1
+- Latest skipped count: 0
 - MathJax validation: passed
 - Answer verification source: AoPS 2009 AMC 10B Answer Key
 
 ## Latest Batch Pages
 
-- `2009 AMC 10B Problem 1` -> `amc10/problems/2009-amc-10b-problem-1/`
-- `2009 AMC 10B Problem 2` -> `amc10/problems/2009-amc-10b-problem-2/`
-- `2009 AMC 10B Problem 3` -> `amc10/problems/2009-amc-10b-problem-3/`
-- `2009 AMC 10B Problem 4` -> `amc10/problems/2009-amc-10b-problem-4/`
-- `2009 AMC 10B Problem 5` -> `amc10/problems/2009-amc-10b-problem-5/`
-- `2009 AMC 10B Problem 6` -> `amc10/problems/2009-amc-10b-problem-6/`
-- `2009 AMC 10B Problem 7` -> `amc10/problems/2009-amc-10b-problem-7/`
-- `2009 AMC 10B Problem 8` -> `amc10/problems/2009-amc-10b-problem-8/`
-- `2009 AMC 10B Problem 10` -> `amc10/problems/2009-amc-10b-problem-10/`
-
-## Skipped in latest batch
-
-- 2009 AMC 10B Problem 9 skipped: diagram-dependent angle configuration
+- `2009 AMC 10B Problem 11` -> `amc10/problems/2009-amc-10b-problem-11/`
+- `2009 AMC 10B Problem 12` -> `amc10/problems/2009-amc-10b-problem-12/`
+- `2009 AMC 10B Problem 13` -> `amc10/problems/2009-amc-10b-problem-13/`
+- `2009 AMC 10B Problem 14` -> `amc10/problems/2009-amc-10b-problem-14/`
+- `2009 AMC 10B Problem 15` -> `amc10/problems/2009-amc-10b-problem-15/`
+- `2009 AMC 10B Problem 16` -> `amc10/problems/2009-amc-10b-problem-16/`
+- `2009 AMC 10B Problem 17` -> `amc10/problems/2009-amc-10b-problem-17/`
+- `2009 AMC 10B Problem 18` -> `amc10/problems/2009-amc-10b-problem-18/`
+- `2009 AMC 10B Problem 19` -> `amc10/problems/2009-amc-10b-problem-19/`
+- `2009 AMC 10B Problem 20` -> `amc10/problems/2009-amc-10b-problem-20/`
