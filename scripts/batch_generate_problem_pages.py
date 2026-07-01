@@ -3,42 +3,34 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 84
+BATCH_NUMBER = 85
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2015_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+TARGET_NUMBERS = {11,12,13,14,15,16}
 SKIPPED = []
-BATCH_LABEL = "2015 AMC 10A Problems 1-10"
-NEXT_START = "2015 AMC 10A Problem 11"
+BATCH_LABEL = "2015 AMC 10A Problems 11-16"
+NEXT_START = "2015 AMC 10A Problem 17"
 
-ANS={1:("C",r"\frac15"),2:("D","9"),3:("D","22"),4:("B",r"\frac16"),5:("E","95"),6:("B",r"\frac32"),7:("B","21"),8:("B","4"),9:("D","The first height is 21% more than the second."),10:("C","2")}
+ANS={11:("C",r"\frac{12}{25}"),12:("C","2"),13:("C","5"),14:("C","4 o'clock"),15:("B","1"),16:("B","15")}
 
 OV={
-1:(r"What is the value of $\left(2^0-1+5^2+0\right)^{-1}\times5$?",[("A","-125"),("B","-120"),("C",r"\frac15"),("D",r"\frac5{24}"),("E","25")]),
-2:(r"A box contains a collection of triangular and square tiles. There are $25$ tiles in the box, containing $84$ edges total. How many square tiles are there in the box?",[("A","3"),("B","5"),("C","7"),("D","9"),("E","11")]),
-3:(r"Ann made a $3$-step staircase using $18$ toothpicks. How many toothpicks does she need to add to complete a $5$-step staircase?",[("A","9"),("B","18"),("C","20"),("D","22"),("E","24")]),
-4:(r"Pablo, Sofia, and Mia got some candy eggs at a party. Pablo had three times as many eggs as Sofia, and Sofia had twice as many eggs as Mia. Pablo decides to give some of his eggs to Sofia and Mia so that all three will have the same number of eggs. What fraction of his eggs should Pablo give to Sofia?",[("A",r"\frac1{12}"),("B",r"\frac16"),("C",r"\frac14"),("D",r"\frac13"),("E",r"\frac12")]),
-5:(r"Mr. Patrick teaches math to $15$ students. He was grading tests and found that when he graded everyone's test except Payton's, the average grade for the class was $80$. After he graded Payton's test, the class average became $81$. What was Payton's score on the test?",[("A","81"),("B","85"),("C","91"),("D","94"),("E","95")]),
-6:(r"The sum of two positive numbers is $5$ times their difference. What is the ratio of the larger number to the smaller?",[("A",r"\frac52"),("B",r"\frac32"),("C",r"\frac95"),("D","2"),("E",r"\frac54")]),
-7:(r"How many terms are there in the arithmetic sequence $13,16,19,\ldots,70,73$?",[("A","20"),("B","21"),("C","24"),("D","60"),("E","61")]),
-8:(r"Two years ago Pete was three times as old as his cousin Claire. Two years before that, Pete was four times as old as Claire. In how many years will the ratio of their ages be $2:1$?",[("A","2"),("B","4"),("C","5"),("D","6"),("E","8")]),
-9:(r"Two right circular cylinders have the same volume. The radius of the second cylinder is $10\%$ more than the radius of the first. What is the relationship between the heights of the two cylinders?",[("A","The second height is 10% less than the first."),("B","The first height is 10% more than the second."),("C","The second height is 21% less than the first."),("D","The first height is 21% more than the second."),("E","The second height is 80% of the first.")]),
-10:(r"How many rearrangements of $abcd$ are there in which no two adjacent letters are also adjacent letters in the alphabet? For example, no such rearrangement could include either $ab$ or $ba$.",[("A","0"),("B","1"),("C","2"),("D","3"),("E","4")]),
+11:(r"The ratio of the length to the width of a rectangle is $4:3$. If the rectangle has diagonal of length $d$, then the area may be expressed as $kd^2$ for some constant $k$. What is $k$?",[("A",r"\frac27"),("B",r"\frac37"),("C",r"\frac{12}{25}"),("D",r"\frac{16}{25}"),("E",r"\frac34")]),
+12:(r"Points $(\sqrt{\pi},a)$ and $(\sqrt{\pi},b)$ are distinct points on the graph of $y^2+x^4=2x^2y+1$. What is $|a-b|$?",[("A","1"),("B",r"\sqrt{\pi}"),("C","2"),("D",r"1+\pi"),("E",r"1+\pi^2")]),
+13:(r"Claudia has $12$ coins, each of which is a $5$-cent coin or a $10$-cent coin. There are exactly $17$ different values that can be obtained as combinations of one or more of her coins. How many $10$-cent coins does Claudia have?",[("A","3"),("B","4"),("C","5"),("D","6"),("E","7")]),
+14:(r"The circular face of a clock has radius $20$ cm, and a circular disk with radius $10$ cm is externally tangent to the clock face at $12$ o'clock. The disk has an arrow painted on it, initially pointing upward. The disk rolls clockwise around the clock face. At what point on the clock face will the disk be tangent when the arrow is next pointing upward?",[("A","2 o'clock"),("B","3 o'clock"),("C","4 o'clock"),("D","6 o'clock"),("E","8 o'clock")]),
+15:(r"Consider the set of all fractions $\frac{x}{y}$, where $x$ and $y$ are relatively prime positive integers. How many of these fractions have the property that if both numerator and denominator are increased by $1$, the value of the fraction is increased by $10\%$?",[("A","0"),("B","1"),("C","2"),("D","3"),("E","infinitely many")]),
+16:(r"If $y+4=(x-2)^2$, $x+4=(y-2)^2$, and $x\ne y$, what is the value of $x^2+y^2$?",[("A","10"),("B","15"),("C","20"),("D","25"),("E","30")]),
 }
 
-KEY_OVERRIDES={1:"Simplify inside the parentheses before applying the reciprocal.",2:"Use a system for triangular and square tiles.",3:"Use the toothpick count formula for an n-step staircase.",4:"Scale the three people's amounts to a simple ratio.",5:"Compare total class scores before and after one test is added.",6:"Convert the sum-difference condition into an equation for the ratio.",7:"Use the arithmetic sequence nth-term formula.",8:"Set up ages at two different times.",9:"Equal volumes mean radius squared and height vary inversely.",10:"Count the few valid permutations after excluding alphabet-adjacent pairs."}
+KEY_OVERRIDES={11:"Use a 3-4-5 rectangle scale factor.",12:"Substitute the fixed x-value and complete the square in y.",13:"Convert nickel/dime values to sums using ones and twos.",14:"Use the rolling circle rotation factor for external rolling.",15:"Turn the fraction condition into a factor equation.",16:"Subtract the symmetric equations and use x+y."}
 
 SOL={
-1:[("Simplify the inside first",r"Inside the parentheses, $2^0=1$ and $5^2=25$. So \[2^0-1+5^2+0=1-1+25=25.\]"),("Apply the reciprocal",r"The exponent $-1$ means reciprocal, so $25^{-1}=\frac1{25}$."),("Multiply by 5",r"The whole expression is $\frac1{25}\cdot5=\frac15$."),("Conclude",r"The answer is $\boxed{\frac15}$."),],
-2:[("Name the tile counts",r"Let $t$ be the number of triangular tiles and $s$ be the number of square tiles. Then $t+s=25$."),("Use the edge count",r"Triangles have $3$ edges and squares have $4$ edges, so $3t+4s=84$."),("Subtract the equations",r"Multiply the first equation by $3$ to get $3t+3s=75$. Subtracting from $3t+4s=84$ gives $s=9$."),("Conclude",r"There are $\boxed{9}$ square tiles."),],
-3:[("Look for the total staircase count",r"For an $n$-step toothpick staircase, the total number of toothpicks is $n(n+3)$. This matches the given $3$-step staircase because $3(3+3)=18$."),("Find the five-step total",r"A $5$-step staircase needs $5(5+3)=40$ toothpicks."),("Compute how many to add",r"Ann already has $18$ toothpicks in the $3$-step staircase, so she must add $40-18=22$ toothpicks."),("Conclude",r"The answer is $\boxed{22}$."),],
-4:[("Choose a simple scale",r"Let Mia have $m$ eggs. Then Sofia has $2m$, and Pablo has $3(2m)=6m$."),("Find the equal final amount",r"The total is $m+2m+6m=9m$, so if all three end equal, each person must have $3m$."),("Find what Sofia needs",r"Sofia starts with $2m$ and must end with $3m$, so Pablo gives Sofia $m$ eggs."),("Convert to a fraction of Pablo's eggs",r"Pablo started with $6m$ eggs, so the fraction he gives to Sofia is $\frac{m}{6m}=\frac16$."),("Conclude",r"The answer is $\boxed{\frac16}$."),],
-5:[("Find the total before Payton",r"There are $14$ graded tests before Payton's test. Their average is $80$, so their total is $14\cdot80=1120$."),("Find the total after Payton",r"After all $15$ tests are graded, the average is $81$, so the total is $15\cdot81=1215$."),("Subtract",r"Payton's score is the difference between these totals: $1215-1120=95$."),("Conclude",r"The answer is $\boxed{95}$."),],
-6:[("Name the numbers",r"Let the larger number be $L$ and the smaller number be $S$. The difference is $L-S$."),("Translate the sentence",r"The sum is five times the difference, so \[L+S=5(L-S).\]"),("Solve for the ratio",r"Expanding gives $L+S=5L-5S$, so $6S=4L$. Thus $\frac{L}{S}=\frac{6}{4}=\frac32$."),("Conclude",r"The ratio of the larger to the smaller is $\boxed{\frac32}$."),],
-7:[("Use the arithmetic sequence formula",r"The sequence starts at $13$ and has common difference $3$. The $n$th term is $13+3(n-1)$."),("Set the last term",r"The last term is $73$, so \[13+3(n-1)=73.\]"),("Solve",r"Then $3(n-1)=60$, so $n-1=20$ and $n=21$."),("Conclude",r"There are $\boxed{21}$ terms."),],
-8:[("Set current ages",r"Let Pete's current age be $P$ and Claire's current age be $C$."),("Use the two past statements",r"Two years ago, $P-2=3(C-2)$. Four years ago, $P-4=4(C-4)$."),("Solve the system",r"The first equation gives $P=3C-4$, and the second gives $P=4C-12$. Equating them gives $C=8$, so $P=20$."),("Find when the ratio is 2 to 1",r"In $t$ years, \[\frac{20+t}{8+t}=2.\] Thus $20+t=16+2t$, so $t=4$."),("Conclude",r"The answer is $\boxed{4}$."),],
-9:[("Write the volume relationship",r"Cylinder volume is $\pi r^2h$. If the second radius is $10\%$ more, then $r_2=1.1r_1$."),("Keep volume the same",r"Equal volumes give \[\pi r_1^2h_1=\pi(1.1r_1)^2h_2.\] So $h_1=1.21h_2$."),("Interpret the percentage",r"If $h_1=1.21h_2$, then the first height is $21\%$ more than the second."),("Conclude",r"The answer is $\boxed{\text{The first height is 21% more than the second.}}$"),],
-10:[("List possible arrangements efficiently",r"There are only $4!=24$ arrangements, but the restrictions are strong: $a$ cannot sit next to $b$, $b$ cannot sit next to $c$, and $c$ cannot sit next to $d$."),("Search by placing b",r"The letter $b$ cannot be next to either $a$ or $c$, so its neighbors, if it has two, must include $d$. This quickly leaves only arrangements where the alphabet-adjacent pairs are separated."),("Identify the valid orders",r"The valid rearrangements are $bdac$ and $cadb$. Each avoids $ab,ba,bc,cb,cd,$ and $dc$ as adjacent pairs."),("Count",r"There are exactly $2$ valid rearrangements."),("Conclude",r"The answer is $\boxed{2}$."),],
+11:[("Use the ratio as side lengths",r"Let the rectangle have length $4s$ and width $3s$. This is the natural way to use the $4:3$ ratio."),("Find the diagonal",r"By the Pythagorean Theorem, the diagonal is $5s$, so $d=5s$ and $s=\frac d5$."),("Compute the area",r"The area is $(4s)(3s)=12s^2=12\left(\frac d5\right)^2=\frac{12}{25}d^2$."),("Conclude",r"Thus $k=\boxed{\frac{12}{25}}$."),],
+12:[("Substitute the fixed x-value",r"With $x=\sqrt{\pi}$, we have $x^2=\pi$ and $x^4=\pi^2$. The equation becomes \[y^2+\pi^2=2\pi y+1.\]"),("Complete the square",r"Move terms to get \[y^2-2\pi y+\pi^2=1,\] so \[(y-\pi)^2=1.\]"),("Find the two y-values",r"The two solutions are $y=\pi+1$ and $y=\pi-1$."),("Compute the distance",r"Therefore $|a-b|=(\pi+1)-(\pi-1)=2$."),("Conclude",r"The answer is $\boxed{2}$."),],
+13:[("Scale values by 5 cents",r"A $5$-cent coin contributes $1$ unit and a $10$-cent coin contributes $2$ units. If Claudia has $t$ ten-cent coins, then she has $12-t$ five-cent coins."),("Count possible unit sums",r"With at least one five-cent coin, the possible positive unit sums run consecutively from $1$ up to $(12-t)+2t=12+t$."),("Use the given number of values",r"The number of different positive values is therefore $12+t$. The problem says this number is $17$."),("Solve",r"$12+t=17$, so $t=5$."),("Conclude",r"Claudia has $\boxed{5}$ ten-cent coins."),],
+14:[("Understand the rolling factor",r"When a circle of radius $r$ rolls externally around a fixed circle of radius $R$, it rotates through angle $\frac{R+r}{r}\theta$ while its center sweeps angle $\theta$ around the fixed circle."),("Apply the radii",r"Here $R=20$ and $r=10$, so the rotation factor is $\frac{20+10}{10}=3$."),("Find the first upright arrow",r"The arrow is next upright after the disk has rotated $2\pi$ radians. Thus $3\theta=2\pi$, so $\theta=\frac{2\pi}{3}$."),("Convert to clock position",r"A clockwise sweep of $\frac{2\pi}{3}=120^\circ$ from $12$ o'clock lands at $4$ o'clock."),("Conclude",r"The answer is $\boxed{\text{4 o'clock}}$."),],
+15:[("Translate the 10 percent increase",r"The new fraction is $\frac{x+1}{y+1}$, and it is $10\%$ larger than $\frac xy$. Thus \[\frac{x+1}{y+1}=\frac{11x}{10y}.\]"),("Clear denominators",r"Cross-multiplying gives $10y(x+1)=11x(y+1)$."),("Rearrange into a factor equation",r"This simplifies to $xy+11x-10y=0$, or \[(x-10)(y+11)=-110.\]"),("Check positive coprime possibilities",r"Since $x,y>0$, we need $x<10$. Testing positive divisors of $110$ gives only one relatively prime solution: $x=5$, $y=11$."),("Conclude",r"There is exactly $\boxed{1}$ such fraction."),],
+16:[("Rewrite both equations",r"From $y+4=(x-2)^2$, we get $y=x^2-4x$. From $x+4=(y-2)^2$, we get $x=y^2-4y$."),("Subtract the equations",r"Subtracting gives \[y-x=(x^2-y^2)-4(x-y).\] Since $x\ne y$, divide by $x-y$ carefully to get $x+y=3$."),("Find xy without solving both values",r"Substitute $y=3-x$ into $y=x^2-4x$: \[3-x=x^2-4x,\] so $x^2-3x-3=0$. This implies $x(3-x)=-3$, so $xy=-3$."),("Compute x squared plus y squared",r"Use \[x^2+y^2=(x+y)^2-2xy=3^2-2(-3)=15.\]"),("Conclude",r"The answer is $\boxed{15}$."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -85,7 +77,7 @@ def render(row):
     notes = row.get("notes") or ""
     if n in {10,17} and notes == "题面包含图形":
         notes = ""
-    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if n in {3} else notes
+    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if n in {14} else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
         f'<li class="choice {"correct" if k == ans else ""}"><span class="choice-key">{esc(k)}</span><span>{esc(v, False)}</span></li>'
@@ -181,7 +173,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": int(r["problem_no"]) in {3},
+                "needs_review": int(r["problem_no"]) in {14},
                 "batch_number": BATCH_NUMBER,
             }
         )
