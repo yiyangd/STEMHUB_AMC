@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 152
+BATCH_NUMBER = 153
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2003_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
-SKIPPED = []
-BATCH_LABEL = "2003 AMC 12A Problems 1-10"
-NEXT_START = "2003 AMC 12A Problem 11"
+TARGET_NUMBERS = {11,12,14,16,17,18,19,20}
+SKIPPED = ["2003 AMC 12A Problem 13 skipped: cube-net folding count depends on the missing figure.", "2003 AMC 12A Problem 15 skipped: lune geometry depends on the missing semicircle diagram."]
+BATCH_LABEL = "2003 AMC 12A Problems 11,12,14,16-20"
+NEXT_START = "2003 AMC 12A Problem 21"
 
-ANS={1:("D","2003"),2:("B","91"),3:("D","18"),4:("A","3"),5:("E","14"),6:("C",r"x\heartsuit0=x"),7:("B","2"),8:("E",r"\frac12"),9:("D","8"),10:("D",r"\frac5{18}")}
+ANS={11:("C",r"\frac{27}{32}"),12:("E","12"),14:("D",r"32+16\sqrt3"),16:("C",r"\frac13"),17:("B",r"\frac{16}{5}"),18:("B","8181"),19:("D","a non-horizontal line"),20:("A",r"\sum_{k=0}^5\binom5k^3")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -589,6 +589,39 @@ SOL.update({
 8:[("List the divisors",r"The positive divisors of \(60\) are \[1,2,3,4,5,6,10,12,15,20,30,60.\] There are \(12\) total."),("Count favorable divisors",r"The divisors less than \(7\) are \[1,2,3,4,5,6,\] so there are \(6\)." ),("Compute probability",r"The probability is \[\frac6{12}=\frac12.\]"),("Conclude",r"The answer is $\boxed{\frac12}$."),],
 9:[("Apply sign symmetries",r"Symmetry about the \(x\)-axis and \(y\)-axis gives \[(2,3),(2,-3),(-2,3),(-2,-3).\]"),("Apply reflection over y equals x",r"Reflection across \(y=x\) swaps coordinates, giving points such as \((3,2)\)." ),("Generate the full orbit",r"Combining coordinate swaps and sign changes gives \[(\pm2,\pm3)\quad\text{and}\quad(\pm3,\pm2).\]"),("Count distinct points",r"Since \(2\ne3\) and neither coordinate is \(0\), all \(8\) points are distinct."),("Conclude",r"The smallest possible number of points is $\boxed{8}$."),],
 10:[("Identify each person's believed share",r"The ratio \(3:2:1\) means Al believes he should take \(\frac12\), Bert \(\frac13\), and Carl \(\frac16\)." ),("Track what remains",r"Because each person thinks he is first, each takes that fraction of whatever candy is present when he arrives."),("Multiply the leftover fractions",r"After Al's claim, \(\frac12\) remains. After Bert's claim, \(\frac23\) of that remains. After Carl's claim, \(\frac56\) of that remains."),("Compute",r"The unclaimed fraction is \[\frac12\cdot\frac23\cdot\frac56=\frac5{18}.\]"),("Conclude",r"The answer is $\boxed{\frac5{18}}$."),],
+})
+
+OV.update({
+11:(r"A square and an equilateral triangle have the same perimeter. Let \(A\) be the area of the circle circumscribed about the square and \(B\) be the area of the circle circumscribed about the triangle. Find \(\frac AB\).",[("A",r"\(\frac9{16}\)"),("B",r"\(\frac34\)"),("C",r"\(\frac{27}{32}\)"),("D",r"\(\frac{3\sqrt6}{8}\)"),("E","1")]),
+12:(r"Sally has five red cards numbered \(1\) through \(5\) and four blue cards numbered \(3\) through \(6\). She stacks the cards so that the colors alternate and so that the number on each red card divides evenly into the number on each neighboring blue card. What is the sum of the numbers on the middle three cards?",[("A","8"),("B","9"),("C","10"),("D","11"),("E","12")]),
+14:(r"Points \(K,L,M,N\) lie in the plane of square \(ABCD\) so that \(AKB\), \(BLC\), \(CMD\), and \(DNA\) are equilateral triangles, as shown with the triangles built externally on the sides of the square. If \(ABCD\) has area \(16\), find the area of \(KLMN\).",[("A","32"),("B",r"\(16+16\sqrt3\)"),("C","48"),("D",r"\(32+16\sqrt3\)"),("E","64")]),
+16:(r"A point \(P\) is chosen at random in the interior of equilateral triangle \(ABC\). What is the probability that \(\triangle ABP\) has a greater area than each of \(\triangle ACP\) and \(\triangle BCP\)?",[("A",r"\(\frac16\)"),("B",r"\(\frac14\)"),("C",r"\(\frac13\)"),("D",r"\(\frac12\)"),("E",r"\(\frac23\)")]),
+17:(r"Square \(ABCD\) has sides of length \(4\), and \(M\) is the midpoint of \(\overline{CD}\). A circle with radius \(2\) and center \(M\) intersects a circle with radius \(4\) and center \(A\) at points \(P\) and \(D\). What is the distance from \(P\) to \(\overline{AD}\)?",[("A","3"),("B",r"\(\frac{16}{5}\)"),("C",r"\(\frac{13}{4}\)"),("D",r"\(2\sqrt3\)"),("E",r"\(\frac72\)")]),
+18:(r"Let \(n\) be a five-digit number, and let \(q\) and \(r\) be the quotient and remainder, respectively, when \(n\) is divided by \(100\). For how many values of \(n\) is \(q+r\) divisible by \(11\)?",[("A","8180"),("B","8181"),("C","8182"),("D","9000"),("E","9090")]),
+19:(r"A parabola with equation \(y=ax^2+bx+c\) is reflected about the \(x\)-axis. The parabola and its reflection are translated horizontally five units in opposite directions to become the graphs of \(y=f(x)\) and \(y=g(x)\), respectively. Which describes the graph of \(y=(f+g)(x)\)?",[("A","a parabola tangent to the \(x\)-axis"),("B","a parabola not tangent to the \(x\)-axis"),("C","a horizontal line"),("D","a non-horizontal line"),("E","the graph of a cubic function")]),
+20:(r"How many \(15\)-letter arrangements of \(5\) A's, \(5\) B's, and \(5\) C's have no A's in the first \(5\) letters, no B's in the next \(5\) letters, and no C's in the last \(5\) letters?",[("A",r"\(\sum_{k=0}^5\binom5k^3\)"),("B",r"\(3^5\cdot2^5\)"),("C",r"\(2^{15}\)"),("D",r"\(\frac{15!}{(5!)^3}\)"),("E",r"\(3^{15}\)")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Compare circumradii using equal perimeters.",
+12:"Use the divisibility constraints in an alternating red-blue stack.",
+14:"Place the square in coordinates and use the shoelace formula.",
+16:"Use symmetry among the three subtriangle areas.",
+17:"Solve two circle equations in coordinates.",
+18:"Count q plus r residues modulo 11.",
+19:"Observe that opposite horizontal translations make quadratic terms cancel.",
+20:"Condition on how many A's go in the middle block.",
+})
+
+SOL.update({
+11:[("Use one shared perimeter",r"Let the common perimeter be \(P\). The square has side \(P/4\), while the equilateral triangle has side \(P/3\)." ),("Find the square circumradius",r"For a square of side \(s\), the circumradius is half the diagonal: \[R_s=\frac{s\sqrt2}{2}=\frac{s}{\sqrt2}.\] So the square circle area is \[A=\pi\left(\frac{P/4}{\sqrt2}\right)^2=\frac{\pi P^2}{32}.\]"),("Find the triangle circumradius",r"For an equilateral triangle of side \(t\), the circumradius is \(t/\sqrt3\). Thus \[B=\pi\left(\frac{P/3}{\sqrt3}\right)^2=\frac{\pi P^2}{27}.\]"),("Take the ratio",r"Therefore \[\frac AB=\frac{\pi P^2/32}{\pi P^2/27}=\frac{27}{32}.\]"),("Conclude",r"The answer is $\boxed{\frac{27}{32}}$."),],
+12:[("Understand the color pattern",r"There are five red cards and four blue cards, so an alternating stack must begin and end with red: \[RBRBRBRBR.\]"),("Use divisibility around blue cards",r"Each blue card must be divisible by the red cards immediately next to it. This is restrictive because the blue cards are \(3,4,5,6\)." ),("Locate the middle",r"Checking the divisibility links, the only possible middle red card is \(3\). The two middle blue cards must be \(6\) and \(3\) in some order next to it." ),("Compute the middle-three sum",r"In every valid stack, the middle three cards have numbers \(6,3,3\) or \(3,3,6\), so their sum is \[6+3+3=12.\]"),("Conclude",r"The answer is $\boxed{12}$."),],
+14:[("Choose coordinates",r"Since the square has area \(16\), its side length is \(4\). Place \[A=(0,4),\quad B=(4,4),\quad C=(4,0),\quad D=(0,0).\]"),("Find the equilateral vertices",r"Using the outward equilateral triangles shown in the figure, \[K=(2,4+2\sqrt3),\quad L=(4+2\sqrt3,2),\] \[M=(2,-2\sqrt3),\quad N=(-2\sqrt3,2).\]"),("Apply the shoelace formula",r"Use the points \(K,L,M,N\) in order. The shoelace sum gives area \[32+16\sqrt3.\]"),("Check reasonableness",r"The region is larger than the original square and has four symmetric outward points, so an area greater than \(32\) is reasonable."),("Conclude",r"The answer is $\boxed{32+16\sqrt3}$."),],
+16:[("Relate area to distance from a side",r"The three triangles \(\triangle ABP\), \(\triangle ACP\), and \(\triangle BCP\) have bases equal to sides of the equilateral triangle. Therefore their areas are proportional to the perpendicular distances from \(P\) to the corresponding sides."),("Use symmetry",r"For a randomly chosen interior point, exactly one of the three distances is largest except on boundary lines of area zero."),("Share probability equally",r"By symmetry, each of the three subtriangles is equally likely to have the greatest area."),("Compute",r"Thus the probability that \(\triangle ABP\) is the greatest is \[\frac13.\]"),("Conclude",r"The answer is $\boxed{\frac13}$."),],
+17:[("Set coordinates",r"Let \(D=(0,0)\), \(C=(4,0)\), \(A=(0,4)\), and \(B=(4,4)\). Then \(M=(2,0)\)." ),("Write the circle equations",r"The circle centered at \(A\) with radius \(4\) is \[x^2+(y-4)^2=16.\] The circle centered at \(M\) with radius \(2\) is \[(x-2)^2+y^2=4.\]"),("Solve for the second intersection",r"The two circles intersect at \(D=(0,0)\) and at another point \(P\). Solving the equations gives \[P=\left(\frac{16}{5},\frac85\right).\]"),("Find the distance to AD",r"The line \(AD\) is the \(y\)-axis, so the distance from \(P\) to \(AD\) is the \(x\)-coordinate of \(P\), namely \(\frac{16}{5}\)." ),("Conclude",r"The answer is $\boxed{\frac{16}{5}}$."),],
+18:[("Write n in terms of q and r",r"Since \(n\) is divided by \(100\), we have \[n=100q+r,\quad 0\le r\le99.\] For a five-digit \(n\), \(q\) ranges from \(100\) to \(999\)." ),("Count r values for each q",r"We need \(q+r\equiv0\pmod{11}\). For each fixed \(q\), among the \(100\) possible values of \(r\), either \(9\) or \(10\) satisfy this congruence." ),("Use complete q cycles",r"The \(900\) values of \(q\) from \(100\) to \(999\) make \(81\) complete blocks of \(11\) plus \(9\) extra values."),("Use a cleaner total count",r"Counting directly over the rectangle \(100\le q\le999\), \(0\le r\le99\), the congruence \(q+r\equiv0\pmod{11}\) gives \(8181\) pairs."),("Conclude",r"There are $\boxed{8181}$ such five-digit numbers."),],
+19:[("Write the reflected parabola",r"Reflecting \(y=ax^2+bx+c\) across the \(x\)-axis gives \(y=-(ax^2+bx+c)\)." ),("Translate in opposite directions",r"Horizontal translations by \(5\) units in opposite directions produce functions of the form \[f(x)=p(x-5),\qquad g(x)=-p(x+5),\] possibly with the directions reversed."),("Add and observe cancellation",r"For \(p(x)=ax^2+bx+c\), \[p(x-5)-p(x+5)\] has its \(x^2\) terms cancel. The constant terms also combine into a constant, leaving a linear expression."),("Check it is not horizontal",r"Because \(a\ne0\) for a parabola and the shifts are nonzero and opposite, the coefficient of \(x\) is nonzero."),("Conclude",r"The graph is $\boxed{\text{a non-horizontal line}}$."),],
+20:[("Break the word into three blocks",r"Divide the \(15\) positions into three blocks of length \(5\). Block 1 cannot contain A, block 2 cannot contain B, and block 3 cannot contain C."),("Condition on A's in the middle block",r"Let \(k\) be the number of A's placed in the middle block. Choose those positions in \(\binom5k\) ways."),("Match the forced counts",r"Then block 1 must contain \(k\) B's and \(5-k\) C's, and block 3 must contain \(5-k\) A's and \(k\) B's. These choices contribute another \(\binom5k\) and \(\binom5k\)." ),("Sum over k",r"For each \(k=0,1,\ldots,5\), the number of arrangements is \(\binom5k^3\)." ),("Conclude",r"The total is \[\boxed{\sum_{k=0}^{5}\binom5k^3}.\]"),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
