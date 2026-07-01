@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 154
+BATCH_NUMBER = 155
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2003_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
-SKIPPED = []
-BATCH_LABEL = "2003 AMC 12A Problems 21-25"
-NEXT_START = "2003 AMC 12B Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2003_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,4,5,6,7,8,9}
+SKIPPED = ["2003 AMC 12B Problem 3 skipped: flower-bed cost minimization depends on the missing rectangle diagram.", "2003 AMC 12B Problem 10 skipped: non-congruent pentagon attachment count depends on the missing figure."]
+BATCH_LABEL = "2003 AMC 12B Problems 1,2,4-9"
+NEXT_START = "2003 AMC 12B Problem 11"
 
-ANS={21:("D","d"),22:("C","0.20"),23:("B","672"),24:("B","0"),25:("B","1")}
+ANS={1:("C",r"\frac23"),2:("D","20"),4:("C","1.35"),5:("D","21.5"),6:("B",r"-\frac{2\sqrt3}{3}"),7:("D","64"),8:("E","10"),9:("D","30")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -647,6 +647,39 @@ SOL.update({
 24:[("Introduce one variable",r"Let \(x=\log_a b\). Since \(a\ge b>1\), we have \(0<x\le1\)." ),("Rewrite the expression",r"Now \[\log_a(a/b)=1-\log_a b=1-x.\] Also \(\log_b a=\frac1x\), so \[\log_b(b/a)=1-\frac1x.\]"),("Combine",r"The expression is \[2-x-\frac1x.\]"),("Maximize",r"For \(x>0\), the AM-GM inequality gives \[x+\frac1x\ge2,\] with equality at \(x=1\)." ),("Conclude",r"The largest possible value is \[2-2=0,\] attained when \(a=b\). The answer is $\boxed{0}$."),],
 25:[("Understand the domain",r"The domain of any polynomial \(f(x)=ax^2+bx\) is all real numbers."),("Ask when the range is all real numbers",r"If \(a\ne0\), the function is a quadratic, so its range is a half-line, not all real numbers."),("Check the linear case",r"If \(a=0\), then \(f(x)=bx\). For any positive \(b\), this linear function has range all real numbers."),("Count a values",r"Thus the only possible value of \(a\) is \(a=0\)." ),("Conclude",r"There is $\boxed{1}$ real value of \(a\)." ),],
 })
+
+OV.update({
+1:(r"Which of the following is the same as \[\frac{2-4+6-8+10-12+14}{3-6+9-12+15-18+21}?\]",[("A","-1"),("B",r"\(-\frac23\)"),("C",r"\(\frac23\)"),("D","1"),("E",r"\(\frac{14}{3}\)")]),
+2:(r"Al gets the disease algebritis and must take one green pill and one pink pill each day for two weeks. A green pill costs \(\$1\) more than a pink pill, and Al's pills cost a total of \(\$546\) for the two weeks. How much does one green pill cost?",[("A",r"\(\$7\)"),("B",r"\(\$14\)"),("C",r"\(\$19\)"),("D",r"\(\$20\)"),("E",r"\(\$39\)")]),
+4:(r"Moe uses a mower to cut his rectangular \(90\)-foot by \(150\)-foot lawn. The swath he cuts is \(28\) inches wide, but he overlaps each cut by \(4\) inches. He walks at \(5000\) feet per hour while pushing the mower. Which is closest to the number of hours it will take?",[("A","0.75"),("B","0.8"),("C","1.35"),("D","1.5"),("E","3")]),
+5:(r"Many television screens are rectangles measured by the length of their diagonals. The ratio of horizontal length to height in a standard television screen is \(4:3\). The horizontal length of a \(27\)-inch screen is closest to which number of inches?",[("A","20"),("B","20.5"),("C","21"),("D","21.5"),("E","22")]),
+6:(r"The second and fourth terms of a geometric sequence are \(2\) and \(6\). Which of the following is a possible first term?",[("A",r"\(-\sqrt3\)"),("B",r"\(-\frac{2\sqrt3}{3}\)"),("C",r"\(-\frac{\sqrt3}{3}\)"),("D",r"\(\sqrt3\)"),("E","3")]),
+7:(r"Penniless Pete's piggy bank has no pennies, but it has \(100\) coins, all nickels, dimes, and quarters, whose total value is \(\$8.35\). It does not necessarily contain coins of all three types. What is the difference between the largest and smallest possible number of dimes?",[("A","0"),("B","13"),("C","37"),("D","64"),("E","83")]),
+8:(r"Let \(\clubsuit(x)\) denote the sum of the digits of the positive integer \(x\). For how many two-digit values of \(x\) is \(\clubsuit(\clubsuit(x))=3\)?",[("A","3"),("B","4"),("C","6"),("D","9"),("E","10")]),
+9:(r"Let \(f\) be a linear function for which \(f(6)-f(2)=12\). What is \(f(12)-f(2)\)?",[("A","12"),("B","18"),("C","24"),("D","30"),("E","36")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Factor the common alternating sum from numerator and denominator.",
+2:"Set up two weeks of one green and one pink pill per day.",
+4:"Use the effective mower width after overlap.",
+5:"Use the 3-4-5 ratio of a standard television screen.",
+6:"Relate terms in a geometric sequence by the common ratio.",
+7:"Solve a coin-count system and optimize the number of dimes.",
+8:"Count two-digit numbers whose digit sum has digit sum 3.",
+9:"Use the constant slope of a linear function.",
+})
+
+SOL.update({
+1:[("Factor each term pattern",r"The numerator is \[2(1-2+3-4+5-6+7),\] and the denominator is \[3(1-2+3-4+5-6+7).\]"),("Cancel the common factor",r"The alternating sum \(1-2+3-4+5-6+7\) is nonzero, so it cancels."),("Compute the ratio",r"The fraction becomes \[\frac{2}{3}.\]"),("Conclude",r"The answer is $\boxed{\frac23}$."),],
+2:[("Let prices be variables",r"Let the pink pill cost \(p\) dollars. Then the green pill costs \(p+1\) dollars."),("Use the two-week total",r"Two weeks is \(14\) days, and Al takes one of each pill per day. Therefore \[14(p+p+1)=546.\]"),("Solve",r"This gives \[2p+1=39,\] so \(p=19\)." ),("Find the green pill cost",r"The green pill costs \(p+1=20\) dollars."),("Conclude",r"The answer is $\boxed{20}$."),],
+4:[("Find the effective width",r"The mower cuts \(28\) inches, but each pass overlaps by \(4\) inches, so each new pass covers \(24\) inches, or \(2\) feet."),("Compute total walking distance",r"To cover a \(90\)-foot width, Moe needs \(90/2=45\) passes. Each pass is \(150\) feet, so he walks \[45\cdot150=6750\] feet."),("Convert to time",r"At \(5000\) feet per hour, the time is \[\frac{6750}{5000}=1.35\] hours."),("Conclude",r"The closest choice is $\boxed{1.35}$."),],
+5:[("Use the screen ratio",r"A \(4:3\) rectangle has diagonal ratio \(5\), because \(3\)-\(4\)-\(5\) is a right triangle."),("Scale to diagonal 27",r"The horizontal length is \(\frac45\) of the diagonal."),("Compute",r"So the horizontal length is \[\frac45\cdot27=21.6.\]"),("Choose the closest answer",r"The closest listed value is \(21.5\)." ),("Conclude",r"The answer is $\boxed{21.5}$."),],
+6:[("Write terms using the first term",r"Let the first term be \(a\) and common ratio be \(r\). Then the second term is \(ar=2\), and the fourth is \(ar^3=6\)." ),("Divide equations",r"Dividing \(ar^3=6\) by \(ar=2\) gives \[r^2=3.\] Thus \(r=\sqrt3\) or \(r=-\sqrt3\)." ),("Find a possible first term",r"Using \(r=-\sqrt3\), we get \[a=\frac{2}{-\sqrt3}=-\frac{2\sqrt3}{3}.\]"),("Check",r"The fourth term would be \(ar^3=(-2/\sqrt3)(-3\sqrt3)=6\), so this works."),("Conclude",r"A possible first term is $\boxed{-\frac{2\sqrt3}{3}}$."),],
+7:[("Set variables",r"Let \(n,d,q\) be the numbers of nickels, dimes, and quarters."),("Write the equations",r"The coin count gives \[n+d+q=100.\] The value equation in cents is \[5n+10d+25q=835,\] or \[n+2d+5q=167.\]"),("Subtract equations",r"Subtracting \(n+d+q=100\) from \(n+2d+5q=167\) gives \[d+4q=67.\] Thus \(d=67-4q\)." ),("Find max and min d",r"For nonnegative integer \(q\), the largest \(d\) is \(67\) when \(q=0\). The smallest nonnegative \(d\) occurs at \(q=16\), giving \(d=3\)." ),("Compute the difference",r"The difference is \[67-3=64.\]"),("Conclude",r"The answer is $\boxed{64}$."),],
+8:[("Reduce the condition",r"For a two-digit \(x\), its digit sum \(\clubsuit(x)\) ranges from \(1\) to \(18\). We need the digit sum of that number to be \(3\)." ),("Find possible digit sums",r"The values from \(1\) to \(18\) with digit sum \(3\) are \(3\) and \(12\)." ),("Count digit sum 3",r"Two-digit numbers with digit sum \(3\) are \(12,21,30\), giving \(3\) numbers."),("Count digit sum 12",r"Two-digit numbers with digit sum \(12\) are \(39,48,57,66,75,84,93\), giving \(7\) numbers."),("Add",r"The total is \(3+7=10\)." ),("Conclude",r"The answer is $\boxed{10}$."),],
+9:[("Use the slope",r"Because \(f\) is linear, the change in \(f\) is proportional to the change in input."),("Find the slope",r"The input changes from \(2\) to \(6\), a difference of \(4\), and the output changes by \(12\). Thus the slope is \(3\)." ),("Apply to the new interval",r"From \(2\) to \(12\), the input change is \(10\), so the output change is \[3\cdot10=30.\]"),("Conclude",r"The answer is $\boxed{30}$."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -753,7 +786,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2003" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2003" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -842,7 +875,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2003 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2003 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
