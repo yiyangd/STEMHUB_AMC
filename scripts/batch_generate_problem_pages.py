@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 168
+BATCH_NUMBER = 169
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16,17,18,19,20}
+TARGET_NUMBERS = {21,22,23,24,25}
 SKIPPED = []
-BATCH_LABEL = "2005 AMC 12B Problems 11-20"
-NEXT_START = "2005 AMC 12B Problem 21"
+BATCH_LABEL = "2005 AMC 12B Problems 21-25"
+NEXT_START = "2006 AMC 12A Problem 1"
 
-ANS={11:("D",r"\frac12"),12:("D","8"),13:("D",r"\frac72"),14:("E",r"6+6\sqrt2"),15:("D","4"),16:("D",r"1+\sqrt3"),17:("B","1"),18:("C","51"),19:("E","154"),20:("C","34")}
+ANS={21:("C","2"),22:("E",r"2^{2005}"),23:("B",r"\frac{29}{2}"),24:("A","14"),25:("A",r"\frac5{256}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1135,6 +1135,29 @@ SOL.update({
 18:[("Translate acute conditions at A and B",r"For angle \(A\) to be acute, \((B-A)\cdot(C-A)>0\), which gives \(x+y>4\). For angle \(B\) to be acute, \((A-B)\cdot(C-B)>0\), which gives \(x+y<14\)."),("Translate the condition at C",r"The angle at \(C\) is right on the circle with diameter \(\overline{AB}\). It is acute outside that circle. The circle has center \((4.5,4.5)\) and radius \(\frac{5\sqrt2}{2}\)."),("Find the strip area",r"In the first quadrant, the region \(4<x+y<14\) has area \[\frac12(14)^2-\frac12(4)^2=98-8=90.\]"),("Subtract the circle",r"The circle lies inside this strip and is tangent to the two boundary lines. Its area is \[\pi\left(\frac{5\sqrt2}{2}\right)^2=\frac{25\pi}{2}.\]"),("Approximate",r"The desired area is \[90-\frac{25\pi}{2}\approx50.7,\] whose closest integer is \(51\)."),("Conclude",r"The answer is \(\boxed{51}\)."),],
 19:[("Write the reversed numbers",r"Let \(x=10a+b\) and \(y=10b+a\), with \(a>b\) so that \(x^2-y^2\) is positive."),("Factor the difference of squares",r"We have \[x-y=9(a-b),\qquad x+y=11(a+b),\] so \[x^2-y^2=99(a-b)(a+b)=99(a^2-b^2).\]"),("Force a square",r"Since \(99=9\cdot11\), we need \(11(a^2-b^2)\) to be a square. With digit values, the only possibility is \(a^2-b^2=11\)."),("Find the digits",r"The digit pair satisfying \(a^2-b^2=11\) is \(a=6,b=5\). Thus \(x=65\) and \(y=56\)."),("Find m and finish",r"Then \(x^2-y^2=1089=33^2\), so \(m=33\). Therefore \[x+y+m=65+56+33=154.\]"),("Conclude",r"The answer is \(\boxed{154}\)."),],
 20:[("Use group sums",r"The total sum of all eight numbers is \(8\). Let \(s=a+b+c+d\). Then the other four numbers have sum \(8-s\)."),("Rewrite the expression",r"The expression becomes \[s^2+(8-s)^2=2(s-4)^2+32.\] So we want a four-element subset whose sum is as close to \(4\) as possible."),("Check whether 4 is possible",r"A short subset check shows no four elements sum to \(4\). For example, with one negative number the three positive numbers already sum at least \(12\); with two negative numbers, none of the needed positive-pair sums occur; the other cases are even farther away."),("Find a sum close to 4",r"A sum of \(3\) is possible: \[-7+(-5)+2+13=3.\] The complementary group then has sum \(5\)."),("Compute the minimum",r"This gives \[3^2+5^2=9+25=34.\] Since sum \(4\) is impossible, this is minimal."),("Conclude",r"The answer is \(\boxed{34}\)."),],
+})
+OV.update({
+21:(r"A positive integer \(n\) has \(60\) divisors and \(7n\) has \(80\) divisors. What is the greatest integer \(k\) such that \(7^k\) divides \(n\)?",[("A","0"),("B","1"),("C","2"),("D","3"),("E","4")]),
+22:(r"A sequence of complex numbers \(z_0,z_1,z_2,\ldots\) is defined by the rule \[z_{n+1}=\frac{i z_n}{\overline{z_n}},\] where \(\overline{z_n}\) is the complex conjugate of \(z_n\) and \(i^2=-1\). Suppose that \(|z_0|=1\) and \(z_{2005}=1\). How many possible values are there for \(z_0\)?",[("A","1"),("B","2"),("C","4"),("D","2005"),("E",r"\(2^{2005}\)")]),
+23:(r"Let \(S\) be the set of ordered triples \((x,y,z)\) of real numbers for which \(\log_{10}(x+y)=z\) and \(\log_{10}(x^2+y^2)=z+1\). There are real numbers \(a\) and \(b\) such that for all ordered triples \((x,y,z)\) in \(S\) we have \(x^3+y^3=a\cdot10^{3z}+b\cdot10^{2z}\). What is the value of \(a+b\)?",[("A",r"\(\frac{15}{2}\)"),("B",r"\(\frac{29}{2}\)"),("C","15"),("D",r"\(\frac{39}{2}\)"),("E","24")]),
+24:(r"All three vertices of an equilateral triangle are on the parabola \(y=x^2\), and one of its sides has a slope of \(2\). The \(x\)-coordinates of the three vertices have a sum of \(\frac{m}{n}\), where \(m\) and \(n\) are relatively prime positive integers. What is the value of \(m+n\)?",[("A","14"),("B","15"),("C","16"),("D","17"),("E","18")]),
+25:(r"Six ants simultaneously stand on the six vertices of a regular octahedron, with each ant at a different vertex. Simultaneously and independently, each ant moves from its vertex to one of the four adjacent vertices, each with equal probability. What is the probability that no two ants arrive at the same vertex?",[("A",r"\(\frac5{256}\)"),("B",r"\(\frac{21}{1024}\)"),("C",r"\(\frac{11}{512}\)"),("D",r"\(\frac{23}{1024}\)"),("E",r"\(\frac3{128}\)")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Compare the divisor-count factor before and after multiplying by \(7\).",
+22:"Track arguments of complex numbers on the unit circle.",
+23:"Use \(x+y\), \(x^2+y^2\), and \(x^3+y^3\) identities.",
+24:"Parameterize the side of slope \(2\) and rotate by \(60^\circ\).",
+25:"Model the octahedron as three opposite vertex pairs.",
+})
+
+SOL.update({
+21:[("Track the exponent of 7",r"Let the exponent of \(7\) in the prime factorization of \(n\) be \(a\). Then the divisor-count contribution from this prime is \(a+1\)."),("See what multiplying by 7 does",r"In \(7n\), the exponent of \(7\) is \(a+1\), so the contribution becomes \(a+2\). All other prime contributions stay the same."),("Use the divisor-count ratio",r"Therefore \[\frac{80}{60}=\frac{a+2}{a+1}.\]"),("Solve",r"Since \(\frac{80}{60}=\frac43\), we get \(3(a+2)=4(a+1)\), so \(a=2\)."),("Conclude",r"The greatest \(k\) such that \(7^k\mid n\) is \(\boxed{2}\)."),],
+22:[("Use the unit circle",r"Because \(|z_0|=1\), the recurrence keeps every \(z_n\) on the unit circle. For \(|z_n|=1\), we have \(\overline{z_n}=1/z_n\)."),("Simplify the recurrence",r"Thus \[z_{n+1}=\frac{i z_n}{\overline{z_n}}=i z_n^2.\]"),("Write arguments",r"Let \(z_n=e^{i\theta_n}\). Then \[\theta_{n+1}\equiv 2\theta_n+\frac{\pi}{2}\pmod{2\pi}.\]"),("Iterate the formula",r"After \(N\) steps, \[\theta_N\equiv 2^N\theta_0+(2^N-1)\frac{\pi}{2}\pmod{2\pi}.\]"),("Count preimages of 1",r"The condition \(z_{2005}=1\) means \(\theta_{2005}\equiv0\pmod{2\pi}\). Multiplication by \(2^{2005}\) on the circle has exactly \(2^{2005}\) solutions for \(\theta_0\)."),("Conclude",r"There are \(\boxed{2^{2005}}\) possible values of \(z_0\)."),],
+23:[("Set a simpler variable",r"Let \(S_1=x+y\). From \(\log_{10}(x+y)=z\), we have \(S_1=10^z\)."),("Use the second equation",r"The equation \(\log_{10}(x^2+y^2)=z+1\) gives \[x^2+y^2=10^{z+1}=10\cdot10^z=10S_1.\]"),("Find xy",r"Since \((x+y)^2=x^2+y^2+2xy\), \[xy=\frac{S_1^2-10S_1}{2}.\]"),("Use the cube identity",r"\[x^3+y^3=(x+y)(x^2-xy+y^2)=S_1\big((x^2+y^2)-xy\big).\]"),("Substitute",r"This equals \[S_1\left(10S_1-\frac{S_1^2-10S_1}{2}\right)=15S_1^2-\frac12S_1^3.\] With \(S_1=10^z\), this is \[-\frac12\cdot10^{3z}+15\cdot10^{2z}.\]"),("Conclude",r"Thus \(a=-\frac12\), \(b=15\), and \(a+b=\boxed{\frac{29}{2}}\)."),],
+24:[("Use the side with slope 2",r"Let the endpoints of the side with slope \(2\) have \(x\)-coordinates \(1-t\) and \(1+t\). This works because the slope between two parabola points is the sum of their \(x\)-coordinates, so the sum must be \(2\)."),("Write the side vector",r"The two points differ by \((2t,4t)\). The midpoint of the side is \((1,1+t^2)\)."),("Find the third vertex",r"Rotating half the side by \(90^\circ\) and scaling by \(\sqrt3\), the third vertex has coordinates \[(1-2\sqrt3\,t,\ 1+t^2+\sqrt3\,t)\] or the reflected version."),("Put the third vertex on the parabola",r"Using \(y=x^2\), \[1+t^2+\sqrt3\,t=(1-2\sqrt3\,t)^2.\] This simplifies to \(t(11t-5\sqrt3)=0\). Since the triangle is nondegenerate, \(t=\frac{5\sqrt3}{11}\)."),("Sum the x-coordinates",r"The three \(x\)-coordinates sum to \[(1-t)+(1+t)+(1-2\sqrt3\,t)=3-2\sqrt3\cdot\frac{5\sqrt3}{11}=\frac{3}{11}.\]"),("Conclude",r"Thus \(m=3\), \(n=11\), and \(m+n=\boxed{14}\)."),],
+25:[("Pair opposite vertices",r"A regular octahedron has \(3\) pairs of opposite vertices. Each ant can move to any vertex except its starting vertex and the opposite vertex, so each ant has \(4\) choices."),("Count total outcomes",r"There are \(4^6=4096\) total movement outcomes."),("Require a permutation",r"No two ants arriving at the same vertex means the six arrivals form a permutation of the six vertices."),("Count by opposite pairs",r"At the level of the \(3\) opposite pairs, each source pair must send two ants to the two other destination pairs, with each destination pair receiving two ants. There are two types: all off-diagonal pair transfers are \(1\)'s, or one of the two directed \(3\)-cycles has transfer \(2\)'s."),("Count the two types",r"In the all-\(1\) type, choosing which ant goes to which destination pair gives \(2^3\) choices, and assigning incoming ants to the two vertices in each destination pair gives another \(2^3\), for \(64\). In the two directed-cycle types, each contributes \(2^3=8\), for \(16\) more."),("Compute probability",r"There are \(64+16=80\) favorable outcomes, so the probability is \[\frac{80}{4096}=\frac5{256}.\] The answer is $\boxed{\frac5{256}}$."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
