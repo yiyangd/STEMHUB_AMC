@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 144
+BATCH_NUMBER = 145
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2024_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {12,13,14,15,16,17,18,19,20}
-SKIPPED = ["2024 AMC 10B Problem 11 skipped: rectangle geometry depends on the missing figure."]
-BATCH_LABEL = "2024 AMC 10B Problems 12-20"
-NEXT_START = "2024 AMC 10B Problem 21"
+TARGET_NUMBERS = {22,23,24}
+SKIPPED = ["2024 AMC 10B Problem 21 skipped: PDF text is truncated and omits key pipe-radius and geometry information.", "2024 AMC 10B Problem 25 skipped: 3D brick reconfiguration depends on the missing figure."]
+BATCH_LABEL = "2024 AMC 10B Problems 22-24"
+NEXT_START = "2002 AMC 12A Problem 1"
 
-ANS={12:("A","9"),13:("B","595"),14:("B","71"),15:("C","3"),16:("A","1010"),17:("D","431"),18:("B","2"),19:("C","6"),20:("A","60")}
+ANS={22:("A","5"),23:("B","319"),24:("E","4")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -340,6 +340,24 @@ SOL.update({
 18:[("Separate multiples of 5",r"If an integer is divisible by $5$, then its $100$th power is divisible by \(5^{100}\), and hence by $125$. Such numbers give remainder $0$."),("Handle numbers relatively prime to 125",r"If \(\gcd(a,125)=1\), Euler's theorem applies. Since \(\varphi(125)=100\), we have \[a^{100}\equiv1\pmod{125}.\]"),("List the possible remainders",r"Thus every integer gives either remainder $0$ or remainder $1$ when raised to the $100$th power modulo $125$."),("Check both occur",r"The integer $5$ gives remainder $0$, and the integer $1$ gives remainder $1$."),("Conclude",r"There are exactly $\boxed{2}$ possible remainders."),],
 19:[("Analyze zero slope",r"A horizontal line \(y=c\) has infinitely many lattice points if \(c\) is an integer, and no lattice points if \(c\) is not an integer. So zero slope allows $0$ and more than $2$, but not exactly $1$ or $2$."),("Analyze nonzero rational slope",r"A line with nonzero rational slope that contains one lattice point contains infinitely many lattice points, because moving by a suitable integer step along the slope gives more lattice points. It can also contain none. So it allows $0$ and more than $2$."),("Analyze irrational slope",r"A line with irrational slope cannot contain two distinct lattice points, because the slope between two lattice points is rational. It can contain exactly one lattice point, or none."),("Count possible entries",r"Each of the three slope types contributes exactly $2$ possible entries."),("Conclude",r"The total number of possible entries is \[2+2+2=6.\] The answer is $\boxed{6}$."),],
 20:[("First choose the L/R pattern",r"Ignore the shoe colors for a moment and look only at the pattern of left shoes and right shoes. Whenever an $L$ is adjacent to an $R$, they must be from the same pair."),("Count the simplest patterns",r"The patterns \(LLLRRR\) and \(RRRLLL\) each allow $12$ labelings of the three pairs, giving $24$ arrangements."),("Count the remaining valid side patterns",r"A systematic check of the remaining left-right patterns shows six more valid patterns: \(LLRRRL, LRRLLR, LRRRLL, RLLLRR, RLLRRL,\) and \(RRLLLR\). In each, the adjacency constraints force enough matching that exactly $6$ pair-labelings are possible."),("Add the cases",r"These six patterns contribute \[6\cdot6=36\] arrangements."),("Combine",r"The total number of valid lineups is \[24+36=60.\]"),("Conclude",r"The answer is $\boxed{60}$."),],
+})
+
+OV.update({
+22:(r"A group of $16$ people will be partitioned into $4$ indistinguishable $4$-person committees. Each committee will have one chairperson and one secretary. The number of different ways to make these assignments can be written as $3^rM$, where $r$ and $M$ are positive integers and $M$ is not divisible by $3$. What is $r$?",[("A","5"),("B","6"),("C","7"),("D","8"),("E","9")]),
+23:(r"The Fibonacci numbers are defined by $F_1=1$, $F_2=1$, and $F_n=F_{n-1}+F_{n-2}$ for $n\ge3$. What is \[\frac{F_2}{F_1}+\frac{F_4}{F_2}+\frac{F_6}{F_3}+\cdots+\frac{F_{20}}{F_{10}}?\]",[("A","318"),("B","319"),("C","320"),("D","321"),("E","322")]),
+24:(r"Let \[P(m)=\frac{m}{2}+\frac{m^2}{4}+\frac{m^4}{8}+\frac{m^8}{8}.\] How many of the values $P(2022)$, $P(2023)$, $P(2024)$, and $P(2025)$ are integers?",[("A","0"),("B","1"),("C","2"),("D","3"),("E","4")]),
+})
+
+KEY_OVERRIDES.update({
+22:"Compute the exponent of 3 in a committee-counting formula.",
+23:"Use the identity F(2n)/F(n) equals the nth Lucas number, or tabulate the ratios.",
+24:"Check the fractional parts by parity.",
+})
+
+SOL.update({
+22:[("Count the committee partitions",r"First partition the $16$ people into four indistinguishable groups of $4$. This can be done in \[\frac{16!}{(4!)^4\,4!}\] ways."),("Assign roles inside committees",r"In each $4$-person committee, choose an ordered pair for chairperson and secretary in \(4\cdot3=12\) ways. Across four committees, this contributes \(12^4\)." ),("Write the full count",r"The total number of assignments is \[\frac{16!\cdot12^4}{(4!)^4\,4!}.\] We only need the exponent of $3$ in this number."),("Compute powers of 3",r"Using \(v_3\) for the exponent of $3$, \[v_3(16!)=\left\lfloor\frac{16}{3}\right\rfloor+\left\lfloor\frac{16}{9}\right\rfloor=5+1=6.\] Also \(v_3(12^4)=4\), and the denominator has \(v_3((4!)^4\,4!)=4+1=5\)." ),("Subtract denominator exponents",r"Therefore \[r=6+4-5=5.\]"),("Conclude",r"The answer is $\boxed{5}$."),],
+23:[("Recognize the ratio pattern",r"The expression is a sum of ratios \(\frac{F_{2n}}{F_n}\) for \(n=1,2,\ldots,10\)." ),("Use a Fibonacci identity",r"The identity \[F_{2n}=F_nL_n\] says that this ratio equals the \(n\)th Lucas number \(L_n\)." ),("List the needed Lucas numbers",r"The Lucas numbers begin \[L_1=1,\quad L_2=3,\] and follow the same recurrence \(L_n=L_{n-1}+L_{n-2}\). Thus the first ten are \[1,3,4,7,11,18,29,47,76,123.\]"),("Add them",r"The sum is \[1+3+4+7+11+18+29+47+76+123=319.\]"),("Conclude",r"The answer is $\boxed{319}$."),],
+24:[("Separate even and odd inputs",r"If \(m\) is even, then each term \(\frac m2,\frac{m^2}{4},\frac{m^4}{8},\frac{m^8}{8}\) is an integer. So \(P(2022)\) and \(P(2024)\) are integers."),("Check odd inputs by fractional parts",r"If \(m\) is odd, then \(\frac m2\) has fractional part \(\frac12\), \(\frac{m^2}{4}\) has fractional part \(\frac14\), and since \(m^4\equiv m^8\equiv1\pmod8\), each of the last two terms has fractional part \(\frac18\)." ),("Add the fractional parts",r"For odd \(m\), the total fractional part is \[\frac12+\frac14+\frac18+\frac18=1,\] which is an integer carry. So \(P(m)\) is also an integer for odd \(m\)." ),("Apply to the four values",r"The numbers \(2022,2023,2024,2025\) include two even and two odd inputs, and all four produce integer values of \(P(m)\)." ),("Conclude",r"There are $\boxed{4}$ integer values."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)

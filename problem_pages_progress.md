@@ -2348,3 +2348,19 @@
 - Pushed: pending
 - Next batch should start from: 2024 AMC 10B Problem 21
 - Review notes: none.
+
+## Batch 145: 2024 AMC 10B Problems 22-24
+
+- Start time: 2026-07-01T04:49:25-07:00
+- End time: 2026-07-01T04:49:26-07:00
+- Processed contest: AMC 10
+- Processed range: 2024 AMC 10B Problems 22-24
+- Generated count: 3
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2024 AMC 10B Problem 21 skipped: PDF text is truncated and omits key pipe-radius and geometry information.; 2024 AMC 10B Problem 25 skipped: 3D brick reconfiguration depends on the missing figure.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2002 AMC 12A Problem 1
+- Review notes: none.
