@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 187
+BATCH_NUMBER = 188
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2008_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
-SKIPPED = []
-BATCH_LABEL = "2008 AMC 12B Problems 21-25"
-NEXT_START = "2009 AMC 12A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2009_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,9,10}
+SKIPPED = ["2009 AMC 12A Problem 8: skipped because the rectangle arrangement depends strongly on the original diagram."]
+BATCH_LABEL = "2009 AMC 12A Problems 1-7, 9-10"
+NEXT_START = "2009 AMC 12A Problem 11"
 
-ANS={21:("E",r"\frac{4\sqrt3-3}{4}"),22:("E",r"\frac{17}{28}"),23:("A","11"),24:("C","17"),25:("B",r"30\sqrt3")}
+ANS={1:("A","46"),2:("C",r"\frac53"),3:("B",r"\frac5{12}"),4:("A","15"),5:("D","125"),6:("E",r"P^{2n}Q^m"),7:("B","502"),9:("D","2"),10:("C","13")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1797,6 +1797,42 @@ SOL.update({
 24:[("Let positions be distances along the x-axis",r"Let \(x_n=A_0A_n\). The side length of equilateral triangle \(A_{n-1}B_nA_n\) is \(d_n=x_n-x_{n-1}\)."),("Use the coordinates of the equilateral vertex",r"The top vertex \(B_n\) has \(x\)-coordinate \(x_{n-1}+\frac{d_n}{2}\) and \(y\)-coordinate \(\frac{\sqrt3}{2}d_n\)."),("Use y equals square root of x",r"Because \(B_n\) lies on \(y=\sqrt{x}\), its coordinates satisfy \(y^2=x\). Therefore \[\left(\frac{\sqrt3}{2}d_n\right)^2=x_{n-1}+\frac{d_n}{2}.\]"),("Find the pattern",r"This equation gives \[\frac34d_n^2=x_{n-1}+\frac12d_n.\] Starting with \(x_0=0\), it yields \(d_1=\frac23\), and induction shows \[d_n=\frac{2n}{3}.\]"),("Sum the side lengths",r"Thus \[x_n=d_1+d_2+\cdots+d_n=\frac23(1+2+\cdots+n)=\frac{n(n+1)}{3}.\]"),("Find the least n",r"We need \[\frac{n(n+1)}{3}\ge100,\] or \(n(n+1)\ge300\). Since \(16\cdot17=272\) and \(17\cdot18=306\), the least such \(n\) is \(17\)."),("Conclude",r"The answer is \(\boxed{17}\)."),],
 25:[("Find the trapezoid height",r"Let the horizontal offsets of the two legs be \(u\) and \(v\), with \(u+v=19-11=8\). The legs have lengths \(7\) and \(5\), so \[h^2+u^2=49,\qquad h^2+v^2=25.\]"),("Solve the offsets",r"Subtracting gives \(u^2-v^2=24\), so \((u-v)(u+v)=24\). Since \(u+v=8\), we get \(u-v=3\). Thus \(u=\frac{11}{2}\), \(v=\frac52\), and \[h^2=49-\left(\frac{11}{2}\right)^2=\frac{75}{4}.\] Hence \(h=\frac{5\sqrt3}{2}\)."),("Find the trapezoid area",r"The trapezoid area is \[\frac{11+19}{2}\cdot h=15h.\]"),("Understand the angle-bisector points",r"Point \(P\) lies on the angle bisectors of \(\angle A\) and \(\angle D\), so it is equally distant from \(\overline{AB}\), \(\overline{AD}\), and \(\overline{CD}\). Since \(\overline{AB}\parallel\overline{CD}\), this means \(P\) is halfway between the bases, and its distance to \(\overline{AD}\) is \(\frac h2\). Similarly, \(Q\)'s distance to \(\overline{BC}\) is \(\frac h2\)."),("Subtract the two side triangles",r"The hexagon is the trapezoid minus triangles \(ADP\) and \(BCQ\). Their areas are \[\frac12\cdot7\cdot\frac h2=\frac{7h}{4},\qquad \frac12\cdot5\cdot\frac h2=\frac{5h}{4}.\] The total removed area is \(3h\)."),("Compute the hexagon area",r"Therefore the area is \[15h-3h=12h=12\cdot\frac{5\sqrt3}{2}=30\sqrt3.\]"),("Conclude",r"The answer is \(\boxed{30\sqrt3}\)."),],
 })
+
+OV.update({
+1:(r"Kim's flight took off from Newark at 10:34 AM and landed in Miami at 1:18 PM. Both cities are in the same time zone. If her flight took \(h\) hours and \(m\) minutes, with \(0<m<60\), what is \(h+m\)?",[("A","46"),("B","47"),("C","50"),("D","53"),("E","54")]),
+2:(r"Which of the following is equal to \[1+\frac{1}{1+\frac{1}{1+1}}?\]",[("A",r"\(\frac54\)"),("B",r"\(\frac32\)"),("C",r"\(\frac53\)"),("D","2"),("E","3")]),
+3:(r"What number is one third of the way from \(\frac14\) to \(\frac34\)?",[("A",r"\(\frac13\)"),("B",r"\(\frac5{12}\)"),("C",r"\(\frac12\)"),("D",r"\(\frac7{12}\)"),("E",r"\(\frac23\)")]),
+4:(r"Four coins are picked out of a piggy bank that contains pennies, nickels, dimes, and quarters. Which of the following could not be the total value of the four coins, in cents?",[("A","15"),("B","25"),("C","35"),("D","45"),("E","55")]),
+5:(r"One dimension of a cube is increased by \(1\), another is decreased by \(1\), and the third is left unchanged. The volume of the new rectangular solid is \(5\) less than that of the cube. What was the volume of the cube?",[("A","8"),("B","27"),("C","64"),("D","125"),("E","216")]),
+6:(r"Suppose that \(P=2^m\) and \(Q=3^n\). Which of the following is equal to \(12^{mn}\) for every pair of integers \((m,n)\)?",[("A",r"\(P^2Q\)"),("B",r"\(P^nQ^m\)"),("C",r"\(P^nQ^{2m}\)"),("D",r"\(P^{2m}Q^n\)"),("E",r"\(P^{2n}Q^m\)")]),
+7:(r"The first three terms of an arithmetic sequence are \(2x-3\), \(5x-11\), and \(3x+1\), respectively. The \(n\)th term of the sequence is \(2009\). What is \(n\)?",[("A","255"),("B","502"),("C","1004"),("D","1506"),("E","8037")]),
+9:(r"Suppose that \(f(x+3)=3x^2+7x+4\) and \(f(x)=ax^2+bx+c\). What is \(a+b+c\)?",[("A","-1"),("B","0"),("C","1"),("D","2"),("E","3")]),
+10:(r"In quadrilateral \(ABCD\), \(AB=5\), \(BC=17\), \(CD=5\), \(DA=9\), and \(BD\) is an integer. What is \(BD\)?",[("A","11"),("B","12"),("C","13"),("D","14"),("E","15")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Subtract the departure time from the arrival time.",
+2:"Evaluate the continued fraction from the inside out.",
+3:"Move one third of the distance from \(\frac14\) to \(\frac34\).",
+4:"Test four-coin sums using denominations \(1,5,10,25\).",
+5:"Let the cube side be \(s\) and compare \(s^3\) with \(s(s+1)(s-1)\).",
+6:"Rewrite \(12^{mn}\) as powers of \(2^m\) and \(3^n\).",
+7:"Use equal differences in the arithmetic sequence.",
+9:"Substitute \(u=x+3\) to rewrite \(f(u)\).",
+10:"Use triangle inequalities on triangles \(ABD\) and \(BCD\).",
+})
+
+SOL.update({
+1:[("Compute the elapsed time",r"From 10:34 AM to 1:18 PM is \(2\) hours and \(44\) minutes."),("Identify h and m",r"So \(h=2\) and \(m=44\). The condition \(0<m<60\) confirms that we should not rewrite the time as \(1\) hour and \(104\) minutes."),("Add",r"\[h+m=2+44=46.\]"),("Conclude",r"The answer is \(\boxed{46}\)."),],
+2:[("Start inside",r"The innermost denominator is \(1+1=2\), so the inner fraction is \(\frac12\)."),("Move outward",r"The next denominator is \[1+\frac12=\frac32.\] Therefore the next fraction is \[\frac{1}{3/2}=\frac23.\]"),("Finish the expression",r"Now the full expression is \[1+\frac23=\frac53.\]"),("Conclude",r"The answer is \(\boxed{\frac53}\)."),],
+3:[("Find the total distance",r"The distance from \(\frac14\) to \(\frac34\) is \[\frac34-\frac14=\frac12.\]"),("Take one third of that distance",r"One third of \(\frac12\) is \[\frac16.\]"),("Add to the starting point",r"Starting at \(\frac14\), the desired number is \[\frac14+\frac16=\frac3{12}+\frac2{12}=\frac5{12}.\]"),("Conclude",r"The answer is \(\boxed{\frac5{12}}\)."),],
+4:[("Check the small target first",r"With four coins, a total of \(15\) cents is surprisingly hard. Four pennies give \(4\), replacing pennies by a nickel adds \(4\), by a dime adds \(9\), and by a quarter adds \(24\)."),("Show 15 is impossible",r"Trying combinations with four coins: a dime plus three pennies gives \(13\), two nickels plus two pennies gives \(12\), and three nickels plus a penny gives \(16\). No four-coin combination totals \(15\)."),("Verify the others are possible",r"The other choices can occur: \(25=10+5+5+5\), \(35=10+10+10+5\), \(45=25+10+5+5\), and \(55=25+10+10+10\)."),("Conclude",r"The impossible total is \(\boxed{15}\)."),],
+5:[("Let the cube side be s",r"The original cube has volume \(s^3\). The new rectangular solid has dimensions \(s+1\), \(s-1\), and \(s\)."),("Write the new volume",r"The new volume is \[(s+1)(s-1)s=(s^2-1)s=s^3-s.\]"),("Use the difference",r"The new volume is \(5\) less than the original, so \[s^3-(s^3-s)=5.\] Thus \(s=5\)."),("Find the cube volume",r"The original volume is \[s^3=5^3=125.\]"),("Conclude",r"The answer is \(\boxed{125}\)."),],
+6:[("Rewrite 12",r"\[12^{mn}=(2^2\cdot3)^{mn}=2^{2mn}3^{mn}.\]"),("Use P and Q",r"Since \(P=2^m\), we have \[P^{2n}=(2^m)^{2n}=2^{2mn}.\] Since \(Q=3^n\), we have \[Q^m=(3^n)^m=3^{mn}.\]"),("Multiply",r"Therefore \[P^{2n}Q^m=2^{2mn}3^{mn}=12^{mn}.\]"),("Conclude",r"The answer is \(\boxed{P^{2n}Q^m}\)."),],
+7:[("Use equal differences",r"In an arithmetic sequence, consecutive differences are equal. So \[(5x-11)-(2x-3)=(3x+1)-(5x-11).\]"),("Solve for x",r"The left side is \(3x-8\), and the right side is \(-2x+12\). Thus \[3x-8=-2x+12,\] so \(5x=20\), and \(x=4\)."),("Find the sequence",r"The first term is \(2(4)-3=5\), and the common difference is \(4\)."),("Write the nth term",r"The \(n\)th term is \[5+4(n-1)=4n+1.\]"),("Solve for n",r"Set \(4n+1=2009\). Then \(4n=2008\), so \(n=502\)."),("Conclude",r"The answer is \(\boxed{502}\)."),],
+9:[("Change variables",r"Let \(u=x+3\). Then \(x=u-3\), and the equation becomes \[f(u)=3(u-3)^2+7(u-3)+4.\]"),("Expand",r"\[3(u^2-6u+9)+7u-21+4=3u^2-18u+27+7u-21+4.\]"),("Combine terms",r"So \[f(u)=3u^2-11u+10.\] Therefore \(a=3\), \(b=-11\), and \(c=10\)."),("Add coefficients",r"\[a+b+c=3-11+10=2.\]"),("Conclude",r"The answer is \(\boxed{2}\)."),],
+10:[("Let BD be x",r"Diagonal \(\overline{BD}\) forms triangles \(ABD\) and \(BCD\). Let \(BD=x\)."),("Use triangle BCD",r"In triangle \(BCD\), the sides are \(17\), \(5\), and \(x\). The triangle inequality requires \[5+x>17,\] so \(x>12\)."),("Use triangle ABD",r"In triangle \(ABD\), the sides are \(5\), \(9\), and \(x\). The triangle inequality requires \[5+9>x,\] so \(x<14\)."),("Use the integer condition",r"The only integer satisfying \(12<x<14\) is \(x=13\)."),("Conclude",r"\(BD=\boxed{13}\)."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -1903,7 +1939,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2008" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2009" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -1992,7 +2028,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2008 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2009 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
