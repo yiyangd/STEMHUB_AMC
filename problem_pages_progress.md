@@ -2332,3 +2332,19 @@
 - Pushed: pending
 - Next batch should start from: 2024 AMC 10B Problem 11
 - Review notes: none.
+
+## Batch 144: 2024 AMC 10B Problems 12-20
+
+- Start time: 2026-07-01T04:46:58-07:00
+- End time: 2026-07-01T04:46:59-07:00
+- Processed contest: AMC 10
+- Processed range: 2024 AMC 10B Problems 12-20
+- Generated count: 9
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2024 AMC 10B Problem 11 skipped: rectangle geometry depends on the missing figure.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2024 AMC 10B Problem 21
+- Review notes: none.
