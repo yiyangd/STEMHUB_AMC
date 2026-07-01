@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 167
+BATCH_NUMBER = 168
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+TARGET_NUMBERS = {11,12,13,14,15,16,17,18,19,20}
 SKIPPED = []
-BATCH_LABEL = "2005 AMC 12B Problems 1-10"
-NEXT_START = "2005 AMC 12B Problem 11"
+BATCH_LABEL = "2005 AMC 12B Problems 11-20"
+NEXT_START = "2005 AMC 12B Problem 21"
 
-ANS={1:("A","100"),2:("D","20"),3:("C",r"\frac25"),4:("B","2"),5:("A",r"80-20\pi"),6:("A","3"),7:("D","24"),8:("C","2"),9:("B","1"),10:("E","250")}
+ANS={11:("D",r"\frac12"),12:("D","8"),13:("D",r"\frac72"),14:("E",r"6+6\sqrt2"),15:("D","4"),16:("D",r"1+\sqrt3"),17:("B","1"),18:("C","51"),19:("E","154"),20:("C","34")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1097,6 +1097,44 @@ SOL.update({
 8:[("Find the vertex",r"The parabola \(y=x^2+a^2\) has vertex \((0,a^2)\)."),("Put the vertex on the line",r"The line \(y=x+a\) passes through \((0,a^2)\) exactly when \[a^2=0+a=a.\]"),("Solve for a",r"The equation \(a^2=a\) gives \(a(a-1)=0\), so \(a=0\) or \(a=1\)."),("Count values",r"There are \(2\) possible values of \(a\)."),("Conclude",r"The answer is \(\boxed{2}\)."),],
 9:[("Find the median",r"The cumulative percentages are \(10\%\) at \(70\), \(35\%\) at \(80\), and \(55\%\) at \(85\). Therefore the median score is \(85\)."),("Compute the mean",r"The remaining percentage is \(30\%\), so the mean is \[0.10(70)+0.25(80)+0.20(85)+0.15(90)+0.30(95)=86.\]"),("Compare",r"The difference between the mean and median is \(86-85=1\)."),("Conclude",r"The answer is \(\boxed{1}\)."),],
 10:[("Generate the first few terms",r"The first term is \(2005\). The next term is \(2^3+0^3+0^3+5^3=8+125=133\)."),("Continue to see the pattern",r"From \(133\), the next term is \(1^3+3^3+3^3=55\). From \(55\), the next term is \(5^3+5^3=250\). From \(250\), the next term is \(2^3+5^3+0^3=133\)."),("Identify the cycle",r"After the first term, the sequence cycles through \[133,\ 55,\ 250\] with period \(3\)."),("Locate the 2005th term",r"Term \(2\) is \(133\). Since \(2005-2=2003\), and \(2003\equiv2\pmod3\), the \(2005\)th term is the third entry in the cycle, \(250\)."),("Conclude",r"The answer is \(\boxed{250}\)."),],
+})
+OV.update({
+11:(r"An envelope contains eight bills: \(2\) ones, \(2\) fives, \(2\) tens, and \(2\) twenties. Two bills are drawn at random without replacement. What is the probability that their sum is \(\$20\) or more?",[("A",r"\(\frac14\)"),("B",r"\(\frac27\)"),("C",r"\(\frac37\)"),("D",r"\(\frac12\)"),("E",r"\(\frac23\)")]),
+12:(r"The quadratic equation \(x^2+mx+n=0\) has roots that are twice those of \(x^2+px+m=0\), and none of \(m,n,\) and \(p\) is zero. What is the value of \(n/p\)?",[("A","1"),("B","2"),("C","4"),("D","8"),("E","16")]),
+13:(r"Suppose that \(4^{x_1}=5,\ 5^{x_2}=6,\ 6^{x_3}=7,\ldots,\ 127^{x_{124}}=128\). What is \(x_1x_2\cdots x_{124}\)?",[("A","2"),("B",r"\(\frac52\)"),("C","3"),("D",r"\(\frac72\)"),("E","4")]),
+14:(r"A circle having center \((0,k)\), with \(k>6\), is tangent to the lines \(y=x\), \(y=-x\), and \(y=6\). What is the radius of this circle?",[("A",r"\(6\sqrt2-6\)"),("B","6"),("C",r"\(6\sqrt2\)"),("D","12"),("E",r"\(6+6\sqrt2\)")]),
+15:(r"The sum of four two-digit numbers is \(221\). None of the eight digits is \(0\), and no two of them are the same. Which of the following is not included among the eight digits?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+16:(r"Eight spheres of radius \(1\), one per octant, are each tangent to the coordinate planes. What is the radius of the smallest sphere, centered at the origin, that contains these eight spheres?",[("A",r"\(\sqrt2\)"),("B",r"\(\sqrt3\)"),("C",r"\(1+\sqrt2\)"),("D",r"\(1+\sqrt3\)"),("E","3")]),
+17:(r"How many distinct four-tuples \((a,b,c,d)\) of rational numbers are there with \(a\log_{10}2+b\log_{10}3+c\log_{10}5+d\log_{10}7=2005\)?",[("A","0"),("B","1"),("C","17"),("D","2004"),("E","infinitely many")]),
+18:(r"Let \(A(2,2)\) and \(B(7,7)\) be points in the plane. Define \(R\) as the region in the first quadrant consisting of those points \(C\) such that \(\triangle ABC\) is an acute triangle. What is the closest integer to the area of the region \(R\)?",[("A","25"),("B","39"),("C","51"),("D","60"),("E","80")]),
+19:(r"Let \(x\) and \(y\) be two-digit integers such that \(y\) is obtained by reversing the digits of \(x\). The integers \(x\) and \(y\) satisfy \(x^2-y^2=m^2\) for some positive integer \(m\). What is \(x+y+m\)?",[("A","88"),("B","112"),("C","116"),("D","144"),("E","154")]),
+20:(r"Let \(a,b,c,d,e,f,g,\) and \(h\) be distinct elements in the set \(\{-7,-5,-3,-2,2,4,6,13\}\). What is the minimum possible value of \((a+b+c+d)^2+(e+f+g+h)^2\)?",[("A","30"),("B","32"),("C","34"),("D","40"),("E","50")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Count favorable bill pairs or use the complement.",
+12:"Compare sums and products of related roots.",
+13:"Use telescoping logarithms.",
+14:"Equate the radius to distances from the center to tangent lines.",
+15:"Use digit sums modulo \(9\).",
+16:"Find the farthest point of a unit sphere centered at \((\pm1,\pm1,\pm1)\).",
+17:"Exponentiate and use uniqueness of prime factorization.",
+18:"Use acute-angle inequalities and subtract the Thales circle.",
+19:"Use reversed digits and force a square.",
+20:"Partition the set into two groups with sums as close as possible.",
+})
+
+SOL.update({
+11:[("Count all pairs",r"There are \(\binom82=28\) equally likely pairs of bills."),("Count the complement",r"It is easier to count pairs with sum less than \(20\). These can only use the two \(1\)'s, two \(5\)'s, and two \(10\)'s, except that the pair \(10+10=20\) is not less than \(20\)."),("Compute complement size",r"Among those six bills there are \(\binom62=15\) pairs, and one is the pair of two tens. So \(14\) pairs have sum less than \(20\)."),("Find favorable pairs",r"The favorable pairs number \(28-14=14\)."),("Compute probability",r"The probability is \(\frac{14}{28}=\frac12\)."),("Conclude",r"The answer is $\boxed{\frac12}$."),],
+12:[("Name roots of the second equation",r"Let the roots of \(x^2+px+m=0\) be \(r\) and \(s\). Then the roots of \(x^2+mx+n=0\) are \(2r\) and \(2s\)."),("Compare sums",r"For the second equation, \(r+s=-p\). For the first equation, \(2r+2s=-m\). Thus \(-m=2(-p)\), so \(m=2p\)."),("Compare products",r"For the second equation, \(rs=m\). For the first equation, \((2r)(2s)=n\), so \(n=4rs=4m\)."),("Find n over p",r"Since \(m=2p\), we have \(n=4m=8p\). Therefore \(\frac np=8\)."),("Conclude",r"The answer is \(\boxed{8}\)."),],
+13:[("Rewrite each exponent",r"From \(4^{x_1}=5\), we have \(x_1=\log_4 5\). Similarly \(x_2=\log_5 6\), and so on."),("Write the product",r"The product is \[\log_4 5\cdot\log_5 6\cdot\log_6 7\cdots\log_{127}128.\]"),("Use telescoping logs",r"Using \(\log_a b\cdot\log_b c=\log_a c\), the entire product collapses to \[\log_4 128.\]"),("Evaluate",r"Since \(4=2^2\) and \(128=2^7\), \[\log_4 128=\frac72.\]"),("Conclude",r"The answer is $\boxed{\frac72}$."),],
+14:[("Use distance to y equals 6",r"The circle has center \((0,k)\) with \(k>6\). Its distance to the horizontal line \(y=6\) is \(k-6\), so the radius is \(r=k-6\)."),("Use distance to y equals x",r"The distance from \((0,k)\) to the line \(y=x\), or \(x-y=0\), is \[\frac{k}{\sqrt2}.\] This is also the radius."),("Equate the distances",r"Thus \(k-6=\frac{k}{\sqrt2}\). It is a little cleaner to use \(r=k-6\), so \(k=r+6\) and \[r=\frac{r+6}{\sqrt2}.\]"),("Solve for r",r"This gives \(r(\sqrt2-1)=6\), so \[r=\frac{6}{\sqrt2-1}=6(\sqrt2+1).\]"),("Conclude",r"The radius is \(\boxed{6+6\sqrt2}\)."),],
+15:[("Use digit sums",r"Let \(T\) be the sum of the four tens digits and \(U\) the sum of the four units digits. The sum of the four two-digit numbers is \(10T+U=221\)."),("Use the missing digit",r"The eight used digits are \(1\) through \(9\) except for one missing digit \(d\). Thus \(T+U=45-d\)."),("Subtract equations",r"Subtracting gives \[9T=221-(45-d)=176+d.\]"),("Use divisibility by 9",r"The right side must be divisible by \(9\). Since \(176\equiv5\pmod9\), we need \(d\equiv4\pmod9\). The missing digit is \(4\)."),("Conclude",r"The answer is \(\boxed{4}\)."),],
+16:[("Locate the small sphere centers",r"The sphere in each octant tangent to the coordinate planes has center \((\pm1,\pm1,\pm1)\), with signs chosen according to the octant."),("Find distance from origin to a center",r"Each such center is \[\sqrt{1^2+1^2+1^2}=\sqrt3\] units from the origin."),("Add the small radius",r"To contain a unit sphere centered \(\sqrt3\) away, the larger sphere centered at the origin must extend one more unit beyond that center."),("Compute radius",r"The required radius is \(1+\sqrt3\)."),("Conclude",r"The answer is \(\boxed{1+\sqrt3}\)."),],
+17:[("Exponentiate the equation",r"The equation is about base-\(10\) logarithms. Exponentiating gives \[2^a3^b5^c7^d=10^{2005}=2^{2005}5^{2005}.\]"),("Handle rational exponents carefully",r"Because \(a,b,c,d\) are rational, multiply all exponents by a common denominator. Unique prime factorization still forces the exponents of each prime to match."),("Match prime exponents",r"Thus \(a=2005\), \(b=0\), \(c=2005\), and \(d=0\)."),("Count solutions",r"This gives exactly one rational four-tuple."),("Conclude",r"The answer is \(\boxed{1}\)."),],
+18:[("Translate acute conditions at A and B",r"For angle \(A\) to be acute, \((B-A)\cdot(C-A)>0\), which gives \(x+y>4\). For angle \(B\) to be acute, \((A-B)\cdot(C-B)>0\), which gives \(x+y<14\)."),("Translate the condition at C",r"The angle at \(C\) is right on the circle with diameter \(\overline{AB}\). It is acute outside that circle. The circle has center \((4.5,4.5)\) and radius \(\frac{5\sqrt2}{2}\)."),("Find the strip area",r"In the first quadrant, the region \(4<x+y<14\) has area \[\frac12(14)^2-\frac12(4)^2=98-8=90.\]"),("Subtract the circle",r"The circle lies inside this strip and is tangent to the two boundary lines. Its area is \[\pi\left(\frac{5\sqrt2}{2}\right)^2=\frac{25\pi}{2}.\]"),("Approximate",r"The desired area is \[90-\frac{25\pi}{2}\approx50.7,\] whose closest integer is \(51\)."),("Conclude",r"The answer is \(\boxed{51}\)."),],
+19:[("Write the reversed numbers",r"Let \(x=10a+b\) and \(y=10b+a\), with \(a>b\) so that \(x^2-y^2\) is positive."),("Factor the difference of squares",r"We have \[x-y=9(a-b),\qquad x+y=11(a+b),\] so \[x^2-y^2=99(a-b)(a+b)=99(a^2-b^2).\]"),("Force a square",r"Since \(99=9\cdot11\), we need \(11(a^2-b^2)\) to be a square. With digit values, the only possibility is \(a^2-b^2=11\)."),("Find the digits",r"The digit pair satisfying \(a^2-b^2=11\) is \(a=6,b=5\). Thus \(x=65\) and \(y=56\)."),("Find m and finish",r"Then \(x^2-y^2=1089=33^2\), so \(m=33\). Therefore \[x+y+m=65+56+33=154.\]"),("Conclude",r"The answer is \(\boxed{154}\)."),],
+20:[("Use group sums",r"The total sum of all eight numbers is \(8\). Let \(s=a+b+c+d\). Then the other four numbers have sum \(8-s\)."),("Rewrite the expression",r"The expression becomes \[s^2+(8-s)^2=2(s-4)^2+32.\] So we want a four-element subset whose sum is as close to \(4\) as possible."),("Check whether 4 is possible",r"A short subset check shows no four elements sum to \(4\). For example, with one negative number the three positive numbers already sum at least \(12\); with two negative numbers, none of the needed positive-pair sums occur; the other cases are even farther away."),("Find a sum close to 4",r"A sum of \(3\) is possible: \[-7+(-5)+2+13=3.\] The complementary group then has sum \(5\)."),("Compute the minimum",r"This gives \[3^2+5^2=9+25=34.\] Since sum \(4\) is impossible, this is minimal."),("Conclude",r"The answer is \(\boxed{34}\)."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
