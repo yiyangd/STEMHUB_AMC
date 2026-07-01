@@ -3,42 +3,32 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 74
+BATCH_NUMBER = 75
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2013_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+TARGET_NUMBERS = {11,12,13,14,15}
 SKIPPED = []
-BATCH_LABEL = "2013 AMC 10B Problems 1-10"
-NEXT_START = "2013 AMC 10B Problem 11"
+BATCH_LABEL = "2013 AMC 10B Problems 11-15"
+NEXT_START = "2013 AMC 10B Problem 16"
 
-ANS={1:("C",r"\frac{7}{12}"),2:("A","600"),3:("C",r"-5"),4:("D","149"),5:("B",r"-15"),6:("C","24.75"),7:("B",r"\frac{\sqrt3}{2}"),8:("B","16"),9:("D","160"),10:("C","20")}
+ANS={11:("B","2"),12:("B",r"\frac49"),13:("E","8"),14:("E","three lines"),15:("B",r"\frac{\sqrt6}{2}")}
 
 OV={
-1:(r"What is $\frac{2+4+6}{1+3+5}-\frac{1+3+5}{2+4+6}$?",[("A",r"-\frac1{36}"),("B",r"\frac5{12}"),("C",r"\frac7{12}"),("D",r"\frac{49}{20}"),("E",r"\frac{43}{3}")]),
-2:(r"Mr. Green measures his rectangular garden as $15$ steps by $20$ steps. Each step is $2$ feet long. He expects half a pound of potatoes per square foot. How many pounds of potatoes does he expect?",[("A","600"),("B","800"),("C","1000"),("D","1200"),("E","1400")]),
-3:(r"On a January day, the high temperature was $16$ degrees higher than the low temperature, and the average of the high and low temperatures was $3^\circ$. What was the low temperature?",[("A",r"-13"),("B",r"-8"),("C",r"-5"),("D","3"),("E","11")]),
-4:(r"When counting from $3$ to $201$, $53$ is the $51$st number counted. When counting backwards from $201$ to $3$, $53$ is the $n$th number counted. What is $n$?",[("A","146"),("B","147"),("C","148"),("D","149"),("E","150")]),
-5:(r"Positive integers $a$ and $b$ are each less than $6$. What is the smallest possible value of $2a-ab$?",[("A",r"-20"),("B",r"-15"),("C",r"-10"),("D","0"),("E","2")]),
-6:(r"The average age of $33$ fifth-graders is $11$. The average age of $55$ of their parents is $33$. What is the average age of all these parents and fifth-graders?",[("A","22"),("B","23.25"),("C","24.75"),("D","26.25"),("E","28")]),
-7:(r"Six points are equally spaced around a circle of radius $1$. Three of these points are vertices of a triangle that is neither equilateral nor isosceles. What is the area of this triangle?",[("A",r"\frac{\sqrt3}{3}"),("B",r"\frac{\sqrt3}{2}"),("C","1"),("D",r"\sqrt2"),("E",r"2\sqrt3")]),
-8:(r"Ray's car averages $40$ miles per gallon, and Tom's car averages $10$ miles per gallon. Ray and Tom each drive the same number of miles. What is the cars' combined rate in miles per gallon?",[("A","10"),("B","16"),("C","25"),("D","30"),("E","40")]),
-9:(r"Three positive integers are each greater than $1$, have product $27000$, and are pairwise relatively prime. What is their sum?",[("A","100"),("B","137"),("C","156"),("D","160"),("E","165")]),
-10:(r"A basketball team's players were successful on $50\%$ of their two-point shots and $40\%$ of their three-point shots, resulting in $54$ points. They attempted $50\%$ more two-point shots than three-point shots. How many three-point shots did they attempt?",[("A","10"),("B","15"),("C","20"),("D","25"),("E","30")]),
+11:(r"Real numbers $x$ and $y$ satisfy $x^2+y^2=10x-6y-34$. What is $x+y$?",[("A","1"),("B","2"),("C","3"),("D","6"),("E","8")]),
+12:(r"Let $S$ be the set of sides and diagonals of a regular pentagon. A pair of elements of $S$ is selected at random without replacement. What is the probability that the two chosen segments have the same length?",[("A",r"\frac25"),("B",r"\frac49"),("C",r"\frac12"),("D",r"\frac59"),("E",r"\frac45")]),
+13:(r"Jo and Blair take turns counting from $1$ to one more than the last number said by the other person. Jo starts by saying $1$, Blair follows by saying $1,2$, Jo then says $1,2,3$, and so on. What is the $53$rd number said?",[("A","2"),("B","3"),("C","5"),("D","6"),("E","8")]),
+14:(r"Define $a\clubsuit b=a^2b-ab^2$. Which describes the set of points $(x,y)$ for which $x\clubsuit y=y\clubsuit x$?",[("A","a finite set of points"),("B","one line"),("C","two parallel lines"),("D","two intersecting lines"),("E","three lines")]),
+15:(r"A wire is cut into two pieces, one of length $a$ and the other of length $b$. The piece of length $a$ is bent to form an equilateral triangle, and the piece of length $b$ is bent to form a regular hexagon. The triangle and the hexagon have equal area. What is $\frac ab$?",[("A","1"),("B",r"\frac{\sqrt6}{2}"),("C",r"\sqrt3"),("D",r"2"),("E",r"\frac32")]),
 }
 
-KEY_OVERRIDES={1:"Compute the two sums first, then subtract fractions.",2:"Convert steps to feet before computing area and yield.",3:"Use average and difference to recover the two temperatures.",4:"Counting backward changes the position to a distance from 201.",5:"Factor the expression and maximize the negative factor.",6:"Use a weighted average by group size.",7:"The only scalene triangle from three vertices of a regular hexagon has side lengths $1,\sqrt3,2$.",8:"For equal distances, add gallons used and divide total miles by total gallons.",9:"Pairwise relatively prime factors must receive whole prime-power blocks.",10:"Use variables for shot attempts and expected made-shot points."}
+KEY_OVERRIDES={11:"Complete the square to force both squared terms to be zero.",12:"A regular pentagon has five sides of one length and five diagonals of another length.",13:"Use triangular numbers to locate the 53rd spoken number.",14:"Factor the equation defining the point set.",15:"Express both areas in terms of the two wire lengths."}
 
 SOL={
-1:[("Compute sums",r"The even sum is $2+4+6=12$, and the odd sum is $1+3+5=9$."),("Substitute",r"The expression becomes $\frac{12}{9}-\frac{9}{12}=\frac43-\frac34$."),("Use a common denominator",r"With denominator $12$, this is $\frac{16}{12}-\frac9{12}=\frac7{12}$."),("Conclude",r"The answer is $\boxed{\frac7{12}}$."),],
-2:[("Convert dimensions",r"Each step is $2$ feet, so the garden is $30$ feet by $40$ feet."),("Find area",r"The area is $30\cdot40=1200$ square feet."),("Apply yield",r"At half a pound per square foot, the expected yield is $1200\cdot\frac12=600$ pounds."),("Conclude",r"The answer is $\boxed{600}$."),],
-3:[("Name the low temperature",r"Let the low temperature be $L$. Then the high temperature is $L+16$."),("Use the average",r"Their average is $3$, so $\frac{L+(L+16)}{2}=3$."),("Solve",r"This gives $2L+16=6$, so $2L=-10$ and $L=-5$."),("Conclude",r"The low temperature was $\boxed{-5^\circ}$."),],
-4:[("Count backward directly",r"When counting backward from $201$, the first number is $201$, the second is $200$, and so on."),("Use the position formula",r"The position of $53$ is $201-53+1$. The $+1$ is important because both endpoints are included."),("Compute",r"We get $201-53+1=149$."),("Conclude",r"Thus $n=\boxed{149}$."),],
-5:[("Factor the expression",r"The expression is $2a-ab=a(2-b)$. Since $a$ is positive, to make the value as small as possible we want $a$ large and $2-b$ as negative as possible."),("Choose b",r"The largest possible $b$ less than $6$ is $5$, giving $2-b=-3$."),("Choose a",r"The largest possible $a$ is also $5$, so the smallest value is $5(2-5)=-15$."),("Conclude",r"The answer is $\boxed{-15}$."),],
-6:[("Find total ages",r"The $33$ fifth-graders have total age $33\cdot11=363$. The $55$ parents have total age $55\cdot33=1815$."),("Add people and ages",r"Together there are $33+55=88$ people and total age $363+1815=2178$."),("Compute weighted average",r"The average is $2178/88=24.75$."),("Conclude",r"The answer is $\boxed{24.75}$."),],
-7:[("Understand the possible triangle",r"Six equally spaced points form a regular hexagon. A triangle that is neither equilateral nor isosceles must use gaps of $1$, $2$, and $3$ steps around the hexagon."),("Find side lengths",r"These correspond to chord lengths $1$, $\sqrt3$, and $2$ in a unit circle."),("Recognize the triangle",r"A triangle with sides $1$, $\sqrt3$, and $2$ is a $30$-$60$-$90$ right triangle."),("Compute area",r"Its area is $\frac12\cdot1\cdot\sqrt3=\frac{\sqrt3}{2}$. The answer is $\boxed{\frac{\sqrt3}{2}}$."),],
-8:[("Use a common distance",r"Suppose each person drives $40$ miles. Ray uses $1$ gallon, while Tom uses $4$ gallons."),("Combine miles and gallons",r"Together they drive $80$ miles and use $5$ gallons."),("Compute rate",r"The combined rate is $80/5=16$ miles per gallon."),("Conclude",r"The answer is $\boxed{16}$."),],
-9:[("Factor the product",r"We have $27000=27\cdot1000=3^3\cdot2^3\cdot5^3$."),("Use pairwise relative primality",r"Since the three integers are pairwise relatively prime, powers of the same prime cannot be split between different integers. Each prime-power block must go entirely into one of the three numbers."),("Assign the blocks",r"The three numbers greater than $1$ must therefore be $2^3=8$, $3^3=27$, and $5^3=125$ in some order."),("Add",r"Their sum is $8+27+125=160$. The answer is $\boxed{160}$."),],
-10:[("Name the attempts",r"Let the number of three-point attempts be $x$. Then the number of two-point attempts is $1.5x$."),("Compute expected successful points",r"The three-point shots produce $0.40x$ makes, worth $3(0.40x)=1.2x$ points. The two-point shots produce $0.50(1.5x)$ makes, worth $2\cdot0.50\cdot1.5x=1.5x$ points."),("Use total points",r"The total is $1.2x+1.5x=2.7x=54$."),("Solve",r"Thus $x=20$. The answer is $\boxed{20}$."),],
+11:[("Move all terms to one side",r"Rewrite the equation as $x^2-10x+y^2+6y+34=0$."),("Complete the squares",r"We have $x^2-10x=(x-5)^2-25$ and $y^2+6y=(y+3)^2-9$."),("Simplify",r"Substituting gives $(x-5)^2+(y+3)^2=0$."),("Use nonnegative squares",r"Both squares must be $0$, so $x=5$ and $y=-3$. Thus $x+y=2$, and the answer is $\boxed{2}$."),],
+12:[("Count the segments",r"A regular pentagon has $5$ sides and $5$ diagonals, so $S$ has $10$ segments."),("Count favorable pairs",r"Two chosen segments have the same length if both are sides or both are diagonals. This gives $\binom52+\binom52=10+10=20$ favorable pairs."),("Count all pairs",r"The total number of pairs is $\binom{10}{2}=45$."),("Compute probability",r"The probability is $\frac{20}{45}=\frac49$. The answer is $\boxed{\frac49}$."),],
+13:[("Group by turns",r"The first turn contributes $1$ number, the second contributes $2$, the third contributes $3$, and so on."),("Use triangular numbers",r"After $9$ turns, the total number said is $1+2+\cdots+9=45$. After $10$ turns, the total is $55$."),("Locate the 53rd number",r"The $53$rd number is in the $10$th turn. It is the $53-45=8$th number said during that turn."),("Read the number",r"During the $10$th turn, the speaker says $1,2,\ldots,10$. The $8$th number is $8$, so the answer is $\boxed{8}$."),],
+14:[("Write both sides",r"The condition is $x^2y-xy^2=y^2x-yx^2$."),("Move everything to one side",r"The right side is the negative of the left side, so the equation becomes $2(x^2y-xy^2)=0$."),("Factor",r"This is $2xy(x-y)=0$."),("Interpret the factors",r"Thus $x=0$, or $y=0$, or $x=y$. These are three lines. The answer is $\boxed{\text{three lines}}$."),],
+15:[("Find the triangle area",r"The equilateral triangle has perimeter $a$, so its side length is $a/3$. Its area is $\frac{\sqrt3}{4}\left(\frac a3\right)^2=\frac{\sqrt3a^2}{36}$."),("Find the hexagon area",r"The regular hexagon has perimeter $b$, so its side length is $b/6$. Its area is $6\cdot\frac{\sqrt3}{4}\left(\frac b6\right)^2=\frac{\sqrt3b^2}{24}$."),("Set areas equal",r"Equal areas give $\frac{\sqrt3a^2}{36}=\frac{\sqrt3b^2}{24}$, so $\frac{a^2}{b^2}=\frac{36}{24}=\frac32$."),("Take the positive root",r"Since lengths are positive, $\frac ab=\sqrt{\frac32}=\frac{\sqrt6}{2}$. The answer is $\boxed{\frac{\sqrt6}{2}}$."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -248,6 +238,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
