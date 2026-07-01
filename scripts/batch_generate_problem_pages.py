@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 146
+BATCH_NUMBER = 147
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2002_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,6,7,9,10}
-SKIPPED = ["2002 AMC 12A Problem 5 skipped: shaded-circle region depends on the missing figure.", "2002 AMC 12A Problem 8 skipped: flag-area comparison depends on the missing figure."]
-BATCH_LABEL = "2002 AMC 12A Problems 1-4,6,7,9,10"
-NEXT_START = "2002 AMC 12A Problem 11"
+TARGET_NUMBERS = {11,12,13,14,15,16,17,18,20}
+SKIPPED = ["2002 AMC 12A Problem 19 skipped: composition count depends on the missing graph of f."]
+BATCH_LABEL = "2002 AMC 12A Problems 11-18,20"
+NEXT_START = "2002 AMC 12A Problem 21"
 
-ANS={1:("A",r"\frac72"),2:("A","15"),3:("B","1"),4:("B","60"),6:("E","infinitely many"),7:("A",r"\frac49"),9:("B","13"),10:("D",r"\frac25")}
+ANS={11:("B","48"),12:("B","1"),13:("C",r"\sqrt5"),14:("D","2"),15:("D","14"),16:("A",r"\frac25"),17:("B","207"),18:("C","20"),20:("C","5")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -391,6 +391,42 @@ SOL.update({
 7:[("Use the arc length formula",r"Arc length is proportional to \(r\theta\), where \(\theta\) is the central angle in degrees or radians as long as the same unit is used for both circles."),("Set the arc lengths equal",r"The two arc lengths are equal, so \[45r_A=30r_B.\] Therefore \[\frac{r_A}{r_B}=\frac{30}{45}=\frac23.\]"),("Convert radius ratio to area ratio",r"Circle area is proportional to the square of the radius. Thus \[\frac{[A]}{[B]}=\left(\frac{r_A}{r_B}\right)^2=\left(\frac23\right)^2=\frac49.\]"),("Conclude",r"The answer is $\boxed{\frac49}$."),],
 9:[("Start with a total-size lower bound",r"The total file size is \[3(0.8)+12(0.7)+15(0.4)=2.4+8.4+6=16.8\text{ MB}.\] Since each disk holds \(1.44\) MB, at least \(12\) disks would be needed by total size alone."),("Show 12 disks cannot work",r"Twelve disks have total capacity \(17.28\) MB, leaving only \(0.48\) MB of slack. But each \(0.8\) MB file cannot be paired with a \(0.7\) MB file, so even if it is paired with a \(0.4\) MB file, that disk has slack \(1.44-1.2=0.24\). Three such disks already require \(0.72\) MB of slack."),("Construct a 13-disk packing",r"Use three disks each holding \(0.8+0.4\). Use six disks each holding \(0.7+0.7\). The remaining twelve \(0.4\) MB files fit as four disks of \(0.4+0.4+0.4\)." ),("Count the disks",r"This uses \[3+6+4=13\] disks."),("Conclude",r"The minimum number is $\boxed{13}$."),],
 10:[("Track the first transfer",r"Initially the first cup has $4$ ounces of coffee, and the second cup has $4$ ounces of cream. Sarah transfers half the coffee, so the first cup has $2$ ounces of coffee, and the second cup has $2$ ounces of coffee plus $4$ ounces of cream."),("Find the mixture in the second cup",r"The second cup now has $6$ ounces total, with coffee fraction \(\frac{2}{6}=\frac13\) and cream fraction \(\frac{4}{6}=\frac23\)." ),("Transfer half back",r"Half of the second cup is $3$ ounces. That transferred liquid contains \[3\cdot\frac13=1\] ounce of coffee and \[3\cdot\frac23=2\] ounces of cream."),("Compute the first cup contents",r"The first cup ends with \(2+1=3\) ounces of coffee and \(2\) ounces of cream, for \(5\) ounces total."),("Conclude",r"The fraction that is cream is \[\frac25.\] The answer is $\boxed{\frac25}$."),],
+})
+
+OV.update({
+11:(r"Mr. Earl E. Bird leaves his house for work at exactly $8{:}00$ A.M. every morning. When he averages $40$ miles per hour, he arrives three minutes late. When he averages $60$ miles per hour, he arrives three minutes early. At what average speed, in miles per hour, should he drive to arrive precisely on time?",[("A","45"),("B","48"),("C","50"),("D","55"),("E","58")]),
+12:(r"Both roots of the quadratic equation \[x^2-63x+k=0\] are prime numbers. How many possible values of $k$ are there?",[("A","0"),("B","1"),("C","2"),("D","3"),("E","more than four")]),
+13:(r"Two different positive numbers $a$ and $b$ each differ from their reciprocals by $1$. What is $a+b$?",[("A","1"),("B","2"),("C",r"$\sqrt5$"),("D",r"$\sqrt6$"),("E","3")]),
+14:(r"For all positive integers $n$, let \[f(n)=\log_{2002}(n^2).\] Let \[N=f(11)+f(13)+f(14).\] Which relation is true?",[("A",r"$N<1$"),("B",r"$N=1$"),("C",r"$1<N<2$"),("D",r"$N=2$"),("E",r"$N>2$")]),
+15:(r"The mean, median, unique mode, and range of a collection of eight integers are all equal to $8$. What is the largest integer that can be an element of this collection?",[("A","11"),("B","12"),("C","13"),("D","14"),("E","15")]),
+16:(r"Tina randomly selects two distinct numbers from the set $\{1,2,3,4,5\}$, and Sergio randomly selects a number from the set $\{1,2,\ldots,10\}$. What is the probability that Sergio's number is larger than the sum of the two numbers chosen by Tina?",[("A",r"$\frac25$"),("B",r"$\frac9{20}$"),("C",r"$\frac12$"),("D",r"$\frac{11}{20}$"),("E",r"$\frac{24}{25}$")]),
+17:(r"Several sets of prime numbers, such as $\{7,83,421,659\}$, use each of the nine nonzero digits exactly once. What is the smallest possible sum such a set of primes could have?",[("A","193"),("B","207"),("C","225"),("D","252"),("E","447")]),
+18:(r"Let $C_1$ and $C_2$ be circles defined by \[(x-10)^2+y^2=36\] and \[(x+15)^2+y^2=81,\] respectively. What is the length of the shortest line segment $\overline{PQ}$ that is tangent to $C_1$ at $P$ and to $C_2$ at $Q$?",[("A","15"),("B","18"),("C","20"),("D","21"),("E","24")]),
+20:(r"Suppose that $a$ and $b$ are digits, not both nine and not both zero, and the repeating decimal $0.\overline{ab}$ is expressed as a fraction in lowest terms. How many different denominators are possible?",[("A","3"),("B","4"),("C","5"),("D","8"),("E","9")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Use the six-minute difference between two travel times.",
+12:"Use Vieta's formulas and parity of prime sums.",
+13:"Solve the two reciprocal-difference equations together.",
+14:"Combine logarithms and use 11 times 13 times 14 equals 2002.",
+15:"Use sorted order, median, sum, range, and mode constraints.",
+16:"Count favorable choices over all unordered Tina pairs and Sergio choices.",
+17:"Partition digits into primes and minimize place-value contribution.",
+18:"Use the internal common tangent length between two circles.",
+20:"Reduce 0.ab repeating to k over 99 and count possible reduced denominators.",
+})
+
+SOL.update({
+11:[("Use travel time rather than speed directly",r"Let the distance to work be \(d\) miles, and let the on-time travel time be \(t\) hours."),("Write the two given times",r"At $40$ mph, he is $3$ minutes late, so \[\frac d{40}=t+\frac{3}{60}.\] At $60$ mph, he is $3$ minutes early, so \[\frac d{60}=t-\frac{3}{60}.\]"),("Subtract the equations",r"The difference between the two travel times is $6$ minutes, or \(\frac{1}{10}\) hour. Thus \[\frac d{40}-\frac d{60}=\frac1{10}.\]"),("Solve for the distance",r"Since \(\frac1{40}-\frac1{60}=\frac1{120}\), we get \[\frac d{120}=\frac1{10},\] so \(d=12\)." ),("Find the on-time speed",r"At $60$ mph, the trip takes \(\frac{12}{60}=\frac15\) hour and arrives $3$ minutes early, so the on-time trip takes \(\frac15+\frac1{20}=\frac14\) hour. The needed speed is \[12\div\frac14=48.\]"),("Conclude",r"The answer is $\boxed{48}$."),],
+12:[("Use Vieta's formulas",r"If the prime roots are \(p\) and \(q\), then \[p+q=63,\qquad pq=k.\]"),("Use parity",r"The sum \(63\) is odd. The only way two primes have an odd sum is for one of them to be \(2\), because all other primes are odd."),("Find the roots",r"Thus the roots must be \[2\quad\text{and}\quad61.\] Both are prime."),("Find k",r"Then \[k=2\cdot61=122.\] This gives exactly one possible value of \(k\)."),("Conclude",r"The answer is $\boxed{1}$."),],
+13:[("Interpret the phrase carefully",r"For a positive number \(x\), differing from its reciprocal by $1$ means either \[x-\frac1x=1\] or \[\frac1x-x=1.\]"),("Solve the first equation",r"The equation \(x-\frac1x=1\) gives \[x^2-x-1=0,\] whose positive solution is \[\frac{1+\sqrt5}{2}.\]"),("Solve the second equation",r"The equation \(\frac1x-x=1\) gives \[x^2+x-1=0,\] whose positive solution is \[\frac{\sqrt5-1}{2}.\]"),("Add the two different numbers",r"The sum is \[\frac{1+\sqrt5}{2}+\frac{\sqrt5-1}{2}=\sqrt5.\]"),("Conclude",r"The answer is $\boxed{\sqrt5}$."),],
+14:[("Use log rules",r"We have \[N=\log_{2002}(11^2)+\log_{2002}(13^2)+\log_{2002}(14^2).\]"),("Combine the logarithms",r"This is \[\log_{2002}\bigl(11^2\cdot13^2\cdot14^2\bigr)=\log_{2002}\bigl((11\cdot13\cdot14)^2\bigr).\]"),("Notice the product",r"Now \[11\cdot13\cdot14=2002.\] Therefore \[N=\log_{2002}(2002^2).\]"),("Evaluate",r"Since \(\log_b(b^2)=2\), we get \(N=2\)."),("Conclude",r"The correct relation is $\boxed{N=2}$."),],
+15:[("Sort the eight integers",r"Let the sorted integers be \[x_1\le x_2\le\cdots\le x_8.\] The mean is $8$, so their sum is \(64\). The median is $8$, so \[x_4+x_5=16.\]"),("Test whether 15 can be the largest",r"If the largest element were $15$, then the range being $8$ would force the smallest element to be $7$."),("Find the contradiction",r"With \(x_1=7\), \(x_8=15\), and \(x_4+x_5=16\), the remaining four middle terms would need sum \[64-7-15-16=26.\] But \(x_2,x_3\ge7\) and \(x_6,x_7\ge8\), so their sum is at least \(7+7+8+8=30\), impossible."),("Show 14 is possible",r"The collection \[6,6,6,8,8,8,8,14\] has sum \(64\), median \(8\), unique mode \(8\), and range \(14-6=8\)." ),("Conclude",r"The largest possible element is $\boxed{14}$."),],
+16:[("Count all outcomes",r"Tina chooses an unordered pair from five numbers, so there are \(\binom52=10\) possible pairs. Sergio has \(10\) choices, giving \(100\) equally likely combined outcomes."),("Count by Tina's sum",r"For pair sums \(3,4,5,6,7,8,9\), the numbers of Tina pairs are respectively \[1,1,2,2,2,1,1.\]"),("Count Sergio choices",r"If Tina's sum is \(s\), Sergio must choose one of \(s+1,s+2,\ldots,10\), giving \(10-s\) choices."),("Add favorable outcomes",r"The favorable count is \[1\cdot7+1\cdot6+2\cdot5+2\cdot4+2\cdot3+1\cdot2+1\cdot1=40.\]"),("Compute the probability",r"The probability is \[\frac{40}{100}=\frac25.\]"),("Conclude",r"The answer is $\boxed{\frac25}$."),],
+17:[("Use small single-digit primes",r"To keep the sum small, it is helpful to use small one-digit primes when possible. The digits \(2,3,5\) can each stand alone as primes."),("Find a strong construction",r"Using the remaining digits \(1,4,6,7,8,9\), one low-sum prime grouping is \[41,\ 67,\ 89.\] Together with \(2,3,5\), the set is \[\{2,3,5,41,67,89\}.\]"),("Compute its sum",r"The sum is \[2+3+5+41+67+89=207.\]"),("Explain minimality",r"A case check by the number of one-digit primes shows that any arrangement below $207$ would need even smaller two-digit primes from the remaining digits, but the digit and prime-ending restrictions prevent this. In particular, the last digit of any multi-digit prime cannot be even or $5$."),("Conclude",r"The smallest possible sum is $\boxed{207}$."),],
+18:[("Identify centers and radii",r"The first circle has center \((10,0)\) and radius \(6\). The second has center \((-15,0)\) and radius \(9\). The distance between centers is \(25\)." ),("Choose the shortest common tangent",r"The shortest segment tangent to both circles is along an internal common tangent, because the circles lie on opposite sides of that tangent segment."),("Use the right triangle",r"For an internal common tangent, the relevant perpendicular offset is the sum of the radii, \(6+9=15\). The center distance \(25\) is the hypotenuse of a right triangle, and the tangent segment is the other leg."),("Compute",r"Thus the tangent length is \[\sqrt{25^2-15^2}=\sqrt{625-225}=\sqrt{400}=20.\]"),("Conclude",r"The shortest possible length is $\boxed{20}$."),],
+20:[("Convert the decimal to a fraction",r"The repeating decimal \(0.\overline{ab}\) equals \[\frac{10a+b}{99}.\] Let \(k=10a+b\)." ),("Know the possible k values",r"The condition excludes \(k=0\) and \(k=99\), so \(1\le k\le98\)." ),("Reduce the denominator",r"In lowest terms, the denominator is \[\frac{99}{\gcd(k,99)}.\] Since \(99=3^2\cdot11\), possible gcd values below \(99\) are \[1,3,9,11,33.\]"),("List possible denominators",r"These give denominators \[99,33,11,9,3.\] Each occurs for a suitable value of \(k\)." ),("Conclude",r"There are $\boxed{5}$ different denominators."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
