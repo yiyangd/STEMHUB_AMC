@@ -8,71 +8,67 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 31
+BATCH_NUMBER = 32
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2006_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {21, 22, 25}
-SKIPPED = [
-    "2006 AMC 10B Problem 23 skipped: statement depends on a diagram for the area partition.",
-    "2006 AMC 10B Problem 24 skipped: statement and choices are truncated by OCR and depend on a diagram.",
-]
-BATCH_LABEL = "2006 AMC 10B Problems 21, 22, 25"
-NEXT_START = "2007 AMC 10A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2007_AMC_10A_Answer_Key"
+TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+SKIPPED = []
+BATCH_LABEL = "2007 AMC 10A Problems 1-10"
+NEXT_START = "2007 AMC 10A Problem 11"
 
 ANS = {
-    21: ("C", r"\frac{8}{63}"),
-    22: ("D", "$1.65"),
-    25: ("B", "5"),
+    1: ("C", "10"),
+    2: ("A", r"-\frac{1}{2}"),
+    3: ("D", "2"),
+    4: ("A", "4"),
+    5: ("B", "$5.84"),
+    6: ("A", "2002 and 2003"),
+    7: ("D", "37,500"),
+    8: ("D", "50"),
+    9: ("E", "60"),
+    10: ("E", "6"),
 }
 
 
 OV = {
-    21: (
-        r"For a particular peculiar pair of dice, the probabilities of rolling $1,2,3,4,5,$ and $6$ on each die are in the ratio $1:2:3:4:5:6$. What is the probability of rolling a total of $7$ on the two dice?",
-        [("A", r"$\frac{4}{63}$"), ("B", r"$\frac18$"), ("C", r"$\frac{8}{63}$"), ("D", r"$\frac16$"), ("E", r"$\frac27$")],
-    ),
-    22: (
-        r"Elmo makes $N$ sandwiches for a fundraiser. For each sandwich he uses $B$ globs of peanut butter at $4$ cents per glob and $J$ blobs of jam at $5$ cents per blob. The cost of the peanut butter and jam to make all the sandwiches is $\$2.53$. Assume that $B$, $J$, and $N$ are all positive integers with $N>1$. What is the cost of the jam Elmo uses to make the sandwiches?",
-        [("A", "$1.05"), ("B", "$1.25"), ("C", "$1.45"), ("D", "$1.65"), ("E", "$1.85")],
-    ),
-    25: (
-        r"Mr. Jones has eight children of different ages. On a family trip his oldest child, who is $9$, spots a license plate with a $4$-digit number in which each of two digits appears two times. \"Look, daddy!\" she exclaims. \"That number is evenly divisible by the age of each of us kids!\" \"That's right,\" replies Mr. Jones, \"and the last two digits just happen to be my age.\" Which of the following is not the age of one of Mr. Jones's children?",
-        [("A", "$4$"), ("B", "$5$"), ("C", "$6$"), ("D", "$7$"), ("E", "$8$")],
-    ),
+    1: (r"One ticket to a show costs $\$20$ at full price. Susan buys $4$ tickets using a coupon that gives her a $25\%$ discount. Pam buys $5$ tickets using a coupon that gives her a $30\%$ discount. How many more dollars does Pam pay than Susan?", [("A", "$2$"), ("B", "$5$"), ("C", "$10$"), ("D", "$15$"), ("E", "$20$")]),
+    2: (r"Define $a@b=ab-b^2$ and $a\#b=a+b-ab^2$. What is $\frac{6@2}{6\#2}$?", [("A", r"$-\frac12$"), ("B", r"$-\frac14$"), ("C", r"$\frac18$"), ("D", r"$\frac14$"), ("E", r"$\frac12$")]),
+    3: (r"An aquarium has a rectangular base that measures $100$ cm by $40$ cm and has height $50$ cm. It is filled with water to a height of $40$ cm. A brick with a rectangular base that measures $40$ cm by $20$ cm and height $10$ cm is placed in the aquarium. By how many centimeters does the water rise?", [("A", "$0.5$"), ("B", "$1$"), ("C", "$1.5$"), ("D", "$2$"), ("E", "$2.5$")]),
+    4: (r"The larger of two consecutive odd integers is three times the smaller. What is their sum?", [("A", "$4$"), ("B", "$8$"), ("C", "$12$"), ("D", "$16$"), ("E", "$20$")]),
+    5: (r"A school store sells $7$ pencils and $8$ notebooks for $\$4.15$. It also sells $5$ pencils and $3$ notebooks for $\$1.77$. How much do $16$ pencils and $10$ notebooks cost?", [("A", "$1.76"), ("B", "$5.84"), ("C", "$6.00"), ("D", "$6.16"), ("E", "$6.32")]),
+    6: (r"At Euclid High School, the number of students taking the AMC 10 was $60$ in $2002$, $66$ in $2003$, $70$ in $2004$, $76$ in $2005$, $78$ in $2006$, and $85$ in $2007$. Between what two consecutive years was there the largest percentage increase?", [("A", "2002 and 2003"), ("B", "2003 and 2004"), ("C", "2004 and 2005"), ("D", "2005 and 2006"), ("E", "2006 and 2007")]),
+    7: (r"Last year Mr. John Q. Public received an inheritance. He paid $20\%$ in federal taxes on the inheritance, and paid $10\%$ of what he had left in state taxes. He paid a total of $\$10,500$ for both taxes. How many dollars was the inheritance?", [("A", "$30,000"), ("B", "$32,500"), ("C", "$35,000"), ("D", "$37,500"), ("E", "$40,000")]),
+    8: (r"Triangles $ABC$ and $ADC$ are isosceles with $AB=BC$ and $AD=DC$. Point $D$ is inside $\triangle ABC$. Angle $ABC=40^\circ$, and angle $ADC=140^\circ$. What is the degree measure of $\angle BAD$?", [("A", "$20$"), ("B", "$30$"), ("C", "$40$"), ("D", "$50$"), ("E", "$60$")]),
+    9: (r"Real numbers $a$ and $b$ satisfy the equations $3^a=81^{b+2}$ and $125^b=5^{a-3}$. What is $ab$?", [("A", "$-60$"), ("B", "$-17$"), ("C", "$9$"), ("D", "$12$"), ("E", "$60$")]),
+    10: (r"The Dunbar family consists of a mother, a father, and some children. The average age of the members of the family is $20$, the father is $48$ years old, and the average age of the mother and children is $16$. How many children are in the family?", [("A", "$2$"), ("B", "$3$"), ("C", "$4$"), ("D", "$5$"), ("E", "$6$")]),
 }
 
 
 KEY_OVERRIDES = {
-    21: "Use weighted probability: each ordered dice outcome has probability proportional to the product of the two face weights.",
-    22: "Use integer factorization and modular constraints on the per-sandwich cost.",
-    25: "Use divisibility by ages 1 through 9 and the special repeated-digit structure of the license plate.",
+    1: "Compute each discounted ticket total, then compare.",
+    2: "Evaluate each custom operation exactly as defined before forming the fraction.",
+    3: "Use displaced volume divided by aquarium base area to find the rise in water height.",
+    4: "Represent consecutive odd integers algebraically and solve the relation.",
+    5: "Solve a two-variable linear pricing system and compute the requested combination.",
+    6: "Compare percentage increases, not raw increases.",
+    7: "Model sequential percentage taxes as fractions of the original inheritance.",
+    8: "Use base angles in two isosceles triangles to subtract angles at A.",
+    9: "Rewrite powers using common bases and solve the resulting linear system.",
+    10: "Use weighted averages to compare total family age in two ways.",
 }
 
 
 SOL = {
-    21: [
-        ("Turn the ratio into probabilities", r"The weights for faces $1$ through $6$ are $1,2,3,4,5,6$. Their total is $1+2+3+4+5+6=21$, so the probability of rolling face $k$ on one die is $\frac{k}{21}$."),
-        ("List the ways to total 7", r"The ordered pairs that sum to $7$ are $(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)$. Because the dice are rolled separately, order matters."),
-        ("Add weighted probabilities", r"For a pair $(i,j)$, the probability is $\frac{i}{21}\cdot\frac{j}{21}$. Therefore the numerator weight is \[1\cdot6+2\cdot5+3\cdot4+4\cdot3+5\cdot2+6\cdot1=56.\]"),
-        ("Divide by the total weight", r"The denominator is $21^2=441$, so the probability is $\frac{56}{441}=\frac{8}{63}$."),
-        ("Answer", r"The answer is $\boxed{\frac{8}{63}}$."),
-    ],
-    22: [
-        ("Write the cost equation", r"For one sandwich, the peanut butter and jam cost $4B+5J$ cents. For $N$ sandwiches, the total is \[N(4B+5J)=253.\]"),
-        ("Factor the total", r"Since $253=11\cdot23$ and $N>1$, the possible values of $N$ are $11$ or $23$ if the per-sandwich cost is an integer factor greater than $1$."),
-        ("Test the per-sandwich costs", r"If $N=23$, then $4B+5J=11$, but positive integers $B,J$ cannot make $11$ because the smallest possible cost is $4+5=9$ and the next possibilities skip $11$. If $N=11$, then $4B+5J=23$."),
-        ("Solve for positive integers", r"The equation $4B+5J=23$ has the positive solution $B=2$, $J=3$, since $4\cdot2+5\cdot3=8+15=23$."),
-        ("Find the total jam cost", r"Each sandwich uses $3$ blobs of jam at $5$ cents each, so jam costs $15$ cents per sandwich. For $11$ sandwiches, the jam cost is $11\cdot15=165$ cents, or $\$1.65$."),
-        ("Answer", r"The answer is $\boxed{\$1.65}$."),
-    ],
-    25: [
-        ("Translate the ages condition", r"The oldest child is $9$, and there are eight children of different ages. So the children's ages are eight different numbers chosen from $1,2,\ldots,9$, and the license number is divisible by all eight of them."),
-        ("Use the repeated-digit condition", r"The license number has four digits with exactly two digits appearing twice. We need such a number that is divisible by $9$ and by seven other ages from $1$ through $8$."),
-        ("Look for the missing age", r"Testing divisibility is efficient here because the possible ages are only $1$ through $9$. The number $5544$ has two $5$s and two $4$s, and it is divisible by $1,2,3,4,6,7,8,$ and $9$."),
-        ("Check the divisibility", r"Indeed, $5544$ is even, its last two digits $44$ are divisible by $4$, its digit sum is $18$ so it is divisible by $3$ and $9$, and $5544\div7=792$. Also $5544\div8=693$."),
-        ("Identify the age not included", r"The divisors from $1$ to $9$ that work are $1,2,3,4,6,7,8,9$. The only missing possible age among the answer choices is $5$."),
-        ("Answer", r"Therefore $\boxed{5}$ is not the age of one of Mr. Jones's children."),
-    ],
+    1: [("Find Susan's cost", r"A $25\%$ discount means Susan pays $75\%$ of full price. Four tickets at $\$20$ each would cost $\$80$, so Susan pays $0.75\cdot80=60$ dollars."), ("Find Pam's cost", r"A $30\%$ discount means Pam pays $70\%$ of full price. Five tickets at $\$20$ each would cost $\$100$, so Pam pays $0.70\cdot100=70$ dollars."), ("Compare", r"Pam pays $70-60=10$ more dollars than Susan."), ("Check the scale", r"Pam buys one more ticket, but also has a larger discount. A difference of $10$ dollars is reasonable."), ("Answer", r"The answer is $\boxed{10}$." )],
+    2: [("Evaluate the numerator", r"Use $a@b=ab-b^2$. With $a=6$ and $b=2$, we get $6@2=6\cdot2-2^2=12-4=8$."), ("Evaluate the denominator", r"Use $a\#b=a+b-ab^2$. Thus $6\#2=6+2-6\cdot2^2=8-24=-16$."), ("Form the fraction", r"The requested value is $\frac{6@2}{6\#2}=\frac{8}{-16}=-\frac12$."), ("Watch the sign", r"The denominator is negative, so the final answer must be negative. That eliminates all positive choices."), ("Answer", r"The answer is $\boxed{-\frac12}$." )],
+    3: [("Find the brick's volume", r"The brick displaces water equal to its volume, assuming it is fully submerged. Its volume is $40\cdot20\cdot10=8000$ cubic centimeters."), ("Find the aquarium base area", r"The base of the aquarium has area $100\cdot40=4000$ square centimeters."), ("Convert volume to height", r"A rise of $h$ centimeters over that base has volume $4000h$. So $4000h=8000$, giving $h=2$."), ("Check for overflow", r"The water starts at height $40$ cm and rises $2$ cm, reaching $42$ cm, below the aquarium height $50$ cm. So no overflow changes the answer."), ("Answer", r"The water rises $\boxed{2}$ centimeters." )],
+    4: [("Set up the consecutive odd integers", r"Let the smaller odd integer be $x$. Then the next consecutive odd integer is $x+2$."), ("Use the given relationship", r"The larger is three times the smaller, so $x+2=3x$."), ("Solve", r"This gives $2=2x$, so $x=1$. The larger integer is $3$."), ("Find the sum", r"Their sum is $1+3=4$."), ("Answer", r"The answer is $\boxed{4}$." )],
+    5: [("Name the prices", r"Let $p$ be the price of one pencil in cents and $n$ be the price of one notebook in cents. Then $7p+8n=415$ and $5p+3n=177$."), ("Solve the system", r"From $5p+3n=177$, $p=\frac{177-3n}{5}$. Substitute into the first equation: $7\left(\frac{177-3n}{5}\right)+8n=415$."), ("Find each price", r"Multiplying by $5$ gives $1239-21n+40n=2075$, so $19n=836$ and $n=44$. Then $5p+3\cdot44=177$, so $p=9$."), ("Compute the requested cost", r"The cost of $16$ pencils and $10$ notebooks is $16\cdot9+10\cdot44=144+440=584$ cents."), ("Answer", r"The answer is $\boxed{\$5.84}$." )],
+    6: [("Use percentages", r"The problem asks for percentage increase, so we compare increase divided by the previous year's number, not just the raw increase."), ("Compute the main candidates", r"From $2002$ to $2003$, the increase is $6$ out of $60$, which is $10\%$. From $2004$ to $2005$, the increase is $6$ out of $70$, which is less than $10\%$. From $2006$ to $2007$, the increase is $7$ out of $78$, also less than $10\%$."), ("Check the smaller increases", r"The other increases are $4$ out of $66$ and $2$ out of $76$, both clearly smaller percentages."), ("Choose the largest", r"The largest percentage increase is therefore from $2002$ to $2003$."), ("Answer", r"The answer is $\boxed{\text{2002 and 2003}}$." )],
+    7: [("Let the inheritance be $x$", r"The federal tax is $20\%$ of $x$, or $0.20x$. After that tax, he has $0.80x$ left."), ("Compute the state tax", r"The state tax is $10\%$ of what remains, so it is $0.10\cdot0.80x=0.08x$."), ("Use the total tax", r"The total tax is $0.20x+0.08x=0.28x$. We are told this equals $10,500$."), ("Solve", r"Thus $0.28x=10500$, so $x=10500/0.28=37500$."), ("Answer", r"The inheritance was $\boxed{37,500}$ dollars." )],
+    8: [("Use triangle $ABC$", r"Since $AB=BC$, triangle $ABC$ is isosceles with vertex angle $\angle ABC=40^\circ$. Therefore the base angles at $A$ and $C$ are each $\frac{180-40}{2}=70^\circ$."), ("Use triangle $ADC$", r"Since $AD=DC$, triangle $ADC$ is also isosceles, with vertex angle $\angle ADC=140^\circ$. Its base angles at $A$ and $C$ are each $\frac{180-140}{2}=20^\circ$."), ("Relate the angles at $A$", r"Point $D$ is inside $\triangle ABC$, so ray $AD$ splits angle $BAC$. We know $\angle BAC=70^\circ$ and $\angle DAC=20^\circ$."), ("Subtract", r"Therefore $\angle BAD=70^\circ-20^\circ=50^\circ$."), ("Answer", r"The answer is $\boxed{50^\circ}$." )],
+    9: [("Rewrite using common bases", r"Since $81=3^4$, the first equation becomes $3^a=(3^4)^{b+2}=3^{4b+8}$, so $a=4b+8$."), ("Rewrite the second equation", r"Since $125=5^3$, the second equation becomes $(5^3)^b=5^{a-3}$, so $3b=a-3$, or $a=3b+3$."), ("Solve the linear system", r"Set the two expressions for $a$ equal: $4b+8=3b+3$. Hence $b=-5$. Then $a=3(-5)+3=-12$."), ("Compute $ab$", r"Now $ab=(-12)(-5)=60$."), ("Answer", r"The answer is $\boxed{60}$." )],
+    10: [("Let the number of children be $n$", r"Then the family has $n+2$ members: the children, the mother, and the father."), ("Use the whole-family average", r"The total age of the whole family is $20(n+2)$."), ("Use the mother-and-children average", r"The mother and children together have $n+1$ people with average age $16$, so their total age is $16(n+1)$. Adding the father's age gives total family age $16(n+1)+48$."), ("Set the totals equal", r"So $20(n+2)=16(n+1)+48$. This simplifies to $20n+40=16n+64$, hence $4n=24$ and $n=6$."), ("Answer", r"There are $\boxed{6}$ children." )],
 }
 
 
@@ -174,7 +170,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2006" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2007" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -249,7 +245,7 @@ def main():
         + "- Commit hash: pending\n"
         + "- Pushed: pending\n"
         + f"- Next batch should start from: {NEXT_START}\n"
-        + "- Review notes: Skipped Problems 23 and 24 because they require diagrams or have truncated OCR.\n",
+        + "- Review notes: none.\n",
         encoding="utf-8",
     )
 
@@ -263,7 +259,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2006 AMC 10B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2007 AMC 10A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
@@ -273,8 +269,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批跳过 2006 AMC 10B Problems 23, 24：题面依赖图形或 OCR 截断。\n"
-        + "2006 AMC 10B 已完成可可靠生成部分。\n"
+        + "本批无跳过题。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题；遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 teaching steps 后 commit/push。\n",
         encoding="utf-8",

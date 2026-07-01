@@ -1,20 +1,22 @@
 # Problem Pages Report
 
-- Total manifest entries: 234
-- Latest batch: 31 (2006 AMC 10B Problems 21, 22, 25)
-- Latest new generated count: 3
+- Total manifest entries: 244
+- Latest batch: 32 (2007 AMC 10A Problems 1-10)
+- Latest new generated count: 10
 - Latest updated existing count: 0
-- Latest skipped count: 2
+- Latest skipped count: 0
 - MathJax validation: passed
-- Answer verification source: AoPS 2006 AMC 10B Answer Key
+- Answer verification source: AoPS 2007 AMC 10A Answer Key
 
 ## Latest Batch Pages
 
-- `2006 AMC 10B Problem 21` -> `amc10/problems/2006-amc-10b-problem-21/`
-- `2006 AMC 10B Problem 22` -> `amc10/problems/2006-amc-10b-problem-22/`
-- `2006 AMC 10B Problem 25` -> `amc10/problems/2006-amc-10b-problem-25/`
-
-## Skipped in latest batch
-
-- 2006 AMC 10B Problem 23 skipped: statement depends on a diagram for the area partition.
-- 2006 AMC 10B Problem 24 skipped: statement and choices are truncated by OCR and depend on a diagram.
+- `2007 AMC 10A Problem 1` -> `amc10/problems/2007-amc-10a-problem-1/`
+- `2007 AMC 10A Problem 2` -> `amc10/problems/2007-amc-10a-problem-2/`
+- `2007 AMC 10A Problem 3` -> `amc10/problems/2007-amc-10a-problem-3/`
+- `2007 AMC 10A Problem 4` -> `amc10/problems/2007-amc-10a-problem-4/`
+- `2007 AMC 10A Problem 5` -> `amc10/problems/2007-amc-10a-problem-5/`
+- `2007 AMC 10A Problem 6` -> `amc10/problems/2007-amc-10a-problem-6/`
+- `2007 AMC 10A Problem 7` -> `amc10/problems/2007-amc-10a-problem-7/`
+- `2007 AMC 10A Problem 8` -> `amc10/problems/2007-amc-10a-problem-8/`
+- `2007 AMC 10A Problem 9` -> `amc10/problems/2007-amc-10a-problem-9/`
+- `2007 AMC 10A Problem 10` -> `amc10/problems/2007-amc-10a-problem-10/`
