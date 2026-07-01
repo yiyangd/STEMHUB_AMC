@@ -8,63 +8,67 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 40
+BATCH_NUMBER = 41
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2008_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {22, 23, 24}
-SKIPPED = [
-    "2008 AMC 10A Problem 21 skipped: diagram-dependent cube cross-section problem",
-    "2008 AMC 10A Problem 25 skipped: diagram-dependent circular table/place-mat problem",
-]
-BATCH_LABEL = "2008 AMC 10A Problems 22-24"
-NEXT_START = "2008 AMC 10B Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2008_AMC_10B_Answer_Key"
+TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+SKIPPED = []
+BATCH_LABEL = "2008 AMC 10B Problems 1-10"
+NEXT_START = "2008 AMC 10B Problem 11"
 
 ANS = {
-    22: ("D", r"\frac{5}{8}"),
-    23: ("B", "40"),
-    24: ("A", "0"),
+    1: ("E", "6"),
+    2: ("B", "4"),
+    3: ("D", "x^{1/2}"),
+    4: ("C", "400000"),
+    5: ("A", "0"),
+    6: ("C", r"\frac{1}{10}"),
+    7: ("C", "100"),
+    8: ("C", "9"),
+    9: ("A", "1"),
+    10: ("A", r"\sqrt{10}"),
 }
 
 
 OV = {
-    22: (r"Jacob uses the following procedure to write down a sequence of numbers. First he chooses the first term to be $6$. To generate each succeeding term, he flips a fair coin. If it comes up heads, he doubles the previous term and subtracts $1$. If it comes up tails, he takes half of the previous term and subtracts $1$. What is the probability that the fourth term in Jacob's sequence is an integer?", [("A", r"$\frac{1}{6}$"), ("B", r"$\frac{1}{3}$"), ("C", r"$\frac{1}{2}$"), ("D", r"$\frac{5}{8}$"), ("E", r"$\frac{3}{4}$")]),
-    23: (r"Two subsets of the set $S=\{a,b,c,d,e\}$ are to be chosen so that their union is $S$ and their intersection contains exactly two elements. In how many ways can this be done, assuming that the order in which the subsets are chosen does not matter?", [("A", "$20$"), ("B", "$40$"), ("C", "$60$"), ("D", "$160$"), ("E", "$320$")]),
-    24: (r"Let $k=2008^2+2^{2008}$. What is the units digit of $k^2+2k$?", [("A", "$0$"), ("B", "$2$"), ("C", "$4$"), ("D", "$6$"), ("E", "$8$")]),
+    1: (r"A basketball player made $5$ baskets during a game. Each basket was worth either $2$ or $3$ points. How many different numbers could represent the total points scored by the player?", [("A", "$2$"), ("B", "$3$"), ("C", "$4$"), ("D", "$5$"), ("E", "$6$")]),
+    2: (r"A $4\times4$ block of calendar dates is shown: $\begin{matrix}1&2&3&4\\8&9&10&11\\15&16&17&18\\22&23&24&25\end{matrix}$. The order of the numbers in the second row is to be reversed. Then the order of the numbers in the fourth row is to be reversed. Finally, the numbers on each diagonal are to be added. What will be the positive difference between the two diagonal sums?", [("A", "$2$"), ("B", "$4$"), ("C", "$6$"), ("D", "$8$"), ("E", "$10$")]),
+    3: (r"Assume that $x$ is a positive real number. Which is equivalent to $\sqrt[3]{x\sqrt{x}}$?", [("A", r"$x^{1/6}$"), ("B", r"$x^{1/4}$"), ("C", r"$x^{3/8}$"), ("D", r"$x^{1/2}$"), ("E", "$x$")]),
+    4: (r"A semipro baseball league has teams with $21$ players each. League rules state that a player must be paid at least $\$15{,}000$, and that the total of all players' salaries for each team cannot exceed $\$700{,}000$. What is the maximum possible salary, in dollars, for a single player?", [("A", "$270{,}000$"), ("B", "$385{,}000$"), ("C", "$400{,}000$"), ("D", "$430{,}000$"), ("E", "$700{,}000$")]),
+    5: (r"For real numbers $a$ and $b$, define $a\$b=(a-b)^2$. What is $(x-y)^2\$(y-x)^2$?", [("A", "$0$"), ("B", "$x^2+y^2$"), ("C", "$2x^2$"), ("D", "$2y^2$"), ("E", "$4xy$")]),
+    6: (r"Points $B$ and $C$ lie on $\overline{AD}$. The length of $AB$ is $4$ times the length of $BD$, and the length of $AC$ is $9$ times the length of $CD$. The length of $BC$ is what fraction of the length of $AD$?", [("A", r"$\frac{1}{36}$"), ("B", r"$\frac{1}{13}$"), ("C", r"$\frac{1}{10}$"), ("D", r"$\frac{5}{36}$"), ("E", r"$\frac{1}{5}$")]),
+    7: (r"An equilateral triangle of side length $10$ is completely filled in by non-overlapping equilateral triangles of side length $1$. How many small triangles are required?", [("A", "$10$"), ("B", "$25$"), ("C", "$100$"), ("D", "$250$"), ("E", "$1000$")]),
+    8: (r"A class collects $\$50$ to buy flowers for a classmate who is in the hospital. Roses cost $\$3$ each, and carnations cost $\$2$ each. No other flowers are to be used. How many different bouquets could be purchased for exactly $\$50$?", [("A", "$1$"), ("B", "$7$"), ("C", "$9$"), ("D", "$16$"), ("E", "$17$")]),
+    9: (r"A quadratic equation $ax^2-2ax+b=0$ has two real solutions. What is the average of the solutions?", [("A", "$1$"), ("B", "$2$"), ("C", r"$\frac{b}{a}$"), ("D", r"$\frac{2b}{a}$"), ("E", r"$\frac{2b-a}{a}$")]),
+    10: (r"Points $A$ and $B$ are on a circle of radius $5$ and $AB=6$. Point $C$ is the midpoint of the minor arc $AB$. What is the length of the line segment $AC$?", [("A", r"$\sqrt{10}$"), ("B", r"$\sqrt{7}$"), ("C", r"$\sqrt{14}$"), ("D", r"$\sqrt{15}$"), ("E", r"$4\sqrt{2}$")]),
 }
 
 
 KEY_OVERRIDES = {
-    22: "Track only whether each term is an integer; a tail move can create fractions depending on parity.",
-    23: "Classify each element by whether it belongs to both subsets or to exactly one subset, then account for unordered pairs.",
-    24: "Use units digits and modular arithmetic instead of computing large powers.",
+    1: "Count possible totals by tracking how many 3-point baskets were made.",
+    2: "Update only the diagonal entries after reversing the two rows.",
+    3: "Convert radicals to fractional exponents and simplify.",
+    4: "Maximize one salary by minimizing the other 20 salaries.",
+    5: "Notice that $(x-y)^2$ and $(y-x)^2$ are equal before applying the operation.",
+    6: "Normalize the whole segment length and locate B and C as fractions of AD.",
+    7: "Use area scaling for similar equilateral triangles.",
+    8: "Count nonnegative integer solutions to a two-variable cost equation.",
+    9: "Use Vieta's formula for the sum of roots.",
+    10: "Use chord length and half-angle geometry in the circle.",
 }
 
 
 SOL = {
-    22: [
-        ("Focus on the property that matters", r"The question does not ask for the actual fourth term; it only asks whether that term is an integer. So we should track the type of each term, especially whether halving it will still give an integer."),
-        ("List the three coin flips", r"The first term is fixed at $6$, and we need the fourth term, so there are exactly three flips. Each flip is either $H$ or $T$, giving $2^3=8$ equally likely sequences."),
-        ("Understand the two operations", r"The heads operation sends $x$ to $2x-1$. If $x$ is an integer, then $2x-1$ is still an integer, and it is odd. The tails operation sends $x$ to $\frac{x}{2}-1$, which is an integer only when $x$ is even."),
-        ("Check the eight short cases efficiently", r"Starting from $6$, the possible flip sequences are short enough to organize directly. The sequences $HHH, HHT, HTH, THH,$ and $THT$ give integer fourth terms. The sequences $HTT, TTH,$ and $TTT$ produce non-integers at the fourth term."),
-        ("Convert the count to a probability", r"There are $5$ successful sequences out of $8$ equally likely sequences, so the probability is $\frac{5}{8}$."),
-        ("Answer", r"Therefore the probability is $\boxed{\frac{5}{8}}$."),
-    ],
-    23: [
-        ("Translate the set conditions into roles", r"For each element of $S$, there are three possible roles: it can be in both subsets, only in the first subset, or only in the second subset. The union being $S$ means no element is allowed to be in neither subset."),
-        ("Choose the intersection first", r"The intersection must contain exactly two elements. We choose those two shared elements in $\binom{5}{2}=10$ ways."),
-        ("Place the remaining elements", r"The other $3$ elements must be in exactly one of the two subsets. If the two subsets were ordered, each of these $3$ elements would have $2$ choices, so there would be $2^3=8$ ordered assignments."),
-        ("Remove the ordering", r"The problem says the order of the two subsets does not matter. Since the remaining $3$ elements cannot all switch to the same assignment under a swap, every unordered pair is counted exactly twice in the ordered count."),
-        ("Compute the final count", r"Thus the number of unordered choices is $10\cdot \frac{8}{2}=40$."),
-        ("Answer", r"The answer is $\boxed{40}$."),
-    ],
-    24: [
-        ("Work only with units digits", r"The expression asks for the units digit, so we do not need the full value of $k$. We only need $k$ modulo $10$."),
-        ("Find the units digit of $2008^2$", r"The units digit of $2008$ is $8$, so the units digit of $2008^2$ is the units digit of $8^2=64$, which is $4$."),
-        ("Find the units digit of $2^{2008}$", r"Powers of $2$ repeat in units digit with cycle $2,4,8,6$. Since $2008$ is divisible by $4$, the units digit of $2^{2008}$ is the fourth digit in the cycle, $6$."),
-        ("Find the units digit of $k$", r"Therefore $k=2008^2+2^{2008}$ has units digit $4+6=10$, so $k$ is congruent to $0$ modulo $10$."),
-        ("Use that in the final expression", r"If $k\equiv 0\pmod{10}$, then $k^2\equiv 0\pmod{10}$ and $2k\equiv 0\pmod{10}$. Hence $k^2+2k$ also has units digit $0$."),
-        ("Answer", r"The units digit is $\boxed{0}$."),
-    ],
+    1: [("Identify the flexible choice", r"The player made exactly $5$ baskets. The only thing that can change is how many of those baskets were worth $3$ points instead of $2$ points."), ("Start from the lowest possible total", r"If all $5$ baskets were worth $2$ points, the total would be $5\cdot2=10$ points."), ("See how each 3-point basket changes the total", r"Changing one basket from $2$ points to $3$ points adds exactly $1$ point. If the player made $k$ three-point baskets, where $k=0,1,2,3,4,5$, the total is $10+k$."), ("Count the possible values", r"The six possible totals are $10,11,12,13,14,15$."), ("Answer", r"There are $\boxed{6}$ different possible totals.")],
+    2: [("Write the rows after the reversals", r"The first and third rows stay the same. The second row becomes $11,10,9,8$, and the fourth row becomes $25,24,23,22$."), ("Find one diagonal sum", r"The diagonal from upper left to lower right is $1+10+17+22=50$."), ("Find the other diagonal sum", r"The diagonal from upper right to lower left is $4+9+16+25=54$."), ("Take the positive difference", r"The problem asks for the positive difference, so we compute $54-50=4$."), ("Answer", r"The difference is $\boxed{4}.")],
+    3: [("Convert the square root first", r"Because $x$ is positive, we can safely use exponent rules. The expression inside the cube root is $x\sqrt{x}=x\cdot x^{1/2}$."), ("Combine the exponents inside", r"Multiplying powers with the same base means adding exponents, so $x\cdot x^{1/2}=x^{3/2}$."), ("Apply the cube root", r"Taking a cube root is the same as raising to the power $\frac13$. Thus $\sqrt[3]{x^{3/2}}=(x^{3/2})^{1/3}$."), ("Simplify the exponent", r"When a power is raised to a power, multiply exponents: $\frac32\cdot\frac13=\frac12$."), ("Answer", r"The expression is $\boxed{x^{1/2}}$.")],
+    4: [("Understand how to maximize one player", r"To make one player's salary as large as possible, the other $20$ players should be paid as little as the rules allow."), ("Compute the minimum total for the other players", r"Each of the other $20$ players must receive at least $\$15{,}000$, so together they must receive at least $20\cdot15{,}000=300{,}000$ dollars."), ("Use the team salary cap", r"The team total cannot exceed $\$700{,}000$. After reserving $\$300{,}000$ for the other players, the most left for one player is $700{,}000-300{,}000=400{,}000$."), ("Check that this is possible", r"This salary is allowed because the other $20$ players can each be paid exactly $\$15{,}000$, making the total exactly $\$700{,}000$."), ("Answer", r"The maximum possible salary is $\boxed{400{,}000}$ dollars.")],
+    5: [("Compare the two inputs to the operation", r"The expression uses $(x-y)^2$ and $(y-x)^2$. Since $y-x=-(x-y)$, their squares are equal."), ("Name the common value", r"Let $u=(x-y)^2$. Then $(y-x)^2$ is also $u$."), ("Apply the definition carefully", r"The operation is $a\$b=(a-b)^2$. Therefore $(x-y)^2\$(y-x)^2=u\$u=(u-u)^2$."), ("Finish", r"Since $u-u=0$, the result is $0^2=0$."), ("Answer", r"The value is $\boxed{0}$.")],
+    6: [("Normalize the segment", r"Fractions are easier if we let $AD=1$. Then all positions can be measured as distances from $A$."), ("Locate B", r"We know $AB=4BD$ and $AB+BD=AD=1$. So $4BD+BD=1$, giving $BD=\frac15$ and $AB=\frac45$."), ("Locate C", r"Similarly, $AC=9CD$ and $AC+CD=1$. Thus $9CD+CD=1$, so $CD=\frac1{10}$ and $AC=\frac9{10}$."), ("Find BC", r"Both $B$ and $C$ are measured from $A$, so $BC=AC-AB=\frac9{10}-\frac45=\frac9{10}-\frac8{10}=\frac1{10}$."), ("Answer", r"The length of $BC$ is $\boxed{\frac1{10}}$ of $AD$.")],
+    7: [("Use similarity instead of drawing every triangle", r"All the small triangles are equilateral and have side length $1$, while the large triangle has side length $10$. The triangles are similar."), ("Convert side scale to area scale", r"Area scales by the square of the side-length scale. Since the side-length ratio is $10:1$, the area ratio is $10^2:1^2=100:1$."), ("Interpret the area ratio", r"Because the large triangle is completely filled without overlap, the number of small triangles equals the ratio of the large area to one small area."), ("Answer", r"The required number of small triangles is $\boxed{100}$.")],
+    8: [("Set up the cost equation", r"Let $r$ be the number of roses and $c$ be the number of carnations. The total cost condition is $3r+2c=50$."), ("Think about possible rose counts", r"Both $r$ and $c$ must be nonnegative integers. Also, $50-3r$ must be even because it equals $2c$."), ("Use parity", r"Since $50$ is even and $3r$ has the same parity as $r$, the number $r$ must be even."), ("List the valid rose counts", r"The largest possible $r$ is $16$, since $3\cdot17>50$. The even values from $0$ to $16$ are $0,2,4,6,8,10,12,14,16$, giving $9$ choices."), ("Answer", r"There are $\boxed{9}$ different bouquets.")],
+    9: [("Recall what the average of roots needs", r"If the two solutions are $r_1$ and $r_2$, their average is $\frac{r_1+r_2}{2}$. So we only need the sum of the roots."), ("Use Vieta's formula", r"For $Ax^2+Bx+C=0$, the sum of the roots is $-\frac{B}{A}$. Here $A=a$ and $B=-2a$."), ("Compute the sum", r"The sum of the two solutions is $-\frac{-2a}{a}=2$, assuming $a\ne0$ as required for a quadratic equation."), ("Find the average", r"The average is $\frac{2}{2}=1$."), ("Answer", r"The average of the solutions is $\boxed{1}$.")],
+    10: [("Relate the chord to a central angle", r"Let $O$ be the center of the circle. Since $AB=6$ in a circle of radius $5$, half the chord has length $3$. If $\angle AOC=\theta$, then the midpoint $C$ of the minor arc means $\angle AOB=2\theta$."), ("Use the right triangle from the chord", r"Dropping a perpendicular from $O$ to chord $AB$ gives a right triangle with hypotenuse $5$ and half-chord $3$. Thus $\sin\theta=\frac35$ and $\cos\theta=\frac45$."), ("Find the chord AC", r"The segment $AC$ is a chord subtending central angle $\theta$, so $AC=2\cdot5\sin(\theta/2)$."), ("Use the half-angle formula", r"Since $\cos\theta=\frac45$, we get $\sin(\theta/2)=\sqrt{\frac{1-\cos\theta}{2}}=\sqrt{\frac{1/5}{2}}=\frac1{\sqrt{10}}$."), ("Finish", r"Therefore $AC=10\cdot\frac1{\sqrt{10}}=\sqrt{10}$."), ("Answer", r"The length of $AC$ is $\boxed{\sqrt{10}}$.")],
 }
 
 def esc(x, quote=True):
@@ -165,7 +169,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2008" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2008" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -254,7 +258,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2008 AMC 10A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2008 AMC 10B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
@@ -275,4 +279,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 

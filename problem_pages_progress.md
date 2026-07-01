@@ -636,3 +636,19 @@
 - Pushed: pending
 - Next batch should start from: 2008 AMC 10B Problem 1
 - Review notes: none.
+
+## Batch 41: 2008 AMC 10B Problems 1-10
+
+- Start time: 2026-06-30T19:36:11-07:00
+- End time: 2026-06-30T19:36:13-07:00
+- Processed contest: AMC 10
+- Processed range: 2008 AMC 10B Problems 1-10
+- Generated count: 10
+- Updated existing count: 0
+- Skipped count: 0
+- Skipped reasons: none
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2008 AMC 10B Problem 11
+- Review notes: none.
