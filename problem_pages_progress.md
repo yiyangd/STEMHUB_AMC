@@ -2444,3 +2444,19 @@
 - Pushed: pending
 - Next batch should start from: 2002 AMC 12B Problem 21
 - Review notes: none.
+
+## Batch 151: 2002 AMC 12B Problems 21-25
+
+- Start time: 2026-07-01T05:08:28-07:00
+- End time: 2026-07-01T05:08:29-07:00
+- Processed contest: AMC 10
+- Processed range: 2002 AMC 12B Problems 21-25
+- Generated count: 5
+- Updated existing count: 0
+- Skipped count: 0
+- Skipped reasons: none
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2003 AMC 12A Problem 1
+- Review notes: none.

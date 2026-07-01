@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 150
+BATCH_NUMBER = 151
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2002_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16,17,18,19,20}
+TARGET_NUMBERS = {21,22,23,24,25}
 SKIPPED = []
-BATCH_LABEL = "2002 AMC 12B Problems 11-20"
-NEXT_START = "2002 AMC 12B Problem 21"
+BATCH_LABEL = "2002 AMC 12B Problems 21-25"
+NEXT_START = "2003 AMC 12A Problem 1"
 
-ANS={11:("E","prime"),12:("D","4"),13:("B","225"),14:("D","12"),15:("D","7"),16:("C",r"\frac12"),17:("B","Beth"),18:("D",r"\frac34"),19:("D","720"),20:("B","26")}
+ANS={21:("A","448"),22:("B","-1"),23:("C",r"\sqrt2"),24:("E",r"4(36+\sqrt{113})"),25:("E","25")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -526,6 +526,30 @@ SOL.update({
 18:[("Translate closer-than condition",r"A point \((x,y)\) is closer to \((0,0)\) than to \((3,1)\) when \[x^2+y^2<(x-3)^2+(y-1)^2.\]"),("Simplify",r"Expanding and canceling gives \[6x+2y<10,\] or \[3x+y<5.\]"),("Find the favorable area",r"In the rectangle \(0\le x\le2\), \(0\le y\le1\), the line \(3x+y=5\) crosses the top edge at \(x=\frac43\) and the bottom edge at \(x=\frac53\). The favorable area is a rectangle of area \(\frac43\) plus a right triangle of area \(\frac16\)." ),("Compute probability",r"The favorable area is \[\frac43+\frac16=\frac32.\] The rectangle area is \(2\), so the probability is \[\frac{3/2}{2}=\frac34.\]"),("Conclude",r"The answer is $\boxed{\frac34}$."),],
 19:[("Introduce pair products",r"Let \[x=ab,\quad y=bc,\quad z=ca.\] Then the equations become \[x+z=152,\quad x+y=162,\quad y+z=170.\]"),("Solve the linear system",r"Adding the first two equations and subtracting the third gives \[2x=144,\] so \(x=72\). Then \(y=90\) and \(z=80\)." ),("Relate to abc",r"We have \[xyz=(ab)(bc)(ca)=(abc)^2.\]"),("Compute",r"Thus \[(abc)^2=72\cdot90\cdot80=518400=720^2.\] Since \(a,b,c\) are positive, \(abc=720\)." ),("Conclude",r"The answer is $\boxed{720}$."),],
 20:[("Set coordinates",r"Let \(O=(0,0)\), \(X=(a,0)\), and \(Y=(0,b)\). Then \(XY^2=a^2+b^2\)." ),("Use the midpoints",r"The midpoint of \(OY\) is \(N=(0,\frac b2)\), so \[XN^2=a^2+\left(\frac b2\right)^2=19^2.\] The midpoint of \(OX\) is \(M=(\frac a2,0)\), so \[YM^2=\left(\frac a2\right)^2+b^2=22^2.\]"),("Add the equations",r"Adding gives \[\frac54(a^2+b^2)=19^2+22^2=361+484=845.\]"),("Solve for XY",r"Therefore \[a^2+b^2=\frac45\cdot845=676,\] so \[XY=\sqrt{676}=26.\]"),("Conclude",r"The answer is $\boxed{26}$."),],
+})
+
+OV.update({
+21:(r"For each positive integer \(n<2002\), define \(a_n=11\) if \(n\) is divisible by \(13\) and \(14\), \(a_n=13\) if \(n\) is divisible by \(11\) and \(14\), \(a_n=14\) if \(n\) is divisible by \(11\) and \(13\), and \(a_n=0\) otherwise. Calculate \[\sum_{n=1}^{2001} a_n.\]",[("A","448"),("B","486"),("C","1560"),("D","2001"),("E","2002")]),
+22:(r"For all integers \(n>1\), define \(a_n=\log_{2002} n\). Let \(b=a_2+a_3+a_4+a_5\) and \(c=a_{10}+a_{11}+a_{12}+a_{13}+a_{14}\). What is \(b-c\)?",[("A","-2"),("B","-1"),("C",r"$-\frac1{2002}$"),("D",r"$\frac1{1001}$"),("E",r"$\frac12$")]),
+23:(r"In \(\triangle ABC\), \(AB=1\) and \(AC=2\). Side \(BC\) and the median from \(A\) to \(BC\) have the same length. What is \(BC\)?",[("A",r"$\frac{1+\sqrt2}{2}$"),("B",r"$\frac{1+\sqrt3}{2}$"),("C",r"$\sqrt2$"),("D",r"$\frac32$"),("E",r"$\frac{\sqrt3}{2}$")]),
+24:(r"A convex quadrilateral \(ABCD\) with area \(2002\) contains a point \(P\) in its interior such that \(PA=24\), \(PB=32\), \(PC=28\), and \(PD=45\). Find the perimeter of \(ABCD\).",[("A",r"$4\sqrt{2002}$"),("B",r"$2\sqrt{8465}$"),("C",r"$2(48+\sqrt{2002})$"),("D",r"$2\sqrt{8633}$"),("E",r"$4(36+\sqrt{113})$")]),
+25:(r"Let \(f(x)=x^2+6x+1\), and let \(R\) denote the set of points \((x,y)\) in the coordinate plane such that \[f(x)+f(y)\le0\quad\text{and}\quad f(x)-f(y)\le0.\] The area of \(R\) is closest to which integer?",[("A","21"),("B","22"),("C","23"),("D","24"),("E","25")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Count multiples of pairwise products below 2002.",
+22:"Combine logarithms into a single quotient.",
+23:"Use the median length formula.",
+24:"Use the maximum area of triangles with two fixed sides.",
+25:"Translate the quadratic and interpret the inequalities geometrically.",
+})
+
+SOL.update({
+21:[("Identify the relevant multiples",r"The value \(a_n=11\) occurs when \(n\) is a multiple of \(13\cdot14=182\). Since \(n<2002\), there are \(\left\lfloor\frac{2001}{182}\right\rfloor=10\) such multiples."),("Count the next type",r"The value \(a_n=13\) occurs for multiples of \(11\cdot14=154\). There are \[\left\lfloor\frac{2001}{154}\right\rfloor=12\] such multiples."),("Count the third type",r"The value \(a_n=14\) occurs for multiples of \(11\cdot13=143\). There are \[\left\lfloor\frac{2001}{143}\right\rfloor=13\] such multiples."),("Check overlap",r"A number divisible by all three of \(11,13,14\) would be divisible by \(2002\), but no positive multiple of \(2002\) is less than \(2002\). So there is no overlap to correct."),("Add",r"The sum is \[11\cdot10+13\cdot12+14\cdot13=110+156+182=448.\]"),("Conclude",r"The answer is $\boxed{448}$."),],
+22:[("Use logarithm addition",r"We have \[b=\log_{2002}(2\cdot3\cdot4\cdot5)=\log_{2002}(120).\]"),("Compute c similarly",r"Also \[c=\log_{2002}(10\cdot11\cdot12\cdot13\cdot14).\]"),("Compare the products",r"The quotient inside \(b-c\) is \[\frac{2\cdot3\cdot4\cdot5}{10\cdot11\cdot12\cdot13\cdot14}=\frac{120}{240240}=\frac1{2002}.\]"),("Evaluate the log",r"Therefore \[b-c=\log_{2002}\left(\frac1{2002}\right)=-1.\]"),("Conclude",r"The answer is $\boxed{-1}$."),],
+23:[("Name the unknown side",r"Let \(BC=x\). The median from \(A\) to \(BC\) also has length \(x\)." ),("Use the median formula",r"For side \(BC=x\), with \(AB=1\) and \(AC=2\), the median from \(A\) has length \(m_a\) satisfying \[m_a^2=\frac{2(AC)^2+2(AB)^2-(BC)^2}{4}.\]"),("Substitute",r"Thus \[x^2=\frac{2\cdot2^2+2\cdot1^2-x^2}{4}=\frac{10-x^2}{4}.\]"),("Solve",r"This gives \[4x^2=10-x^2,\] so \[5x^2=10,\quad x^2=2.\]"),("Conclude",r"Since \(x>0\), \(BC=\boxed{\sqrt2}\)." ),],
+24:[("Break the quadrilateral into four triangles",r"The area of \(ABCD\) is the sum of the areas of \(\triangle APB\), \(\triangle BPC\), \(\triangle CPD\), and \(\triangle DPA\)." ),("Use the maximum possible area",r"For two fixed sides \(r\) and \(s\), the triangle area is at most \(\frac12rs\), with equality when the included angle is \(90^\circ\)." ),("Compute the maximum total",r"The maximum possible total area is \[\frac12(24\cdot32+32\cdot28+28\cdot45+45\cdot24)=\frac12(4004)=2002.\] This equals the given area, so all four included angles at \(P\) are right angles."),("Find the side lengths",r"Thus \[AB=\sqrt{24^2+32^2}=40,\quad BC=\sqrt{32^2+28^2}=4\sqrt{113},\] \[CD=\sqrt{28^2+45^2}=53,\quad DA=\sqrt{45^2+24^2}=51.\]"),("Add the perimeter",r"The perimeter is \[40+4\sqrt{113}+53+51=144+4\sqrt{113}=4(36+\sqrt{113}).\]"),("Conclude",r"The answer is $\boxed{4(36+\sqrt{113})}$."),],
+25:[("Complete the square",r"We have \[f(x)=x^2+6x+1=(x+3)^2-8.\] Let \(u=x+3\) and \(v=y+3\)." ),("Rewrite the first inequality",r"The condition \(f(x)+f(y)\le0\) becomes \[(u^2-8)+(v^2-8)\le0,\] so \[u^2+v^2\le16.\] This is a disk of radius \(4\)." ),("Rewrite the second inequality",r"The condition \(f(x)-f(y)\le0\) becomes \[u^2-v^2\le0,\] or \[|u|\le |v|.\]"),("Find the area fraction",r"The lines \(v=u\) and \(v=-u\) divide the disk into four equal \(45^\circ\)-based sectors. The condition \(|u|\le|v|\) selects two opposite sectors, exactly half the disk."),("Compute the area",r"The area is \[\frac12\pi(4^2)=8\pi\approx25.13.\] The closest listed integer is \(25\)." ),("Conclude",r"The answer is $\boxed{25}$."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
