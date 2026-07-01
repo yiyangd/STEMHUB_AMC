@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 142
+BATCH_NUMBER = 143
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2024_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {21,23,24}
-SKIPPED = ["2024 AMC 10A Problem 22 skipped: kite polygon area depends on the missing figure.", "2024 AMC 10A Problem 25 skipped: toothpick loop count depends on the missing grid figure."]
-BATCH_LABEL = "2024 AMC 10A Problems 21,23,24"
-NEXT_START = "2024 AMC 10B Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2024_AMC_10B_Answer_Key"
+TARGET_NUMBERS = {6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2024 AMC 10B Problems 6-10"
+NEXT_START = "2024 AMC 10B Problem 11"
 
-ANS={21:("C","29"),23:("D","276"),24:("B",r"\frac7{54}")}
+ANS={6:("B","180"),7:("A","0"),8:("D","6"),9:("A","-5"),10:("A","5:4")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -281,6 +281,30 @@ SOL.update({
 23:[("Subtract two equations to reveal a factor",r"Subtract the second equation from the first: \[(ab+c)-(bc+a)=100-87.\] This simplifies to \[(a-c)(b-1)=13.\]"),("Use the prime factor 13",r"Since $13$ is prime, the factor pairs for \((a-c)(b-1)\) are limited. In particular, $a-c$ must be one of \(\pm1,\pm13\)."),("Test the compatible case",r"The case \(a-c=-1\) gives \(b-1=-13\), so \(b=-12\) and \(c=a+1\). Substituting into \(ab+c=100\) gives \[-12a+(a+1)=100,\] so \[-11a=99\] and \(a=-9\). Thus \(c=-8\)."),("Check the equations",r"With \[(a,b,c)=(-9,-12,-8),\] the three equations are satisfied: \[ab+c=108-8=100,\quad bc+a=96-9=87,\quad ca+b=72-12=60.\]"),("Compute the requested sum",r"Therefore \[ab+bc+ca=108+96+72=276.\]"),("Conclude",r"The answer is $\boxed{276}$."),],
 24:[("Translate the problem into paths on a cube",r"Each die roll moves the bee along one coordinate-axis edge of the three-dimensional grid. We need four distinct traversed edges that all belong to one unit cube."),("Count paths using exactly two axes",r"If the path uses two axes twice each, the two axes must alternate, forming four edges around one square face. Choose the two axes in \(\binom32=3\) ways, choose one of two alternating orders, and choose the initial signs for the two axes in \(2^2\) ways. This gives \[3\cdot2\cdot4=24\] paths."),("Count paths using all three axes",r"Now suppose one axis is used twice and the other two axes once each. Choose the repeated axis in $3$ ways. Its two appearances cannot be adjacent, so there are $6$ valid axis-order patterns. The repeated axis must be used once in each direction, and the two single axes have arbitrary signs, giving \(2^3=8\) sign choices."),("Add the favorable paths",r"This second case contributes \[3\cdot6\cdot8=144\] paths. The total number of favorable paths is \[24+144=168.\]"),("Divide by all possible rolls",r"There are \[6^4=1296\] equally likely sequences of four die rolls. Thus the probability is \[\frac{168}{1296}=\frac7{54}.\]"),("Conclude",r"The answer is $\boxed{\frac7{54}}$."),],
 })
+
+OV.update({
+6:(r"A rectangle has integer side lengths and an area of $2024$. What is the least possible perimeter of the rectangle?",[("A","160"),("B","180"),("C","222"),("D","228"),("E","390")]),
+7:(r"What is the remainder when \[7^{2024}+7^{2025}+7^{2026}\] is divided by $19$?",[("A","0"),("B","1"),("C","7"),("D","11"),("E","18")]),
+8:(r"Let $N$ be the product of all the positive integer divisors of $42$. What is the units digit of $N$?",[("A","0"),("B","2"),("C","4"),("D","6"),("E","8")]),
+9:(r"Real numbers $a$, $b$, and $c$ have arithmetic mean $0$. The arithmetic mean of $a^2$, $b^2$, and $c^2$ is $10$. What is the arithmetic mean of $ab$, $ac$, and $bc$?",[("A","-5"),("B","-10"),("C",r"$-\frac{10}{3}$"),("D","0"),("E",r"$\frac{10}{9}$")]),
+10:(r"Quadrilateral $ABCD$ is a parallelogram, and $E$ is the midpoint of side $\overline{AD}$. Let $F$ be the intersection of lines $EB$ and $AC$. What is the ratio of the area of quadrilateral $CDEF$ to the area of triangle $CFB$?",[("A","5:4"),("B","4:3"),("C","3:2"),("D","5:3"),("E","2:1")]),
+})
+
+KEY_OVERRIDES.update({
+6:"Choose factor pairs closest to the square root for minimum perimeter.",
+7:"Use the cycle of powers of 7 modulo 19.",
+8:"Pair divisors to compute the product of all divisors.",
+9:"Use (a+b+c)^2 to relate square terms and pairwise products.",
+10:"Use coordinates to compare parallelogram sub-areas.",
+})
+
+SOL.update({
+6:[("Factor the area",r"The side lengths are positive integers whose product is $2024$. To minimize perimeter for a fixed area, the two side lengths should be as close as possible."),("Factor 2024",r"We have \[2024=8\cdot253=2^3\cdot11\cdot23.\]"),("Find a close factor pair",r"The square root of $2024$ is a little less than $45$. A nearby factor pair is \[44\cdot46=2024.\]"),("Compute the perimeter",r"The perimeter is \[2(44+46)=2\cdot90=180.\]"),("Conclude",r"The least possible perimeter is $\boxed{180}$."),],
+7:[("Look for a modular cycle",r"Since the modulus is $19$, we reduce powers of $7$ modulo $19$. A useful observation is \[7^3=343\equiv1\pmod{19},\] because $343=19\cdot18+1$."),("Reduce the exponents",r"The powers repeat every $3$. We have \[2024\equiv2,\quad2025\equiv0,\quad2026\equiv1\pmod3.\]"),("Replace each power",r"Thus \[7^{2024}\equiv7^2,\quad7^{2025}\equiv1,\quad7^{2026}\equiv7\pmod{19}.\]"),("Add the residues",r"The sum is \[7^2+1+7=49+1+7=57.\] Since $57$ is divisible by $19$, the remainder is $0$."),("Conclude",r"The answer is $\boxed{0}$."),],
+8:[("List the divisor-product idea",r"The divisors of a number can be paired so that each pair has product equal to the original number. This is faster than multiplying all divisors directly."),("Count divisors of 42",r"Since \[42=2\cdot3\cdot7,\] it has \[2^3=8\] positive divisors."),("Pair the divisors",r"The $8$ divisors form $4$ pairs, each with product $42$. Therefore \[N=42^4.\]"),("Find only the units digit",r"The units digit of $42^4$ is the same as the units digit of $2^4$, which is $16$."),("Conclude",r"The units digit is $\boxed{6}$."),],
+9:[("Translate the means",r"The mean of $a$, $b$, and $c$ is $0$, so \[a+b+c=0.\] The mean of $a^2$, $b^2$, and $c^2$ is $10$, so \[a^2+b^2+c^2=30.\]"),("Use a standard identity",r"Square the first equation: \[(a+b+c)^2=a^2+b^2+c^2+2(ab+ac+bc).\]"),("Substitute known values",r"The left side is $0$, and the square sum is $30$, so \[0=30+2(ab+ac+bc).\]"),("Solve for the pairwise sum",r"This gives \[ab+ac+bc=-15.\]"),("Find the requested mean",r"The arithmetic mean of $ab$, $ac$, and $bc$ is \[\frac{ab+ac+bc}{3}=\frac{-15}{3}=-5.\]"),("Conclude",r"The answer is $\boxed{-5}$."),],
+10:[("Choose convenient coordinates",r"Because only an area ratio is needed, choose a simple parallelogram: let \[A=(0,0),\quad B=(1,0),\quad D=(0,1),\quad C=(1,1).\] Then $E$, the midpoint of $\overline{AD}$, is \[(0,\tfrac12).\]"),("Find point F",r"The diagonal $AC$ has equation $y=x$. The line through $E(0,\frac12)$ and $B(1,0)$ has equation \[y=\frac12-\frac12x.\] Solving with $y=x$ gives \[x=\frac13,\quad y=\frac13,\] so $F=(\frac13,\frac13)$."),("Compute the triangle area",r"Triangle $CFB$ has base $CB=1$ and horizontal distance from $F$ to the line $x=1$ equal to $\frac23$, so \[[CFB]=\frac12\cdot1\cdot\frac23=\frac13.\]"),("Compute the quadrilateral area",r"Using the shoelace formula on $C(1,1)$, $D(0,1)$, $E(0,\frac12)$, and $F(\frac13,\frac13)$ gives \[[CDEF]=\frac5{12}.\]"),("Compare",r"Therefore \[[CDEF]:[CFB]=\frac5{12}:\frac13=5:4.\]"),("Conclude",r"The answer is $\boxed{5:4}$."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -386,7 +410,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2024" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2024" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -475,7 +499,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2024 AMC 10A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2024 AMC 10B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
