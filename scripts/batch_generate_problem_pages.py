@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 190
+BATCH_NUMBER = 191
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2009_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {21,22,23}
-SKIPPED = ["2009 AMC 12A Problem 24: skipped for separate review because the tower/log notation is OCR-fragile.", "2009 AMC 12A Problem 25: skipped for separate review because the tangent-recursion notation is OCR-fragile."]
-BATCH_LABEL = "2009 AMC 12A Problems 21-23"
-NEXT_START = "2009 AMC 12B Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2009_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2009 AMC 12B Problems 1-10"
+NEXT_START = "2009 AMC 12B Problem 11"
 
-ANS={21:("C","8"),22:("E","14"),23:("D","752")}
+ANS={1:("B","2"),2:("C","15"),3:("D","36"),4:("C",r"\frac15"),5:("D","18"),6:("C","4"),7:("B","17"),8:("E",r"3a-2b"),9:("A","6"),10:("A",r"\frac12")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1887,6 +1887,49 @@ SOL.update({
 22:[("Understand the cut",r"A regular octahedron can be viewed as two congruent square pyramids base-to-base, or equivalently as having opposite parallel triangular faces. A plane halfway between two opposite faces and parallel to them cuts the octahedron into two congruent solids."),("Identify the cross-section",r"That middle cross-section passes through the midpoints of the six edges not lying on the two opposite faces. By symmetry, the cross-section is a regular hexagon."),("Find its side length",r"The octahedron side length is \(1\), and the cross-section connects midpoints of edges, so each side of the hexagon has length \(\frac12\)."),("Compute the hexagon area",r"A regular hexagon is made of \(6\) equilateral triangles. With side length \(\frac12\), its area is \[6\cdot\frac{\sqrt3}{4}\left(\frac12\right)^2=\frac{3\sqrt3}{8}.\]"),("Extract a, b, c",r"Thus \(a=3\), \(b=3\), and \(c=8\)."),("Conclude",r"\[a+b+c=3+3+8=14.\] The answer is \(\boxed{14}\)."),],
 23:[("Use the symmetry between f and g",r"The relation \(g(x)=-f(100-x)\) means the graph of \(g\) is obtained from the graph of \(f\) by a half-turn around \((50,0)\). Therefore the roots of \(g\) are \(100\) minus the roots of \(f\)."),("Place the middle two roots",r"By symmetry, the middle two intercepts satisfy \[x_2+x_3=100.\] Since \(x_3-x_2=150\), we get \(x_2=-25\) and \(x_3=125\)."),("Let h be the vertex x-coordinate of f",r"Assume the roots of \(f\) are \(x_1\) and \(x_3=125\). Then the vertex of \(f\) has \(x\)-coordinate \[h=\frac{x_1+125}{2},\] so \(x_1=2h-125\). By symmetry, \(x_4=100-x_1=225-2h\)."),("Use that g contains the vertex of f",r"Write \(f(x)=A(x-x_1)(x-125)\). Then \(g(x)=-f(100-x)\). Substituting the vertex point \((h,f(h))\) into \(g\) gives an equation that simplifies to \[h=-25-75\sqrt2.\] The other sign places the roots in the wrong order."),("Find x4 minus x1",r"Now \[x_4-x_1=(225-2h)-(2h-125)=350-4h.\] With \(h=-25-75\sqrt2\), this becomes \[350-4(-25-75\sqrt2)=450+300\sqrt2.\]"),("Finish",r"Thus \(m=450\), \(n=300\), and \(p=2\), so \[m+n+p=752.\]"),("Conclude",r"The answer is \(\boxed{752}\)."),],
 })
+
+OV.update({
+1:(r"Each morning of her five-day workweek, Jane bought either a \(50\)-cent muffin or a \(75\)-cent bagel. Her total cost for the week was a whole number of dollars. How many bagels did she buy?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+2:(r"Paula the painter had just enough paint for \(30\) identically sized rooms. Unfortunately, on the way to work, three cans of paint fell off her truck, so she had only enough paint for \(25\) rooms. How many cans of paint did she use for the \(25\) rooms?",[("A","10"),("B","12"),("C","15"),("D","18"),("E","25")]),
+3:(r"Twenty percent less than \(60\) is one-third more than what number?",[("A","16"),("B","30"),("C","32"),("D","36"),("E","48")]),
+4:(r"A rectangular yard contains two flower beds in the shape of congruent isosceles right triangles. The remainder of the yard has a trapezoidal shape. The parallel sides of the trapezoid have lengths \(15\) and \(25\) meters. What fraction of the yard is occupied by the flower beds?",[("A",r"\(\frac18\)"),("B",r"\(\frac16\)"),("C",r"\(\frac15\)"),("D",r"\(\frac14\)"),("E",r"\(\frac13\)")]),
+5:(r"Kiana has two older twin brothers. The product of their three ages is \(128\). What is the sum of their three ages?",[("A","10"),("B","12"),("C","16"),("D","18"),("E","24")]),
+6:(r"By inserting parentheses, it is possible to give the expression \(2\times3+4\times5\) several values. How many different values can be obtained?",[("A","2"),("B","3"),("C","4"),("D","5"),("E","6")]),
+7:(r"In a certain year the price of gasoline rose by \(20\%\) during January, fell by \(20\%\) during February, rose by \(25\%\) during March, and fell by \(x\%\) during April. The price at the end of April was the same as at the beginning of January. To the nearest integer, what is \(x\)?",[("A","12"),("B","17"),("C","20"),("D","25"),("E","35")]),
+8:(r"When a bucket is two-thirds full of water, the bucket and water weigh \(a\) kilograms. When the bucket is one-half full of water, the total weight is \(b\) kilograms. In terms of \(a\) and \(b\), what is the total weight when the bucket is full of water?",[("A",r"\(\frac23a+\frac13b\)"),("B",r"\(\frac32a-\frac12b\)"),("C",r"\(\frac32a+b\)"),("D",r"\(\frac32a+2b\)"),("E",r"\(3a-2b\)")]),
+9:(r"Triangle \(ABC\) has vertices \(A=(3,0)\), \(B=(0,3)\), and \(C\), where \(C\) is on the line \(x+y=7\). What is the area of \(\triangle ABC\)?",[("A","6"),("B","8"),("C","10"),("D","12"),("E","14")]),
+10:(r"A particular \(12\)-hour digital clock displays the hour and minute of a day. Unfortunately, whenever it is supposed to display a \(1\), it mistakenly displays a \(9\). What fraction of the day will the clock show the correct time?",[("A",r"\(\frac12\)"),("B",r"\(\frac58\)"),("C",r"\(\frac34\)"),("D",r"\(\frac56\)"),("E",r"\(\frac9{10}\)")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Use cents modulo \(100\).",
+2:"The three lost cans correspond to the paint for five rooms.",
+3:"Translate percent phrases into equations.",
+4:"Use the difference of trapezoid bases to find the legs of the right-triangle beds.",
+5:"Use the twin condition and factor \(128\).",
+6:"List the possible parenthesized values.",
+7:"Multiply the monthly price factors.",
+8:"Solve for bucket weight and full-water weight from two fill levels.",
+9:"Use distance between parallel lines.",
+10:"Count hours and minutes whose display contains no digit \(1\).",
+})
+
+NOTES_OVERRIDES.update({
+4:"This problem contains a diagram. The solution uses the displayed fact that the two isosceles right triangle beds fill the side gaps between trapezoid bases 15 and 25; please refer to the original PDF or AoPS page for the figure.",
+})
+
+SOL.update({
+1:[("Let b be the number of bagels",r"If Jane bought \(b\) bagels, then she bought \(5-b\) muffins."),("Write the total cost in cents",r"The total cost is \[75b+50(5-b)=250+25b\] cents."),("Use whole dollars",r"For the total to be a whole number of dollars, \(250+25b\) must be divisible by \(100\). Since \(250\equiv50\pmod{100}\), we need \(25b\equiv50\pmod{100}\)."),("Solve for b",r"This means \(b\equiv2\pmod4\). Among \(0,1,2,3,4,5\), the only possibility is \(b=2\)."),("Conclude",r"Jane bought \(\boxed{2}\) bagels."),],
+2:[("Relate cans to rooms",r"Losing \(3\) cans changed Paula's paint supply from enough for \(30\) rooms to enough for \(25\) rooms. So \(3\) cans correspond to \(5\) rooms of paint."),("Find cans per room",r"The ratio is \(3\) cans for \(5\) rooms, or \(\frac35\) can per room."),("Compute cans for 25 rooms",r"For \(25\) rooms, Paula used \[25\cdot\frac35=15\] cans."),("Conclude",r"The answer is \(\boxed{15}\)."),],
+3:[("Compute twenty percent less than 60",r"Twenty percent less than \(60\) is \(80\%\) of \(60\): \[0.8\cdot60=48.\]"),("Set up the unknown",r"Let the unknown number be \(x\). One-third more than \(x\) is \(\frac43x\)."),("Solve",r"\[\frac43x=48,\] so \[x=48\cdot\frac34=36.\]"),("Conclude",r"The answer is \(\boxed{36}\)."),],
+4:[("Find the triangle legs",r"The trapezoid's parallel sides are \(15\) and \(25\), so the total horizontal difference is \(10\). The two congruent isosceles right triangle beds split this equally, giving each triangle leg length \(5\)."),("Find total flower-bed area",r"Each isosceles right triangle has area \[\frac12\cdot5\cdot5=\frac{25}{2}.\] Two such triangles have total area \(25\)."),("Find the yard area",r"The rectangle has length \(25\) and width \(5\), so its area is \(125\)."),("Compute the fraction",r"The fraction occupied by the beds is \[\frac{25}{125}=\frac15.\]"),("Conclude",r"The answer is \(\boxed{\frac15}\)."),],
+5:[("Use the twin condition",r"Let each twin brother's age be \(t\), and let Kiana's age be \(k\). The product is \[kt^2=128=2^7.\]"),("Use that Kiana is younger",r"Since Kiana has older twin brothers, we need \(k<t\). Testing square factors of \(128\), \(t=8\) gives \(k=2\)."),("Check other possibilities",r"If \(t=1,2,\) or \(4\), Kiana would not be younger than both brothers, and if \(t\) is larger, \(k\) is not an integer age from this factorization."),("Add the ages",r"The sum is \[2+8+8=18.\]"),("Conclude",r"The answer is \(\boxed{18}\)."),],
+6:[("List the structures",r"The expression has two multiplications and one addition, so parentheses can change which addition happens before multiplication."),("Compute possible values",r"The natural value is \[(2\cdot3)+(4\cdot5)=26.\] Also \[((2\cdot3)+4)\cdot5=50,\] \[2\cdot(3+(4\cdot5))=46,\] and \[2\cdot((3+4)\cdot5)=70.\]"),("Check duplicates",r"Other parenthesizations repeat one of these values, such as \((2\cdot(3+4))\cdot5=70\)."),("Count distinct values",r"The distinct values are \(26,46,50,\) and \(70\), so there are \(4\)."),("Conclude",r"The answer is \(\boxed{4}\)."),],
+7:[("Multiply the monthly factors",r"Starting with price \(P\), January gives \(1.2P\), February gives \(0.8(1.2P)=0.96P\), and March gives \(1.25(0.96P)=1.2P\)."),("Apply April's decrease",r"After April, the price is \[1.2P\left(1-\frac{x}{100}\right).\] This must equal \(P\)."),("Solve",r"\[1.2\left(1-\frac{x}{100}\right)=1,\] so \[1-\frac{x}{100}=\frac56.\] Thus \(\frac{x}{100}=\frac16\), and \(x\approx16.67\)."),("Round",r"To the nearest integer, \(x=17\)."),("Conclude",r"The answer is \(\boxed{17}\)."),],
+8:[("Name the unknown weights",r"Let \(p\) be the empty bucket's weight and \(w\) be the weight of the water when the bucket is full."),("Write the two equations",r"\[p+\frac23w=a,\qquad p+\frac12w=b.\]"),("Find w",r"Subtracting the second equation from the first gives \[\frac16w=a-b,\] so \(w=6(a-b)\)."),("Find the full weight",r"The full bucket weighs \(p+w\). From \(p+\frac12w=b\), we have \(p=b-\frac12w=b-3(a-b)=4b-3a.\] Therefore \[p+w=(4b-3a)+6(a-b)=3a-2b.\]"),("Conclude",r"The full weight is \(\boxed{3a-2b}\)."),],
+9:[("Notice parallel lines",r"Points \(A=(3,0)\) and \(B=(0,3)\) lie on the line \(x+y=3\). Point \(C\) lies on the parallel line \(x+y=7\)."),("Find the base length",r"The length of \(\overline{AB}\) is \[\sqrt{(3-0)^2+(0-3)^2}=3\sqrt2.\]"),("Find the height",r"The distance between the parallel lines \(x+y=3\) and \(x+y=7\) is \[\frac{|7-3|}{\sqrt{1^2+1^2}}=\frac4{\sqrt2}=2\sqrt2.\]"),("Compute area",r"The area is \[\frac12\cdot3\sqrt2\cdot2\sqrt2=6.\]"),("Conclude",r"The answer is \(\boxed{6}\)."),],
+10:[("Count correct hours",r"The hour display is wrong whenever the hour contains a digit \(1\). In a \(12\)-hour clock, the bad hours are \(1,10,11,12\), so \(8\) of the \(12\) hours display correctly."),("Count correct minutes",r"A minute displays correctly when neither digit is \(1\). The tens digit can be \(0,2,3,4,5\), giving \(5\) choices, and the ones digit can be any digit except \(1\), giving \(9\) choices. So \(45\) of \(60\) minute displays are correct."),("Multiply independent counts",r"The fraction of the day with correct display is \[\frac8{12}\cdot\frac{45}{60}=\frac23\cdot\frac34=\frac12.\]"),("Conclude",r"The answer is \(\boxed{\frac12}\)."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -1993,7 +2036,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2009" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2009" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -2082,7 +2125,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2009 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2009 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
