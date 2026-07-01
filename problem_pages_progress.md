@@ -476,3 +476,19 @@
 - Pushed: pending
 - Next batch should start from: 2006 AMC 10B Problem 21
 - Review notes: Skipped Problems 15 and 19 because they require diagrams.
+
+## Batch 31: 2006 AMC 10B Problems 21, 22, 25
+
+- Start time: 2026-06-30T17:46:40-07:00
+- End time: 2026-06-30T17:46:41-07:00
+- Processed contest: AMC 10
+- Processed range: 2006 AMC 10B Problems 21, 22, 25
+- Generated count: 3
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2006 AMC 10B Problem 23 skipped: statement depends on a diagram for the area partition.; 2006 AMC 10B Problem 24 skipped: statement and choices are truncated by OCR and depend on a diagram.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2007 AMC 10A Problem 1
+- Review notes: Skipped Problems 23 and 24 because they require diagrams or have truncated OCR.

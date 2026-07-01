@@ -8,148 +8,70 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 30
+BATCH_NUMBER = 31
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2006_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {11, 12, 13, 14, 16, 17, 18, 20}
+TARGET_NUMBERS = {21, 22, 25}
 SKIPPED = [
-    "2006 AMC 10B Problem 15 skipped: statement depends on a diagram for the rhombus configuration.",
-    "2006 AMC 10B Problem 19 skipped: statement and shaded region depend on a diagram.",
+    "2006 AMC 10B Problem 23 skipped: statement depends on a diagram for the area partition.",
+    "2006 AMC 10B Problem 24 skipped: statement and choices are truncated by OCR and depend on a diagram.",
 ]
-BATCH_LABEL = "2006 AMC 10B Problems 11-14, 16-18, 20"
-NEXT_START = "2006 AMC 10B Problem 21"
+BATCH_LABEL = "2006 AMC 10B Problems 21, 22, 25"
+NEXT_START = "2007 AMC 10A Problem 1"
 
 ANS = {
-    11: ("C", "4"),
-    12: ("E", r"\frac{9}{4}"),
-    13: ("E", r"\frac{7}{6}"),
-    14: ("D", r"\frac{9}{2}"),
-    16: ("E", "Saturday"),
-    17: ("D", r"\frac{1}{3}"),
-    18: ("C", "3"),
-    20: ("E", "40,400"),
+    21: ("C", r"\frac{8}{63}"),
+    22: ("D", "$1.65"),
+    25: ("B", "5"),
 }
 
 
 OV = {
-    11: (
-        r"What is the tens digit in the sum $7!+8!+9!+\cdots+2006!$?",
-        [("A", "$1$"), ("B", "$3$"), ("C", "$4$"), ("D", "$6$"), ("E", "$9$")],
+    21: (
+        r"For a particular peculiar pair of dice, the probabilities of rolling $1,2,3,4,5,$ and $6$ on each die are in the ratio $1:2:3:4:5:6$. What is the probability of rolling a total of $7$ on the two dice?",
+        [("A", r"$\frac{4}{63}$"), ("B", r"$\frac18$"), ("C", r"$\frac{8}{63}$"), ("D", r"$\frac16$"), ("E", r"$\frac27$")],
     ),
-    12: (
-        r"The lines $x=\frac14y+a$ and $y=\frac14x+b$ intersect at the point $(1,2)$. What is $a+b$?",
-        [("A", "$0$"), ("B", r"$\frac34$"), ("C", "$1$"), ("D", "$2$"), ("E", r"$\frac94$")],
+    22: (
+        r"Elmo makes $N$ sandwiches for a fundraiser. For each sandwich he uses $B$ globs of peanut butter at $4$ cents per glob and $J$ blobs of jam at $5$ cents per blob. The cost of the peanut butter and jam to make all the sandwiches is $\$2.53$. Assume that $B$, $J$, and $N$ are all positive integers with $N>1$. What is the cost of the jam Elmo uses to make the sandwiches?",
+        [("A", "$1.05"), ("B", "$1.25"), ("C", "$1.45"), ("D", "$1.65"), ("E", "$1.85")],
     ),
-    13: (
-        r"Joe and JoAnn each bought $12$ ounces of coffee in a $16$-ounce cup. Joe drank $2$ ounces of his coffee and then added $2$ ounces of cream. JoAnn added $2$ ounces of cream, stirred the coffee well, and then drank $2$ ounces. What is the resulting ratio of the amount of cream in Joe's coffee to that in JoAnn's coffee?",
-        [("A", r"$\frac67$"), ("B", r"$\frac{13}{14}$"), ("C", "$1$"), ("D", r"$\frac{14}{13}$"), ("E", r"$\frac76$")],
-    ),
-    14: (
-        r"Let $a$ and $b$ be the roots of the equation $x^2-mx+2=0$. Suppose that $a+\frac1b$ and $b+\frac1a$ are the roots of the equation $x^2-px+q=0$. What is $q$?",
-        [("A", r"$\frac52$"), ("B", r"$\frac72$"), ("C", "$4$"), ("D", r"$\frac92$"), ("E", "$8$")],
-    ),
-    16: (
-        r"Leap Day, February $29$, $2004$, occurred on a Sunday. On what day of the week will Leap Day, February $29$, $2020$, occur?",
-        [("A", "Tuesday"), ("B", "Wednesday"), ("C", "Thursday"), ("D", "Friday"), ("E", "Saturday")],
-    ),
-    17: (
-        r"Bob and Alice each have a bag that contains one ball of each of the colors blue, green, orange, red, and violet. Alice randomly selects one ball from her bag and puts it into Bob's bag. Bob then randomly selects one ball from his bag and puts it into Alice's bag. What is the probability that after this process, the contents of the two bags are the same?",
-        [("A", r"$\frac{1}{10}$"), ("B", r"$\frac16$"), ("C", r"$\frac15$"), ("D", r"$\frac13$"), ("E", r"$\frac12$")],
-    ),
-    18: (
-        r"Let $a_1,a_2,\ldots$ be a sequence for which $a_1=2$, $a_2=3$, and $a_n=\frac{a_{n-1}}{a_{n-2}}$ for each positive integer $n\ge3$. What is $a_{2006}$?",
-        [("A", "$1$"), ("B", "$2$"), ("C", "$3$"), ("D", r"$\frac23$"), ("E", r"$\frac32$")],
-    ),
-    20: (
-        r"In rectangle $ABCD$, we have $A=(6,-22)$, $B=(2006,178)$, and $D=(8,y)$ for some integer $y$. What is the area of rectangle $ABCD$?",
-        [("A", "$4000$"), ("B", "$4040$"), ("C", "$4400$"), ("D", "$40,000$"), ("E", "$40,400$")],
+    25: (
+        r"Mr. Jones has eight children of different ages. On a family trip his oldest child, who is $9$, spots a license plate with a $4$-digit number in which each of two digits appears two times. \"Look, daddy!\" she exclaims. \"That number is evenly divisible by the age of each of us kids!\" \"That's right,\" replies Mr. Jones, \"and the last two digits just happen to be my age.\" Which of the following is not the age of one of Mr. Jones's children?",
+        [("A", "$4$"), ("B", "$5$"), ("C", "$6$"), ("D", "$7$"), ("E", "$8$")],
     ),
 }
 
 
 KEY_OVERRIDES = {
-    11: "For large factorials, use place-value divisibility and only keep terms that can affect the tens digit.",
-    12: "Substitute the intersection point into both line equations to solve for the constants.",
-    13: "Track the actual amount of cream left after a mixed portion is removed.",
-    14: "Use Vieta's formulas and multiply the transformed roots directly.",
-    16: "Count weekday shifts between leap days using days modulo 7.",
-    17: "Condition on Alice's transferred color and ask what Bob must return to restore both bags.",
-    18: "Look for the repeating cycle in the recursively defined sequence.",
-    20: "Use perpendicular side vectors of a rectangle and the dot product to find the missing coordinate and area.",
+    21: "Use weighted probability: each ordered dice outcome has probability proportional to the product of the two face weights.",
+    22: "Use integer factorization and modular constraints on the per-sandwich cost.",
+    25: "Use divisibility by ages 1 through 9 and the special repeated-digit structure of the license plate.",
 }
 
 
 SOL = {
-    11: [
-        ("Decide which factorials matter", r"We only need the tens digit, so any term that is a multiple of $100$ cannot change it. Since $10!$ and every larger factorial contain the factors $2^2\cdot5^2=100$, all terms from $10!$ onward end in at least two zeros."),
-        ("Reduce the sum", r"That means the tens digit of $7!+8!+9!+\cdots+2006!$ is the same as the tens digit of $7!+8!+9!$."),
-        ("Compute the smaller factorials", r"We have $7!=5040$, $8!=40320$, and $9!=362880$. Adding gives \
-\[5040+40320+362880=408240.\]"),
-        ("Read the requested digit", r"The tens digit of $408240$ is $4$. The large later factorials do not change that digit because they all contribute $00$ in the last two places."),
-        ("Answer", r"Therefore the answer is $\boxed{4}$."),
+    21: [
+        ("Turn the ratio into probabilities", r"The weights for faces $1$ through $6$ are $1,2,3,4,5,6$. Their total is $1+2+3+4+5+6=21$, so the probability of rolling face $k$ on one die is $\frac{k}{21}$."),
+        ("List the ways to total 7", r"The ordered pairs that sum to $7$ are $(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)$. Because the dice are rolled separately, order matters."),
+        ("Add weighted probabilities", r"For a pair $(i,j)$, the probability is $\frac{i}{21}\cdot\frac{j}{21}$. Therefore the numerator weight is \[1\cdot6+2\cdot5+3\cdot4+4\cdot3+5\cdot2+6\cdot1=56.\]"),
+        ("Divide by the total weight", r"The denominator is $21^2=441$, so the probability is $\frac{56}{441}=\frac{8}{63}$."),
+        ("Answer", r"The answer is $\boxed{\frac{8}{63}}$."),
     ],
-    12: [
-        ("Use the meaning of intersection", r"If the two lines intersect at $(1,2)$, then $x=1$ and $y=2$ must satisfy both equations. This is more direct than trying to solve the two lines symbolically."),
-        ("Find $a$", r"Substitute $(x,y)=(1,2)$ into $x=\frac14y+a$: \
-\[1=\frac14\cdot2+a=\frac12+a.\] Thus $a=\frac12$."),
-        ("Find $b$", r"Substitute the same point into $y=\frac14x+b$: \
-\[2=\frac14\cdot1+b.\] Therefore $b=2-\frac14=\frac74$."),
-        ("Add the constants", r"Now \
-\[a+b=\frac12+\frac74=\frac24+\frac74=\frac94.\]"),
-        ("Answer", r"The answer is $\boxed{\frac94}$."),
+    22: [
+        ("Write the cost equation", r"For one sandwich, the peanut butter and jam cost $4B+5J$ cents. For $N$ sandwiches, the total is \[N(4B+5J)=253.\]"),
+        ("Factor the total", r"Since $253=11\cdot23$ and $N>1$, the possible values of $N$ are $11$ or $23$ if the per-sandwich cost is an integer factor greater than $1$."),
+        ("Test the per-sandwich costs", r"If $N=23$, then $4B+5J=11$, but positive integers $B,J$ cannot make $11$ because the smallest possible cost is $4+5=9$ and the next possibilities skip $11$. If $N=11$, then $4B+5J=23$."),
+        ("Solve for positive integers", r"The equation $4B+5J=23$ has the positive solution $B=2$, $J=3$, since $4\cdot2+5\cdot3=8+15=23$."),
+        ("Find the total jam cost", r"Each sandwich uses $3$ blobs of jam at $5$ cents each, so jam costs $15$ cents per sandwich. For $11$ sandwiches, the jam cost is $11\cdot15=165$ cents, or $\$1.65$."),
+        ("Answer", r"The answer is $\boxed{\$1.65}$."),
     ],
-    13: [
-        ("Track Joe's cream", r"Joe first drinks $2$ ounces of pure coffee, so no cream is removed. Then he adds $2$ ounces of cream. Joe therefore has $2$ ounces of cream in his cup."),
-        ("Track JoAnn's mixture", r"JoAnn adds $2$ ounces of cream to $12$ ounces of coffee, making $14$ ounces total. Since the mixture is stirred well, the cream is evenly distributed."),
-        ("Find how much cream JoAnn drinks", r"The fraction of JoAnn's mixture that is cream is $\frac{2}{14}=\frac17$. When she drinks $2$ ounces, she removes $2\cdot\frac17=\frac27$ ounces of cream."),
-        ("Find JoAnn's remaining cream", r"JoAnn started with $2$ ounces of cream and drank $\frac27$ ounces of it, so she has $2-\frac27=\frac{12}{7}$ ounces of cream left."),
-        ("Form the ratio", r"The requested ratio is Joe's cream to JoAnn's cream: \
-\[\frac{2}{12/7}=2\cdot\frac7{12}=\frac76.\]"),
-        ("Answer", r"Therefore the answer is $\boxed{\frac76}$."),
-    ],
-    14: [
-        ("Record what Vieta gives", r"Since $a$ and $b$ are roots of $x^2-mx+2=0$, Vieta's formulas tell us that $ab=2$. We do not actually need the value of $m$."),
-        ("Understand what $q$ represents", r"For the equation $x^2-px+q=0$, the constant term $q$ is the product of its two roots. So \
-\[q=\left(a+\frac1b\right)\left(b+\frac1a\right).\]"),
-        ("Multiply carefully", r"Expanding gives \
-\[ab+1+1+\frac1{ab}.\] The two middle terms are $a\cdot\frac1a=1$ and $\frac1b\cdot b=1$."),
-        ("Substitute $ab=2$", r"Thus \
-\[q=2+1+1+\frac12=\frac92.\]"),
-        ("Answer", r"The answer is $\boxed{\frac92}$."),
-    ],
-    16: [
-        ("Think in four-year jumps", r"We are comparing Leap Day to Leap Day, so it is natural to move in four-year intervals: $2004$ to $2008$, then to $2012$, $2016$, and $2020$."),
-        ("Find the weekday shift for one interval", r"From February $29$ of one leap year to February $29$ of the next leap year is $4\cdot365+1=1461$ days. Since $1461\equiv5\pmod7$, each four-year leap-day jump moves the weekday forward $5$ days."),
-        ("Count the intervals", r"There are four such jumps from $2004$ to $2020$. The total shift is $4\cdot5=20$ days, and $20\equiv6\pmod7$."),
-        ("Apply the shift", r"Starting from Sunday, moving forward $6$ days gives Saturday."),
-        ("Answer", r"Leap Day in $2020$ occurred on $\boxed{\text{Saturday}}$."),
-    ],
-    17: [
-        ("Condition on Alice's first move", r"Suppose Alice transfers a blue ball. The same reasoning applies no matter which color she transfers, so we can focus on this one case."),
-        ("Describe the bags after Alice's move", r"Alice is missing blue and still has one of each of the other four colors. Bob now has two blue balls and one of each of the other four colors, for $6$ balls total."),
-        ("Identify what Bob must return", r"For the bags to end with the same contents as before, Alice must get a blue ball back. If Bob returns any other color, Alice will still be missing blue and will have two of another color."),
-        ("Compute the probability", r"Bob has $2$ blue balls among his $6$ balls, so the probability that he returns blue is $\frac26=\frac13$."),
-        ("Answer", r"Therefore the answer is $\boxed{\frac13}$."),
-    ],
-    18: [
-        ("Compute early terms", r"For recursive sequence problems, a good first move is to list terms until a pattern appears. We are given $a_1=2$ and $a_2=3$."),
-        ("Use the recurrence", r"Now \
-\[a_3=\frac{a_2}{a_1}=\frac32,\quad a_4=\frac{a_3}{a_2}=\frac12,\quad a_5=\frac{a_4}{a_3}=\frac13,\quad a_6=\frac{a_5}{a_4}=\frac23.\]"),
-        ("Notice the cycle", r"Continuing one more term gives $a_7=\frac{a_6}{a_5}=2$, which is the same as $a_1$. Then $a_8=3$, matching $a_2$. So the sequence repeats every $6$ terms."),
-        ("Use the index modulo 6", r"Since $2006=6\cdot334+2$, the $2006$th term is in the same position of the cycle as $a_2$."),
-        ("Answer", r"Thus $a_{2006}=a_2=\boxed{3}$."),
-    ],
-    20: [
-        ("Use rectangle geometry", r"In rectangle $ABCD$, the sides $AB$ and $AD$ meet at a right angle. So the vectors $\overrightarrow{AB}$ and $\overrightarrow{AD}$ must be perpendicular."),
-        ("Write the two vectors", r"From $A=(6,-22)$ to $B=(2006,178)$, \
-\[\overrightarrow{AB}=(2000,200).\] From $A=(6,-22)$ to $D=(8,y)$, \
-\[\overrightarrow{AD}=(2,y+22).\]"),
-        ("Use the dot product", r"Perpendicular vectors have dot product $0$, so \
-\[(2000)(2)+200(y+22)=0.\] This gives $4000+200y+4400=0$, hence $200y=-8400$ and $y=-42$."),
-        ("Find side lengths", r"Now $AD=(2,-20)$, so $AD=\sqrt{2^2+(-20)^2}=\sqrt{404}$. Also $AB=\sqrt{2000^2+200^2}=\sqrt{4,040,000}=100\sqrt{404}$."),
-        ("Compute area", r"The area of the rectangle is \
-\[(\sqrt{404})(100\sqrt{404})=100\cdot404=40,400.\]"),
-        ("Answer", r"The answer is $\boxed{40,400}$."),
+    25: [
+        ("Translate the ages condition", r"The oldest child is $9$, and there are eight children of different ages. So the children's ages are eight different numbers chosen from $1,2,\ldots,9$, and the license number is divisible by all eight of them."),
+        ("Use the repeated-digit condition", r"The license number has four digits with exactly two digits appearing twice. We need such a number that is divisible by $9$ and by seven other ages from $1$ through $8$."),
+        ("Look for the missing age", r"Testing divisibility is efficient here because the possible ages are only $1$ through $9$. The number $5544$ has two $5$s and two $4$s, and it is divisible by $1,2,3,4,6,7,8,$ and $9$."),
+        ("Check the divisibility", r"Indeed, $5544$ is even, its last two digits $44$ are divisible by $4$, its digit sum is $18$ so it is divisible by $3$ and $9$, and $5544\div7=792$. Also $5544\div8=693$."),
+        ("Identify the age not included", r"The divisors from $1$ to $9$ that work are $1,2,3,4,6,7,8,9$. The only missing possible age among the answer choices is $5$."),
+        ("Answer", r"Therefore $\boxed{5}$ is not the age of one of Mr. Jones's children."),
     ],
 }
 
@@ -327,7 +249,7 @@ def main():
         + "- Commit hash: pending\n"
         + "- Pushed: pending\n"
         + f"- Next batch should start from: {NEXT_START}\n"
-        + "- Review notes: Skipped Problems 15 and 19 because they require diagrams.\n",
+        + "- Review notes: Skipped Problems 23 and 24 because they require diagrams or have truncated OCR.\n",
         encoding="utf-8",
     )
 
@@ -351,7 +273,8 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批跳过 2006 AMC 10B Problems 15, 19：题面依赖图形。\n"
+        + "本批跳过 2006 AMC 10B Problems 23, 24：题面依赖图形或 OCR 截断。\n"
+        + "2006 AMC 10B 已完成可可靠生成部分。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题；遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 teaching steps 后 commit/push。\n",
         encoding="utf-8",
