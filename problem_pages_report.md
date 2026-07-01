@@ -1,8 +1,8 @@
 # Problem Pages Report
 
-- Total manifest entries: 625
-- Latest batch: 85 (2015 AMC 10A Problems 11-16)
-- Latest new generated count: 6
+- Total manifest entries: 629
+- Latest batch: 86 (2015 AMC 10A Problems 17-20)
+- Latest new generated count: 4
 - Latest updated existing count: 0
 - Latest skipped count: 0
 - MathJax validation: passed
@@ -10,9 +10,7 @@
 
 ## Latest Batch Pages
 
-- `2015 AMC 10A Problem 11` -> `amc10/problems/2015-amc-10a-problem-11/`
-- `2015 AMC 10A Problem 12` -> `amc10/problems/2015-amc-10a-problem-12/`
-- `2015 AMC 10A Problem 13` -> `amc10/problems/2015-amc-10a-problem-13/`
-- `2015 AMC 10A Problem 14` -> `amc10/problems/2015-amc-10a-problem-14/`
-- `2015 AMC 10A Problem 15` -> `amc10/problems/2015-amc-10a-problem-15/`
-- `2015 AMC 10A Problem 16` -> `amc10/problems/2015-amc-10a-problem-16/`
+- `2015 AMC 10A Problem 17` -> `amc10/problems/2015-amc-10a-problem-17/`
+- `2015 AMC 10A Problem 18` -> `amc10/problems/2015-amc-10a-problem-18/`
+- `2015 AMC 10A Problem 19` -> `amc10/problems/2015-amc-10a-problem-19/`
+- `2015 AMC 10A Problem 20` -> `amc10/problems/2015-amc-10a-problem-20/`

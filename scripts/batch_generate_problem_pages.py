@@ -3,34 +3,30 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 85
+BATCH_NUMBER = 86
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2015_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16}
+TARGET_NUMBERS = {17,18,19,20}
 SKIPPED = []
-BATCH_LABEL = "2015 AMC 10A Problems 11-16"
-NEXT_START = "2015 AMC 10A Problem 17"
+BATCH_LABEL = "2015 AMC 10A Problems 17-20"
+NEXT_START = "2015 AMC 10A Problem 21"
 
-ANS={11:("C",r"\frac{12}{25}"),12:("C","2"),13:("C","5"),14:("C","4 o'clock"),15:("B","1"),16:("B","15")}
+ANS={17:("D",r"3+2\sqrt3"),18:("E","21"),19:("D",r"\frac{50-25\sqrt3}{2}"),20:("B","102")}
 
 OV={
-11:(r"The ratio of the length to the width of a rectangle is $4:3$. If the rectangle has diagonal of length $d$, then the area may be expressed as $kd^2$ for some constant $k$. What is $k$?",[("A",r"\frac27"),("B",r"\frac37"),("C",r"\frac{12}{25}"),("D",r"\frac{16}{25}"),("E",r"\frac34")]),
-12:(r"Points $(\sqrt{\pi},a)$ and $(\sqrt{\pi},b)$ are distinct points on the graph of $y^2+x^4=2x^2y+1$. What is $|a-b|$?",[("A","1"),("B",r"\sqrt{\pi}"),("C","2"),("D",r"1+\pi"),("E",r"1+\pi^2")]),
-13:(r"Claudia has $12$ coins, each of which is a $5$-cent coin or a $10$-cent coin. There are exactly $17$ different values that can be obtained as combinations of one or more of her coins. How many $10$-cent coins does Claudia have?",[("A","3"),("B","4"),("C","5"),("D","6"),("E","7")]),
-14:(r"The circular face of a clock has radius $20$ cm, and a circular disk with radius $10$ cm is externally tangent to the clock face at $12$ o'clock. The disk has an arrow painted on it, initially pointing upward. The disk rolls clockwise around the clock face. At what point on the clock face will the disk be tangent when the arrow is next pointing upward?",[("A","2 o'clock"),("B","3 o'clock"),("C","4 o'clock"),("D","6 o'clock"),("E","8 o'clock")]),
-15:(r"Consider the set of all fractions $\frac{x}{y}$, where $x$ and $y$ are relatively prime positive integers. How many of these fractions have the property that if both numerator and denominator are increased by $1$, the value of the fraction is increased by $10\%$?",[("A","0"),("B","1"),("C","2"),("D","3"),("E","infinitely many")]),
-16:(r"If $y+4=(x-2)^2$, $x+4=(y-2)^2$, and $x\ne y$, what is the value of $x^2+y^2$?",[("A","10"),("B","15"),("C","20"),("D","25"),("E","30")]),
+17:(r"A line that passes through the origin intersects both the line $x=1$ and the line $y=1+\frac{x}{\sqrt3}$. The three lines create an equilateral triangle. What is the perimeter of the triangle?",[("A",r"2\sqrt6"),("B",r"2+2\sqrt3"),("C","6"),("D",r"3+2\sqrt3"),("E",r"6+3\sqrt3")]),
+18:(r"Hexadecimal (base-$16$) numbers are written using numeric digits $0$ through $9$ as well as the letters $A$ through $F$ to represent $10$ through $15$. Among the first $1000$ positive integers, there are $n$ whose hexadecimal representation contains only numeric digits. What is the sum of the digits of $n$?",[("A","17"),("B","18"),("C","19"),("D","20"),("E","21")]),
+19:(r"The isosceles right triangle $ABC$ has right angle at $C$ and area $12.5$. The rays trisecting $\angle ACB$ intersect $AB$ at $D$ and $E$. What is the area of $\triangle CDE$?",[("A",r"5\sqrt2"),("B",r"\frac{50\sqrt3-75}{4}"),("C",r"\frac{15\sqrt3}{2}"),("D",r"\frac{50-25\sqrt3}{2}"),("E",r"\frac{25\sqrt3}{6}")]),
+20:(r"A rectangle with positive integer side lengths has area $A$ square centimeters and perimeter $P$ centimeters. Which of the following numbers cannot equal $A+P$?",[("A","100"),("B","102"),("C","104"),("D","106"),("E","108")]),
 }
 
-KEY_OVERRIDES={11:"Use a 3-4-5 rectangle scale factor.",12:"Substitute the fixed x-value and complete the square in y.",13:"Convert nickel/dime values to sums using ones and twos.",14:"Use the rolling circle rotation factor for external rolling.",15:"Turn the fraction condition into a factor equation.",16:"Subtract the symmetric equations and use x+y."}
+KEY_OVERRIDES={17:"Use the 60-degree angle between the given lines to identify the third line.",18:"Count hexadecimal representations with only decimal digits.",19:"Place the right isosceles triangle on coordinate axes and use trisection slopes.",20:"Rewrite A+P as (a+2)(b+2)-4 for integer side lengths."}
 
 SOL={
-11:[("Use the ratio as side lengths",r"Let the rectangle have length $4s$ and width $3s$. This is the natural way to use the $4:3$ ratio."),("Find the diagonal",r"By the Pythagorean Theorem, the diagonal is $5s$, so $d=5s$ and $s=\frac d5$."),("Compute the area",r"The area is $(4s)(3s)=12s^2=12\left(\frac d5\right)^2=\frac{12}{25}d^2$."),("Conclude",r"Thus $k=\boxed{\frac{12}{25}}$."),],
-12:[("Substitute the fixed x-value",r"With $x=\sqrt{\pi}$, we have $x^2=\pi$ and $x^4=\pi^2$. The equation becomes \[y^2+\pi^2=2\pi y+1.\]"),("Complete the square",r"Move terms to get \[y^2-2\pi y+\pi^2=1,\] so \[(y-\pi)^2=1.\]"),("Find the two y-values",r"The two solutions are $y=\pi+1$ and $y=\pi-1$."),("Compute the distance",r"Therefore $|a-b|=(\pi+1)-(\pi-1)=2$."),("Conclude",r"The answer is $\boxed{2}$."),],
-13:[("Scale values by 5 cents",r"A $5$-cent coin contributes $1$ unit and a $10$-cent coin contributes $2$ units. If Claudia has $t$ ten-cent coins, then she has $12-t$ five-cent coins."),("Count possible unit sums",r"With at least one five-cent coin, the possible positive unit sums run consecutively from $1$ up to $(12-t)+2t=12+t$."),("Use the given number of values",r"The number of different positive values is therefore $12+t$. The problem says this number is $17$."),("Solve",r"$12+t=17$, so $t=5$."),("Conclude",r"Claudia has $\boxed{5}$ ten-cent coins."),],
-14:[("Understand the rolling factor",r"When a circle of radius $r$ rolls externally around a fixed circle of radius $R$, it rotates through angle $\frac{R+r}{r}\theta$ while its center sweeps angle $\theta$ around the fixed circle."),("Apply the radii",r"Here $R=20$ and $r=10$, so the rotation factor is $\frac{20+10}{10}=3$."),("Find the first upright arrow",r"The arrow is next upright after the disk has rotated $2\pi$ radians. Thus $3\theta=2\pi$, so $\theta=\frac{2\pi}{3}$."),("Convert to clock position",r"A clockwise sweep of $\frac{2\pi}{3}=120^\circ$ from $12$ o'clock lands at $4$ o'clock."),("Conclude",r"The answer is $\boxed{\text{4 o'clock}}$."),],
-15:[("Translate the 10 percent increase",r"The new fraction is $\frac{x+1}{y+1}$, and it is $10\%$ larger than $\frac xy$. Thus \[\frac{x+1}{y+1}=\frac{11x}{10y}.\]"),("Clear denominators",r"Cross-multiplying gives $10y(x+1)=11x(y+1)$."),("Rearrange into a factor equation",r"This simplifies to $xy+11x-10y=0$, or \[(x-10)(y+11)=-110.\]"),("Check positive coprime possibilities",r"Since $x,y>0$, we need $x<10$. Testing positive divisors of $110$ gives only one relatively prime solution: $x=5$, $y=11$."),("Conclude",r"There is exactly $\boxed{1}$ such fraction."),],
-16:[("Rewrite both equations",r"From $y+4=(x-2)^2$, we get $y=x^2-4x$. From $x+4=(y-2)^2$, we get $x=y^2-4y$."),("Subtract the equations",r"Subtracting gives \[y-x=(x^2-y^2)-4(x-y).\] Since $x\ne y$, divide by $x-y$ carefully to get $x+y=3$."),("Find xy without solving both values",r"Substitute $y=3-x$ into $y=x^2-4x$: \[3-x=x^2-4x,\] so $x^2-3x-3=0$. This implies $x(3-x)=-3$, so $xy=-3$."),("Compute x squared plus y squared",r"Use \[x^2+y^2=(x+y)^2-2xy=3^2-2(-3)=15.\]"),("Conclude",r"The answer is $\boxed{15}$."),],
+17:[("Use the angle between the fixed lines",r"The line $x=1$ is vertical, and the line $y=1+\frac{x}{\sqrt3}$ has slope $\frac1{\sqrt3}$, so it makes a $30^\circ$ angle with the $x$-axis. The angle between these two lines is $60^\circ$."),("Choose the third line",r"For the triangle to be equilateral, the third line through the origin must make a $60^\circ$ angle with each of the other two lines. This gives the line $y=-\frac{x}{\sqrt3}$."),("Find the vertical side length",r"On $x=1$, the slanted upper line has $y=1+\frac1{\sqrt3}$, while the line through the origin has $y=-\frac1{\sqrt3}$. The side length is \[1+\frac2{\sqrt3}.\]"),("Find the perimeter",r"The triangle is equilateral, so the perimeter is \[3\left(1+\frac2{\sqrt3}\right)=3+2\sqrt3.\]"),("Conclude",r"The answer is $\boxed{3+2\sqrt3}$."),],
+18:[("Translate the bound",r"The first $1000$ positive integers go up to decimal $1000$, which is hexadecimal $3E8$."),("Count one- and two-digit hexadecimal numbers",r"With only numeric digits, there are $9$ one-digit positive numbers and $9\cdot10=90$ two-digit numbers."),("Count three-digit numbers",r"For three-digit hexadecimal numbers up to $3E8$, the first digit can be $1$, $2$, or $3$. Since the other allowed digits are only $0$ through $9$, all $3\cdot100=300$ such numbers are below $3E8$."),("Find n",r"Thus $n=9+90+300=399$."),("Sum the digits",r"The sum of the decimal digits of $399$ is $3+9+9=21$."),("Conclude",r"The answer is $\boxed{21}$."),],
+19:[("Place the triangle on axes",r"Since the triangle is isosceles right with area $12.5$, its legs have length $5$. Put $C=(0,0)$, $A=(5,0)$, and $B=(0,5)$, so $AB$ is $x+y=5$."),("Use the trisecting rays",r"The rays trisecting the right angle have slopes $\tan30^\circ=\frac1{\sqrt3}$ and $\tan60^\circ=\sqrt3$."),("Find the intersection points",r"The first ray meets $AB$ at \[\left(\frac{5\sqrt3}{\sqrt3+1},\frac5{\sqrt3+1}\right),\] and the second meets $AB$ at \[\left(\frac5{\sqrt3+1},\frac{5\sqrt3}{\sqrt3+1}\right).\]"),("Compute area with a determinant",r"The absolute determinant of these two point vectors is \[\frac{25(3-1)}{(\sqrt3+1)^2}=\frac{25}{2+\sqrt3}.\] The triangle area is half of that."),("Simplify",r"Thus \[[CDE]=\frac{25}{2(2+\sqrt3)}=\frac{25(2-\sqrt3)}2=\frac{50-25\sqrt3}{2}.\]"),("Conclude",r"The answer is $\boxed{\frac{50-25\sqrt3}{2}}$."),],
+20:[("Use the corrected integer-side version",r"Let the positive integer side lengths be $a$ and $b$. Then $A=ab$ and $P=2a+2b$."),("Factor A plus P",r"\[A+P=ab+2a+2b=(a+2)(b+2)-4.\] Thus $A+P+4$ must factor into two integers greater than $2$."),("Test the choices by adding 4",r"The choices become $104,106,108,110,112$ after adding $4$."),("Find the impossible one",r"$106=2\cdot53$ has no factorization into two integers both greater than $2$. The others do: for example, $104=4\cdot26$, $108=6\cdot18$, $110=5\cdot22$, and $112=4\cdot28$."),("Conclude",r"Therefore $A+P$ cannot be $\boxed{102}$."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -77,7 +73,9 @@ def render(row):
     notes = row.get("notes") or ""
     if n in {10,17} and notes == "题面包含图形":
         notes = ""
-    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if n in {14} else notes
+    if n == 20:
+        notes = "This page uses the corrected practice version with positive integer side lengths; the original wording was ambiguous."
+    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if n in set() else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
         f'<li class="choice {"correct" if k == ans else ""}"><span class="choice-key">{esc(k)}</span><span>{esc(v, False)}</span></li>'
@@ -173,7 +171,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": int(r["problem_no"]) in {14},
+                "needs_review": int(r["problem_no"]) in {20},
                 "batch_number": BATCH_NUMBER,
             }
         )
