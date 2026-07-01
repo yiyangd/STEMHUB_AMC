@@ -8,132 +8,151 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 23
+BATCH_NUMBER = 24
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
 SKIPPED = []
-BATCH_LABEL = "2005 AMC 10B Problem 1-10"
-NEXT_START = "2005 AMC 10B Problem 11"
+BATCH_LABEL = "2005 AMC 10B Problem 11-20"
+NEXT_START = "2005 AMC 10B Problem 21"
 
 ANS = {
-    1: ("A", "100"),
-    2: ("D", "20"),
-    3: ("D", r"\frac{4}{9}"),
-    4: ("D", r"13\sqrt2"),
-    5: ("C", r"\frac{2}{5}"),
-    6: ("B", "2"),
-    7: ("B", r"\frac{\pi}{8}"),
-    8: ("A", r"80-20\pi"),
-    9: ("D", r"\frac{5}{9}"),
-    10: ("A", "3"),
+    11: ("E", "250"),
+    12: ("E", r"\left(\frac{1}{6}\right)^{10}"),
+    13: ("C", "835"),
+    14: ("C", r"\frac{\sqrt3}{2}"),
+    15: ("D", r"\frac{1}{2}"),
+    16: ("D", "8"),
+    17: ("B", r"\frac{3}{2}"),
+    18: ("D", "8"),
+    19: ("B", "1"),
+    20: ("C", "53332.8"),
 }
 
 
 OV = {
-    3: (
-        r"A gallon of paint is used to paint a room. One third of the paint is used on the first day. On the second day, one third of the remaining paint is used. What fraction of the original amount of paint is available to use on the third day?",
-        [("A", r"$\frac1{10}$"), ("B", r"$\frac19$"), ("C", r"$\frac13$"), ("D", r"$\frac49$"), ("E", r"$\frac59$")],
+    11: (
+        r"The first term of a sequence is $2005$. Each succeeding term is the sum of the cubes of the digits of the previous term. What is the $2005$th term of the sequence?",
+        [("A", "$29$"), ("B", "$55$"), ("C", "$85$"), ("D", "$133$"), ("E", "$250$")],
     ),
-    4: (
-        r"For real numbers $a$ and $b$, define $a\diamond b=\sqrt{a^2+b^2}$. What is the value of $(5\diamond12)\diamond((-12)\diamond(-5))$?",
-        [("A", "$0$"), ("B", r"$\sqrt{17}$"), ("C", "$13$"), ("D", r"$13\sqrt2$"), ("E", r"$26\sqrt2$")],
+    12: (
+        r"Twelve fair dice are rolled. What is the probability that the product of the numbers on the top faces is prime?",
+        [("A", r"$\left(\frac{1}{12}\right)^{12}$"), ("B", r"$\left(\frac{1}{6}\right)^{12}$"), ("C", r"$2\left(\frac{1}{6}\right)^{11}$"), ("D", r"$5\left(\frac{1}{6}\right)^{11}$"), ("E", r"$\left(\frac{1}{6}\right)^{10}$")],
     ),
-    7: (
-        r"A circle is inscribed in a square, then a square is inscribed in this circle, and finally, a circle is inscribed in this square. What is the ratio of the area of the smaller circle to the area of the larger square?",
-        [("A", r"$\frac{\pi}{16}$"), ("B", r"$\frac{\pi}{8}$"), ("C", r"$\frac{3\pi}{16}$"), ("D", r"$\frac{\pi}{4}$"), ("E", r"$\frac{\pi}{2}$")],
+    13: (
+        r"How many numbers between $1$ and $2005$ are integer multiples of $3$ or $4$ but not $12$?",
+        [("A", "$501$"), ("B", "$668$"), ("C", "$835$"), ("D", "$1002$"), ("E", "$1169$")],
     ),
-    9: (
-        r"One fair die has faces $1,1,2,2,3,3$ and another has faces $4,4,5,5,6,6$. The dice are rolled and the numbers on the top faces are added. What is the probability that the sum will be odd?",
-        [("A", r"$\frac13$"), ("B", r"$\frac49$"), ("C", r"$\frac12$"), ("D", r"$\frac59$"), ("E", r"$\frac23$")],
+    14: (
+        r"Equilateral $\triangle ABC$ has side length $2$, $M$ is the midpoint of $AC$, and $C$ is the midpoint of $BD$. What is the area of $\triangle CDM$?",
+        [("A", r"$\frac12$"), ("B", r"$\frac{\sqrt3}{4}$"), ("C", r"$\frac{\sqrt3}{2}$"), ("D", "$1$"), ("E", "$2$")],
     ),
-    10: (
-        r"In $\triangle ABC$, we have $AC=BC=7$ and $AB=2$. Suppose that $D$ is a point on line $AB$ such that $B$ lies between $A$ and $D$ and $CD=8$. What is $BD$?",
-        [("A", "$3$"), ("B", r"$2\sqrt3$"), ("C", "$4$"), ("D", "$5$"), ("E", r"$4\sqrt2$")],
+    15: (
+        r"An envelope contains eight bills: two $1$-dollar bills, two $5$-dollar bills, two $10$-dollar bills, and two $20$-dollar bills. Two bills are drawn at random without replacement. What is the probability that their sum is $20$ dollars or more?",
+        [("A", r"$\frac14$"), ("B", r"$\frac27$"), ("C", r"$\frac37$"), ("D", r"$\frac12$"), ("E", r"$\frac23$")],
+    ),
+    16: (
+        r"The quadratic equation $x^2+mx+n=0$ has roots that are twice those of $x^2+px+m=0$, and none of $m$, $n$, and $p$ is zero. What is the value of $\frac np$?",
+        [("A", "$1$"), ("B", "$2$"), ("C", "$4$"), ("D", "$8$"), ("E", "$16$")],
+    ),
+    17: (
+        r"Suppose that $4^a=5$, $5^b=6$, $6^c=7$, and $7^d=8$. What is $a\cdot b\cdot c\cdot d$?",
+        [("A", "$1$"), ("B", r"$\frac32$"), ("C", "$2$"), ("D", r"$\frac52$"), ("E", "$3$")],
+    ),
+    18: (
+        r"All of David's telephone numbers have the form $555-abc-defg$, where $a,b,c,d,e,f,$ and $g$ are distinct digits and in increasing order, and none is either $0$ or $1$. How many different telephone numbers can David have?",
+        [("A", "$1$"), ("B", "$2$"), ("C", "$7$"), ("D", "$8$"), ("E", "$9$")],
+    ),
+    19: (
+        r"On a certain math exam, $10\%$ of the students got $70$ points, $25\%$ got $80$ points, $20\%$ got $85$ points, $15\%$ got $90$ points, and the rest got $95$ points. What is the difference between the mean and the median score on this exam?",
+        [("A", "$0$"), ("B", "$1$"), ("C", "$2$"), ("D", "$4$"), ("E", "$5$")],
     ),
 }
 
 
 KEY_OVERRIDES = {
-    1: "Compute total buying cost and total selling revenue.",
-    2: "Translate x percent of x into an equation.",
-    3: "Track the remaining fraction after each day.",
-    4: "Evaluate the custom square-root operation from the inside out.",
-    5: "Use proportional cost: one third of the CDs costs one fifth of the money.",
-    6: "Convert a percentage goal into the required number of A grades.",
-    7: "Track areas through alternating inscribed squares and circles.",
-    8: "Compute shaded area per tile and multiply by the number of tiles.",
-    9: "Use parity: odd sums occur when one die is odd and the other is even.",
-    10: "Use symmetry and the Pythagorean theorem in an isosceles triangle.",
+    11: "Compute early terms until the digit-cube process enters a cycle.",
+    12: "A product is prime only when exactly one die contributes a prime and all others are 1.",
+    13: "Use inclusion-exclusion, then remove multiples of 12.",
+    14: "Use coordinates for the equilateral triangle and midpoint condition.",
+    15: "Count unordered pairs of bills with sum at least 20.",
+    16: "Apply Vieta's formulas to two quadratics whose roots differ by a factor of 2.",
+    17: "Rewrite the exponents as logarithms so the product telescopes.",
+    18: "Choose the seven increasing digits; the order is then forced.",
+    19: "Compute the weighted mean and locate the median from cumulative percentages.",
+    20: "Use symmetry: each digit appears equally often in each place value.",
 }
 
 
 SOL = {
-    1: [
-        ("Find the cost", r"The troop buys $1000$ bars at five for $2. The cost per group of $5$ is $2$, so the total cost is $(1000/5)\cdot2=400$ dollars."),
-        ("Find the revenue", r"They sell at two for $1$, so every $2$ bars brings in $1$. The revenue is $(1000/2)\cdot1=500$ dollars."),
-        ("Subtract", r"Profit is revenue minus cost: $500-400=100$."),
-        ("Answer", r"Their profit was $\boxed{100}$ dollars."),
+    11: [
+        ("Compute the first few terms", r"Start with $2005$. The next term is $2^3+0^3+0^3+5^3=8+125=133$."),
+        ("Look for a cycle", r"From $133$, the next term is $1^3+3^3+3^3=55$. From $55$, the next term is $5^3+5^3=250$. From $250$, the next term is $2^3+5^3+0^3=133$."),
+        ("Identify the repeating block", r"After the first term, the sequence repeats $133,55,250$ with period $3$."),
+        ("Use the index", r"The $2005$th term is $2004$ steps after the first term. Since $2004$ is divisible by $3$, the sequence lands on the third value of the repeating block, $250$."),
+        ("Answer", r"The $2005$th term is $\boxed{250}$."),
     ],
-    2: [
-        ("Translate the phrase", r"The phrase '$x\%$ of $x$' means $\frac{x}{100}\cdot x$."),
-        ("Set up the equation", r"We are told \[\frac{x}{100}\cdot x=4.\] Thus $x^2=400$."),
-        ("Use positivity", r"Since $x$ is positive, $x=20$, not $-20$."),
-        ("Answer", r"The answer is $\boxed{20}$."),
+    12: [
+        ("Understand when a product is prime", r"A product of twelve positive integers is prime only if one factor is that prime and all the other factors are $1$."),
+        ("Choose which die gives the prime", r"There are $12$ choices for the die that shows a prime."),
+        ("Choose the prime face", r"On a standard die, the prime faces are $2,3,5$, so the probability that the chosen die shows a prime is $3/6$."),
+        ("Force all other dice to be 1", r"The remaining $11$ dice must each show $1$, with probability $(1/6)^{11}$."),
+        ("Combine", r"The probability is $12\cdot\frac36\cdot\left(\frac16\right)^{11}=6\left(\frac16\right)^{11}=\boxed{\left(\frac16\right)^{10}}$."),
     ],
-    3: [
-        ("Track what remains after day 1", r"After using one third of the paint, the amount left is $1-\frac13=\frac23$ of the original gallon."),
-        ("Use one third of the remaining paint", r"On the second day, one third of the remaining paint is used, so two thirds of the remaining paint stays unused."),
-        ("Multiply the remaining fractions", r"The amount available for the third day is \[\frac23\cdot\frac23=\frac49\] of the original amount."),
-        ("Answer", r"The answer is $\boxed{\frac49}$."),
+    13: [
+        ("Count multiples of 3 or 4", r"Between $1$ and $2005$, there are $\lfloor2005/3\rfloor=668$ multiples of $3$ and $\lfloor2005/4\rfloor=501$ multiples of $4$."),
+        ("Avoid double-counting multiples of 12", r"Multiples of both $3$ and $4$ are multiples of $12$, and there are $\lfloor2005/12\rfloor=167$ of them."),
+        ("Find the union", r"The number divisible by $3$ or $4$ is $668+501-167=1002$."),
+        ("Remove multiples of 12", r"The problem says 'but not $12$', meaning not multiples of $12$. Remove those $167$ numbers."),
+        ("Answer", r"The count is $1002-167=\boxed{835}$."),
     ],
-    4: [
-        ("Understand the operation", r"The operation $a\diamond b$ gives the length of the hypotenuse of a right triangle with legs $a$ and $b$: $\sqrt{a^2+b^2}$."),
-        ("Evaluate the two inner operations", r"We have $5\diamond12=\sqrt{25+144}=13$. Also $(-12)\diamond(-5)=\sqrt{144+25}=13$."),
-        ("Evaluate the outer operation", r"Now the expression becomes $13\diamond13=\sqrt{13^2+13^2}=\sqrt{338}$."),
-        ("Simplify", r"Since $338=169\cdot2$, the value is $13\sqrt2$."),
-        ("Answer", r"The answer is $\boxed{13\sqrt2}$."),
+    14: [
+        ("Place the equilateral triangle", r"Let $B=(-1,0)$, $C=(1,0)$, and $A=(0,\sqrt3)$. This gives side length $2$."),
+        ("Locate M", r"Point $M$ is the midpoint of $AC$, so $M=\left(\frac12,\frac{\sqrt3}{2}\right)$."),
+        ("Use C as midpoint of BD", r"Since $C$ is the midpoint of $BD$ and $B=(-1,0)$, point $D$ must be $(3,0)$."),
+        ("Compute the triangle area", r"Segment $CD$ is horizontal with length $2$. The height from $M$ to line $CD$ is $\frac{\sqrt3}{2}$."),
+        ("Answer", r"Thus $[CDM]=\frac12\cdot2\cdot\frac{\sqrt3}{2}=\boxed{\frac{\sqrt3}{2}}$."),
     ],
-    5: [
-        ("Find the cost of all CDs", r"One third of the CDs costs one fifth of her money. Since all CDs have the same price, all the CDs cost three times as much."),
-        ("Compute the total fraction spent", r"Buying all the CDs costs $3\cdot\frac15=\frac35$ of her money."),
-        ("Find what remains", r"The fraction left is $1-\frac35=\frac25$."),
-        ("Answer", r"She will have $\boxed{\frac25}$ of her money left."),
+    15: [
+        ("Count all pairs", r"There are $8$ bills, so the total number of unordered pairs is $\binom82=28$."),
+        ("Count pairs involving a $20$", r"Any pair with a $20$-dollar bill has sum at least $20$. There are $2$ choices for a $20$ and $6$ choices for a non-$20$ bill, giving $12$ pairs, plus the pair of two $20$s, giving $13$ pairs."),
+        ("Count pairs without a $20$", r"Without a $20$, the only way to reach at least $20$ is to choose the two $10$-dollar bills. That adds $1$ more pair."),
+        ("Compute the probability", r"There are $14$ favorable pairs out of $28$ total pairs."),
+        ("Answer", r"The probability is $14/28=\boxed{\frac12}$."),
     ],
-    6: [
-        ("Convert the goal", r"Lisa wants an A on at least $80\%$ of $50$ quizzes. That means she needs at least $0.8\cdot50=40$ A grades."),
-        ("Use what she already has", r"She already has $22$ A grades from the first $30$ quizzes."),
-        ("Find how many more A grades she needs", r"She needs $40-22=18$ more A grades among the remaining $20$ quizzes."),
-        ("Count allowed non-A grades", r"If she needs $18$ A grades out of $20$, then at most $2$ of the remaining quizzes can be lower than an A."),
-        ("Answer", r"The answer is $\boxed{2}$."),
+    16: [
+        ("Name the roots", r"Let the roots of $x^2+px+m=0$ be $r$ and $s$. Then the roots of $x^2+mx+n=0$ are $2r$ and $2s$."),
+        ("Use Vieta on the second equation", r"For $x^2+px+m=0$, we have $r+s=-p$ and $rs=m$."),
+        ("Use Vieta on the first equation", r"For $x^2+mx+n=0$, the sum of roots is $-m$. But the roots are $2r$ and $2s$, so $2r+2s=2(r+s)=-2p=-m$. Hence $m=2p$."),
+        ("Use the product", r"The product of the first equation's roots is $n$. Thus $n=(2r)(2s)=4rs=4m$."),
+        ("Answer", r"Since $m=2p$, we get $n=4m=8p$, so $\frac np=\boxed{8}$."),
     ],
-    7: [
-        ("Choose a simple side length", r"Let the larger square have side length $s$, so its area is $s^2$. The first circle inscribed in it has radius $s/2$."),
-        ("Find the inscribed square", r"The square inside that circle has diagonal equal to the circle's diameter, which is $s$. Therefore its side length is $s/\sqrt2$."),
-        ("Find the smaller circle", r"The final circle is inscribed in this smaller square, so its radius is half the side length: $s/(2\sqrt2)$."),
-        ("Compute the area ratio", r"The smaller circle has area $\pi\left(\frac{s}{2\sqrt2}\right)^2=\frac{\pi s^2}{8}$. Dividing by the larger square area $s^2$ gives $\frac{\pi}{8}$."),
-        ("Answer", r"The ratio is $\boxed{\frac{\pi}{8}}$."),
+    17: [
+        ("Rewrite as logarithms", r"From $4^a=5$, we have $a=\log_4 5$. Similarly, $b=\log_5 6$, $c=\log_6 7$, and $d=\log_7 8$."),
+        ("Multiply the logs", r"The product is \[\log_4 5\cdot\log_5 6\cdot\log_6 7\cdot\log_7 8.\]"),
+        ("Use telescoping", r"Using $\log_a b\cdot\log_b c=\log_a c$, the product collapses to $\log_4 8$."),
+        ("Evaluate", r"Since $4=2^2$ and $8=2^3$, $\log_4 8=\frac32$."),
+        ("Answer", r"The answer is $\boxed{\frac32}$."),
     ],
-    8: [
-        ("Find the shaded area of one tile", r"Each tile has four white quarter-circles of radius $1/2$. Together they make one full circle of radius $1/2$, with area $\pi(1/2)^2=\pi/4$."),
-        ("Subtract from the tile area", r"Each tile has area $1$, so the shaded area per tile is $1-\pi/4$."),
-        ("Count the tiles", r"The floor is $8$ feet by $10$ feet, so it has $80$ one-foot square tiles."),
-        ("Multiply", r"The total shaded area is $80(1-\pi/4)=80-20\pi$."),
-        ("Answer", r"The answer is $\boxed{80-20\pi}$."),
+    18: [
+        ("Identify the available digits", r"The digits cannot be $0$ or $1$, so they come from $2,3,4,5,6,7,8,9$, which gives $8$ possible digits."),
+        ("Use the increasing-order condition", r"Once David chooses which $7$ digits appear, their order is forced because they must be in increasing order."),
+        ("Count choices", r"So the number of telephone numbers is just the number of ways to choose $7$ digits from $8$: \[\binom87=8.\]"),
+        ("Answer", r"David can have $\boxed{8}$ different telephone numbers."),
     ],
-    9: [
-        ("Use parity", r"A sum is odd when one addend is odd and the other is even."),
-        ("Find parity probabilities", r"The first die has four odd faces ($1,1,3,3$) and two even faces ($2,2$). So $P(\text{odd on first})=\frac46=\frac23$ and $P(\text{even on first})=\frac13$."),
-        ("Do the same for the second die", r"The second die has two odd faces ($5,5$) and four even faces ($4,4,6,6$). So $P(\text{odd on second})=\frac13$ and $P(\text{even on second})=\frac23$."),
-        ("Add the two favorable parity cases", r"The probability is \[\frac23\cdot\frac23+\frac13\cdot\frac13=\frac49+\frac19=\frac59.\]"),
-        ("Answer", r"The answer is $\boxed{\frac59}$."),
+    19: [
+        ("Find the median", r"The cumulative percentages are $10\%$ at $70$, then $35\%$ at $80$, then $55\%$ at $85$. So the median score is $85$."),
+        ("Find the remaining percentage", r"The listed percentages before $95$ add to $10+25+20+15=70\%$, so $30\%$ of students got $95$."),
+        ("Compute the mean", r"The mean is \[0.10(70)+0.25(80)+0.20(85)+0.15(90)+0.30(95).\]"),
+        ("Evaluate", r"This equals $7+20+17+13.5+28.5=86$."),
+        ("Answer", r"The difference between the mean and median is $86-85=\boxed{1}$."),
     ],
-    10: [
-        ("Use symmetry", r"Since $AC=BC=7$ and $AB=2$, point $C$ lies above the midpoint of $AB$. Put $A=(-1,0)$ and $B=(1,0)$."),
-        ("Find the height of C", r"The distance from the midpoint to either endpoint is $1$, so the height $h$ satisfies $h^2+1^2=7^2$. Thus $h^2=48$."),
-        ("Place point D", r"Point $D$ is on line $AB$ beyond $B$, so write $D=(1+x,0)$ where $x=BD$."),
-        ("Use CD=8", r"The distance from $C=(0,\sqrt{48})$ to $D=(1+x,0)$ is $8$, so \[(1+x)^2+48=64.\] Therefore $(1+x)^2=16$."),
-        ("Solve", r"Since $x>0$, $1+x=4$, so $x=3$. Thus $BD=\boxed{3}$."),
+    20: [
+        ("Use symmetry of permutations", r"All permutations of the digits $1,3,5,7,8$ are used. In each place value, every digit appears equally often."),
+        ("Find the average digit in each place", r"The average of the five digits is \[\frac{1+3+5+7+8}{5}=\frac{24}{5}=4.8.\]"),
+        ("Build the average number", r"Since each place has average digit $4.8$, the average number is \[4.8(10000+1000+100+10+1).\]"),
+        ("Compute", r"This is $4.8\cdot11111=53332.8$."),
+        ("Answer", r"The average is $\boxed{53332.8}$."),
     ],
 }
 
@@ -336,7 +355,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批完成 2005 AMC 10B Problems 1-10，无跳过题。\n"
+        + "本批完成 2005 AMC 10B Problems 11-20，无跳过题。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",
