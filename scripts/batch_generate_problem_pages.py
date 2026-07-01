@@ -3,73 +3,115 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 62
+BATCH_NUMBER = 63
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2012_AMC_10A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
 SKIPPED = []
-BATCH_LABEL = "2011 AMC 10B Problems 21-25"
-NEXT_START = "2012 AMC 10A Problem 1"
+BATCH_LABEL = "2012 AMC 10A Problems 1-10"
+NEXT_START = "2012 AMC 10A Problem 11"
 
 ANS = {
-    21: ("B", "31"),
-    22: ("A", r"5\sqrt2-7"),
-    23: ("D", "6"),
-    24: ("B", r"\frac{50}{99}"),
-    25: ("D", r"\frac{1509}{128}"),
+    1: ("D", "25"),
+    2: ("E", "$4$ by $8$"),
+    3: ("E", "15"),
+    4: ("C", "4"),
+    5: ("B", "200"),
+    6: ("D", r"\frac{15}{2}"),
+    7: ("C", r"\frac47"),
+    8: ("D", "7"),
+    9: ("D", r"\frac13"),
+    10: ("C", "8"),
 }
 
 OV = {
-    21: (r"Brian writes down four integers $w>x>y>z$ whose sum is $44$. The pairwise positive differences of these numbers are $1,3,4,5,6,$ and $9$. What is the sum of the possible values for $w$?", [("A","16"),("B","31"),("C","48"),("D","62"),("E","93")]),
-    22: (r"A pyramid has a square base with sides of length $1$ and has lateral faces that are equilateral triangles. A cube is placed within the pyramid so that one face is on the base of the pyramid and its opposite face has all its edges on the lateral faces of the pyramid. What is the volume of this cube?", [("A",r"5\sqrt2-7"),("B",r"7-4\sqrt3"),("C",r"\frac{2\sqrt2}{27}"),("D",r"\frac{\sqrt2}{9}"),("E",r"\frac{\sqrt3}{9}")]),
-    23: (r"What is the hundreds digit of $2011^{2011}$?", [("A","1"),("B","4"),("C","5"),("D","6"),("E","9")]),
-    24: (r"A lattice point in an $xy$-coordinate system is any point $(x,y)$ where both $x$ and $y$ are integers. The graph of $y=mx+2$ passes through no lattice point with $0<x\le100$ for all $m$ such that $\frac12<m<a$. What is the maximum possible value of $a$?", [("A",r"\frac{51}{101}"),("B",r"\frac{50}{99}"),("C",r"\frac{51}{100}"),("D",r"\frac{52}{101}"),("E",r"\frac{13}{25}")]),
-    25: (r"Let $T_1$ be a triangle with side lengths $2011,2012,$ and $2013$. For $n\ge1$, if $T_n=\triangle ABC$ and $D,E,F$ are the points of tangency of the incircle of $\triangle ABC$ to the sides $AB,BC,$ and $AC$, respectively, then $T_{n+1}$ is a triangle with side lengths $AD,BE,$ and $CF$, if it exists. What is the perimeter of the last triangle in the sequence $(T_n)$?", [("A",r"\frac{1509}{8}"),("B",r"\frac{1509}{32}"),("C",r"\frac{1509}{64}"),("D",r"\frac{1509}{128}"),("E",r"\frac{1509}{256}")]),
+    1: (r"Cagney can frost a cupcake every $20$ seconds and Lacey can frost a cupcake every $30$ seconds. Working together, how many cupcakes can they frost in $5$ minutes?", [("A","10"),("B","15"),("C","20"),("D","25"),("E","30")]),
+    2: (r"A square with side length $8$ is cut in half, creating two congruent rectangles. What are the dimensions of one of these rectangles?", [("A", "$2$ by $4$"),("B", "$2$ by $6$"),("C", "$2$ by $8$"),("D", "$4$ by $4$"),("E", "$4$ by $8$")]),
+    3: (r"A bug crawls along a number line, starting at $-2$. It crawls to $-6$, then turns around and crawls to $5$. How many units does the bug crawl altogether?", [("A","9"),("B","11"),("C","13"),("D","14"),("E","15")]),
+    4: (r"Let $\angle ABC=24^\circ$ and $\angle ABD=20^\circ$. What is the smallest possible degree measure for $\angle CBD$?", [("A","0"),("B","2"),("C","4"),("D","6"),("E","12")]),
+    5: (r"Last year $100$ adult cats, half of whom were female, were brought into the Smallville Animal Shelter. Half of the adult female cats were accompanied by a litter of kittens. The average number of kittens per litter was $4$. What was the total number of cats and kittens received by the shelter last year?", [("A","150"),("B","200"),("C","250"),("D","300"),("E","400")]),
+    6: (r"The product of two positive numbers is $9$. The reciprocal of one of these numbers is $4$ times the reciprocal of the other number. What is the sum of the two numbers?", [("A",r"\frac{10}{3}"),("B",r"\frac{20}{3}"),("C","7"),("D",r"\frac{15}{2}"),("E","8")]),
+    7: (r"In a bag of marbles, $\frac35$ of the marbles are blue and the rest are red. If the number of red marbles is doubled and the number of blue marbles stays the same, what fraction of the marbles will be red?", [("A",r"\frac25"),("B",r"\frac37"),("C",r"\frac47"),("D",r"\frac35"),("E",r"\frac45")]),
+    8: (r"The sums of three whole numbers taken in pairs are $12$, $17$, and $19$. What is the middle number?", [("A","4"),("B","5"),("C","6"),("D","7"),("E","8")]),
+    9: (r"A pair of six-sided fair dice are labeled so that one die has only even numbers, two each of $2,4,$ and $6$, and the other die has only odd numbers, two each of $1,3,$ and $5$. The pair of dice is rolled. What is the probability that the sum of the numbers on top of the two dice is $7$?", [("A",r"\frac16"),("B",r"\frac15"),("C",r"\frac14"),("D",r"\frac13"),("E",r"\frac12")]),
+    10: (r"Mary divides a circle into $12$ sectors. The central angles of these sectors, measured in degrees, are all integers and they form an arithmetic sequence. What is the degree measure of the smallest possible sector angle?", [("A","5"),("B","6"),("C","8"),("D","10"),("E","12")]),
 }
 
 KEY_OVERRIDES = {
-    21: "Represent the four numbers by adjacent gaps and test the possible gap patterns.",
-    22: "Use a diagonal cross-section of the pyramid so the cube becomes a rectangle inside a 45-45-90 triangle.",
-    23: "Find the last three digits with modular arithmetic, then read the hundreds digit.",
-    24: "The first rational slope greater than $1/2$ with denominator at most $100$ creates the limiting value.",
-    25: "Track how the side lengths change when incircle tangency lengths become the next triangle.",
+    1: "Add work rates and multiply by the total time.",
+    2: "Cutting an $8$ by $8$ square in half halves one dimension and keeps the other unchanged.",
+    3: "Distance traveled on a number line is the sum of absolute changes, not just final displacement.",
+    4: "To minimize the angle between two rays, place them on the same side of the common ray.",
+    5: "Count female cats, litters, and kittens separately before adding the original adult cats.",
+    6: "Turn the reciprocal condition into a ratio between the two positive numbers.",
+    7: "Use convenient total marbles to track the changing red and blue counts.",
+    8: "Add the pairwise sums to get twice the sum of the three numbers.",
+    9: "Count the equally likely displayed values on the even die and odd die.",
+    10: "Use the arithmetic-sequence sum formula and integer constraints.",
 }
 
 SOL = {
-    21: [
-        ("Use the largest difference", r"Since $w$ is the largest number and $z$ is the smallest, the largest pairwise difference must be $w-z=9$."),
-        ("Think in adjacent gaps", r"Let the adjacent gaps be $w-x$, $x-y$, and $y-z$. These three gaps add to $9$, and all pairwise differences are made by adding consecutive gaps."),
-        ("Find the possible gap patterns", r"The six differences must be $1,3,4,5,6,9$. The adjacent gaps have to be three of these numbers and sum to $9$. The two working orders are $(5,1,3)$ and $(3,1,5)$, which produce exactly the required six differences."),
-        ("Convert each pattern to w", r"For gaps $(5,1,3)$, the numbers are $w,w-5,w-6,w-9$. Their sum is $4w-20=44$, so $w=16$. For gaps $(3,1,5)$, the numbers are $w,w-3,w-4,w-9$, giving $4w-16=44$, so $w=15$."),
-        ("Add possible values", r"The possible values of $w$ are $16$ and $15$, and their sum is $31$. The answer is $\boxed{31}$."),
+    1: [
+        ("Convert the time", r"Five minutes is $5\cdot60=300$ seconds. Working in seconds matches the frosting rates in the problem."),
+        ("Find each person's output", r"Cagney frosts one cupcake every $20$ seconds, so in $300$ seconds Cagney can frost $300/20=15$ cupcakes. Lacey frosts one every $30$ seconds, so Lacey can frost $300/30=10$ cupcakes."),
+        ("Add the outputs", r"Since they work together on separate cupcakes, their outputs add. The total is $15+10=25$."),
+        ("Conclude", r"Together they can frost $\boxed{25}$ cupcakes."),
     ],
-    22: [
-        ("Take the right cross-section", r"A spatial problem becomes much easier if we slice through the apex and a diagonal of the square base. The cross-section of the pyramid is a $45$-$45$-$90$ triangle with base $\sqrt2$ and equal sides $1$."),
-        ("Describe the cube in the cross-section", r"If the cube has side length $s$, then in this diagonal cross-section it appears as a rectangle of height $s$ and width $s\sqrt2$, because the width is the diagonal of the cube's top face."),
-        ("Use the side triangles", r"The two small triangles on the left and right of the rectangle are also $45$-$45$-$90$ triangles, so each has horizontal leg $s$. Therefore the full base length satisfies \[\sqrt2=s+s\sqrt2+s=(2+\sqrt2)s.\]"),
-        ("Solve for the cube side", r"Thus \[s=\frac{\sqrt2}{2+\sqrt2}=\sqrt2-1.\]"),
-        ("Compute the volume", r"The cube's volume is $s^3=(\sqrt2-1)^3=5\sqrt2-7$. The answer is $\boxed{5\sqrt2-7}$."),
+    2: [
+        ("Start with the square", r"The original square has dimensions $8$ by $8$. Cutting it into two congruent rectangles means each rectangle has half the area of the square."),
+        ("Think about the cut", r"A straight cut through the middle parallel to a side keeps one dimension equal to $8$ and cuts the other dimension from $8$ to $4$."),
+        ("Check the area", r"Each rectangle is $4$ by $8$, with area $32$, exactly half of the square's area $64$."),
+        ("Conclude", r"The dimensions are $\boxed{4\text{ by }8}$."),
     ],
-    23: [
-        ("Only the last three digits matter", r"The hundreds digit is determined by the number modulo $1000$. Since $2011\equiv11\pmod{1000}$, we need $11^{2011}\pmod{1000}$."),
-        ("Use modulo 8 and 125", r"Because $1000=8\cdot125$, we can work modulo $8$ and modulo $125$. Modulo $8$, $2011\equiv3$, and an odd power of $3$ is $3$ modulo $8$."),
-        ("Compute modulo 125", r"Modulo $125$, $2011\equiv11$. Since powers repeat with period dividing $100$, $11^{2011}\equiv11^{11}\pmod{125}$. Now $11^2\equiv-4$, $11^8\equiv6$, so $11^{11}=11^8\cdot11^2\cdot11\equiv6(-4)(11)\equiv111\pmod{125}$."),
-        ("Combine the congruences", r"So the last three digits have the form $111+125k$. We need $111+125k\equiv3\pmod8$. Since $111\equiv7$ and $125\equiv5$, this gives $7+5k\equiv3\pmod8$, so $k\equiv4\pmod8$."),
-        ("Read the hundreds digit", r"Taking $k=4$ gives $111+500=611$. Therefore the hundreds digit is $\boxed{6}$."),
+    3: [
+        ("Separate the two parts of the trip", r"The bug first moves from $-2$ to $-6$. That distance is $|-6-(-2)|=4$ units."),
+        ("Find the second distance", r"Then the bug moves from $-6$ to $5$. That distance is $|5-(-6)|=11$ units."),
+        ("Add distances, not endpoints", r"The bug turned around, so the total distance is $4+11=15$, not just the distance from the starting point to the ending point."),
+        ("Conclude", r"The bug crawls $\boxed{15}$ units altogether."),
     ],
-    24: [
-        ("Translate lattice points into slope fractions", r"The line is $y=mx+2$. Since $2$ is already an integer, a lattice point with integer $x$ occurs exactly when $mx$ is an integer."),
-        ("Connect this to denominators", r"If $m=\frac pq$ in lowest terms and $q\le100$, then choosing $x=q$ makes $mx=p$ an integer, so the line hits a lattice point. Therefore the interval must avoid every rational number greater than $\frac12$ whose reduced denominator is at most $100$."),
-        ("Find the first dangerous slope", r"For an even denominator $q$, the smallest fraction above $\frac12$ is at least $\frac12+\frac1q\ge\frac12+rac1{100}=\frac{51}{100}$. For an odd denominator $q$, it is $\frac{(q+1)/2}{q}=\frac12+rac1{2q}$, minimized by the largest odd $q\le100$, namely $q=99$."),
-        ("Compute that value", r"With $q=99$, the fraction is $\frac{50}{99}$, and it is the first rational slope greater than $\frac12$ that would create a lattice point with $0<x\le100$."),
-        ("Conclude", r"Thus the largest possible upper endpoint is $a=\frac{50}{99}$. The answer is $\boxed{\frac{50}{99}}$."),
+    4: [
+        ("Understand the geometry", r"Both angles have vertex $B$ and share ray $BA$. We want the smallest possible angle between rays $BC$ and $BD$."),
+        ("Place the rays close together", r"The smallest angle happens when $BC$ and $BD$ are on the same side of $BA$, because then the smaller angle between them is the difference of the two given angles."),
+        ("Subtract", r"The difference is $24^\circ-20^\circ=4^\circ$."),
+        ("Conclude", r"The smallest possible measure of $\angle CBD$ is $\boxed{4^\circ}$."),
     ],
-    25: [
-        ("Understand one step of the process", r"Suppose a triangle has side lengths $m-1,m,m+1$. Tangent segments from the same vertex to the incircle are equal, so if the new side lengths are $x,y,z$, they satisfy $x+y=m-1$, $x+z=m$, and $y+z=m+1$."),
-        ("Solve the tangent lengths", r"Adding the first two equations and subtracting the third gives $2x=m-2$, so $x=\frac m2-1$. Similarly, $y=\frac m2$ and $z=\frac m2+1$. Thus the next triangle again has side lengths of the form $m'-1,m',m'+1$, where $m'=\frac m2$."),
-        ("Track the middle side", r"The first triangle has middle side $m=2012$. Each valid step halves the middle side: $2012,1006,503,\frac{503}{2},\ldots$."),
-        ("Find when the triangle stops existing", r"A triangle with sides $m-1,m,m+1$ exists exactly when $(m-1)+m>m+1$, which simplifies to $m>2$. The last middle side greater than $2$ is $\frac{503}{128}$; the next would be $\frac{503}{256}<2$."),
-        ("Compute the last perimeter", r"For the last triangle, the side lengths are $\frac{503}{128}-1$, $\frac{503}{128}$, and $\frac{503}{128}+1$. Their sum is $3\cdot\frac{503}{128}=\frac{1509}{128}$. The answer is $\boxed{\frac{1509}{128}}$."),
+    5: [
+        ("Count the adult female cats", r"There were $100$ adult cats, and half were female. So there were $50$ adult female cats."),
+        ("Count the litters", r"Half of the adult female cats had litters, so there were $25$ litters of kittens."),
+        ("Count the kittens", r"Each litter had an average of $4$ kittens, so the shelter received $25\cdot4=100$ kittens."),
+        ("Add adults and kittens", r"The shelter received $100$ adult cats and $100$ kittens, for a total of $200$ animals. The answer is $\boxed{200}$."),
+    ],
+    6: [
+        ("Name the numbers", r"Let the two positive numbers be $a$ and $b$, with $ab=9$. The reciprocal condition says one reciprocal is four times the other. We may write $\frac1a=4\cdot\frac1b$."),
+        ("Turn reciprocals into a ratio", r"From $\frac1a=\frac4b$, cross-multiply to get $b=4a$."),
+        ("Use the product", r"Substitute into $ab=9$: $a(4a)=9$, so $4a^2=9$ and $a=\frac32$ because the numbers are positive. Then $b=4a=6$."),
+        ("Find the sum", r"The sum is $\frac32+6=\frac{15}{2}$. The answer is $\boxed{\frac{15}{2}}$."),
+    ],
+    7: [
+        ("Choose a convenient total", r"Since $\frac35$ of the marbles are blue, use $5$ marbles as a convenient model. Then $3$ are blue and $2$ are red."),
+        ("Double only the red marbles", r"Doubling the red marbles changes the red count from $2$ to $4$, while the blue count stays $3$."),
+        ("Find the new total", r"The new total is $4+3=7$ marbles in this model."),
+        ("Compute the red fraction", r"The fraction that are red is $\frac47$. The answer is $\boxed{\frac47}$."),
+    ],
+    8: [
+        ("Name the numbers", r"Let the three whole numbers be $a,b,c$. Their pairwise sums are $12$, $17$, and $19$."),
+        ("Add the pairwise sums", r"Adding all three pairwise sums counts each number twice: $(a+b)+(a+c)+(b+c)=2(a+b+c)$."),
+        ("Find the total", r"The given sums add to $12+17+19=48$, so $2(a+b+c)=48$ and $a+b+c=24$."),
+        ("Recover the numbers", r"If one pair sums to $12$, then the remaining number is $24-12=12$. Similarly the other remaining numbers are $24-17=7$ and $24-19=5$. The numbers are $5,7,12$."),
+        ("Conclude", r"The middle number is $\boxed{7}$."),
+    ],
+    9: [
+        ("Reduce the dice to value choices", r"Each even value $2,4,6$ appears twice, so each has probability $\frac13$ on the even die. Similarly, each odd value $1,3,5$ has probability $\frac13$ on the odd die."),
+        ("List sums of 7", r"The pairs that sum to $7$ are $(2,5)$, $(4,3)$, and $(6,1)$."),
+        ("Count among value pairs", r"There are $3\cdot3=9$ equally likely value pairs, and $3$ of them sum to $7$."),
+        ("Compute the probability", r"The probability is $\frac39=\frac13$. The answer is $\boxed{\frac13}$."),
+    ],
+    10: [
+        ("Use the sum of all central angles", r"The $12$ sector angles add to $360^\circ$. Since they form an arithmetic sequence, let the first angle be $a$ and common difference be $d$, where $a$ and $d$ are integers."),
+        ("Apply the arithmetic-sequence sum", r"The sum is \[\frac{12}{2}(2a+11d)=360,\] so $2a+11d=60$."),
+        ("Minimize the first angle", r"To make $a$ small, make $d$ as large as possible while keeping $a$ positive and integral. Since $2a=60-11d$, $d$ must be even. The largest even $d$ with positive $a$ is $d=4$."),
+        ("Compute a", r"Then $2a=60-44=16$, so $a=8$."),
+        ("Conclude", r"The smallest possible sector angle is $\boxed{8^\circ}$."),
     ],
 }
 def esc(x, quote=True):
@@ -170,7 +212,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2011" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2012" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -259,7 +301,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2011 AMC 10B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2012 AMC 10A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
@@ -280,6 +322,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
