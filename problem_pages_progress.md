@@ -1436,3 +1436,19 @@
 - Pushed: pending
 - Next batch should start from: 2015 AMC 10B Problem 1
 - Review notes: none.
+
+## Batch 88: 2015 AMC 10B Problems 1-10 excluding 8 and 9
+
+- Start time: 2026-07-01T01:30:50-07:00
+- End time: 2026-07-01T01:30:51-07:00
+- Processed contest: AMC 10
+- Processed range: 2015 AMC 10B Problems 1-10 excluding 8 and 9
+- Generated count: 8
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2015 AMC 10B Problem 8 skipped: answer choices are images of a transformed letter; 2015 AMC 10B Problem 9 skipped: shaded falcata region depends on diagram interpretation
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2015 AMC 10B Problem 11
+- Review notes: none.
