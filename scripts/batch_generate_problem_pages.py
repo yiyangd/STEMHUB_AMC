@@ -3,124 +3,74 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 54
+BATCH_NUMBER = 55
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16,17,18,19,20}
+TARGET_NUMBERS = {21,22,23,24,25}
 SKIPPED = []
-BATCH_LABEL = "2010 AMC 10B Problems 11-20"
-NEXT_START = "2010 AMC 10B Problem 21"
+BATCH_LABEL = "2010 AMC 10B Problems 21-25"
+NEXT_START = "2011 AMC 10A Problem 1"
 
 ANS = {
-    11: ("A", "50"),
-    12: ("D", "60"),
-    13: ("C", "92"),
-    14: ("B", r"\frac{50}{101}"),
-    15: ("C", "29"),
-    16: ("B", r"\frac{2\pi}{9}-\frac{\sqrt{3}}{3}"),
-    17: ("B", "23"),
-    18: ("E", r"\frac{13}{27}"),
-    19: ("B", "6"),
-    20: ("D", "81"),
+    21: ("E", r"\frac{1}{5}"),
+    22: ("C", "1932"),
+    23: ("D", "42"),
+    24: ("E", "34"),
+    25: ("B", "315"),
 }
 
 OV = {
-    11: r"A shopper plans to purchase an item with listed price greater than $\$100$ and may use one coupon. Coupon A gives $15\%$ off the listed price, Coupon B gives $\$30$ off the listed price, and Coupon C gives $25\%$ off the amount by which the listed price exceeds $\$100$. Let $x$ and $y$ be the smallest and largest prices for which Coupon A saves at least as many dollars as Coupon B or Coupon C. What is $y-x$?",
-    12: r"At the beginning of the school year, $50\%$ of the students in Mr. Well's class answered \"Yes\" to \"Do you love math?\" and $50\%$ answered \"No.\" At the end of the year, $70\%$ answered \"Yes\" and $30\%$ answered \"No.\" Altogether, $x\%$ of the students gave a different answer at the beginning and end. What is the difference between the maximum and minimum possible values of $x$?",
-    13: r"What is the sum of all solutions of $x=\left|2x-|60-2x|\right|$?",
-    14: r"The average of the numbers $1,2,3,\ldots,98,99,$ and $x$ is $100x$. What is $x$?",
-    15: r"On a $50$-question multiple choice math contest, students receive $4$ points for a correct answer, $0$ points for a blank answer, and $-1$ point for an incorrect answer. Jesse's total score was $99$. What is the maximum number of questions that Jesse could have answered correctly?",
-    16: r"A square of side length $1$ and a circle of radius $\frac{\sqrt{3}}{3}$ share the same center. What is the area inside the circle, but outside the square?",
-    17: r"Every high school in the city of Euclid sent a team of $3$ students to a math contest. Each participant received a different score. Andrea's score was the median among all students, and hers was the highest score on her team. Andrea's teammates Beth and Carla placed $37^{\text{th}}$ and $64^{\text{th}}$, respectively. How many schools are in the city?",
-    18: r"Positive integers $a,b,c$ are randomly and independently selected with replacement from the set $\{1,2,3,\ldots,2010\}$. What is the probability that $abc+ab+a$ is divisible by $3$?",
-    19: r"A circle with center $O$ has area $156\pi$. Triangle $ABC$ is equilateral, $BC$ is a chord of the circle, $OA=4\sqrt{3}$, and point $O$ is outside $\triangle ABC$. What is the side length of $\triangle ABC$?",
-    20: r"Two circles lie outside regular hexagon $ABCDEF$. The first is tangent to $\overline{AB}$, and the second is tangent to $\overline{DE}$. Both are tangent to lines $BC$ and $FA$. What is the ratio of the area of the second circle to that of the first circle?",
+    21: r"A palindrome between $1000$ and $10{,}000$ is chosen at random. What is the probability that it is divisible by $7$?",
+    22: r"Seven distinct pieces of candy are to be distributed among three bags. The red bag and the blue bag must each receive at least one piece of candy; the white bag may remain empty. How many arrangements are possible?",
+    23: r"The entries in a $3\times3$ array include all the digits from $1$ through $9$, arranged so that the entries in every row and every column are in increasing order. How many such arrays are there?",
+    24: r"A high school basketball game between the Raiders and Wildcats was tied at the end of the first quarter. The number of points scored by the Raiders in each of the four quarters formed an increasing geometric sequence, and the number of points scored by the Wildcats in each of the four quarters formed an increasing arithmetic sequence. At the end of the fourth quarter, the Raiders had won by one point. Neither team scored more than $100$ points. What was the total number of points scored by the two teams in the first half?",
+    25: r"Let $a>0$, and let $P(x)$ be a polynomial with integer coefficients such that $P(1)=P(3)=P(5)=P(7)=a$, and $P(2)=P(4)=P(6)=P(8)=-a$. What is the smallest possible value of $a$?",
 }
-
 OV = {k: (v, None) for k, v in OV.items()}
 
 KEY_OVERRIDES = {
-    11: "Translate coupon savings into inequalities and find the interval of listed prices.",
-    12: "Compare two yes/no distributions by matching as many students as possible, then as few as possible.",
-    13: "Break an absolute value equation at the points where the inside expressions change sign.",
-    14: "Turn the average statement into an equation using the sum of an arithmetic sequence.",
-    15: "Use variables and an inequality to maximize correct answers under the scoring rule.",
-    16: "Find one repeated circular segment using symmetry, then multiply by four.",
-    17: "Use Andrea's median rank and teammate ranks to pin down the total number of students.",
-    18: "Work modulo $3$ and count residue classes instead of individual integers.",
-    19: "Relate the chord length, circle radius, and equilateral-triangle height with the Pythagorean theorem.",
-    20: "View the tangent circles as incircles in the same $60^\circ$ angle and compare their radii.",
+    21: "Write a four-digit palindrome algebraically and test divisibility by 7.",
+    22: "Use complementary counting to enforce nonempty red and blue bags.",
+    23: "Recognize the row-and-column increasing array as a standard Young tableau and use hook lengths.",
+    24: "Model the two teams' quarter scores with sequences and use the one-point final difference.",
+    25: "Use divisibility properties of integer-coefficient polynomials to force a lower bound, then construct it.",
 }
 
 SOL = {
-    11: [
-        ("Represent the price clearly", r"Let the listed price be $P$. The problem is not asking for the best coupon for one fixed price; it asks for all prices where Coupon A saves at least as much as each of the other two coupons. So we should write the three savings as expressions in $P$."),
-        ("Write the three savings", r"Coupon A saves $0.15P$. Coupon B saves $30$. Coupon C saves $25\%$ of the amount above $100$, so it saves $0.25(P-100)$. Coupon A must be at least as good as both, so it must satisfy two inequalities."),
-        ("Compare A with B", r"From $0.15P\ge 30$, multiply by $100$ or divide by $0.15$ to get $P\ge 200$. This gives the left endpoint: below $200$, a flat $30$ discount beats Coupon A."),
-        ("Compare A with C", r"Now compare Coupon A with Coupon C: $0.15P\ge 0.25(P-100)$. This becomes $0.15P\ge 0.25P-25$, so $25\ge 0.10P$ and therefore $P\le 250$. This gives the right endpoint."),
-        ("Find the requested difference", r"The valid prices run from $x=200$ to $y=250$. Therefore $y-x=250-200=50$, so the answer is $\boxed{50}$."),
+    21: [
+        ("Describe the palindromes", r"A palindrome between $1000$ and $10{,}000$ has four digits, so it has the form $abba$. Algebraically this is $1000a+100b+10b+a=1001a+110b$, where $a$ can be $1$ through $9$ and $b$ can be $0$ through $9$."),
+        ("Count the total possibilities", r"There are $9$ choices for $a$ and $10$ choices for $b$, so there are $90$ palindromes total. Now we only need to count which of these are divisible by $7$."),
+        ("Use modular arithmetic", r"Since $1001=7\cdot143$, the term $1001a$ is always divisible by $7$. Therefore divisibility by $7$ depends only on $110b$. Because $110\equiv5\pmod7$, we need $5b\equiv0\pmod7$, so $b\equiv0\pmod7$."),
+        ("Count favorable palindromes", r"The digit $b$ can be $0$ or $7$. For each of those $2$ choices, $a$ can still be any of $9$ nonzero digits. Thus there are $18$ favorable palindromes."),
+        ("Compute the probability", r"The probability is $\frac{18}{90}=\frac15$. The answer is $\boxed{\frac15}$."),
     ],
-    12: [
-        ("Convert the percentages into groups", r"Think of $100$ students, since all percentages then become counts. At the beginning there are $50$ Yes and $50$ No. At the end there are $70$ Yes and $30$ No."),
-        ("Find the minimum number who changed", r"To make as few students change as possible, keep all $50$ original Yes students as Yes. The class still needs $20$ more Yes answers at the end, so $20$ No students must change to Yes. Thus the minimum possible value of $x$ is $20$."),
-        ("Find the maximum number who changed", r"To make as many students change as possible, change all $50$ original Yes students to No if possible. But the end has only $30$ No answers, so only $30$ of them can switch to No. Also all $50$ original No students can switch to Yes, giving $30+50=80$ students who changed."),
-        ("Compare the extremes", r"The maximum possible value of $x$ is $80$, and the minimum possible value is $20$. The requested difference is $80-20=60$, so the answer is $\boxed{60}$."),
+    22: [
+        ("Start with all distributions", r"Each of the $7$ distinct candies can independently go into the red, blue, or white bag. Without restrictions, that gives $3^7$ possible distributions."),
+        ("Subtract distributions with an empty required bag", r"The red bag is not allowed to be empty. If it is empty, each candy has only two choices, blue or white, giving $2^7$ bad distributions. Similarly, there are $2^7$ distributions where the blue bag is empty."),
+        ("Correct for double subtraction", r"If both the red and blue bags are empty, then all candies are in the white bag. That one distribution was subtracted twice, so we add it back once."),
+        ("Calculate", r"The number of valid distributions is \[3^7-2^7-2^7+1=2187-128-128+1=1932.\]"),
+        ("Conclude", r"Therefore there are $\boxed{1932}$ arrangements."),
     ],
-    13: [
-        ("Locate where the absolute values change", r"The expression has two absolute values. The inner one, $|60-2x|$, changes form at $x=30$. After that, another absolute value may change depending on the simplified expression, so a case approach is the cleanest way to avoid guessing."),
-        ("Case 1: $x<30$", r"If $x<30$, then $|60-2x|=60-2x$. The equation becomes $x=|2x-(60-2x)|=|4x-60|$. This new absolute value changes at $x=15$."),
-        ("Solve the subcases below $30$", r"For $15\le x<30$, we have $|4x-60|=4x-60$, so $x=4x-60$ and $x=20$. For $x<15$, we have $|4x-60|=60-4x$, so $x=60-4x$ and $x=12$. Both values fit their subcases."),
-        ("Case 2: $x\ge 30$", r"If $x\ge 30$, then $|60-2x|=2x-60$. The equation becomes $x=|2x-(2x-60)|=|60|=60$. This solution fits $x\ge 30$."),
-        ("Add the solutions", r"The solutions are $12$, $20$, and $60$. Their sum is $12+20+60=92$, so the answer is $\boxed{92}$."),
+    23: [
+        ("Recognize the structure", r"The entries must increase left to right in every row and top to bottom in every column. This is exactly the same structure as filling a $3\times3$ Young diagram with $1$ through $9$ so that rows and columns increase."),
+        ("Use the hook-length idea", r"For this kind of increasing array, the number of fillings is \[\frac{9!}{\text{product of all hook lengths}}.\] A hook length counts the cell itself, the cells to its right, and the cells below it."),
+        ("List the hook lengths", r"For a $3\times3$ square, the hook lengths are \[\begin{matrix}5&4&3\\4&3&2\\3&2&1\end{matrix}.\] Their product is $5\cdot4\cdot3\cdot4\cdot3\cdot2\cdot3\cdot2\cdot1=8640$."),
+        ("Divide", r"Since $9!=362880$, the number of valid arrays is \[\frac{362880}{8640}=42.\]"),
+        ("Conclude", r"So the number of arrays is $\boxed{42}$."),
     ],
-    14: [
-        ("Translate average into total sum", r"An average is total divided by number of terms. Here there are the $99$ numbers from $1$ to $99$, plus the extra number $x$, so there are $100$ terms altogether."),
-        ("Sum the known numbers", r"The sum $1+2+\cdots+99$ is $\frac{99\cdot100}{2}=99\cdot50$. Therefore the total sum of all $100$ terms is $99\cdot50+x$."),
-        ("Set up the average equation", r"Since the average is $100x$, we write \[\frac{99\cdot50+x}{100}=100x.\] Multiplying by $100$ gives $99\cdot50+x=10000x$."),
-        ("Solve for $x$ cleanly", r"Move the $x$ term to the right: $99\cdot50=9999x$. Since $9999=99\cdot101$, we get \[x=\frac{99\cdot50}{99\cdot101}=\frac{50}{101}.\]"),
-        ("Check the size", r"The value is about $0.495$, which is plausible because the average $100x$ is about $49.5$, near the average of $1$ through $99$. The answer is $\boxed{\frac{50}{101}}$."),
+    24: [
+        ("Set up the two score sequences", r"Let the Raiders' first-quarter score be $a$. Since the game was tied after the first quarter, the Wildcats also scored $a$ in the first quarter. Suppose the Raiders' geometric sequence has integer ratio $r>1$, so their scores are $a,ar,ar^2,ar^3$. The Wildcats' arithmetic sequence is $a,a+d,a+2d,a+3d$."),
+        ("Use the final one-point margin", r"The Raiders won by one point, so \[a(1+r+r^2+r^3)-\bigl(4a+6d\bigr)=1.\] This simplifies to \[a(r+r^2+r^3-3)-6d=1.\]"),
+        ("Limit the possible ratio", r"The Raiders scored fewer than $100$ total points, so $a(1+r+r^2+r^3)<100$. Testing integer ratios, $r=2$ is the only small ratio that can satisfy the congruence cleanly. With $r=2$, the equation becomes $11a-6d=1$."),
+        ("Solve the score pattern", r"From $11a-6d=1$, we get $11a\equiv1\pmod6$, so $5a\equiv1\pmod6$ and $a\equiv5\pmod6$. Also $15a<100$, so $a=5$. Then $55-6d=1$, giving $d=9$."),
+        ("Compute the first-half total", r"The Raiders scored $5+10=15$ in the first half. The Wildcats scored $5+14=19$ in the first half. Together they scored $15+19=34$, so the answer is $\boxed{34}$."),
     ],
-    15: [
-        ("Name the quantities", r"Let $c$ be the number correct, $w$ the number wrong, and $b$ the number blank. Then $c+w+b=50$. The score equation is $4c-w=99$."),
-        ("Focus on maximizing correct answers", r"Blank answers do not change the score, so to make $c$ large we mainly need to know whether there are enough remaining questions to absorb the necessary wrong answers. From $4c-w=99$, we get $w=4c-99$."),
-        ("Use the total number of questions", r"The number answered either correctly or incorrectly is $c+w$, and this cannot exceed $50$. Substitute $w=4c-99$: \[c+(4c-99)\le 50.\] This gives $5c\le149$, so $c\le29.8$."),
-        ("Use integrality", r"Because $c$ is an integer, the largest possible value is $c=29$. This is actually possible because then $w=4(29)-99=17$ and $b=50-29-17=4$."),
-        ("Conclude", r"So Jesse could have answered at most $29$ questions correctly. The answer is $\boxed{29}$."),
-    ],
-    16: [
-        ("Understand the overlap", r"The circle and square have the same center. The radius is $\frac{\sqrt3}{3}$, while half the square's side is $\frac12$. The circle crosses each side of the square, so the desired region consists of four identical circular segments outside the square."),
-        ("Study one side of the square", r"Look at the top side of the square. From the center to that side is distance $\frac12$. If half the chord cut by the circle on that side is $a$, then \[a^2+\left(\frac12\right)^2=\left(\frac{\sqrt3}{3}\right)^2.\] Thus $a^2=\frac13-rac14=\frac1{12}$, so $a=\frac{\sqrt3}{6}$."),
-        ("Identify the central angle", r"The full chord length is $2a=\frac{\sqrt3}{3}$, which equals the radius. A chord equal to the radius subtends a $60^\circ$ central angle. That tells us the outside piece above one side is one $60^\circ$ sector minus an equilateral triangle."),
-        ("Compute one segment", r"The sector area is \[\frac{60}{360}\pi\left(\frac{\sqrt3}{3}\right)^2=\frac{\pi}{18}.\] The equilateral triangle has side $\frac{\sqrt3}{3}$, so its area is \[\frac{\sqrt3}{4}\left(\frac{\sqrt3}{3}\right)^2=\frac{\sqrt3}{12}.\]"),
-        ("Multiply by four", r"There are four identical segments, one on each side of the square. The total area is $4\left(\frac{\pi}{18}-\frac{\sqrt3}{12}\right)=\frac{2\pi}{9}-\frac{\sqrt3}{3}$. The answer is $\boxed{\frac{2\pi}{9}-\frac{\sqrt3}{3}}$."),
-    ],
-    17: [
-        ("Translate schools into students", r"Let there be $n$ schools. Since each school sends $3$ students, there are $3n$ contestants. Because all scores are different, the median is a single middle rank, so $3n$ must be odd and the median rank is $\frac{3n+1}{2}$."),
-        ("Use Andrea's team condition", r"Andrea has the highest score on her own team, while Beth and Carla placed $37$th and $64$th. Therefore Andrea's rank is better than both teammates, so her rank is less than $37$."),
-        ("Use the existence of the 64th-place teammate", r"There must be at least $64$ contestants, so $3n\ge64$. This gives $n\ge22$. Since $3n$ must be odd, $n$ must be odd, so possible nearby values begin with $23,25,\ldots$."),
-        ("Test the median rank", r"If $n=23$, then there are $69$ students and the median rank is $35$, which is less than $37$. That works with Andrea being ahead of Beth and Carla. If $n=25$, the median rank is $38$, which is not better than Beth's $37$th place, so it fails."),
-        ("Conclude", r"The only possible number of schools is $23$. Therefore the answer is $\boxed{23}$."),
-    ],
-    18: [
-        ("Reduce the expression modulo 3", r"We only care whether $abc+ab+a$ is divisible by $3$. Factor the expression as \[abc+ab+a=a(bc+b+1)=a\bigl(b(c+1)+1\bigr).\] A product is $0$ modulo $3$ if at least one factor is $0$ modulo $3$."),
-        ("Use uniform residues", r"The set $\{1,2,\ldots,2010\}$ has the same number of integers in each residue class modulo $3$, because $2010$ is divisible by $3$. So $a,b,c$ are each equally likely to be $0,1,$ or $2$ modulo $3$."),
-        ("Count when the first factor works", r"If $a\equiv0\pmod3$, the expression is automatically divisible by $3$. This happens with probability $\frac13$."),
-        ("Count when the second factor works", r"If $a\not\equiv0\pmod3$, we need $b(c+1)+1\equiv0\pmod3$. Among the $9$ possible residue pairs $(b,c)$, this happens for $(b,c)=(1,1)$ and $(2,0)$, so the probability is $\frac29$."),
-        ("Combine the cases", r"The cases are disjoint by whether $a$ is $0$ modulo $3$. Thus the probability is \[\frac13+\frac23\cdot\frac29=\frac13+\frac4{27}=\frac{13}{27}.\] The answer is $\boxed{\frac{13}{27}}$."),
-    ],
-    19: [
-        ("Turn the area into a radius", r"The circle has area $156\pi$, so its radius $R$ satisfies $\pi R^2=156\pi$. Thus $R^2=156$. We will use $R^2$ directly instead of simplifying the radical."),
-        ("Let the triangle side be $s$", r"Since $ABC$ is equilateral, the altitude from $A$ to $BC$ is $\frac{s\sqrt3}{2}$. The chord $BC$ has length $s$, so if the distance from $O$ to chord $BC$ is $d$, then the right triangle from the circle center to the midpoint of the chord gives \[\left(\frac{s}{2}\right)^2+d^2=156.\]"),
-        ("Use the position of $O$", r"Point $O$ is outside the equilateral triangle, and $OA=4\sqrt3$. In this configuration the center lies beyond side $BC$ from vertex $A$, so the distance from $O$ to $BC$ is the triangle altitude plus $OA$: \[d=\frac{s\sqrt3}{2}+4\sqrt3.\]"),
-        ("Solve the equation", r"Substitute this into the chord equation: \[\frac{s^2}{4}+\left(\frac{s\sqrt3}{2}+4\sqrt3\right)^2=156.\] This simplifies to $s^2+12s+48=156$, so $s^2+12s-108=0$."),
-        ("Choose the positive root", r"Factoring gives $(s-6)(s+18)=0$. A side length must be positive, so $s=6$. The answer is $\boxed{6}$."),
-    ],
-    20: [
-        ("Use a convenient scale", r"The ratio of areas will not depend on the size of the regular hexagon, so let the side length be $1$. The lines $BC$ and $FA$ meet at a $60^\circ$ angle outside the hexagon."),
-        ("Find the small circle radius", r"The first circle is tangent to lines $BC$ and $FA$ and also to side $AB$. In the $60^\circ$ angle, its center lies on the angle bisector. The distance from the angle vertex to line $AB$ is the altitude of an equilateral triangle of side $1$, namely $\frac{\sqrt3}{2}$. For a circle inside this small triangular region, that distance equals $3r_1$, so $r_1=\frac{\sqrt3}{6}$."),
-        ("Find the large circle radius", r"The second circle is tangent to the same two lines but to the opposite side $DE$. The distance from the angle vertex down to line $DE$ is three times as large, $\frac{3\sqrt3}{2}$. Since this circle lies on the far side of $DE$, the distance to its center is $2r_2$, and the last radius reaches back to $DE$, so $2r_2=\frac{3\sqrt3}{2}+r_2$. Thus $r_2=\frac{3\sqrt3}{2}$."),
-        ("Compare radii", r"The ratio of the radii is \[\frac{r_2}{r_1}=\frac{\frac{3\sqrt3}{2}}{\frac{\sqrt3}{6}}=9.\] Since circle areas scale with the square of the radius, the area ratio is $9^2=81$."),
-        ("Conclude", r"Therefore the ratio of the area of the second circle to that of the first circle is $\boxed{81}$."),
+    25: [
+        ("Use roots at the odd inputs", r"The condition $P(1)=P(3)=P(5)=P(7)=a$ means the polynomial $P(x)-a$ has roots $1,3,5,7$. Because these factors are monic with integer roots, we can write \[P(x)-a=(x-1)(x-3)(x-5)(x-7)Q(x)\] for some polynomial $Q(x)$ with integer coefficients."),
+        ("Plug in the even inputs", r"At $x=2,4,6,8$, we have $P(x)=-a$, so $P(x)-a=-2a$. The factor $(x-1)(x-3)(x-5)(x-7)$ takes the values $-15,9,-15,105$ at $x=2,4,6,8$."),
+        ("Get a divisibility condition", r"Because $Q$ has integer coefficients, $Q(2),Q(4),Q(6),Q(8)$ are integers. Therefore each of $15,9,15,105$ must divide $2a$. Their least common multiple is $315$, so $315$ divides $2a$. Since $315$ is odd, $315$ must divide $a$."),
+        ("Show the lower bound is attainable", r"It remains to know that $a=315$ is possible. One working choice is \[Q(x)=-8x^3+124x^2-576x+762.\] Then $Q(2)=42$, $Q(4)=-70$, $Q(6)=42$, and $Q(8)=-6$, exactly giving $P(x)-a=-630$ at the even inputs when $a=315$."),
+        ("Conclude", r"Thus $a$ must be a multiple of $315$, and $315$ can actually occur. The smallest possible value is $\boxed{315}$."),
     ],
 }
 def esc(x, quote=True):
@@ -331,6 +281,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
