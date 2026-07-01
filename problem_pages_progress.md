@@ -444,3 +444,19 @@
 - Pushed: pending
 - Next batch should start from: 2006 AMC 10B Problem 1
 - Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.
+
+## Batch 29: 2006 AMC 10B Problems 1-5, 9-10
+
+- Start time: 2026-06-30T17:38:59-07:00
+- End time: 2026-06-30T17:38:59-07:00
+- Processed contest: AMC 10
+- Processed range: 2006 AMC 10B Problems 1-5, 9-10
+- Generated count: 7
+- Updated existing count: 0
+- Skipped count: 3
+- Skipped reasons: 2006 AMC 10B Problem 6 skipped: statement depends on a diagram and OCR text is incomplete.; 2006 AMC 10B Problem 7 skipped: OCR text for the expression is unreliable.; 2006 AMC 10B Problem 8 skipped: statement depends on a diagram.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2006 AMC 10B Problem 11
+- Review notes: Skipped Problems 6 and 8 because they require diagrams; skipped Problem 7 because OCR made the expression unreliable.
