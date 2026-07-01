@@ -3,30 +3,42 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 83
+BATCH_NUMBER = 84
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2014_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {21,23,24,25}
-SKIPPED = ["2014 AMC 10B Problem 22 skipped: eight-semicircle layout depends on missing diagram"]
-BATCH_LABEL = "2014 AMC 10B Problems 21,23,24,25"
-NEXT_START = "2015 AMC 10A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2015_AMC_10A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2015 AMC 10A Problems 1-10"
+NEXT_START = "2015 AMC 10A Problem 11"
 
-ANS={21:("B","25"),23:("E",r"\frac{3+\sqrt5}{2}"),24:("B","2"),25:("C",r"\frac{63}{146}")}
+ANS={1:("C",r"\frac15"),2:("D","9"),3:("D","22"),4:("B",r"\frac16"),5:("E","95"),6:("B",r"\frac32"),7:("B","21"),8:("B","4"),9:("D","The first height is 21% more than the second."),10:("C","2")}
 
 OV={
-21:(r"Trapezoid $ABCD$ has parallel sides $AB$ of length $33$ and $CD$ of length $21$. The other two sides have lengths $10$ and $14$. The angles at $A$ and $B$ are acute. What is the length of the shorter diagonal of $ABCD$?",[("A",r"10\sqrt6"),("B","25"),("C",r"8\sqrt{10}"),("D",r"18\sqrt2"),("E","26")]),
-23:(r"A sphere is inscribed in a truncated right circular cone. The volume of the truncated cone is twice that of the sphere. What is the ratio of the radius of the bottom base of the truncated cone to the radius of the top base of the truncated cone?",[("A",r"\frac32"),("B",r"\frac{1+\sqrt5}{2}"),("C","3"),("D","2"),("E",r"\frac{3+\sqrt5}{2}")]),
-24:(r"The numbers $1,2,3,4,5$ are to be arranged in a circle. An arrangement is bad if it is not true that for every $n$ from $1$ to $15$ one can find a subset of the numbers that appear consecutively on the circle that sum to $n$. Arrangements that differ only by a rotation or a reflection are considered the same. How many different bad arrangements are there?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
-25:(r"In a small pond there are eleven lily pads in a row labeled $0$ through $10$. A frog is sitting on pad $1$. When the frog is on pad $N$, where $0<N<10$, it jumps to pad $N-1$ with probability $\frac{N}{10}$ and to pad $N+1$ with probability $1-\frac{N}{10}$. If the frog reaches pad $0$ it is eaten by a snake; if it reaches pad $10$ it exits the pond. What is the probability that the frog escapes?",[("A",r"\frac{32}{79}"),("B",r"\frac{161}{384}"),("C",r"\frac{63}{146}"),("D",r"\frac7{16}"),("E",r"\frac12")]),
+1:(r"What is the value of $\left(2^0-1+5^2+0\right)^{-1}\times5$?",[("A","-125"),("B","-120"),("C",r"\frac15"),("D",r"\frac5{24}"),("E","25")]),
+2:(r"A box contains a collection of triangular and square tiles. There are $25$ tiles in the box, containing $84$ edges total. How many square tiles are there in the box?",[("A","3"),("B","5"),("C","7"),("D","9"),("E","11")]),
+3:(r"Ann made a $3$-step staircase using $18$ toothpicks. How many toothpicks does she need to add to complete a $5$-step staircase?",[("A","9"),("B","18"),("C","20"),("D","22"),("E","24")]),
+4:(r"Pablo, Sofia, and Mia got some candy eggs at a party. Pablo had three times as many eggs as Sofia, and Sofia had twice as many eggs as Mia. Pablo decides to give some of his eggs to Sofia and Mia so that all three will have the same number of eggs. What fraction of his eggs should Pablo give to Sofia?",[("A",r"\frac1{12}"),("B",r"\frac16"),("C",r"\frac14"),("D",r"\frac13"),("E",r"\frac12")]),
+5:(r"Mr. Patrick teaches math to $15$ students. He was grading tests and found that when he graded everyone's test except Payton's, the average grade for the class was $80$. After he graded Payton's test, the class average became $81$. What was Payton's score on the test?",[("A","81"),("B","85"),("C","91"),("D","94"),("E","95")]),
+6:(r"The sum of two positive numbers is $5$ times their difference. What is the ratio of the larger number to the smaller?",[("A",r"\frac52"),("B",r"\frac32"),("C",r"\frac95"),("D","2"),("E",r"\frac54")]),
+7:(r"How many terms are there in the arithmetic sequence $13,16,19,\ldots,70,73$?",[("A","20"),("B","21"),("C","24"),("D","60"),("E","61")]),
+8:(r"Two years ago Pete was three times as old as his cousin Claire. Two years before that, Pete was four times as old as Claire. In how many years will the ratio of their ages be $2:1$?",[("A","2"),("B","4"),("C","5"),("D","6"),("E","8")]),
+9:(r"Two right circular cylinders have the same volume. The radius of the second cylinder is $10\%$ more than the radius of the first. What is the relationship between the heights of the two cylinders?",[("A","The second height is 10% less than the first."),("B","The first height is 10% more than the second."),("C","The second height is 21% less than the first."),("D","The first height is 21% more than the second."),("E","The second height is 80% of the first.")]),
+10:(r"How many rearrangements of $abcd$ are there in which no two adjacent letters are also adjacent letters in the alphabet? For example, no such rearrangement could include either $ab$ or $ba$.",[("A","0"),("B","1"),("C","2"),("D","3"),("E","4")]),
 }
 
-KEY_OVERRIDES={21:"Drop altitudes in the trapezoid and solve for the horizontal projections.",23:"Use the incircle condition in the frustum cross-section plus the volume formula.",24:"Classify circular arrangements up to symmetry and check consecutive sums.",25:"Use hitting probabilities for a one-dimensional birth-death random walk."}
+KEY_OVERRIDES={1:"Simplify inside the parentheses before applying the reciprocal.",2:"Use a system for triangular and square tiles.",3:"Use the toothpick count formula for an n-step staircase.",4:"Scale the three people's amounts to a simple ratio.",5:"Compare total class scores before and after one test is added.",6:"Convert the sum-difference condition into an equation for the ratio.",7:"Use the arithmetic sequence nth-term formula.",8:"Set up ages at two different times.",9:"Equal volumes mean radius squared and height vary inversely.",10:"Count the few valid permutations after excluding alphabet-adjacent pairs."}
 
 SOL={
-21:[("Drop altitudes to the longer base",r"Let the horizontal projection of the side of length $10$ be $x$, and let the height be $h$. Since the base lengths differ by $33-21=12$, the other side of length $14$ has horizontal projection $12-x$."),("Use the two right triangles",r"The side lengths give \[x^2+h^2=10^2\] and \[(12-x)^2+h^2=14^2.\]"),("Solve for the projection",r"Subtracting the first equation from the second gives $(12-x)^2-x^2=96$, so $144-24x=96$ and $x=2$."),("Find the shorter diagonal",r"Then $h^2=10^2-2^2=96$. The shorter diagonal has horizontal distance $21+x=23$, so its length squared is $23^2+96=625$."),("Conclude",r"The shorter diagonal has length $\sqrt{625}=\boxed{25}$."),],
-23:[("Use a cross-section",r"A vertical cross-section through the axis gives an isosceles trapezoid with an incircle. Let the top radius be $1$, the bottom radius be $R$, and the sphere radius be $a$."),("Relate the height and slant side",r"The sphere is tangent to both bases, so the frustum height is $2a$. In a tangential isosceles trapezoid, each slant side equals the sum of the two base radii, so the slant side is $R+1$."),("Use the right triangle on the side",r"The slant side also satisfies \[(R+1)^2=(R-1)^2+(2a)^2.\] This simplifies to $a^2=R$."),("Use the volume condition",r"The frustum volume is \[\frac13\pi(2a)(R^2+R+1).\] It is twice the sphere volume, so \[\frac{2a\pi}{3}(R^2+R+1)=\frac{8\pi a^3}{3}.\]"),("Solve for the ratio",r"Canceling gives $R^2+R+1=4a^2=4R$, so $R^2-3R+1=0$. Since $R>1$, \[R=\frac{3+\sqrt5}{2}.\]"),("Conclude",r"The required ratio is $\boxed{\frac{3+\sqrt5}{2}}$."),],
-24:[("Use symmetry to limit the search",r"Up to rotation and reflection, there are only $12$ circular arrangements of $1,2,3,4,5$. A careful table of consecutive circular sums is small enough to manage."),("Know what must be checked",r"The total sum is $15$, so we need every sum from $1$ through $15$ to appear as a sum of consecutive entries around the circle."),("Find the bad arrangements",r"Checking the $12$ symmetry classes, exactly two fail: $(1,2,5,3,4)$ misses sums $6$ and $9$, and $(1,3,2,4,5)$ misses sums $7$ and $8$."),("Why the table is reliable",r"For each arrangement, there are only $5$ starting positions and at most $5$ lengths, so all consecutive circular sums can be listed directly without duplication worries."),("Conclude",r"There are $\boxed{2}$ bad arrangements."),],
-25:[("Set up escape probabilities",r"Let $p_i$ be the probability of eventually reaching pad $10$ before pad $0$ starting from pad $i$. We want $p_1$, with $p_0=0$ and $p_{10}=1$."),("Use the birth-death walk formula",r"For a one-dimensional walk with left probability $i/10$ and right probability $(10-i)/10$, \[p_1=\frac{1}{\sum_{k=0}^{9}\prod_{j=1}^{k}\frac{j}{10-j}}.\]"),("Simplify the products",r"The product is \[\prod_{j=1}^{k}\frac{j}{10-j}=\frac{k!(9-k)!}{9!}=\frac1{\binom9k}.\]"),("Evaluate the denominator",r"Thus \[\sum_{k=0}^{9}\frac1{\binom9k}=2+\frac29+\frac2{36}+\frac2{84}+\frac2{126}=\frac{146}{63}.\]"),("Invert",r"Therefore $p_1=\frac{1}{146/63}=\frac{63}{146}$."),("Conclude",r"The frog escapes with probability $\boxed{\frac{63}{146}}$."),],
+1:[("Simplify the inside first",r"Inside the parentheses, $2^0=1$ and $5^2=25$. So \[2^0-1+5^2+0=1-1+25=25.\]"),("Apply the reciprocal",r"The exponent $-1$ means reciprocal, so $25^{-1}=\frac1{25}$."),("Multiply by 5",r"The whole expression is $\frac1{25}\cdot5=\frac15$."),("Conclude",r"The answer is $\boxed{\frac15}$."),],
+2:[("Name the tile counts",r"Let $t$ be the number of triangular tiles and $s$ be the number of square tiles. Then $t+s=25$."),("Use the edge count",r"Triangles have $3$ edges and squares have $4$ edges, so $3t+4s=84$."),("Subtract the equations",r"Multiply the first equation by $3$ to get $3t+3s=75$. Subtracting from $3t+4s=84$ gives $s=9$."),("Conclude",r"There are $\boxed{9}$ square tiles."),],
+3:[("Look for the total staircase count",r"For an $n$-step toothpick staircase, the total number of toothpicks is $n(n+3)$. This matches the given $3$-step staircase because $3(3+3)=18$."),("Find the five-step total",r"A $5$-step staircase needs $5(5+3)=40$ toothpicks."),("Compute how many to add",r"Ann already has $18$ toothpicks in the $3$-step staircase, so she must add $40-18=22$ toothpicks."),("Conclude",r"The answer is $\boxed{22}$."),],
+4:[("Choose a simple scale",r"Let Mia have $m$ eggs. Then Sofia has $2m$, and Pablo has $3(2m)=6m$."),("Find the equal final amount",r"The total is $m+2m+6m=9m$, so if all three end equal, each person must have $3m$."),("Find what Sofia needs",r"Sofia starts with $2m$ and must end with $3m$, so Pablo gives Sofia $m$ eggs."),("Convert to a fraction of Pablo's eggs",r"Pablo started with $6m$ eggs, so the fraction he gives to Sofia is $\frac{m}{6m}=\frac16$."),("Conclude",r"The answer is $\boxed{\frac16}$."),],
+5:[("Find the total before Payton",r"There are $14$ graded tests before Payton's test. Their average is $80$, so their total is $14\cdot80=1120$."),("Find the total after Payton",r"After all $15$ tests are graded, the average is $81$, so the total is $15\cdot81=1215$."),("Subtract",r"Payton's score is the difference between these totals: $1215-1120=95$."),("Conclude",r"The answer is $\boxed{95}$."),],
+6:[("Name the numbers",r"Let the larger number be $L$ and the smaller number be $S$. The difference is $L-S$."),("Translate the sentence",r"The sum is five times the difference, so \[L+S=5(L-S).\]"),("Solve for the ratio",r"Expanding gives $L+S=5L-5S$, so $6S=4L$. Thus $\frac{L}{S}=\frac{6}{4}=\frac32$."),("Conclude",r"The ratio of the larger to the smaller is $\boxed{\frac32}$."),],
+7:[("Use the arithmetic sequence formula",r"The sequence starts at $13$ and has common difference $3$. The $n$th term is $13+3(n-1)$."),("Set the last term",r"The last term is $73$, so \[13+3(n-1)=73.\]"),("Solve",r"Then $3(n-1)=60$, so $n-1=20$ and $n=21$."),("Conclude",r"There are $\boxed{21}$ terms."),],
+8:[("Set current ages",r"Let Pete's current age be $P$ and Claire's current age be $C$."),("Use the two past statements",r"Two years ago, $P-2=3(C-2)$. Four years ago, $P-4=4(C-4)$."),("Solve the system",r"The first equation gives $P=3C-4$, and the second gives $P=4C-12$. Equating them gives $C=8$, so $P=20$."),("Find when the ratio is 2 to 1",r"In $t$ years, \[\frac{20+t}{8+t}=2.\] Thus $20+t=16+2t$, so $t=4$."),("Conclude",r"The answer is $\boxed{4}$."),],
+9:[("Write the volume relationship",r"Cylinder volume is $\pi r^2h$. If the second radius is $10\%$ more, then $r_2=1.1r_1$."),("Keep volume the same",r"Equal volumes give \[\pi r_1^2h_1=\pi(1.1r_1)^2h_2.\] So $h_1=1.21h_2$."),("Interpret the percentage",r"If $h_1=1.21h_2$, then the first height is $21\%$ more than the second."),("Conclude",r"The answer is $\boxed{\text{The first height is 21% more than the second.}}$"),],
+10:[("List possible arrangements efficiently",r"There are only $4!=24$ arrangements, but the restrictions are strong: $a$ cannot sit next to $b$, $b$ cannot sit next to $c$, and $c$ cannot sit next to $d$."),("Search by placing b",r"The letter $b$ cannot be next to either $a$ or $c$, so its neighbors, if it has two, must include $d$. This quickly leaves only arrangements where the alphabet-adjacent pairs are separated."),("Identify the valid orders",r"The valid rearrangements are $bdac$ and $cadb$. Each avoids $ab,ba,bc,cb,cd,$ and $dc$ as adjacent pairs."),("Count",r"There are exactly $2$ valid rearrangements."),("Conclude",r"The answer is $\boxed{2}$."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -73,7 +85,7 @@ def render(row):
     notes = row.get("notes") or ""
     if n in {10,17} and notes == "题面包含图形":
         notes = ""
-    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if n in {23} else notes
+    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if n in {3} else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
         f'<li class="choice {"correct" if k == ans else ""}"><span class="choice-key">{esc(k)}</span><span>{esc(v, False)}</span></li>'
@@ -128,7 +140,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2014" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2015" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -169,7 +181,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": int(r["problem_no"]) in {23},
+                "needs_review": int(r["problem_no"]) in {3},
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -217,7 +229,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2014 AMC 10B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2015 AMC 10A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
