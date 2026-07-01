@@ -3,32 +3,29 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 69
+BATCH_NUMBER = 70
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2013_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5}
+TARGET_NUMBERS = {6,7,8,9,10}
 SKIPPED = []
-BATCH_LABEL = "2013 AMC 10A Problems 1-5"
-NEXT_START = "2013 AMC 10A Problem 6"
+BATCH_LABEL = "2013 AMC 10A Problems 6-10"
+NEXT_START = "2013 AMC 10A Problem 11"
 
-ANS = {1:("C",r"\$2.75"),2:("B","10"),3:("E","8"),4:("C","45"),5:("B","20")}
-
+ANS = {6:("D","11"),7:("C","9"),8:("C",r"\frac53"),9:("B","18"),10:("E","70")}
 OV = {
-1:(r"A taxi ride costs $\$1.50$ plus $\$0.25$ per mile traveled. How much does a $5$-mile taxi ride cost?",[("A",r"\$2.25"),("B",r"\$2.50"),("C",r"\$2.75"),("D",r"\$3.00"),("E",r"\$3.25")]),
-2:(r"Alice is making a batch of cookies and needs $2\frac12$ cups of sugar. Unfortunately, her measuring cup holds only $\frac14$ cup of sugar. How many times must she fill that cup to get the correct amount of sugar?",[("A","8"),("B","10"),("C","12"),("D","16"),("E","20")]),
-3:(r"Square $ABCD$ has side length $10$. Point $E$ is on $BC$, and the area of $\triangle ABE$ is $40$. What is $BE$?",[("A","4"),("B","5"),("C","6"),("D","7"),("E","8")]),
-4:(r"A softball team played ten games, scoring $1,2,3,4,5,6,7,8,9,$ and $10$ runs. They lost by one run in exactly five games. In each of the other games, they scored twice as many runs as their opponent. How many total runs did their opponents score?",[("A","35"),("B","40"),("C","45"),("D","50"),("E","55")]),
-5:(r"Tom, Dorothy, and Sammy went on a vacation and agreed to split the costs evenly. Tom paid $\$105$, Dorothy paid $\$125$, and Sammy paid $\$175$. To share costs equally, Tom gave Sammy $t$ dollars and Dorothy gave Sammy $d$ dollars. What is $t-d$?",[("A","15"),("B","20"),("C","25"),("D","30"),("E","35")]),
+6:(r"Joey and his five brothers are ages $3,5,7,9,11,$ and $13$. One afternoon two brothers whose ages sum to $16$ went to the movies, two brothers younger than $10$ went to play baseball, and Joey and the $5$-year-old stayed home. How old is Joey?",[("A","3"),("B","7"),("C","9"),("D","11"),("E","13")]),
+7:(r"A student must choose a program of four courses from English, Algebra, Geometry, History, Art, and Latin. This program must contain English and at least one mathematics course. In how many ways can this program be chosen?",[("A","6"),("B","8"),("C","9"),("D","12"),("E","16")]),
+8:(r"What is the value of $\frac{2^{2014}+2^{2012}}{2^{2014}-2^{2012}}$?",[("A",r"-1"),("B","1"),("C",r"\frac53"),("D","2013"),("E",r"2^{4024}")]),
+9:(r"In a basketball game, Shenille attempted only three-point shots and two-point shots. She was successful on $20\%$ of her three-point shots and $30\%$ of her two-point shots. Shenille attempted $30$ shots. How many points did she score?",[("A","12"),("B","18"),("C","24"),("D","30"),("E","36")]),
+10:(r"A bouquet contains pink roses, red roses, pink carnations, and red carnations. One third of the pink flowers are roses, three fourths of the red flowers are carnations, and six tenths of the flowers are pink. What percent of the flowers are carnations?",[("A","15"),("B","30"),("C","40"),("D","60"),("E","70")]),
 }
-
-KEY_OVERRIDES={1:"Add the fixed taxi fee and the per-mile charge.",2:"Divide the needed amount by the measuring-cup size.",3:"Use triangle area with base $BE$ and height $10$.",4:"Choose which five scores were losses to satisfy the scoring conditions.",5:"Find each person's fair share and compare to what each paid."}
-
+KEY_OVERRIDES={6:"Use the activity clues to eliminate possible ages for Joey.",7:"Choose English and then count valid choices among the remaining courses.",8:"Factor out the common power of 2.",9:"Both shot types contribute the same expected points per attempt.",10:"Use a convenient total and split pink/red flowers by the given fractions."}
 SOL={
-1:[("Separate fixed and variable cost",r"The ride has a fixed cost of $\$1.50$ plus a per-mile cost."),("Compute mileage cost",r"For $5$ miles, the mileage charge is $5\cdot\$0.25=\$1.25$."),("Add",r"The total is $\$1.50+\$1.25=\$2.75$."),("Conclude",r"The answer is $\boxed{\$2.75}$."),],
-2:[("Convert the mixed number",r"Alice needs $2\frac12=\frac52$ cups of sugar."),("Use the cup size",r"Each fill gives $\frac14$ cup."),("Divide",r"The number of fills is $\frac52\div\frac14=\frac52\cdot4=10$."),("Conclude",r"She must fill the cup $\boxed{10}$ times."),],
-3:[("Choose base and height",r"Use $BE$ as the base of $\triangle ABE$. Since $AB$ is perpendicular to $BC$, the height from $A$ to line $BE$ is $AB=10$."),("Set up area",r"The area is $\frac12\cdot BE\cdot10=5BE$."),("Solve",r"Since the area is $40$, we have $5BE=40$, so $BE=8$."),("Conclude",r"The answer is $\boxed{8}$."),],
-4:[("Understand opponent scores",r"If the team lost by one run in a game where it scored $s$, the opponent scored $s+1$. If it scored twice the opponent's runs, the opponent scored $s/2$, so $s$ must be even."),("Choose the wins",r"The five games that are not losses must therefore have even scores $2,4,6,8,10$. Opponent scores in those games are $1,2,3,4,5$, summing to $15$."),("Count loss games",r"The loss games have scores $1,3,5,7,9$, so opponents scored $2,4,6,8,10$, summing to $30$."),("Add",r"Total opponent runs are $15+30=45$. The answer is $\boxed{45}$."),],
-5:[("Find total and fair share",r"The total cost is $105+125+175=405$, so each person's fair share is $405/3=135$."),("Compare Tom",r"Tom paid $105$, which is $30$ less than his share, so he gives Sammy $t=30$."),("Compare Dorothy",r"Dorothy paid $125$, which is $10$ less than her share, so she gives Sammy $d=10$."),("Subtract",r"Thus $t-d=30-10=20$. The answer is $\boxed{20}$."),],
+6:[("List possible movie pairs",r"The ages summing to $16$ are $(3,13)$, $(5,11)$, and $(7,9)$."),("Use who stayed home",r"Joey and the $5$-year-old stayed home, so the $5$-year-old did not go to the movies or baseball."),("Use baseball clue",r"Two brothers younger than $10$ went to baseball. The ages younger than $10$ are $3,5,7,9$, but $5$ stayed home, so baseball must be two of $3,7,9$."),("Find consistent arrangement",r"If the movie pair is $(3,13)$ or $(7,9)$, there are not enough remaining younger-than-$10$ brothers besides $5$ for baseball. The movie pair must be $(5,11)$, but $5$ stayed home, so Joey must be $11$. The answer is $\boxed{11}$."),],
+7:[("Include English",r"English is required, so choose it first. We need $3$ more courses from Algebra, Geometry, History, Art, and Latin."),("Count all choices",r"There are $\binom53=10$ ways to choose the remaining three courses."),("Subtract choices with no math",r"The only way to choose no mathematics course is to choose History, Art, and Latin. So subtract $1$."),("Conclude",r"There are $10-1=9$ programs. The answer is $\boxed{9}$."),],
+8:[("Factor the common power",r"Both numerator and denominator contain $2^{2012}$. Factor it out."),("Simplify",r"The expression becomes $\frac{2^{2012}(2^2+1)}{2^{2012}(2^2-1)}=\frac{4+1}{4-1}$."),("Finish",r"This equals $\frac53$."),("Conclude",r"The answer is $\boxed{\frac53}$."),],
+9:[("Let the shot counts vary",r"Let Shenille attempt $a$ three-point shots and $b$ two-point shots. Then $a+b=30$."),("Find points from each type",r"She makes $20\%$ of the three-point shots, so those are worth $0.20a\cdot3=0.6a$ points. She makes $30\%$ of the two-point shots, worth $0.30b\cdot2=0.6b$ points."),("Use total attempts",r"Her total points are $0.6a+0.6b=0.6(a+b)=0.6\cdot30=18$."),("Conclude",r"She scored $\boxed{18}$ points."),],
+10:[("Choose a total",r"Use $100$ flowers. Then $60$ are pink and $40$ are red."),("Split pink flowers",r"One third of the pink flowers are roses, so $20$ pink flowers are roses and $40$ pink flowers are carnations."),("Split red flowers",r"Three fourths of the red flowers are carnations, so $30$ red flowers are carnations."),("Count carnations",r"There are $40+30=70$ carnations out of $100$ flowers. The answer is $\boxed{70}$."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -238,6 +235,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
