@@ -1,7 +1,7 @@
 # Problem Pages Report
 
-- Total manifest entries: 1188
-- Latest batch: 161 (2004 AMC 12B Problems 1-10)
+- Total manifest entries: 1198
+- Latest batch: 162 (2004 AMC 12B Problems 11-20)
 - Latest new generated count: 10
 - Latest updated existing count: 0
 - Latest skipped count: 0
@@ -10,13 +10,13 @@
 
 ## Latest Batch Pages
 
-- `2004 AMC 12B Problem 1` -> `amc12/problems/2004-amc-12b-problem-1/`
-- `2004 AMC 12B Problem 2` -> `amc12/problems/2004-amc-12b-problem-2/`
-- `2004 AMC 12B Problem 3` -> `amc12/problems/2004-amc-12b-problem-3/`
-- `2004 AMC 12B Problem 4` -> `amc12/problems/2004-amc-12b-problem-4/`
-- `2004 AMC 12B Problem 5` -> `amc12/problems/2004-amc-12b-problem-5/`
-- `2004 AMC 12B Problem 6` -> `amc12/problems/2004-amc-12b-problem-6/`
-- `2004 AMC 12B Problem 7` -> `amc12/problems/2004-amc-12b-problem-7/`
-- `2004 AMC 12B Problem 8` -> `amc12/problems/2004-amc-12b-problem-8/`
-- `2004 AMC 12B Problem 9` -> `amc12/problems/2004-amc-12b-problem-9/`
-- `2004 AMC 12B Problem 10` -> `amc12/problems/2004-amc-12b-problem-10/`
+- `2004 AMC 12B Problem 11` -> `amc12/problems/2004-amc-12b-problem-11/`
+- `2004 AMC 12B Problem 12` -> `amc12/problems/2004-amc-12b-problem-12/`
+- `2004 AMC 12B Problem 13` -> `amc12/problems/2004-amc-12b-problem-13/`
+- `2004 AMC 12B Problem 14` -> `amc12/problems/2004-amc-12b-problem-14/`
+- `2004 AMC 12B Problem 15` -> `amc12/problems/2004-amc-12b-problem-15/`
+- `2004 AMC 12B Problem 16` -> `amc12/problems/2004-amc-12b-problem-16/`
+- `2004 AMC 12B Problem 17` -> `amc12/problems/2004-amc-12b-problem-17/`
+- `2004 AMC 12B Problem 18` -> `amc12/problems/2004-amc-12b-problem-18/`
+- `2004 AMC 12B Problem 19` -> `amc12/problems/2004-amc-12b-problem-19/`
+- `2004 AMC 12B Problem 20` -> `amc12/problems/2004-amc-12b-problem-20/`

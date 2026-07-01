@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 161
+BATCH_NUMBER = 162
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2004_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+TARGET_NUMBERS = {11,12,13,14,15,16,17,18,19,20}
 SKIPPED = []
-BATCH_LABEL = "2004 AMC 12B Problems 1-10"
-NEXT_START = "2004 AMC 12B Problem 11"
+BATCH_LABEL = "2004 AMC 12B Problems 11-20"
+NEXT_START = "2004 AMC 12B Problem 21"
 
-ANS={1:("A","3"),2:("D","9"),3:("A","8"),4:("B",r"\frac15"),5:("A","5"),6:("A","13"),7:("B",r"100+75\pi"),8:("D","10"),9:("E",r"(3,2)"),10:("A",r"\pi a^2")}
+ANS={11:("D","13"),12:("C","0"),13:("A","-2"),14:("D",r"\frac{240}{13}"),15:("B","18"),16:("C","2"),17:("A","-256"),18:("E",r"5\sqrt2"),19:("A","6"),20:("B",r"\frac5{16}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -884,6 +884,48 @@ SOL.update({
 8:[("Write the row sizes",r"The row sizes are \(1,3,5,\ldots\), increasing by \(2\) each time. If there are \(n\) rows, the last row has \(2n-1\) cans."),("Use the odd-number sum",r"The sum of the first \(n\) odd positive integers is \(n^2\). This is a useful pattern to recognize here."),("Set up the total",r"The display has \(100\) cans, so \[n^2=100.\]"),("Solve for rows",r"Since \(n\) is positive, \(n=10\)."),("Conclude",r"The display contains \(\boxed{10}\) rows."),],
 9:[("Apply clockwise rotation",r"A \(90^\circ\) clockwise rotation sends \((x,y)\) to \((y,-x)\). Therefore \((-3,2)\) becomes \(B=(2,3)\)."),("Reflect over y equals x",r"Reflection over the line \(y=x\) swaps the two coordinates."),("Find C",r"So \(B=(2,3)\) reflects to \(C=(3,2)\)."),("Check the transformations",r"The rotation changes the quadrant as expected, and the reflection keeps the point in the first quadrant."),("Conclude",r"The answer is \(\boxed{(3,2)}\)."),],
 10:[("Start with the annulus formula",r"The area of the annulus is the larger circle area minus the smaller circle area: \[\pi b^2-\pi c^2=\pi(b^2-c^2).\]"),("Use the tangent radius",r"Since \(\overline{XZ}\) is tangent to the smaller circle at \(Z\), it is perpendicular to the radius \(\overline{OZ}\)."),("Build the right triangle",r"Triangle \(OXZ\) is right, with \(OX=b\), \(OZ=c\), and \(XZ=a\)."),("Apply the Pythagorean Theorem",r"Thus \[a^2+c^2=b^2,\] so \(b^2-c^2=a^2\)."),("Substitute into the area",r"The annulus area is \[\pi(b^2-c^2)=\pi a^2.\]"),("Conclude",r"The answer is \(\boxed{\pi a^2}\)."),],
+})
+OV.update({
+11:(r"All the students in an algebra class took a \(100\)-point test. Five students scored \(100\), each student scored at least \(60\), and the mean score was \(76\). What is the smallest possible number of students in the class?",[("A","10"),("B","11"),("C","12"),("D","13"),("E","14")]),
+12:(r"In the sequence \(2001,2002,2003,\ldots\), each term after the third is found by subtracting the previous term from the sum of the two terms that precede that term. For example, the fourth term is \(2001+2002-2003=2000\). What is the \(2004\)th term in this sequence?",[("A","-2004"),("B","-2"),("C","0"),("D","4003"),("E","6007")]),
+13:(r"If \(f(x)=ax+b\) and \(f^{-1}(x)=bx+a\) with \(a\) and \(b\) real, what is the value of \(a+b\)?",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
+14:(r"In \(\triangle ABC\), \(AB=13\), \(AC=5\), and \(BC=12\). Points \(M\) and \(N\) lie on \(\overline{AC}\) and \(\overline{BC}\), respectively, with \(CM=CN=4\). Points \(J\) and \(K\) are on \(\overline{AB}\) so that \(\overline{MJ}\) and \(\overline{NK}\) are perpendicular to \(\overline{AB}\). What is the area of pentagon \(CMJKN\)?",[("A","15"),("B",r"\(\frac{81}{5}\)"),("C",r"\(\frac{205}{12}\)"),("D",r"\(\frac{240}{13}\)"),("E","20")]),
+15:(r"The two digits in Jack's age are the same as the digits in Bill's age, but in reverse order. In five years Jack will be twice as old as Bill will be then. What is the difference in their current ages?",[("A","9"),("B","18"),("C","27"),("D","36"),("E","45")]),
+16:(r"A function \(f\) is defined by \(f(z)=i\overline{z}\), where \(i=\sqrt{-1}\) and \(\overline{z}\) is the complex conjugate of \(z\). How many values of \(z\) satisfy both \(|z|=5\) and \(f(z)=z\)?",[("A","0"),("B","1"),("C","2"),("D","4"),("E","8")]),
+17:(r"For some real numbers \(a\) and \(b\), the equation \[8x^3+4ax^2+2bx+a=0\] has three distinct positive roots. If the sum of the base-\(2\) logarithms of the roots is \(5\), what is the value of \(a\)?",[("A","-256"),("B","-64"),("C","-8"),("D","64"),("E","256")]),
+18:(r"Points \(A\) and \(B\) are on the parabola \(y=4x^2+7x-1\), and the origin is the midpoint of \(\overline{AB}\). What is the length of \(\overline{AB}\)?",[("A",r"\(2\sqrt5\)"),("B",r"\(5+\frac{\sqrt2}{2}\)"),("C",r"\(5+\sqrt2\)"),("D","7"),("E",r"\(5\sqrt2\)")]),
+19:(r"A truncated cone has horizontal bases with radii \(18\) and \(2\). A sphere is tangent to the top, bottom, and lateral surface of the truncated cone. What is the radius of the sphere?",[("A","6"),("B",r"\(4\sqrt5\)"),("C","9"),("D","10"),("E",r"\(6\sqrt3\)")]),
+20:(r"Each face of a cube is painted either red or blue, each with probability \(\frac12\). The color of each face is determined independently. What is the probability that the painted cube can be placed on a horizontal surface so that the four vertical faces are all the same color?",[("A",r"\(\frac14\)"),("B",r"\(\frac5{16}\)"),("C",r"\(\frac38\)"),("D",r"\(\frac7{16}\)"),("E",r"\(\frac12\)")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Balance scores above and below the mean.",
+12:"Separate the recurrence into odd and even subsequences.",
+13:"Compose a linear function with its inverse and compare coefficients.",
+14:"Use coordinates and perpendicular projections onto the hypotenuse.",
+15:"Represent two reversed two-digit ages algebraically.",
+16:"Translate the complex equation into conditions on real and imaginary parts.",
+17:"Use logarithms to find the product of roots, then Vieta's formula.",
+18:"Use midpoint symmetry to pair \((x,y)\) with \((-x,-y)\).",
+19:"Use the axial cross-section of the frustum and a tangential trapezoid.",
+20:"Group cube faces into opposite pairs and count favorable colorings.",
+})
+
+NOTES_OVERRIDES.update({
+14:"This problem contains a diagram. The side lengths and perpendicular relationships are fully stated; please refer to the original PDF or AoPS page for the figure.",
+})
+
+SOL.update({
+11:[("Measure scores relative to the mean",r"The mean is \(76\). Each of the five scores of \(100\) is \(24\) points above the mean."),("Compute the total surplus",r"Those five high scores contribute \[5\cdot24=120\] points above the mean."),("Balance with lower scores",r"Every other student scored at least \(60\), so each other score can be at most \(76-60=16\) points below the mean."),("Find how many other students are needed",r"To balance \(120\) points, we need at least \[\frac{120}{16}=7.5\] other students, so at least \(8\) other students."),("Check attainability",r"Five students scoring \(100\) and eight students scoring \(61\) give mean \(76\), so the minimum total is \(5+8=13\)."),("Conclude",r"The answer is \(\boxed{13}\)."),],
+12:[("Compute a few terms",r"After \(2001,2002,2003\), the next terms are \(2000,2005,1998,2007,\ldots\). This suggests the odd and even positions behave separately."),("Track odd terms",r"The odd-indexed terms are \(2001,2003,2005,2007,\ldots\), increasing by \(2\)."),("Track even terms",r"The even-indexed terms are \(2002,2000,1998,1996,\ldots\), decreasing by \(2\)."),("Locate the 2004th term",r"The \(2004\)th term is the \(1002\)nd even-indexed term."),("Compute it",r"Starting at \(2002\) and subtracting \(2\) for each step, we get \[2002-2(1002-1)=2002-2002=0.\]"),("Conclude",r"The answer is \(\boxed{0}\)."),],
+13:[("Use the inverse condition",r"If \(f^{-1}(x)=bx+a\), then \(f(f^{-1}(x))=x\) for every \(x\)."),("Compose the functions",r"We have \[f(bx+a)=a(bx+a)+b=abx+a^2+b.\]"),("Compare coefficients",r"For this to equal \(x\), we need \[ab=1,\qquad a^2+b=0.\]"),("Solve the system",r"From \(ab=1\), \(b=\frac1a\). From \(a^2+b=0\), \(b=-a^2\). Thus \(\frac1a=-a^2\), so \(a^3=-1\), giving \(a=-1\). Then \(b=-1\)."),("Conclude",r"Therefore \(a+b=-2\), so the answer is \(\boxed{-2}\)."),],
+14:[("Place the right triangle",r"Since \(5^2+12^2=13^2\), triangle \(ABC\) is right at \(C\). Put \(C=(0,0)\), \(A=(0,5)\), and \(B=(12,0)\)."),("Locate M and N",r"Because \(CM=CN=4\), we have \(M=(0,4)\) and \(N=(4,0)\). The line \(AB\) has equation \[5x+12y=60.\]"),("Project M and N onto AB",r"The foot from \(M\) to \(AB\) is \(J=\left(\frac{60}{169},\frac{820}{169}\right)\). The foot from \(N\) to \(AB\) is \(K=\left(\frac{876}{169},\frac{480}{169}\right)\)."),("Use the shoelace formula",r"Apply the shoelace formula to the polygon \(C(0,0),M,J,K,N(4,0)\). This keeps the tilted side \(JK\) from making the area hard to see."),("Compute the area",r"The shoelace calculation gives \[\frac12\left(\frac{1054560}{28561}\right)=\frac{527280}{28561}=\frac{240}{13}.\]"),("Conclude",r"The answer is $\boxed{\frac{240}{13}}$."),],
+15:[("Write the reversed ages",r"Let Jack's age be \(10a+b\) and Bill's age be \(10b+a\), where \(a\) and \(b\) are digits."),("Use the future relationship",r"In five years, Jack will be twice Bill's age, so \[10a+b+5=2(10b+a+5).\]"),("Simplify",r"This becomes \[8a-19b=5.\]"),("Find digit values",r"Testing digit values, \(b=1\) gives \(8a=24\), so \(a=3\). Thus the ages are \(31\) and \(13\)."),("Find the difference",r"Their current age difference is \(31-13=18\)."),("Conclude",r"The answer is \(\boxed{18}\)."),],
+16:[("Write z in components",r"Let \(z=x+iy\). Then \(\overline z=x-iy\)."),("Apply the function",r"We get \[f(z)=i(x-iy)=y+ix.\]"),("Set f(z) equal to z",r"The equation \(f(z)=z\) becomes \(y+ix=x+iy\). Comparing real and imaginary parts gives \(y=x\)."),("Use the magnitude condition",r"Now \(|z|=5\) gives \[x^2+y^2=25.\] Since \(y=x\), we get \(2x^2=25\)."),("Count solutions",r"There are two real values of \(x\), namely \(x=\pm\frac5{\sqrt2}\), and each determines \(y=x\)."),("Conclude",r"There are \(\boxed{2}\) values of \(z\)."),],
+17:[("Use the logarithm information",r"If the roots are \(r,s,t\), then \[\log_2 r+\log_2 s+\log_2 t=\log_2(rst)=5.\]"),("Find the product of roots",r"Therefore \(rst=2^5=32\)."),("Apply Vieta's formula",r"For \[8x^3+4ax^2+2bx+a=0,\] the product of the three roots is \[-\frac{a}{8}.\]"),("Set equal to 32",r"So \[-\frac{a}{8}=32,\] which gives \(a=-256\)."),("Conclude",r"The answer is \(\boxed{-256}\)."),],
+18:[("Use midpoint symmetry",r"If \(A=(x,y)\) and the origin is the midpoint of \(\overline{AB}\), then \(B=(-x,-y)\). Both points lie on the parabola."),("Write both equations",r"Since \(A\) is on the parabola, \[y=4x^2+7x-1.\] Since \(B=(-x,-y)\) is on it, \[-y=4x^2-7x-1.\]"),("Eliminate y",r"The second equation gives \(y=-4x^2+7x+1\). Equating the two expressions for \(y\), \[4x^2+7x-1=-4x^2+7x+1,\] so \(8x^2=2\) and \(x=\pm\frac12\)."),("Find one point",r"Using \(x=\frac12\), \[y=4\left(\frac14\right)+7\left(\frac12\right)-1=\frac72.\] One endpoint is \((\frac12,\frac72)\), and the other is its negative."),("Compute the length",r"The distance from the origin to one endpoint is \[\sqrt{\left(\frac12\right)^2+\left(\frac72\right)^2}=\frac{5\sqrt2}{2}.\] Therefore \(AB\) is twice this, or \(5\sqrt2\)."),("Conclude",r"The answer is \(\boxed{5\sqrt2}\)."),],
+19:[("Take a central cross-section",r"A vertical cross-section through the axis of the truncated cone is an isosceles trapezoid. Its bases have lengths \(36\) and \(4\), and the sphere becomes a circle tangent to all four sides."),("Use tangential trapezoid property",r"For a tangential quadrilateral, opposite side lengths have equal sums. If each leg has length \(L\), then \[36+4=L+L,\] so \(L=20\)."),("Find the height",r"The half-difference of the bases is \(\frac{36-4}{2}=16\). Thus a leg, the height \(h\), and \(16\) form a right triangle: \[20^2=h^2+16^2.\]"),("Solve for height",r"This gives \(h^2=400-256=144\), so \(h=12\)."),("Relate height to sphere radius",r"The sphere is tangent to the top and bottom bases, so the vertical distance between the bases is the sphere's diameter. Hence \(2r=12\)."),("Conclude",r"The radius is \(r=\boxed{6}\)."),],
+20:[("Group opposite faces",r"A cube has \(3\) pairs of opposite faces. If the cube can stand with four vertical faces all the same color, then two opposite pairs must together consist of four faces of one color."),("Classify each opposite pair",r"Each opposite pair can be \(RR\), \(BB\), or mixed. The weights are \(1,1,2\), respectively, because a mixed pair can be \(RB\) or \(BR\)."),("Count red vertical possibilities",r"At least two opposite pairs must be \(RR\). Exactly two \(RR\) pairs can be chosen in \(\binom32=3\) ways, and the third pair has weight \(3\) if it is not forced to be \(RR\). This gives \(9\) colorings. All three \(RR\) gives \(1\) more, so there are \(10\) red-favorable colorings."),("Count blue vertical possibilities",r"By symmetry, there are also \(10\) blue-favorable colorings."),("Divide by all colorings",r"There are \(2^6=64\) total face colorings, and the red-favorable and blue-favorable cases do not overlap. Thus the probability is \[\frac{20}{64}=\frac5{16}.\]"),("Conclude",r"The answer is $\boxed{\frac5{16}}$."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
