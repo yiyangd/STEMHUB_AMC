@@ -3,116 +3,70 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 59
+BATCH_NUMBER = 60
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+TARGET_NUMBERS = {11,12,13,14,15}
 SKIPPED = []
-BATCH_LABEL = "2011 AMC 10B Problems 1-10"
-NEXT_START = "2011 AMC 10B Problem 11"
+BATCH_LABEL = "2011 AMC 10B Problems 11-15"
+NEXT_START = "2011 AMC 10B Problem 16"
 
 ANS = {
-    1: ("C", r"\frac{7}{12}"),
-    2: ("E", "95"),
-    3: ("A", "3.75"),
-    4: ("C", r"\frac{B-A}{2}"),
-    5: ("E", "224"),
-    6: ("A", "30"),
-    7: ("B", "72"),
-    8: ("B", "The temperature was cooler than $80^\circ F$ or it was not sunny."),
-    9: ("D", r"\frac{4\sqrt3}{3}"),
-    10: ("B", "9"),
+    11: ("D", "5"),
+    12: ("A", r"\frac{\pi}{3}"),
+    13: ("D", r"\frac{5}{9}"),
+    14: ("C", "62"),
+    15: ("E", "II and III only"),
 }
 
 OV = {
-    1: (r"What is $\frac{2+4+6}{1+3+5}-\frac{1+3+5}{2+4+6}$?", [("A",r"-\frac{1}{36}"),("B",r"\frac{5}{12}"),("C",r"\frac{7}{12}"),("D",r"\frac{147}{60}"),("E",r"\frac{43}{3}")]),
-    2: (r"Josanna's test scores to date are $90,80,70,60,$ and $85$. Her goal is to raise her test average at least $3$ points with her next test. What is the minimum test score she would need to accomplish this goal?", [("A","80"),("B","82"),("C","85"),("D","90"),("E","95")]),
-    3: (r"At a store, when a length is reported as $x$ inches that means the length is at least $x-0.5$ inches and at most $x+0.5$ inches. Suppose the dimensions of a rectangular tile are reported as $2$ inches by $3$ inches. In square inches, what is the minimum area for the rectangle?", [("A","3.75"),("B","4.5"),("C","5"),("D","6"),("E","8.75")]),
-    4: (r"LeRoy and Bernardo went on a week-long trip together and agreed to share the costs equally. At the end of the trip LeRoy had paid $A$ dollars and Bernardo had paid $B$ dollars, where $A<B$. How many dollars must LeRoy give to Bernardo so that they share the costs equally?", [("A",r"\frac{A+B}{2}"),("B",r"\frac{A-B}{2}"),("C",r"\frac{B-A}{2}"),("D",r"B-A"),("E",r"A+B")]),
-    5: (r"In multiplying two positive integers $a$ and $b$, Ron reversed the digits of the two-digit number $a$. His erroneous product was $161$. What is the correct value of the product of $a$ and $b$?", [("A","116"),("B","161"),("C","204"),("D","214"),("E","224")]),
-    6: (r"On Halloween Casper ate $\frac13$ of his candies and then gave $2$ candies to his brother. The next day he ate $\frac13$ of his remaining candies and then gave $4$ candies to his sister. On the third day he ate his final $8$ candies. How many candies did Casper have at the beginning?", [("A","30"),("B","39"),("C","48"),("D","57"),("E","66")]),
-    7: (r"The sum of two angles of a triangle is $\frac65$ of a right angle, and one of these two angles is $30^\circ$ larger than the other. What is the degree measure of the largest angle in the triangle?", [("A","69"),("B","72"),("C","90"),("D","102"),("E","108")]),
-    8: (r"At a certain beach, if it is at least $80^\circ F$ and sunny, then the beach will be crowded. On June 10 the beach was not crowded. What can be said about the weather conditions on June 10?", [("A",r"The temperature was cooler than $80^\circ F$ and it was not sunny."),("B",r"The temperature was cooler than $80^\circ F$ or it was not sunny."),("C",r"If the temperature was at least $80^\circ F$, then it was sunny."),("D",r"If the temperature was cooler than $80^\circ F$, then it was sunny."),("E",r"If the temperature was cooler than $80^\circ F$, then it was not sunny.")]),
-    9: (r"In the diagram, $\triangle ABC$ is a $3$-$4$-$5$ triangle with $AC=3$, $BC=4$, and $AB=5$. Point $D$ lies on $\overline{AB}$, point $E$ lies on $\overline{BC}$, and $DE\perp AB$. The area of $\triangle EBD$ is one third of the area of $\triangle ABC$. What is $BD$?", [("A",r"\frac43"),("B",r"\sqrt5"),("C",r"\frac94"),("D",r"\frac{4\sqrt3}{3}"),("E",r"\frac52")]),
-    10: (r"Consider the set of numbers $\{1,10,10^2,10^3,\ldots,10^{10}\}$. The ratio of the largest element of the set to the sum of the other ten elements is closest to which integer?", [("A","1"),("B","9"),("C","10"),("D","11"),("E","101")]),
+    11: (r"There are $52$ people in a room. What is the largest value of $n$ such that the statement 'At least $n$ people in this room have birthdays falling in the same month' is always true?", [("A","2"),("B","3"),("C","4"),("D","5"),("E","12")]),
+    12: (r"Keiko walks once around a track at exactly the same constant speed every day. The sides of the track are straight, and the ends are semicircles. The track has width $6$ meters, and it takes her $36$ seconds longer to walk around the outside edge of the track than around the inside edge. What is Keiko's speed in meters per second?", [("A",r"\frac{\pi}{3}"),("B",r"\frac{2\pi}{3}"),("C",r"\pi"),("D",r"\frac{4\pi}{3}"),("E",r"\frac{5\pi}{3}")]),
+    13: (r"Two real numbers are selected independently at random from the interval $[-20,10]$. What is the probability that the product of those numbers is greater than zero?", [("A",r"\frac19"),("B",r"\frac13"),("C",r"\frac49"),("D",r"\frac59"),("E",r"\frac23")]),
+    14: (r"A rectangular parking lot has a diagonal of $25$ meters and an area of $168$ square meters. In meters, what is the perimeter of the parking lot?", [("A","52"),("B","58"),("C","62"),("D","68"),("E","70")]),
+    15: (r"Let $@$ denote the 'averaged with' operation: $a@b=\frac{a+b}{2}$. Which of the following distributive laws hold for all numbers $x,y,z$? I. $x@(y+z)=(x@y)+(x@z)$ II. $x+(y@z)=(x+y)@(x+z)$ III. $x@(y@z)=(x@y)@(x@z)$", [("A","I only"),("B","II only"),("C","III only"),("D","I and III only"),("E","II and III only")]),
 }
 
 KEY_OVERRIDES = {
-    1: "Compute the two simple sums first, then subtract the fractions.",
-    2: "Translate a desired average increase into a required total score.",
-    3: "Use the smallest possible dimensions allowed by the rounding rule.",
-    4: "Equal sharing means each person should end up paying half the total cost.",
-    5: "Factor the erroneous product to recover the reversed two-digit number.",
-    6: "Work backward from the final number of candies.",
-    7: "Use the sum of two angles and their difference to find the triangle's angles.",
-    8: "Use the contrapositive/negation of an AND statement.",
-    9: "Use similarity and the area ratio between the smaller and larger right triangles.",
-    10: "Use the geometric-series sum and compare the resulting ratio to nearby integers.",
+    11: "Use the pigeonhole principle with 52 people and 12 months.",
+    12: "The outside track is longer only because the two semicircular ends have larger radius.",
+    13: "The product is positive when both selected numbers have the same sign.",
+    14: "Use side product and diagonal information to find the sum of side lengths.",
+    15: "Expand the averaging operation algebraically and compare both sides of each identity.",
 }
 
 SOL = {
-    1: [
-        ("Compute the sums", r"The numerator $2+4+6$ is $12$, and the denominator $1+3+5$ is $9$. So the expression becomes $\frac{12}{9}-\frac{9}{12}$."),
-        ("Simplify each fraction", r"We have $\frac{12}{9}=\frac43$ and $\frac{9}{12}=\frac34$."),
-        ("Subtract with a common denominator", r"Using denominator $12$, $\frac43=\frac{16}{12}$ and $\frac34=\frac9{12}$."),
-        ("Finish", r"The difference is $\frac{16}{12}-\frac9{12}=\frac7{12}$. The answer is $\boxed{\frac7{12}}$."),
+    11: [
+        ("Use the pigeonhole principle", r"Birth months are the boxes, and the $52$ people are the objects being placed into those boxes. There are $12$ months."),
+        ("Find the forced minimum", r"If we tried to keep every month at $4$ or fewer birthdays, we could place at most $12\cdot4=48$ people. But there are $52$ people."),
+        ("Increase the guarantee", r"Since $48$ is not enough, at least one month must contain at least $5$ people."),
+        ("Check that 6 is not guaranteed", r"It is possible to distribute $52$ people as four months with $5$ birthdays and eight months with $4$ birthdays. Then no month has $6$ people, so $6$ is not guaranteed."),
+        ("Conclude", r"The largest guaranteed value of $n$ is $\boxed{5}$."),
     ],
-    2: [
-        ("Find the current total", r"Josanna's five scores add to $90+80+70+60+85=385$. Her current average is $385/5=77$."),
-        ("Set the target average", r"She wants to raise her average by at least $3$ points, so after the next test the average should be at least $80$."),
-        ("Translate to a total", r"After six tests, an average of $80$ requires a total of $6\cdot80=480$ points."),
-        ("Find the needed score", r"She already has $385$ points, so she needs $480-385=95$ on the next test. The answer is $\boxed{95}$."),
+    12: [
+        ("Compare inside and outside tracks", r"The straight parts of the inside and outside paths have the same lengths in pairs; the extra distance comes from the rounded ends."),
+        ("Use the semicircles", r"Two semicircles make one full circle. The outside rounded path has radius $6$ meters more than the inside rounded path, so the difference in curved length is the difference of two circumferences: $2\pi\cdot6=12\pi$."),
+        ("Use time equals distance over speed", r"Keiko takes $36$ seconds longer to walk the extra $12\pi$ meters. Since her speed is constant, \[\text{speed}=\frac{12\pi}{36}=\frac{\pi}{3}.\]"),
+        ("Conclude", r"Her speed is $\boxed{\frac{\pi}{3}}$ meters per second."),
     ],
-    3: [
-        ("Use the lower bounds", r"To minimize the area, choose the smallest possible value for each reported dimension. A reported length of $2$ inches could be as small as $1.5$ inches."),
-        ("Find the other smallest dimension", r"A reported length of $3$ inches could be as small as $2.5$ inches."),
-        ("Multiply for area", r"The minimum possible area is $1.5\cdot2.5=3.75$ square inches."),
-        ("Conclude", r"The answer is $\boxed{3.75}$."),
+    13: [
+        ("Identify when the product is positive", r"A product of two real numbers is positive when both numbers are positive or both numbers are negative. The probability of selecting exactly zero is $0$, so it does not affect the answer."),
+        ("Find the interval lengths", r"The full interval $[-20,10]$ has length $30$. The negative part has length $20$, and the positive part has length $10$."),
+        ("Compute same-sign probability", r"The probability both numbers are negative is $\left(\frac{20}{30}\right)^2=\frac49$. The probability both are positive is $\left(\frac{10}{30}\right)^2=\frac19$."),
+        ("Add the cases", r"The total probability is $\frac49+\frac19=\frac59$. The answer is $\boxed{\frac59}$."),
     ],
-    4: [
-        ("Find each person's fair share", r"Together they paid $A+B$ dollars. If they share equally, each person should pay $\frac{A+B}{2}$."),
-        ("Compare LeRoy's payment to his share", r"LeRoy has already paid $A$ dollars. Since $A<B$, he paid less than half, so he must pay Bernardo the difference between his fair share and what he already paid."),
-        ("Compute the difference", r"That amount is $\frac{A+B}{2}-A=\frac{A+B-2A}{2}=\frac{B-A}{2}$."),
-        ("Conclude", r"LeRoy must give Bernardo $\boxed{\frac{B-A}{2}}$ dollars."),
+    14: [
+        ("Name the side lengths", r"Let the rectangle have side lengths $x$ and $y$. The area gives $xy=168$, and the diagonal gives $x^2+y^2=25^2=625$."),
+        ("Look for the perimeter", r"The perimeter is $2(x+y)$, so we do not need $x$ and $y$ separately. We only need $x+y$."),
+        ("Use the identity", r"Since $(x+y)^2=x^2+y^2+2xy$, we get \[(x+y)^2=625+2\cdot168=625+336=961.\]"),
+        ("Finish", r"Thus $x+y=31$, and the perimeter is $2\cdot31=62$. The answer is $\boxed{62}$."),
     ],
-    5: [
-        ("Factor the wrong product", r"The erroneous product was $161$, and $161=7\cdot23$. Since Ron reversed a two-digit number, the reversed version of $a$ is likely one of these two factors."),
-        ("Identify the reversed number", r"The reversed number must be two digits, so it is $23$, not $7$. Therefore the original value of $a$ was $32$."),
-        ("Find the other factor", r"If the wrong product used $23$, then $b=7$."),
-        ("Compute the correct product", r"The correct product is $32\cdot7=224$. The answer is $\boxed{224}$."),
-    ],
-    6: [
-        ("Work backward", r"Forward fractions can be messy, so start from the end. On the third day Casper ate his final $8$ candies, so he had $8$ candies after giving $4$ to his sister the previous day."),
-        ("Undo the gift to his sister", r"Before giving away $4$ candies, he had $8+4=12$ candies. This was after he ate $\frac13$ of that day's starting amount, so $12$ is $\frac23$ of what he had at the start of the second day."),
-        ("Undo the second-day eating", r"If $\frac23$ of the second-day starting amount is $12$, then the second-day starting amount was $18$."),
-        ("Undo the first day", r"After the first day gift of $2$ candies, he had $18$, so before that gift he had $20$. This was $\frac23$ of his original amount, so the original amount was $30$."),
-        ("Conclude", r"Casper began with $\boxed{30}$ candies."),
-    ],
-    7: [
-        ("Convert the right angle information", r"A right angle is $90^\circ$, so $\frac65$ of a right angle is $\frac65\cdot90=108^\circ$."),
-        ("Set up the two angles", r"Let the smaller of the two angles be $x$. Then the larger of the two is $x+30$. Their sum is $108$, so $x+(x+30)=108$."),
-        ("Solve for the two angles", r"This gives $2x=78$, so $x=39$. The two angles are $39^\circ$ and $69^\circ$."),
-        ("Find the third angle", r"The third angle is $180-108=72^\circ$. Comparing $39$, $69$, and $72$, the largest angle is $72^\circ$."),
-        ("Conclude", r"The answer is $\boxed{72}$."),
-    ],
-    8: [
-        ("Name the condition", r"The statement says: if the temperature is at least $80^\circ F$ and it is sunny, then the beach is crowded. In symbols, $(T\text{ and }S)\Rightarrow C$."),
-        ("Use the given fact", r"On June 10 the beach was not crowded, so $C$ was false. Therefore the condition $T\text{ and }S$ could not have been true."),
-        ("Negate the AND statement", r"The negation of '$T$ and $S$' is 'not $T$ or not $S$.' This means the temperature was cooler than $80^\circ F$ or it was not sunny."),
-        ("Conclude", r"The answer is $\boxed{\text{cooler than }80^\circ F\text{ or not sunny}}$."),
-    ],
-    9: [
-        ("Use the diagram relationship", r"The large triangle $ABC$ is a $3$-$4$-$5$ right triangle, and $DE\perp AB$. The smaller triangle $EBD$ shares angle $B$ with the large triangle and has a right angle, so $\triangle EBD\sim\triangle ABC$."),
-        ("Use area ratio to get side ratio", r"The area of $\triangle EBD$ is one third of the area of $\triangle ABC$. For similar triangles, areas scale as the square of side lengths, so the side-length scale factor is $\sqrt{\frac13}=\frac{1}{\sqrt3}$."),
-        ("Match corresponding sides", r"Side $BD$ in the smaller triangle corresponds to side $BC=4$ in the large triangle. Therefore $BD=4\cdot\frac{1}{\sqrt3}=\frac{4}{\sqrt3}$."),
-        ("Rationalize", r"Rationalizing gives $BD=\frac{4\sqrt3}{3}$."),
-        ("Conclude", r"The answer is $\boxed{\frac{4\sqrt3}{3}}$."),
-    ],
-    10: [
-        ("Identify the largest element", r"The largest element is $10^{10}$. The sum of the other ten elements is $1+10+10^2+\cdots+10^9$."),
-        ("Use the geometric sum", r"The denominator is a geometric series: \[1+10+10^2+\cdots+10^9=\frac{10^{10}-1}{9}.\]"),
-        ("Form the ratio", r"The ratio is \[\frac{10^{10}}{(10^{10}-1)/9}=\frac{9\cdot10^{10}}{10^{10}-1}.\] This is just slightly bigger than $9$."),
-        ("Choose the closest integer", r"Since the ratio is a tiny bit more than $9$ and much closer to $9$ than to $10$, the closest integer is $9$. The answer is $\boxed{9}$."),
+    15: [
+        ("Translate the operation", r"The operation $a@b$ means $\frac{a+b}{2}$. The safest way to test these laws is to expand both sides."),
+        ("Test statement I", r"The left side is $x@(y+z)=\frac{x+y+z}{2}$. The right side is $(x@y)+(x@z)=\frac{x+y}{2}+\frac{x+z}{2}=x+\frac{y+z}{2}$. These are not always equal, so I is false."),
+        ("Test statement II", r"The left side is $x+(y@z)=x+\frac{y+z}{2}$. The right side is $(x+y)@(x+z)=\frac{x+y+x+z}{2}=x+\frac{y+z}{2}$. These match, so II is true."),
+        ("Test statement III", r"The left side is $x@(y@z)=\frac{x+\frac{y+z}{2}}{2}=\frac{x}{2}+\frac{y}{4}+\frac{z}{4}$. The right side is $(x@y)@(x@z)=\frac{\frac{x+y}{2}+\frac{x+z}{2}}{2}=\frac{x}{2}+\frac{y}{4}+\frac{z}{4}$. These match, so III is true."),
+        ("Conclude", r"Exactly statements II and III hold. The answer is $\boxed{\text{II and III only}}$."),
     ],
 }
 def esc(x, quote=True):
@@ -254,7 +208,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {9},
+                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in set(),
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -323,6 +277,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
