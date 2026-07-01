@@ -3,30 +3,40 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 80
+BATCH_NUMBER = 81
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2014_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {21,22,24,25}
-SKIPPED = ["2014 AMC 10A Problem 23 skipped: folding line and overlap depend on missing diagram"]
-BATCH_LABEL = "2014 AMC 10A Problems 21,22,24,25"
-NEXT_START = "2014 AMC 10B Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2014_AMC_10B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,6,7,8,9,10}
+SKIPPED = ["2014 AMC 10B Problem 5 skipped: pane layout depends on missing diagram"]
+BATCH_LABEL = "2014 AMC 10B Problems 1-10 excluding 5"
+NEXT_START = "2014 AMC 10B Problem 11"
 
-ANS={21:("E",r"-8"),22:("E","20"),24:("A","996506"),25:("B","279")}
+ANS={1:("C","37"),2:("E","64"),3:("E",r"\frac{300}{7}"),4:("B",r"\frac53"),6:("C","36"),7:("A",r"100\left(\frac{A-B}{B}\right)"),8:("E",r"\frac{10b}{t}"),9:("A","-2014"),10:("C","7")}
 
 OV={
-21:(r"Positive integers $a$ and $b$ are such that the graphs of $y=ax+5$ and $y=3x+b$ intersect the $x$-axis at the same point. What is the sum of all possible $x$-coordinates of these points of intersection?",[("A",r"-20"),("B",r"-18"),("C",r"-15"),("D",r"-12"),("E",r"-8")]),
-22:(r"In rectangle $ABCD$, $AB=20$ and $BC=10$. Let $E$ be a point on $CD$ such that $\angle CBE=15^\circ$. What is $AE$?",[("A",r"\frac{20}{\sqrt3}"),("B",r"10\sqrt3"),("C","18"),("D",r"11\sqrt3"),("E","20")]),
-24:(r"A sequence of natural numbers is constructed by listing the first $4$, then skipping one, listing the next $5$, skipping $2$, listing $6$, skipping $3$, and, on the $n$th iteration, listing $n+3$ and skipping $n$. The sequence begins $1,2,3,4,6,7,8,9,10,13$. What is the $500000$th number in the sequence?",[("A","996506"),("B","996507"),("C","996508"),("D","996509"),("E","996510")]),
-25:(r"The number $5^{867}$ is between $2^{2013}$ and $2^{2014}$. How many pairs of integers $(m,n)$ are there such that $1\le m\le2012$ and $5^n<2^m<2^{m+2}<5^{n+1}$?",[("A","278"),("B","279"),("C","280"),("D","281"),("E","282")]),
+1:(r"Leah has $13$ coins, all of which are pennies and nickels. If she had one more nickel than she has now, then she would have the same number of pennies and nickels. In cents, how much are Leah's coins worth?",[("A","33"),("B","35"),("C","37"),("D","39"),("E","41")]),
+2:(r"What is $\frac{2^3+2^3}{2^{-3}+2^{-3}}$?",[("A","16"),("B","24"),("C","32"),("D","48"),("E","64")]),
+3:(r"Randy drove the first third of his trip on a gravel road, the next $20$ miles on pavement, and the remaining one-fifth on a dirt road. In miles, how long was Randy's trip?",[("A","30"),("B",r"\frac{400}{11}"),("C",r"\frac{75}{2}"),("D","40"),("E",r"\frac{300}{7}")]),
+4:(r"Susie pays for $4$ muffins and $3$ bananas. Calvin spends twice as much paying for $2$ muffins and $16$ bananas. A muffin is how many times as expensive as a banana?",[("A","3"),("B",r"\frac53"),("C",r"\frac74"),("D","2"),("E",r"\frac{13}{4}")]),
+6:(r"Orvin went to the store with just enough money to buy $30$ balloons. When he arrived, he discovered that the store had a special sale on balloons: buy $1$ balloon at the regular price and get a second at $\frac13$ off the regular price. What is the greatest number of balloons Orvin could buy?",[("A","33"),("B","34"),("C","36"),("D","38"),("E","39")]),
+7:(r"Suppose $A>B>0$ and $A$ is $x\%$ greater than $B$. What is $x$?",[("A",r"100\left(\frac{A-B}{B}\right)"),("B",r"100\left(\frac{A+B}{B}\right)"),("C",r"100\left(\frac{A+B}{A}\right)"),("D",r"100\left(\frac{A-B}{A}\right)"),("E",r"100\left(\frac{A}{B}\right)")]),
+8:(r"A truck travels $\frac{b}{6}$ feet every $t$ seconds. There are $3$ feet in a yard. How many yards does the truck travel in $3$ minutes?",[("A",r"\frac{b}{1080t}"),("B",r"\frac{30t}{b}"),("C",r"\frac{30b}{t}"),("D",r"\frac{10t}{b}"),("E",r"\frac{10b}{t}")]),
+9:(r"For real numbers $w$ and $z$, \[\frac{\frac1w+\frac1z}{\frac1w-\frac1z}=2014.\] What is $\frac{w+z}{w-z}$?",[("A","-2014"),("B",r"-\frac1{2014}"),("C",r"\frac1{2014}"),("D","1"),("E","2014")]),
+10:(r"In the addition shown below, $A$, $B$, $C$, and $D$ are distinct digits: \[ABBCB+BCADA=DBDDD.\] How many different values are possible for $D$?",[("A","2"),("B","4"),("C","7"),("D","8"),("E","9")]),
 }
 
-KEY_OVERRIDES={21:"Convert the shared x-intercept into a divisor equation.",22:"Use the 15-degree angle to locate E, then apply the distance formula.",24:"Use cumulative listed counts to locate the correct iteration.",25:"Convert the exponential inequalities into fractional-part counting with logarithms."}
+KEY_OVERRIDES={1:"Translate the coin condition into two equations.",2:"Simplify powers carefully, especially negative exponents.",3:"Use fractions of the total trip to identify the 20-mile middle part.",4:"Set up prices for muffins and bananas and solve for the ratio.",6:"Group balloons into sale pairs and compare their cost to regular price.",7:"Use the definition of percent increase from the original amount.",8:"Convert feet to yards and minutes to seconds before multiplying by rate.",9:"Clear the complex fraction and watch the sign change.",10:"Analyze column carries in a digit addition puzzle."}
 
 SOL={
-21:[("Use the shared x-intercept",r"The line $y=ax+5$ meets the $x$-axis when $0=ax+5$, so $x=-\frac5a$. The line $y=3x+b$ meets the $x$-axis when $x=-\frac b3$."),("Set the intercepts equal",r"Since the two $x$-intercepts are the same, \[-\frac5a=-\frac b3.\] Thus $ab=15$."),("List positive factor pairs",r"Because $a$ and $b$ are positive integers, the possible values of $a$ are $1,3,5,15$."),("Find and add the x-coordinates",r"The corresponding intercepts are $-5$, $-\frac53$, $-1$, and $-\frac13$. Their sum is \[-5-\frac53-1-\frac13=-8.\]"),("Conclude",r"The answer is $\boxed{-8}$."),],
-22:[("Place the rectangle",r"Let $A=(0,0)$, $B=(20,0)$, $C=(20,10)$, and $D=(0,10)$. Point $E$ lies on the top side $CD$."),("Use the 15-degree angle",r"From $B$, segment $BC$ is vertical and has length $10$. Since $\angle CBE=15^\circ$, the horizontal distance from $C$ to $E$ is $10\tan15^\circ$."),("Use the special tangent value",r"\[\tan15^\circ=2-\sqrt3.\] Therefore $E$ has $x$-coordinate $20-10(2-\sqrt3)=10\sqrt3$, and $y$-coordinate $10$."),("Compute AE",r"Now \[AE=\sqrt{(10\sqrt3)^2+10^2}=\sqrt{300+100}=20.\]"),("Conclude",r"The answer is $\boxed{20}$."),],
-24:[("Count listed terms by iteration",r"On iteration $n$, the sequence lists $n+3$ numbers. After $k$ iterations, the number of listed terms is \[\sum_{n=1}^k(n+3)=\frac{k(k+7)}2.\]"),("Locate the 500000th listed term",r"For $k=996$, this count is $\frac{996\cdot1003}{2}=499494$. For $k=997$, it is $\frac{997\cdot1004}{2}=500494$. So the $500000$th term occurs during iteration $997$."),("Find the actual numbers reached before that iteration",r"Each iteration $n$ lists $n+3$ numbers and then skips $n$, so it passes over $2n+3$ natural numbers. After $996$ iterations, the last passed number is \[\sum_{n=1}^{996}(2n+3)=996^2+4\cdot996=996000.\]"),("Move to the desired position",r"The $500000$th listed term is $500000-499494=506$ terms into iteration $997$. That iteration starts at $996001$, so the desired number is $996001+505=996506$."),("Conclude",r"The answer is $\boxed{996506}$."),],
-25:[("Translate with logarithms",r"Let $\alpha=\log_2 5$. The inequality $5^n<2^m<2^{m+2}<5^{n+1}$ becomes \[n\alpha<m<m+2<(n+1)\alpha.\]"),("Understand how many m values are possible",r"Since $\alpha$ is a little more than $2$, the possible integer $m$ for a fixed $n$ can only be the first integer greater than $n\alpha$. Such an $m$ works exactly when the fractional part of $n\alpha$ is greater than $3-\alpha$."),("Remove the integer part of alpha",r"Write $\alpha=2+\beta$, where $\beta=\log_2(5/4)$. The condition becomes $\{n\beta\}>1-\beta$, which is equivalent to $\lfloor(n+1)\beta\rfloor=\lfloor n\beta\rfloor+1$."),("Count the jumps",r"For $1\le m\le2012$, the relevant values are $n=1$ through $866$. The number of jumps is \[\lfloor867\beta\rfloor.\]"),("Use the given estimate",r"The given fact says $2^{2013}<5^{867}<2^{2014}$, so $2013<867\alpha<2014$. Subtracting $2\cdot867=1734$ gives $279<867\beta<280$."),("Conclude",r"Therefore $\lfloor867\beta\rfloor=279$, so the answer is $\boxed{279}$."),],
+1:[("Name the coins",r"Let $p$ be the number of pennies and $n$ be the number of nickels. The total number of coins gives $p+n=13$."),("Translate the extra nickel condition",r"If Leah had one more nickel, she would have $n+1$ nickels. That would equal the number of pennies, so $p=n+1$."),("Solve the system",r"Substitute $p=n+1$ into $p+n=13$: \[(n+1)+n=13.\] Thus $2n=12$, so $n=6$ and $p=7$."),("Compute the value",r"The pennies are worth $7$ cents, and the nickels are worth $6\cdot5=30$ cents. The total is $37$ cents."),("Conclude",r"The answer is $\boxed{37}$."),],
+2:[("Simplify the numerator",r"The numerator is $2^3+2^3=8+8=16$."),("Simplify the denominator",r"A negative exponent means reciprocal: $2^{-3}=\frac18$. So the denominator is $\frac18+\frac18=\frac14$."),("Divide by the denominator",r"The expression is \[\frac{16}{1/4}=16\cdot4=64.\]"),("Check the size",r"The denominator is less than $1$, so dividing by it should make the numerator larger. Getting $64$ is reasonable."),("Conclude",r"The answer is $\boxed{64}$."),],
+3:[("Represent the whole trip",r"Let the total trip length be $T$ miles. The first part is $\frac13T$, and the last part is $\frac15T$."),("Identify the paved part",r"The paved part is what remains after the first and last parts: \[1-\frac13-\frac15=\frac7{15}\] of the trip."),("Use the 20-mile information",r"The paved part is $20$ miles, so \[\frac7{15}T=20.\]"),("Solve",r"Multiplying by $\frac{15}{7}$ gives $T=20\cdot\frac{15}{7}=\frac{300}{7}$."),("Conclude",r"The answer is $\boxed{\frac{300}{7}}$."),],
+4:[("Assign prices",r"Let a muffin cost $m$ dollars and a banana cost $b$ dollars. Susie pays $4m+3b$."),("Translate Calvin's cost",r"Calvin pays for $2$ muffins and $16$ bananas, so his cost is $2m+16b$. The problem says this is twice Susie's cost."),("Set up the equation",r"\[2m+16b=2(4m+3b).\] Expanding gives $2m+16b=8m+6b$."),("Solve for the ratio",r"Move terms to get $10b=6m$, so $\frac{m}{b}=\frac{10}{6}=\frac53$."),("Conclude",r"A muffin is $\boxed{\frac53}$ times as expensive as a banana."),],
+6:[("Measure money in regular balloon prices",r"Let one regular-price balloon cost $p$. Orvin has $30p$ dollars."),("Find the cost of a sale pair",r"Under the sale, two balloons cost $p+\frac23p=\frac53p$, because the second balloon is $\frac13$ off."),("Count full sale pairs",r"With $30p$ dollars, Orvin can buy \[\frac{30p}{(5/3)p}=18\] sale pairs."),("Convert pairs to balloons",r"Each pair contains $2$ balloons, so $18$ pairs give $36$ balloons. This uses all of his money exactly."),("Conclude",r"The answer is $\boxed{36}$."),],
+7:[("Recall the definition",r"Saying $A$ is $x\%$ greater than $B$ means the increase from $B$ to $A$ is $x\%$ of $B$."),("Write the increase",r"The increase is $A-B$. Therefore \[\frac{x}{100}\cdot B=A-B.\]"),("Solve for x",r"Divide by $B$ and multiply by $100$: \[x=100\left(\frac{A-B}{B}\right).\]"),("Check the denominator",r"The denominator must be the original amount, which is $B$, not the final amount $A$."),("Conclude",r"The answer is $\boxed{100\left(\frac{A-B}{B}\right)}$."),],
+8:[("Convert the distance unit",r"The truck travels $\frac{b}{6}$ feet every $t$ seconds. Since $3$ feet make $1$ yard, this is $\frac{b}{18}$ yards every $t$ seconds."),("Convert the time",r"Three minutes is $180$ seconds. That contains $\frac{180}{t}$ intervals of length $t$ seconds."),("Multiply rate by number of intervals",r"The total distance in yards is \[\frac{b}{18}\cdot\frac{180}{t}=\frac{10b}{t}.\]"),("Check the units",r"The feet-to-yards conversion divides by $3$, and the minutes-to-seconds conversion multiplies by $180$. Both conversions are accounted for."),("Conclude",r"The answer is $\boxed{\frac{10b}{t}}$."),],
+9:[("Clear the complex fraction",r"Multiply the numerator and denominator by $wz$. Then \[\frac{\frac1w+\frac1z}{\frac1w-\frac1z}=\frac{z+w}{z-w}.\]"),("Use the given value",r"The equation tells us \[\frac{w+z}{z-w}=2014,\] since $z+w=w+z$."),("Compare with the requested expression",r"The denominator in the requested expression is $w-z$, which is the negative of $z-w$."),("Change the sign",r"Therefore \[\frac{w+z}{w-z}=-\frac{w+z}{z-w}=-2014.\]"),("Conclude",r"The answer is $\boxed{-2014}$."),],
+10:[("Look at the leftmost column",r"The sum has only five digits, so there is no carry into a sixth digit. Thus the leftmost column gives $A+B=D$."),("Use the ones column",r"The ones column is also $B+A$, so it gives the same digit $D$ and has no carry."),("Use the tens column",r"With no carry from the ones column, the tens column gives $C+D=D$. Hence $C=0$."),("Determine possible D values",r"Since $A$ and $B$ are distinct nonzero digits and $D=A+B$, the smallest possible $D$ is $1+2=3$. Any value from $3$ through $9$ can be made by choosing distinct positive digits with that sum."),("Count",r"The possible values are $3,4,5,6,7,8,9$, which gives $7$ values."),("Conclude",r"The answer is $\boxed{7}$."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -71,9 +81,9 @@ def render(row):
     ans, val = ANS[n]
     tags = "".join(f'<span class="badge">{esc(t)}</span>' for t in (row.get("tags") or "").split(";") if t)
     notes = row.get("notes") or ""
-    if n == 17 and notes == "题面包含图形":
+    if n in {10,17} and notes == "题面包含图形":
         notes = ""
-    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if n in {12,13} else notes
+    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if n in set() else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
         f'<li class="choice {"correct" if k == ans else ""}"><span class="choice-key">{esc(k)}</span><span>{esc(v, False)}</span></li>'
@@ -128,7 +138,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2014" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2014" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -169,7 +179,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": int(r["problem_no"]) in {12,13},
+                "needs_review": int(r["problem_no"]) in set(),
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -217,7 +227,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2014 AMC 10A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2014 AMC 10B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),

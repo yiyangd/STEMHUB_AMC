@@ -1324,3 +1324,19 @@
 - Pushed: pending
 - Next batch should start from: 2014 AMC 10B Problem 1
 - Review notes: none.
+
+## Batch 81: 2014 AMC 10B Problems 1-10 excluding 5
+
+- Start time: 2026-07-01T01:09:20-07:00
+- End time: 2026-07-01T01:09:21-07:00
+- Processed contest: AMC 10
+- Processed range: 2014 AMC 10B Problems 1-10 excluding 5
+- Generated count: 9
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2014 AMC 10B Problem 5 skipped: pane layout depends on missing diagram
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2014 AMC 10B Problem 11
+- Review notes: none.
