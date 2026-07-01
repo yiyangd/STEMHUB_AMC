@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 153
+BATCH_NUMBER = 154
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2003_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,14,16,17,18,19,20}
-SKIPPED = ["2003 AMC 12A Problem 13 skipped: cube-net folding count depends on the missing figure.", "2003 AMC 12A Problem 15 skipped: lune geometry depends on the missing semicircle diagram."]
-BATCH_LABEL = "2003 AMC 12A Problems 11,12,14,16-20"
-NEXT_START = "2003 AMC 12A Problem 21"
+TARGET_NUMBERS = {21,22,23,24,25}
+SKIPPED = []
+BATCH_LABEL = "2003 AMC 12A Problems 21-25"
+NEXT_START = "2003 AMC 12B Problem 1"
 
-ANS={11:("C",r"\frac{27}{32}"),12:("E","12"),14:("D",r"32+16\sqrt3"),16:("C",r"\frac13"),17:("B",r"\frac{16}{5}"),18:("B","8181"),19:("D","a non-horizontal line"),20:("A",r"\sum_{k=0}^5\binom5k^3")}
+ANS={21:("D","d"),22:("C","0.20"),23:("B","672"),24:("B","0"),25:("B","1")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -622,6 +622,30 @@ SOL.update({
 18:[("Write n in terms of q and r",r"Since \(n\) is divided by \(100\), we have \[n=100q+r,\quad 0\le r\le99.\] For a five-digit \(n\), \(q\) ranges from \(100\) to \(999\)." ),("Count r values for each q",r"We need \(q+r\equiv0\pmod{11}\). For each fixed \(q\), among the \(100\) possible values of \(r\), either \(9\) or \(10\) satisfy this congruence." ),("Use complete q cycles",r"The \(900\) values of \(q\) from \(100\) to \(999\) make \(81\) complete blocks of \(11\) plus \(9\) extra values."),("Use a cleaner total count",r"Counting directly over the rectangle \(100\le q\le999\), \(0\le r\le99\), the congruence \(q+r\equiv0\pmod{11}\) gives \(8181\) pairs."),("Conclude",r"There are $\boxed{8181}$ such five-digit numbers."),],
 19:[("Write the reflected parabola",r"Reflecting \(y=ax^2+bx+c\) across the \(x\)-axis gives \(y=-(ax^2+bx+c)\)." ),("Translate in opposite directions",r"Horizontal translations by \(5\) units in opposite directions produce functions of the form \[f(x)=p(x-5),\qquad g(x)=-p(x+5),\] possibly with the directions reversed."),("Add and observe cancellation",r"For \(p(x)=ax^2+bx+c\), \[p(x-5)-p(x+5)\] has its \(x^2\) terms cancel. The constant terms also combine into a constant, leaving a linear expression."),("Check it is not horizontal",r"Because \(a\ne0\) for a parabola and the shifts are nonzero and opposite, the coefficient of \(x\) is nonzero."),("Conclude",r"The graph is $\boxed{\text{a non-horizontal line}}$."),],
 20:[("Break the word into three blocks",r"Divide the \(15\) positions into three blocks of length \(5\). Block 1 cannot contain A, block 2 cannot contain B, and block 3 cannot contain C."),("Condition on A's in the middle block",r"Let \(k\) be the number of A's placed in the middle block. Choose those positions in \(\binom5k\) ways."),("Match the forced counts",r"Then block 1 must contain \(k\) B's and \(5-k\) C's, and block 3 must contain \(5-k\) A's and \(k\) B's. These choices contribute another \(\binom5k\) and \(\binom5k\)." ),("Sum over k",r"For each \(k=0,1,\ldots,5\), the number of arrangements is \(\binom5k^3\)." ),("Conclude",r"The total is \[\boxed{\sum_{k=0}^{5}\binom5k^3}.\]"),],
+})
+
+OV.update({
+21:(r"The graph of the polynomial \[P(x)=x^5+ax^4+bx^3+cx^2+dx+e\] has five distinct \(x\)-intercepts, one of which is at \((0,0)\). Which coefficient cannot be zero?",[("A","a"),("B","b"),("C","c"),("D","d"),("E","e")]),
+22:(r"Objects \(A\) and \(B\) move simultaneously in the coordinate plane via a sequence of steps, each of length \(1\). Object \(A\) starts at \((0,0)\), and each of its steps is either right or up, equally likely. Object \(B\) starts at \((5,7)\), and each of its steps is either left or down, equally likely. Which is closest to the probability that the objects meet?",[("A","0.10"),("B","0.15"),("C","0.20"),("D","0.25"),("E","0.30")]),
+23:(r"How many perfect squares are divisors of the product \[1!\cdot2!\cdot3!\cdots9!?\]",[("A","504"),("B","672"),("C","864"),("D","936"),("E","1008")]),
+24:(r"If \(a\ge b>1\), what is the largest possible value of \[\log_a(a/b)+\log_b(b/a)?\]",[("A","-2"),("B","0"),("C","2"),("D",r"\(\sqrt3\)"),("E","4")]),
+25:(r"Let \(f(x)=ax^2+bx\). For how many real values of \(a\) is there at least one positive value of \(b\) for which the domain of \(f\) and the range of \(f\) are the same set?",[("A","0"),("B","1"),("C","2"),("D","3"),("E","infinitely many")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Use the nonzero roots of a monic polynomial with one root at zero.",
+22:"Find the only time step when the walkers can meet and count paths.",
+23:"Use prime exponents in the product of factorials.",
+24:"Reduce the expression to 2 minus x minus 1 over x.",
+25:"A linear function has full real range, while a nonconstant quadratic does not.",
+})
+
+SOL.update({
+21:[("Use the root at zero",r"Since one \(x\)-intercept is at \((0,0)\), \(0\) is a root. Thus \[P(x)=x(x-r_1)(x-r_2)(x-r_3)(x-r_4),\] where the \(r_i\) are four distinct nonzero roots."),("Identify the coefficient d",r"The coefficient \(d\) is the coefficient of \(x\). In the factored form, it is the product of the four nonzero root factors, up to sign."),("Use nonzero roots",r"Because \(r_1,r_2,r_3,r_4\) are all nonzero, their product is nonzero. Therefore the coefficient of \(x\), namely \(d\), cannot be zero."),("Check e",r"The constant term \(e\) is actually zero because \(0\) is a root, so \(e\) is not the answer."),("Conclude",r"The coefficient that cannot be zero is $\boxed{d}$."),],
+22:[("Find when meeting is possible",r"After \(t\) steps, object A has moved \(r\) steps right and \(t-r\) steps up. Object B has moved \(l\) steps left and \(t-l\) steps down."),("Set coordinates equal",r"A is at \((r,t-r)\). B is at \((5-l,7-(t-l))\). Meeting requires \[r=5-l\quad\text{and}\quad t-r=7-t+l.\]"),("Solve for t",r"The first equation gives \(r+l=5\). Substitute into the second equation to get \(2t=7+r+l=12\), so \(t=6\)." ),("Count favorable path pairs",r"At time \(6\), we need \(r+l=5\). The number of path pairs is \[\sum_{r=0}^{5}\binom6r\binom6{5-r}=\binom{12}{5}=792.\]"),("Divide by all path pairs",r"Each object has \(2^6\) possible six-step paths, so the probability is \[\frac{792}{2^{12}}=\frac{792}{4096}\approx0.193.\]"),("Conclude",r"The closest choice is $\boxed{0.20}$."),],
+23:[("Find prime exponents",r"In the product \(1!\cdot2!\cdots9!\), the prime exponents are \[2^{30}3^{13}5^5 7^3.\]"),("Count square divisors",r"A square divisor must use even exponents. For a prime exponent \(E\), the possible square exponents are \(0,2,4,\ldots,2\lfloor E/2\rfloor\), giving \(\lfloor E/2\rfloor+1\) choices."),("Apply to each prime",r"The number of square divisors is \[\left(\left\lfloor\frac{30}{2}\right\rfloor+1\right)\left(\left\lfloor\frac{13}{2}\right\rfloor+1\right)\left(\left\lfloor\frac5{2}\right\rfloor+1\right)\left(\left\lfloor\frac3{2}\right\rfloor+1\right).\]"),("Compute",r"This is \[16\cdot7\cdot3\cdot2=672.\]"),("Conclude",r"The answer is $\boxed{672}$."),],
+24:[("Introduce one variable",r"Let \(x=\log_a b\). Since \(a\ge b>1\), we have \(0<x\le1\)." ),("Rewrite the expression",r"Now \[\log_a(a/b)=1-\log_a b=1-x.\] Also \(\log_b a=\frac1x\), so \[\log_b(b/a)=1-\frac1x.\]"),("Combine",r"The expression is \[2-x-\frac1x.\]"),("Maximize",r"For \(x>0\), the AM-GM inequality gives \[x+\frac1x\ge2,\] with equality at \(x=1\)." ),("Conclude",r"The largest possible value is \[2-2=0,\] attained when \(a=b\). The answer is $\boxed{0}$."),],
+25:[("Understand the domain",r"The domain of any polynomial \(f(x)=ax^2+bx\) is all real numbers."),("Ask when the range is all real numbers",r"If \(a\ne0\), the function is a quadratic, so its range is a half-line, not all real numbers."),("Check the linear case",r"If \(a=0\), then \(f(x)=bx\). For any positive \(b\), this linear function has range all real numbers."),("Count a values",r"Thus the only possible value of \(a\) is \(a=0\)." ),("Conclude",r"There is $\boxed{1}$ real value of \(a\)." ),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
