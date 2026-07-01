@@ -3,122 +3,74 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 57
+BATCH_NUMBER = 58
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16,17,18,19,20}
+TARGET_NUMBERS = {21,22,23,24,25}
 SKIPPED = []
-BATCH_LABEL = "2011 AMC 10A Problems 11-20"
-NEXT_START = "2011 AMC 10A Problem 21"
+BATCH_LABEL = "2011 AMC 10A Problems 21-25"
+NEXT_START = "2011 AMC 10B Problem 1"
 
 ANS = {
-    11: ("B", r"\frac{25}{32}"),
-    12: ("A", "13"),
-    13: ("A", "12"),
-    14: ("B", r"\frac{1}{12}"),
-    15: ("C", "440"),
-    16: ("B", r"2\sqrt{6}"),
-    17: ("C", "25"),
-    18: ("C", "2"),
-    19: ("E", "62"),
-    20: ("D", r"\frac{1}{3}"),
+    21: ("D", r"\frac{15}{19}"),
+    22: ("C", "3120"),
+    23: ("C", "365"),
+    24: ("D", r"\frac{1}{6}"),
+    25: ("C", "2320"),
 }
 
 OV = {
-    11: (r"Square $EFGH$ has one vertex on each side of square $ABCD$. Point $E$ is on $\overline{AB}$ with $AE=7\cdot EB$. What is the ratio of the area of $EFGH$ to the area of $ABCD$?", [("A",r"\frac{49}{64}"),("B",r"\frac{25}{32}"),("C",r"\frac{7\sqrt2}{8}"),("D",r"\frac{5}{8}"),("E",r"\frac{14}{4}")]),
-    12: (r"The players on a basketball team made some three-point shots, some two-point shots, and some one-point free throws. They scored as many points with two-point shots as with three-point shots. Their number of successful free throws was one more than their number of successful two-point shots. The team's total score was $61$ points. How many free throws did they make?", [("A","13"),("B","14"),("C","15"),("D","16"),("E","17")]),
-    13: (r"How many even integers are there between $200$ and $700$ whose digits are all different and come from the set $\{1,2,5,7,8,9\}$?", [("A","12"),("B","20"),("C","72"),("D","120"),("E","200")]),
-    14: (r"A pair of standard $6$-sided fair dice is rolled once. The sum of the numbers rolled determines the diameter of a circle. What is the probability that the numerical value of the area of the circle is less than the numerical value of the circle's circumference?", [("A",r"\frac{1}{36}"),("B",r"\frac{1}{12}"),("C",r"\frac{1}{6}"),("D",r"\frac{1}{4}"),("E",r"\frac{5}{18}")]),
-    15: (r"Roy bought a new battery-gasoline hybrid car. On a trip the car ran exclusively on its battery for the first $40$ miles, then ran exclusively on gasoline for the rest of the trip, using gasoline at a rate of $0.02$ gallons per mile. On the whole trip he averaged $55$ miles per gallon. How long was the trip in miles?", [("A","140"),("B","240"),("C","440"),("D","640"),("E","840")]),
-    16: (r"Which of the following is equal to $\sqrt{9-6\sqrt2}+\sqrt{9+6\sqrt2}$?", [("A",r"3\sqrt2"),("B",r"2\sqrt6"),("C",r"7\sqrt2"),("D",r"3\sqrt3"),("E",r"6\sqrt2")]),
-    17: (r"In the eight-term sequence $A,B,C,D,E,F,G,H$, the value of $C$ is $5$ and the sum of any three consecutive terms is $30$. What is $A+H$?", [("A","17"),("B","18"),("C","25"),("D","26"),("E","43")]),
-    18: (r"Circles $A$, $B$, and $C$ each have radius $1$. Circles $A$ and $B$ share one point of tangency. Circle $C$ has a point of tangency with the midpoint of $\overline{AB}$. What is the area inside circle $C$ but outside circles $A$ and $B$?", [("A",r"3-\frac{\pi}{2}"),("B",r"\frac{\pi}{2}"),("C","2"),("D",r"\frac{3\pi}{4}"),("E",r"1+\frac{\pi}{2}")]),
-    19: (r"In 1991 the population of a town was a perfect square. Ten years later, after an increase of $150$ people, the population was $9$ more than a perfect square. Now, in 2011, with an increase of another $150$ people, the population is once again a perfect square. Which of the following is closest to the percent growth of the town's population during this twenty-year period?", [("A","42"),("B","47"),("C","52"),("D","57"),("E","62")]),
-    20: (r"Two points on the circumference of a circle of radius $r$ are selected independently and at random. From each point a chord of length $r$ is drawn in a clockwise direction. What is the probability that the two chords intersect?", [("A",r"\frac{1}{6}"),("B",r"\frac{1}{5}"),("C",r"\frac{1}{4}"),("D",r"\frac{1}{3}"),("E",r"\frac{1}{2}")]),
+    21: (r"Two counterfeit coins of equal weight are mixed with $8$ identical genuine coins. The weight of each counterfeit coin is different from the weight of each genuine coin. A pair of coins is selected at random without replacement from the $10$ coins. A second pair is selected at random without replacement from the remaining $8$ coins. The combined weight of the first pair is equal to the combined weight of the second pair. What is the probability that all $4$ selected coins are genuine?", [("A",r"\frac{7}{11}"),("B",r"\frac{9}{13}"),("C",r"\frac{11}{15}"),("D",r"\frac{15}{19}"),("E",r"\frac{15}{16}")]),
+    22: (r"Each vertex of convex pentagon $ABCDE$ is to be assigned a color. There are $6$ colors to choose from, and the ends of each diagonal must have different colors. How many different colorings are possible?", [("A","2520"),("B","2880"),("C","3120"),("D","3250"),("E","3750")]),
+    23: (r"Seven students count from $1$ to $1000$ as follows. Alice says all the numbers except the middle number in each consecutive group of three numbers. Barbara says all of the numbers Alice does not say, except she also skips the middle number in each consecutive group of three numbers. Candice, Debbie, Eliza, and Fatima continue the same process in alphabetical order. Finally, George says the only number that no one else says. What number does George say?", [("A","37"),("B","242"),("C","365"),("D","728"),("E","998")]),
+    24: (r"Two distinct regular tetrahedra have all their vertices among the vertices of the same unit cube. What is the volume of the region formed by the intersection of the tetrahedra?", [("A",r"\frac{1}{12}"),("B",r"\frac{\sqrt2}{12}"),("C",r"\frac{\sqrt3}{12}"),("D",r"\frac{1}{6}"),("E",r"\frac{\sqrt2}{6}")]),
+    25: (r"Let $R$ be a square region and $n\ge4$ an integer. A point $X$ in the interior of $R$ is called $n$-ray partitional if there are $n$ rays emanating from $X$ that divide $R$ into $n$ triangles of equal area. How many points are $100$-ray partitional but not $60$-ray partitional?", [("A","1500"),("B","1560"),("C","2320"),("D","2480"),("E","2500")]),
 }
 
 KEY_OVERRIDES = {
-    11: "Use coordinates for the rotated inner square and compare side lengths.",
-    12: "Translate point totals into variables for made shots and solve a linear equation.",
-    13: "Count by hundreds digit and units digit, since the number must be even and in range.",
-    14: "Convert the area-versus-circumference condition into a condition on the dice sum.",
-    15: "Use total miles divided by gasoline gallons to express the overall miles per gallon.",
-    16: "Recognize each radical as a square of a binomial radical.",
-    17: "Use equal three-term sums to show the sequence repeats with period three.",
-    18: "Compute circular overlap areas using the geometry of unit circles whose centers are $\sqrt2$ apart.",
-    19: "Turn the population statements into square equations and factor the total growth.",
-    20: "A chord of length equal to the radius subtends a $60^\circ$ arc; count starting positions that interleave endpoints.",
+    21: "Condition on equal pair weights and count the possible type patterns of the two pairs.",
+    22: "The diagonal constraints form a 5-cycle coloring problem.",
+    23: "Repeatedly keeping the middle number in each group of three creates a base-3 recurrence.",
+    24: "The intersection of the two cube tetrahedra is the octahedron with vertices at the face centers.",
+    25: "Translate equal-area ray partitions into integer conditions on the distances from the point to the square's sides.",
 }
 
 SOL = {
-    11: [
-        ("Choose a scale", r"Because the question asks for an area ratio, we can choose a convenient scale. Let $EB=1$, so $AE=7$ and the side length of square $ABCD$ is $8$."),
-        ("Place the first vertex", r"Put $A=(0,8)$, $B=(8,8)$, $C=(8,0)$, and $D=(0,0)$. Then $E=(7,8)$. If $F$ lies on side $BC$, the horizontal change from $E$ to $F$ is $1$."),
-        ("Use the square rotation", r"For the rotated square to land one vertex on each side, the vertical drop from $E$ to $F$ is $7$. Thus the side vector of the inner square can be taken as $(1,-7)$. Its squared side length is $1^2+7^2=50$."),
-        ("Compare areas", r"The area of square $EFGH$ is $50$. The area of square $ABCD$ is $8^2=64$. So the ratio is $\frac{50}{64}=\frac{25}{32}$."),
-        ("Conclude", r"The answer is $\boxed{\frac{25}{32}}$."),
+    21: [
+        ("Focus on the condition", r"We are told that the two pair weights are equal. Since both counterfeit coins have the same weight and all genuine coins have the same weight, a pair's weight depends only on how many counterfeit coins it contains."),
+        ("List possible equal-weight cases", r"The two pairs can have equal weight in two useful ways: both pairs are genuine-genuine, or both pairs are mixed with one genuine and one counterfeit. A pair of two counterfeit coins cannot be matched by another such pair because there are only two counterfeit coins total."),
+        ("Count all-genuine equal cases", r"For ordered first and second pairs, the all-genuine case has $\binom82\binom62=28\cdot15=420$ possibilities."),
+        ("Count mixed equal cases", r"For the first pair to be mixed, choose $1$ of the $2$ counterfeit coins and $1$ of the $8$ genuine coins, giving $16$ choices. The second pair must use the remaining counterfeit coin and one of the remaining $7$ genuine coins, giving $7$ choices. That makes $112$ mixed cases."),
+        ("Compute the conditional probability", r"Given equal weights, there are $420+112=532$ possible cases, and $420$ of them have all four coins genuine. Thus the probability is $\frac{420}{532}=\frac{15}{19}$. The answer is $\boxed{\frac{15}{19}}$."),
     ],
-    12: [
-        ("Name the made shots", r"Let $x$ be the number of made three-point shots and $y$ be the number of made two-point shots. The number of free throws is then $y+1$."),
-        ("Use the equal point condition", r"The team scored as many points from two-point shots as from three-point shots, so $2y=3x$. This means the points from three-point shots are also $2y$."),
-        ("Write the total score", r"The total score is points from threes plus points from twos plus free throws: $2y+2y+(y+1)=61$."),
-        ("Solve", r"This gives $5y+1=61$, so $5y=60$ and $y=12$. Therefore the number of free throws is $y+1=13$."),
-        ("Conclude", r"The answer is $\boxed{13}$."),
+    22: [
+        ("Understand the graph of restrictions", r"In a pentagon, the diagonals connect vertices that are not adjacent. The rule says the two endpoints of every diagonal must have different colors."),
+        ("Notice the diagonal graph", r"The five diagonals themselves form another $5$-cycle on the same vertices. So the problem is equivalent to properly coloring a cycle of length $5$ using $6$ colors."),
+        ("Use the cycle coloring formula", r"The number of proper colorings of a cycle of length $n$ with $k$ colors is $(k-1)^n+(-1)^n(k-1)$. Here $n=5$ and $k=6$."),
+        ("Calculate", r"This gives $5^5-5=3125-5=3120$."),
+        ("Conclude", r"There are $\boxed{3120}$ valid colorings."),
     ],
-    13: [
-        ("Use the range first", r"The number is between $200$ and $700$, so its hundreds digit can only be $2$ or $5$ from the allowed set. A hundreds digit of $1$ is too small, and $7,8,9$ are too large."),
-        ("Use evenness", r"The units digit must be even. From the allowed digits, the even choices are $2$ and $8$. Digits also have to be different."),
-        ("Count when the hundreds digit is 2", r"If the hundreds digit is $2$, then the units digit cannot also be $2$, so it must be $8$. The tens digit can be any of $1,5,7,9$, giving $4$ numbers."),
-        ("Count when the hundreds digit is 5", r"If the hundreds digit is $5$, then the units digit can be $2$ or $8$. After choosing the units digit, there are $4$ choices left for the tens digit, giving $2\cdot4=8$ numbers."),
-        ("Add the cases", r"The total is $4+8=12$. The answer is $\boxed{12}$."),
+    23: [
+        ("See what each student leaves behind", r"Each student says all available numbers except the middle number in each consecutive group of three. So after a student is done, the numbers left are exactly the $2$nd, $5$th, $8$th, and so on in that student's current list."),
+        ("Track positions, not all numbers", r"If a number is the $k$th number in the next remaining list, then before that round it was in position $3k-1$. This gives a simple reverse recurrence: go backward by replacing $k$ with $3k-1$."),
+        ("Count the rounds", r"Alice, Barbara, Candice, Debbie, Eliza, and Fatima each perform this skipping process. George receives the one number left after six such rounds."),
+        ("Work backward from the final number", r"Start with final position $1$ and apply $k\mapsto3k-1$ six times: \[1\to2\to5\to14\to41\to122\to365.\]"),
+        ("Conclude", r"So George says the number $\boxed{365}$."),
     ],
-    14: [
-        ("Translate diameter into radius", r"Let the dice sum be $s$. Then the circle has diameter $s$ and radius $\frac{s}{2}$."),
-        ("Compare area and circumference", r"The area is $\pi\left(\frac{s}{2}\right)^2=\frac{\pi s^2}{4}$, and the circumference is $\pi s$. We need $\frac{\pi s^2}{4}<\pi s$."),
-        ("Simplify the inequality", r"Since $s$ is positive, divide by $\pi s$ to get $\frac{s}{4}<1$, so $s<4$. The only possible dice sums are therefore $2$ and $3$."),
-        ("Count dice outcomes", r"There is $1$ way to roll a sum of $2$ and $2$ ways to roll a sum of $3$, for $3$ favorable outcomes out of $36$ total."),
-        ("Compute the probability", r"The probability is $\frac{3}{36}=\frac{1}{12}$. The answer is $\boxed{\frac{1}{12}}$."),
+    24: [
+        ("Visualize the two tetrahedra", r"A unit cube has two regular tetrahedra formed by choosing alternating vertices. These two tetrahedra are distinct and symmetric inside the cube."),
+        ("Identify the intersection", r"Their intersection is the octahedron whose vertices are the centers of the six faces of the cube. This is a common and useful way to see the central overlap of the two alternating tetrahedra."),
+        ("Split the octahedron", r"That octahedron can be split into two congruent square pyramids. The shared square is the middle cross-section of the cube, and its side length is $\frac{\sqrt2}{2}$, so its area is $\left(\frac{\sqrt2}{2}\right)^2=\frac12$."),
+        ("Compute the volume", r"Each pyramid has height $\frac12$. So the total octahedron volume is \[2\cdot\frac13\cdot\frac12\cdot\frac12=\frac16.\]"),
+        ("Conclude", r"The intersection volume is $\boxed{\frac16}$."),
     ],
-    15: [
-        ("Let the total distance be unknown", r"Let the whole trip length be $D$ miles. The first $40$ miles use no gasoline, so only $D-40$ miles use gasoline."),
-        ("Write the gasoline used", r"The car uses gasoline at $0.02$ gallons per mile, so the gasoline used is $0.02(D-40)$ gallons."),
-        ("Use miles per gallon", r"The whole-trip average is $55$ miles per gallon, so \[\frac{D}{0.02(D-40)}=55.\] This equation uses total miles divided by gasoline gallons."),
-        ("Solve", r"Multiply both sides by the denominator: $D=55\cdot0.02(D-40)=1.1(D-40)$. Thus $D=1.1D-44$, so $0.1D=44$ and $D=440$."),
-        ("Conclude", r"The trip was $\boxed{440}$ miles long."),
-    ],
-    16: [
-        ("Look for squared binomials", r"Expressions like $9\pm6\sqrt2$ often come from squaring $\sqrt a\pm\sqrt b$, because $(\sqrt a\pm\sqrt b)^2=a+b\pm2\sqrt{ab}$."),
-        ("Match the numbers", r"We need $a+b=9$ and $2\sqrt{ab}=6\sqrt2$, so $ab=18$. The pair $a=6$, $b=3$ works."),
-        ("Rewrite each radical", r"Therefore $9+6\sqrt2=(\sqrt6+\sqrt3)^2$ and $9-6\sqrt2=(\sqrt6-\sqrt3)^2$. Both square roots are nonnegative, so the square roots are $\sqrt6+\sqrt3$ and $\sqrt6-\sqrt3$."),
-        ("Add", r"The sum is $(\sqrt6-\sqrt3)+(\sqrt6+\sqrt3)=2\sqrt6$. The answer is $\boxed{2\sqrt6}$."),
-    ],
-    17: [
-        ("Compare neighboring sums", r"The sums $A+B+C$ and $B+C+D$ are both $30$. Subtracting the common $B+C$ shows $A=D$."),
-        ("See the repeating pattern", r"Similarly, comparing $B+C+D$ with $C+D+E$ gives $B=E$, and comparing $C+D+E$ with $D+E+F$ gives $C=F$. So the sequence repeats every three terms."),
-        ("Use the value of C", r"Since $C=5$, we also have $F=5$. The sequence has the form $A,B,5,A,B,5,A,B$."),
-        ("Use one three-term sum", r"Because $A+B+C=30$, we have $A+B+5=30$, so $A+B=25$."),
-        ("Find A plus H", r"The eighth term $H$ is $B$, so $A+H=A+B=25$. The answer is $\boxed{25}$."),
-    ],
-    18: [
-        ("Reconstruct the geometry", r"Circles $A$ and $B$ are unit circles tangent to each other. Circle $C$ is a unit circle tangent at the midpoint between their centers, so the center of $C$ is one unit above that midpoint in the diagram."),
-        ("Find the overlap with one circle", r"The distance from the center of circle $C$ to the center of circle $A$ is $\sqrt2$. For two unit circles with center distance $\sqrt2$, the overlap consists of two $90^\circ$ sectors minus a square-like pair of right triangles. Its area is $\frac{\pi}{2}-1$."),
-        ("Use symmetry", r"Circle $C$ overlaps circle $A$ and circle $B$ in two congruent regions. These two overlap regions do not overlap each other except at a boundary point, so the total area of circle $C$ covered by circles $A$ or $B$ is $2\left(\frac{\pi}{2}-1\right)=\pi-2$."),
-        ("Subtract from circle C", r"Circle $C$ has area $\pi$. The area inside circle $C$ but outside circles $A$ and $B$ is $\pi-(\pi-2)=2$."),
-        ("Conclude", r"The answer is $\boxed{2}$."),
-    ],
-    19: [
-        ("Name the square populations", r"Let the 1991 population be $n^2$ and the 2011 population be $p^2$. Since the population increased by $300$ over the twenty years, we have $p^2-n^2=300$."),
-        ("Factor the difference of squares", r"The equation becomes $(p-n)(p+n)=300$. The two factors must have the same parity, so the useful factor pairs are $(2,150)$, $(6,50)$, and $(10,30)$."),
-        ("Test the middle-year condition", r"These pairs give possible $(n,p)$ values $(74,76)$, $(22,28)$, and $(10,20)$. The 2001 population is $n^2+150$, and it must be $9$ more than a square, so $n^2+141$ must be a square. Only $n=22$ works, since $22^2+141=625=25^2$."),
-        ("Compute percent growth", r"The initial population was $22^2=484$ and the total increase was $300$. The percent growth is $\frac{300}{484}\cdot100\%\approx61.98\%$."),
-        ("Choose the closest answer", r"The closest choice is $62$. The answer is $\boxed{62}$."),
-    ],
-    20: [
-        ("Convert chord length to arc size", r"In a circle of radius $r$, a chord of length $r$ forms an equilateral triangle with the two radii to its endpoints. Therefore each chord subtends a $60^\circ$ central angle."),
-        ("Fix the first chord", r"Because the circle is symmetric, fix the first starting point at angle $0^\circ$. Its clockwise chord ends at $60^\circ$. Now only the starting angle of the second chord is random."),
-        ("Use endpoint interleaving", r"Two chords intersect inside the circle exactly when their endpoints alternate around the circle. For the fixed chord with endpoints $0^\circ$ and $60^\circ$, this happens if exactly one endpoint of the second chord lies on the arc from $0^\circ$ to $60^\circ$."),
-        ("Count favorable starting angles", r"The second starting angle works if it lies between $0^\circ$ and $60^\circ$, or if its ending angle lies there, which means the starting angle lies between $300^\circ$ and $360^\circ$. These intervals have total length $120^\circ$."),
-        ("Compute the probability", r"The probability is $\frac{120}{360}=\frac13$. The answer is $\boxed{\frac13}$."),
+    25: [
+        ("Turn the square into coordinates", r"Let the square have side length $1$, and let point $X$ have distances $x$, $1-x$, $y$, and $1-y$ from the four sides. We only need distances to the sides because each small triangle has base on a side of the square and height equal to the distance from $X$ to that side."),
+        ("Find the condition for one side", r"If the square is divided into $n$ equal-area triangles, each triangle has area $\frac1n$. Along a side at distance $h$ from $X$, a triangle with base length $b$ has area $\frac12bh$, so $b=\frac{2}{nh}$. Since the side length is $1$, the number of such equal triangles along that side is $\frac{1}{b}=\frac{nh}{2}$."),
+        ("Convert to integer conditions", r"Therefore $X$ is $n$-ray partitional exactly when $\frac{nx}{2}$, $\frac{n(1-x)}{2}$, $\frac{ny}{2}$, and $\frac{n(1-y)}{2}$ are integers. For even $n$, this is equivalent to requiring $\frac{nx}{2}$ and $\frac{ny}{2}$ to be integers."),
+        ("Count 100-ray points", r"For $n=100$, we need $50x$ and $50y$ to be integers. Since $X$ is inside the square, each coordinate can be $\frac1{50},\frac2{50},\ldots,\frac{49}{50}$, giving $49^2=2401$ points."),
+        ("Subtract the 60-ray points", r"For $n=60$, we need $30x$ and $30y$ to be integers. A point counted by both conditions must have both $50x$ and $30x$ integers, so $10x$ is an integer; similarly $10y$ is an integer. That gives $9^2=81$ points counted by both."),
+        ("Finish", r"The number that are $100$-ray partitional but not $60$-ray partitional is $2401-81=2320$. The answer is $\boxed{2320}$."),
     ],
 }
 def esc(x, quote=True):
@@ -260,7 +212,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {18},
+                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in set(),
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -329,6 +281,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
