@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 155
+BATCH_NUMBER = 156
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2003_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1,2,4,5,6,7,8,9}
-SKIPPED = ["2003 AMC 12B Problem 3 skipped: flower-bed cost minimization depends on the missing rectangle diagram.", "2003 AMC 12B Problem 10 skipped: non-congruent pentagon attachment count depends on the missing figure."]
-BATCH_LABEL = "2003 AMC 12B Problems 1,2,4-9"
-NEXT_START = "2003 AMC 12B Problem 11"
+TARGET_NUMBERS = {11,12,13,14,15,17,18,19,20}
+SKIPPED = ["2003 AMC 12B Problem 16 skipped: shaded semicircle area depends on the missing figure."]
+BATCH_LABEL = "2003 AMC 12B Problems 11-15,17-20"
+NEXT_START = "2003 AMC 12B Problem 21"
 
-ANS={1:("C",r"\frac23"),2:("D","20"),4:("C","1.35"),5:("D","21.5"),6:("B",r"-\frac{2\sqrt3}{3}"),7:("D","64"),8:("E","10"),9:("D","30")}
+ANS={11:("C","10:25 PM"),12:("D","15"),13:("B","3:1"),14:("D",r"\frac{25}{2}"),15:("D",r"\frac12"),17:("D",r"\frac35"),18:("B","31"),19:("E","19"),20:("B","-2")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -679,6 +679,42 @@ SOL.update({
 7:[("Set variables",r"Let \(n,d,q\) be the numbers of nickels, dimes, and quarters."),("Write the equations",r"The coin count gives \[n+d+q=100.\] The value equation in cents is \[5n+10d+25q=835,\] or \[n+2d+5q=167.\]"),("Subtract equations",r"Subtracting \(n+d+q=100\) from \(n+2d+5q=167\) gives \[d+4q=67.\] Thus \(d=67-4q\)." ),("Find max and min d",r"For nonnegative integer \(q\), the largest \(d\) is \(67\) when \(q=0\). The smallest nonnegative \(d\) occurs at \(q=16\), giving \(d=3\)." ),("Compute the difference",r"The difference is \[67-3=64.\]"),("Conclude",r"The answer is $\boxed{64}$."),],
 8:[("Reduce the condition",r"For a two-digit \(x\), its digit sum \(\clubsuit(x)\) ranges from \(1\) to \(18\). We need the digit sum of that number to be \(3\)." ),("Find possible digit sums",r"The values from \(1\) to \(18\) with digit sum \(3\) are \(3\) and \(12\)." ),("Count digit sum 3",r"Two-digit numbers with digit sum \(3\) are \(12,21,30\), giving \(3\) numbers."),("Count digit sum 12",r"Two-digit numbers with digit sum \(12\) are \(39,48,57,66,75,84,93\), giving \(7\) numbers."),("Add",r"The total is \(3+7=10\)." ),("Conclude",r"The answer is $\boxed{10}$."),],
 9:[("Use the slope",r"Because \(f\) is linear, the change in \(f\) is proportional to the change in input."),("Find the slope",r"The input changes from \(2\) to \(6\), a difference of \(4\), and the output changes by \(12\). Thus the slope is \(3\)." ),("Apply to the new interval",r"From \(2\) to \(12\), the input change is \(10\), so the output change is \[3\cdot10=30.\]"),("Conclude",r"The answer is $\boxed{30}$."),],
+})
+
+OV.update({
+11:(r"Cassandra sets her watch to the correct time at noon. At the actual time of \(1{:}00\) PM, she notices that her watch reads \(12{:}57\) and \(36\) seconds. Assuming her watch loses time at a constant rate, what will be the actual time when her watch first reads \(10{:}00\) PM?",[("A","10:22 PM and 24 seconds"),("B","10:24 PM"),("C","10:25 PM"),("D","10:27 PM"),("E","10:30 PM")]),
+12:(r"What is the largest integer that is a divisor of \[(n+1)(n+3)(n+5)(n+7)(n+9)\] for all positive even integers \(n\)?",[("A","3"),("B","5"),("C","11"),("D","15"),("E","165")]),
+13:(r"An ice cream cone consists of a sphere of vanilla ice cream and a right circular cone that has the same diameter as the sphere. If the ice cream melts, it exactly fills the cone. Assume the melted ice cream occupies \(75\%\) of the volume of the frozen ice cream. What is the ratio of the cone's height to its radius?",[("A","2:1"),("B","3:1"),("C","4:1"),("D","16:3"),("E","6:1")]),
+14:(r"In rectangle \(ABCD\), \(AB=5\) and \(BC=3\). Points \(F\) and \(G\) are on \(\overline{CD}\) so that \(DF=1\) and \(GC=2\). Lines \(AF\) and \(BG\) intersect at \(E\). Find the area of \(\triangle AEB\).",[("A","10"),("B",r"\(\frac{21}{2}\)"),("C","12"),("D",r"\(\frac{25}{2}\)"),("E","15")]),
+15:(r"A regular octagon \(ABCDEFGH\) has area \(1\) square unit. What is the area of rectangle \(ABEF\)?",[("A",r"\(1-\frac{\sqrt2}{2}\)"),("B",r"\(\frac{\sqrt2}{4}\)"),("C",r"\(\sqrt2-1\)"),("D",r"\(\frac12\)"),("E",r"\(\frac{1+\sqrt2}{4}\)")]),
+17:(r"If \(\log(xy^3)=1\) and \(\log(x^2y)=1\), what is \(\log(xy)\)?",[("A",r"\(-\frac12\)"),("B","0"),("C",r"\(\frac12\)"),("D",r"\(\frac35\)"),("E","1")]),
+18:(r"Let \(x\) and \(y\) be positive integers such that \(7x^5=11y^{13}\). The minimum possible value of \(x\) has prime factorization \(a^c b^d\). What is \(a+b+c+d\)?",[("A","30"),("B","31"),("C","32"),("D","33"),("E","34")]),
+19:(r"Let \(S\) be the set of permutations of \(1,2,3,4,5\) for which the first term is not \(1\). A permutation is chosen randomly from \(S\). The probability that the second term is \(2\), in lowest terms, is \(\frac ab\). What is \(a+b\)?",[("A","5"),("B","6"),("C","11"),("D","16"),("E","19")]),
+20:(r"Part of the graph of \(f(x)=x^3+bx^2+cx+d\) is shown, including the points \((0,2)\), \((-1,0)\), and \((1,0)\). What is \(b\)?",[("A","-4"),("B","-2"),("C","0"),("D","2"),("E","4")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Use the watch's constant rate compared with real time.",
+12:"Analyze five consecutive odd factors for universal divisibility.",
+13:"Equate melted sphere volume to cone volume.",
+14:"Use coordinates for the rectangle and intersect two lines.",
+15:"Use a square-with-corners-cut model of a regular octagon.",
+17:"Solve a linear system in logarithms.",
+18:"Match prime exponents modulo 13.",
+19:"Count conditional permutations.",
+20:"Use roots and the constant term of a monic cubic.",
+})
+
+SOL.update({
+11:[("Find the watch rate",r"From noon to actual \(1{:}00\) PM, one real hour passes. The watch advances only \(57\) minutes \(36\) seconds, which is \(57.6\) minutes."),("Convert to a rate",r"The watch runs at \[\frac{57.6}{60}=0.96\] of real speed."),("Find real time for 10 watch hours",r"To read \(10{:}00\) PM, the watch must advance \(10\) watch-hours after noon. The real time needed is \[\frac{10}{0.96}=10.4166\ldots\text{ hours}.\]"),("Convert the fraction of an hour",r"The decimal \(0.4166\ldots\) hour is \(25\) minutes."),("Conclude",r"The actual time is \(\boxed{10{:}25\text{ PM}}\)." ),],
+12:[("Understand the factors",r"For even \(n\), the numbers \(n+1,n+3,n+5,n+7,n+9\) are five consecutive odd integers."),("Show divisibility by 3 and 5",r"Among any five consecutive odd integers, one is divisible by \(3\) and one is divisible by \(5\). Thus the product is always divisible by \(15\)." ),("Rule out the larger listed divisor",r"The only larger listed candidate is \(165=3\cdot5\cdot11\). It is not universal: if \(n=12\), the factors are \[13,15,17,19,21,\] none of which is divisible by \(11\)." ),("Conclude the largest universal divisor",r"Therefore \(15\) divides the product for every positive even \(n\), while \(165\) does not."),("Conclude",r"The answer is $\boxed{15}$."),],
+13:[("Name the common radius",r"Let the sphere radius and cone radius be \(r\), because the cone has the same diameter as the sphere."),("Compute melted volume",r"The frozen sphere volume is \(\frac43\pi r^3\). The melted ice cream occupies \(75\%\) of that, so its volume is \[\frac34\cdot\frac43\pi r^3=\pi r^3.\]"),("Set equal to cone volume",r"The cone volume is \[\frac13\pi r^2h.\] Since the melted ice cream exactly fills the cone, \[\frac13\pi r^2h=\pi r^3.\]"),("Solve for h",r"Cancel \(\pi r^2\) to get \(\frac h3=r\), so \(h=3r\)." ),("Conclude",r"The height-to-radius ratio is $\boxed{3:1}$."),],
+14:[("Place coordinates",r"Let \(D=(0,0)\), \(C=(5,0)\), \(A=(0,3)\), and \(B=(5,3)\). Then \(F=(1,0)\) and \(G=(3,0)\)." ),("Find the line equations",r"Line \(AF\) through \((0,3)\) and \((1,0)\) has equation \(y=3-3x\). Line \(BG\) through \((5,3)\) and \((3,0)\) has slope \(\frac32\), so \(y=\frac32(x-3)\)." ),("Find E",r"Set the equations equal: \[3-3x=\frac32(x-3).\] This gives \(x=\frac53\), and \(y=-2\)." ),("Compute triangle area",r"Segment \(AB\) has length \(5\), and the perpendicular distance from \(E\) to line \(AB\), which is \(y=3\), is \(5\)." ),("Conclude",r"The area of \(\triangle AEB\) is \[\frac12\cdot5\cdot5=\frac{25}{2}.\]"),],
+15:[("Use the standard octagon model",r"A regular octagon can be viewed as a rectangle-like middle strip plus four congruent corner triangles. With the usual labeling, rectangle \(ABEF\) is exactly the central rectangle determined by two opposite sides."),("Compare by symmetry",r"The four cut-off corner triangles outside rectangle \(ABEF\) can be rearranged to match the remaining parts inside the octagon outside that rectangle."),("Conclude the area fraction",r"This symmetry shows that rectangle \(ABEF\) has half the area of the regular octagon."),("Use the given area",r"Since the octagon area is \(1\), the rectangle area is \[\frac12.\]"),("Conclude",r"The answer is $\boxed{\frac12}$."),],
+17:[("Turn logarithms into variables",r"Let \(u=\log x\) and \(v=\log y\)." ),("Translate the equations",r"The equation \(\log(xy^3)=1\) becomes \[u+3v=1.\] The equation \(\log(x^2y)=1\) becomes \[2u+v=1.\]"),("Solve the system",r"Solving gives \(v=\frac15\) and \(u=\frac25\)." ),("Find the requested log",r"We need \[\log(xy)=u+v=\frac25+\frac15=\frac35.\]"),("Conclude",r"The answer is $\boxed{\frac35}$."),],
+18:[("Compare prime exponents",r"The equation is \[7x^5=11y^{13}.\] We need choose \(x\) so that after multiplying by \(7\), every prime exponent on the left is a multiple of \(13\)." ),("Handle the prime 7",r"If \(7^a\) divides \(x\), then the exponent of \(7\) on the left is \(1+5a\). We need \[1+5a\equiv0\pmod{13}.\] The smallest nonnegative solution is \(a=5\)." ),("Handle the prime 11",r"If \(11^c\) divides \(x\), then the exponent of \(11\) on the left is \(5c\). The right side has an extra factor \(11\), so we need \[5c\equiv1\pmod{13},\] whose smallest solution is \(c=8\)." ),("Write minimum x",r"Thus the minimum possible \(x\) is \[x=7^5\cdot11^8.\]"),("Add the requested numbers",r"Here \(a=7\), \(b=11\), \(c=5\), and \(d=8\), so \[a+b+c+d=7+11+5+8=31.\]"),("Conclude",r"The answer is $\boxed{31}$."),],
+19:[("Count the sample space",r"There are \(5!=120\) permutations of \(1,2,3,4,5\). Those with first term \(1\) number \(4!=24\). So \[|S|=120-24=96.\]"),("Count favorable permutations",r"Now require the second term to be \(2\). There are \(4!=24\) permutations with second term \(2\)." ),("Remove forbidden first term",r"Among those, the permutations with first term \(1\) have first two terms \(1,2\), and the remaining \(3\) terms can be arranged in \(3!=6\) ways. Thus favorable permutations in \(S\) number \(24-6=18\)." ),("Reduce the probability",r"The probability is \[\frac{18}{96}=\frac{3}{16}.\]"),("Conclude",r"Thus \(a+b=3+16=\boxed{19}\)." ),],
+20:[("Use the roots shown",r"The graph shows \(x\)-intercepts at \(-1\) and \(1\), so \(x+1\) and \(x-1\) are factors."),("Use the y-intercept",r"The point \((0,2)\) gives \(f(0)=2\), so \(d=2\)." ),("Write the factored form",r"Since the polynomial is monic cubic, \[f(x)=(x^2-1)(x-r).\] The constant term is \(r\), so \(r=2\)." ),("Read b",r"Then \[f(x)=(x^2-1)(x-2)=x^3-2x^2-x+2.\] Thus \(b=-2\)." ),("Conclude",r"The answer is $\boxed{-2}$."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)

@@ -1,25 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 1140
-- Latest batch: 155 (2003 AMC 12B Problems 1,2,4-9)
-- Latest new generated count: 8
+- Total manifest entries: 1149
+- Latest batch: 156 (2003 AMC 12B Problems 11-15,17-20)
+- Latest new generated count: 9
 - Latest updated existing count: 0
-- Latest skipped count: 2
+- Latest skipped count: 1
 - MathJax validation: passed
 - Answer verification source: AoPS 2003 AMC 12B Answer Key
 
 ## Latest Batch Pages
 
-- `2003 AMC 12B Problem 1` -> `amc10/problems/2003-amc-12b-problem-1/`
-- `2003 AMC 12B Problem 2` -> `amc10/problems/2003-amc-12b-problem-2/`
-- `2003 AMC 12B Problem 4` -> `amc10/problems/2003-amc-12b-problem-4/`
-- `2003 AMC 12B Problem 5` -> `amc10/problems/2003-amc-12b-problem-5/`
-- `2003 AMC 12B Problem 6` -> `amc10/problems/2003-amc-12b-problem-6/`
-- `2003 AMC 12B Problem 7` -> `amc10/problems/2003-amc-12b-problem-7/`
-- `2003 AMC 12B Problem 8` -> `amc10/problems/2003-amc-12b-problem-8/`
-- `2003 AMC 12B Problem 9` -> `amc10/problems/2003-amc-12b-problem-9/`
+- `2003 AMC 12B Problem 11` -> `amc10/problems/2003-amc-12b-problem-11/`
+- `2003 AMC 12B Problem 12` -> `amc10/problems/2003-amc-12b-problem-12/`
+- `2003 AMC 12B Problem 13` -> `amc10/problems/2003-amc-12b-problem-13/`
+- `2003 AMC 12B Problem 14` -> `amc10/problems/2003-amc-12b-problem-14/`
+- `2003 AMC 12B Problem 15` -> `amc10/problems/2003-amc-12b-problem-15/`
+- `2003 AMC 12B Problem 17` -> `amc10/problems/2003-amc-12b-problem-17/`
+- `2003 AMC 12B Problem 18` -> `amc10/problems/2003-amc-12b-problem-18/`
+- `2003 AMC 12B Problem 19` -> `amc10/problems/2003-amc-12b-problem-19/`
+- `2003 AMC 12B Problem 20` -> `amc10/problems/2003-amc-12b-problem-20/`
 
 ## Skipped in latest batch
 
-- 2003 AMC 12B Problem 3 skipped: flower-bed cost minimization depends on the missing rectangle diagram.
-- 2003 AMC 12B Problem 10 skipped: non-congruent pentagon attachment count depends on the missing figure.
+- 2003 AMC 12B Problem 16 skipped: shaded semicircle area depends on the missing figure.
