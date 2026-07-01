@@ -8,91 +8,132 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 22
+BATCH_NUMBER = 23
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {21, 22, 23, 24, 25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_10B_Answer_Key"
+TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 SKIPPED = []
-BATCH_LABEL = "2005 AMC 10A Problem 21-25"
-NEXT_START = "2005 AMC 10B Problem 1"
+BATCH_LABEL = "2005 AMC 10B Problem 1-10"
+NEXT_START = "2005 AMC 10B Problem 11"
 
 ANS = {
-    21: ("B", "5"),
-    22: ("D", "668"),
-    23: ("C", r"\frac{1}{3}"),
-    24: ("B", "1"),
-    25: ("D", r"\frac{19}{56}"),
+    1: ("A", "100"),
+    2: ("D", "20"),
+    3: ("D", r"\frac{4}{9}"),
+    4: ("D", r"13\sqrt2"),
+    5: ("C", r"\frac{2}{5}"),
+    6: ("B", "2"),
+    7: ("B", r"\frac{\pi}{8}"),
+    8: ("A", r"80-20\pi"),
+    9: ("D", r"\frac{5}{9}"),
+    10: ("A", "3"),
 }
 
 
 OV = {
-    21: (
-        r"For how many positive integers $n$ does $1+2+\cdots+n$ evenly divide $6n$?",
-        [("A", "$3$"), ("B", "$5$"), ("C", "$7$"), ("D", "$9$"), ("E", "$11$")],
+    3: (
+        r"A gallon of paint is used to paint a room. One third of the paint is used on the first day. On the second day, one third of the remaining paint is used. What fraction of the original amount of paint is available to use on the third day?",
+        [("A", r"$\frac1{10}$"), ("B", r"$\frac19$"), ("C", r"$\frac13$"), ("D", r"$\frac49$"), ("E", r"$\frac59$")],
     ),
-    22: (
-        r"Let $S$ be the set of the $2005$ smallest positive multiples of $4$, and let $T$ be the set of the $2005$ smallest positive multiples of $6$. How many elements are common to $S$ and $T$?",
-        [("A", "$166$"), ("B", "$333$"), ("C", "$500$"), ("D", "$668$"), ("E", "$1001$")],
+    4: (
+        r"For real numbers $a$ and $b$, define $a\diamond b=\sqrt{a^2+b^2}$. What is the value of $(5\diamond12)\diamond((-12)\diamond(-5))$?",
+        [("A", "$0$"), ("B", r"$\sqrt{17}$"), ("C", "$13$"), ("D", r"$13\sqrt2$"), ("E", r"$26\sqrt2$")],
     ),
-    23: (
-        r"Let $AB$ be a diameter of a circle and $C$ be a point on $AB$ with $2\cdot AC=BC$. Let $D$ and $E$ be points on the circle such that $DC\perp AB$ and $DE$ is a second diameter. What is the ratio of the area of $\triangle DCE$ to the area of $\triangle ABD$?",
-        [("A", r"$\frac16$"), ("B", r"$\frac14$"), ("C", r"$\frac13$"), ("D", r"$\frac12$"), ("E", r"$\frac23$")],
+    7: (
+        r"A circle is inscribed in a square, then a square is inscribed in this circle, and finally, a circle is inscribed in this square. What is the ratio of the area of the smaller circle to the area of the larger square?",
+        [("A", r"$\frac{\pi}{16}$"), ("B", r"$\frac{\pi}{8}$"), ("C", r"$\frac{3\pi}{16}$"), ("D", r"$\frac{\pi}{4}$"), ("E", r"$\frac{\pi}{2}$")],
     ),
-    24: (
-        r"For each positive integer $m>1$, let $P(m)$ denote the greatest prime factor of $m$. For how many positive integers $n$ is it true that both $P(n)=\sqrt n$ and $P(n+48)=\sqrt{n+48}$?",
-        [("A", "$0$"), ("B", "$1$"), ("C", "$3$"), ("D", "$4$"), ("E", "$5$")],
+    9: (
+        r"One fair die has faces $1,1,2,2,3,3$ and another has faces $4,4,5,5,6,6$. The dice are rolled and the numbers on the top faces are added. What is the probability that the sum will be odd?",
+        [("A", r"$\frac13$"), ("B", r"$\frac49$"), ("C", r"$\frac12$"), ("D", r"$\frac59$"), ("E", r"$\frac23$")],
     ),
-    25: (
-        r"In $\triangle ABC$ we have $AB=25$, $BC=39$, and $AC=42$. Points $D$ and $E$ are on $AB$ and $AC$, respectively, with $AD=19$ and $AE=14$. What is the ratio of the area of triangle $ADE$ to the area of quadrilateral $BCED$?",
-        [("A", r"$\frac{266}{1521}$"), ("B", r"$\frac{19}{75}$"), ("C", r"$\frac13$"), ("D", r"$\frac{19}{56}$"), ("E", r"$\frac12$")],
+    10: (
+        r"In $\triangle ABC$, we have $AC=BC=7$ and $AB=2$. Suppose that $D$ is a point on line $AB$ such that $B$ lies between $A$ and $D$ and $CD=8$. What is $BD$?",
+        [("A", "$3$"), ("B", r"$2\sqrt3$"), ("C", "$4$"), ("D", "$5$"), ("E", r"$4\sqrt2$")],
     ),
 }
 
 
 KEY_OVERRIDES = {
-    21: "Convert the triangular-number divisibility condition into a divisor condition on n+1.",
-    22: "Use least common multiples and inclusion with finite initial segments.",
-    23: "Choose coordinates on the diameter to compare triangle areas directly.",
-    24: "Interpret the greatest-prime-factor condition as saying the number is a square of a prime.",
-    25: "Use the product of side ratios for triangles sharing an included angle.",
+    1: "Compute total buying cost and total selling revenue.",
+    2: "Translate x percent of x into an equation.",
+    3: "Track the remaining fraction after each day.",
+    4: "Evaluate the custom square-root operation from the inside out.",
+    5: "Use proportional cost: one third of the CDs costs one fifth of the money.",
+    6: "Convert a percentage goal into the required number of A grades.",
+    7: "Track areas through alternating inscribed squares and circles.",
+    8: "Compute shaded area per tile and multiply by the number of tiles.",
+    9: "Use parity: odd sums occur when one die is odd and the other is even.",
+    10: "Use symmetry and the Pythagorean theorem in an isosceles triangle.",
 }
 
 
 SOL = {
-    21: [
-        ("Rewrite the divisor", r"The sum $1+2+\cdots+n$ is the triangular number $\frac{n(n+1)}{2}$. The condition is \[\frac{n(n+1)}2 \mid 6n.\]"),
-        ("Cancel the common factor carefully", r"Since $n$ is positive, compare $6n$ with $\frac{n(n+1)}2$: \[\frac{6n}{n(n+1)/2}=\frac{12}{n+1}.\] The divisibility holds exactly when $\frac{12}{n+1}$ is an integer."),
-        ("Count possible n", r"Thus $n+1$ must be a positive divisor of $12$. The divisors are $1,2,3,4,6,12$."),
-        ("Remove the impossible divisor", r"Because $n$ is positive, $n+1>1$, so we use $2,3,4,6,12$. These give $n=1,2,3,5,11$."),
-        ("Answer", r"There are $\boxed{5}$ possible values of $n$."),
+    1: [
+        ("Find the cost", r"The troop buys $1000$ bars at five for $2. The cost per group of $5$ is $2$, so the total cost is $(1000/5)\cdot2=400$ dollars."),
+        ("Find the revenue", r"They sell at two for $1$, so every $2$ bars brings in $1$. The revenue is $(1000/2)\cdot1=500$ dollars."),
+        ("Subtract", r"Profit is revenue minus cost: $500-400=100$."),
+        ("Answer", r"Their profit was $\boxed{100}$ dollars."),
     ],
-    22: [
-        ("Describe the two sets", r"The $2005$ smallest positive multiples of $4$ run from $4$ to $4\cdot2005=8020$. The $2005$ smallest positive multiples of $6$ run from $6$ to $6\cdot2005=12030$."),
-        ("Find common multiples", r"A number common to both sets must be a multiple of $\operatorname{lcm}(4,6)=12$."),
-        ("Use the smaller endpoint", r"Since every common element must lie in $S$, it cannot exceed $8020$. Any multiple of $12$ up to $8020$ is also at most $12030$, so it is automatically in $T$."),
-        ("Count", r"The number of positive multiples of $12$ up to $8020$ is \[\left\lfloor\frac{8020}{12}\right\rfloor=668.\]"),
-        ("Answer", r"The two sets have $\boxed{668}$ elements in common."),
+    2: [
+        ("Translate the phrase", r"The phrase '$x\%$ of $x$' means $\frac{x}{100}\cdot x$."),
+        ("Set up the equation", r"We are told \[\frac{x}{100}\cdot x=4.\] Thus $x^2=400$."),
+        ("Use positivity", r"Since $x$ is positive, $x=20$, not $-20$."),
+        ("Answer", r"The answer is $\boxed{20}$."),
     ],
-    23: [
-        ("Choose a convenient scale", r"The ratio is unchanged by scaling, so let $AC=1$ and $BC=2$. Then $AB=3$. Put $A=(0,0)$, $C=(1,0)$, and $B=(3,0)$."),
-        ("Find point D", r"The circle has center $(3/2,0)$ and radius $3/2$. Since $DC\perp AB$, point $D$ has $x$-coordinate $1$. Its height is \[\sqrt{\left(\frac32\right)^2-\left(1-\frac32\right)^2}=\sqrt2.\] Thus $D=(1,\sqrt2)$."),
-        ("Use the second diameter", r"Since $DE$ is a diameter, $E$ is opposite $D$ through the center. Therefore $E=(2,-\sqrt2)$."),
-        ("Compute the two areas", r"Triangle $ABD$ has base $AB=3$ and height $\sqrt2$, so its area is $\frac{3\sqrt2}{2}$. Triangle $DCE$ has base $DC=\sqrt2$ and horizontal height $1$, so its area is $\frac{\sqrt2}{2}$."),
-        ("Form the ratio", r"The ratio is \[\frac{[DCE]}{[ABD]}=\frac{\sqrt2/2}{3\sqrt2/2}=\frac13.\] The answer is $\boxed{\frac13}$."),
+    3: [
+        ("Track what remains after day 1", r"After using one third of the paint, the amount left is $1-\frac13=\frac23$ of the original gallon."),
+        ("Use one third of the remaining paint", r"On the second day, one third of the remaining paint is used, so two thirds of the remaining paint stays unused."),
+        ("Multiply the remaining fractions", r"The amount available for the third day is \[\frac23\cdot\frac23=\frac49\] of the original amount."),
+        ("Answer", r"The answer is $\boxed{\frac49}$."),
     ],
-    24: [
-        ("Interpret the condition", r"If $P(n)=\sqrt n$, then $\sqrt n$ is a prime factor of $n$ and is the greatest prime factor. This means $n$ must be the square of a prime."),
-        ("Set up prime squares", r"Let $n=p^2$ and $n+48=q^2$, where $p$ and $q$ are primes and $q>p$. Then \[q^2-p^2=48.\]"),
-        ("Factor the difference of squares", r"We get $(q-p)(q+p)=48$. Since $p$ and $q$ are primes greater than $2$ in the only viable case, both factors are even."),
-        ("Test factor pairs", r"The even factor pairs for $48$ are $(2,24)$, $(4,12)$, and $(6,8)$. These give $(p,q)=(11,13)$, $(4,8)$, and $(1,7)$ respectively. Only $(11,13)$ uses two primes."),
-        ("Answer", r"Thus there is exactly one value, $n=11^2=121$. The answer is $\boxed{1}$."),
+    4: [
+        ("Understand the operation", r"The operation $a\diamond b$ gives the length of the hypotenuse of a right triangle with legs $a$ and $b$: $\sqrt{a^2+b^2}$."),
+        ("Evaluate the two inner operations", r"We have $5\diamond12=\sqrt{25+144}=13$. Also $(-12)\diamond(-5)=\sqrt{144+25}=13$."),
+        ("Evaluate the outer operation", r"Now the expression becomes $13\diamond13=\sqrt{13^2+13^2}=\sqrt{338}$."),
+        ("Simplify", r"Since $338=169\cdot2$, the value is $13\sqrt2$."),
+        ("Answer", r"The answer is $\boxed{13\sqrt2}$."),
     ],
-    25: [
-        ("Notice the shared angle", r"Triangles $ABC$ and $ADE$ share angle $A$. Their areas can be compared using the two sides around that angle."),
-        ("Use side ratios", r"The side ratio on $AB$ is $AD/AB=19/25$. The side ratio on $AC$ is $AE/AC=14/42=1/3$."),
-        ("Find the area fraction", r"Therefore \[\frac{[ADE]}{[ABC]}=\frac{19}{25}\cdot\frac13=\frac{19}{75}.\]"),
-        ("Convert to the requested denominator", r"Quadrilateral $BCED$ is the rest of triangle $ABC$, so \[[BCED]=[ABC]-[ADE]=\frac{56}{75}[ABC].\]"),
-        ("Answer", r"Thus \[\frac{[ADE]}{[BCED]}=\frac{19/75}{56/75}=\frac{19}{56}.\] The answer is $\boxed{\frac{19}{56}}$."),
+    5: [
+        ("Find the cost of all CDs", r"One third of the CDs costs one fifth of her money. Since all CDs have the same price, all the CDs cost three times as much."),
+        ("Compute the total fraction spent", r"Buying all the CDs costs $3\cdot\frac15=\frac35$ of her money."),
+        ("Find what remains", r"The fraction left is $1-\frac35=\frac25$."),
+        ("Answer", r"She will have $\boxed{\frac25}$ of her money left."),
+    ],
+    6: [
+        ("Convert the goal", r"Lisa wants an A on at least $80\%$ of $50$ quizzes. That means she needs at least $0.8\cdot50=40$ A grades."),
+        ("Use what she already has", r"She already has $22$ A grades from the first $30$ quizzes."),
+        ("Find how many more A grades she needs", r"She needs $40-22=18$ more A grades among the remaining $20$ quizzes."),
+        ("Count allowed non-A grades", r"If she needs $18$ A grades out of $20$, then at most $2$ of the remaining quizzes can be lower than an A."),
+        ("Answer", r"The answer is $\boxed{2}$."),
+    ],
+    7: [
+        ("Choose a simple side length", r"Let the larger square have side length $s$, so its area is $s^2$. The first circle inscribed in it has radius $s/2$."),
+        ("Find the inscribed square", r"The square inside that circle has diagonal equal to the circle's diameter, which is $s$. Therefore its side length is $s/\sqrt2$."),
+        ("Find the smaller circle", r"The final circle is inscribed in this smaller square, so its radius is half the side length: $s/(2\sqrt2)$."),
+        ("Compute the area ratio", r"The smaller circle has area $\pi\left(\frac{s}{2\sqrt2}\right)^2=\frac{\pi s^2}{8}$. Dividing by the larger square area $s^2$ gives $\frac{\pi}{8}$."),
+        ("Answer", r"The ratio is $\boxed{\frac{\pi}{8}}$."),
+    ],
+    8: [
+        ("Find the shaded area of one tile", r"Each tile has four white quarter-circles of radius $1/2$. Together they make one full circle of radius $1/2$, with area $\pi(1/2)^2=\pi/4$."),
+        ("Subtract from the tile area", r"Each tile has area $1$, so the shaded area per tile is $1-\pi/4$."),
+        ("Count the tiles", r"The floor is $8$ feet by $10$ feet, so it has $80$ one-foot square tiles."),
+        ("Multiply", r"The total shaded area is $80(1-\pi/4)=80-20\pi$."),
+        ("Answer", r"The answer is $\boxed{80-20\pi}$."),
+    ],
+    9: [
+        ("Use parity", r"A sum is odd when one addend is odd and the other is even."),
+        ("Find parity probabilities", r"The first die has four odd faces ($1,1,3,3$) and two even faces ($2,2$). So $P(\text{odd on first})=\frac46=\frac23$ and $P(\text{even on first})=\frac13$."),
+        ("Do the same for the second die", r"The second die has two odd faces ($5,5$) and four even faces ($4,4,6,6$). So $P(\text{odd on second})=\frac13$ and $P(\text{even on second})=\frac23$."),
+        ("Add the two favorable parity cases", r"The probability is \[\frac23\cdot\frac23+\frac13\cdot\frac13=\frac49+\frac19=\frac59.\]"),
+        ("Answer", r"The answer is $\boxed{\frac59}$."),
+    ],
+    10: [
+        ("Use symmetry", r"Since $AC=BC=7$ and $AB=2$, point $C$ lies above the midpoint of $AB$. Put $A=(-1,0)$ and $B=(1,0)$."),
+        ("Find the height of C", r"The distance from the midpoint to either endpoint is $1$, so the height $h$ satisfies $h^2+1^2=7^2$. Thus $h^2=48$."),
+        ("Place point D", r"Point $D$ is on line $AB$ beyond $B$, so write $D=(1+x,0)$ where $x=BD$."),
+        ("Use CD=8", r"The distance from $C=(0,\sqrt{48})$ to $D=(1+x,0)$ is $8$, so \[(1+x)^2+48=64.\] Therefore $(1+x)^2=16$."),
+        ("Solve", r"Since $x>0$, $1+x=4$, so $x=3$. Thus $BD=\boxed{3}$."),
     ],
 }
 
@@ -196,7 +237,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2005" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2005" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -295,7 +336,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批完成 2005 AMC 10A Problems 21-25，无跳过题；2005A 可可靠处理部分完成。\n"
+        + "本批完成 2005 AMC 10B Problems 1-10，无跳过题。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",

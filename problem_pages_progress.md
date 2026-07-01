@@ -348,3 +348,19 @@
 - Pushed: pending
 - Next batch should start from: 2005 AMC 10B Problem 1
 - Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.
+
+## Batch 23: 2005 AMC 10B Problem 1-10
+
+- Start time: 2026-06-30T15:13:21-07:00
+- End time: 2026-06-30T15:13:22-07:00
+- Processed contest: AMC 10
+- Processed range: 2005 AMC 10B Problem 1-10
+- Generated count: 10
+- Updated existing count: 0
+- Skipped count: 0
+- Skipped reasons: none
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2005 AMC 10B Problem 11
+- Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.
