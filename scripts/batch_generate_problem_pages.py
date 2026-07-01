@@ -3,34 +3,42 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 90
+BATCH_NUMBER = 91
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2015_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {18,20,21,23,24,25}
-SKIPPED = ["2015 AMC 10B Problem 17 skipped: prism dimensions depend on missing diagram", "2015 AMC 10B Problem 19 skipped: circle condition for constructed squares depends on diagram", "2015 AMC 10B Problem 22 skipped: pentagon segment labels depend on missing diagram"]
-BATCH_LABEL = "2015 AMC 10B Problems 18,20,21,23,24,25"
-NEXT_START = "2016 AMC 10A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2016_AMC_10A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2016 AMC 10A Problems 1-10"
+NEXT_START = "2016 AMC 10A Problem 11"
 
-ANS={18:("D","56"),20:("A","6"),21:("D","13"),23:("B","8"),24:("D","(13,-22)"),25:("B","10")}
+ANS={1:("B","100"),2:("C","3"),3:("C","$87.50"),4:("B",r"-\frac1{40}"),5:("D","96"),6:("D","103"),7:("D","90"),8:("C","35"),9:("D","9"),10:("B","2")}
 
 OV={
-18:(r"Johann has $64$ fair coins. He flips all the coins. Any coin that lands on tails is tossed again. Coins that land on tails on the second toss are tossed a third time. What is the expected number of coins that are now heads?",[("A","32"),("B","40"),("C","48"),("D","56"),("E","64")]),
-20:(r"Erin the ant starts at a given corner of a cube and crawls along exactly $7$ edges in such a way that she visits every corner exactly once and then finds that she is unable to return along an edge to her starting point. How many paths are there meeting these conditions?",[("A","6"),("B","9"),("C","12"),("D","18"),("E","24")]),
-21:(r"Cozy the Cat and Dash the Dog are going up a staircase with a certain number of steps. Cozy goes two steps up with each jump, except possibly the last jump. Dash goes five steps up with each jump, except possibly the last jump. Dash takes $19$ fewer jumps than Cozy. Let $s$ denote the sum of all possible numbers of steps this staircase can have. What is the sum of the digits of $s$?",[("A","9"),("B","11"),("C","12"),("D","13"),("E","15")]),
-23:(r"Let $n$ be a positive integer greater than $4$ such that the decimal representation of $n!$ ends in $k$ zeros and the decimal representation of $(2n)!$ ends in $3k$ zeros. Let $s$ denote the sum of the four least possible values of $n$. What is the sum of the digits of $s$?",[("A","7"),("B","8"),("C","9"),("D","10"),("E","11")]),
-24:(r"Aaron the ant walks on the coordinate plane according to the following rules. He starts at the origin $p_0=(0,0)$ facing east and walks one unit, arriving at $p_1=(1,0)$. For $n=1,2,3,\ldots$, right after arriving at $p_n$, if Aaron can turn $90^\circ$ left and walk one unit to an unvisited point, he does that; otherwise, he walks one unit straight ahead to reach $p_{n+1}$. The points continue in a counterclockwise spiral pattern. What is $p_{2015}$?",[("A","(-22,-13)"),("B","(-13,-22)"),("C","(-13,22)"),("D","(13,-22)"),("E","(22,-13)")]),
-25:(r"A rectangular box measures $a\times b\times c$, where $a$, $b$, and $c$ are integers and $1\le a\le b\le c$. The volume and surface area of the box are numerically equal. How many ordered triples $(a,b,c)$ are possible?",[("A","4"),("B","10"),("C","12"),("D","21"),("E","26")]),
+1:(r"What is the value of $\frac{11!-10!}{9!}$?",[("A","99"),("B","100"),("C","110"),("D","121"),("E","132")]),
+2:(r"For what value of $x$ does $10^x\cdot100^{2x}=1000^5$?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+3:(r"For every dollar Ben spent on bagels, David spent $25$ cents less. Ben paid $\$12.50$ more than David. How much did they spend in the bagel store together?",[("A","$37.50"),("B","$50.00"),("C","$87.50"),("D","$90.00"),("E","$92.50")]),
+4:(r"The remainder can be defined for all real numbers $x$ and $y$ with $y\ne0$ by $\operatorname{rem}(x,y)=x-y\left\lfloor\frac{x}{y}\right\rfloor$. What is $\operatorname{rem}\left(\frac38,-\frac25\right)$?",[("A",r"-\frac38"),("B",r"-\frac1{40}"),("C","0"),("D",r"\frac38"),("E",r"\frac{31}{40}")]),
+5:(r"A rectangular box has integer side lengths in the ratio $1:3:4$. Which of the following could be the volume of the box?",[("A","48"),("B","56"),("C","64"),("D","96"),("E","144")]),
+6:(r"Ximena lists the whole numbers $1$ through $30$ once. Emilio copies Ximena's numbers, replacing each occurrence of the digit $2$ by the digit $1$. Ximena adds her numbers and Emilio adds his numbers. How much larger is Ximena's sum than Emilio's?",[("A","13"),("B","26"),("C","102"),("D","103"),("E","110")]),
+7:(r"The mean, median, and mode of the $7$ data values $60,100,x,40,50,200,90$ are all equal to $x$. What is the value of $x$?",[("A","50"),("B","60"),("C","75"),("D","90"),("E","100")]),
+8:(r"Trickster Rabbit agrees with Foolish Fox to double Fox's money every time Fox crosses the bridge by Rabbit's house, as long as Fox pays $40$ coins in toll to Rabbit after each crossing. The payment is made after the doubling. Fox discovers that all his money is gone after crossing the bridge three times. How many coins did Fox have at the beginning?",[("A","20"),("B","30"),("C","35"),("D","40"),("E","45")]),
+9:(r"A triangular array of $2016$ coins has $1$ coin in the first row, $2$ coins in the second row, $3$ coins in the third row, and so on up to $N$ coins in the $N$th row. What is the sum of the digits of $N$?",[("A","6"),("B","7"),("C","8"),("D","9"),("E","10")]),
+10:(r"A rug is made with three different colors. The areas of the three differently colored rectangular regions form an arithmetic progression. The inner rectangle is $1$ foot wide, and each of the two surrounding shaded regions is $1$ foot wide on all four sides. What is the length in feet of the inner rectangle?",[("A","1"),("B","2"),("C","4"),("D","6"),("E","8")]),
 }
 
-KEY_OVERRIDES={18:"Use linearity of expectation for each coin.",20:"Count Hamiltonian paths on the cube ending at the opposite vertex.",21:"Solve an equation involving ceiling functions.",23:"Count trailing zeros with factors of 5.",24:"Recognize square spiral layers and locate the index.",25:"Transform the volume-surface equation and enumerate bounded integer cases."}
+KEY_OVERRIDES={1:"Factor common factorial terms.",2:"Rewrite all bases as powers of 10.",3:"Use the per-dollar difference to scale the total.",4:"Apply the floor-based remainder definition carefully for a negative divisor.",5:"Use the side-length ratio to express volume.",6:"Count digit replacements by place value.",7:"Use the mean equation, then verify median and mode.",8:"Work backward through the repeated doubling-and-toll operation.",9:"Solve a triangular-number equation.",10:"Write the three rectangular region areas in terms of the inner length."}
 
 SOL={
-18:[("Use one coin first",r"A single coin is tossed until it lands heads or until it has been tossed three times. It is still not heads only if it lands tails three times."),("Find the probability a coin is heads",r"The probability of three tails is $\left(\frac12\right)^3=\frac18$, so the probability the coin is heads at the end is $1-\frac18=\frac78$."),("Use linearity of expectation",r"Expected values add even when outcomes are not listed one by one. For $64$ coins, the expected number of heads is $64\cdot\frac78=56$."),("Conclude",r"The answer is $\boxed{56}$."),],
-20:[("Translate to cube vertices",r"Visiting every corner exactly once along $7$ edges is a Hamiltonian path on the cube graph starting from a fixed vertex."),("Use the final condition",r"After $7$ edge moves, the endpoint has odd parity relative to the start. Among odd-parity vertices, the only one not adjacent to the start is the opposite vertex."),("Count paths to the opposite vertex",r"From a fixed start to the opposite vertex, a direct case check on the first two moves shows there are $6$ Hamiltonian paths. Equivalently, they correspond to the $3!$ orders in which the three coordinate directions are first introduced."),("Check the condition",r"Each such path ends at the opposite corner, which is not connected to the starting corner by an edge, so Erin cannot return directly."),("Conclude",r"There are $\boxed{6}$ paths."),],
-21:[("Write jumps with ceiling functions",r"If the staircase has $n$ steps, Cozy takes $\lceil n/2\rceil$ jumps and Dash takes $\lceil n/5\rceil$ jumps."),("Set up the difference",r"The condition is \[\left\lceil\frac n2\right\rceil-\left\lceil\frac n5\right\rceil=19.\]"),("Check the narrow range",r"Since the difference is roughly $\frac{3n}{10}$, $n$ should be near $63$. Testing the few possible values gives $n=63,64,66$."),("Sum possible stair counts",r"The sum is $s=63+64+66=193$."),("Sum digits",r"The digit sum of $193$ is $1+9+3=13$."),("Conclude",r"The answer is $\boxed{13}$."),],
-23:[("Count trailing zeros",r"The number of trailing zeros in $n!$ is \[z(n)=\left\lfloor\frac n5\right\rfloor+\left\lfloor\frac n{25}\right\rfloor+\cdots.\]"),("Search the first values carefully",r"We need $z(2n)=3z(n)$. For small $n>4$, this can be checked by tracking multiples of $5$."),("Find the four least n",r"The first four values that work are $n=8,9,13,14$. For example, $z(8)=1$ and $z(16)=3$, while $z(13)=2$ and $z(26)=6$."),("Compute s",r"Their sum is $s=8+9+13+14=44$."),("Sum digits",r"The digit sum of $44$ is $8$."),("Conclude",r"The answer is $\boxed{8}$."),],
-24:[("Recognize the spiral layers",r"The path forms a square spiral. The corners of the layers occur at nearby perfect squares, which makes it useful to locate $2015$ between squares."),("Locate the layer",r"We have $44^2=1936$ and $45^2=2025$. Thus $p_{2015}$ is on the layer ending near the square of side length $45$."),("Move back from a known corner",r"In this spiral, $p_{2025}$ is at $(22,-22)$. Moving back $10$ steps along the bottom side gives $p_{2015}=(13,-22)$."),("Conclude",r"The answer is $\boxed{(13,-22)}$."),],
-25:[("Write the equation",r"The volume is $abc$, and the surface area is $2(ab+ac+bc)$. The condition is \[abc=2(ab+ac+bc).\]"),("Solve for c",r"Rearrange as \[c(ab-2a-2b)=2ab,\] so \[c=\frac{2ab}{ab-2a-2b}.\] This gives a finite check because the denominator must be positive."),("Bound a and b",r"Since $a\le b\le c$, testing possible small $a$ values is enough. The denominator becomes positive only after $a$ and $b$ are large enough, but if $a\ge7$ the fraction is already too small to keep $c\ge b$."),("List the valid triples",r"The valid triples are $(3,7,42),(3,8,24),(3,9,18),(3,10,15),(3,12,12),(4,5,20),(4,6,12),(4,8,8),(5,5,10),(6,6,6)$."),("Count",r"There are $10$ triples."),("Conclude",r"The answer is $\boxed{10}$."),],
+1:[("Factor out 9 factorial",r"Both $11!$ and $10!$ contain a factor of $9!$. So \[\frac{11!-10!}{9!}=\frac{9!(11\cdot10)-9!(10)}{9!}.\]"),("Simplify",r"Cancel $9!$ to get $110-10=100$."),("Check the scale",r"The expression compares two large factorials, but dividing by $9!$ leaves only the next multiplication factors. A two- or three-digit answer is therefore reasonable."),("Conclude",r"The answer is $\boxed{100}$."),],
+2:[("Rewrite bases",r"Use $100=10^2$ and $1000=10^3$. Then \[10^x\cdot100^{2x}=10^x\cdot(10^2)^{2x}=10^{5x}.\]"),("Rewrite the right side",r"$1000^5=(10^3)^5=10^{15}$."),("Compare exponents",r"Thus $5x=15$, so $x=3$."),("Conclude",r"The answer is $\boxed{3}$."),],
+3:[("Understand the per-dollar comparison",r"For every dollar Ben spent, David spent $25$ cents less, or $\$0.75$. So David spent $75\%$ as much as Ben."),("Use the difference",r"The difference between their spending is $25\%$ of Ben's spending. This difference is $\$12.50$."),("Find Ben and David's amounts",r"Ben spent $\$12.50/0.25=\$50.00$. David spent $\$37.50$."),("Add",r"Together they spent $\$50.00+\$37.50=\$87.50$."),("Conclude",r"The answer is $\boxed{\$87.50}$."),],
+4:[("Apply the definition",r"Here $x=\frac38$ and $y=-\frac25$. First compute \[\frac{x}{y}=\frac{3/8}{-2/5}=-\frac{15}{16}.\]"),("Take the floor",r"The greatest integer less than or equal to $-\frac{15}{16}$ is $-1$."),("Substitute",r"\[\operatorname{rem}\left(\frac38,-\frac25\right)=\frac38-\left(-\frac25\right)(-1)=\frac38-\frac25.\]"),("Simplify",r"\[\frac38-\frac25=\frac{15-16}{40}=-\frac1{40}.\]"),("Conclude",r"The answer is $\boxed{-\frac1{40}}$."),],
+5:[("Use the ratio",r"Let the integer side lengths be $s$, $3s$, and $4s$."),("Find the volume form",r"The volume is $s\cdot3s\cdot4s=12s^3$."),("Test the choices",r"We need a choice of the form $12s^3$. When $s=2$, the volume is $12\cdot8=96$."),("Conclude",r"The possible volume is $\boxed{96}$."),],
+6:[("Separate units and tens changes",r"Changing a digit $2$ to $1$ lowers a number by $1$ if the digit is in the units place, and by $10$ if the digit is in the tens place."),("Count units-place changes",r"The units digit is $2$ in $2,12,22$, giving a total decrease of $3$."),("Count tens-place changes",r"The tens digit is $2$ in $20,21,\ldots,29$, giving a total decrease of $10\cdot10=100$."),("Add the decreases",r"Emilio's sum is $3+100=103$ less than Ximena's sum."),("Conclude",r"Ximena's sum is $\boxed{103}$ larger."),],
+7:[("Use the mean condition",r"The sum of the seven values is $60+100+x+40+50+200+90=540+x$."),("Set mean equal to x",r"\[\frac{540+x}{7}=x.\] Thus $540+x=7x$, so $x=90$."),("Verify median and mode",r"With $x=90$, the ordered list is $40,50,60,90,90,100,200$. The median is $90$, and the mode is also $90$."),("Conclude",r"The answer is $\boxed{90}$."),],
+8:[("Work backward",r"After each crossing, Fox's money is doubled and then $40$ coins are paid. After the third crossing he has $0$."),("Before the third crossing",r"If he had $M$ before the third crossing, then $2M-40=0$, so $M=20$."),("Before the second and first crossings",r"Before the second crossing, $2M-40=20$, so $M=30$. Before the first crossing, $2M-40=30$, so $M=35$."),("Conclude",r"Fox began with $\boxed{35}$ coins."),],
+9:[("Use the triangular number formula",r"The total number of coins is \[1+2+\cdots+N=\frac{N(N+1)}2.\]"),("Set equal to 2016",r"We need $\frac{N(N+1)}2=2016$, or $N(N+1)=4032$."),("Find N",r"Since $63\cdot64=4032$, we have $N=63$."),("Sum digits",r"The sum of the digits of $63$ is $6+3=9$."),("Conclude",r"The answer is $\boxed{9}$."),],
+10:[("Name the inner length",r"Let the inner rectangle have length $x$ and width $1$, so its area is $x$."),("Compute the middle region",r"The first surrounding strip makes dimensions $(x+2)$ by $3$. Its area alone is $3(x+2)-x=2x+6$."),("Compute the outer region",r"The second surrounding strip makes dimensions $(x+4)$ by $5$. Its area alone is $5(x+4)-3(x+2)=2x+14$."),("Use arithmetic progression",r"The three areas $x$, $2x+6$, and $2x+14$ form an arithmetic progression, so \[(2x+6)-x=(2x+14)-(2x+6).\]"),("Solve",r"This gives $x+6=8$, so $x=2$."),("Conclude",r"The inner rectangle has length $\boxed{2}$ feet."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -77,7 +85,7 @@ def render(row):
     notes = row.get("notes") or ""
     if n in {10,17} and notes == "题面包含图形":
         notes = ""
-    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if n in set() else notes
+    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if n in {10} else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
         f'<li class="choice {"correct" if k == ans else ""}"><span class="choice-key">{esc(k)}</span><span>{esc(v, False)}</span></li>'
@@ -132,7 +140,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2015" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2016" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -173,7 +181,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": int(r["problem_no"]) in set(),
+                "needs_review": int(r["problem_no"]) in {10},
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -221,7 +229,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2015 AMC 10B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2016 AMC 10A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
