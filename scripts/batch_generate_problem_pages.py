@@ -3,28 +3,38 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 126
+BATCH_NUMBER = 127
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2021_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {22,24,25}
-SKIPPED = ["2021 Spring AMC 10B Problem 21 skipped: folding geometry depends on the missing paper-folding figure.", "2021 Spring AMC 10B Problem 23 skipped: coin-overlap probability depends on the missing shaded-region diagram."]
-BATCH_LABEL = "2021 Spring AMC 10B Problems 22,24,25"
-NEXT_START = "2021 Fall AMC 10A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2022_AMC_10A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8}
+SKIPPED = ["2022 AMC 10A Problem 9 skipped: coloring count depends on the missing region-adjacency diagram.", "2022 AMC 10A Problem 10 skipped: index-card geometry depends on the missing cut-corner diagram."]
+BATCH_LABEL = "2022 AMC 10A Problems 1-8"
+NEXT_START = "2022 AMC 10A Problem 11"
 
-ANS={22:("D","471"),24:("B",r"(6,2,1)"),25:("E","85")}
+ANS={1:("D",r"\frac{109}{33}"),2:("B","7"),3:("E","5"),4:("E",r"\frac{100\ell m}{x}"),5:("C",r"2-\sqrt2"),6:("A",r"3-2a"),7:("B","6"),8:("D","36")}
 
 OV={
-22:(r"Ang, Ben, and Jasmin each have $5$ blocks, colored red, blue, yellow, white, and green, and there are $5$ empty boxes. Each person randomly and independently places one block into each box. The probability that at least one box receives $3$ blocks all of the same color is $\frac mn$, where $m$ and $n$ are relatively prime. What is $m+n$?",[("A","47"),("B","94"),("C","227"),("D","471"),("E","542")]),
-24:(r"Arjun and Beth play a game in which they take turns removing one brick or two adjacent bricks from one wall among several one-brick-tall walls, with gaps possibly creating new walls. Arjun plays first, and the player who removes the last brick wins. For which starting configuration is there a strategy that guarantees a win for Beth?",[("A",r"$(6,1,1)$"),("B",r"$(6,2,1)$"),("C",r"$(6,2,2)$"),("D",r"$(6,3,1)$"),("E",r"$(6,3,2)$")]),
-25:(r"Let $S$ be the set of lattice points in the coordinate plane whose coordinates are integers between $1$ and $30$, inclusive. Exactly $300$ points in $S$ lie on or below a line with equation $y=mx$. The possible values of $m$ lie in an interval of length $\frac ab$, where $a$ and $b$ are relatively prime positive integers. What is $a+b$?",[("A","31"),("B","47"),("C","62"),("D","72"),("E","85")]),
+1:(r"What is the value of \[3+\frac{1}{3+\frac{1}{3+\frac13}}?\]",[("A",r"$\frac{31}{10}$"),("B",r"$\frac{49}{15}$"),("C",r"$\frac{33}{10}$"),("D",r"$\frac{109}{33}$"),("E",r"$\frac{15}{4}$")]),
+2:(r"Mike cycled $15$ laps in $57$ minutes at a constant speed. Approximately how many laps did he complete in the first $27$ minutes?",[("A","5"),("B","7"),("C","9"),("D","11"),("E","13")]),
+3:(r"The sum of three numbers is $96$. The first number is $6$ times the third number, and the third number is $40$ less than the second number. What is the absolute value of the difference between the first and second numbers?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+4:(r"Suppose $1$ kilometer equals $m$ miles, and $1$ gallon equals $\ell$ liters. Which expression gives the fuel efficiency in liters per $100$ kilometers for a car that gets $x$ miles per gallon?",[("A",r"$\frac{x}{100\ell m}$"),("B",r"$\frac{x\ell m}{100}$"),("C",r"$\frac{\ell m}{100x}$"),("D",r"$\frac{100}{x\ell m}$"),("E",r"$\frac{100\ell m}{x}$")]),
+5:(r"Square $ABCD$ has side length $1$. Points $P,Q,R,$ and $S$ each lie on a side of $ABCD$ such that $APQCRS$ is an equilateral convex hexagon with side length $s$. What is $s$?",[("A",r"$\frac{\sqrt2}{3}$"),("B",r"$\frac12$"),("C",r"$2-\sqrt2$"),("D",r"$1-\frac{\sqrt2}{4}$"),("E",r"$\frac23$")]),
+6:(r"Which expression is equal to \[\left|a-2-\sqrt{(a-1)^2}\right|\] for $a<0$?",[("A",r"$3-2a$"),("B",r"$1-a$"),("C","1"),("D",r"$a+1$"),("E","3")]),
+7:(r"The least common multiple of a positive integer $n$ and $18$ is $180$, and the greatest common divisor of $n$ and $45$ is $15$. What is the sum of the digits of $n$?",[("A","3"),("B","6"),("C","8"),("D","9"),("E","12")]),
+8:(r"A data set consists of $6$ not necessarily distinct positive integers: $1,7,5,2,5,$ and $X$. The average of the $6$ numbers equals a value in the data set. What is the sum of all positive values of $X$?",[("A","10"),("B","26"),("C","32"),("D","36"),("E","40")]),
 }
 
-KEY_OVERRIDES={22:"Use inclusion-exclusion on boxes where all three colors match.",24:"Compute small impartial-game values for wall lengths.",25:"Count lattice points with floor sums and locate adjacent critical slopes."}
+KEY_OVERRIDES={1:"Evaluate a continued fraction from the inside out.",2:"Use a constant-rate proportion.",3:"Set up a linear equation from three number relationships.",4:"Convert miles per gallon into liters per 100 kilometers.",5:"Use an isosceles right corner triangle in the square.",6:"Use square root of a square as absolute value.",7:"Use prime exponents from lcm and gcd conditions.",8:"Test which data-set value can equal the mean."}
 
 SOL={
-22:[("Fix one person's placement",r"Because the colors are symmetric, fix Ang's placement of the five colors in the five boxes. Ben and Jasmin each independently choose a random permutation of the five colors."),("Define the matching event",r"A box receives three blocks of the same color exactly when both Ben and Jasmin put the box's Ang-color into that same box. So we need at least one common fixed box for Ben's and Jasmin's permutations relative to Ang."),("Use inclusion-exclusion",r"There are $(5!)^2$ total pairs of permutations. If a chosen set of $k$ boxes is forced to match for both Ben and Jasmin, then the remaining choices can be made in \[((5-k)!)^2\] ways."),("Count favorable pairs",r"By inclusion-exclusion, the number with at least one matching box is \[\binom51(4!)^2-\binom52(3!)^2+\binom53(2!)^2-\binom54(1!)^2+\binom55(0!)^2=2556.\]"),("Compute the probability",r"The probability is \[\frac{2556}{(5!)^2}=\frac{2556}{14400}=\frac{71}{400}.\]"),("Conclude",r"Thus $m+n=71+400=\boxed{471}$."),],
-24:[("Recognize an impartial game",r"Each wall acts independently, and a move on one wall can split it into smaller walls. This is a small impartial game, so we can assign a Grundy value to each wall length."),("Build the small table",r"Let $g(n)$ be the value of a wall of length $n$. Checking all ways to remove one brick or two adjacent bricks gives \[g(1)=1,\quad g(2)=2,\quad g(3)=3,\quad g(4)=1,\quad g(5)=4,\quad g(6)=3.\]"),("Combine walls with xor",r"A position is losing for the player to move exactly when the xor of its wall values is $0$."),("Test the choices",r"The xors are \[(6,1,1):3\oplus1\oplus1=3,\] \[(6,2,1):3\oplus2\oplus1=0.\] The other listed choices have nonzero xor."),("Interpret the result",r"If the starting xor is $0$, then the first player, Arjun, is in a losing position with best play. Therefore Beth has a guaranteed winning strategy only for $(6,2,1)$."),("Conclude",r"The answer is $\boxed{(6,2,1)}$."),],
-25:[("Write the count as a floor sum",r"For a fixed slope $m$, the number of lattice points on or below $y=mx$ is \[\sum_{x=1}^{30}\left\lfloor mx\right\rfloor,\] as long as $m<1$, which will be true for the relevant slopes."),("Find a slope that gives 300",r"At $m=\frac23$, the sum is \[\sum_{x=1}^{30}\left\lfloor\frac{2x}{3}\right\rfloor=300.\] This can be checked in blocks of three: the terms for $x=3k+1,3k+2,3k+3$ add to $6k+3$."),("Find the next larger critical slope",r"The count changes only when the line passes through a lattice point, so the next slope greater than $\frac23$ is the smallest fraction $\frac yx>\frac23$ with $1\le x,y\le30$."),("Locate that next slope",r"We need $3y>2x$. The closest possible case is $3y-2x=1$. To minimize the increase, take the largest $x\le30$ satisfying this, which is $x=28$, giving $y=19$. Thus the next critical slope is \[\frac{19}{28}.\]"),("Compute the interval length",r"The possible slopes are from $\frac23$ up to but not including $\frac{19}{28}$, so the interval length is \[\frac{19}{28}-\frac23=\frac1{84}.\]"),("Conclude",r"Therefore $a+b=1+84=\boxed{85}$."),],
+1:[("Start from the innermost denominator",r"Work from the inside out. First, \[3+\frac13=\frac{10}{3}.\]"),("Move one layer outward",r"The next denominator is \[3+\frac{1}{10/3}=3+\frac{3}{10}=\frac{33}{10}.\]"),("Evaluate the whole expression",r"Now the original expression is \[3+\frac{1}{33/10}=3+\frac{10}{33}.\]"),("Combine",r"Thus \[3+\frac{10}{33}=\frac{99}{33}+\frac{10}{33}=\frac{109}{33}.\]"),("Conclude",r"The answer is $\boxed{\frac{109}{33}}$."),],
+2:[("Use constant speed",r"Since Mike cycles at a constant speed, laps are proportional to time."),("Set up the proportion",r"In $57$ minutes he cycles $15$ laps, so in $27$ minutes he cycles \[15\cdot\frac{27}{57}.\]"),("Approximate",r"This equals \[\frac{405}{57}\approx7.1.\]"),("Choose the closest answer",r"The closest answer choice is $7$."),("Conclude",r"The answer is $\boxed{7}$."),],
+3:[("Name the third number",r"Let the third number be $t$. Then the first number is $6t$, and the second number is $t+40$."),("Use the sum",r"The three numbers add to $96$, so \[6t+(t+40)+t=96.\]"),("Solve",r"This gives \[8t+40=96,\] so $t=7$."),("Find the first two numbers",r"The first number is $6t=42$, and the second number is $t+40=47$."),("Conclude",r"The absolute difference is \[|42-47|=\boxed{5}.\]"),],
+4:[("Interpret x miles per gallon",r"The car travels $x$ miles using $1$ gallon, which is $\ell$ liters."),("Convert miles to kilometers",r"Since $1$ kilometer is $m$ miles, $x$ miles is \[\frac{x}{m}\] kilometers."),("Find liters per kilometer",r"The fuel use is \[\frac{\ell}{x/m}=\frac{\ell m}{x}\] liters per kilometer."),("Scale to 100 kilometers",r"For $100$ kilometers, multiply by $100$: \[\frac{100\ell m}{x}.\]"),("Conclude",r"The answer is $\boxed{\frac{100\ell m}{x}}$."),],
+5:[("Locate the key right triangle",r"Because the hexagon has side length $s$, the leftover segments near a corner of the square have length $1-s$."),("Use the diagonal side of the hexagon",r"In the corner near $B$, the segment $PQ$ is a side of the equilateral hexagon, so $PQ=s$. It is also the hypotenuse of an isosceles right triangle with legs $1-s$."),("Set up the equation",r"Thus \[s=(1-s)\sqrt2.\]"),("Solve",r"We get \[s=\sqrt2-s\sqrt2,\] so \[(1+\sqrt2)s=\sqrt2.\] Therefore \[s=\frac{\sqrt2}{1+\sqrt2}=2-\sqrt2.\]"),("Conclude",r"The answer is $\boxed{2-\sqrt2}$."),],
+6:[("Replace the square root carefully",r"For any real $u$, $\sqrt{u^2}=|u|$. Here $u=a-1$. Since $a<0$, $a-1<0$, so \[|a-1|=1-a.\]"),("Substitute",r"The expression becomes \[\left|a-2-(1-a)\right|.\]"),("Simplify inside",r"Inside the absolute value, \[a-2-1+a=2a-3.\]"),("Remove the absolute value",r"Because $a<0$, $2a-3<0$, so \[|2a-3|=3-2a.\]"),("Conclude",r"The answer is $\boxed{3-2a}$."),],
+7:[("Use prime factors",r"Write \[18=2\cdot3^2,\quad180=2^2\cdot3^2\cdot5,\quad45=3^2\cdot5.\]"),("Use the lcm condition",r"The lcm of $n$ and $18$ is $180$, so $n$ must contribute $2^2$ and $5$, and it cannot contain prime powers beyond those in $180$."),("Use the gcd condition",r"The gcd of $n$ and $45$ is $15=3\cdot5$. Therefore $n$ has exactly one factor of $3$ and at least one factor of $5$."),("Determine n",r"Combining the exponent conditions gives \[n=2^2\cdot3\cdot5=60.\]"),("Conclude",r"The sum of the digits of $60$ is $\boxed{6}$."),],
+8:[("Write the average",r"The known five numbers sum to \[1+7+5+2+5=20.\] Thus the average is \[\frac{20+X}{6}.\]"),("Test possible data values",r"The average must equal one of the data values: $1,2,5,7,$ or $X$."),("Find possible X values",r"If the average is $5$, then $20+X=30$, so $X=10$. If the average is $7$, then $20+X=42$, so $X=22$. If the average is $X$, then $20+X=6X$, so $X=4$."),("Reject impossible cases",r"An average of $1$ or $2$ is impossible because the known sum is already $20$."),("Add",r"The positive possible values are $10,22,4$, and their sum is \[10+22+4=36.\]"),("Conclude",r"The answer is $\boxed{36}$."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -131,7 +141,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2021 Spring" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2022" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -220,7 +230,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2021 AMC 10B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2022 AMC 10A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),

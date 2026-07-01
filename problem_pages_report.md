@@ -1,20 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 938
-- Latest batch: 126 (2021 Spring AMC 10B Problems 22,24,25)
-- Latest new generated count: 3
+- Total manifest entries: 946
+- Latest batch: 127 (2022 AMC 10A Problems 1-8)
+- Latest new generated count: 8
 - Latest updated existing count: 0
 - Latest skipped count: 2
 - MathJax validation: passed
-- Answer verification source: AoPS 2021 AMC 10B Answer Key
+- Answer verification source: AoPS 2022 AMC 10A Answer Key
 
 ## Latest Batch Pages
 
-- `2021 Spring AMC 10B Problem 22` -> `amc10/problems/2021-spring-amc-10b-problem-22/`
-- `2021 Spring AMC 10B Problem 24` -> `amc10/problems/2021-spring-amc-10b-problem-24/`
-- `2021 Spring AMC 10B Problem 25` -> `amc10/problems/2021-spring-amc-10b-problem-25/`
+- `2022 AMC 10A Problem 1` -> `amc10/problems/2022-amc-10a-problem-1/`
+- `2022 AMC 10A Problem 2` -> `amc10/problems/2022-amc-10a-problem-2/`
+- `2022 AMC 10A Problem 3` -> `amc10/problems/2022-amc-10a-problem-3/`
+- `2022 AMC 10A Problem 4` -> `amc10/problems/2022-amc-10a-problem-4/`
+- `2022 AMC 10A Problem 5` -> `amc10/problems/2022-amc-10a-problem-5/`
+- `2022 AMC 10A Problem 6` -> `amc10/problems/2022-amc-10a-problem-6/`
+- `2022 AMC 10A Problem 7` -> `amc10/problems/2022-amc-10a-problem-7/`
+- `2022 AMC 10A Problem 8` -> `amc10/problems/2022-amc-10a-problem-8/`
 
 ## Skipped in latest batch
 
-- 2021 Spring AMC 10B Problem 21 skipped: folding geometry depends on the missing paper-folding figure.
-- 2021 Spring AMC 10B Problem 23 skipped: coin-overlap probability depends on the missing shaded-region diagram.
+- 2022 AMC 10A Problem 9 skipped: coloring count depends on the missing region-adjacency diagram.
+- 2022 AMC 10A Problem 10 skipped: index-card geometry depends on the missing cut-corner diagram.
