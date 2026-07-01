@@ -2204,3 +2204,19 @@
 - Pushed: pending
 - Next batch should start from: 2023 AMC 10A Problem 21
 - Review notes: none.
+
+## Batch 136: 2023 AMC 10A Problems 21-23,25
+
+- Start time: 2026-07-01T04:19:45-07:00
+- End time: 2026-07-01T04:19:46-07:00
+- Processed contest: AMC 10
+- Processed range: 2023 AMC 10A Problems 21-23,25
+- Generated count: 4
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2023 AMC 10A Problem 24 skipped: hexagonal-frame area depends on the missing block arrangement diagram.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2023 AMC 10B Problem 1
+- Review notes: none.
