@@ -1500,3 +1500,19 @@
 - Pushed: pending
 - Next batch should start from: 2016 AMC 10A Problem 11
 - Review notes: none.
+
+## Batch 92: 2016 AMC 10A Problems 12-14, 16-20
+
+- Start time: 2026-07-01T01:44:14-07:00
+- End time: 2026-07-01T01:44:15-07:00
+- Processed contest: AMC 10
+- Processed range: 2016 AMC 10A Problems 12-14, 16-20
+- Generated count: 8
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2016 AMC 10A Problem 11 skipped: shaded rectangle area depends on the original diagram.; 2016 AMC 10A Problem 15 skipped: cookie-circle layout depends on the original diagram.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2016 AMC 10A Problem 21
+- Review notes: none.
