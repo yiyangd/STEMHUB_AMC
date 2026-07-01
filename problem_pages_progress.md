@@ -796,3 +796,19 @@
 - Pushed: pending
 - Next batch should start from: 2010 AMC 10A Problem 11
 - Review notes: none.
+
+## Batch 51: 2010 AMC 10A Problems 11-13, 15-18, 20
+
+- Start time: 2026-06-30T20:17:37-07:00
+- End time: 2026-06-30T20:17:37-07:00
+- Processed contest: AMC 10
+- Processed range: 2010 AMC 10A Problems 11-13, 15-18, 20
+- Generated count: 8
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2010 AMC 10A Problem 14 skipped: geometry construction solution needs more careful diagram-based review; 2010 AMC 10A Problem 19 skipped: equiangular hexagon area relation needs more careful derivation
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2010 AMC 10A Problem 21
+- Review notes: none.
