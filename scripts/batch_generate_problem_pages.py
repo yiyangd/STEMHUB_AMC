@@ -8,62 +8,47 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 36
+BATCH_NUMBER = 37
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2007_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 20}
-SKIPPED = [
-    "2007 AMC 10B Problem 18 skipped: statement depends on a diagram.",
-    "2007 AMC 10B Problem 19 skipped: statement depends on a spinner/checkerboard diagram.",
-]
-BATCH_LABEL = "2007 AMC 10B Problems 11-17, 20"
-NEXT_START = "2007 AMC 10B Problem 21"
+TARGET_NUMBERS = {21, 22, 23, 24, 25}
+SKIPPED = []
+BATCH_LABEL = "2007 AMC 10B Problems 21-25"
+NEXT_START = "2008 AMC 10A Problem 1"
 
 ANS = {
-    11: ("C", r"\frac{81\pi}{32}"),
-    12: ("D", "5"),
-    13: ("D", r"2(\pi-2)"),
-    14: ("C", "8"),
-    15: ("D", "173"),
-    16: ("C", "93"),
-    17: ("D", r"4\sqrt3"),
-    20: ("C", "600"),
+    21: ("B", r"\frac{60}{37}"),
+    22: ("B", r"-\frac{1}{16}"),
+    23: ("E", r"4+2\sqrt2"),
+    24: ("C", "4944"),
+    25: ("A", "4"),
 }
 
 
 OV = {
-    11: (r"A circle passes through the three vertices of an isosceles triangle that has two sides of length $3$ and a base of length $2$. What is the area of this circle?", [("A", r"$2\pi$"), ("B", r"$\frac{5\pi}{2}$"), ("C", r"$\frac{81\pi}{32}$"), ("D", r"$3\pi$"), ("E", r"$\frac{7\pi}{2}$")]),
-    12: (r"Tom's age is $T$ years, which is also the sum of the ages of his three children. His age $N$ years ago was twice the sum of their ages then. What is $\frac{T}{N}$?", [("A", "$2$"), ("B", "$3$"), ("C", "$4$"), ("D", "$5$"), ("E", "$6$")]),
-    13: (r"Two circles of radius $2$ are centered at $(2,0)$ and at $(0,2)$. What is the area of the intersection of the interiors of the two circles?", [("A", r"$\pi-2$"), ("B", r"$\pi$"), ("C", r"$\frac{3\pi}{2}$"), ("D", r"$2(\pi-2)$"), ("E", r"$2\pi$")]),
-    14: (r"Some boys and girls are having a car wash to raise money for a class trip to China. Initially $40\%$ of the group are girls. Shortly thereafter two girls leave and two boys arrive, and then $30\%$ of the group are girls. How many girls were initially in the group?", [("A", "$4$"), ("B", "$6$"), ("C", "$8$"), ("D", "$10$"), ("E", "$12$")]),
-    15: (r"The angles of quadrilateral $ABCD$ satisfy $\angle A=2\angle B=3\angle C=4\angle D$. What is the degree measure of $\angle A$, rounded to the nearest whole number?", [("A", "$125$"), ("B", "$144$"), ("C", "$153$"), ("D", "$173$"), ("E", "$180$")]),
-    16: (r"A teacher gave a test to a class in which $10\%$ of the students are juniors and $90\%$ are seniors. The average score on the test was $84$. The juniors all received the same score, and the average score of the seniors was $83$. What score did each of the juniors receive on the test?", [("A", "$85$"), ("B", "$88$"), ("C", "$93$"), ("D", "$94$"), ("E", "$98$")]),
-    17: (r"Point $P$ is inside equilateral $\triangle ABC$. Points $Q,R,$ and $S$ are the feet of the perpendiculars from $P$ to $AB,BC,$ and $CA$, respectively. Given that $PQ=1$, $PR=2$, and $PS=3$, what is $AB$?", [("A", "$4$"), ("B", r"$3\sqrt3$"), ("C", "$6$"), ("D", r"$4\sqrt3$"), ("E", "$9$")]),
-    20: (r"A set of $25$ square blocks is arranged into a $5\times5$ square. How many different combinations of $3$ blocks can be selected from that set so that no two are in the same row or column?", [("A", "$100$"), ("B", "$125$"), ("C", "$600$"), ("D", "$2300$"), ("E", "$3600$")]),
+    21: (r"Right $\triangle ABC$ has $AB=3$, $BC=4$, and $AC=5$. Square $XYZW$ is inscribed in $\triangle ABC$ with $X$ and $Y$ on $AC$, $W$ on $AB$, and $Z$ on $BC$. What is the side length of the square?", [("A", r"$\frac32$"), ("B", r"$\frac{60}{37}$"), ("C", r"$\frac{12}{7}$"), ("D", r"$\frac{23}{13}$"), ("E", "$2$")]),
+    22: (r"A player chooses one of the numbers $1$ through $4$. After the choice has been made, two regular four-sided tetrahedral dice are rolled, with the sides numbered $1$ through $4$. If the number chosen appears on the bottom of exactly one die, the player wins $\$1$. If it appears on the bottom of both dice, the player wins $\$2$. If it does not appear on the bottom of either die, the player loses $\$1$. What is the expected return to the player, in dollars, for one roll of the dice?", [("A", r"$-\frac18$"), ("B", r"$-\frac1{16}$"), ("C", "$0$"), ("D", r"$\frac1{16}$"), ("E", r"$\frac18$")]),
+    23: (r"A pyramid with a square base is cut by a plane that is parallel to its base and is $2$ units from the base. The surface area of the smaller pyramid that is cut from the top is half the surface area of the original pyramid. What is the altitude of the original pyramid?", [("A", "$2$"), ("B", r"$2+\sqrt2$"), ("C", r"$1+2\sqrt2$"), ("D", "$4$"), ("E", r"$4+2\sqrt2$")]),
+    24: (r"Let $n$ denote the smallest positive integer that is divisible by both $4$ and $9$, and whose base-$10$ representation consists only of $4$'s and $9$'s, with at least one of each. What are the last four digits of $n$?", [("A", "$4444$"), ("B", "$4494$"), ("C", "$4944$"), ("D", "$9444$"), ("E", "$9944$")]),
+    25: (r"How many pairs of positive integers $(a,b)$ are there such that $\gcd(a,b)=1$ and $\frac{a}{b}+\frac{14b}{9a}$ is an integer?", [("A", "$4$"), ("B", "$6$"), ("C", "$9$"), ("D", "$12$"), ("E", "infinitely many")]),
 }
 
 
 KEY_OVERRIDES = {
-    11: "Find the circumradius of the isosceles triangle using area and side lengths.",
-    12: "Compare current and past total ages, remembering that all three children age by N years.",
-    13: "Compute the overlap of two equal circles using sectors minus triangles.",
-    14: "Use the unchanged group size and percentage change to solve for the initial total.",
-    15: "Express all angles in terms of angle A and use the quadrilateral angle sum.",
-    16: "Use a weighted average to isolate the juniors' score.",
-    17: "Apply Viviani's theorem: distances to the sides of an equilateral triangle sum to the altitude.",
-    20: "Choose rows, choose columns, then match them with a permutation.",
+    21: "Use similar triangles: the width parallel to the hypotenuse decreases linearly with distance from the hypotenuse.",
+    22: "Compute expected value by separating exactly-one, both, and neither outcomes.",
+    23: "Surface areas of similar pyramids scale as the square of the linear scale factor.",
+    24: "Use divisibility by 4 and 9 together with smallest-number digit placement.",
+    25: "Use coprimality to force divisibility conditions on a and b, then check the finite candidates.",
 }
 
 
 SOL = {
-    11: [("Find the triangle's height", r"The isosceles triangle has equal sides $3$ and base $2$. Dropping an altitude to the base splits the base into two segments of length $1$. The height is $\sqrt{3^2-1^2}=\sqrt8=2\sqrt2$."), ("Find the triangle area", r"The area is $K=\frac12\cdot2\cdot2\sqrt2=2\sqrt2$."), ("Use the circumradius formula", r"For a triangle with side lengths $a,b,c$ and area $K$, the circumradius is $R=\frac{abc}{4K}$. Here $a,b,c=3,3,2$, so $R=\frac{18}{4(2\sqrt2)}=\frac{9}{4\sqrt2}$."), ("Compute the circle area", r"Thus $R^2=\frac{81}{32}$, and the circle's area is $\pi R^2=\frac{81\pi}{32}$."), ("Answer", r"The answer is $\boxed{\frac{81\pi}{32}}$." )],
-    12: [("Use current ages", r"Tom's current age is $T$, and the sum of his three children's current ages is also $T$."), ("Move N years back", r"$N$ years ago, Tom's age was $T-N$. Each of the three children was $N$ years younger, so the sum of their ages then was $T-3N$."), ("Translate the condition", r"The problem says $T-N=2(T-3N)$."), ("Solve for the ratio", r"Expanding gives $T-N=2T-6N$, so $T=5N$. Therefore $\frac{T}{N}=5$."), ("Answer", r"The answer is $\boxed{5}$." )],
-    13: [("Find the distance between centers", r"The centers are $(2,0)$ and $(0,2)$, so their distance is $\sqrt{(2-0)^2+(0-2)^2}=2\sqrt2$."), ("Understand the overlap", r"Each circle has radius $2$. In each circle, the chord of intersection subtends a $90^\circ$ central angle because $\cos\theta=\frac{d}{2r}=\frac{2\sqrt2}{4}=\frac{\sqrt2}{2}$."), ("Compute one circular segment", r"One segment is a $90^\circ$ sector of radius $2$ minus an isosceles right triangle with legs $2$. The sector area is $\frac14\pi(2^2)=\pi$, and the triangle area is $2$."), ("Double the segment", r"The overlap consists of two such segments, so its area is $2(\pi-2)$."), ("Answer", r"The answer is $\boxed{2(\pi-2)}$." )],
-    14: [("Let the group size be N", r"The total number of people does not change, because two girls leave and two boys arrive. Let the total be $N$."), ("Write the initial number of girls", r"Initially $40\%$ are girls, so the number of girls is $0.4N$."), ("Write the later number of girls", r"After two girls leave, the number of girls is $0.4N-2$. This is $30\%$ of the same total, so $0.4N-2=0.3N$."), ("Solve", r"Then $0.1N=2$, so $N=20$. The initial number of girls is $0.4\cdot20=8$."), ("Answer", r"The answer is $\boxed{8}$." )],
-    15: [("Use one variable", r"Let $\angle A=x$. Since $x=2\angle B=3\angle C=4\angle D$, we have $\angle B=\frac{x}{2}$, $\angle C=\frac{x}{3}$, and $\angle D=\frac{x}{4}$."), ("Use the quadrilateral angle sum", r"The angles of a quadrilateral add to $360^\circ$, so $x+\frac{x}{2}+\frac{x}{3}+\frac{x}{4}=360$."), ("Combine fractions", r"The coefficient is $1+\frac12+\frac13+\frac14=\frac{25}{12}$, so $\frac{25}{12}x=360$."), ("Solve and round", r"Thus $x=360\cdot\frac{12}{25}=172.8$, which rounds to $173$."), ("Answer", r"The answer is $\boxed{173}$." )],
-    16: [("Use a weighted average", r"Juniors make up $10\%$ of the class and seniors make up $90\%$. Let the junior score be $j$."), ("Set up the average", r"The class average is $84$, so $0.10j+0.90(83)=84$."), ("Solve", r"Since $0.90\cdot83=74.7$, we get $0.10j+74.7=84$, so $0.10j=9.3$ and $j=93$."), ("Check", r"A small group of juniors must score above $84$ to pull the senior average of $83$ up to $84$, so $93$ is reasonable."), ("Answer", r"The juniors each scored $\boxed{93}$." )],
-    17: [("Recall the key property", r"In an equilateral triangle, the sum of the perpendicular distances from any interior point to the three sides equals the triangle's altitude. This is Viviani's theorem."), ("Find the altitude", r"Here the three distances are $1$, $2$, and $3$, so the altitude is $1+2+3=6$."), ("Relate altitude to side length", r"For an equilateral triangle with side length $s$, the altitude is $\frac{\sqrt3}{2}s$. Therefore $\frac{\sqrt3}{2}s=6$."), ("Solve", r"So $s=\frac{12}{\sqrt3}=4\sqrt3$."), ("Answer", r"The answer is $\boxed{4\sqrt3}$." )],
-    20: [("Choose the rows", r"No two selected blocks can be in the same row, so first choose which $3$ of the $5$ rows will contain selected blocks. This can be done in $\binom53$ ways."), ("Choose the columns", r"Similarly, choose which $3$ of the $5$ columns will contain selected blocks. This can also be done in $\binom53$ ways."), ("Match rows to columns", r"Once the rows and columns are chosen, each selected row must be paired with a different selected column. There are $3!$ such matchings."), ("Compute", r"The number of combinations is $\binom53\binom53\cdot3!=10\cdot10\cdot6=600$."), ("Answer", r"The answer is $\boxed{600}$." )],
+    21: [("Use the hypotenuse as the base", r"The square has one side $XY$ on the hypotenuse $AC$, so it is natural to view the triangle with base $AC=5$. The altitude from the right angle to the hypotenuse is $\frac{3\cdot4}{5}=\frac{12}{5}$."), ("Let the square side be s", r"The side $WZ$ of the square is parallel to $AC$ and lies $s$ units away from $AC$. A cross-section parallel to the hypotenuse shrinks linearly as we move toward vertex $B$."), ("Set up similarity", r"At distance $s$ from the hypotenuse, the available width is $5\left(1-\frac{s}{12/5}\right)$. This width must equal the square side length $s$."), ("Solve", r"So $s=5\left(1-\frac{5s}{12}\right)=5-\frac{25s}{12}$. Thus $\frac{37s}{12}=5$, and $s=\frac{60}{37}$."), ("Answer", r"The side length is $\boxed{\frac{60}{37}}$." )],
+    22: [("Focus on the chosen number", r"The player chooses a number first, but by symmetry every chosen number has the same probabilities. For each die, the chance that the chosen number appears on the bottom is $\frac14$."), ("Compute exactly one match", r"Exactly one die shows the chosen number with probability $2\cdot\frac14\cdot\frac34=\frac38$. This pays $1$ dollar."), ("Compute two matches", r"Both dice show the chosen number with probability $\frac14\cdot\frac14=\frac1{16}$. This pays $2$ dollars."), ("Compute no matches", r"Neither die shows the chosen number with probability $\frac34\cdot\frac34=\frac9{16}$. This loses $1$ dollar."), ("Find expected value", r"The expected return is $1\cdot\frac38+2\cdot\frac1{16}-1\cdot\frac9{16}=\frac6{16}+\frac2{16}-\frac9{16}=-\frac1{16}$."), ("Answer", r"The expected return is $\boxed{-\frac1{16}}$ dollars." )],
+    23: [("Use similarity", r"The cutting plane is parallel to the base, so the small top pyramid is similar to the original pyramid."), ("Convert surface-area ratio to length ratio", r"The smaller pyramid has half the surface area of the original. Surface area scales as the square of the linear scale factor, so the linear scale factor is $\frac{1}{\sqrt2}$."), ("Relate altitudes", r"Let the original altitude be $H$. Since the plane is $2$ units above the base, the smaller top pyramid has altitude $H-2$. Therefore $\frac{H-2}{H}=\frac1{\sqrt2}$."), ("Solve for H", r"We have $H-2=\frac{H}{\sqrt2}$, so $H\left(1-\frac1{\sqrt2}\right)=2$. Hence $H=\frac{2}{1-1/\sqrt2}=4+2\sqrt2$."), ("Answer", r"The altitude is $\boxed{4+2\sqrt2}$." )],
+    24: [("Use divisibility by 4", r"A number is divisible by $4$ if its last two digits form a number divisible by $4$. With digits only $4$ and $9$, the possible endings are $44,49,94,99$, and only $44$ is divisible by $4$."), ("Use divisibility by 9", r"A number is divisible by $9$ when its digit sum is divisible by $9$. If the number has $t$ digits equal to $4$ and the rest equal to $9$, its digit sum is congruent to $4t$ modulo $9$. Thus $t$ must be a multiple of $9$."), ("Make the number as short as possible", r"The number must contain at least one $9$, so it cannot have exactly nine digits all equal to $4$. The shortest possibility has ten digits: nine $4$'s and one $9$."), ("Make the number as small as possible", r"To make the ten-digit number as small as possible, put the single $9$ as far to the right as possible, but the last two digits must be $44$. So the ending is $4944$."), ("Answer", r"The last four digits are $\boxed{4944}$." )],
+    25: [("Start from the integer condition", r"We need $\frac{a}{b}+\frac{14b}{9a}$ to be an integer, with $\gcd(a,b)=1$. Combining fractions gives $\frac{9a^2+14b^2}{9ab}$."), ("Use divisibility by b", r"For this fraction to be an integer, $b$ must divide the numerator. Modulo $b$, the numerator is congruent to $9a^2$. Since $\gcd(a,b)=1$, this forces $b\mid9$."), ("Use divisibility by a", r"Similarly, modulo $a$, the numerator is congruent to $14b^2$. Since $\gcd(a,b)=1$, this forces $a\mid14$."), ("Check finite candidates", r"Thus $a\in\{1,2,7,14\}$ and $b\in\{1,3,9\}$, with $\gcd(a,b)=1$. Checking these finite possibilities in the original expression leaves four pairs: $(1,9),(2,9),(7,1),(14,1)$."), ("Answer", r"There are $\boxed{4}$ pairs." )],
 }
 
 
@@ -240,7 +225,7 @@ def main():
         + "- Commit hash: pending\n"
         + "- Pushed: pending\n"
         + f"- Next batch should start from: {NEXT_START}\n"
-        + "- Review notes: Skipped Problems 18 and 19 because they require diagrams.\n",
+        + "- Review notes: Problem 25 statement corrected from OCR using AoPS reference.\n",
         encoding="utf-8",
     )
 
@@ -264,7 +249,8 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批跳过 2007 AMC 10B Problems 18, 19：题面依赖图形。\n"
+        + "本批无跳过题；Problem 25 已根据 AoPS 修正 OCR 漏掉的分数线。\n"
+        + "2007 AMC 10B 已完成可可靠生成部分。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题；遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 teaching steps 后 commit/push。\n",
         encoding="utf-8",

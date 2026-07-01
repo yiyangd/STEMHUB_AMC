@@ -572,3 +572,19 @@
 - Pushed: pending
 - Next batch should start from: 2007 AMC 10B Problem 21
 - Review notes: Skipped Problems 18 and 19 because they require diagrams.
+
+## Batch 37: 2007 AMC 10B Problems 21-25
+
+- Start time: 2026-06-30T18:38:05-07:00
+- End time: 2026-06-30T18:38:06-07:00
+- Processed contest: AMC 10
+- Processed range: 2007 AMC 10B Problems 21-25
+- Generated count: 5
+- Updated existing count: 0
+- Skipped count: 0
+- Skipped reasons: none
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2008 AMC 10A Problem 1
+- Review notes: Problem 25 statement corrected from OCR using AoPS reference.
