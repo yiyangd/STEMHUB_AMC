@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 175
+BATCH_NUMBER = 176
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2006_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2007_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
 SKIPPED = []
-BATCH_LABEL = "2006 AMC 12B Problems 21-25"
-NEXT_START = "2007 AMC 12A Problem 1"
+BATCH_LABEL = "2007 AMC 12A Problems 1-10"
+NEXT_START = "2007 AMC 12A Problem 11"
 
-ANS={21:("C",r"8\sqrt{1003}"),22:("B","492"),23:("E","127"),24:("C",r"\frac{\pi^2}{6}"),25:("B","324")}
+ANS={1:("C","10"),2:("D","2"),3:("A","4"),4:("A","7"),5:("D","37,500"),6:("D","50"),7:("C","c"),8:("C","30"),9:("B",r"\frac34"),10:("A","8.64")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1376,6 +1376,44 @@ SOL.update({
 24:[("Solve the boundary first",r"The boundary is \[\sin^2x-\sin x\sin y+\sin^2y=\frac34.\] Treating this as a quadratic in \(\sin x\) gives \[\sin x=\frac12\sin y\pm\frac{\sqrt3}{2}\cos y.\]"),("Recognize angle formulas",r"The right side is exactly \(\sin(y\pm\frac{\pi}{3})\). So the boundary in the square is made from the lines \[x=y+\frac{\pi}{3},\quad x=y-\frac{\pi}{3},\quad x=\frac{2\pi}{3}-y,\] restricted to \(0\le x,y\le\frac{\pi}{2}\)."),("Choose the correct side",r"Testing a point such as \((\frac{\pi}{6},\frac{\pi}{6})\) shows it satisfies the inequality. Thus the desired region is the main pentagonal region left after cutting off three corner triangles from the square."),("Compute from the square",r"The full square has area \[\left(\frac{\pi}{2}\right)^2=\frac{\pi^2}{4}.\] The removed pieces are two right triangles with legs \(\frac{\pi}{6}\), and one right triangle with legs \(\frac{\pi}{3}\)."),("Subtract",r"The desired area is \[\frac{\pi^2}{4}-2\cdot\frac12\left(\frac{\pi}{6}\right)^2-\frac12\left(\frac{\pi}{3}\right)^2=\pi^2\left(\frac14-\frac1{36}-\frac1{18}\right)=\frac{\pi^2}{6}.\]"),("Conclude",r"The area is \(\boxed{\frac{\pi^2}{6}}\)."),],
 25:[("Notice the Euclidean-algorithm behavior",r"The recurrence \(a_{n+2}=|a_{n+1}-a_n|\) repeatedly replaces two numbers by their difference. This preserves the greatest common divisor of consecutive terms."),("Use the gcd condition",r"Since \(a_{2006}=1\), the original pair \((999,a_2)\) must have gcd \(1\). If the gcd were larger than \(1\), every term would be divisible by that gcd and could never equal \(1\)."),("Track the phase",r"When the gcd is \(1\), the sequence eventually reaches the repeating cycle \(1,1,0,1,1,0,\ldots\). The position of this cycle depends on the parity of \(a_2\). Since \(999\) is odd and \(2006\equiv2\pmod3\), the term \(a_{2006}\) is \(1\) exactly when \(a_2\) is odd."),("Count odd numbers coprime to 999",r"We need odd \(a_2\) with \(0\le a_2<999\) and \(\gcd(a_2,999)=1\). Since \[999=3^3\cdot37,\] \[\varphi(999)=999\left(1-\frac13\right)\left(1-\frac1{37}\right)=648.\]"),("Take half by parity",r"Because \(999\) is odd, the coprime residues pair as \(t\) and \(999-t\), one odd and one even. Therefore exactly half of the \(648\) coprime values are odd."),("Conclude",r"The number of possible values is \[\frac{648}{2}=324.\] The answer is \(\boxed{324}\)."),],
 })
+OV.update({
+1:(r"One ticket to a show costs \(\$20\) at full price. Susan buys \(4\) tickets using a coupon that gives her a \(25\%\) discount. Pam buys \(5\) tickets using a coupon that gives her a \(30\%\) discount. How many more dollars does Pam pay than Susan?",[("A","2"),("B","5"),("C","10"),("D","15"),("E","20")]),
+2:(r"An aquarium has a rectangular base that measures \(100\) cm by \(40\) cm and has a height of \(50\) cm. It is filled with water to a height of \(40\) cm. A brick with a rectangular base that measures \(40\) cm by \(20\) cm and a height of \(10\) cm is placed in the aquarium. By how many centimeters does the water rise?",[("A","0.5"),("B","1"),("C","1.5"),("D","2"),("E","2.5")]),
+3:(r"The larger of two consecutive odd integers is three times the smaller. What is their sum?",[("A","4"),("B","8"),("C","12"),("D","16"),("E","20")]),
+4:(r"Kate rode her bicycle for \(30\) minutes at a speed of \(16\) mph, then walked for \(90\) minutes at a speed of \(4\) mph. What was her overall average speed in miles per hour?",[("A","7"),("B","9"),("C","10"),("D","12"),("E","14")]),
+5:(r"Last year Mr. John Q. Public received an inheritance. He paid \(20\%\) in federal taxes on the inheritance, and paid \(10\%\) of what he had left in state taxes. He paid a total of \(\$10{,}500\) for both taxes. How many dollars was the inheritance?",[("A","30,000"),("B","32,500"),("C","35,000"),("D","37,500"),("E","40,000")]),
+6:(r"Triangles \(ABC\) and \(ADC\) are isosceles with \(AB=BC\) and \(AD=DC\). Point \(D\) is inside \(\triangle ABC\), \(\angle ABC=40^\circ\), and \(\angle ADC=140^\circ\). What is the degree measure of \(\angle BAD\)?",[("A","20"),("B","30"),("C","40"),("D","50"),("E","60")]),
+7:(r"Let \(a,b,c,d,\) and \(e\) be five consecutive terms in an arithmetic sequence, and suppose that \(a+b+c+d+e=30\). Which of the following can be found?",[("A",r"\(a\)"),("B",r"\(b\)"),("C",r"\(c\)"),("D",r"\(d\)"),("E",r"\(e\)")]),
+8:(r"A star-polygon is drawn on a clock face by drawing a chord from each number to the fifth number counted clockwise from that number. That is, chords are drawn from \(12\) to \(5\), from \(5\) to \(10\), from \(10\) to \(3\), and so on, ending back at \(12\). What is the degree measure of the angle at each vertex in the star-polygon?",[("A","20"),("B","24"),("C","30"),("D","36"),("E","60")]),
+9:(r"Yan is somewhere between his home and the stadium. To get to the stadium he can walk directly to the stadium, or else he can walk home and then ride his bicycle to the stadium. He rides \(7\) times as fast as he walks, and both choices require the same amount of time. What is the ratio of Yan's distance from his home to his distance from the stadium?",[("A",r"\(\frac23\)"),("B",r"\(\frac34\)"),("C",r"\(\frac45\)"),("D",r"\(\frac56\)"),("E",r"\(\frac67\)")]),
+10:(r"A triangle with side lengths in the ratio \(3:4:5\) is inscribed in a circle of radius \(3\). What is the area of the triangle?",[("A","8.64"),("B","12"),("C",r"\(5\pi\)"),("D","17.28"),("E","18")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Compare discounted totals for two ticket purchases.",
+2:"Use displaced volume divided by aquarium base area.",
+3:"Translate consecutive odd integers into \(x\) and \(x+2\).",
+4:"Compute total distance and divide by total time.",
+5:"Combine sequential federal and state tax percentages.",
+6:"Use base angles in two isosceles triangles.",
+7:"The middle term of five arithmetic-sequence terms is the average.",
+8:"Use an inscribed angle on the clock circle.",
+9:"Set equal travel times using walking and biking speeds.",
+10:"Use the circumradius of a \(3\)-\(4\)-\(5\) right triangle.",
+})
+
+SOL.update({
+1:[("Find Susan's discounted price",r"A \(25\%\) discount means Susan pays \(75\%\) of full price. Four tickets cost \[4\cdot20\cdot0.75=60.\]"),("Find Pam's discounted price",r"A \(30\%\) discount means Pam pays \(70\%\) of full price. Five tickets cost \[5\cdot20\cdot0.70=70.\]"),("Compare the totals",r"Pam pays \(\$70\), while Susan pays \(\$60\)."),("Subtract",r"The difference is \[70-60=10.\]"),("Conclude",r"Pam pays \(\boxed{10}\) more dollars."),],
+2:[("Find the brick volume",r"The brick displaces water equal to its volume, since it is placed into the water. Its volume is \[40\cdot20\cdot10=8000\text{ cm}^3.\]"),("Find the aquarium base area",r"The aquarium base area is \[100\cdot40=4000\text{ cm}^2.\]"),("Convert volume to height rise",r"The rise in water level equals displaced volume divided by base area: \[\frac{8000}{4000}=2.\]"),("Check that the brick is submerged",r"The water was already \(40\) cm high, and the brick is only \(10\) cm tall, so the brick is fully submerged."),("Conclude",r"The water rises \(\boxed{2}\) cm."),],
+3:[("Represent the integers",r"Consecutive odd integers differ by \(2\). Let the smaller be \(x\), so the larger is \(x+2\)."),("Use the condition",r"The larger is three times the smaller, so \[x+2=3x.\]"),("Solve",r"This gives \(2=2x\), hence \(x=1\). The larger integer is \(3\)."),("Find the sum",r"Their sum is \[1+3=4.\]"),("Conclude",r"The answer is \(\boxed{4}\)."),],
+4:[("Convert times to hours",r"Thirty minutes is \(\frac12\) hour, and ninety minutes is \(\frac32\) hours."),("Compute biking distance",r"At \(16\) mph for \(\frac12\) hour, Kate bikes \[16\cdot\frac12=8\] miles."),("Compute walking distance",r"At \(4\) mph for \(\frac32\) hours, she walks \[4\cdot\frac32=6\] miles."),("Find average speed",r"Her total distance is \(14\) miles and her total time is \(2\) hours, so her average speed is \[\frac{14}{2}=7.\]"),("Conclude",r"The overall average speed is \(\boxed{7}\) mph."),],
+5:[("Let the inheritance be H",r"Let the inheritance be \(H\) dollars. The federal tax is \(20\%\), or \(0.20H\)."),("Compute what remains",r"After federal tax, \(80\%\) of the inheritance remains, so the remaining amount is \(0.80H\)."),("Compute state tax",r"The state tax is \(10\%\) of that remaining amount: \[0.10(0.80H)=0.08H.\]"),("Use the total tax",r"The total tax is \[0.20H+0.08H=0.28H.\] This equals \(10500\), so \[0.28H=10500.\]"),("Solve",r"\[H=\frac{10500}{0.28}=37500.\]"),("Conclude",r"The inheritance was \(\boxed{37{,}500}\) dollars."),],
+6:[("Find the base angles of ABC",r"Since \(AB=BC\), triangle \(ABC\) is isosceles with vertex angle \(\angle ABC=40^\circ\). Therefore the base angles are \[\frac{180^\circ-40^\circ}{2}=70^\circ.\] So \(\angle BAC=70^\circ\)."),("Find the base angles of ADC",r"Since \(AD=DC\), triangle \(ADC\) is isosceles with vertex angle \(\angle ADC=140^\circ\). Therefore \[\angle DAC=\angle ACD=\frac{180^\circ-140^\circ}{2}=20^\circ.\]"),("Use D inside ABC",r"Because \(D\) is inside \(\triangle ABC\), ray \(AD\) lies between \(AB\) and \(AC\). Thus \[\angle BAC=\angle BAD+\angle DAC.\]"),("Subtract",r"\[\angle BAD=70^\circ-20^\circ=50^\circ.\]"),("Conclude",r"The angle measure is \(\boxed{50^\circ}\)."),],
+7:[("Use the structure of five consecutive terms",r"In an arithmetic sequence, five consecutive terms are symmetric around the middle term \(c\). We can write them as \[c-2r,\ c-r,\ c,\ c+r,\ c+2r.\]"),("Add the terms",r"The terms involving \(r\) cancel, so the sum is \[5c.\]"),("Use the given sum",r"Since \(a+b+c+d+e=30\), we have \[5c=30.\]"),("Solve for the middle term",r"Thus \(c=6\). The other terms depend on the common difference \(r\), which is not given."),("Conclude",r"The term that can be found is \(\boxed{c}\)."),],
+8:[("Focus on one vertex",r"By symmetry, every vertex angle is the same. Look at the vertex at \(12\). The two chords meeting there connect \(12\) to \(5\) and \(12\) to \(7\)."),("Find the intercepted arc",r"The inscribed angle at \(12\) intercepts the arc from \(5\) to \(7\) that does not contain \(12\). This arc covers \(2\) hour marks."),("Convert clock marks to degrees",r"Each hour mark on a clock is \(30^\circ\), so the intercepted arc measures \[2\cdot30^\circ=60^\circ.\]"),("Use the inscribed angle theorem",r"An inscribed angle is half the measure of its intercepted arc. Therefore the vertex angle is \[\frac{60^\circ}{2}=30^\circ.\]"),("Conclude",r"The angle at each vertex is \(\boxed{30^\circ}\)."),],
+9:[("Name the distances",r"Let \(H\) be Yan's distance from home and \(S\) be his distance from the stadium. His walking speed is \(v\), so his biking speed is \(7v\)."),("Write the direct walking time",r"If Yan walks directly to the stadium, the time is \[\frac{S}{v}.\]"),("Write the home-then-bike time",r"If he walks home first, that takes \(\frac{H}{v}\). Then he bikes the full home-to-stadium distance \(H+S\), taking \(\frac{H+S}{7v}\)."),("Set times equal",r"The times are equal, so \[\frac{S}{v}=\frac{H}{v}+\frac{H+S}{7v}.\] Multiplying by \(7v\) gives \[7S=7H+H+S.\]"),("Solve the ratio",r"Thus \(6S=8H\), so \[\frac{H}{S}=\frac{6}{8}=\frac34.\]"),("Conclude",r"The ratio is \(\boxed{\frac34}\)."),],
+10:[("Recognize the triangle type",r"A triangle with side ratio \(3:4:5\) is a right triangle, with the side corresponding to \(5\) as the hypotenuse."),("Use the circumradius",r"For a right triangle, the hypotenuse is the diameter of the circumcircle. The circle radius is \(3\), so the hypotenuse is \(6\)."),("Find the scale factor",r"The ratio hypotenuse is \(5\), but the actual hypotenuse is \(6\), so the scale factor is \(\frac65\)."),("Find the legs",r"The legs are \[3\cdot\frac65=\frac{18}{5},\qquad 4\cdot\frac65=\frac{24}{5}.\]"),("Compute area",r"The area is \[\frac12\cdot\frac{18}{5}\cdot\frac{24}{5}=\frac{216}{25}=8.64.\]"),("Conclude",r"The area is \(\boxed{8.64}\)."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -1482,7 +1520,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2006" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2007" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -1571,7 +1609,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2006 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2007 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
