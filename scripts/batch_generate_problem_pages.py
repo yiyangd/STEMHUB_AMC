@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 196
+BATCH_NUMBER = 197
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {16,17,18,19,20}
+TARGET_NUMBERS = {21,22,23,24,25}
 SKIPPED = []
-BATCH_LABEL = "2010 AMC 12A Problems 16-20"
-NEXT_START = "2010 AMC 12A Problem 21"
+BATCH_LABEL = "2010 AMC 12A Problems 21-25"
+NEXT_START = "2010 AMC 12B Problem 1"
 
-ANS={16:("B",r"\frac{37}{56}"),17:("E","6"),18:("D","1698"),19:("A","45"),20:("C","8")}
+ANS={21:("A","4"),22:("A","49"),23:("A","12"),24:("B","12"),25:("C","568")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2092,6 +2092,35 @@ SOL.update({
 19:[("Write the stopping event",r"To stop after exactly $n$ marbles, Isabella must draw white marbles from boxes $1$ through $n-1$, and then draw a red marble from box $n$."),("Compute each probability",r"In box $k$, there are $k$ white marbles and $1$ red marble, so the probability of drawing white is \[\frac{k}{k+1}\] and the probability of drawing red is \[\frac1{k+1}.\]"),("Use telescoping",r"Thus \[P(n)=\left(\frac12\cdot\frac23\cdot\frac34\cdots\frac{n-1}{n}\right)\cdot\frac1{n+1}.\] The product telescopes to $\frac1n$, so \[P(n)=\frac1{n(n+1)}.\]"),("Apply the inequality",r"We need \[\frac1{n(n+1)}<\frac1{2010},\] which is equivalent to \[n(n+1)>2010.\]"),("Find the smallest n",r"Since \[44\cdot45=1980<2010,\] but \[45\cdot46=2070>2010,\] the smallest possible $n$ is $45$."),("Conclude",r"The answer is $\boxed{45}$."),
 ],
 20:[("Write the arithmetic sequences",r"Let the common differences be $r$ and $s$, where $1<a_2\le b_2$ implies $1\le r\le s$. Then \[a_n=1+(n-1)r,\qquad b_n=1+(n-1)s.\]"),("Introduce m=n-1",r"Let $m=n-1$. The condition $a_nb_n=2010$ means that $2010$ must be written as a product of two factors, both congruent to $1$ modulo $m$."),("Use factor pairs of 2010",r"List the factor pairs with smaller factor first: \[(2,1005),(3,670),(5,402),(6,335),(10,201),(15,134),(30,67).\] For each pair $(A,B)$, the possible $m$ must divide both $A-1$ and $B-1$."),("Find the largest possible m",r"Compute \[\gcd(A-1,B-1)\] for these pairs. The largest value occurs for \[(15,134),\] where \[\gcd(14,133)=7.\] The other pairs give only smaller gcds."),("Build the sequences",r"With $m=7$, we have $n=8$. The factors are \[15=1+7\cdot2,\qquad 134=1+7\cdot19,\] so valid arithmetic sequences exist."),("Conclude",r"The largest possible value of $n$ is \[\boxed{8}.\]"),
+],
+})
+
+OV.update({
+21:(r"The graph of \[y=x^6-10x^5+29x^4-4x^3+ax^2\] lies above the line \[y=bx+c\] except at three values of $x$, where the graph and the line intersect. What is the largest of those values?",[("A","4"),("B","5"),("C","6"),("D","7"),("E","8")]),
+22:(r"What is the minimum value of \[f(x)=|x-1|+|2x-1|+|3x-1|+\cdots+|119x-1|?\]",[("A","49"),("B","50"),("C","51"),("D","52"),("E","53")]),
+23:(r"The number obtained from the last two nonzero digits of $90!$ is equal to $n$. What is $n$?",[("A","12"),("B","32"),("C","48"),("D","52"),("E","68")]),
+24:(r"Let \[f(x)=\log_{10}(\sin(\pi x)\cdot\sin(2\pi x)\cdot\sin(3\pi x)\cdots\sin(8\pi x)).\] The intersection of the domain of $f(x)$ with the interval $[0,1]$ is a union of $n$ disjoint open intervals. What is $n$?",[("A","2"),("B","12"),("C","18"),("D","22"),("E","36")]),
+25:(r"Two quadrilaterals are considered the same if one can be obtained from the other by a rotation and a translation. How many different convex cyclic quadrilaterals are there with integer sides and perimeter equal to $32$?",[("A","560"),("B","564"),("C","568"),("D","1498"),("E","2255")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Use the fact that touching a line from above creates double roots.",
+22:"Interpret the absolute-value sum as a weighted median problem.",
+23:"Remove factors causing trailing zeros and work modulo 25 and modulo 4.",
+24:"Count sign intervals of a product of sine functions.",
+25:"Count cyclic side-length quadruples using Burnside's lemma for rotations.",
+})
+
+SOL.update({
+21:[("Convert the geometry of the graph into algebra",r"If the polynomial graph lies above the line except where it intersects, then the difference \[x^6-10x^5+29x^4-4x^3+ax^2-(bx+c)\] is always nonnegative and has three real zeros. Each zero must be a double root; otherwise the sign would change."),("Write the difference as a square",r"Let the three intersection $x$-values be $r,s,t$. Then the difference has the form \[(x-r)^2(x-s)^2(x-t)^2.\] This is \[(x^3-S_1x^2+S_2x-S_3)^2,\] where $S_1=r+s+t$, $S_2=rs+rt+st$, and $S_3=rst$."),("Compare the x^5 and x^4 coefficients",r"The coefficient of $x^5$ is $-2S_1=-10$, so $S_1=5$. The coefficient of $x^4$ is $S_1^2+2S_2=29$, so \[25+2S_2=29,\] giving $S_2=2$."),("Compare the x^3 coefficient",r"The coefficient of $x^3$ is \[-2S_3-2S_1S_2.\] Since this equals $-4$, we get \[-2S_3-20=-4,\] so $S_3=-8$."),("Find the three roots",r"The numbers $r,s,t$ are roots of \[z^3-5z^2+2z+8=0.\] Factoring gives \[(z-4)(z-2)(z+1)=0.\] Thus the three intersection values are $-1,2,4$."),("Conclude",r"The largest of these values is $\boxed{4}$."),
+],
+22:[("Rewrite each term conceptually",r"The term $|kx-1|$ can be viewed as $k|x-\frac1k|$. So $f(x)$ is a weighted sum of distances from the points \[\frac11,\frac12,\ldots,\frac1{119},\] with weights $1,2,\ldots,119$."),("Use the weighted median idea",r"A weighted sum of absolute distances is minimized at a weighted median. The total weight is \[1+2+\cdots+119=\frac{119\cdot120}{2}=7140,\] so half the total weight is $3570$."),("Find the balancing point",r"We have \[1+2+\cdots+84=\frac{84\cdot85}{2}=3570.\] Therefore every $x$ between $\frac1{85}$ and $\frac1{84}$ minimizes the function."),("Evaluate at a convenient minimizer",r"Choose $x=\frac1{84}$. Then \[f(x)=\sum_{k=1}^{84}\left(1-\frac{k}{84}\right)+\sum_{k=85}^{119}\left(\frac{k}{84}-1\right).\]"),("Compute the two sums",r"The first sum is \[84-\frac{3570}{84}=84-42.5=41.5.\] The second sum is \[\frac{3570}{84}-35=42.5-35=7.5.\]"),("Conclude",r"The minimum value is \[41.5+7.5=49,\] so the answer is $\boxed{49}$."),
+],
+23:[("Separate trailing zeros from the meaningful digits",r"Trailing zeros come from pairs of factors $2\cdot5$. In $90!$, there are \[\left\lfloor\frac{90}{5}\right\rfloor+\left\lfloor\frac{90}{25}\right\rfloor=18+3=21\] factors of $5$, and plenty of factors of $2$. Remove $21$ pairs of $2$ and $5$."),("Work modulo 25 first",r"After removing the factors of $5$, the part of $90!$ relatively prime to $5$ is congruent to $1$ modulo $25$. The remaining factors that came from multiples of $5$, after dividing by $5^{21}$, are congruent to $-1$ modulo $25$."),("Account for removed powers of 2",r"Removing the $21$ pairs also removed $2^{21}$. Since \[2^{21}\equiv2\pmod{25},\] its inverse modulo $25$ is $13$. Therefore the last two nonzero digits $N$ satisfy \[N\equiv 13\cdot1\cdot(-1)\equiv12\pmod{25}.\]"),("Use divisibility by 4",r"After all factors of $5$ are removed, many factors of $2$ remain, so the last two nonzero digits must be divisible by $4$."),("Combine the conditions",r"The two-digit numbers congruent to $12$ modulo $25$ are \[12,37,62,87.\] Of these, only $12$ is divisible by $4$."),("Conclude",r"The last two nonzero digits are $\boxed{12}$."),
+],
+24:[("Translate the domain condition",r"The logarithm is defined exactly when \[\sin(\pi x)\sin(2\pi x)\cdots\sin(8\pi x)>0.\] So we need to count intervals in $[0,1]$ where this product is positive."),("Use symmetry",r"Because \[\sin(n\pi(1-x))=(-1)^{n+1}\sin(n\pi x),\] the product has the same sign at $x$ and $1-x$. Therefore it is enough to count positive intervals in $(0,\frac12)$ and then double the result."),("List the zeros in the first half",r"In $(0,\frac12)$, the product is zero at fractions $\frac{k}{m}$ with $2\le m\le8$. The distinct zeros are \[\frac18,\frac17,\frac16,\frac15,\frac14,\frac27,\frac13,\frac38,\frac25,\frac37.\] These split $(0,\frac12)$ into $11$ smaller intervals."),("Know when the sign changes",r"At most zeros exactly one sine factor changes sign, so the whole product changes sign. The exceptions are \[\frac14=\frac28\quad\text{and}\quad \frac13=\frac26,\] where two factors vanish and the product does not change sign."),("Count positive intervals in the first half",r"Near $x=0$, all sine factors are positive. Moving across the zeros and changing sign except at $\frac14$ and $\frac13$ gives $6$ positive intervals in $(0,\frac12)$."),("Double by symmetry",r"The interval $(\frac12,1)$ contributes another $6$ positive intervals. Hence the total number is \[6+6=12.\] The answer is $\boxed{12}$."),
+],
+25:[("Reduce the geometry to side lengths",r"A convex cyclic quadrilateral is determined by its side lengths together with their cyclic order. The side lengths must be positive integers summing to $32$, and the largest side must be less than the sum of the other three sides. This is equivalent to requiring the largest side to be at most $15$."),("Count valid ordered side quadruples",r"The number of positive ordered quadruples with sum $32$ is \[\binom{31}{3}=4495.\] If a specified side is at least $16$, subtract $16$ from it; the remaining count is \[\binom{16}{3}=560.\] There are $4$ choices for the large side, so the number of valid ordered quadruples is \[4495-4\cdot560=2255.\]"),("Use Burnside for rotations",r"The problem identifies quadrilaterals that differ by rotation, so we average over the $4$ cyclic rotations of the side sequence."),("Count fixed sequences",r"The identity rotation fixes all $2255$ valid sequences. A $90^\circ$ or $270^\circ$ rotation fixes only $(8,8,8,8)$, giving $1$ each. A $180^\circ$ rotation fixes sequences of the form $(a,b,a,b)$ with $2a+2b=32$, so $a+b=16$, giving $15$ positive choices."),("Average",r"By Burnside's Lemma, the number of rotation classes is \[\frac{2255+1+15+1}{4}=\frac{2272}{4}=568.\]"),("Conclude",r"The number of quadrilaterals is $\boxed{568}$."),
 ],
 })
 
