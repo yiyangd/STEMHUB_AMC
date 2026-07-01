@@ -1,22 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 334
-- Latest batch: 44 (2009 AMC 10A Problems 1-10)
-- Latest new generated count: 10
+- Total manifest entries: 342
+- Latest batch: 45 (2009 AMC 10A Problems 11-14, 16-19)
+- Latest new generated count: 8
 - Latest updated existing count: 0
-- Latest skipped count: 0
+- Latest skipped count: 2
 - MathJax validation: passed
 - Answer verification source: AoPS 2009 AMC 10A Answer Key
 
 ## Latest Batch Pages
 
-- `2009 AMC 10A Problem 1` -> `amc10/problems/2009-amc-10a-problem-1/`
-- `2009 AMC 10A Problem 2` -> `amc10/problems/2009-amc-10a-problem-2/`
-- `2009 AMC 10A Problem 3` -> `amc10/problems/2009-amc-10a-problem-3/`
-- `2009 AMC 10A Problem 4` -> `amc10/problems/2009-amc-10a-problem-4/`
-- `2009 AMC 10A Problem 5` -> `amc10/problems/2009-amc-10a-problem-5/`
-- `2009 AMC 10A Problem 6` -> `amc10/problems/2009-amc-10a-problem-6/`
-- `2009 AMC 10A Problem 7` -> `amc10/problems/2009-amc-10a-problem-7/`
-- `2009 AMC 10A Problem 8` -> `amc10/problems/2009-amc-10a-problem-8/`
-- `2009 AMC 10A Problem 9` -> `amc10/problems/2009-amc-10a-problem-9/`
-- `2009 AMC 10A Problem 10` -> `amc10/problems/2009-amc-10a-problem-10/`
+- `2009 AMC 10A Problem 11` -> `amc10/problems/2009-amc-10a-problem-11/`
+- `2009 AMC 10A Problem 12` -> `amc10/problems/2009-amc-10a-problem-12/`
+- `2009 AMC 10A Problem 13` -> `amc10/problems/2009-amc-10a-problem-13/`
+- `2009 AMC 10A Problem 14` -> `amc10/problems/2009-amc-10a-problem-14/`
+- `2009 AMC 10A Problem 16` -> `amc10/problems/2009-amc-10a-problem-16/`
+- `2009 AMC 10A Problem 17` -> `amc10/problems/2009-amc-10a-problem-17/`
+- `2009 AMC 10A Problem 18` -> `amc10/problems/2009-amc-10a-problem-18/`
+- `2009 AMC 10A Problem 19` -> `amc10/problems/2009-amc-10a-problem-19/`
+
+## Skipped in latest batch
+
+- 2009 AMC 10A Problem 15 skipped: OCR/diagram sequence text is incomplete
+- 2009 AMC 10A Problem 20 skipped: OCR appears to contain only displaced choices/figure labels

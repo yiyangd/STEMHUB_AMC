@@ -8,42 +8,41 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 44
+BATCH_NUMBER = 45
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2009_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-SKIPPED = []
-BATCH_LABEL = "2009 AMC 10A Problems 1-10"
-NEXT_START = "2009 AMC 10A Problem 11"
+TARGET_NUMBERS = {11, 12, 13, 14, 16, 17, 18, 19}
+SKIPPED = [
+    "2009 AMC 10A Problem 15 skipped: OCR/diagram sequence text is incomplete",
+    "2009 AMC 10A Problem 20 skipped: OCR appears to contain only displaced choices/figure labels",
+]
+BATCH_LABEL = "2009 AMC 10A Problems 11-14, 16-19"
+NEXT_START = "2009 AMC 10A Problem 21"
 
-ANS = {1:("E","11"),2:("A","15"),3:("C",r"\frac{5}{3}"),4:("A",r"\frac{120}{11}"),5:("E","81"),6:("A",r"\frac{1}{2}"),7:("C",r"\frac{10}{3}"),8:("B","36"),9:("B","41"),10:("B",r"7\sqrt3")}
+ANS={11:("D","125"),12:("C","13"),13:("E",r"P^{2n}Q^m"),14:("A","3"),16:("D","18"),17:("C",r"\frac{125}{12}"),18:("D","51%"),19:("B","8")}
 
-OV = {
-  1:(r"One can holds $12$ ounces of soda. What is the minimum number of cans needed to provide a gallon, or $128$ ounces, of soda?",[("A","$7$"),("B","$8$"),("C","$9$"),("D","$10$"),("E","$11$")]),
-  2:(r"Four coins are picked out of a piggy bank that contains pennies, nickels, dimes, and quarters. Which of the following could not be the total value of the four coins, in cents?",[("A","$15$"),("B","$25$"),("C","$35$"),("D","$45$"),("E","$55$")]),
-  3:(r"Which of the following is equal to $1+\frac{1}{1+\frac{1}{1+1}}$?",[("A",r"$\frac54$"),("B",r"$\frac32$"),("C",r"$\frac53$"),("D","$2$"),("E","$3$")]),
-  4:(r"Eric plans to compete in a triathlon. He can average $2$ miles per hour in the $\frac14$-mile swim and $6$ miles per hour in the $3$-mile run. His goal is to finish the triathlon in $2$ hours. To accomplish his goal, what must his average speed, in miles per hour, be for the $15$-mile bicycle ride?",[("A",r"$\frac{120}{11}$"),("B","$11$"),("C",r"$\frac{56}{5}$"),("D",r"$\frac{45}{4}$"),("E","$12$")]),
-  5:(r"What is the sum of the digits of the square of $111{,}111{,}111$?",[("A","$18$"),("B","$27$"),("C","$45$"),("D","$63$"),("E","$81$")]),
-  6:(r"A circle of radius $2$ is inscribed in a semicircle. The area inside the semicircle but outside the circle is shaded. What fraction of the semicircle's area is shaded?",[("A",r"$\frac12$"),("B",r"$\frac{\pi}{6}$"),("C",r"$\frac{2}{\pi}$"),("D",r"$\frac23$"),("E",r"$\frac{3}{\pi}$")]),
-  7:(r"A carton contains milk that is $2\%$ fat, an amount that is $40\%$ less fat than the amount contained in a carton of whole milk. What is the percentage of fat in whole milk?",[("A",r"$\frac{12}{5}$"),("B","$3$"),("C",r"$\frac{10}{3}$"),("D",r"$\frac{38}{5}$"),("E",r"$\frac{42}{5}$")]),
-  8:(r"Three generations of the Wen family are going to the movies, two from each generation. The two members of the youngest generation receive a $50\%$ discount as children. The two members of the oldest generation receive a $25\%$ discount as senior citizens. The two members of the middle generation receive no discount. Grandfather Wen, whose senior ticket costs $\$6.00$, is paying for everyone. How many dollars must he pay?",[("A","$34$"),("B","$36$"),("C","$42$"),("D","$46$"),("E","$48$")]),
-  9:(r"Positive integers $a$, $b$, and $2009$, with $a<b<2009$, form a geometric sequence with an integer ratio. What is $a$?",[("A","$7$"),("B","$41$"),("C","$49$"),("D","$289$"),("E","$2009$")]),
-  10:(r"Triangle $ABC$ has a right angle at $B$. Point $D$ is the foot of the altitude from $B$ to $AC$, $AD=3$, and $DC=4$. What is the area of $\triangle ABC$?",[("A",r"$4\sqrt3$"),("B",r"$7\sqrt3$"),("C","$21$"),("D",r"$14\sqrt3$"),("E","$42$")]),
+OV={
+11:(r"One dimension of a cube is increased by $1$, another is decreased by $1$, and the third is left unchanged. The volume of the new rectangular solid is $5$ less than that of the cube. What was the volume of the cube?",[("A","$8$"),("B","$27$"),("C","$64$"),("D","$125$"),("E","$216$")]),
+12:(r"In quadrilateral $ABCD$, $AB=5$, $BC=17$, $CD=5$, $DA=9$, and $BD$ is an integer. What is $BD$?",[("A","$11$"),("B","$12$"),("C","$13$"),("D","$14$"),("E","$15$")]),
+13:(r"Suppose that $P=2^m$ and $Q=3^n$. Which of the following is equal to $12^{mn}$ for every pair of integers $(m,n)$?",[("A",r"$P^2Q$"),("B",r"$P^nQ^m$"),("C",r"$P^nQ^{2m}$"),("D",r"$P^{2m}Q^n$"),("E",r"$P^{2n}Q^m$")]),
+14:(r"Four congruent rectangles are placed around a square as shown. The area of the outer square is $4$ times that of the inner square. What is the ratio of the length of the longer side of each rectangle to the length of its shorter side?",[("A","$3$"),("B",r"$\sqrt{10}$"),("C",r"$2+\sqrt2$"),("D",r"$2\sqrt3$"),("E","$4$")]),
+16:(r"Let $a,b,c,$ and $d$ be real numbers with $|a-b|=2$, $|b-c|=3$, and $|c-d|=4$. What is the sum of all possible values of $|a-d|$?",[("A","$9$"),("B","$12$"),("C","$15$"),("D","$18$"),("E","$24$")]),
+17:(r"Rectangle $ABCD$ has $AB=4$ and $BC=3$. Segment $EF$ is constructed through $B$ so that $EF$ is perpendicular to $DB$, and $A$ and $C$ lie on $DE$ and $DF$, respectively. What is $EF$?",[("A","$9$"),("B","$10$"),("C",r"$\frac{125}{12}$"),("D",r"$\frac{103}{9}$"),("E","$12$")]),
+18:(r"At Jefferson Summer Camp, $60\%$ of the children play soccer, $30\%$ of the children swim, and $40\%$ of the soccer players swim. To the nearest whole percent, what percent of the non-swimmers play soccer?",[("A","$30\%$"),("B","$40\%$"),("C","$49\%$"),("D","$51\%$"),("E","$70\%$")]),
+19:(r"Circle $A$ has radius $100$. Circle $B$ has an integer radius $r<100$ and remains internally tangent to circle $A$ as it rolls once around the circumference of circle $A$. The two circles have the same points of tangency at the beginning and end of circle $B$'s trip. How many possible values can $r$ have?",[("A","$4$"),("B","$8$"),("C","$9$"),("D","$50$"),("E","$90$")]),
 }
 
-KEY_OVERRIDES={1:"Round up after dividing ounces needed by ounces per can.",2:"Check four-coin totals using coin denominations.",3:"Simplify the nested fraction from the inside out.",4:"Subtract swim and run time from the total time to find the required biking speed.",5:"Use the repunit square pattern to avoid long multiplication.",6:"Relate the inscribed circle radius to the larger semicircle radius and compare areas.",7:"Translate '40 percent less' into 60 percent of the whole-milk fat percentage.",8:"Use the senior discount to recover the full ticket price, then price all six tickets.",9:"Use prime factorization of 2009 and the integer common ratio.",10:"Use the right-triangle altitude relation BD squared equals AD times DC."}
+KEY_OVERRIDES={11:"Compare the cube volume with the changed rectangular-prism volume.",12:"Use triangle inequalities on the two triangles formed by diagonal BD.",13:"Rewrite 12 as powers of 2 and 3, then match exponents using P and Q.",14:"Relate outer and inner square side lengths in terms of the rectangle sides.",16:"Represent each absolute-value difference as a signed step and list possible net distances.",17:"Use coordinates and a line perpendicular to the rectangle diagonal.",18:"Use a 100-child model and subtract swimmers from soccer players.",19:"The small circle returns to the same tangency point when the internal rolling rotation count is an integer."}
 
 SOL={
-1:[("Identify the unit",r"Each can contributes $12$ ounces, and the target is $128$ ounces."),("Divide to estimate",r"We compute $128\div12=10\frac{2}{3}$. This means $10$ cans would be too few."),("Round in the correct direction",r"Because cans come in whole numbers, we must round up, not down."),("Check the amount",r"With $11$ cans, the amount is $11\cdot12=132$ ounces, which is enough."),("Answer",r"The minimum number of cans is $\boxed{11}$.")],
-2:[("Use four coin values",r"The available coin values are $1,5,10,$ and $25$ cents. We need exactly four coins."),("Show the other choices are possible",r"We can make $25=10+5+5+5$, $35=10+10+10+5$, $45=25+10+5+5$, and $55=25+10+10+10$."),("Test 15 cents",r"With four coins, using a dime leaves $5$ cents for three coins, impossible because the smallest three coins sum to $3$ and no combination gives exactly $5$ with three coins except $1+1+3$, and there is no $3$-cent coin. Without a dime, four nickels already make $20$ if all are nickels, and adding pennies cannot reach $15$ with exactly four coins."),("Answer",r"The impossible total is $\boxed{15}$ cents.")],
-3:[("Start inside",r"The innermost denominator is $1+1=2$, so the inner fraction is $\frac{1}{2}$."),("Simplify the next denominator",r"Now the middle denominator is $1+\frac12=\frac32$. Thus the large fraction is $\frac{1}{3/2}=\frac23$."),("Finish",r"The whole expression is $1+\frac23=\frac53$."),("Answer",r"The value is $\boxed{\frac53}$.")],
-4:[("Find the swim time",r"The swim is $\frac14$ mile at $2$ miles per hour, so it takes $\frac{1/4}{2}=\frac18$ hour."),("Find the run time",r"The run is $3$ miles at $6$ miles per hour, so it takes $\frac36=\frac12$ hour."),("Find the bike time left",r"The total goal is $2$ hours, so the bike ride must take $2-\frac18-\frac12=\frac{11}{8}$ hours."),("Compute the biking speed",r"Speed is distance divided by time: $15\div\frac{11}{8}=15\cdot\frac8{11}=\frac{120}{11}$."),("Answer",r"The required speed is $\boxed{\frac{120}{11}}$ miles per hour.")],
-5:[("Notice the structure",r"The number $111{,}111{,}111$ is a repunit, a number made of nine $1$ digits."),("Use the repunit square pattern",r"Squaring a repunit with nine digits gives increasing digits up to $9$ and then decreasing digits: $12345678987654321$."),("Split the digit sum",r"The digit sum is $(1+2+\cdots+9)+(8+7+\cdots+1)$."),("Compute",r"These sums are $45$ and $36$, so the total digit sum is $81$."),("Answer",r"The sum of the digits is $\boxed{81}$.")],
-6:[("Infer the larger radius",r"For a circle of radius $2$ inscribed in a semicircle in the standard way, it is tangent to the diameter and the semicircular arc. The larger semicircle has radius $4$."),("Compare areas",r"The semicircle area is $\frac12\pi(4)^2=8\pi$. The small circle area is $\pi(2)^2=4\pi$."),("Find the shaded fraction",r"The shaded area is $8\pi-4\pi=4\pi$, which is half the semicircle area."),("Answer",r"The shaded fraction is $\boxed{\frac12}$.")],
-7:[("Translate the percent statement",r"Let $w$ be the fat percentage of whole milk. The $2\%$ milk has $40\%$ less fat, so it has $60\%$ of the whole-milk fat."),("Set up the equation",r"Thus $2=0.60w=\frac35w$."),("Solve",r"Multiplying by $\frac53$ gives $w=2\cdot\frac53=\frac{10}{3}$."),("Answer",r"Whole milk is $\boxed{\frac{10}{3}\%}$ fat.")],
-8:[("Recover the regular ticket price",r"A senior ticket has a $25\%$ discount, so it costs $75\%$ of the regular price. If $0.75$ of the regular price is $6$, then the regular price is $6\div0.75=8$ dollars."),("Price each generation",r"The two seniors cost $2\cdot6=12$ dollars. The two middle-generation tickets cost $2\cdot8=16$ dollars. The two children's tickets are half price, so they cost $2\cdot4=8$ dollars."),("Add",r"The total is $12+16+8=36$ dollars."),("Answer",r"Grandfather Wen must pay $\boxed{36}$ dollars.")],
-9:[("Use the geometric sequence form",r"Since $a,b,2009$ form a geometric sequence with integer ratio $r$, we have $b=ar$ and $2009=ar^2$."),("Factor 2009",r"We factor $2009=7^2\cdot41$. Therefore the square factor $r^2$ must be $7^2$, so $r=7$."),("Find a",r"Then $a=\frac{2009}{7^2}=41$. This also gives $b=287$, which satisfies $a<b<2009$."),("Answer",r"The value of $a$ is $\boxed{41}$.")],
-10:[("Use the altitude-to-hypotenuse relation",r"In a right triangle, the altitude from the right angle to the hypotenuse satisfies $BD^2=AD\cdot DC$. Here $AD=3$ and $DC=4$, so $BD^2=12$."),("Find the altitude",r"Thus $BD=2\sqrt3$."),("Use AC as the base",r"The hypotenuse is split into $AD+DC=3+4=7$, so $AC=7$."),("Compute area",r"Using base $AC$ and height $BD$, the area is $\frac12\cdot7\cdot2\sqrt3=7\sqrt3$."),("Answer",r"The area is $\boxed{7\sqrt3}$.")],
+11:[("Let the cube side be s",r"If the cube has side length $s$, its volume is $s^3$."),("Write the new dimensions",r"The rectangular solid has dimensions $s+1$, $s-1$, and $s$. Its volume is $(s+1)(s-1)s=(s^2-1)s=s^3-s$."),("Use the volume difference",r"The new volume is $5$ less than the cube volume, so $s^3-s=s^3-5$."),("Solve",r"This gives $s=5$."),("Answer",r"The original cube volume is $5^3=\boxed{125}$.")],
+12:[("Use BD as a shared side",r"The diagonal $BD$ forms triangles $ABD$ and $BCD$. We can restrict $BD$ using triangle inequalities."),("Apply triangle ABD",r"Triangle $ABD$ has sides $5,9,BD$, so $|9-5|<BD<9+5$, giving $4<BD<14$."),("Apply triangle BCD",r"Triangle $BCD$ has sides $17,5,BD$, so $|17-5|<BD<17+5$, giving $12<BD<22$."),("Combine with integer condition",r"The only integer satisfying both $4<BD<14$ and $12<BD<22$ is $13$."),("Answer",r"Therefore $BD=\boxed{13}$.")],
+13:[("Rewrite the target",r"Since $12=2^2\cdot3$, we have $12^{mn}=2^{2mn}3^{mn}$."),("Use P and Q",r"Because $P=2^m$, raising $P$ to $2n$ gives $P^{2n}=2^{2mn}$."),("Match the power of 3",r"Because $Q=3^n$, raising $Q$ to $m$ gives $Q^m=3^{mn}$."),("Multiply",r"Thus $P^{2n}Q^m=2^{2mn}3^{mn}=12^{mn}$."),("Answer",r"The matching expression is $\boxed{P^{2n}Q^m}$.")],
+14:[("Name the rectangle sides",r"Let the shorter side be $x$ and the longer side be $y$. In the standard four-rectangle arrangement, the outer square has side $x+y$, and the inner square has side $y-x$."),("Use the area ratio",r"The outer square area is $4$ times the inner square area, so $(x+y)^2=4(y-x)^2$."),("Take positive square roots",r"Since side lengths are positive, $x+y=2(y-x)$."),("Solve for the ratio",r"This simplifies to $x+y=2y-2x$, so $3x=y$. Therefore $\frac{y}{x}=3$."),("Answer",r"The ratio is $\boxed{3}$.")],
+16:[("Turn each distance into a signed step",r"The conditions mean $a-b$ can be $\pm2$, $b-c$ can be $\pm3$, and $c-d$ can be $\pm4$."),("Add the steps",r"We have $a-d=(a-b)+(b-c)+(c-d)$, so possible values come from $\pm2\pm3\pm4$."),("List distinct absolute values",r"The possible net sums have absolute values $1,3,5,$ and $9$."),("Add them",r"The required sum is $1+3+5+9=18$."),("Answer",r"The sum of all possible values is $\boxed{18}$.")],
+17:[("Place the rectangle on coordinates",r"Let $A=(0,0)$, $B=(4,0)$, $C=(4,3)$, and $D=(0,3)$. Then diagonal $DB$ has slope $-\frac34$."),("Find the perpendicular line",r"A line perpendicular to $DB$ has slope $\frac43$. Through $B=(4,0)$, it has equation $y=\frac43(x-4)$."),("Find E and F",r"Line $DE$ passes through $D$ and $A$, so it is $x=0$; intersecting gives $E=(0,-\frac{16}{3})$. Line $DF$ passes through $D$ and $C$, so it is $y=3$; intersecting gives $F=(\frac{25}{4},3)$."),("Compute EF",r"The differences are $\Delta x=\frac{25}{4}$ and $\Delta y=\frac{25}{3}$, so $EF=\sqrt{(\frac{25}{4})^2+(\frac{25}{3})^2}=25\sqrt{\frac1{16}+\frac1{9}}=\frac{125}{12}$."),("Answer",r"Thus $EF=\boxed{\frac{125}{12}}$.")],
+18:[("Use a convenient total",r"Imagine there are $100$ children. Then $60$ play soccer and $30$ swim."),("Find soccer players who swim",r"Since $40\%$ of soccer players swim, $0.40\cdot60=24$ children both play soccer and swim."),("Find soccer-playing non-swimmers",r"The soccer players who do not swim are $60-24=36$."),("Find all non-swimmers",r"The total number of non-swimmers is $100-30=70$."),("Compute the percentage",r"The desired percent is $\frac{36}{70}\approx51.4\%$, which rounds to $51\%$."),("Answer",r"The answer is $\boxed{51\%}$.")],
+19:[("Think in rotations",r"When a circle of radius $r$ rolls internally inside a circle of radius $100$, its center travels around a circle of radius $100-r$."),("Use the internal rolling count",r"The small circle makes $\frac{100-r}{r}=\frac{100}{r}-1$ rotations relative to its own circumference during one trip."),("Require the same tangency point",r"For the same point of circle $B$ to return to tangency, this rotation count must be an integer. Therefore $\frac{100}{r}$ must be an integer."),("Count possible radii",r"So $r$ must be a positive divisor of $100$ less than $100$: $1,2,4,5,10,20,25,50$."),("Answer",r"There are $\boxed{8}$ possible values of $r$.")],
 }
 
 def esc(x, quote=True):
@@ -185,7 +184,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {6, 10},
+                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {14},
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -254,6 +253,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
