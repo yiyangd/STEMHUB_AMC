@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 172
+BATCH_NUMBER = 173
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2006_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2006_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
 SKIPPED = []
-BATCH_LABEL = "2006 AMC 12A Problems 21-25"
-NEXT_START = "2006 AMC 12B Problem 1"
+BATCH_LABEL = "2006 AMC 12B Problems 1-10"
+NEXT_START = "2006 AMC 12B Problem 11"
 
-ANS={21:("E","102"),22:("D",r"3\sqrt2+\sqrt6"),23:("B",r"\sqrt2-1"),24:("D","1,008,016"),25:("E","405")}
+ANS={1:("C","0"),2:("A","-72"),3:("A","10"),4:("A","5"),5:("A","30"),6:("B","137"),7:("B","12"),8:("E",r"\frac94"),9:("B","34"),10:("A","43")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1267,6 +1267,44 @@ SOL.update({
 24:[("Look at one monomial",r"A term in the expansion has the form \(x^a y^b z^c\), where \(a+b+c=2006\). The same monomial appears in both expanded expressions."),("Find when it survives",r"In \((x+y+z)^{2006}\) the coefficient is positive. In \((x-y-z)^{2006}\), the sign is \((-1)^{b+c}\). Thus the two coefficients cancel when \(b+c\) is odd and add when \(b+c\) is even."),("Count by t=b+c",r"Let \(t=b+c\). We need \(t\) even, with \(0\le t\le2006\). For a fixed \(t\), \(a=2006-t\), and there are \(t+1\) choices for \((b,c)\)."),("Sum over even t",r"Write \(t=2j\), where \(j=0,1,\ldots,1003\). The number of surviving terms is \[\sum_{j=0}^{1003}(2j+1).\]"),("Evaluate the sum",r"The sum of the first \(1004\) odd positive integers is \(1004^2\). Therefore the number of terms is \[1004^2=1{,}008{,}016.\]"),("Conclude",r"The answer is \(\boxed{1{,}008{,}016}\)."),],
 25:[("Count by subset size",r"Suppose \(S\) has \(k\) elements. Condition (2) says every chosen number must be at least \(k\), so the available set is \(\{k,k+1,\ldots,15\}\), which has \(16-k\) elements."),("Use the no-consecutive formula",r"The number of ways to choose \(k\) elements from \(n\) ordered elements with no two consecutive is \[\binom{n-k+1}{k}.\] This comes from shifting the \(i\)th chosen element down by \(i-1\)."),("Apply it to this problem",r"Here \(n=16-k\), so the count for size \(k\) is \[\binom{(16-k)-k+1}{k}=\binom{17-2k}{k}.\]"),("Find possible k values",r"We need \(17-2k\ge k\), so \(17\ge3k\). Thus \(k=1,2,3,4,5\)."),("Add the cases",r"The total is \[\binom{15}{1}+\binom{13}{2}+\binom{11}{3}+\binom{9}{4}+\binom{7}{5}.\] This equals \[15+78+165+126+21=405.\]"),("Conclude",r"There are \(\boxed{405}\) subsets."),],
 })
+OV.update({
+1:(r"What is \((-1)^1+(-1)^2+\cdots+(-1)^{2006}\)?",[("A","-2006"),("B","-1"),("C","0"),("D","1"),("E","2006")]),
+2:(r"For real numbers \(x\) and \(y\), define \(x\spadesuit y=(x+y)(x-y)\). What is \(3\spadesuit(4\spadesuit5)\)?",[("A","-72"),("B","-27"),("C","-24"),("D","24"),("E","72")]),
+3:(r"A football game was played between two teams, the Cougars and the Panthers. The two teams scored a total of \(34\) points, and the Cougars won by a margin of \(14\) points. How many points did the Panthers score?",[("A","10"),("B","14"),("C","17"),("D","20"),("E","24")]),
+4:(r"Mary is about to pay for five items at the grocery store. The prices of the items are \(\$7.99\), \(\$4.99\), \(\$2.99\), \(\$1.99\), and \(\$0.99\). Mary will pay with a twenty-dollar bill. Which of the following is closest to the percentage of the \(\$20.00\) that she will receive in change?",[("A","5"),("B","10"),("C","15"),("D","20"),("E","25")]),
+5:(r"John is walking east at a speed of \(3\) miles per hour, while Bob is also walking east, but at a speed of \(5\) miles per hour. If Bob is now \(1\) mile west of John, how many minutes will it take for Bob to catch up to John?",[("A","30"),("B","50"),("C","60"),("D","90"),("E","120")]),
+6:(r"Francesca uses \(100\) grams of lemon juice, \(100\) grams of sugar, and \(400\) grams of water to make lemonade. There are \(25\) calories in \(100\) grams of lemon juice and \(386\) calories in \(100\) grams of sugar. Water contains no calories. How many calories are in \(200\) grams of her lemonade?",[("A","129"),("B","137"),("C","174"),("D","223"),("E","411")]),
+7:(r"Mr. and Mrs. Lopez have two children. When they get into their family car, two people sit in the front, and the other two sit in the back. Either Mr. Lopez or Mrs. Lopez must sit in the driver's seat. How many seating arrangements are possible?",[("A","4"),("B","12"),("C","16"),("D","24"),("E","48")]),
+8:(r"The lines \(x=\frac14y+a\) and \(y=\frac14x+b\) intersect at the point \((1,2)\). What is \(a+b\)?",[("A","0"),("B",r"\(\frac34\)"),("C","1"),("D","2"),("E",r"\(\frac94\)")]),
+9:(r"How many even three-digit integers have the property that their digits, read left to right, are in strictly increasing order?",[("A","21"),("B","34"),("C","51"),("D","72"),("E","150")]),
+10:(r"In a triangle with integer side lengths, one side is three times as long as a second side, and the length of the third side is \(15\). What is the greatest possible perimeter of the triangle?",[("A","43"),("B","44"),("C","45"),("D","46"),("E","47")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Pair consecutive powers of \(-1\).",
+2:"Evaluate the custom operation from the inside outward.",
+3:"Use sum and difference equations for the two scores.",
+4:"Add the prices, find the change, and estimate the percentage.",
+5:"Use relative speed to close a one-mile gap.",
+6:"Compute total calories, then scale from 600 grams to 200 grams.",
+7:"Choose the driver first, then arrange the remaining seats.",
+8:"Substitute the intersection point into both line equations.",
+9:"Count choices by the final even digit.",
+10:"Use triangle inequalities to maximize the integer side ratio.",
+})
+
+SOL.update({
+1:[("Look for pairing",r"The signs alternate: \((-1)^1=-1\), \((-1)^2=1\), and this pattern repeats."),("Pair two terms at a time",r"Each pair is \[(-1)^{2k-1}+(-1)^{2k}=-1+1=0.\]"),("Count the pairs",r"There are \(2006\) terms, which makes \(1003\) complete pairs."),("Add the pairs",r"Since each pair contributes \(0\), the whole sum is \[1003\cdot0=0.\]"),("Conclude",r"The value is \(\boxed{0}\)."),],
+2:[("Start with the inner operation",r"The expression \(3\spadesuit(4\spadesuit5)\) must be evaluated from the inside first."),("Compute 4 spadesuit 5",r"Using \(x\spadesuit y=(x+y)(x-y)\), \[4\spadesuit5=(4+5)(4-5)=9(-1)=-9.\]"),("Substitute into the outer operation",r"Now the original expression becomes \(3\spadesuit(-9)\)."),("Apply the rule again",r"\[3\spadesuit(-9)=(3+(-9))(3-(-9))=(-6)(12)=-72.\]"),("Conclude",r"The value is \(\boxed{-72}\)."),],
+3:[("Name the scores",r"Let the Panthers score \(P\) points and the Cougars score \(C\) points. The Cougars won, so \(C>P\)."),("Write the two equations",r"The total score gives \[C+P=34.\] The winning margin gives \[C-P=14.\]"),("Eliminate C",r"Subtracting the second equation from the first gives \[2P=20.\]"),("Solve for P",r"Thus \(P=10\)."),("Conclude",r"The Panthers scored \(\boxed{10}\) points."),],
+4:[("Add the prices efficiently",r"The prices are close to \(8,5,3,2,\) and \(1\), but each is \(0.01\) less. The total is \[7.99+4.99+2.99+1.99+0.99=18.95.\]"),("Find the change",r"Mary pays with \(\$20.00\), so her change is \[20.00-18.95=1.05.\]"),("Convert to a percentage of 20 dollars",r"The fraction of the bill returned is \[\frac{1.05}{20}=0.0525.\]"),("Estimate the percentage",r"That is \(5.25\%\), which is closest to \(5\%\)."),("Conclude",r"The answer is \(\boxed{5}\)."),],
+5:[("Focus on the gap",r"Both people walk east, so Bob is catching John only because Bob is faster. The initial gap is \(1\) mile."),("Find the relative speed",r"Bob gains on John at \[5-3=2\] miles per hour."),("Find the catch-up time",r"Time equals distance divided by relative speed: \[\frac{1}{2}\text{ hour}.\]"),("Convert to minutes",r"One half hour is \(30\) minutes."),("Conclude",r"Bob catches John after \(\boxed{30}\) minutes."),],
+6:[("Compute total calories",r"The lemon juice contributes \(25\) calories, the sugar contributes \(386\) calories, and the water contributes \(0\). So the whole batch has \[25+386=411\] calories."),("Compute total mass",r"The batch has \[100+100+400=600\] grams of lemonade."),("Scale to 200 grams",r"Since \(200\) grams is one third of \(600\) grams, it contains one third of the total calories."),("Calculate",r"\[\frac{411}{3}=137.\]"),("Conclude",r"There are \(\boxed{137}\) calories in \(200\) grams."),],
+7:[("Choose the driver first",r"The driver's seat must be occupied by one of the two parents. There are \(2\) choices for the driver."),("Seat the remaining people",r"After the driver is chosen, \(3\) people remain and \(3\) seats remain."),("Arrange the remaining seats",r"The remaining people can be arranged in \[3!=6\] ways."),("Multiply the choices",r"The total number of seating arrangements is \[2\cdot6=12.\]"),("Conclude",r"There are \(\boxed{12}\) arrangements."),],
+8:[("Use the intersection point",r"If the two lines intersect at \((1,2)\), then \(x=1\) and \(y=2\) must satisfy both equations."),("Find a",r"Substitute into \(x=\frac14y+a\): \[1=\frac14(2)+a=\frac12+a,\] so \(a=\frac12\)."),("Find b",r"Substitute into \(y=\frac14x+b\): \[2=\frac14(1)+b,\] so \(b=\frac74\)."),("Add",r"\[a+b=\frac12+\frac74=\frac24+\frac74=\frac94.\]"),("Conclude",r"The answer is \(\boxed{\frac94}\)."),],
+9:[("Use the last digit",r"The integer must be even, so its last digit must be \(2,4,6,\) or \(8\). Because the digits are strictly increasing, the first two digits must be positive digits smaller than the last digit."),("Count for last digit 2",r"If the last digit is \(2\), the only smaller positive digit is \(1\), so there are not enough digits to make a three-digit number. This gives \(0\)."),("Count for last digit 4",r"Choose the first two digits from \(\{1,2,3\}\), giving \(\binom32=3\) numbers."),("Count for last digits 6 and 8",r"For last digit \(6\), choose two digits from \(\{1,2,3,4,5\}\), giving \(\binom52=10\). For last digit \(8\), choose two from \(\{1,2,\ldots,7\}\), giving \(\binom72=21\)."),("Add the cases",r"The total is \[0+3+10+21=34.\]"),("Conclude",r"There are \(\boxed{34}\) such integers."),],
+10:[("Name the related sides",r"Let the shorter of the related sides be \(a\), so the longer is \(3a\). The third side is \(15\)."),("Use the triangle inequality",r"The restrictive inequality is \[a+15>3a,\] because the two shorter sides must exceed the longest side."),("Solve the bound",r"This gives \(15>2a\), so \(a<7.5\). Since side lengths are integers, the largest possible \(a\) is \(7\)."),("Check the triangle",r"With \(a=7\), the sides are \(7,21,15\). They satisfy \(7+15>21\), so this is a valid triangle."),("Compute the perimeter",r"The perimeter is \[7+21+15=43.\]"),("Conclude",r"The greatest possible perimeter is \(\boxed{43}\)."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -1373,7 +1411,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2006" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2006" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -1462,7 +1500,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2006 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2006 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
