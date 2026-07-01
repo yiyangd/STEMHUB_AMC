@@ -3,32 +3,32 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 75
+BATCH_NUMBER = 76
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2013_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15}
+TARGET_NUMBERS = {16,17,18,19,20}
 SKIPPED = []
-BATCH_LABEL = "2013 AMC 10B Problems 11-15"
-NEXT_START = "2013 AMC 10B Problem 16"
+BATCH_LABEL = "2013 AMC 10B Problems 16-20"
+NEXT_START = "2013 AMC 10B Problem 21"
 
-ANS={11:("B","2"),12:("B",r"\frac49"),13:("E","8"),14:("E","three lines"),15:("B",r"\frac{\sqrt6}{2}")}
+ANS={16:("B","13.5"),17:("E","103"),18:("D","46"),19:("D",r"-2+\sqrt3"),20:("B","2")}
 
 OV={
-11:(r"Real numbers $x$ and $y$ satisfy $x^2+y^2=10x-6y-34$. What is $x+y$?",[("A","1"),("B","2"),("C","3"),("D","6"),("E","8")]),
-12:(r"Let $S$ be the set of sides and diagonals of a regular pentagon. A pair of elements of $S$ is selected at random without replacement. What is the probability that the two chosen segments have the same length?",[("A",r"\frac25"),("B",r"\frac49"),("C",r"\frac12"),("D",r"\frac59"),("E",r"\frac45")]),
-13:(r"Jo and Blair take turns counting from $1$ to one more than the last number said by the other person. Jo starts by saying $1$, Blair follows by saying $1,2$, Jo then says $1,2,3$, and so on. What is the $53$rd number said?",[("A","2"),("B","3"),("C","5"),("D","6"),("E","8")]),
-14:(r"Define $a\clubsuit b=a^2b-ab^2$. Which describes the set of points $(x,y)$ for which $x\clubsuit y=y\clubsuit x$?",[("A","a finite set of points"),("B","one line"),("C","two parallel lines"),("D","two intersecting lines"),("E","three lines")]),
-15:(r"A wire is cut into two pieces, one of length $a$ and the other of length $b$. The piece of length $a$ is bent to form an equilateral triangle, and the piece of length $b$ is bent to form a regular hexagon. The triangle and the hexagon have equal area. What is $\frac ab$?",[("A","1"),("B",r"\frac{\sqrt6}{2}"),("C",r"\sqrt3"),("D",r"2"),("E",r"\frac32")]),
+16:(r"In $\triangle ABC$, medians $AD$ and $CE$ intersect at $P$. Given $PE=1.5$, $PD=2$, and $DE=2.5$, what is the area of quadrilateral $AEDC$?",[("A","13"),("B","13.5"),("C","14"),("D","14.5"),("E","15")]),
+17:(r"Alex has $75$ red tokens and $75$ blue tokens. At one booth he can give two red tokens and receive a silver token and a blue token. At another booth he can give three blue tokens and receive a silver token and a red token. Alex continues until no more exchanges are possible. How many silver tokens will he have?",[("A","62"),("B","82"),("C","83"),("D","102"),("E","103")]),
+18:(r"The number $2013$ has the property that its units digit is the sum of its other digits: $2+0+1=3$. How many integers less than $2013$ but greater than $1000$ share this property?",[("A","33"),("B","34"),("C","45"),("D","46"),("E","58")]),
+19:(r"The real numbers $c,b,a$ form an arithmetic sequence with $a\ge b\ge c\ge0$. The quadratic $ax^2+bx+c$ has exactly one root. What is this root?",[("A",r"-7-4\sqrt3"),("B",r"-2-\sqrt3"),("C",r"-1"),("D",r"-2+\sqrt3"),("E",r"-7+4\sqrt3")]),
+20:(r"The number $2013$ is expressed as $2013=\frac{a_1!a_2!\cdots a_m!}{b_1!b_2!\cdots b_n!}$, where $a_1\ge a_2\ge\cdots\ge a_m$ and $b_1\ge b_2\ge\cdots\ge b_n$ are positive integers and $a_1+b_1$ is as small as possible. What is $|a_1-b_1|$?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
 }
 
-KEY_OVERRIDES={11:"Complete the square to force both squared terms to be zero.",12:"A regular pentagon has five sides of one length and five diagonals of another length.",13:"Use triangular numbers to locate the 53rd spoken number.",14:"Factor the equation defining the point set.",15:"Express both areas in terms of the two wire lengths."}
+KEY_OVERRIDES={16:"Use centroid ratios and the area ratio between triangle PDE and triangle ABC.",17:"Track how many times each exchange is used and identify the only reachable terminal state.",18:"Count four-digit numbers whose unit digit is the sum of the first three digits.",19:"Use the arithmetic-sequence condition and discriminant zero.",20:"Use the prime factor 61 to force large factorials, then construct the minimum."}
 
 SOL={
-11:[("Move all terms to one side",r"Rewrite the equation as $x^2-10x+y^2+6y+34=0$."),("Complete the squares",r"We have $x^2-10x=(x-5)^2-25$ and $y^2+6y=(y+3)^2-9$."),("Simplify",r"Substituting gives $(x-5)^2+(y+3)^2=0$."),("Use nonnegative squares",r"Both squares must be $0$, so $x=5$ and $y=-3$. Thus $x+y=2$, and the answer is $\boxed{2}$."),],
-12:[("Count the segments",r"A regular pentagon has $5$ sides and $5$ diagonals, so $S$ has $10$ segments."),("Count favorable pairs",r"Two chosen segments have the same length if both are sides or both are diagonals. This gives $\binom52+\binom52=10+10=20$ favorable pairs."),("Count all pairs",r"The total number of pairs is $\binom{10}{2}=45$."),("Compute probability",r"The probability is $\frac{20}{45}=\frac49$. The answer is $\boxed{\frac49}$."),],
-13:[("Group by turns",r"The first turn contributes $1$ number, the second contributes $2$, the third contributes $3$, and so on."),("Use triangular numbers",r"After $9$ turns, the total number said is $1+2+\cdots+9=45$. After $10$ turns, the total is $55$."),("Locate the 53rd number",r"The $53$rd number is in the $10$th turn. It is the $53-45=8$th number said during that turn."),("Read the number",r"During the $10$th turn, the speaker says $1,2,\ldots,10$. The $8$th number is $8$, so the answer is $\boxed{8}$."),],
-14:[("Write both sides",r"The condition is $x^2y-xy^2=y^2x-yx^2$."),("Move everything to one side",r"The right side is the negative of the left side, so the equation becomes $2(x^2y-xy^2)=0$."),("Factor",r"This is $2xy(x-y)=0$."),("Interpret the factors",r"Thus $x=0$, or $y=0$, or $x=y$. These are three lines. The answer is $\boxed{\text{three lines}}$."),],
-15:[("Find the triangle area",r"The equilateral triangle has perimeter $a$, so its side length is $a/3$. Its area is $\frac{\sqrt3}{4}\left(\frac a3\right)^2=\frac{\sqrt3a^2}{36}$."),("Find the hexagon area",r"The regular hexagon has perimeter $b$, so its side length is $b/6$. Its area is $6\cdot\frac{\sqrt3}{4}\left(\frac b6\right)^2=\frac{\sqrt3b^2}{24}$."),("Set areas equal",r"Equal areas give $\frac{\sqrt3a^2}{36}=\frac{\sqrt3b^2}{24}$, so $\frac{a^2}{b^2}=\frac{36}{24}=\frac32$."),("Take the positive root",r"Since lengths are positive, $\frac ab=\sqrt{\frac32}=\frac{\sqrt6}{2}$. The answer is $\boxed{\frac{\sqrt6}{2}}$."),],
+16:[("Use centroid ratios",r"Since $AD$ and $CE$ are medians, their intersection $P$ is the centroid. A centroid divides each median in a $2:1$ ratio, so $AD=3\cdot PD=6$ and $CE=3\cdot PE=4.5$."),("Look at triangle PDE",r"The sides of $\triangle PDE$ are $1.5$, $2$, and $2.5$, so it is a right triangle. Its area is $\frac12\cdot1.5\cdot2=1.5$."),("Relate this to triangle ABC",r"In any triangle, the triangle formed by the centroid and two side midpoints has area $\frac1{12}$ of the whole triangle. Thus $[ABC]=12\cdot1.5=18$."),("Find the requested quadrilateral",r"Since $D$ and $E$ are midpoints, triangle $BDE$ is similar to $BAC$ with scale factor $\frac12$, so $[BDE]=\frac14[ABC]$. Therefore $[AEDC]=\frac34[ABC]=\frac34\cdot18=13.5$."),("Conclude",r"The answer is $\boxed{13.5}$."),],
+17:[("Count exchanges",r"Let $x$ be the number of red-token exchanges and $y$ the number of blue-token exchanges. Then the final red count is $75-2x+y$, and the final blue count is $75+x-3y$."),("Use the stopping condition",r"When no exchange is possible, the final red count is less than $2$ and the final blue count is less than $3$. Solving these integer conditions gives two algebraic candidates: $(R,B,x,y)=(1,2,59,44)$ or $(0,0,60,45)$."),("Remove the unreachable candidate",r"The state $(0,0)$ cannot be reached by a final legal move: the previous state would have to be $(2,-1)$ or $(-1,3)$, both impossible. Thus the reachable terminal state is $(1,2)$."),("Count silver tokens",r"In that state, the number of silver tokens is $x+y=59+44=103$."),("Conclude",r"The answer is $\boxed{103}$."),],
+18:[("Separate by thousands digit",r"A number between $1000$ and $2013$ has thousands digit $1$ or $2$. Write it as $abcd$, where the condition is $d=a+b+c$."),("Count numbers starting with 1",r"If $a=1$, then $d=1+b+c$ must be a digit, so $b+c\le8$. The number of nonnegative pairs $(b,c)$ with sum at most $8$ is $\binom{10}{2}=45$."),("Count numbers starting with 2",r"If $a=2$ and the number is less than $2013$, then only $2002$ works. The next possible case $2013$ is not less than $2013$."),("Add",r"The total is $45+1=46$. The answer is $\boxed{46}$."),],
+19:[("Use the arithmetic sequence",r"Since $c,b,a$ form an arithmetic sequence, write $a=b+d$ and $c=b-d$, where $d\ge0$."),("Use the one-root condition",r"A quadratic has exactly one real root when its discriminant is zero, so $b^2-4ac=0$."),("Substitute",r"This gives $b^2=4(b+d)(b-d)=4(b^2-d^2)$, so $3b^2=4d^2$. Hence $\frac db=\frac{\sqrt3}{2}$."),("Find the root",r"The repeated root is $x=-\frac{b}{2a}=-\frac{b}{2(b+d)}=-\frac{1}{2(1+d/b)}=-\frac{1}{2+\sqrt3}$."),("Simplify",r"Rationalizing gives $x=\sqrt3-2=-2+\sqrt3$. The answer is $\boxed{-2+\sqrt3}$."),],
+20:[("Use the large prime",r"Since $2013=3\cdot11\cdot61$, any factorial expression must introduce the prime $61$ in the numerator. Thus $a_1\ge61$."),("Try to keep the largest denominator small",r"If $b_1\le58$, then the factor $59$ appearing in $61!$ could not be canceled, so $b_1$ must be at least $59$ when $a_1=61$."),("Construct with a1=61 and b1=59",r"There is a construction: \[2013=\frac{61!\,11!\,3!}{59!\,10!\,5!}.\] Indeed this equals $(60\cdot61)\cdot11\cdot6/120=61\cdot11\cdot3$."),("Show minimality",r"This has $a_1+b_1=61+59=120$. A smaller sum would require $a_1=61$ and $b_1\le58$, which cannot cancel the unwanted factor $59$, or would require $a_1<61$, impossible."),("Conclude",r"Therefore $|a_1-b_1|=|61-59|=2$. The answer is $\boxed{2}$."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -169,7 +169,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in set(),
+                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {16},
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -238,6 +238,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
