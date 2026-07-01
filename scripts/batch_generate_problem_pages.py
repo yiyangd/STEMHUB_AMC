@@ -8,151 +8,91 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 24
+BATCH_NUMBER = 25
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
+TARGET_NUMBERS = {21, 22, 23, 24, 25}
 SKIPPED = []
-BATCH_LABEL = "2005 AMC 10B Problem 11-20"
-NEXT_START = "2005 AMC 10B Problem 21"
+BATCH_LABEL = "2005 AMC 10B Problem 21-25"
+NEXT_START = "2006 AMC 10A Problem 1"
 
 ANS = {
-    11: ("E", "250"),
-    12: ("E", r"\left(\frac{1}{6}\right)^{10}"),
-    13: ("C", "835"),
-    14: ("C", r"\frac{\sqrt3}{2}"),
-    15: ("D", r"\frac{1}{2}"),
-    16: ("D", "8"),
-    17: ("B", r"\frac{3}{2}"),
-    18: ("D", "8"),
-    19: ("B", "1"),
-    20: ("C", "53332.8"),
+    21: ("A", "162"),
+    22: ("C", "16"),
+    23: ("C", "5"),
+    24: ("E", "154"),
+    25: ("C", "62"),
 }
 
 
 OV = {
-    11: (
-        r"The first term of a sequence is $2005$. Each succeeding term is the sum of the cubes of the digits of the previous term. What is the $2005$th term of the sequence?",
-        [("A", "$29$"), ("B", "$55$"), ("C", "$85$"), ("D", "$133$"), ("E", "$250$")],
+    21: (
+        r"Forty slips are placed into a hat, each bearing a number $1,2,3,4,5,6,7,8,9,$ or $10$, with each number entered on four slips. Four slips are drawn from the hat at random and without replacement. Let $p$ be the probability that all four slips bear the same number. Let $q$ be the probability that two of the slips bear a number $a$ and the other two bear a number $b\ne a$. What is the value of $q/p$?",
+        [("A", "$162$"), ("B", "$180$"), ("C", "$324$"), ("D", "$360$"), ("E", "$720$")],
     ),
-    12: (
-        r"Twelve fair dice are rolled. What is the probability that the product of the numbers on the top faces is prime?",
-        [("A", r"$\left(\frac{1}{12}\right)^{12}$"), ("B", r"$\left(\frac{1}{6}\right)^{12}$"), ("C", r"$2\left(\frac{1}{6}\right)^{11}$"), ("D", r"$5\left(\frac{1}{6}\right)^{11}$"), ("E", r"$\left(\frac{1}{6}\right)^{10}$")],
+    22: (
+        r"For how many positive integers $n\le24$ is $n!$ evenly divisible by $1+2+\cdots+n$?",
+        [("A", "$8$"), ("B", "$12$"), ("C", "$16$"), ("D", "$17$"), ("E", "$21$")],
     ),
-    13: (
-        r"How many numbers between $1$ and $2005$ are integer multiples of $3$ or $4$ but not $12$?",
-        [("A", "$501$"), ("B", "$668$"), ("C", "$835$"), ("D", "$1002$"), ("E", "$1169$")],
+    23: (
+        r"In trapezoid $ABCD$ we have $AB\parallel DC$, $E$ as the midpoint of $BC$, and $F$ as the midpoint of $DA$. The area of $ABEF$ is twice the area of $FECD$. What is $AB/DC$?",
+        [("A", "$2$"), ("B", "$3$"), ("C", "$5$"), ("D", "$6$"), ("E", "$8$")],
     ),
-    14: (
-        r"Equilateral $\triangle ABC$ has side length $2$, $M$ is the midpoint of $AC$, and $C$ is the midpoint of $BD$. What is the area of $\triangle CDM$?",
-        [("A", r"$\frac12$"), ("B", r"$\frac{\sqrt3}{4}$"), ("C", r"$\frac{\sqrt3}{2}$"), ("D", "$1$"), ("E", "$2$")],
+    24: (
+        r"Let $x$ and $y$ be two-digit integers such that $y$ is obtained by reversing the digits of $x$. The integers $x$ and $y$ satisfy $x^2-y^2=m^2$ for some positive integer $m$. What is $x+y+m$?",
+        [("A", "$88$"), ("B", "$112$"), ("C", "$116$"), ("D", "$144$"), ("E", "$154$")],
     ),
-    15: (
-        r"An envelope contains eight bills: two $1$-dollar bills, two $5$-dollar bills, two $10$-dollar bills, and two $20$-dollar bills. Two bills are drawn at random without replacement. What is the probability that their sum is $20$ dollars or more?",
-        [("A", r"$\frac14$"), ("B", r"$\frac27$"), ("C", r"$\frac37$"), ("D", r"$\frac12$"), ("E", r"$\frac23$")],
-    ),
-    16: (
-        r"The quadratic equation $x^2+mx+n=0$ has roots that are twice those of $x^2+px+m=0$, and none of $m$, $n$, and $p$ is zero. What is the value of $\frac np$?",
-        [("A", "$1$"), ("B", "$2$"), ("C", "$4$"), ("D", "$8$"), ("E", "$16$")],
-    ),
-    17: (
-        r"Suppose that $4^a=5$, $5^b=6$, $6^c=7$, and $7^d=8$. What is $a\cdot b\cdot c\cdot d$?",
-        [("A", "$1$"), ("B", r"$\frac32$"), ("C", "$2$"), ("D", r"$\frac52$"), ("E", "$3$")],
-    ),
-    18: (
-        r"All of David's telephone numbers have the form $555-abc-defg$, where $a,b,c,d,e,f,$ and $g$ are distinct digits and in increasing order, and none is either $0$ or $1$. How many different telephone numbers can David have?",
-        [("A", "$1$"), ("B", "$2$"), ("C", "$7$"), ("D", "$8$"), ("E", "$9$")],
-    ),
-    19: (
-        r"On a certain math exam, $10\%$ of the students got $70$ points, $25\%$ got $80$ points, $20\%$ got $85$ points, $15\%$ got $90$ points, and the rest got $95$ points. What is the difference between the mean and the median score on this exam?",
-        [("A", "$0$"), ("B", "$1$"), ("C", "$2$"), ("D", "$4$"), ("E", "$5$")],
+    25: (
+        r"A subset $B$ of the set of integers from $1$ to $100$, inclusive, has the property that no two elements of $B$ sum to $125$. What is the maximum possible number of elements in $B$?",
+        [("A", "$50$"), ("B", "$51$"), ("C", "$62$"), ("D", "$65$"), ("E", "$68$")],
     ),
 }
 
 
 KEY_OVERRIDES = {
-    11: "Compute early terms until the digit-cube process enters a cycle.",
-    12: "A product is prime only when exactly one die contributes a prime and all others are 1.",
-    13: "Use inclusion-exclusion, then remove multiples of 12.",
-    14: "Use coordinates for the equilateral triangle and midpoint condition.",
-    15: "Count unordered pairs of bills with sum at least 20.",
-    16: "Apply Vieta's formulas to two quadratics whose roots differ by a factor of 2.",
-    17: "Rewrite the exponents as logarithms so the product telescopes.",
-    18: "Choose the seven increasing digits; the order is then forced.",
-    19: "Compute the weighted mean and locate the median from cumulative percentages.",
-    20: "Use symmetry: each digit appears equally often in each place value.",
+    21: "Count favorable four-slip selections for each event, then divide to cancel the common denominator.",
+    22: "Reduce the triangular-number divisibility condition to whether n+1 divides 2(n-1)!.",
+    23: "Use the trapezoid midline to compare the top and bottom trapezoid areas.",
+    24: "Use reversed-digit algebra and search the constrained digit pairs for a square difference.",
+    25: "Pair numbers that sum to 125; choose at most one from each pair plus all unpaired small numbers.",
 }
 
 
 SOL = {
-    11: [
-        ("Compute the first few terms", r"Start with $2005$. The next term is $2^3+0^3+0^3+5^3=8+125=133$."),
-        ("Look for a cycle", r"From $133$, the next term is $1^3+3^3+3^3=55$. From $55$, the next term is $5^3+5^3=250$. From $250$, the next term is $2^3+5^3+0^3=133$."),
-        ("Identify the repeating block", r"After the first term, the sequence repeats $133,55,250$ with period $3$."),
-        ("Use the index", r"The $2005$th term is $2004$ steps after the first term. Since $2004$ is divisible by $3$, the sequence lands on the third value of the repeating block, $250$."),
-        ("Answer", r"The $2005$th term is $\boxed{250}$."),
+    21: [
+        ("Use counts instead of probabilities", r"Both $p$ and $q$ have the same denominator, namely the number of ways to draw $4$ slips from $40$. So $q/p$ can be found by dividing favorable counts."),
+        ("Count all four the same", r"For event $p$, choose which number appears on all four slips. There are $10$ choices, and once the number is chosen, all four slips of that number must be drawn. So the favorable count for $p$ is $10$."),
+        ("Count two and two", r"For event $q$, choose the two numbers that appear: $\binom{10}{2}=45$ choices."),
+        ("Choose the slips", r"For each chosen number, choose $2$ of its $4$ slips. That gives $\binom42^2=6^2=36$ choices."),
+        ("Divide", r"Thus $q/p=\frac{45\cdot36}{10}=162$. The answer is $\boxed{162}$."),
     ],
-    12: [
-        ("Understand when a product is prime", r"A product of twelve positive integers is prime only if one factor is that prime and all the other factors are $1$."),
-        ("Choose which die gives the prime", r"There are $12$ choices for the die that shows a prime."),
-        ("Choose the prime face", r"On a standard die, the prime faces are $2,3,5$, so the probability that the chosen die shows a prime is $3/6$."),
-        ("Force all other dice to be 1", r"The remaining $11$ dice must each show $1$, with probability $(1/6)^{11}$."),
-        ("Combine", r"The probability is $12\cdot\frac36\cdot\left(\frac16\right)^{11}=6\left(\frac16\right)^{11}=\boxed{\left(\frac16\right)^{10}}$."),
+    22: [
+        ("Rewrite the divisor", r"The sum $1+2+\cdots+n$ is $\frac{n(n+1)}2$. We need \[\frac{n(n+1)}2\mid n!.\]"),
+        ("Cancel the common factor n", r"For $n\ge1$, this is equivalent to asking whether $n+1$ divides $2(n-1)!$."),
+        ("Identify failures", r"If $n+1$ is an odd prime greater than $2$, then none of the factors $1,2,\ldots,n-1$ is divisible by $n+1$, and the extra factor $2$ does not help. So those cases fail."),
+        ("Count the failed values", r"For $n\le24$, we have $n+1\le25$. The odd primes from $3$ to $25$ are $3,5,7,11,13,17,19,23$, giving $8$ failures."),
+        ("Conclude", r"All other values work, because composite $n+1$ has enough factors inside $2(n-1)!$. There are $24-8=16$ working values. The answer is $\boxed{16}$."),
     ],
-    13: [
-        ("Count multiples of 3 or 4", r"Between $1$ and $2005$, there are $\lfloor2005/3\rfloor=668$ multiples of $3$ and $\lfloor2005/4\rfloor=501$ multiples of $4$."),
-        ("Avoid double-counting multiples of 12", r"Multiples of both $3$ and $4$ are multiples of $12$, and there are $\lfloor2005/12\rfloor=167$ of them."),
-        ("Find the union", r"The number divisible by $3$ or $4$ is $668+501-167=1002$."),
-        ("Remove multiples of 12", r"The problem says 'but not $12$', meaning not multiples of $12$. Remove those $167$ numbers."),
-        ("Answer", r"The count is $1002-167=\boxed{835}$."),
+    23: [
+        ("Name the bases", r"Let $AB=a$ and $DC=c$. Since $E$ and $F$ are midpoints of the legs, $FE$ is the midline of the trapezoid, so $FE=\frac{a+c}{2}$."),
+        ("Split the height", r"The midline is halfway between the two bases, so the upper and lower trapezoids have equal height, say $h/2$ if the full height is $h$."),
+        ("Write the two areas", r"The area of $ABEF$ is \[\frac12\cdot\frac h2\left(a+\frac{a+c}{2}\right)=\frac{h(3a+c)}8.\] The area of $FECD$ is \[\frac12\cdot\frac h2\left(\frac{a+c}{2}+c\right)=\frac{h(a+3c)}8.\]"),
+        ("Use the ratio", r"The top area is twice the bottom area, so $3a+c=2(a+3c)$."),
+        ("Solve", r"This simplifies to $3a+c=2a+6c$, hence $a=5c$. Therefore $AB/DC=\boxed{5}$."),
     ],
-    14: [
-        ("Place the equilateral triangle", r"Let $B=(-1,0)$, $C=(1,0)$, and $A=(0,\sqrt3)$. This gives side length $2$."),
-        ("Locate M", r"Point $M$ is the midpoint of $AC$, so $M=\left(\frac12,\frac{\sqrt3}{2}\right)$."),
-        ("Use C as midpoint of BD", r"Since $C$ is the midpoint of $BD$ and $B=(-1,0)$, point $D$ must be $(3,0)$."),
-        ("Compute the triangle area", r"Segment $CD$ is horizontal with length $2$. The height from $M$ to line $CD$ is $\frac{\sqrt3}{2}$."),
-        ("Answer", r"Thus $[CDM]=\frac12\cdot2\cdot\frac{\sqrt3}{2}=\boxed{\frac{\sqrt3}{2}}$."),
+    24: [
+        ("Write the reversed digits", r"Let $x=10a+b$ and $y=10b+a$, where $a$ and $b$ are nonzero digits. Since $m$ is positive, take $a>b$ so $x>y$."),
+        ("Factor the difference of squares", r"We have \[x^2-y^2=(x-y)(x+y).\] Now $x-y=9(a-b)$ and $x+y=11(a+b)$, so \[m^2=99(a-b)(a+b).\]"),
+        ("Use the small digit range", r"The digits are only from $1$ to $9$, so we can test the possible pairs $a>b$. The square condition is quite restrictive because the factor $99=9\cdot11$ requires the remaining factor to supply another factor of $11$ and make all exponents even."),
+        ("Find the working pair", r"The pair $a=6$, $b=5$ gives $x=65$ and $y=56$. Then \[65^2-56^2=(65-56)(65+56)=9\cdot121=33^2.\]"),
+        ("Answer", r"Thus $m=33$, and $x+y+m=65+56+33=\boxed{154}$."),
     ],
-    15: [
-        ("Count all pairs", r"There are $8$ bills, so the total number of unordered pairs is $\binom82=28$."),
-        ("Count pairs involving a $20$", r"Any pair with a $20$-dollar bill has sum at least $20$. There are $2$ choices for a $20$ and $6$ choices for a non-$20$ bill, giving $12$ pairs, plus the pair of two $20$s, giving $13$ pairs."),
-        ("Count pairs without a $20$", r"Without a $20$, the only way to reach at least $20$ is to choose the two $10$-dollar bills. That adds $1$ more pair."),
-        ("Compute the probability", r"There are $14$ favorable pairs out of $28$ total pairs."),
-        ("Answer", r"The probability is $14/28=\boxed{\frac12}$."),
-    ],
-    16: [
-        ("Name the roots", r"Let the roots of $x^2+px+m=0$ be $r$ and $s$. Then the roots of $x^2+mx+n=0$ are $2r$ and $2s$."),
-        ("Use Vieta on the second equation", r"For $x^2+px+m=0$, we have $r+s=-p$ and $rs=m$."),
-        ("Use Vieta on the first equation", r"For $x^2+mx+n=0$, the sum of roots is $-m$. But the roots are $2r$ and $2s$, so $2r+2s=2(r+s)=-2p=-m$. Hence $m=2p$."),
-        ("Use the product", r"The product of the first equation's roots is $n$. Thus $n=(2r)(2s)=4rs=4m$."),
-        ("Answer", r"Since $m=2p$, we get $n=4m=8p$, so $\frac np=\boxed{8}$."),
-    ],
-    17: [
-        ("Rewrite as logarithms", r"From $4^a=5$, we have $a=\log_4 5$. Similarly, $b=\log_5 6$, $c=\log_6 7$, and $d=\log_7 8$."),
-        ("Multiply the logs", r"The product is \[\log_4 5\cdot\log_5 6\cdot\log_6 7\cdot\log_7 8.\]"),
-        ("Use telescoping", r"Using $\log_a b\cdot\log_b c=\log_a c$, the product collapses to $\log_4 8$."),
-        ("Evaluate", r"Since $4=2^2$ and $8=2^3$, $\log_4 8=\frac32$."),
-        ("Answer", r"The answer is $\boxed{\frac32}$."),
-    ],
-    18: [
-        ("Identify the available digits", r"The digits cannot be $0$ or $1$, so they come from $2,3,4,5,6,7,8,9$, which gives $8$ possible digits."),
-        ("Use the increasing-order condition", r"Once David chooses which $7$ digits appear, their order is forced because they must be in increasing order."),
-        ("Count choices", r"So the number of telephone numbers is just the number of ways to choose $7$ digits from $8$: \[\binom87=8.\]"),
-        ("Answer", r"David can have $\boxed{8}$ different telephone numbers."),
-    ],
-    19: [
-        ("Find the median", r"The cumulative percentages are $10\%$ at $70$, then $35\%$ at $80$, then $55\%$ at $85$. So the median score is $85$."),
-        ("Find the remaining percentage", r"The listed percentages before $95$ add to $10+25+20+15=70\%$, so $30\%$ of students got $95$."),
-        ("Compute the mean", r"The mean is \[0.10(70)+0.25(80)+0.20(85)+0.15(90)+0.30(95).\]"),
-        ("Evaluate", r"This equals $7+20+17+13.5+28.5=86$."),
-        ("Answer", r"The difference between the mean and median is $86-85=\boxed{1}$."),
-    ],
-    20: [
-        ("Use symmetry of permutations", r"All permutations of the digits $1,3,5,7,8$ are used. In each place value, every digit appears equally often."),
-        ("Find the average digit in each place", r"The average of the five digits is \[\frac{1+3+5+7+8}{5}=\frac{24}{5}=4.8.\]"),
-        ("Build the average number", r"Since each place has average digit $4.8$, the average number is \[4.8(10000+1000+100+10+1).\]"),
-        ("Compute", r"This is $4.8\cdot11111=53332.8$."),
-        ("Answer", r"The average is $\boxed{53332.8}$."),
+    25: [
+        ("Pair dangerous numbers", r"Two numbers cannot both be chosen if their sum is $125$. The relevant pairs are $(25,100),(26,99),\ldots,(62,63)$."),
+        ("Count the pairs", r"There are $62-25+1=38$ such pairs. From each pair, we can choose at most one number."),
+        ("Find unpaired numbers", r"The numbers $1$ through $24$ cannot pair with another number in the set to make $125$, because their partners would be greater than $100$. All $24$ of these can be included."),
+        ("Build the maximum", r"Choose all $24$ unpaired numbers and one number from each of the $38$ dangerous pairs. This gives $24+38=62$ numbers."),
+        ("Answer", r"The maximum possible size of $B$ is $\boxed{62}$."),
     ],
 }
 
@@ -355,7 +295,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批完成 2005 AMC 10B Problems 11-20，无跳过题。\n"
+        + "本批完成 2005 AMC 10B Problems 21-25，无跳过题；2005B 完成。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",
