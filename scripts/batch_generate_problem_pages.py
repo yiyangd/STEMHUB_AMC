@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 156
+BATCH_NUMBER = 157
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2003_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,17,18,19,20}
-SKIPPED = ["2003 AMC 12B Problem 16 skipped: shaded semicircle area depends on the missing figure."]
-BATCH_LABEL = "2003 AMC 12B Problems 11-15,17-20"
-NEXT_START = "2003 AMC 12B Problem 21"
+TARGET_NUMBERS = {21,22,23,24,25}
+SKIPPED = []
+BATCH_LABEL = "2003 AMC 12B Problems 21-25"
+NEXT_START = "2004 AMC 12A Problem 1"
 
-ANS={11:("C","10:25 PM"),12:("D","15"),13:("B","3:1"),14:("D",r"\frac{25}{2}"),15:("D",r"\frac12"),17:("D",r"\frac35"),18:("B","31"),19:("E","19"),20:("B","-2")}
+ANS={21:("D",r"\frac13"),22:("C","7"),23:("A","2900"),24:("C","1002"),25:("D",r"\frac1{12}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -715,6 +715,30 @@ SOL.update({
 18:[("Compare prime exponents",r"The equation is \[7x^5=11y^{13}.\] We need choose \(x\) so that after multiplying by \(7\), every prime exponent on the left is a multiple of \(13\)." ),("Handle the prime 7",r"If \(7^a\) divides \(x\), then the exponent of \(7\) on the left is \(1+5a\). We need \[1+5a\equiv0\pmod{13}.\] The smallest nonnegative solution is \(a=5\)." ),("Handle the prime 11",r"If \(11^c\) divides \(x\), then the exponent of \(11\) on the left is \(5c\). The right side has an extra factor \(11\), so we need \[5c\equiv1\pmod{13},\] whose smallest solution is \(c=8\)." ),("Write minimum x",r"Thus the minimum possible \(x\) is \[x=7^5\cdot11^8.\]"),("Add the requested numbers",r"Here \(a=7\), \(b=11\), \(c=5\), and \(d=8\), so \[a+b+c+d=7+11+5+8=31.\]"),("Conclude",r"The answer is $\boxed{31}$."),],
 19:[("Count the sample space",r"There are \(5!=120\) permutations of \(1,2,3,4,5\). Those with first term \(1\) number \(4!=24\). So \[|S|=120-24=96.\]"),("Count favorable permutations",r"Now require the second term to be \(2\). There are \(4!=24\) permutations with second term \(2\)." ),("Remove forbidden first term",r"Among those, the permutations with first term \(1\) have first two terms \(1,2\), and the remaining \(3\) terms can be arranged in \(3!=6\) ways. Thus favorable permutations in \(S\) number \(24-6=18\)." ),("Reduce the probability",r"The probability is \[\frac{18}{96}=\frac{3}{16}.\]"),("Conclude",r"Thus \(a+b=3+16=\boxed{19}\)." ),],
 20:[("Use the roots shown",r"The graph shows \(x\)-intercepts at \(-1\) and \(1\), so \(x+1\) and \(x-1\) are factors."),("Use the y-intercept",r"The point \((0,2)\) gives \(f(0)=2\), so \(d=2\)." ),("Write the factored form",r"Since the polynomial is monic cubic, \[f(x)=(x^2-1)(x-r).\] The constant term is \(r\), so \(r=2\)." ),("Read b",r"Then \[f(x)=(x^2-1)(x-2)=x^3-2x^2-x+2.\] Thus \(b=-2\)." ),("Conclude",r"The answer is $\boxed{-2}$."),],
+})
+
+OV.update({
+21:(r"An object moves \(8\) cm in a straight line from \(A\) to \(B\), turns at an angle \(\alpha\), measured in radians and chosen at random from \((0,\pi)\), and moves \(5\) cm in a straight line to \(C\). What is the probability that \(AC<7\)?",[("A",r"\(\frac16\)"),("B",r"\(\frac15\)"),("C",r"\(\frac14\)"),("D",r"\(\frac13\)"),("E",r"\(\frac12\)")]),
+22:(r"Let \(ABCD\) be a rhombus with \(AC=16\) and \(BD=30\). Let \(N\) be a point on \(\overline{AB}\), and let \(P\) and \(Q\) be the feet of the perpendiculars from \(N\) to \(\overline{AC}\) and \(\overline{BD}\), respectively. Which is closest to the minimum possible value of \(PQ\)?",[("A","6.5"),("B","6.75"),("C","7"),("D","7.25"),("E","7.5")]),
+23:(r"The number of \(x\)-intercepts on the graph of \(y=\sin(1/x)\) in the interval \((0.0001,0.001)\) is closest to:",[("A","2900"),("B","3000"),("C","3100"),("D","3200"),("E","3300")]),
+24:(r"Positive integers \(a,b,c\) are chosen so that \(a<b<c\), and the system \[2x+y=2003,\qquad y=|x-a|+|x-b|+|x-c|\] has exactly one solution. What is the minimum value of \(c\)?",[("A","668"),("B","669"),("C","1002"),("D","2003"),("E","2004")]),
+25:(r"Three points are chosen randomly and independently on a circle. What is the probability that all three pairwise distances between the points are less than the radius of the circle?",[("A",r"\(\frac1{36}\)"),("B",r"\(\frac1{24}\)"),("C",r"\(\frac1{18}\)"),("D",r"\(\frac1{12}\)"),("E",r"\(\frac19\)")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Use the Law of Cosines and the uniform angle interval.",
+22:"Model the rhombus with perpendicular diagonals and minimize a distance to a side.",
+23:"Solve sin(1/x)=0 by counting integer multiples of pi.",
+24:"Make a line tangent to a piecewise-linear absolute-value graph.",
+25:"Fix one point and measure the allowable angular region for the other two.",
+})
+
+SOL.update({
+21:[("Use the Law of Cosines",r"The object travels \(AB=8\) and then \(BC=5\), with turn angle \(\alpha\). The distance \(AC\) satisfies \[AC^2=8^2+5^2+2\cdot8\cdot5\cos\alpha=89+80\cos\alpha.\]"),("Apply the condition",r"We want \(AC<7\), so \[89+80\cos\alpha<49.\] This gives \[\cos\alpha<-\frac12.\]"),("Convert to an angle interval",r"On \((0,\pi)\), the inequality \(\cos\alpha<-\frac12\) holds when \[\alpha>\frac{2\pi}{3}.\]"),("Compute probability",r"The favorable interval has length \(\pi-\frac{2\pi}{3}=\frac{\pi}{3}\). The total interval has length \(\pi\), so the probability is \[\frac{\pi/3}{\pi}=\frac13.\]"),("Conclude",r"The answer is $\boxed{\frac13}$."),],
+22:[("Use diagonal coordinates",r"In a rhombus, the diagonals are perpendicular and bisect each other. Put their intersection at the origin, let \(AC\) be horizontal with endpoints \((-8,0)\) and \((8,0)\), and \(BD\) be vertical with endpoints \((0,-15)\) and \((0,15)\)." ),("Interpret P and Q",r"If \(N=(x,y)\), then the foot to \(AC\) is \(P=(x,0)\), and the foot to \(BD\) is \(Q=(0,y)\). Therefore \[PQ=\sqrt{x^2+y^2},\] the distance from \(N\) to the origin."),("Minimize over side AB",r"Point \(N\) lies on side \(AB\), the line through \((-8,0)\) and \((0,15)\). The closest point on this side to the origin gives the minimum \(PQ\)." ),("Compute the distance",r"The line has equation \[15x-8y+120=0.\] The distance from the origin to this line is \[\frac{120}{\sqrt{15^2+8^2}}=\frac{120}{17}\approx7.06.\]"),("Choose the closest answer",r"The closest listed value is \(\boxed{7}\)." ),],
+23:[("Find zeros of sine",r"The graph crosses the \(x\)-axis when \[\sin(1/x)=0,\] which occurs when \[1/x=k\pi\] for a positive integer \(k\)." ),("Convert the interval",r"The condition \(0.0001<x<0.001\) becomes \[1000<\frac1x<10000.\] Thus \[1000<k\pi<10000.\]"),("Count k values approximately",r"This means \[\frac{1000}{\pi}<k<\frac{10000}{\pi}.\] Numerically, this is approximately \[318.3<k<3183.1.\]"),("Count intercepts",r"So \(k=319,320,\ldots,3183\), giving about \(2865\) intercepts."),("Conclude",r"The closest choice is $\boxed{2900}$."),],
+24:[("Substitute the line into the absolute-value graph",r"From \(2x+y=2003\), we have \(y=2003-2x\). Intersections satisfy \[2003-2x=|x-a|+|x-b|+|x-c|.\]"),("Move everything to one side",r"Define \[F(x)=|x-a|+|x-b|+|x-c|+2x-2003.\] Since \(a<b<c\), this piecewise-linear function decreases up to \(x=a\), then increases afterward."),("Require exactly one solution",r"For exactly one intersection, the minimum must equal \(0\). The minimum occurs at \(x=a\)." ),("Evaluate the minimum",r"At \(x=a\), \[F(a)=0+(b-a)+(c-a)+2a-2003=b+c-2003.\] Thus we need \[b+c=2003.\]"),("Minimize c",r"With positive integers \(a<b<c\), the smallest possible \(c\) occurs when \(b\) and \(c\) are as close as possible. Since \(b+c=2003\), take \(b=1001\) and \(c=1002\)." ),("Conclude",r"The minimum possible value is $\boxed{1002}$."),],
+25:[("Fix one point",r"By rotational symmetry, fix the first point on the circle. The other two points are independently and uniformly chosen."),("Translate chord length to angle",r"A chord is shorter than the radius exactly when its smaller central angle is less than \(60^\circ\), or \(\frac16\) of a full circle."),("Describe the allowed region",r"Each of the other two points must lie within \(60^\circ\) of the fixed point. In angular coordinates scaled so the full circle has length \(1\), both lie in an interval \((-1/6,1/6)\)." ),("Enforce the third pair",r"The two moving points must also be within \(1/6\) of each other. Inside the square of side \(1/3\), this removes two right triangles of side \(1/6\), leaving area \[3\left(\frac16\right)^2=\frac1{12}.\]"),("Conclude",r"The probability is $\boxed{\frac1{12}}$."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
