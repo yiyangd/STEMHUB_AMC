@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 160
+BATCH_NUMBER = 161
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2004_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2004_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
 SKIPPED = []
-BATCH_LABEL = "2004 AMC 12A Problems 21-25"
-NEXT_START = "2004 AMC 12B Problem 1"
+BATCH_LABEL = "2004 AMC 12B Problems 1-10"
+NEXT_START = "2004 AMC 12B Problem 11"
 
-ANS={21:("D",r"\frac35"),22:("B",r"3+\frac{\sqrt{69}}3"),23:("E",r"\sum_{k=1}^{2004}c_k"),24:("C",r"3\pi-\frac{\sqrt3}{2}"),25:("E","962")}
+ANS={1:("A","3"),2:("D","9"),3:("A","8"),4:("B",r"\frac15"),5:("A","5"),6:("A","13"),7:("B",r"100+75\pi"),8:("D","10"),9:("E",r"(3,2)"),10:("A",r"\pi a^2")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -843,6 +843,48 @@ SOL.update({
 24:[("Think about disk centers",r"A radius-\(1\) disk covers segment \(\overline{AB}\) exactly when its center is within distance \(1\) of both \(A\) and \(B\). Thus the possible centers form the lens-shaped intersection of two unit disks centered at \(A\) and \(B\)."),("Use a geometric enlargement",r"The set \(S\) is obtained by taking every possible center in that lens and drawing a unit disk around it. In other words, \(S\) is the lens enlarged outward by radius \(1\)."),("Find the lens area",r"Since \(AB=1\), the two unit circles meet with central angle \(120^\circ\). The lens area is \[2\cdot\frac{120^\circ}{360^\circ}\pi-2\cdot\frac{\sqrt3}{4}=\frac{2\pi}{3}-\frac{\sqrt3}{2}.\]"),("Find the lens perimeter",r"The boundary of the lens consists of two \(120^\circ\) arcs of radius \(1\), so its perimeter is \[2\cdot\frac{2\pi}{3}=\frac{4\pi}{3}.\]"),("Add the radius-one enlargement",r"Enlarging a convex region by radius \(1\) adds area equal to its perimeter times \(1\), plus the area \(\pi\) of a unit disk. Thus \[|S|=\left(\frac{2\pi}{3}-\frac{\sqrt3}{2}\right)+\frac{4\pi}{3}+\pi=3\pi-\frac{\sqrt3}{2}.\]"),("Conclude",r"The answer is $\boxed{3\pi-\frac{\sqrt3}{2}}$."),],
 25:[("Convert the repeating decimal",r"In base \(n\), \(0.\overline{133}_n\) has repeating block \(133\). Therefore \[a_n=\frac{n^2+3n+3}{n^3-1}.\]"),("Prepare for telescoping",r"Notice that \(n^2+3n+3=(n+1)^2+(n+1)+1\). Also \[n^3-1=(n-1)(n^2+n+1).\]"),("Rewrite each factor",r"Let \(Q_n=n^2+n+1\). Then \[a_n=\frac{Q_{n+1}}{(n-1)Q_n}.\]"),("Multiply from 4 to 99",r"The \(Q_n\) factors telescope: \[\prod_{n=4}^{99}a_n=\frac{Q_{100}}{Q_4\cdot(3\cdot4\cdots98)}.\]"),("Simplify the product",r"We have \(Q_{100}=100^2+100+1=10101\) and \(Q_4=21\). Also \(3\cdot4\cdots98=\frac{98!}{2}\). Thus \[\prod_{n=4}^{99}a_n=\frac{10101}{21}\cdot\frac{2}{98!}=\frac{962}{98!}.\]"),("Conclude",r"With \(N\) as small as possible, \(m=\boxed{962}\)."),],
 })
+OV.update({
+1:(r"At each basketball practice last week, Jenny made twice as many free throws as she made at the previous practice. At her fifth practice she made \(48\) free throws. How many free throws did she make at the first practice?",[("A","3"),("B","6"),("C","9"),("D","12"),("E","15")]),
+2:(r"In the expression \(c\cdot a^b-d\), the values of \(a,b,c,\) and \(d\) are \(0,1,2,\) and \(3\), although not necessarily in that order. What is the maximum possible value of the result?",[("A","5"),("B","6"),("C","8"),("D","9"),("E","10")]),
+3:(r"If \(x\) and \(y\) are positive integers for which \(2^x3^y=1296\), what is the value of \(x+y\)?",[("A","8"),("B","9"),("C","10"),("D","11"),("E","12")]),
+4:(r"An integer \(x\), with \(10\le x\le99\), is to be chosen. If all choices are equally likely, what is the probability that at least one digit of \(x\) is a \(7\)?",[("A",r"\(\frac19\)"),("B",r"\(\frac15\)"),("C",r"\(\frac{19}{90}\)"),("D",r"\(\frac29\)"),("E",r"\(\frac13\)")]),
+5:(r"On a trip from the United States to Canada, Isabella took \(d\) U.S. dollars. At the border she exchanged them all, receiving \(10\) Canadian dollars for every \(7\) U.S. dollars. After spending \(60\) Canadian dollars, she had \(d\) Canadian dollars left. What is the sum of the digits of \(d\)?",[("A","5"),("B","6"),("C","7"),("D","8"),("E","9")]),
+6:(r"Minneapolis-St. Paul International Airport is \(8\) miles southwest of downtown St. Paul and \(10\) miles southeast of downtown Minneapolis. Which of the following is closest to the number of miles between downtown St. Paul and downtown Minneapolis?",[("A","13"),("B","14"),("C","15"),("D","16"),("E","17")]),
+7:(r"A square has sides of length \(10\), and a circle centered at one of its vertices has radius \(10\). What is the area of the union of the regions enclosed by the square and the circle?",[("A",r"\(200+25\pi\)"),("B",r"\(100+75\pi\)"),("C",r"\(75+100\pi\)"),("D",r"\(100+100\pi\)"),("E",r"\(100+125\pi\)")]),
+8:(r"A grocer makes a display of cans in which the top row has one can and each lower row has two more cans than the row above it. If the display contains \(100\) cans, how many rows does it contain?",[("A","5"),("B","8"),("C","9"),("D","10"),("E","11")]),
+9:(r"The point \((-3,2)\) is rotated \(90^\circ\) clockwise around the origin to point \(B\). Point \(B\) is then reflected over the line \(y=x\) to point \(C\). What are the coordinates of \(C\)?",[("A",r"\((-3,-2)\)"),("B",r"\((-2,-3)\)"),("C",r"\((2,-3)\)"),("D",r"\((2,3)\)"),("E",r"\((3,2)\)")]),
+10:(r"An annulus is the region between two concentric circles. The concentric circles in the figure have radii \(b\) and \(c\), with \(b>c\). Let \(\overline{OX}\) be a radius of the larger circle, let \(\overline{XZ}\) be tangent to the smaller circle at \(Z\), and let \(\overline{OY}\) be the radius of the larger circle that contains \(Z\). Let \(a=XZ\), \(d=YZ\), and \(e=XY\). What is the area of the annulus?",[("A",r"\(\pi a^2\)"),("B",r"\(\pi b^2\)"),("C",r"\(\pi c^2\)"),("D",r"\(\pi d^2\)"),("E",r"\(\pi e^2\)")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Work backward through a doubling pattern.",
+2:"Place the digits to maximize an exponential expression and subtract zero.",
+3:"Use prime factorization to match exponents.",
+4:"Use complement or inclusion-exclusion on two-digit numbers.",
+5:"Set up an exchange-rate equation.",
+6:"Model the directions as perpendicular legs of a right triangle.",
+7:"Use union area equals square plus circle minus overlap.",
+8:"Recognize the sum of the first \(n\) odd numbers.",
+9:"Apply coordinate rules for rotation and reflection.",
+10:"Use the tangent radius to relate the annulus area to \(a^2\).",
+})
+
+NOTES_OVERRIDES.update({
+10:"This problem contains a diagram. The text gives the needed tangent and radius relationships; please refer to the original PDF or AoPS page for the figure.",
+})
+
+SOL.update({
+1:[("Read the doubling pattern",r"Each practice has twice the previous practice's number of free throws. That means going backward divides by \(2\)."),("Move from fifth to fourth",r"At the fifth practice Jenny made \(48\), so at the fourth practice she made \(48/2=24\)."),("Continue backward",r"The third practice was \(24/2=12\), the second was \(12/2=6\), and the first was \(6/2=3\)."),("Check forward",r"Starting with \(3\), doubling four times gives \(3,6,12,24,48\), which matches the fifth practice."),("Conclude",r"She made \(\boxed{3}\) free throws at the first practice."),],
+2:[("Make subtraction harmless",r"To maximize \(c\cdot a^b-d\), we want \(d\) as small as possible. Since \(0\) is available, choose \(d=0\)."),("Decide where 1 should go",r"If \(b=1\), then the power is only \(a\), and if \(a=1\), then the power is \(1\). The largest value is likely when \(1\) is the multiplier \(c\), leaving \(a=3\) and \(b=2\)."),("Test the best arrangement",r"With \(c=1\), \(a=3\), \(b=2\), and \(d=0\), the expression is \[1\cdot3^2-0=9.\]"),("Check no larger option is missed",r"If \(c=2\) or \(3\), then the exponent base or exponent loses one of \(2,3\), and the best remaining powers give at most \(3\cdot2^1=6\) or \(2\cdot3^1=6\)."),("Conclude",r"The maximum possible value is \(\boxed{9}\)."),],
+3:[("Factor the right side",r"Since \(1296=36^2\), we have \[1296=(2^2\cdot3^2)^2=2^4\cdot3^4.\]"),("Match prime powers",r"The equation \(2^x3^y=1296\) has unique prime factorization, so \(x=4\) and \(y=4\)."),("Compute the requested sum",r"Therefore \(x+y=4+4=8\)."),("Check positivity",r"Both \(x\) and \(y\) are positive integers, so this solution satisfies the condition."),("Conclude",r"The answer is \(\boxed{8}\)."),],
+4:[("Count the sample space",r"The integers from \(10\) through \(99\) are exactly the \(90\) two-digit integers."),("Count units digit 7",r"There are \(10\) numbers with units digit \(7\): \(17,27,\ldots,97\)."),("Count tens digit 7",r"There are \(10\) numbers from \(70\) through \(79\), but this count includes \(77\), which was already counted in the units-digit group."),("Apply inclusion-exclusion",r"The number with at least one digit \(7\) is \(10+10-1=19\) if we include \(07\), but \(07\) is not a two-digit number. Equivalently, tens digit \(7\) gives \(10\) numbers and units digit \(7\) among two-digit numbers gives \(9\) additional numbers outside the 70s, for \(18\) total."),("Compute probability",r"The probability is \[\frac{18}{90}=\frac15.\]"),("Conclude",r"The answer is $\boxed{\frac15}$."),],
+5:[("Translate the exchange rate",r"If Isabella starts with \(d\) U.S. dollars, then she receives \(\frac{10d}{7}\) Canadian dollars."),("Use the amount left",r"After spending \(60\) Canadian dollars, she has \(d\) Canadian dollars left. Thus \[\frac{10d}{7}-60=d.\]"),("Solve for d",r"Multiplying by \(7\) gives \(10d-420=7d\), so \(3d=420\) and \(d=140\)."),("Answer the digit question",r"The sum of the digits of \(140\) is \(1+4+0=5\)."),("Conclude",r"The answer is \(\boxed{5}\)."),],
+6:[("Interpret the directions",r"From the airport, downtown St. Paul is northeast, and downtown Minneapolis is northwest. These two directions are perpendicular."),("Form a right triangle",r"The airport-to-St. Paul distance is \(8\) miles, and the airport-to-Minneapolis distance is \(10\) miles. The distance between downtowns is the hypotenuse."),("Apply the Pythagorean Theorem",r"The distance is \[\sqrt{8^2+10^2}=\sqrt{164}.\]"),("Choose the closest option",r"Since \(12^2=144\) and \(13^2=169\), \(\sqrt{164}\) is closest to \(13\)."),("Conclude",r"The answer is \(\boxed{13}\)."),],
+7:[("Use union area",r"The union area equals square area plus circle area minus the overlap area."),("Find the square and circle areas",r"The square has area \(10^2=100\). The circle has area \(\pi\cdot10^2=100\pi\)."),("Identify the overlap",r"Because the circle is centered at a vertex of the square and has radius equal to the side length, the part of the circle inside the square is exactly one quarter of the circle."),("Subtract the overlap",r"The overlap area is \(\frac14\cdot100\pi=25\pi\). Thus the union area is \[100+100\pi-25\pi=100+75\pi.\]"),("Conclude",r"The answer is \(\boxed{100+75\pi}\)."),],
+8:[("Write the row sizes",r"The row sizes are \(1,3,5,\ldots\), increasing by \(2\) each time. If there are \(n\) rows, the last row has \(2n-1\) cans."),("Use the odd-number sum",r"The sum of the first \(n\) odd positive integers is \(n^2\). This is a useful pattern to recognize here."),("Set up the total",r"The display has \(100\) cans, so \[n^2=100.\]"),("Solve for rows",r"Since \(n\) is positive, \(n=10\)."),("Conclude",r"The display contains \(\boxed{10}\) rows."),],
+9:[("Apply clockwise rotation",r"A \(90^\circ\) clockwise rotation sends \((x,y)\) to \((y,-x)\). Therefore \((-3,2)\) becomes \(B=(2,3)\)."),("Reflect over y equals x",r"Reflection over the line \(y=x\) swaps the two coordinates."),("Find C",r"So \(B=(2,3)\) reflects to \(C=(3,2)\)."),("Check the transformations",r"The rotation changes the quadrant as expected, and the reflection keeps the point in the first quadrant."),("Conclude",r"The answer is \(\boxed{(3,2)}\)."),],
+10:[("Start with the annulus formula",r"The area of the annulus is the larger circle area minus the smaller circle area: \[\pi b^2-\pi c^2=\pi(b^2-c^2).\]"),("Use the tangent radius",r"Since \(\overline{XZ}\) is tangent to the smaller circle at \(Z\), it is perpendicular to the radius \(\overline{OZ}\)."),("Build the right triangle",r"Triangle \(OXZ\) is right, with \(OX=b\), \(OZ=c\), and \(XZ=a\)."),("Apply the Pythagorean Theorem",r"Thus \[a^2+c^2=b^2,\] so \(b^2-c^2=a^2\)."),("Substitute into the area",r"The annulus area is \[\pi(b^2-c^2)=\pi a^2.\]"),("Conclude",r"The answer is \(\boxed{\pi a^2}\)."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -949,7 +991,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2004" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2004" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -1038,7 +1080,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2004 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2004 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
