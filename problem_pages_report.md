@@ -1,7 +1,7 @@
 # Problem Pages Report
 
-- Total manifest entries: 535
-- Latest batch: 72 (2013 AMC 10A Problems 16-20)
+- Total manifest entries: 540
+- Latest batch: 73 (2013 AMC 10A Problems 21-25)
 - Latest new generated count: 5
 - Latest updated existing count: 0
 - Latest skipped count: 0
@@ -10,8 +10,8 @@
 
 ## Latest Batch Pages
 
-- `2013 AMC 10A Problem 16` -> `amc10/problems/2013-amc-10a-problem-16/`
-- `2013 AMC 10A Problem 17` -> `amc10/problems/2013-amc-10a-problem-17/`
-- `2013 AMC 10A Problem 18` -> `amc10/problems/2013-amc-10a-problem-18/`
-- `2013 AMC 10A Problem 19` -> `amc10/problems/2013-amc-10a-problem-19/`
-- `2013 AMC 10A Problem 20` -> `amc10/problems/2013-amc-10a-problem-20/`
+- `2013 AMC 10A Problem 21` -> `amc10/problems/2013-amc-10a-problem-21/`
+- `2013 AMC 10A Problem 22` -> `amc10/problems/2013-amc-10a-problem-22/`
+- `2013 AMC 10A Problem 23` -> `amc10/problems/2013-amc-10a-problem-23/`
+- `2013 AMC 10A Problem 24` -> `amc10/problems/2013-amc-10a-problem-24/`
+- `2013 AMC 10A Problem 25` -> `amc10/problems/2013-amc-10a-problem-25/`
