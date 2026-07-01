@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 188
+BATCH_NUMBER = 189
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2009_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,9,10}
-SKIPPED = ["2009 AMC 12A Problem 8: skipped because the rectangle arrangement depends strongly on the original diagram."]
-BATCH_LABEL = "2009 AMC 12A Problems 1-7, 9-10"
-NEXT_START = "2009 AMC 12A Problem 11"
+TARGET_NUMBERS = {11,12,13,14,15,16,17,18,19}
+SKIPPED = ["2009 AMC 12A Problem 20: skipped because the local CSV statement is truncated and mixed with another problem's figure labels."]
+BATCH_LABEL = "2009 AMC 12A Problems 11-19"
+NEXT_START = "2009 AMC 12A Problem 21"
 
-ANS={1:("A","46"),2:("C",r"\frac53"),3:("B",r"\frac5{12}"),4:("A","15"),5:("D","125"),6:("E",r"P^{2n}Q^m"),7:("B","502"),9:("D","2"),10:("C","13")}
+ANS={11:("E","761"),12:("B","1"),13:("D","[700,800]"),14:("B",r"-\frac16"),15:("D","97"),16:("D","8"),17:("C","1"),18:("B","7"),19:("C","A=B")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1832,6 +1832,42 @@ SOL.update({
 7:[("Use equal differences",r"In an arithmetic sequence, consecutive differences are equal. So \[(5x-11)-(2x-3)=(3x+1)-(5x-11).\]"),("Solve for x",r"The left side is \(3x-8\), and the right side is \(-2x+12\). Thus \[3x-8=-2x+12,\] so \(5x=20\), and \(x=4\)."),("Find the sequence",r"The first term is \(2(4)-3=5\), and the common difference is \(4\)."),("Write the nth term",r"The \(n\)th term is \[5+4(n-1)=4n+1.\]"),("Solve for n",r"Set \(4n+1=2009\). Then \(4n=2008\), so \(n=502\)."),("Conclude",r"The answer is \(\boxed{502}\)."),],
 9:[("Change variables",r"Let \(u=x+3\). Then \(x=u-3\), and the equation becomes \[f(u)=3(u-3)^2+7(u-3)+4.\]"),("Expand",r"\[3(u^2-6u+9)+7u-21+4=3u^2-18u+27+7u-21+4.\]"),("Combine terms",r"So \[f(u)=3u^2-11u+10.\] Therefore \(a=3\), \(b=-11\), and \(c=10\)."),("Add coefficients",r"\[a+b+c=3-11+10=2.\]"),("Conclude",r"The answer is \(\boxed{2}\)."),],
 10:[("Let BD be x",r"Diagonal \(\overline{BD}\) forms triangles \(ABD\) and \(BCD\). Let \(BD=x\)."),("Use triangle BCD",r"In triangle \(BCD\), the sides are \(17\), \(5\), and \(x\). The triangle inequality requires \[5+x>17,\] so \(x>12\)."),("Use triangle ABD",r"In triangle \(ABD\), the sides are \(5\), \(9\), and \(x\). The triangle inequality requires \[5+9>x,\] so \(x<14\)."),("Use the integer condition",r"The only integer satisfying \(12<x<14\) is \(x=13\)."),("Conclude",r"\(BD=\boxed{13}\)."),],
+})
+
+OV.update({
+11:(r"The figures \(F_1,F_2,F_3,\ldots\) begin a sequence. For \(n\ge3\), \(F_n\) is constructed from \(F_{n-1}\) by surrounding it with a square and placing one more diamond on each side of the new square than \(F_{n-1}\) had on each side of its outside square. Figure \(F_3\) has \(13\) diamonds. How many diamonds are there in \(F_{20}\)?",[("A","401"),("B","485"),("C","585"),("D","626"),("E","761")]),
+12:(r"How many positive integers less than \(1000\) are \(6\) times the sum of their digits?",[("A","0"),("B","1"),("C","2"),("D","4"),("E","12")]),
+13:(r"A ship sails \(10\) miles in a straight line from \(A\) to \(B\), turns through an angle between \(45^\circ\) and \(60^\circ\), and then sails another \(20\) miles to \(C\). Which interval contains \(AC^2\)?",[("A","[400,500]"),("B","[500,600]"),("C","[600,700]"),("D","[700,800]"),("E","[800,900]")]),
+14:(r"A triangle has vertices \((0,0)\), \((1,1)\), and \((6m,0)\), and the line \(y=mx\) divides the triangle into two triangles of equal area. What is the sum of all possible values of \(m\)?",[("A",r"\(-\frac13\)"),("B",r"\(-\frac16\)"),("C",r"\(\frac16\)"),("D",r"\(\frac13\)"),("E",r"\(\frac12\)")]),
+15:(r"For what value of \(n\) is \[i+2i^2+3i^3+\cdots+ni^n=48+49i?\] Here \(i=\sqrt{-1}\).",[("A","24"),("B","48"),("C","49"),("D","97"),("E","98")]),
+16:(r"A circle with center \(C\) is tangent to the positive \(x\)- and \(y\)-axes and externally tangent to the circle centered at \((3,0)\) with radius \(1\). What is the sum of all possible radii of the circle with center \(C\)?",[("A","3"),("B","4"),("C","6"),("D","8"),("E","9")]),
+17:(r"Let \(a+ar_1+ar_1^2+\cdots\) and \(a+ar_2+ar_2^2+\cdots\) be two different infinite geometric series of positive numbers with the same first term. The sum of the first series is \(r_1\), and the sum of the second series is \(r_2\). What is \(r_1+r_2\)?",[("A","0"),("B",r"\(\frac12\)"),("C","1"),("D",r"\(\frac{1+\sqrt5}{2}\)"),("E","2")]),
+18:(r"For \(k>0\), let \(I_k=10\ldots064\), where there are \(k\) zeros between the \(1\) and the \(6\). Let \(N(k)\) be the number of factors of \(2\) in the prime factorization of \(I_k\). What is the maximum value of \(N(k)\)?",[("A","6"),("B","7"),("C","8"),("D","9"),("E","10")]),
+19:(r"Andrea inscribed a circle inside a regular pentagon, circumscribed a circle around the pentagon, and calculated the area of the region between the two circles. Bethany did the same with a regular heptagon. The areas of the two regions were \(A\) and \(B\), respectively. Each polygon had side length \(2\). Which of the following is true?",[("A",r"\(A=\frac{25}{49}B\)"),("B",r"\(A=\frac57B\)"),("C",r"\(A=B\)"),("D",r"\(A=\frac75B\)"),("E",r"\(A=\frac{49}{25}B\)")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Sum the number of diamonds added on each new outside square.",
+12:"Use digit equations for one-, two-, and three-digit numbers.",
+13:"Apply the Law of Cosines with the turn angle converted to the interior angle.",
+14:"An area-bisecting line from a vertex passes through the midpoint of the opposite side.",
+15:"Group powers of \(i\) in blocks of four.",
+16:"Set the unknown tangent circle center at \((r,r)\).",
+17:"Both ratios are roots of the same quadratic.",
+18:"Analyze powers of \(2\) in \(10^{k+2}+64\).",
+19:"For a regular polygon with side \(2\), use \(R^2-r^2=1\).",
+})
+
+SOL.update({
+11:[("Find how many diamonds are added at each stage",r"The outside square for \(F_n\) has \(4\) more boundary diamonds than the outside square for \(F_{n-1}\). Since the outside square of \(F_2\) has \(4\) diamonds, the outside square of \(F_n\) has \(4(n-1)\) diamonds."),("Write the total as a sum",r"Starting from the center diamond, the total number in \(F_n\) is \[1+4+8+12+\cdots+4(n-1).\]"),("Use the arithmetic series",r"\[1+4(1+2+\cdots+(n-1))=1+4\cdot\frac{(n-1)n}{2}=1+2n(n-1).\]"),("Evaluate at n=20",r"For \(F_{20}\), this gives \[1+2\cdot20\cdot19=1+760=761.\]"),("Conclude",r"The answer is \(\boxed{761}\)."),],
+12:[("Check one-digit numbers",r"If a one-digit number \(u\) worked, then \(u=6u\), forcing \(u=0\). But the number must be positive, so there are no one-digit solutions."),("Check two-digit numbers",r"Let the number be \(10t+u\). The condition is \[10t+u=6(t+u),\] so \(4t=5u\). Since \(t\) and \(u\) are digits, the only possibility is \(t=5\), \(u=4\), giving \(54\)."),("Rule out three-digit numbers",r"Let the number be \(100h+10t+u\). Then \[100h+10t+u=6(h+t+u),\] so \[94h+4t=5u.\] The left side is at least \(94\), while the right side is at most \(45\), impossible."),("Count",r"The only positive integer less than \(1000\) that works is \(54\)."),("Conclude",r"The answer is \(\boxed{1}\)."),],
+13:[("Convert the turn to the triangle angle",r"The ship turns between \(45^\circ\) and \(60^\circ\), so the interior angle \(\angle ABC\) of triangle \(ABC\) is between \(120^\circ\) and \(135^\circ\)."),("Apply the Law of Cosines",r"\[AC^2=10^2+20^2-2(10)(20)\cos\angle ABC=500-400\cos\angle ABC.\]"),("Bound the cosine",r"For angles between \(120^\circ\) and \(135^\circ\), the cosine is between \(-\frac12\) and \(-\frac{\sqrt2}{2}\)."),("Bound AC squared",r"Therefore \[700=500+200\le AC^2\le 500+200\sqrt2<800.\]"),("Conclude",r"So \(AC^2\) lies in \(\boxed{[700,800]}\)."),],
+14:[("Use the area-bisecting fact",r"The line \(y=mx\) passes through the vertex \((0,0)\). For it to divide the triangle into two equal areas, it must pass through the midpoint of the opposite side."),("Find the midpoint",r"The opposite side joins \((1,1)\) and \((6m,0)\), so its midpoint is \[\left(\frac{6m+1}{2},\frac12\right).\]"),("Put the midpoint on the line",r"Since this midpoint lies on \(y=mx\), \[\frac12=m\cdot\frac{6m+1}{2}.\] Thus \[1=m(6m+1).\]"),("Solve the quadratic",r"\[6m^2+m-1=0=(3m-1)(2m+1).\] So \(m=\frac13\) or \(m=-\frac12\)."),("Add the values",r"\[\frac13-\frac12=-\frac16.\]"),("Conclude",r"The answer is \(\boxed{-\frac16}\)."),],
+15:[("Group terms in blocks of four",r"The powers of \(i\) repeat every four terms. For \(k\) a multiple of \(4\), the block \[(k+1)i^{k+1}+(k+2)i^{k+2}+(k+3)i^{k+3}+(k+4)i^{k+4}\] equals \[(k+1)i-(k+2)-(k+3)i+(k+4)=2-2i.\]"),("Use 24 full blocks",r"Through \(n=96\), there are \(24\) full blocks, so the sum is \[24(2-2i)=48-48i.\]"),("Add the next term",r"The next term is \(97i^{97}=97i\), because \(97\equiv1\pmod4\)."),("Reach the target",r"\[48-48i+97i=48+49i.\] Thus \(n=97\)."),("Conclude",r"The answer is \(\boxed{97}\)."),],
+16:[("Locate the center",r"A circle tangent to both positive axes with radius \(r\) has center \(C=(r,r)\)."),("Use external tangency",r"The distance from \(C=(r,r)\) to the center \((3,0)\) of the radius-\(1\) circle must be \(r+1\)."),("Set up the equation",r"\[(r-3)^2+r^2=(r+1)^2.\]"),("Solve",r"Expanding gives \[r^2-8r+8=0.\] The two possible radii are \[r=4\pm2\sqrt2.\]"),("Add the radii",r"The sum of all possible radii is \[(4+2\sqrt2)+(4-2\sqrt2)=8.\]"),("Conclude",r"The answer is \(\boxed{8}\)."),],
+17:[("Write the sum formula",r"For an infinite geometric series with first term \(a\) and ratio \(r\), the sum is \(\frac{a}{1-r}\). The problem says this sum equals \(r\)."),("Create the equation for each ratio",r"Thus each ratio \(r\) satisfies \[\frac{a}{1-r}=r,\] or \[r^2-r+a=0.\]"),("Use the fact that the two ratios are different",r"The two different ratios \(r_1\) and \(r_2\) are the two roots of the same quadratic equation \(r^2-r+a=0\)."),("Use sum of roots",r"The sum of the roots is \(1\). Therefore \[r_1+r_2=1.\]"),("Conclude",r"The answer is \(\boxed{1}\)."),],
+18:[("Write Ik algebraically",r"The number \(I_k\) is \[I_k=10^{k+2}+64.\] We want the largest possible exponent of \(2\) dividing this number."),("Factor out an initial 4",r"\[I_k=4\left(25\cdot10^k+16\right).\] The outer factor contributes \(2\) factors of \(2\)."),("Check small k and the stable case",r"For \(k=1,2,3\), the inner factor contributes \(1,2,3\) more factors of \(2\), respectively. For \(k\ge5\), the inner factor has exactly \(4\) factors of \(2\), because after factoring \(16\), the remaining parenthesis is odd."),("Check the exceptional k=4",r"When \(k=4\), \[25\cdot10^4+16=16(25\cdot5^4+1).\] The parenthesis is even but not divisible by \(4\), so the inner factor contributes \(5\) factors of \(2\)."),("Find the maximum",r"Together with the outside factor \(4\), the maximum number of factors of \(2\) is \[2+5=7.\]"),("Conclude",r"The answer is \(\boxed{7}\)."),],
+19:[("Use a regular polygon side",r"For a regular polygon with side length \(2\), let \(R\) be the circumradius and \(r\) be the inradius. Connect the center to the midpoint of a side and to an endpoint of that side."),("Apply the right triangle",r"The half-side length is \(1\), so the right triangle has legs \(r\) and \(1\), and hypotenuse \(R\). Therefore \[R^2-r^2=1.\]"),("Find the annulus area",r"The area between the circumscribed and inscribed circles is \[\pi R^2-\pi r^2=\pi(R^2-r^2)=\pi.\]"),("Notice independence from number of sides",r"This calculation did not depend on whether the polygon was a pentagon or a heptagon. It only used the side length \(2\)."),("Conclude",r"The two areas are equal, so \(\boxed{A=B}\)."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
