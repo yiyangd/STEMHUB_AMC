@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 178
+BATCH_NUMBER = 179
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2007_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2007_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
 SKIPPED = []
-BATCH_LABEL = "2007 AMC 12A Problems 21-25"
-NEXT_START = "2007 AMC 12B Problem 1"
+BATCH_LABEL = "2007 AMC 12B Problems 1-10"
+NEXT_START = "2007 AMC 12B Problem 11"
 
-ANS={21:("A",r"\text{the coefficient of }x^2"),22:("D","4"),23:("A",r"\sqrt[6]{3}"),24:("D","2,016,532"),25:("E","129")}
+ANS={1:("E","876"),2:("B","24"),3:("D","50"),4:("B","8"),5:("D","16"),6:("D","4"),7:("E","150"),8:("D","5"),9:("A","7"),10:("C","8")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1480,6 +1480,49 @@ SOL.update({
 24:[("Use the two ways sine values can match",r"The equation \(\sin x=\sin nx\) means either the angles are congruent modulo \(2\pi\), or they are supplementary modulo \(2\pi\). These two cases organize all possible solutions."),("Count the first family",r"From \(x=nx+2k\pi\), we get \((n-1)x=-2k\pi\), so the solutions in \([0,\pi]\) have the form \[x=\frac{2j\pi}{n-1}.\] This gives one set of evenly spaced candidates."),("Count the second family",r"From \(x=\pi-nx+2k\pi\), we get \[(n+1)x=(2k+1)\pi,\] so the solutions have the form \[x=\frac{(2k+1)\pi}{n+1}.\] This gives the odd multiples of \(\frac{\pi}{n+1}\) in the interval."),("Account for overlap",r"Together these families usually give \(n+1\) distinct solutions. The only time one solution is counted twice is when \(n\equiv1\pmod4\); then the overlap removes one solution, so \(F(n)=n\) instead of \(n+1\)."),("Sum the main contribution",r"If every \(n\) from \(2\) to \(2007\) contributed \(n+1\), the sum would be \[\sum_{n=2}^{2007}(n+1)=2,017,033.\]"),("Subtract the overlaps",r"The integers \(n\equiv1\pmod4\) from \(2\) through \(2007\) are \(5,9,\ldots,2005\), a total of \(501\) integers. Therefore the desired sum is \[2,017,033-501=2,016,532.\]"),("Conclude",r"The answer is \(\boxed{2,016,532}\)."),],
 25:[("Model the set as choices along a line",r"A spacy subset of \(\{1,2,\ldots,n\}\) can be viewed as choosing some positions, with the rule that no block of three consecutive positions contains two chosen numbers. Equivalently, any two chosen numbers must be at least \(3\) apart."),("Define a recurrence",r"Let \(f(n)\) be the number of spacy subsets of \(\{1,2,\ldots,n\}\). For the last number \(n\), either we do not choose it, giving \(f(n-1)\) possibilities, or we choose it."),("Handle the case where n is chosen",r"If \(n\) is chosen, then \(n-1\) and \(n-2\) cannot be chosen. The remaining choices come from \(\{1,2,\ldots,n-3\}\), giving \(f(n-3)\) possibilities."),("Write the recurrence and bases",r"Thus \[f(n)=f(n-1)+f(n-3).\] The starting values are \(f(0)=1\), \(f(1)=2\), and \(f(2)=3\)."),("Compute up to 12",r"Using the recurrence, \[f(3)=4,\ f(4)=6,\ f(5)=9,\ f(6)=13,\ f(7)=19,\ f(8)=28,\] \[f(9)=41,\ f(10)=60,\ f(11)=88,\ f(12)=129.\]"),("Conclude",r"There are \(\boxed{129}\) spacy subsets."),],
 })
+
+OV.update({
+1:(r"Isabella's house has \(3\) bedrooms. Each bedroom is \(12\) feet long, \(10\) feet wide, and \(8\) feet high. Isabella must paint the walls of all the bedrooms. Doorways and windows, which will not be painted, occupy \(60\) square feet in each bedroom. How many square feet of walls must be painted?",[("A","678"),("B","768"),("C","786"),("D","867"),("E","876")]),
+2:(r"A college student drove his compact car \(120\) miles home for the weekend and averaged \(30\) miles per gallon. On the return trip the student drove his parents' SUV and averaged only \(20\) miles per gallon. What was the average gas mileage, in miles per gallon, for the round trip?",[("A","22"),("B","24"),("C","25"),("D","26"),("E","28")]),
+3:(r"The point \(O\) is the center of the circle circumscribed about \(\triangle ABC\), with \(\angle BOC=120^\circ\) and \(\angle AOB=140^\circ\), as shown. What is the degree measure of \(\angle ABC\)?",[("A","35"),("B","40"),("C","45"),("D","50"),("E","60")]),
+4:(r"At Frank's Fruit Market, \(3\) bananas cost as much as \(2\) apples, and \(6\) apples cost as much as \(4\) oranges. How many oranges cost as much as \(18\) bananas?",[("A","6"),("B","8"),("C","9"),("D","12"),("E","18")]),
+5:(r"The 2007 AMC 12 contests will be scored by awarding \(6\) points for each correct response, \(0\) points for each incorrect response, and \(1.5\) points for each problem left unanswered. After looking over the \(25\) problems, Sarah has decided to attempt the first \(22\) and leave the last \(3\) unanswered. How many of the first \(22\) problems must she solve correctly in order to score at least \(100\) points?",[("A","13"),("B","14"),("C","15"),("D","16"),("E","17")]),
+6:(r"Triangle \(ABC\) has side lengths \(AB=5\), \(BC=6\), and \(AC=7\). Two bugs start simultaneously from \(A\) and crawl along the sides of the triangle in opposite directions at the same speed. They meet at point \(D\). What is \(BD\)?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+7:(r"All sides of the convex pentagon \(ABCDE\) are of equal length, and \(\angle A=\angle B=90^\circ\). What is the degree measure of \(\angle E\)?",[("A","90"),("B","108"),("C","120"),("D","144"),("E","150")]),
+8:(r"Tom's age is \(T\) years, which is also the sum of the ages of his three children. His age \(N\) years ago was twice the sum of their ages then. What is \(\frac{T}{N}\)?",[("A","2"),("B","3"),("C","4"),("D","5"),("E","6")]),
+9:(r"A function \(f\) has the property that \(f(3x-1)=x^2+x+1\) for all real numbers \(x\). What is \(f(5)\)?",[("A","7"),("B","13"),("C","31"),("D","111"),("E","211")]),
+10:(r"Some boys and girls are having a car wash to raise money for a class trip to China. Initially \(40\%\) of the group are girls. Shortly thereafter two girls leave and two boys arrive, and then \(30\%\) of the group are girls. How many girls were initially in the group?",[("A","4"),("B","6"),("C","8"),("D","10"),("E","12")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Compute wall area from perimeter times height, then subtract unpainted openings.",
+2:"Use total miles divided by total gallons, not the average of the two rates.",
+3:"Use the central angle subtending arc \(AC\) and the inscribed angle theorem.",
+4:"Convert bananas to apples, then apples to oranges.",
+5:"Account for unanswered-point credit before solving the score inequality.",
+6:"Equal speeds mean each bug travels half the perimeter.",
+7:"Use a square plus an equilateral triangle inside the equal-sided pentagon.",
+8:"Write Tom's age and the children's total age \(N\) years ago.",
+9:"Choose \(x\) so that the input \(3x-1\) equals \(5\).",
+10:"Set up two percentage equations before and after the group changes.",
+})
+
+NOTES_OVERRIDES.update({
+3:"This problem contains a diagram. The needed circle-center angle information is included in the text; please refer to the original PDF or AoPS page for the figure.",
+})
+
+SOL.update({
+1:[("Find the wall area of one room before subtracting",r"Each bedroom is a rectangular room. The four walls have total horizontal perimeter \(2(12+10)=44\) feet, and the height is \(8\) feet."),("Compute one room's wall area",r"Before subtracting doors and windows, one bedroom has wall area \[44\cdot 8=352\] square feet."),("Subtract the unpainted area",r"The doorways and windows occupy \(60\) square feet in each bedroom, so the painted area in one bedroom is \[352-60=292.\]"),("Use all three bedrooms",r"There are \(3\) identical bedrooms, so the total painted area is \[3\cdot292=876.\]"),("Conclude",r"The answer is \(\boxed{876}\)."),],
+2:[("Remember what average mileage means",r"Average gas mileage is total distance divided by total gallons used. It is not the simple average of \(30\) and \(20\), because the same distance is driven at each mileage."),("Find gallons on the first trip",r"The compact car travels \(120\) miles at \(30\) miles per gallon, so it uses \[\frac{120}{30}=4\] gallons."),("Find gallons on the return trip",r"The SUV travels \(120\) miles at \(20\) miles per gallon, so it uses \[\frac{120}{20}=6\] gallons."),("Compute the round-trip mileage",r"The total distance is \(240\) miles and the total fuel is \(10\) gallons. Therefore the average mileage is \[\frac{240}{10}=24.\]"),("Conclude",r"The answer is \(\boxed{24}\)."),],
+3:[("Identify the angle intercepted by \(\angle ABC\)",r"An inscribed angle is half the measure of the arc it intercepts. Angle \(\angle ABC\) intercepts arc \(AC\) that does not contain \(B\)."),("Find the central angle for arc AC",r"The central angles around \(O\) add to \(360^\circ\). We are given \(\angle AOB=140^\circ\) and \(\angle BOC=120^\circ\), so \[\angle AOC=360^\circ-140^\circ-120^\circ=100^\circ.\]"),("Apply the inscribed angle theorem",r"The measure of \(\angle ABC\) is half the measure of central angle \(\angle AOC\), because both subtend arc \(AC\)."),("Compute",r"\[\angle ABC=\frac{100^\circ}{2}=50^\circ.\]"),("Conclude",r"The answer is \(\boxed{50^\circ}\)."),],
+4:[("Convert bananas to apples",r"The statement says \(3\) bananas cost as much as \(2\) apples. Multiplying by \(6\), \(18\) bananas cost as much as \(12\) apples."),("Convert apples to oranges",r"The statement also says \(6\) apples cost as much as \(4\) oranges. Therefore \(12\) apples cost twice as much, or as much as \(8\) oranges."),("Link the two conversions",r"Since \(18\) bananas cost as much as \(12\) apples, and \(12\) apples cost as much as \(8\) oranges, the same cost equals \(8\) oranges."),("Conclude",r"The answer is \(\boxed{8}\)."),],
+5:[("Account for the unanswered problems first",r"Sarah leaves \(3\) problems unanswered. Each unanswered problem gives \(1.5\) points, so these contribute \[3\cdot1.5=4.5\] points."),("Find the score needed from correct answers",r"To reach at least \(100\), she needs at least \[100-4.5=95.5\] points from the first \(22\) attempted problems."),("Translate correct answers into points",r"Each correct answer is worth \(6\) points, while incorrect answers give \(0\). If she solves \(c\) of the first \(22\) correctly, then she earns \(6c\) points from them."),("Solve the inequality",r"We need \[6c\ge95.5.\] Since \(\frac{95.5}{6}\approx15.92\), the least integer \(c\) is \(16\)."),("Conclude",r"Sarah must solve \(\boxed{16}\) of the first \(22\) problems correctly."),],
+6:[("Use equal speeds to compare distances",r"The two bugs start at the same time and move at the same speed. Therefore, when they meet, they have crawled the same distance."),("Find the total perimeter",r"The perimeter of the triangle is \[AB+BC+AC=5+6+7=18.\] Together, the two bugs crawl the whole perimeter between them."),("Find each bug's distance",r"Since the two crawled distances are equal, each bug crawls \[\frac{18}{2}=9\] units."),("Locate point D on the path",r"One bug travels from \(A\) through \(B\) to \(D\), so its distance is \(AB+BD=5+BD\). This must equal \(9\)."),("Solve for BD",r"\[5+BD=9,\] so \(BD=4\)."),("Conclude",r"The answer is \(\boxed{4}\)."),],
+7:[("Give the common side length a name",r"Let every side of the pentagon have length \(s\). Since \(\angle A=\angle B=90^\circ\), the path \(E\to A\to B\to C\) forms two perpendicular unit-side turns if scaled by \(s\)."),("Recognize the square part",r"Because \(EA=AB=BC=s\) and the turns at \(A\) and \(B\) are right angles, points \(E\) and \(C\) are positioned like adjacent top corners of a square with side \(s\). Thus \(EC=s\) and \(\angle AEC=90^\circ\)."),("Use the remaining equal sides",r"We also have \(CD=DE=s\). Since \(EC=s\), triangle \(CDE\) is equilateral."),("Find the angle contributed by the equilateral triangle",r"In an equilateral triangle, \(\angle CED=60^\circ\)."),("Combine the angles at E",r"The full interior angle at \(E\) is \[\angle AED=\angle AEC+\angle CED=90^\circ+60^\circ=150^\circ.\]"),("Conclude",r"The answer is \(\boxed{150^\circ}\)."),],
+8:[("Track the current ages",r"Tom's current age is \(T\), and the current sum of his three children's ages is also \(T\)."),("Move N years into the past",r"\(N\) years ago, Tom's age was \(T-N\). Each of the three children was \(N\) years younger, so the sum of their ages was \(T-3N\)."),("Use the condition from the past",r"The problem says Tom's age \(N\) years ago was twice the sum of the children's ages then, so \[T-N=2(T-3N).\]"),("Solve the equation",r"Expand and simplify: \[T-N=2T-6N.\] Moving terms gives \[5N=T.\]"),("Find the requested ratio",r"Therefore \[\frac{T}{N}=5.\]"),("Conclude",r"The answer is \(\boxed{5}\)."),],
+9:[("Focus on the input to f",r"We are not asked for \(x\); we are asked for \(f(5)\). The rule gives values of \(f\) at inputs of the form \(3x-1\)."),("Choose x to make the input 5",r"Set \[3x-1=5.\] Then \(3x=6\), so \(x=2\)."),("Substitute into the output expression",r"Using \(x=2\), the rule gives \[f(5)=2^2+2+1.\]"),("Compute",r"\[2^2+2+1=4+2+1=7.\]"),("Conclude",r"The answer is \(\boxed{7}\)."),],
+10:[("Name the initial numbers",r"Let \(g\) be the initial number of girls and \(b\) be the initial number of boys. Initially, girls are \(40\%\) of the group, so \[g=0.4(g+b).\]"),("Use the later situation",r"After two girls leave and two boys arrive, the total group size is still \(g+b\), but the number of girls is \(g-2\). Girls are then \(30\%\) of the group, so \[g-2=0.3(g+b).\]"),("Subtract the equations",r"The first equation says \(g\) is \(40\%\) of the total, while the second says \(g-2\) is \(30\%\) of the same total. The difference of \(2\) girls is \(10\%\) of the total group."),("Find the total group size",r"If \(2\) is \(10\%\) of the group, then the total group size is \[20.\]"),("Find the initial number of girls",r"Initially, \(40\%\) of \(20\) were girls, so \[g=0.4\cdot20=8.\]"),("Conclude",r"There were initially \(\boxed{8}\) girls."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -1586,7 +1629,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2007" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2007" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -1675,7 +1718,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2007 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2007 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),

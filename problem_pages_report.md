@@ -1,17 +1,22 @@
 # Problem Pages Report
 
-- Total manifest entries: 1326
-- Latest batch: 178 (2007 AMC 12A Problems 21-25)
-- Latest new generated count: 5
+- Total manifest entries: 1336
+- Latest batch: 179 (2007 AMC 12B Problems 1-10)
+- Latest new generated count: 10
 - Latest updated existing count: 0
 - Latest skipped count: 0
 - MathJax validation: passed
-- Answer verification source: AoPS 2007 AMC 12A Answer Key
+- Answer verification source: AoPS 2007 AMC 12B Answer Key
 
 ## Latest Batch Pages
 
-- `2007 AMC 12A Problem 21` -> `amc12/problems/2007-amc-12a-problem-21/`
-- `2007 AMC 12A Problem 22` -> `amc12/problems/2007-amc-12a-problem-22/`
-- `2007 AMC 12A Problem 23` -> `amc12/problems/2007-amc-12a-problem-23/`
-- `2007 AMC 12A Problem 24` -> `amc12/problems/2007-amc-12a-problem-24/`
-- `2007 AMC 12A Problem 25` -> `amc12/problems/2007-amc-12a-problem-25/`
+- `2007 AMC 12B Problem 1` -> `amc12/problems/2007-amc-12b-problem-1/`
+- `2007 AMC 12B Problem 2` -> `amc12/problems/2007-amc-12b-problem-2/`
+- `2007 AMC 12B Problem 3` -> `amc12/problems/2007-amc-12b-problem-3/`
+- `2007 AMC 12B Problem 4` -> `amc12/problems/2007-amc-12b-problem-4/`
+- `2007 AMC 12B Problem 5` -> `amc12/problems/2007-amc-12b-problem-5/`
+- `2007 AMC 12B Problem 6` -> `amc12/problems/2007-amc-12b-problem-6/`
+- `2007 AMC 12B Problem 7` -> `amc12/problems/2007-amc-12b-problem-7/`
+- `2007 AMC 12B Problem 8` -> `amc12/problems/2007-amc-12b-problem-8/`
+- `2007 AMC 12B Problem 9` -> `amc12/problems/2007-amc-12b-problem-9/`
+- `2007 AMC 12B Problem 10` -> `amc12/problems/2007-amc-12b-problem-10/`
