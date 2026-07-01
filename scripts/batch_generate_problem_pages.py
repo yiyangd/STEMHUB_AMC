@@ -3,74 +3,116 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 58
+BATCH_NUMBER = 59
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_10B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
 SKIPPED = []
-BATCH_LABEL = "2011 AMC 10A Problems 21-25"
-NEXT_START = "2011 AMC 10B Problem 1"
+BATCH_LABEL = "2011 AMC 10B Problems 1-10"
+NEXT_START = "2011 AMC 10B Problem 11"
 
 ANS = {
-    21: ("D", r"\frac{15}{19}"),
-    22: ("C", "3120"),
-    23: ("C", "365"),
-    24: ("D", r"\frac{1}{6}"),
-    25: ("C", "2320"),
+    1: ("C", r"\frac{7}{12}"),
+    2: ("E", "95"),
+    3: ("A", "3.75"),
+    4: ("C", r"\frac{B-A}{2}"),
+    5: ("E", "224"),
+    6: ("A", "30"),
+    7: ("B", "72"),
+    8: ("B", "The temperature was cooler than $80^\circ F$ or it was not sunny."),
+    9: ("D", r"\frac{4\sqrt3}{3}"),
+    10: ("B", "9"),
 }
 
 OV = {
-    21: (r"Two counterfeit coins of equal weight are mixed with $8$ identical genuine coins. The weight of each counterfeit coin is different from the weight of each genuine coin. A pair of coins is selected at random without replacement from the $10$ coins. A second pair is selected at random without replacement from the remaining $8$ coins. The combined weight of the first pair is equal to the combined weight of the second pair. What is the probability that all $4$ selected coins are genuine?", [("A",r"\frac{7}{11}"),("B",r"\frac{9}{13}"),("C",r"\frac{11}{15}"),("D",r"\frac{15}{19}"),("E",r"\frac{15}{16}")]),
-    22: (r"Each vertex of convex pentagon $ABCDE$ is to be assigned a color. There are $6$ colors to choose from, and the ends of each diagonal must have different colors. How many different colorings are possible?", [("A","2520"),("B","2880"),("C","3120"),("D","3250"),("E","3750")]),
-    23: (r"Seven students count from $1$ to $1000$ as follows. Alice says all the numbers except the middle number in each consecutive group of three numbers. Barbara says all of the numbers Alice does not say, except she also skips the middle number in each consecutive group of three numbers. Candice, Debbie, Eliza, and Fatima continue the same process in alphabetical order. Finally, George says the only number that no one else says. What number does George say?", [("A","37"),("B","242"),("C","365"),("D","728"),("E","998")]),
-    24: (r"Two distinct regular tetrahedra have all their vertices among the vertices of the same unit cube. What is the volume of the region formed by the intersection of the tetrahedra?", [("A",r"\frac{1}{12}"),("B",r"\frac{\sqrt2}{12}"),("C",r"\frac{\sqrt3}{12}"),("D",r"\frac{1}{6}"),("E",r"\frac{\sqrt2}{6}")]),
-    25: (r"Let $R$ be a square region and $n\ge4$ an integer. A point $X$ in the interior of $R$ is called $n$-ray partitional if there are $n$ rays emanating from $X$ that divide $R$ into $n$ triangles of equal area. How many points are $100$-ray partitional but not $60$-ray partitional?", [("A","1500"),("B","1560"),("C","2320"),("D","2480"),("E","2500")]),
+    1: (r"What is $\frac{2+4+6}{1+3+5}-\frac{1+3+5}{2+4+6}$?", [("A",r"-\frac{1}{36}"),("B",r"\frac{5}{12}"),("C",r"\frac{7}{12}"),("D",r"\frac{147}{60}"),("E",r"\frac{43}{3}")]),
+    2: (r"Josanna's test scores to date are $90,80,70,60,$ and $85$. Her goal is to raise her test average at least $3$ points with her next test. What is the minimum test score she would need to accomplish this goal?", [("A","80"),("B","82"),("C","85"),("D","90"),("E","95")]),
+    3: (r"At a store, when a length is reported as $x$ inches that means the length is at least $x-0.5$ inches and at most $x+0.5$ inches. Suppose the dimensions of a rectangular tile are reported as $2$ inches by $3$ inches. In square inches, what is the minimum area for the rectangle?", [("A","3.75"),("B","4.5"),("C","5"),("D","6"),("E","8.75")]),
+    4: (r"LeRoy and Bernardo went on a week-long trip together and agreed to share the costs equally. At the end of the trip LeRoy had paid $A$ dollars and Bernardo had paid $B$ dollars, where $A<B$. How many dollars must LeRoy give to Bernardo so that they share the costs equally?", [("A",r"\frac{A+B}{2}"),("B",r"\frac{A-B}{2}"),("C",r"\frac{B-A}{2}"),("D",r"B-A"),("E",r"A+B")]),
+    5: (r"In multiplying two positive integers $a$ and $b$, Ron reversed the digits of the two-digit number $a$. His erroneous product was $161$. What is the correct value of the product of $a$ and $b$?", [("A","116"),("B","161"),("C","204"),("D","214"),("E","224")]),
+    6: (r"On Halloween Casper ate $\frac13$ of his candies and then gave $2$ candies to his brother. The next day he ate $\frac13$ of his remaining candies and then gave $4$ candies to his sister. On the third day he ate his final $8$ candies. How many candies did Casper have at the beginning?", [("A","30"),("B","39"),("C","48"),("D","57"),("E","66")]),
+    7: (r"The sum of two angles of a triangle is $\frac65$ of a right angle, and one of these two angles is $30^\circ$ larger than the other. What is the degree measure of the largest angle in the triangle?", [("A","69"),("B","72"),("C","90"),("D","102"),("E","108")]),
+    8: (r"At a certain beach, if it is at least $80^\circ F$ and sunny, then the beach will be crowded. On June 10 the beach was not crowded. What can be said about the weather conditions on June 10?", [("A",r"The temperature was cooler than $80^\circ F$ and it was not sunny."),("B",r"The temperature was cooler than $80^\circ F$ or it was not sunny."),("C",r"If the temperature was at least $80^\circ F$, then it was sunny."),("D",r"If the temperature was cooler than $80^\circ F$, then it was sunny."),("E",r"If the temperature was cooler than $80^\circ F$, then it was not sunny.")]),
+    9: (r"In the diagram, $\triangle ABC$ is a $3$-$4$-$5$ triangle with $AC=3$, $BC=4$, and $AB=5$. Point $D$ lies on $\overline{AB}$, point $E$ lies on $\overline{BC}$, and $DE\perp AB$. The area of $\triangle EBD$ is one third of the area of $\triangle ABC$. What is $BD$?", [("A",r"\frac43"),("B",r"\sqrt5"),("C",r"\frac94"),("D",r"\frac{4\sqrt3}{3}"),("E",r"\frac52")]),
+    10: (r"Consider the set of numbers $\{1,10,10^2,10^3,\ldots,10^{10}\}$. The ratio of the largest element of the set to the sum of the other ten elements is closest to which integer?", [("A","1"),("B","9"),("C","10"),("D","11"),("E","101")]),
 }
 
 KEY_OVERRIDES = {
-    21: "Condition on equal pair weights and count the possible type patterns of the two pairs.",
-    22: "The diagonal constraints form a 5-cycle coloring problem.",
-    23: "Repeatedly keeping the middle number in each group of three creates a base-3 recurrence.",
-    24: "The intersection of the two cube tetrahedra is the octahedron with vertices at the face centers.",
-    25: "Translate equal-area ray partitions into integer conditions on the distances from the point to the square's sides.",
+    1: "Compute the two simple sums first, then subtract the fractions.",
+    2: "Translate a desired average increase into a required total score.",
+    3: "Use the smallest possible dimensions allowed by the rounding rule.",
+    4: "Equal sharing means each person should end up paying half the total cost.",
+    5: "Factor the erroneous product to recover the reversed two-digit number.",
+    6: "Work backward from the final number of candies.",
+    7: "Use the sum of two angles and their difference to find the triangle's angles.",
+    8: "Use the contrapositive/negation of an AND statement.",
+    9: "Use similarity and the area ratio between the smaller and larger right triangles.",
+    10: "Use the geometric-series sum and compare the resulting ratio to nearby integers.",
 }
 
 SOL = {
-    21: [
-        ("Focus on the condition", r"We are told that the two pair weights are equal. Since both counterfeit coins have the same weight and all genuine coins have the same weight, a pair's weight depends only on how many counterfeit coins it contains."),
-        ("List possible equal-weight cases", r"The two pairs can have equal weight in two useful ways: both pairs are genuine-genuine, or both pairs are mixed with one genuine and one counterfeit. A pair of two counterfeit coins cannot be matched by another such pair because there are only two counterfeit coins total."),
-        ("Count all-genuine equal cases", r"For ordered first and second pairs, the all-genuine case has $\binom82\binom62=28\cdot15=420$ possibilities."),
-        ("Count mixed equal cases", r"For the first pair to be mixed, choose $1$ of the $2$ counterfeit coins and $1$ of the $8$ genuine coins, giving $16$ choices. The second pair must use the remaining counterfeit coin and one of the remaining $7$ genuine coins, giving $7$ choices. That makes $112$ mixed cases."),
-        ("Compute the conditional probability", r"Given equal weights, there are $420+112=532$ possible cases, and $420$ of them have all four coins genuine. Thus the probability is $\frac{420}{532}=\frac{15}{19}$. The answer is $\boxed{\frac{15}{19}}$."),
+    1: [
+        ("Compute the sums", r"The numerator $2+4+6$ is $12$, and the denominator $1+3+5$ is $9$. So the expression becomes $\frac{12}{9}-\frac{9}{12}$."),
+        ("Simplify each fraction", r"We have $\frac{12}{9}=\frac43$ and $\frac{9}{12}=\frac34$."),
+        ("Subtract with a common denominator", r"Using denominator $12$, $\frac43=\frac{16}{12}$ and $\frac34=\frac9{12}$."),
+        ("Finish", r"The difference is $\frac{16}{12}-\frac9{12}=\frac7{12}$. The answer is $\boxed{\frac7{12}}$."),
     ],
-    22: [
-        ("Understand the graph of restrictions", r"In a pentagon, the diagonals connect vertices that are not adjacent. The rule says the two endpoints of every diagonal must have different colors."),
-        ("Notice the diagonal graph", r"The five diagonals themselves form another $5$-cycle on the same vertices. So the problem is equivalent to properly coloring a cycle of length $5$ using $6$ colors."),
-        ("Use the cycle coloring formula", r"The number of proper colorings of a cycle of length $n$ with $k$ colors is $(k-1)^n+(-1)^n(k-1)$. Here $n=5$ and $k=6$."),
-        ("Calculate", r"This gives $5^5-5=3125-5=3120$."),
-        ("Conclude", r"There are $\boxed{3120}$ valid colorings."),
+    2: [
+        ("Find the current total", r"Josanna's five scores add to $90+80+70+60+85=385$. Her current average is $385/5=77$."),
+        ("Set the target average", r"She wants to raise her average by at least $3$ points, so after the next test the average should be at least $80$."),
+        ("Translate to a total", r"After six tests, an average of $80$ requires a total of $6\cdot80=480$ points."),
+        ("Find the needed score", r"She already has $385$ points, so she needs $480-385=95$ on the next test. The answer is $\boxed{95}$."),
     ],
-    23: [
-        ("See what each student leaves behind", r"Each student says all available numbers except the middle number in each consecutive group of three. So after a student is done, the numbers left are exactly the $2$nd, $5$th, $8$th, and so on in that student's current list."),
-        ("Track positions, not all numbers", r"If a number is the $k$th number in the next remaining list, then before that round it was in position $3k-1$. This gives a simple reverse recurrence: go backward by replacing $k$ with $3k-1$."),
-        ("Count the rounds", r"Alice, Barbara, Candice, Debbie, Eliza, and Fatima each perform this skipping process. George receives the one number left after six such rounds."),
-        ("Work backward from the final number", r"Start with final position $1$ and apply $k\mapsto3k-1$ six times: \[1\to2\to5\to14\to41\to122\to365.\]"),
-        ("Conclude", r"So George says the number $\boxed{365}$."),
+    3: [
+        ("Use the lower bounds", r"To minimize the area, choose the smallest possible value for each reported dimension. A reported length of $2$ inches could be as small as $1.5$ inches."),
+        ("Find the other smallest dimension", r"A reported length of $3$ inches could be as small as $2.5$ inches."),
+        ("Multiply for area", r"The minimum possible area is $1.5\cdot2.5=3.75$ square inches."),
+        ("Conclude", r"The answer is $\boxed{3.75}$."),
     ],
-    24: [
-        ("Visualize the two tetrahedra", r"A unit cube has two regular tetrahedra formed by choosing alternating vertices. These two tetrahedra are distinct and symmetric inside the cube."),
-        ("Identify the intersection", r"Their intersection is the octahedron whose vertices are the centers of the six faces of the cube. This is a common and useful way to see the central overlap of the two alternating tetrahedra."),
-        ("Split the octahedron", r"That octahedron can be split into two congruent square pyramids. The shared square is the middle cross-section of the cube, and its side length is $\frac{\sqrt2}{2}$, so its area is $\left(\frac{\sqrt2}{2}\right)^2=\frac12$."),
-        ("Compute the volume", r"Each pyramid has height $\frac12$. So the total octahedron volume is \[2\cdot\frac13\cdot\frac12\cdot\frac12=\frac16.\]"),
-        ("Conclude", r"The intersection volume is $\boxed{\frac16}$."),
+    4: [
+        ("Find each person's fair share", r"Together they paid $A+B$ dollars. If they share equally, each person should pay $\frac{A+B}{2}$."),
+        ("Compare LeRoy's payment to his share", r"LeRoy has already paid $A$ dollars. Since $A<B$, he paid less than half, so he must pay Bernardo the difference between his fair share and what he already paid."),
+        ("Compute the difference", r"That amount is $\frac{A+B}{2}-A=\frac{A+B-2A}{2}=\frac{B-A}{2}$."),
+        ("Conclude", r"LeRoy must give Bernardo $\boxed{\frac{B-A}{2}}$ dollars."),
     ],
-    25: [
-        ("Turn the square into coordinates", r"Let the square have side length $1$, and let point $X$ have distances $x$, $1-x$, $y$, and $1-y$ from the four sides. We only need distances to the sides because each small triangle has base on a side of the square and height equal to the distance from $X$ to that side."),
-        ("Find the condition for one side", r"If the square is divided into $n$ equal-area triangles, each triangle has area $\frac1n$. Along a side at distance $h$ from $X$, a triangle with base length $b$ has area $\frac12bh$, so $b=\frac{2}{nh}$. Since the side length is $1$, the number of such equal triangles along that side is $\frac{1}{b}=\frac{nh}{2}$."),
-        ("Convert to integer conditions", r"Therefore $X$ is $n$-ray partitional exactly when $\frac{nx}{2}$, $\frac{n(1-x)}{2}$, $\frac{ny}{2}$, and $\frac{n(1-y)}{2}$ are integers. For even $n$, this is equivalent to requiring $\frac{nx}{2}$ and $\frac{ny}{2}$ to be integers."),
-        ("Count 100-ray points", r"For $n=100$, we need $50x$ and $50y$ to be integers. Since $X$ is inside the square, each coordinate can be $\frac1{50},\frac2{50},\ldots,\frac{49}{50}$, giving $49^2=2401$ points."),
-        ("Subtract the 60-ray points", r"For $n=60$, we need $30x$ and $30y$ to be integers. A point counted by both conditions must have both $50x$ and $30x$ integers, so $10x$ is an integer; similarly $10y$ is an integer. That gives $9^2=81$ points counted by both."),
-        ("Finish", r"The number that are $100$-ray partitional but not $60$-ray partitional is $2401-81=2320$. The answer is $\boxed{2320}$."),
+    5: [
+        ("Factor the wrong product", r"The erroneous product was $161$, and $161=7\cdot23$. Since Ron reversed a two-digit number, the reversed version of $a$ is likely one of these two factors."),
+        ("Identify the reversed number", r"The reversed number must be two digits, so it is $23$, not $7$. Therefore the original value of $a$ was $32$."),
+        ("Find the other factor", r"If the wrong product used $23$, then $b=7$."),
+        ("Compute the correct product", r"The correct product is $32\cdot7=224$. The answer is $\boxed{224}$."),
+    ],
+    6: [
+        ("Work backward", r"Forward fractions can be messy, so start from the end. On the third day Casper ate his final $8$ candies, so he had $8$ candies after giving $4$ to his sister the previous day."),
+        ("Undo the gift to his sister", r"Before giving away $4$ candies, he had $8+4=12$ candies. This was after he ate $\frac13$ of that day's starting amount, so $12$ is $\frac23$ of what he had at the start of the second day."),
+        ("Undo the second-day eating", r"If $\frac23$ of the second-day starting amount is $12$, then the second-day starting amount was $18$."),
+        ("Undo the first day", r"After the first day gift of $2$ candies, he had $18$, so before that gift he had $20$. This was $\frac23$ of his original amount, so the original amount was $30$."),
+        ("Conclude", r"Casper began with $\boxed{30}$ candies."),
+    ],
+    7: [
+        ("Convert the right angle information", r"A right angle is $90^\circ$, so $\frac65$ of a right angle is $\frac65\cdot90=108^\circ$."),
+        ("Set up the two angles", r"Let the smaller of the two angles be $x$. Then the larger of the two is $x+30$. Their sum is $108$, so $x+(x+30)=108$."),
+        ("Solve for the two angles", r"This gives $2x=78$, so $x=39$. The two angles are $39^\circ$ and $69^\circ$."),
+        ("Find the third angle", r"The third angle is $180-108=72^\circ$. Comparing $39$, $69$, and $72$, the largest angle is $72^\circ$."),
+        ("Conclude", r"The answer is $\boxed{72}$."),
+    ],
+    8: [
+        ("Name the condition", r"The statement says: if the temperature is at least $80^\circ F$ and it is sunny, then the beach is crowded. In symbols, $(T\text{ and }S)\Rightarrow C$."),
+        ("Use the given fact", r"On June 10 the beach was not crowded, so $C$ was false. Therefore the condition $T\text{ and }S$ could not have been true."),
+        ("Negate the AND statement", r"The negation of '$T$ and $S$' is 'not $T$ or not $S$.' This means the temperature was cooler than $80^\circ F$ or it was not sunny."),
+        ("Conclude", r"The answer is $\boxed{\text{cooler than }80^\circ F\text{ or not sunny}}$."),
+    ],
+    9: [
+        ("Use the diagram relationship", r"The large triangle $ABC$ is a $3$-$4$-$5$ right triangle, and $DE\perp AB$. The smaller triangle $EBD$ shares angle $B$ with the large triangle and has a right angle, so $\triangle EBD\sim\triangle ABC$."),
+        ("Use area ratio to get side ratio", r"The area of $\triangle EBD$ is one third of the area of $\triangle ABC$. For similar triangles, areas scale as the square of side lengths, so the side-length scale factor is $\sqrt{\frac13}=\frac{1}{\sqrt3}$."),
+        ("Match corresponding sides", r"Side $BD$ in the smaller triangle corresponds to side $BC=4$ in the large triangle. Therefore $BD=4\cdot\frac{1}{\sqrt3}=\frac{4}{\sqrt3}$."),
+        ("Rationalize", r"Rationalizing gives $BD=\frac{4\sqrt3}{3}$."),
+        ("Conclude", r"The answer is $\boxed{\frac{4\sqrt3}{3}}$."),
+    ],
+    10: [
+        ("Identify the largest element", r"The largest element is $10^{10}$. The sum of the other ten elements is $1+10+10^2+\cdots+10^9$."),
+        ("Use the geometric sum", r"The denominator is a geometric series: \[1+10+10^2+\cdots+10^9=\frac{10^{10}-1}{9}.\]"),
+        ("Form the ratio", r"The ratio is \[\frac{10^{10}}{(10^{10}-1)/9}=\frac{9\cdot10^{10}}{10^{10}-1}.\] This is just slightly bigger than $9$."),
+        ("Choose the closest integer", r"Since the ratio is a tiny bit more than $9$ and much closer to $9$ than to $10$, the closest integer is $9$. The answer is $\boxed{9}$."),
     ],
 }
 def esc(x, quote=True):
@@ -116,7 +158,7 @@ def render(row):
     ans, val = ANS[n]
     tags = "".join(f'<span class="badge">{esc(t)}</span>' for t in (row.get("tags") or "").split(";") if t)
     notes = row.get("notes") or ""
-    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in {18}) else notes
+    note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if ("图" in notes or "figure" in notes.lower() or n in {9}) else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
         f'<li class="choice {"correct" if k == ans else ""}"><span class="choice-key">{esc(k)}</span><span>{esc(v, False)}</span></li>'
@@ -171,7 +213,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2011" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2011" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -212,7 +254,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in set(),
+                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {9},
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -260,7 +302,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2011 AMC 10A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2011 AMC 10B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
@@ -281,6 +323,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
 
 
