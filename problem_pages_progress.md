@@ -2556,3 +2556,19 @@
 - Pushed: pending
 - Next batch should start from: 2004 AMC 12A Problem 1
 - Review notes: none.
+
+## Batch 158: 2004 AMC 12A Problems 1-4,6-10
+
+- Start time: 2026-07-01T05:30:36-07:00
+- End time: 2026-07-01T05:30:37-07:00
+- Processed contest: AMC 10
+- Processed range: 2004 AMC 12A Problems 1-4,6-10
+- Generated count: 9
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2004 AMC 12A Problem 5 skipped: line graph and slope/intercept information depend on the missing figure.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2004 AMC 12A Problem 11
+- Review notes: none.

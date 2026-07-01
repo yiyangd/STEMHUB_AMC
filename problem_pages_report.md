@@ -1,17 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 1154
-- Latest batch: 157 (2003 AMC 12B Problems 21-25)
-- Latest new generated count: 5
+- Total manifest entries: 1163
+- Latest batch: 158 (2004 AMC 12A Problems 1-4,6-10)
+- Latest new generated count: 9
 - Latest updated existing count: 0
-- Latest skipped count: 0
+- Latest skipped count: 1
 - MathJax validation: passed
-- Answer verification source: AoPS 2003 AMC 12B Answer Key
+- Answer verification source: AoPS 2004 AMC 12A Answer Key
 
 ## Latest Batch Pages
 
-- `2003 AMC 12B Problem 21` -> `amc10/problems/2003-amc-12b-problem-21/`
-- `2003 AMC 12B Problem 22` -> `amc10/problems/2003-amc-12b-problem-22/`
-- `2003 AMC 12B Problem 23` -> `amc10/problems/2003-amc-12b-problem-23/`
-- `2003 AMC 12B Problem 24` -> `amc10/problems/2003-amc-12b-problem-24/`
-- `2003 AMC 12B Problem 25` -> `amc10/problems/2003-amc-12b-problem-25/`
+- `2004 AMC 12A Problem 1` -> `amc10/problems/2004-amc-12a-problem-1/`
+- `2004 AMC 12A Problem 2` -> `amc10/problems/2004-amc-12a-problem-2/`
+- `2004 AMC 12A Problem 3` -> `amc10/problems/2004-amc-12a-problem-3/`
+- `2004 AMC 12A Problem 4` -> `amc10/problems/2004-amc-12a-problem-4/`
+- `2004 AMC 12A Problem 6` -> `amc10/problems/2004-amc-12a-problem-6/`
+- `2004 AMC 12A Problem 7` -> `amc10/problems/2004-amc-12a-problem-7/`
+- `2004 AMC 12A Problem 8` -> `amc10/problems/2004-amc-12a-problem-8/`
+- `2004 AMC 12A Problem 9` -> `amc10/problems/2004-amc-12a-problem-9/`
+- `2004 AMC 12A Problem 10` -> `amc10/problems/2004-amc-12a-problem-10/`
+
+## Skipped in latest batch
+
+- 2004 AMC 12A Problem 5 skipped: line graph and slope/intercept information depend on the missing figure.

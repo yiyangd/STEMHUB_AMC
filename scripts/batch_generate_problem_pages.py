@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 157
+BATCH_NUMBER = 158
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2003_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
-SKIPPED = []
-BATCH_LABEL = "2003 AMC 12B Problems 21-25"
-NEXT_START = "2004 AMC 12A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2004_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,6,7,8,9,10}
+SKIPPED = ["2004 AMC 12A Problem 5 skipped: line graph and slope/intercept information depend on the missing figure."]
+BATCH_LABEL = "2004 AMC 12A Problems 1-4,6-10"
+NEXT_START = "2004 AMC 12A Problem 11"
 
-ANS={21:("D",r"\frac13"),22:("C","7"),23:("A","2900"),24:("C","1002"),25:("D",r"\frac1{12}")}
+ANS={1:("E","29"),2:("C","14"),3:("B","9"),4:("E","26"),6:("A",r"U-V"),7:("B","37"),8:("B","4"),9:("C","36%"),10:("C",r"7^3")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -740,6 +740,42 @@ SOL.update({
 24:[("Substitute the line into the absolute-value graph",r"From \(2x+y=2003\), we have \(y=2003-2x\). Intersections satisfy \[2003-2x=|x-a|+|x-b|+|x-c|.\]"),("Move everything to one side",r"Define \[F(x)=|x-a|+|x-b|+|x-c|+2x-2003.\] Since \(a<b<c\), this piecewise-linear function decreases up to \(x=a\), then increases afterward."),("Require exactly one solution",r"For exactly one intersection, the minimum must equal \(0\). The minimum occurs at \(x=a\)." ),("Evaluate the minimum",r"At \(x=a\), \[F(a)=0+(b-a)+(c-a)+2a-2003=b+c-2003.\] Thus we need \[b+c=2003.\]"),("Minimize c",r"With positive integers \(a<b<c\), the smallest possible \(c\) occurs when \(b\) and \(c\) are as close as possible. Since \(b+c=2003\), take \(b=1001\) and \(c=1002\)." ),("Conclude",r"The minimum possible value is $\boxed{1002}$."),],
 25:[("Fix one point",r"By rotational symmetry, fix the first point on the circle. The other two points are independently and uniformly chosen."),("Translate chord length to angle",r"A chord is shorter than the radius exactly when its smaller central angle is less than \(60^\circ\), or \(\frac16\) of a full circle."),("Describe the allowed region",r"Each of the other two points must lie within \(60^\circ\) of the fixed point. In angular coordinates scaled so the full circle has length \(1\), both lie in an interval \((-1/6,1/6)\)." ),("Enforce the third pair",r"The two moving points must also be within \(1/6\) of each other. Inside the square of side \(1/3\), this removes two right triangles of side \(1/6\), leaving area \[3\left(\frac16\right)^2=\frac1{12}.\]"),("Conclude",r"The probability is $\boxed{\frac1{12}}$."),],
 })
+
+OV.update({
+1:(r"Alicia earns \(\$20\) per hour, of which \(1.45\%\) is deducted to pay local taxes. How many cents per hour of Alicia's wages are used to pay local taxes?",[("A","0.0029"),("B","0.029"),("C","0.29"),("D","2.9"),("E","29")]),
+2:(r"On the AMC 12, each correct answer is worth \(6\) points, each incorrect answer is worth \(0\) points, and each problem left unanswered is worth \(2.5\) points. If Charlyn leaves \(8\) of the \(25\) problems unanswered, how many of the remaining problems must she answer correctly in order to score at least \(100\)?",[("A","11"),("B","13"),("C","14"),("D","16"),("E","17")]),
+3:(r"For how many ordered pairs of positive integers \((x,y)\) is \[x+2y=100?\]",[("A","33"),("B","49"),("C","50"),("D","99"),("E","100")]),
+4:(r"Bertha has \(6\) daughters and no sons. Some of her daughters have \(6\) daughters, and the rest have none. Bertha has a total of \(30\) daughters and granddaughters, and no great-granddaughters. How many of Bertha's daughters and granddaughters have no children?",[("A","22"),("B","23"),("C","24"),("D","25"),("E","26")]),
+6:(r"Let \(U=2\cdot2004^{2005}\), \(V=2004^{2005}\), \(W=2003\cdot2004^{2004}\), \(X=2\cdot2004^{2004}\), \(Y=2004^{2004}\), and \(Z=2004^{2003}\). Which of the following is largest?",[("A",r"\(U-V\)"),("B",r"\(V-W\)"),("C",r"\(W-X\)"),("D",r"\(X-Y\)"),("E",r"\(Y-Z\)")]),
+7:(r"A game is played with tokens according to this rule: in each round, the player with the most tokens gives one token to each other player and also places one token into a discard pile. The game ends when some player runs out of tokens. Players \(A,B,C\) start with \(15,14,13\) tokens, respectively. How many rounds will there be?",[("A","36"),("B","37"),("C","38"),("D","39"),("E","40")]),
+8:(r"In the figure, \(\angle EAB\) and \(\angle ABC\) are right angles, \(AB=4\), \(BC=6\), \(AE=8\), and \(AC\) and \(BE\) intersect at \(D\). What is the difference between the areas of \(\triangle ADE\) and \(\triangle BDC\)?",[("A","2"),("B","4"),("C","5"),("D","8"),("E","9")]),
+9:(r"A company sells peanut butter in cylindrical jars. Marketing research suggests wider jars would increase sales. If the diameter of the jars is increased by \(25\%\) without altering the volume, by what percent must the height be decreased?",[("A","10%"),("B","25%"),("C","36%"),("D","50%"),("E","60%")]),
+10:(r"The sum of \(49\) consecutive integers is \(7^5\). What is their median?",[("A",r"\(7\)"),("B",r"\(7^2\)"),("C",r"\(7^3\)"),("D",r"\(7^4\)"),("E",r"\(7^5\)")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Convert a percent of dollars per hour into cents per hour.",
+2:"Use the score from unanswered problems before counting correct answers.",
+3:"Count positive integer choices for y.",
+4:"Separate daughters with children from daughters without children.",
+6:"Factor powers of 2004 to compare large expressions.",
+7:"Track the token game cycle or simulate the deterministic process.",
+8:"Use coordinates to find the intersection and compare triangle areas.",
+9:"Keep cylinder volume constant while changing diameter.",
+10:"For consecutive integers, the median equals the average.",
+})
+
+SOL.update({
+1:[("Convert the percent to a decimal",r"The local tax rate is \(1.45\%=0.0145\)."),("Apply it to hourly wages",r"Alicia earns \(\$20\) per hour, so the tax is \[20\cdot0.0145=0.29\text{ dollars}.\]"),("Convert dollars to cents",r"\(\$0.29\) is \(29\) cents."),("Conclude",r"The answer is $\boxed{29}$."),],
+2:[("Score the unanswered problems",r"Charlyn leaves \(8\) problems unanswered, worth \[8\cdot2.5=20\] points."),("Find how many points are still needed",r"To reach \(100\), she needs at least \(80\) more points from correct answers."),("Use six points per correct answer",r"If she answers \(x\) correctly, she earns \(6x\) points. We need \[6x+20\ge100.\]"),("Solve",r"This gives \(6x\ge80\), so \(x\ge13\frac13\). Therefore she needs at least \(14\) correct answers."),("Conclude",r"The answer is $\boxed{14}$."),],
+3:[("Solve for x",r"The equation gives \[x=100-2y.\]"),("Use positivity",r"We need \(x>0\) and \(y>0\). Thus \[100-2y>0,\] so \(y<50\)." ),("Count y values",r"The positive integer values are \(y=1,2,\ldots,49\), and each gives exactly one positive integer \(x\)." ),("Conclude",r"There are $\boxed{49}$ ordered pairs."),],
+4:[("Count granddaughters",r"Bertha has \(6\) daughters and a total of \(30\) daughters plus granddaughters. Therefore she has \(30-6=24\) granddaughters."),("Find daughters with children",r"Each daughter who has children has \(6\) daughters, so the number of such daughters is \[24/6=4.\]"),("Count daughters with no children",r"Of Bertha's \(6\) daughters, \(4\) have children and \(2\) have none."),("Use no great-granddaughters",r"No granddaughter has children, so all \(24\) granddaughters have no children."),("Add",r"The number with no children is \[2+24=26.\]"),("Conclude",r"The answer is $\boxed{26}$."),],
+6:[("Factor the expressions",r"Compute each difference in terms of powers of \(2004\): \[U-V=2004^{2005},\quad V-W=2004^{2004}.\]"),("Continue simplifying",r"Also \[W-X=(2003-2)2004^{2004}=2001\cdot2004^{2004},\] and \[X-Y=2004^{2004}.\]"),("Compare the final option",r"Finally, \[Y-Z=2004^{2004}-2004^{2003}=2003\cdot2004^{2003}.\]"),("Compare the largest two",r"The largest candidates are \(U-V=2004\cdot2004^{2004}\) and \(W-X=2001\cdot2004^{2004}\). Since \(2004>2001\), \(U-V\) is larger."),("Conclude",r"The answer is $\boxed{U-V}$."),],
+7:[("Observe determinism",r"At every step, the player with the most tokens is clear. We can track the triples \((A,B,C)\)." ),("Use a short cycle idea",r"After several rounds, the largest pile keeps rotating and the total number of tokens decreases by \(1\) per round because one token is discarded."),("Track until the endpoint",r"Following the rule from \((15,14,13)\), the game reaches \[(0,3,2)\] after \(37\) rounds."),("Check why it stops",r"At this point player \(A\) has run out of tokens, so the game ends immediately."),("Conclude",r"There are $\boxed{37}$ rounds."),],
+8:[("Place coordinates",r"Let \(A=(0,0)\), \(B=(4,0)\), \(E=(0,8)\), and \(C=(4,6)\). This matches the two right angles and the given lengths."),("Find D",r"Line \(AC\) and line \(BE\) intersect at \[D=\left(\frac{16}{7},\frac{24}{7}\right).\]"),("Compute the two areas",r"Using base-height or the shoelace formula, \[[ADE]=\frac{64}{7},\qquad [BDC]=\frac{36}{7}.\]"),("Subtract",r"The difference is \[\frac{64}{7}-\frac{36}{7}=4.\]"),("Conclude",r"The answer is $\boxed{4}$."),],
+9:[("Use volume formula",r"A cylinder's volume is proportional to \(d^2h\), where \(d\) is the diameter and \(h\) is the height."),("Apply the diameter increase",r"Increasing the diameter by \(25\%\) multiplies it by \(1.25=\frac54\). Therefore \(d^2\) is multiplied by \[\left(\frac54\right)^2=\frac{25}{16}.\]"),("Keep volume fixed",r"To keep volume unchanged, the height must be multiplied by the reciprocal \(\frac{16}{25}=0.64\)." ),("Convert to decrease",r"The new height is \(64\%\) of the old height, so the decrease is \(36\%\)." ),("Conclude",r"The answer is $\boxed{36\%}$."),],
+10:[("Recognize the structure",r"The numbers are consecutive and there are \(49\) of them, an odd number. That means the middle term is also the median."),("Connect median and average",r"For an odd list of consecutive integers, terms pair symmetrically around the middle. Each pair has average equal to the middle term, so the average of all \(49\) integers equals the median."),("Compute the average",r"There are \(49=7^2\) integers, and their sum is \(7^5\). Thus the average is \[\frac{7^5}{7^2}=7^3.\]"),("Use the fact to answer",r"Because the average equals the median for this consecutive odd-length list, the median is \(7^3\)."),("Conclude",r"The answer is $\boxed{7^3}$."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -846,7 +882,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2003" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2004" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -935,7 +971,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2003 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2004 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
