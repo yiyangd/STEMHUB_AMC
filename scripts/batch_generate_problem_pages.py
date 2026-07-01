@@ -8,91 +8,129 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 25
+BATCH_NUMBER = 26
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {21, 22, 23, 24, 25}
-SKIPPED = []
-BATCH_LABEL = "2005 AMC 10B Problem 21-25"
-NEXT_START = "2006 AMC 10A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2006_AMC_10A_Answer_Key"
+TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 8, 9, 10}
+SKIPPED = ["2006 AMC 10A Problem 7: rectangle-to-hexagon dissection depends on the original diagram."]
+BATCH_LABEL = "2006 AMC 10A Problem 1-10"
+NEXT_START = "2006 AMC 10A Problem 11"
 
 ANS = {
-    21: ("A", "162"),
-    22: ("C", "16"),
-    23: ("C", "5"),
-    24: ("E", "154"),
-    25: ("C", "62"),
+    1: ("A", "31"),
+    2: ("C", "h"),
+    3: ("B", "18"),
+    4: ("E", "23"),
+    5: ("D", "4"),
+    6: ("B", r"\frac{2}{7}"),
+    8: ("E", "11"),
+    9: ("C", "3"),
+    10: ("E", "11"),
 }
 
 
 OV = {
-    21: (
-        r"Forty slips are placed into a hat, each bearing a number $1,2,3,4,5,6,7,8,9,$ or $10$, with each number entered on four slips. Four slips are drawn from the hat at random and without replacement. Let $p$ be the probability that all four slips bear the same number. Let $q$ be the probability that two of the slips bear a number $a$ and the other two bear a number $b\ne a$. What is the value of $q/p$?",
-        [("A", "$162$"), ("B", "$180$"), ("C", "$324$"), ("D", "$360$"), ("E", "$720$")],
+    1: (
+        r"Sandwiches at Joe's Fast Food cost $3$ dollars each and sodas cost $2$ dollars each. How many dollars will it cost to purchase $5$ sandwiches and $8$ sodas?",
+        [("A", "$31$"), ("B", "$32$"), ("C", "$33$"), ("D", "$34$"), ("E", "$35$")],
     ),
-    22: (
-        r"For how many positive integers $n\le24$ is $n!$ evenly divisible by $1+2+\cdots+n$?",
-        [("A", "$8$"), ("B", "$12$"), ("C", "$16$"), ("D", "$17$"), ("E", "$21$")],
+    2: (
+        r"Define $x\otimes y=x^3-y$. What is $h\otimes(h\otimes h)$?",
+        [("A", "$-h$"), ("B", "$0$"), ("C", "$h$"), ("D", "$2h$"), ("E", "$h^3$")],
     ),
-    23: (
-        r"In trapezoid $ABCD$ we have $AB\parallel DC$, $E$ as the midpoint of $BC$, and $F$ as the midpoint of $DA$. The area of $ABEF$ is twice the area of $FECD$. What is $AB/DC$?",
-        [("A", "$2$"), ("B", "$3$"), ("C", "$5$"), ("D", "$6$"), ("E", "$8$")],
+    3: (
+        r"The ratio of Mary's age to Alice's age is $3:5$. Alice is $30$ years old. How old is Mary?",
+        [("A", "$15$"), ("B", "$18$"), ("C", "$20$"), ("D", "$24$"), ("E", "$50$")],
     ),
-    24: (
-        r"Let $x$ and $y$ be two-digit integers such that $y$ is obtained by reversing the digits of $x$. The integers $x$ and $y$ satisfy $x^2-y^2=m^2$ for some positive integer $m$. What is $x+y+m$?",
-        [("A", "$88$"), ("B", "$112$"), ("C", "$116$"), ("D", "$144$"), ("E", "$154$")],
+    4: (
+        r"A digital watch displays hours and minutes with AM and PM. What is the largest possible sum of the digits in the display?",
+        [("A", "$17$"), ("B", "$19$"), ("C", "$21$"), ("D", "$22$"), ("E", "$23$")],
     ),
-    25: (
-        r"A subset $B$ of the set of integers from $1$ to $100$, inclusive, has the property that no two elements of $B$ sum to $125$. What is the maximum possible number of elements in $B$?",
-        [("A", "$50$"), ("B", "$51$"), ("C", "$62$"), ("D", "$65$"), ("E", "$68$")],
+    6: (
+        r"What non-zero real value for $x$ satisfies $(7x)^{14}=(14x)^7$?",
+        [("A", r"$\frac17$"), ("B", r"$\frac27$"), ("C", "$1$"), ("D", "$7$"), ("E", "$14$")],
+    ),
+    10: (
+        r"For how many positive integer values of $x$ is $\sqrt{120-x}$ an integer?",
+        [("A", "$3$"), ("B", "$6$"), ("C", "$9$"), ("D", "$10$"), ("E", "$11$")],
     ),
 }
 
 
 KEY_OVERRIDES = {
-    21: "Count favorable four-slip selections for each event, then divide to cancel the common denominator.",
-    22: "Reduce the triangular-number divisibility condition to whether n+1 divides 2(n-1)!.",
-    23: "Use the trapezoid midline to compare the top and bottom trapezoid areas.",
-    24: "Use reversed-digit algebra and search the constrained digit pairs for a square difference.",
-    25: "Pair numbers that sum to 125; choose at most one from each pair plus all unpaired small numbers.",
+    1: "Multiply each item cost by the quantity and add.",
+    2: "Evaluate the custom operation from the inside out.",
+    3: "Use a ratio to scale Mary's age from Alice's age.",
+    4: "Maximize the digit sum of a valid 12-hour digital time.",
+    5: "Split the pizza cost according to which slices were eaten.",
+    6: "Use exponent rules and the nonzero condition to solve for x.",
+    8: "Use symmetry of equal y-values on a parabola.",
+    9: "List possible lengths of consecutive positive integer sums.",
+    10: "Count square values that keep x positive.",
 }
 
 
 SOL = {
-    21: [
-        ("Use counts instead of probabilities", r"Both $p$ and $q$ have the same denominator, namely the number of ways to draw $4$ slips from $40$. So $q/p$ can be found by dividing favorable counts."),
-        ("Count all four the same", r"For event $p$, choose which number appears on all four slips. There are $10$ choices, and once the number is chosen, all four slips of that number must be drawn. So the favorable count for $p$ is $10$."),
-        ("Count two and two", r"For event $q$, choose the two numbers that appear: $\binom{10}{2}=45$ choices."),
-        ("Choose the slips", r"For each chosen number, choose $2$ of its $4$ slips. That gives $\binom42^2=6^2=36$ choices."),
-        ("Divide", r"Thus $q/p=\frac{45\cdot36}{10}=162$. The answer is $\boxed{162}$."),
+    1: [
+        ("Compute sandwich cost", r"Each sandwich costs $3$ dollars, so $5$ sandwiches cost $5\cdot3=15$ dollars."),
+        ("Compute soda cost", r"Each soda costs $2$ dollars, so $8$ sodas cost $8\cdot2=16$ dollars."),
+        ("Add the costs", r"The total cost is $15+16=31$ dollars."),
+        ("Answer", r"The answer is $\boxed{31}$."),
     ],
-    22: [
-        ("Rewrite the divisor", r"The sum $1+2+\cdots+n$ is $\frac{n(n+1)}2$. We need \[\frac{n(n+1)}2\mid n!.\]"),
-        ("Cancel the common factor n", r"For $n\ge1$, this is equivalent to asking whether $n+1$ divides $2(n-1)!$."),
-        ("Identify failures", r"If $n+1$ is an odd prime greater than $2$, then none of the factors $1,2,\ldots,n-1$ is divisible by $n+1$, and the extra factor $2$ does not help. So those cases fail."),
-        ("Count the failed values", r"For $n\le24$, we have $n+1\le25$. The odd primes from $3$ to $25$ are $3,5,7,11,13,17,19,23$, giving $8$ failures."),
-        ("Conclude", r"All other values work, because composite $n+1$ has enough factors inside $2(n-1)!$. There are $24-8=16$ working values. The answer is $\boxed{16}$."),
+    2: [
+        ("Start inside", r"The expression is nested, so first compute $h\otimes h$. By definition, $h\otimes h=h^3-h$."),
+        ("Substitute into the outside operation", r"Now $h\otimes(h\otimes h)=h\otimes(h^3-h)$."),
+        ("Apply the definition again", r"Using $x\otimes y=x^3-y$, this becomes $h^3-(h^3-h)$."),
+        ("Simplify", r"The $h^3$ terms cancel, leaving $h$."),
+        ("Answer", r"The value is $\boxed{h}$."),
     ],
-    23: [
-        ("Name the bases", r"Let $AB=a$ and $DC=c$. Since $E$ and $F$ are midpoints of the legs, $FE$ is the midline of the trapezoid, so $FE=\frac{a+c}{2}$."),
-        ("Split the height", r"The midline is halfway between the two bases, so the upper and lower trapezoids have equal height, say $h/2$ if the full height is $h$."),
-        ("Write the two areas", r"The area of $ABEF$ is \[\frac12\cdot\frac h2\left(a+\frac{a+c}{2}\right)=\frac{h(3a+c)}8.\] The area of $FECD$ is \[\frac12\cdot\frac h2\left(\frac{a+c}{2}+c\right)=\frac{h(a+3c)}8.\]"),
-        ("Use the ratio", r"The top area is twice the bottom area, so $3a+c=2(a+3c)$."),
-        ("Solve", r"This simplifies to $3a+c=2a+6c$, hence $a=5c$. Therefore $AB/DC=\boxed{5}$."),
+    3: [
+        ("Use the ratio", r"Mary's age to Alice's age is $3:5$, so Mary is $3/5$ as old as Alice."),
+        ("Substitute Alice's age", r"Alice is $30$, so Mary's age is $\frac35\cdot30=18$."),
+        ("Check", r"The ratio $18:30$ simplifies to $3:5$, matching the problem."),
+        ("Answer", r"Mary is $\boxed{18}$ years old."),
     ],
-    24: [
-        ("Write the reversed digits", r"Let $x=10a+b$ and $y=10b+a$, where $a$ and $b$ are nonzero digits. Since $m$ is positive, take $a>b$ so $x>y$."),
-        ("Factor the difference of squares", r"We have \[x^2-y^2=(x-y)(x+y).\] Now $x-y=9(a-b)$ and $x+y=11(a+b)$, so \[m^2=99(a-b)(a+b).\]"),
-        ("Use the small digit range", r"The digits are only from $1$ to $9$, so we can test the possible pairs $a>b$. The square condition is quite restrictive because the factor $99=9\cdot11$ requires the remaining factor to supply another factor of $11$ and make all exponents even."),
-        ("Find the working pair", r"The pair $a=6$, $b=5$ gives $x=65$ and $y=56$. Then \[65^2-56^2=(65-56)(65+56)=9\cdot121=33^2.\]"),
-        ("Answer", r"Thus $m=33$, and $x+y+m=65+56+33=\boxed{154}$."),
+    4: [
+        ("Think about valid times", r"The watch uses a $12$-hour display, so the hour can be from $1$ to $12$ and the minutes from $00$ to $59$."),
+        ("Maximize the minute digits", r"The largest possible minute digit sum is from $59$, which gives $5+9=14$."),
+        ("Maximize the hour digit with that", r"The hour with the largest digit sum is $9$, giving digit sum $9$. Times like $19:59$ are not valid on a $12$-hour watch."),
+        ("Add", r"At $9:59$, the digit sum is $9+5+9=23$."),
+        ("Answer", r"The largest possible sum is $\boxed{23}$."),
     ],
-    25: [
-        ("Pair dangerous numbers", r"Two numbers cannot both be chosen if their sum is $125$. The relevant pairs are $(25,100),(26,99),\ldots,(62,63)$."),
-        ("Count the pairs", r"There are $62-25+1=38$ such pairs. From each pair, we can choose at most one number."),
-        ("Find unpaired numbers", r"The numbers $1$ through $24$ cannot pair with another number in the set to make $125$, because their partners would be greater than $100$. All $24$ of these can be included."),
-        ("Build the maximum", r"Choose all $24$ unpaired numbers and one number from each of the $38$ dangerous pairs. This gives $24+38=62$ numbers."),
-        ("Answer", r"The maximum possible size of $B$ is $\boxed{62}$."),
+    5: [
+        ("Find the total pizza cost", r"The plain pizza costs $8$, and anchovies on half add $2$, so the whole pizza costs $10$."),
+        ("Separate plain and anchovy halves", r"The plain half costs $4$. The anchovy half costs the other $4$ of plain pizza plus the $2$ topping charge, so it costs $6$."),
+        ("Assign Dave's cost", r"Dave ate all $4$ anchovy slices, worth $6$, and one plain slice. Since the plain half has $4$ slices costing $4$, one plain slice costs $1$. Dave pays $7$."),
+        ("Assign Doug's cost", r"Doug ate the remaining $3$ plain slices, worth $3$."),
+        ("Answer", r"Dave paid $7-3=\boxed{4}$ dollars more than Doug."),
+    ],
+    6: [
+        ("Use the nonzero condition", r"Because $x\ne0$, we can divide by powers of $x$ without losing a solution."),
+        ("Expand the powers", r"The equation is $7^{14}x^{14}=14^7x^7$. Dividing by $x^7$ gives $7^{14}x^7=14^7$."),
+        ("Solve for x to the seventh", r"Since $14^7=(2\cdot7)^7=2^7\cdot7^7$, we get \[x^7=\frac{2^7\cdot7^7}{7^{14}}=\left(\frac27\right)^7.\]"),
+        ("Take the seventh root", r"The seventh root preserves the real value, so $x=\frac27$."),
+        ("Answer", r"The answer is $\boxed{\frac27}$."),
+    ],
+    8: [
+        ("Use the equal y-values", r"The points $(2,3)$ and $(4,3)$ have the same $y$-value on the parabola. For a parabola, equal heights occur at points symmetric about the axis of symmetry."),
+        ("Find the axis", r"The midpoint of $x=2$ and $x=4$ is $x=3$, so the axis of symmetry is $x=3$."),
+        ("Relate this to b", r"For $y=x^2+bx+c$, the axis is $x=-b/2$. Thus $-b/2=3$, so $b=-6$."),
+        ("Solve for c", r"Use point $(2,3)$: $3=2^2-6(2)+c=4-12+c$, so $c=11$."),
+        ("Answer", r"The answer is $\boxed{11}$."),
+    ],
+    9: [
+        ("List by length", r"We need sums of two or more consecutive positive integers that equal $15$. Checking by length is organized and avoids missing cases."),
+        ("Find the examples", r"With length $2$, $7+8=15$. With length $3$, $4+5+6=15$. With length $5$, $1+2+3+4+5=15$."),
+        ("Rule out other lengths", r"Length $4$ would have average $15/4$, not halfway between two middle integers. Lengths $6$ or more already exceed $15$ if they start at $1$."),
+        ("Count", r"There are $3$ valid sets."),
+        ("Answer", r"The answer is $\boxed{3}$."),
+    ],
+    10: [
+        ("Translate the square-root condition", r"For $\sqrt{120-x}$ to be an integer, the quantity $120-x$ must be a perfect square."),
+        ("Use positivity of x", r"Because $x$ is a positive integer, we need $120-x\ge0$, so the square can be $0^2,1^2,2^2,\ldots,10^2$."),
+        ("Count the squares", r"The next square, $11^2=121$, would make $x=120-121=-1$, which is not positive. So there are $11$ possible squares, from $0^2$ through $10^2$."),
+        ("Get x values", r"Each square gives exactly one value $x=120-k^2$."),
+        ("Answer", r"There are $\boxed{11}$ possible positive integer values of $x$."),
     ],
 }
 
@@ -196,7 +234,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2005" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2006" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -295,7 +333,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批完成 2005 AMC 10B Problems 21-25，无跳过题；2005B 完成。\n"
+        + "本批完成 2006 AMC 10A Problems 1-6 和 8-10；Problem 7 因图形依赖跳过。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",

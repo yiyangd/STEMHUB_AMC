@@ -396,3 +396,19 @@
 - Pushed: pending
 - Next batch should start from: 2006 AMC 10A Problem 1
 - Review notes: Batch 25 completed 2005 AMC 10B Problems 21-25 with no skipped problems; 2005B complete.
+
+## Batch 26: 2006 AMC 10A Problem 1-10
+
+- Start time: 2026-06-30T17:23:44-07:00
+- End time: 2026-06-30T17:23:45-07:00
+- Processed contest: AMC 10
+- Processed range: 2006 AMC 10A Problem 1-10
+- Generated count: 9
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2006 AMC 10A Problem 7: rectangle-to-hexagon dissection depends on the original diagram.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2006 AMC 10A Problem 11
+- Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.
