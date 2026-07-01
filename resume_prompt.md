@@ -1,8 +1,8 @@
 请继续 STEMHUB AMC problem teaching pages 批量生成任务。
 
-当前状态：Batch 136 已生成/更新并通过本地脚本验证；最新范围为 2023 AMC 10A Problems 21-23,25。
+当前状态：Batch 137 已生成/更新并通过本地脚本验证；最新范围为 2023 AMC 10B Problems 1-6,8-10。
 本批跳过题：
-- 2023 AMC 10A Problem 24 skipped: hexagonal-frame area depends on the missing block arrangement diagram.
-下一批从 2023 AMC 10B Problem 1 开始。
+- 2023 AMC 10B Problem 7 skipped: rotated-square angle depends on the missing diagram and vertex placement.
+下一批从 2023 AMC 10B Problem 11 开始。
 
 继续策略：每批生成 5-10 道可靠题；遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 teaching steps 后 commit/push。
