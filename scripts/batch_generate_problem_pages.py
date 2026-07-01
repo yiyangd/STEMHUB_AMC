@@ -3,32 +3,42 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 73
+BATCH_NUMBER = 74
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2013_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2013_AMC_10B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
 SKIPPED = []
-BATCH_LABEL = "2013 AMC 10A Problems 21-25"
-NEXT_START = "2013 AMC 10B Problem 1"
+BATCH_LABEL = "2013 AMC 10B Problems 1-10"
+NEXT_START = "2013 AMC 10B Problem 11"
 
-ANS = {21:("D","1925"),22:("B",r"\frac32"),23:("D","61"),24:("E","900"),25:("A","49")}
+ANS={1:("C",r"\frac{7}{12}"),2:("A","600"),3:("C",r"-5"),4:("D","149"),5:("B",r"-15"),6:("C","24.75"),7:("B",r"\frac{\sqrt3}{2}"),8:("B","16"),9:("D","160"),10:("C","20")}
 
-OV = {
-21:(r"A group of $12$ pirates divide a chest of gold coins as follows. The $k$th pirate to take a share takes $\frac{k}{12}$ of the coins that remain in the chest. The initial number of coins is the smallest number for which every pirate receives a positive whole number of coins. How many coins does the $12$th pirate receive?",[("A","720"),("B","1296"),("C","1728"),("D","1925"),("E","3850")]),
-22:(r"Six spheres of radius $1$ have centers at the vertices of a regular hexagon of side length $2$. The six spheres are internally tangent to a larger sphere whose center is the center of the hexagon. An eighth sphere is externally tangent to the six smaller spheres and internally tangent to the larger sphere. What is the radius of this eighth sphere?",[("A",r"\sqrt2"),("B",r"\frac32"),("C",r"\sqrt5"),("D",r"\sqrt3"),("E",r"\frac23")]),
-23:(r"In $\triangle ABC$, $AB=86$ and $AC=97$. A circle with center $A$ and radius $AB$ intersects $BC$ at points $B$ and $X$. Moreover $BX$ and $CX$ have integer lengths. What is $BC$?",[("A","11"),("B","28"),("C","33"),("D","61"),("E","72")]),
-24:(r"Central High School plays Northern High School in a backgammon match. Each school has three players, and each player plays two games against each player from the other school. The match has six rounds, with three games played simultaneously in each round. In how many different ways can the match be scheduled?",[("A","540"),("B","600"),("C","720"),("D","810"),("E","900")]),
-25:(r"All diagonals are drawn in a regular octagon. At how many distinct points in the interior of the octagon, not on the boundary, do two or more diagonals intersect?",[("A","49"),("B","65"),("C","70"),("D","96"),("E","128")]),
+OV={
+1:(r"What is $\frac{2+4+6}{1+3+5}-\frac{1+3+5}{2+4+6}$?",[("A",r"-\frac1{36}"),("B",r"\frac5{12}"),("C",r"\frac7{12}"),("D",r"\frac{49}{20}"),("E",r"\frac{43}{3}")]),
+2:(r"Mr. Green measures his rectangular garden as $15$ steps by $20$ steps. Each step is $2$ feet long. He expects half a pound of potatoes per square foot. How many pounds of potatoes does he expect?",[("A","600"),("B","800"),("C","1000"),("D","1200"),("E","1400")]),
+3:(r"On a January day, the high temperature was $16$ degrees higher than the low temperature, and the average of the high and low temperatures was $3^\circ$. What was the low temperature?",[("A",r"-13"),("B",r"-8"),("C",r"-5"),("D","3"),("E","11")]),
+4:(r"When counting from $3$ to $201$, $53$ is the $51$st number counted. When counting backwards from $201$ to $3$, $53$ is the $n$th number counted. What is $n$?",[("A","146"),("B","147"),("C","148"),("D","149"),("E","150")]),
+5:(r"Positive integers $a$ and $b$ are each less than $6$. What is the smallest possible value of $2a-ab$?",[("A",r"-20"),("B",r"-15"),("C",r"-10"),("D","0"),("E","2")]),
+6:(r"The average age of $33$ fifth-graders is $11$. The average age of $55$ of their parents is $33$. What is the average age of all these parents and fifth-graders?",[("A","22"),("B","23.25"),("C","24.75"),("D","26.25"),("E","28")]),
+7:(r"Six points are equally spaced around a circle of radius $1$. Three of these points are vertices of a triangle that is neither equilateral nor isosceles. What is the area of this triangle?",[("A",r"\frac{\sqrt3}{3}"),("B",r"\frac{\sqrt3}{2}"),("C","1"),("D",r"\sqrt2"),("E",r"2\sqrt3")]),
+8:(r"Ray's car averages $40$ miles per gallon, and Tom's car averages $10$ miles per gallon. Ray and Tom each drive the same number of miles. What is the cars' combined rate in miles per gallon?",[("A","10"),("B","16"),("C","25"),("D","30"),("E","40")]),
+9:(r"Three positive integers are each greater than $1$, have product $27000$, and are pairwise relatively prime. What is their sum?",[("A","100"),("B","137"),("C","156"),("D","160"),("E","165")]),
+10:(r"A basketball team's players were successful on $50\%$ of their two-point shots and $40\%$ of their three-point shots, resulting in $54$ points. They attempted $50\%$ more two-point shots than three-point shots. How many three-point shots did they attempt?",[("A","10"),("B","15"),("C","20"),("D","25"),("E","30")]),
 }
 
-KEY_OVERRIDES={21:"Work backward through the divisibility conditions on the remaining coins.",22:"Use symmetry and the Pythagorean theorem for the eighth sphere center.",23:"Use equal radii to create a chord and factor the difference of squares.",24:"View each round as a perfect matching between the two teams.",25:"Start with $\binom84$ intersections and correct for special concurrences in a regular octagon."}
+KEY_OVERRIDES={1:"Compute the two sums first, then subtract fractions.",2:"Convert steps to feet before computing area and yield.",3:"Use average and difference to recover the two temperatures.",4:"Counting backward changes the position to a distance from 201.",5:"Factor the expression and maximize the negative factor.",6:"Use a weighted average by group size.",7:"The only scalene triangle from three vertices of a regular hexagon has side lengths $1,\sqrt3,2$.",8:"For equal distances, add gallons used and divide total miles by total gallons.",9:"Pairwise relatively prime factors must receive whole prime-power blocks.",10:"Use variables for shot attempts and expected made-shot points."}
 
 SOL={
-21:[("Track the remaining coins",r"Let $R_k$ be the number of coins left after the $k$th pirate takes a share. Pirate $k$ takes $\frac{k}{12}$ of $R_{k-1}$, so $R_k=\frac{12-k}{12}R_{k-1}$."),("Work backward",r"The $12$th pirate receives all of $R_{11}$. We want the smallest positive $R_{11}$ that makes every earlier remaining amount and every share an integer."),("Use the backward relation",r"For $k=11,10,\ldots,1$, the reverse formula is $R_{k-1}=\frac{12}{12-k}R_k$. Applying these divisibility requirements successively gives the smallest possible $R_{11}=1925$."),("Check the meaning",r"Since the $12$th pirate takes all coins remaining after the $11$th pirate, the $12$th pirate receives $R_{11}$."),("Conclude",r"The answer is $\boxed{1925}$."),],
-22:[("Find the large sphere radius",r"The centers of the six small spheres are distance $2$ from the hexagon center. Since each small sphere has radius $1$ and is internally tangent to the large sphere, the large sphere has radius $3$."),("Place the eighth sphere by symmetry",r"The eighth sphere must lie on the line through the hexagon center perpendicular to the plane of the six centers. Let its radius be $r$ and its center be height $h$ above the hexagon plane."),("Write the tangency equations",r"Internal tangency to the large sphere gives $h+r=3$. External tangency to each small sphere gives $h^2+2^2=(r+1)^2$."),("Solve",r"Substitute $h=3-r$: $(3-r)^2+4=(r+1)^2$. This simplifies to $13-6r=r^2+2r+1-r^2$, so $12=8r$ and $r=\frac32$."),("Conclude",r"The radius is $\boxed{\frac32}$."),],
-23:[("Use the equal radii",r"Since $B$ and $X$ lie on the circle centered at $A$, we have $AB=AX=86$. Thus $BX$ is a chord of that circle lying on line $BC$."),("Name the integer pieces",r"Let $BX=x$ and $CX=m$, where both are positive integers. Then $BC=x+m$."),("Compare right triangles",r"Drop the perpendicular from $A$ to line $BC$. It bisects chord $BX$, so the horizontal distances to $B$ and $X$ are both $x/2$. Comparing $AC^2$ and $AB^2$ gives \[(m+x/2)^2-(x/2)^2=97^2-86^2.\]"),("Factor",r"The left side is $m(m+x)$, and the right side is $2013=3\cdot11\cdot61$. Thus $m$ and $m+x=BC$ are factor pairs of $2013$."),("Use triangle inequality",r"The possible larger factors are $2013,671,183,61$. Since $BC<AB+AC=183$, only $61$ can work. The answer is $\boxed{61}$."),],
-24:[("Model a round",r"In each round, the three games form a perfect matching between the three Central players and the three Northern players. There are $3!=6$ possible matchings for one round."),("Use the all-matchings schedule",r"If each of the $6$ possible matchings is used exactly once, then every cross-school pair occurs exactly twice. These schedules can be ordered in $6!=720$ ways."),("Find the other possible pattern",r"There are also two sets of three matchings that already cover every cross-school pair exactly once. Using each matching in one of these sets twice gives another valid schedule."),("Count those schedules",r"For each of the two such sets, the six-round order has three matchings repeated twice, so it can be arranged in $\frac{6!}{2!2!2!}=90$ ways. This contributes $2\cdot90=180$ schedules."),("Add",r"The total number of schedules is $720+180=900$. The answer is $\boxed{900}$."),],
-25:[("Start with the general-position count",r"In a convex octagon with no three diagonals concurrent, each interior intersection comes from choosing $4$ vertices, so there would be $\binom84=70$ intersection points."),("Correct the center",r"In a regular octagon, the $4$ long diagonals connecting opposite vertices all meet at the center. The general count treats this as $\binom42=6$ intersections, but it is only one point, so subtract $5$."),("Correct the other triple intersections",r"Regular-octagon symmetry also creates $8$ other interior points where $3$ diagonals meet. Each such point is counted as $\binom32=3$ intersections in the general count but should be counted once, so each requires subtracting $2$."),("Compute",r"The corrected number is $70-5-8\cdot2=70-5-16=49$."),("Conclude",r"The answer is $\boxed{49}$."),],
+1:[("Compute sums",r"The even sum is $2+4+6=12$, and the odd sum is $1+3+5=9$."),("Substitute",r"The expression becomes $\frac{12}{9}-\frac{9}{12}=\frac43-\frac34$."),("Use a common denominator",r"With denominator $12$, this is $\frac{16}{12}-\frac9{12}=\frac7{12}$."),("Conclude",r"The answer is $\boxed{\frac7{12}}$."),],
+2:[("Convert dimensions",r"Each step is $2$ feet, so the garden is $30$ feet by $40$ feet."),("Find area",r"The area is $30\cdot40=1200$ square feet."),("Apply yield",r"At half a pound per square foot, the expected yield is $1200\cdot\frac12=600$ pounds."),("Conclude",r"The answer is $\boxed{600}$."),],
+3:[("Name the low temperature",r"Let the low temperature be $L$. Then the high temperature is $L+16$."),("Use the average",r"Their average is $3$, so $\frac{L+(L+16)}{2}=3$."),("Solve",r"This gives $2L+16=6$, so $2L=-10$ and $L=-5$."),("Conclude",r"The low temperature was $\boxed{-5^\circ}$."),],
+4:[("Count backward directly",r"When counting backward from $201$, the first number is $201$, the second is $200$, and so on."),("Use the position formula",r"The position of $53$ is $201-53+1$. The $+1$ is important because both endpoints are included."),("Compute",r"We get $201-53+1=149$."),("Conclude",r"Thus $n=\boxed{149}$."),],
+5:[("Factor the expression",r"The expression is $2a-ab=a(2-b)$. Since $a$ is positive, to make the value as small as possible we want $a$ large and $2-b$ as negative as possible."),("Choose b",r"The largest possible $b$ less than $6$ is $5$, giving $2-b=-3$."),("Choose a",r"The largest possible $a$ is also $5$, so the smallest value is $5(2-5)=-15$."),("Conclude",r"The answer is $\boxed{-15}$."),],
+6:[("Find total ages",r"The $33$ fifth-graders have total age $33\cdot11=363$. The $55$ parents have total age $55\cdot33=1815$."),("Add people and ages",r"Together there are $33+55=88$ people and total age $363+1815=2178$."),("Compute weighted average",r"The average is $2178/88=24.75$."),("Conclude",r"The answer is $\boxed{24.75}$."),],
+7:[("Understand the possible triangle",r"Six equally spaced points form a regular hexagon. A triangle that is neither equilateral nor isosceles must use gaps of $1$, $2$, and $3$ steps around the hexagon."),("Find side lengths",r"These correspond to chord lengths $1$, $\sqrt3$, and $2$ in a unit circle."),("Recognize the triangle",r"A triangle with sides $1$, $\sqrt3$, and $2$ is a $30$-$60$-$90$ right triangle."),("Compute area",r"Its area is $\frac12\cdot1\cdot\sqrt3=\frac{\sqrt3}{2}$. The answer is $\boxed{\frac{\sqrt3}{2}}$."),],
+8:[("Use a common distance",r"Suppose each person drives $40$ miles. Ray uses $1$ gallon, while Tom uses $4$ gallons."),("Combine miles and gallons",r"Together they drive $80$ miles and use $5$ gallons."),("Compute rate",r"The combined rate is $80/5=16$ miles per gallon."),("Conclude",r"The answer is $\boxed{16}$."),],
+9:[("Factor the product",r"We have $27000=27\cdot1000=3^3\cdot2^3\cdot5^3$."),("Use pairwise relative primality",r"Since the three integers are pairwise relatively prime, powers of the same prime cannot be split between different integers. Each prime-power block must go entirely into one of the three numbers."),("Assign the blocks",r"The three numbers greater than $1$ must therefore be $2^3=8$, $3^3=27$, and $5^3=125$ in some order."),("Add",r"Their sum is $8+27+125=160$. The answer is $\boxed{160}$."),],
+10:[("Name the attempts",r"Let the number of three-point attempts be $x$. Then the number of two-point attempts is $1.5x$."),("Compute expected successful points",r"The three-point shots produce $0.40x$ makes, worth $3(0.40x)=1.2x$ points. The two-point shots produce $0.50(1.5x)$ makes, worth $2\cdot0.50\cdot1.5x=1.5x$ points."),("Use total points",r"The total is $1.2x+1.5x=2.7x=54$."),("Solve",r"Thus $x=20$. The answer is $\boxed{20}$."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
@@ -128,7 +138,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2013" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2013" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -217,7 +227,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2013 AMC 10A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2013 AMC 10B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
@@ -238,6 +248,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
