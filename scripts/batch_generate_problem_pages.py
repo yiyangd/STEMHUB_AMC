@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 198
+BATCH_NUMBER = 199
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1,3,4,5,6,7,8,9,10}
-SKIPPED = ["2010 AMC 12B Problem 2: skipped because the L-shaped region depends on the original diagram."]
-BATCH_LABEL = "2010 AMC 12B Problems 1, 3-10"
-NEXT_START = "2010 AMC 12B Problem 11"
+TARGET_NUMBERS = {11,12,13,14,15}
+SKIPPED = []
+BATCH_LABEL = "2010 AMC 12B Problems 11-15"
+NEXT_START = "2010 AMC 12B Problem 16"
 
-ANS={1:("C","25"),3:("E","5"),4:("B","3"),5:("D","3"),6:("D","60"),7:("C","24"),8:("B","23"),9:("E","7"),10:("B",r"\frac{50}{101}")}
+ANS={11:("E",r"\frac15"),12:("D","256"),13:("A","2"),14:("B","671"),15:("D","225")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2166,6 +2166,35 @@ SOL.update({
 9:[("Use prime exponents",r"Write \[n=\prod p^{e_p}.\] The condition that $n^2$ is a perfect cube means each exponent $2e_p$ is divisible by $3$, so each $e_p$ is divisible by $3$."),("Use the square condition",r"The condition that $n^3$ is a perfect square means each exponent $3e_p$ is even. Since $3$ is odd, each $e_p$ must be even."),("Combine the exponent conditions",r"Each exponent in $n$ must be divisible by both $3$ and $2$, so each exponent must be a multiple of $6$."),("Include divisibility by 20",r"Because $20=2^2\cdot5$, the number $n$ must include prime factors $2$ and $5$. The smallest allowed exponents are therefore $6$ for both primes."),("Find n and its digits",r"The smallest possible $n$ is \[2^6\cdot5^6=(2\cdot5)^6=10^6.\] This number is $1{,}000{,}000$, which has $7$ digits."),("Conclude",r"The answer is $\boxed{7}$."),
 ],
 10:[("Write the average equation",r"There are $100$ numbers total: the numbers $1$ through $99$, and $x$. The average is \[100x.\]"),("Compute the known sum",r"The sum \[1+2+\cdots+99=\frac{99\cdot100}{2}=4950.\]"),("Set up the equation",r"The average equation is \[\frac{4950+x}{100}=100x.\] Multiplying by $100$ gives \[4950+x=10000x.\]"),("Solve",r"Thus \[4950=9999x,\] so \[x=\frac{4950}{9999}=\frac{50}{101}.\]"),("Conclude",r"The answer is \[\boxed{\frac{50}{101}}.\]"),
+],
+})
+
+OV.update({
+11:(r"A palindrome between $1000$ and $10{,}000$ is chosen at random. What is the probability that it is divisible by $7$?",[("A",r"$\frac1{10}$"),("B",r"$\frac19$"),("C",r"$\frac17$"),("D",r"$\frac16$"),("E",r"$\frac15$")]),
+12:(r"For what value of $x$ does \[\log_{\sqrt2}\sqrt{x}+\log_2 x+\log_4(x^2)+\log_8(x^3)+\log_{16}(x^4)=40?\]",[("A","8"),("B","16"),("C","32"),("D","256"),("E","1024")]),
+13:(r"In $\triangle ABC$, \[\cos(2A-B)+\sin(A+B)=2\] and $AB=4$. What is $BC$?",[("A","2"),("B",r"$\sqrt3$"),("C",r"$2\sqrt2$"),("D",r"$2\sqrt3$"),("E","4")]),
+14:(r"Let $a,b,c,d,$ and $e$ be positive integers with \[a+b+c+d+e=2010,\] and let $M$ be the largest of the sums $a+b$, $b+c$, $c+d$, and $d+e$. What is the smallest possible value of $M$?",[("A","670"),("B","671"),("C","802"),("D","803"),("E","804")]),
+15:(r"For how many ordered triples $(x,y,z)$ of nonnegative integers less than $20$ are there exactly two distinct elements in the set \[\{i^x,(1+i)^y,z\},\] where $i=\sqrt{-1}$?",[("A","149"),("B","205"),("C","215"),("D","225"),("E","235")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Write a four-digit palindrome algebraically and test divisibility by 7.",
+12:"Convert every logarithm to base 2.",
+13:"Use the fact that two trigonometric terms can sum to 2 only when both equal 1.",
+14:"Maximize the total possible sum under adjacent-pair bounds.",
+15:"Count the cases where exactly one pair among the three complex numbers is equal.",
+})
+
+SOL.update({
+11:[("Write the palindrome",r"Every four-digit palindrome has the form \[\overline{abba}=1000a+100b+10b+a=1001a+110b,\] where $a=1,2,\ldots,9$ and $b=0,1,\ldots,9$."),("Factor the expression",r"We have \[1001a+110b=11(91a+10b).\] Since $1001=7\cdot11\cdot13$, the term $91a$ is divisible by $7$."),("Check divisibility by 7",r"The palindrome is divisible by $7$ exactly when \[91a+10b\] is divisible by $7$. Modulo $7$, this is the same as \[10b\equiv3b\equiv0\pmod7,\] so $b$ must be $0$ or $7$."),("Count favorable palindromes",r"There are $9$ choices for $a$ and $2$ choices for $b$, giving $18$ favorable palindromes. There are $9\cdot10=90$ four-digit palindromes total."),("Compute the probability",r"The probability is \[\frac{18}{90}=\frac15.\]"),("Conclude",r"The answer is \[\boxed{\frac15}.\]"),
+],
+12:[("Use one logarithm base",r"Let \[t=\log_2 x.\] Then $\log_2\sqrt{x}=\frac12t$, but the first term has base $\sqrt2$, so \[\log_{\sqrt2}\sqrt{x}=\frac{\frac12t}{\frac12}=t.\]"),("Convert the remaining terms",r"We also have \[\log_2x=t,\quad \log_4(x^2)=\frac{2t}{2}=t,\quad \log_8(x^3)=\frac{3t}{3}=t,\quad \log_{16}(x^4)=\frac{4t}{4}=t.\]"),("Add the terms",r"The left side is therefore \[t+t+t+t+t=5t.\]"),("Solve for t",r"The equation becomes \[5t=40,\] so $t=8$."),("Convert back to x",r"Since $t=\log_2x$, we get \[x=2^8=256.\]"),("Conclude",r"The answer is $\boxed{256}$."),
+],
+13:[("Use the maximum possible values",r"Both $\cos(2A-B)$ and $\sin(A+B)$ are at most $1$. Their sum is $2$, so both must equal $1$."),("Use the sine condition",r"Since $\sin(A+B)=1$ and $A+B$ is an angle sum in a triangle, we must have \[A+B=90^\circ.\] Therefore \[C=90^\circ.\]"),("Use the cosine condition",r"Since $\cos(2A-B)=1$, the angle $2A-B$ must be $0^\circ$ in this triangle setting. Thus \[B=2A.\]"),("Find the triangle angles",r"Now \[A+B=90^\circ\] and $B=2A$, so $3A=90^\circ$. Hence \[A=30^\circ,\quad B=60^\circ,\quad C=90^\circ.\]"),("Use the side AB",r"The side $AB$ is opposite the right angle $C$, so it is the hypotenuse. Since $AB=4$, the side opposite $30^\circ$ is half the hypotenuse, so \[BC=2.\]"),("Conclude",r"The answer is $\boxed{2}$."),
+],
+14:[("Think of M as an upper bound",r"If $M$ is the largest adjacent-pair sum, then \[a+b\le M,\quad b+c\le M,\quad c+d\le M,\quad d+e\le M.\] We want the smallest $M$ that still allows the total sum to be $2010$."),("Maximize the total for a fixed M",r"For a fixed $M$, make $a$ and $e$ as large as possible: $a\le M-b$ and $e\le M-d$. Also $c\le M-b$ and $c\le M-d$, so \[c\le M-\max(b,d).\]"),("Use positivity",r"Because $b$ and $d$ are positive integers, $\max(b,d)\ge1$. Therefore the largest possible total is at most \[(M-b)+b+(M-1)+d+(M-d)=3M-1.\]"),("Get a lower bound for M",r"We need \[2010\le3M-1,\] so \[3M\ge2011.\] Thus $M\ge671$."),("Show M=671 works",r"Take \[a=670,\ b=1,\ c=670,\ d=1,\ e=668.\] Then the adjacent sums are \[671,671,671,669,\] and the total is $2010$. So $M=671$ is attainable."),("Conclude",r"The smallest possible value is $\boxed{671}$."),
+],
+15:[("Name the three values",r"Let \[A=i^x,\quad B=(1+i)^y,\quad C=z.\] We need exactly two distinct elements among $A,B,C$, so exactly one pair is equal while the third value is different."),("Count A=B",r"The value $i^x$ always has magnitude $1$. The value $(1+i)^y$ has magnitude $(\sqrt2)^y$, so $A=B$ is possible only when $y=0$, giving $B=1$. Then $i^x=1$, so $x\equiv0\pmod4$, giving $5$ choices for $x$. To avoid all three being equal, choose $z\ne1$, giving $19$ choices. This case contributes \[5\cdot19=95.\]"),("Count A=C",r"Since $z$ is a nonnegative integer and $i^x$ has magnitude $1$, equality $A=C$ is possible only when $i^x=1$ and $z=1$. There are $5$ choices for $x$. We need $B\ne1$, so $y\ne0$, giving $19$ choices. This case contributes \[5\cdot19=95.\]"),("Count B=C",r"We need $(1+i)^y$ to be a nonnegative integer less than $20$. This happens for $y=0$, giving $1$, and for $y=8$, giving $16$. If $y=0,z=1$, then $x$ must not make $A=1$, giving $15$ choices. If $y=8,z=16$, then $A$ is never $16$, giving $20$ choices. This case contributes \[15+20=35.\]"),("Add the disjoint cases",r"The three cases are disjoint because exactly one pair is equal. The total is \[95+95+35=225.\]"),("Conclude",r"The answer is $\boxed{225}$."),
 ],
 })
 

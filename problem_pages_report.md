@@ -1,25 +1,17 @@
 # Problem Pages Report
 
-- Total manifest entries: 1476
-- Latest batch: 198 (2010 AMC 12B Problems 1, 3-10)
-- Latest new generated count: 9
+- Total manifest entries: 1481
+- Latest batch: 199 (2010 AMC 12B Problems 11-15)
+- Latest new generated count: 5
 - Latest updated existing count: 0
-- Latest skipped count: 1
+- Latest skipped count: 0
 - MathJax validation: passed
 - Answer verification source: AoPS 2010 AMC 12B Answer Key
 
 ## Latest Batch Pages
 
-- `2010 AMC 12B Problem 1` -> `amc12/problems/2010-amc-12b-problem-1/`
-- `2010 AMC 12B Problem 3` -> `amc12/problems/2010-amc-12b-problem-3/`
-- `2010 AMC 12B Problem 4` -> `amc12/problems/2010-amc-12b-problem-4/`
-- `2010 AMC 12B Problem 5` -> `amc12/problems/2010-amc-12b-problem-5/`
-- `2010 AMC 12B Problem 6` -> `amc12/problems/2010-amc-12b-problem-6/`
-- `2010 AMC 12B Problem 7` -> `amc12/problems/2010-amc-12b-problem-7/`
-- `2010 AMC 12B Problem 8` -> `amc12/problems/2010-amc-12b-problem-8/`
-- `2010 AMC 12B Problem 9` -> `amc12/problems/2010-amc-12b-problem-9/`
-- `2010 AMC 12B Problem 10` -> `amc12/problems/2010-amc-12b-problem-10/`
-
-## Skipped in latest batch
-
-- 2010 AMC 12B Problem 2: skipped because the L-shaped region depends on the original diagram.
+- `2010 AMC 12B Problem 11` -> `amc12/problems/2010-amc-12b-problem-11/`
+- `2010 AMC 12B Problem 12` -> `amc12/problems/2010-amc-12b-problem-12/`
+- `2010 AMC 12B Problem 13` -> `amc12/problems/2010-amc-12b-problem-13/`
+- `2010 AMC 12B Problem 14` -> `amc12/problems/2010-amc-12b-problem-14/`
+- `2010 AMC 12B Problem 15` -> `amc12/problems/2010-amc-12b-problem-15/`
