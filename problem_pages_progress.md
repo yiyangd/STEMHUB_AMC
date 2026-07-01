@@ -3116,3 +3116,19 @@
 - Pushed: pending
 - Next batch should start from: 2009 AMC 12B Problem 11
 - Review notes: none.
+
+## Batch 192: 2009 AMC 12B Problems 11-13, 16-20
+
+- Start time: 2026-07-01T07:30:33-07:00
+- End time: 2026-07-01T07:30:34-07:00
+- Processed contest: AMC12
+- Processed range: 2009 AMC 12B Problems 11-13, 16-20
+- Generated count: 8
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2009 AMC 12B Problem 14: skipped because the five-unit-square region depends strongly on the original diagram.; 2009 AMC 12B Problem 15: skipped because the local OCR loses the exponent/radical structure in the answer choices.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2009 AMC 12B Problem 21
+- Review notes: none.

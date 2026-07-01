@@ -1,22 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 1430
-- Latest batch: 191 (2009 AMC 12B Problems 1-10)
-- Latest new generated count: 10
+- Total manifest entries: 1438
+- Latest batch: 192 (2009 AMC 12B Problems 11-13, 16-20)
+- Latest new generated count: 8
 - Latest updated existing count: 0
-- Latest skipped count: 0
+- Latest skipped count: 2
 - MathJax validation: passed
 - Answer verification source: AoPS 2009 AMC 12B Answer Key
 
 ## Latest Batch Pages
 
-- `2009 AMC 12B Problem 1` -> `amc12/problems/2009-amc-12b-problem-1/`
-- `2009 AMC 12B Problem 2` -> `amc12/problems/2009-amc-12b-problem-2/`
-- `2009 AMC 12B Problem 3` -> `amc12/problems/2009-amc-12b-problem-3/`
-- `2009 AMC 12B Problem 4` -> `amc12/problems/2009-amc-12b-problem-4/`
-- `2009 AMC 12B Problem 5` -> `amc12/problems/2009-amc-12b-problem-5/`
-- `2009 AMC 12B Problem 6` -> `amc12/problems/2009-amc-12b-problem-6/`
-- `2009 AMC 12B Problem 7` -> `amc12/problems/2009-amc-12b-problem-7/`
-- `2009 AMC 12B Problem 8` -> `amc12/problems/2009-amc-12b-problem-8/`
-- `2009 AMC 12B Problem 9` -> `amc12/problems/2009-amc-12b-problem-9/`
-- `2009 AMC 12B Problem 10` -> `amc12/problems/2009-amc-12b-problem-10/`
+- `2009 AMC 12B Problem 11` -> `amc12/problems/2009-amc-12b-problem-11/`
+- `2009 AMC 12B Problem 12` -> `amc12/problems/2009-amc-12b-problem-12/`
+- `2009 AMC 12B Problem 13` -> `amc12/problems/2009-amc-12b-problem-13/`
+- `2009 AMC 12B Problem 16` -> `amc12/problems/2009-amc-12b-problem-16/`
+- `2009 AMC 12B Problem 17` -> `amc12/problems/2009-amc-12b-problem-17/`
+- `2009 AMC 12B Problem 18` -> `amc12/problems/2009-amc-12b-problem-18/`
+- `2009 AMC 12B Problem 19` -> `amc12/problems/2009-amc-12b-problem-19/`
+- `2009 AMC 12B Problem 20` -> `amc12/problems/2009-amc-12b-problem-20/`
+
+## Skipped in latest batch
+
+- 2009 AMC 12B Problem 14: skipped because the five-unit-square region depends strongly on the original diagram.
+- 2009 AMC 12B Problem 15: skipped because the local OCR loses the exponent/radical structure in the answer choices.
