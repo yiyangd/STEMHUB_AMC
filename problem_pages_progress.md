@@ -2252,3 +2252,19 @@
 - Pushed: pending
 - Next batch should start from: 2023 AMC 10B Problem 21
 - Review notes: none.
+
+## Batch 139: 2023 AMC 10B Problems 21-24
+
+- Start time: 2026-07-01T04:31:01-07:00
+- End time: 2026-07-01T04:31:01-07:00
+- Processed contest: AMC 10
+- Processed range: 2023 AMC 10B Problems 21-24
+- Generated count: 4
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2023 AMC 10B Problem 25 skipped: folded-pentagon area depends on the missing fold-line diagram.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2024 AMC 10A Problem 1
+- Review notes: none.
