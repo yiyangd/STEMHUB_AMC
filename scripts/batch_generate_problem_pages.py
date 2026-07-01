@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 184
+BATCH_NUMBER = 185
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2008_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {21,23,24,25}
-SKIPPED = ["2008 AMC 12A Problem 22: skipped because the rectangular placemat configuration depends strongly on the original diagram."]
-BATCH_LABEL = "2008 AMC 12A Problems 21, 23-25"
-NEXT_START = "2008 AMC 12B Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2008_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2008 AMC 12B Problems 1-10"
+NEXT_START = "2008 AMC 12B Problem 11"
 
-ANS={21:("D","48"),23:("D",r"2^{5/4}"),24:("D",r"\frac{\sqrt3}{4\sqrt2-3}"),25:("D",r"\frac{1}{2^{98}}")}
+ANS={1:("E","6"),2:("B","4"),3:("C","400,000"),4:("D",r"\frac7{24}"),5:("C","9"),6:("A","2500"),7:("A","0"),8:("C",r"\frac1{10}"),9:("A",r"\sqrt{10}"),10:("B","900")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1693,6 +1693,50 @@ SOL.update({
 24:[("Set up coordinates",r"Place \(C=(0,0)\), \(B=(2,2\sqrt3)\), so \(BC=4\) and the ray \(CB\) makes a \(60^\circ\) angle with the positive \(x\)-axis. Let \(A=(x,0)\) with \(x>0\). Since \(D\) is the midpoint of \(BC\), \(D=(1,\sqrt3)\)."),("Express the angle as a difference",r"From point \(A\), the slopes of \(\overline{AD}\) and \(\overline{AB}\) are \[\frac{\sqrt3}{1-x}\quad\text{and}\quad \frac{2\sqrt3}{2-x}.\] The tangent of \(\angle BAD\) can be computed with the tangent subtraction formula."),("Compute the tangent expression",r"Using \(\tan(\alpha-\beta)=\frac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}\), the expression simplifies to \[\tan\angle BAD=\frac{\sqrt3\,x}{x^2-3x+8}.\]"),("Maximize the one-variable expression",r"Now maximize \(f(x)=\frac{x}{x^2-3x+8}\) for \(x>0\). Its derivative has numerator \[x^2-3x+8-x(2x-3)=8-x^2,\] so the maximum occurs at \(x=2\sqrt2\)."),("Evaluate at the maximum",r"Substituting \(x=2\sqrt2\), \[\tan\angle BAD=\frac{2\sqrt6}{16-6\sqrt2}=\frac{\sqrt3}{4\sqrt2-3}.\]"),("Conclude",r"The largest possible value is \(\boxed{\frac{\sqrt3}{4\sqrt2-3}}\)."),],
 25:[("Use complex numbers",r"Let \(z_n=a_n+b_ni\). The recurrence becomes \[z_{n+1}=(a_n+b_ni)(\sqrt3+i)=z_n(\sqrt3+i).\]"),("Write the multiplier in polar form",r"\(\sqrt3+i=2\left(\cos\frac{\pi}{6}+i\sin\frac{\pi}{6}\right)\). Each step multiplies the modulus by \(2\) and rotates by \(30^\circ\)."),("Relate z100 to z1",r"Since going from \(z_1\) to \(z_{100}\) takes \(99\) multiplications, \[z_{100}=z_1(\sqrt3+i)^{99}.\]"),("Simplify the 99th power",r"\[(\sqrt3+i)^{99}=2^{99}\left(\cos\frac{99\pi}{6}+i\sin\frac{99\pi}{6}\right)=2^{99}i,\] because \(\frac{99\pi}{6}=\frac{33\pi}{2}\)."),("Solve for z1",r"Given \(z_{100}=2+4i\), \[z_1=\frac{2+4i}{2^{99}i}=\frac{4-2i}{2^{99}}.\] Thus \(a_1=\frac4{2^{99}}\) and \(b_1=-\frac2{2^{99}}\)."),("Add the coordinates",r"\[a_1+b_1=\frac{4-2}{2^{99}}=\frac2{2^{99}}=\frac1{2^{98}}.\]"),("Conclude",r"The answer is \(\boxed{\frac1{2^{98}}}\)."),],
 })
+
+OV.update({
+1:(r"A basketball player made \(5\) baskets during a game. Each basket was worth either \(2\) or \(3\) points. How many different numbers could represent the total points scored by the player?",[("A","2"),("B","3"),("C","4"),("D","5"),("E","6")]),
+2:(r"A \(4\times4\) block of calendar dates is shown. The order of the numbers in the second row is reversed, and then the order of the numbers in the fourth row is reversed. Finally, the numbers on each diagonal are added. What is the positive difference between the two diagonal sums? The original rows are \(1,2,3,4\); \(8,9,10,11\); \(15,16,17,18\); and \(22,23,24,25\).",[("A","2"),("B","4"),("C","6"),("D","8"),("E","10")]),
+3:(r"A semipro baseball league has teams with \(21\) players each. League rules state that a player must be paid at least \(\$15{,}000\), and that the total of all players' salaries for each team cannot exceed \(\$700{,}000\). What is the maximum possible salary, in dollars, for a single player?",[("A","270,000"),("B","385,000"),("C","400,000"),("D","430,000"),("E","700,000")]),
+4:(r"On circle \(O\), points \(C\) and \(D\) are on the same side of diameter \(\overline{AB}\), \(\angle AOC=30^\circ\), and \(\angle DOB=45^\circ\). What is the ratio of the area of the smaller sector \(COD\) to the area of the circle?",[("A",r"\(\frac29\)"),("B",r"\(\frac14\)"),("C",r"\(\frac5{18}\)"),("D",r"\(\frac7{24}\)"),("E",r"\(\frac3{10}\)")]),
+5:(r"A class collects \(\$50\) to buy flowers for a classmate who is in the hospital. Roses cost \(\$3\) each, and carnations cost \(\$2\) each. No other flowers are to be used. How many different bouquets could be purchased for exactly \(\$50\)?",[("A","1"),("B","7"),("C","9"),("D","16"),("E","17")]),
+6:(r"Postman Pete has a pedometer to count his steps. The pedometer records up to \(99999\) steps, then flips over to \(00000\) on the next step. Pete sets the pedometer to \(00000\) on January 1. During the year, the pedometer flips from \(99999\) to \(00000\) forty-four times. On December 31 the pedometer reads \(50000\). Pete takes \(1800\) steps per mile. Which of the following is closest to the number of miles Pete walked during the year?",[("A","2500"),("B","3000"),("C","3500"),("D","4000"),("E","4500")]),
+7:(r"For real numbers \(a\) and \(b\), define \(a\$b=(a-b)^2\). What is \((x-y)^2\$(y-x)^2\)?",[("A","0"),("B",r"\(x^2+y^2\)"),("C",r"\(2x^2\)"),("D",r"\(2y^2\)"),("E",r"\(4xy\)")]),
+8:(r"Points \(B\) and \(C\) lie on \(\overline{AD}\). The length of \(\overline{AB}\) is \(4\) times the length of \(\overline{BD}\), and the length of \(\overline{AC}\) is \(9\) times the length of \(\overline{CD}\). The length of \(\overline{BC}\) is what fraction of the length of \(\overline{AD}\)?",[("A",r"\(\frac1{36}\)"),("B",r"\(\frac1{13}\)"),("C",r"\(\frac1{10}\)"),("D",r"\(\frac5{36}\)"),("E",r"\(\frac15\)")]),
+9:(r"Points \(A\) and \(B\) are on a circle of radius \(5\), and \(AB=6\). Point \(C\) is the midpoint of the minor arc \(AB\). What is the length of the line segment \(AC\)?",[("A",r"\(\sqrt{10}\)"),("B",r"\(\sqrt7\)"),("C",r"\(\sqrt{14}\)"),("D",r"\(\sqrt{15}\)"),("E",r"\(4\sqrt2\)")]),
+10:(r"Bricklayer Brenda would take \(9\) hours to build a chimney alone, and bricklayer Brandon would take \(10\) hours to build it alone. When they work together they talk a lot, and their combined output is decreased by \(10\) bricks per hour. Working together, they build the chimney in \(5\) hours. How many bricks are in the chimney?",[("A","500"),("B","900"),("C","950"),("D","1000"),("E","1900")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Let the number of 3-point baskets vary from 0 to 5.",
+2:"Reverse the specified rows and compute the two diagonal sums.",
+3:"Pay twenty players the minimum to maximize one player's salary.",
+4:"Find the central angle \(\angle COD\) as part of a semicircle.",
+5:"Count nonnegative integer solutions to \(3r+2c=50\).",
+6:"Convert full pedometer cycles and the final reading into steps, then miles.",
+7:"Notice that \((x-y)^2=(y-x)^2\).",
+8:"Normalize \(AD=1\) and locate \(B\) and \(C\).",
+9:"Use the perpendicular from the circle center to the chord.",
+10:"Set up a work-rate equation with the 10-brick-per-hour decrease.",
+})
+
+NOTES_OVERRIDES.update({
+2:"This problem contains a calendar block diagram. The entries are included in the text; please refer to the original PDF or AoPS page for the figure.",
+4:"This problem contains a circle diagram. The central angle data are included in the text; please refer to the original PDF or AoPS page for the figure.",
+})
+
+SOL.update({
+1:[("Use the number of 3-point baskets",r"Let \(k\) be the number of \(3\)-point baskets. Since the player made \(5\) baskets total, the number of \(2\)-point baskets is \(5-k\)."),("Write the total score",r"The total score is \[3k+2(5-k)=10+k.\]"),("List possible k values",r"The value of \(k\) can be \(0,1,2,3,4,\) or \(5\). These give total scores \(10,11,12,13,14,\) and \(15\)."),("Count distinct totals",r"There are \(6\) different possible totals."),("Conclude",r"The answer is \(\boxed{6}\)."),],
+2:[("Apply the row reversals",r"After reversing the second and fourth rows, the block becomes \[\begin{matrix}1&2&3&4\\11&10&9&8\\15&16&17&18\\25&24&23&22\end{matrix}\]"),("Find one diagonal sum",r"The top-left to bottom-right diagonal has sum \[1+10+17+22=50.\]"),("Find the other diagonal sum",r"The top-right to bottom-left diagonal has sum \[4+9+16+25=54.\]"),("Take the positive difference",r"The positive difference is \[54-50=4.\]"),("Conclude",r"The answer is \(\boxed{4}\)."),],
+3:[("Maximize one salary by minimizing the others",r"To make one player's salary as large as possible, pay each of the other \(20\) players the minimum allowed salary, \(\$15{,}000\)."),("Compute the minimum total for the other players",r"The other \(20\) players must receive at least \[20\cdot15{,}000=300{,}000\] dollars total."),("Use the team salary cap",r"The total team salary cannot exceed \(\$700{,}000\), so the chosen player can receive at most \[700{,}000-300{,}000=400{,}000.\]"),("Check attainability",r"This amount is allowed because it is at least \(\$15{,}000\) and keeps the team total exactly at the cap."),("Conclude",r"The maximum possible salary is \(\boxed{400{,}000}\)."),],
+4:[("Use the semicircle",r"Since \(\overline{AB}\) is a diameter, the central angle from \(OA\) to \(OB\) on one side is \(180^\circ\). Points \(C\) and \(D\) lie on that same side."),("Subtract the given end angles",r"We are given \(\angle AOC=30^\circ\) and \(\angle DOB=45^\circ\). Therefore the central angle between \(OC\) and \(OD\) is \[180^\circ-30^\circ-45^\circ=105^\circ.\]"),("Convert sector angle to area ratio",r"A sector's area is the same fraction of the circle's area as its central angle is of \(360^\circ\)."),("Compute the ratio",r"\[\frac{105}{360}=\frac7{24}.\]"),("Conclude",r"The answer is \(\boxed{\frac7{24}}\)."),],
+5:[("Set up the cost equation",r"Let \(r\) be the number of roses and \(c\) be the number of carnations. The cost condition is \[3r+2c=50.\]"),("Use parity",r"Since \(2c\) and \(50\) are even, \(3r\) must be even. Therefore \(r\) must be even."),("List possible rose counts",r"The nonnegative even values of \(r\) that do not exceed \(\frac{50}{3}\) are \[0,2,4,6,8,10,12,14,16.\]"),("Find carnations automatically",r"For each of these \(9\) values of \(r\), the equation gives a nonnegative integer value of \(c\)."),("Conclude",r"There are \(\boxed{9}\) possible bouquets."),],
+6:[("Convert flips to steps",r"Each full flip represents \(100{,}000\) steps. Forty-four flips represent \[44\cdot100{,}000=4{,}400{,}000\] steps."),("Add the final reading",r"The final reading is \(50{,}000\), so the total number of steps is \[4{,}400{,}000+50{,}000=4{,}450{,}000.\]"),("Convert steps to miles",r"Pete takes \(1800\) steps per mile, so he walked \[\frac{4{,}450{,}000}{1800}\approx2472.2\] miles."),("Choose the closest option",r"The closest answer choice is \(2500\)."),("Conclude",r"The answer is \(\boxed{2500}\)."),],
+7:[("Compare the two inputs",r"The two inputs to the operation are \((x-y)^2\) and \((y-x)^2\). But \(y-x=-(x-y)\), so their squares are equal."),("Apply the definition",r"If the two inputs are equal, then \[a\$a=(a-a)^2=0.\]"),("Use that here",r"Thus \[(x-y)^2\$(y-x)^2=0.\]"),("Conclude",r"The answer is \(\boxed{0}\)."),],
+8:[("Normalize the segment length",r"Let \(AD=1\). The final answer is a fraction of \(AD\), so this normalization does not change the result."),("Locate B",r"Since \(AB=4BD\) and \(AB+BD=AD=1\), we have \(5BD=1\). Thus \(BD=\frac15\) and \(AB=\frac45\)."),("Locate C",r"Since \(AC=9CD\) and \(AC+CD=1\), we have \(10CD=1\). Thus \(CD=\frac1{10}\) and \(AC=\frac9{10}\)."),("Find BC",r"Along the segment from \(A\) to \(D\), \[BC=AC-AB=\frac9{10}-\frac45=\frac9{10}-\frac8{10}=\frac1{10}.\]"),("Conclude",r"The length of \(BC\) is \(\boxed{\frac1{10}}\) of \(AD\)."),],
+9:[("Use the chord midpoint",r"Let \(M\) be the midpoint of chord \(\overline{AB}\). Since \(AB=6\), \(AM=3\). The radius to the midpoint of a chord is perpendicular to the chord."),("Find the distance from the center to the chord",r"The circle radius is \(5\), so in right triangle \(OMA\), \[OM=\sqrt{5^2-3^2}=\sqrt{25-9}=4.\]"),("Use the midpoint of the minor arc",r"Point \(C\), the midpoint of the minor arc, lies on the same perpendicular line through \(O\) and \(M\). Since \(OC=5\), the distance \(MC\) is \[5-4=1.\]"),("Compute AC",r"Triangle \(AMC\) is right, with legs \(AM=3\) and \(MC=1\). Therefore \[AC=\sqrt{3^2+1^2}=\sqrt{10}.\]"),("Conclude",r"The answer is \(\boxed{\sqrt{10}}\)."),],
+10:[("Let N be the number of bricks",r"If the chimney has \(N\) bricks, Brenda's rate is \(\frac{N}{9}\) bricks per hour, and Brandon's rate is \(\frac{N}{10}\) bricks per hour."),("Account for talking",r"When they work together, their combined output is decreased by \(10\) bricks per hour. So their actual combined rate is \[\frac{N}{9}+\frac{N}{10}-10.\]"),("Use the five-hour completion time",r"Building \(N\) bricks in \(5\) hours means their actual rate is \(\frac{N}{5}\) bricks per hour. Thus \[\frac{N}{5}=\frac{N}{9}+\frac{N}{10}-10.\]"),("Solve",r"The right side without the \(10\) is \(\frac{19N}{90}\), and \(\frac{N}{5}=\frac{18N}{90}\). Therefore \[\frac{18N}{90}=\frac{19N}{90}-10,\] so \(\frac{N}{90}=10\)."),("Find N",r"\[N=900.\]"),("Conclude",r"The chimney contains \(\boxed{900}\) bricks."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -1799,7 +1843,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2008" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2008" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -1888,7 +1932,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2008 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2008 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
