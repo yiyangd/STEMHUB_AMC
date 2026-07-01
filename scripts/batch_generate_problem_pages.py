@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 158
+BATCH_NUMBER = 159
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2004_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,6,7,8,9,10}
-SKIPPED = ["2004 AMC 12A Problem 5 skipped: line graph and slope/intercept information depend on the missing figure."]
-BATCH_LABEL = "2004 AMC 12A Problems 1-4,6-10"
-NEXT_START = "2004 AMC 12A Problem 11"
+TARGET_NUMBERS = {11,12,13,14,15,16,17,18,19,20}
+SKIPPED = []
+BATCH_LABEL = "2004 AMC 12A Problems 11-20"
+NEXT_START = "2004 AMC 12A Problem 21"
 
-ANS={1:("E","29"),2:("C","14"),3:("B","9"),4:("E","26"),6:("A",r"U-V"),7:("B","37"),8:("B","4"),9:("C","36%"),10:("C",r"7^3")}
+ANS={11:("A","0"),12:("B",r"2\sqrt2"),13:("B","20"),14:("A","1"),15:("C","350"),16:("B",r"2001^{2002}"),17:("D",r"2^{4950}"),18:("D",r"\frac52"),19:("D",r"\frac89"),20:("E",r"\frac34")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -92,6 +92,7 @@ OV={
 }
 
 KEY_OVERRIDES={11:"Count positive integer solutions to a linear money equation.",12:"Track sign changes only at roots of odd multiplicity.",13:"Use quadrant symmetry and an absolute-value diamond.",14:"Bound integer solutions and test small cases.",15:"Track prime-exponent parity in a factorial product.",16:"Count digit subsets that form increasing or decreasing numbers.",17:"Use symmetric sums of the box edge lengths.",18:"Analyze prime divisibility in the equation after clearing denominators.",19:"Average the one-direction escape probability by symmetry."}
+NOTES_OVERRIDES={}
 
 SOL={
 1:[("Start inside the parentheses",r"The operation is $x\diamond y=|x-y|$, so nested expressions should be evaluated from the inside outward."),("Compute the left nested part",r"First, \[2\diamond3=|2-3|=1.\] Then \[1\diamond(2\diamond3)=1\diamond1=|1-1|=0.\]"),("Compute the right nested part",r"Next, \[1\diamond2=|1-2|=1.\] Then \[(1\diamond2)\diamond3=1\diamond3=|1-3|=2.\]"),("Subtract the two results",r"The whole expression is \[0-2=-2.\]"),("Conclude",r"The answer is $\boxed{-2}$."),],
@@ -776,6 +777,49 @@ SOL.update({
 9:[("Use volume formula",r"A cylinder's volume is proportional to \(d^2h\), where \(d\) is the diameter and \(h\) is the height."),("Apply the diameter increase",r"Increasing the diameter by \(25\%\) multiplies it by \(1.25=\frac54\). Therefore \(d^2\) is multiplied by \[\left(\frac54\right)^2=\frac{25}{16}.\]"),("Keep volume fixed",r"To keep volume unchanged, the height must be multiplied by the reciprocal \(\frac{16}{25}=0.64\)." ),("Convert to decrease",r"The new height is \(64\%\) of the old height, so the decrease is \(36\%\)." ),("Conclude",r"The answer is $\boxed{36\%}$."),],
 10:[("Recognize the structure",r"The numbers are consecutive and there are \(49\) of them, an odd number. That means the middle term is also the median."),("Connect median and average",r"For an odd list of consecutive integers, terms pair symmetrically around the middle. Each pair has average equal to the middle term, so the average of all \(49\) integers equals the median."),("Compute the average",r"There are \(49=7^2\) integers, and their sum is \(7^5\). Thus the average is \[\frac{7^5}{7^2}=7^3.\]"),("Use the fact to answer",r"Because the average equals the median for this consecutive odd-length list, the median is \(7^3\)."),("Conclude",r"The answer is $\boxed{7^3}$."),],
 })
+OV.update({
+11:(r"The average value of all the pennies, nickels, dimes, and quarters in Paula's purse is \(20\) cents. If she had one more quarter, the average value would be \(21\) cents. How many dimes does she have in her purse?",[("A","0"),("B","1"),("C","2"),("D","3"),("E","4")]),
+12:(r"Let \(A=(0,9)\) and \(B=(0,12)\). Points \(A'\) and \(B'\) are on the line \(y=x\), and \(\overline{AA'}\) and \(\overline{BB'}\) intersect at \(C=(2,8)\). What is the length of \(\overline{A'B'}\)?",[("A","2"),("B",r"\(2\sqrt2\)"),("C","3"),("D",r"\(2+\sqrt2\)"),("E",r"\(3\sqrt2\)")]),
+13:(r"Let \(S\) be the set of points \((a,b)\) in the coordinate plane, where each of \(a\) and \(b\) may be \(-1,0,\) or \(1\). How many distinct lines pass through at least two members of \(S\)?",[("A","8"),("B","20"),("C","24"),("D","27"),("E","36")]),
+14:(r"A sequence of three real numbers forms an arithmetic progression with first term \(9\). If \(2\) is added to the second term and \(20\) is added to the third term, the three resulting numbers form a geometric progression. What is the smallest possible value for the third term in the geometric progression?",[("A","1"),("B","4"),("C","36"),("D","49"),("E","81")]),
+15:(r"Brenda and Sally run in opposite directions on a circular track, starting at diametrically opposite points. They first meet after Brenda has run \(100\) meters. They next meet after Sally has run \(150\) meters past their first meeting point. Each girl runs at a constant speed. What is the length of the track in meters?",[("A","250"),("B","300"),("C","350"),("D","400"),("E","500")]),
+16:(r"The set of all real numbers \(x\) for which \(\log_{2004}(\log_{2003}(\log_{2002}(\log_{2001}x)))\) is defined is \(\{x\mid x>c\}\). What is the value of \(c\)?",[("A","0"),("B",r"\(2001^{2002}\)"),("C",r"\(2002^{2003}\)"),("D",r"\(2003^{2004}\)"),("E",r"\(2001^{2002^{2003}}\)")]),
+17:(r"Let \(f\) be a function with the following properties: \(f(1)=1\), and \(f(2n)=n\cdot f(n)\) for any positive integer \(n\). What is the value of \(f(2^{100})\)?",[("A","1"),("B",r"\(2^{99}\)"),("C",r"\(2^{100}\)"),("D",r"\(2^{4950}\)"),("E",r"\(2^{9999}\)")]),
+18:(r"Square \(ABCD\) has side length \(2\). A semicircle with diameter \(\overline{AB}\) is constructed inside the square, and the tangent to the semicircle from \(C\) intersects side \(\overline{AD}\) at \(E\). What is the length of \(\overline{CE}\)?",[("A",r"\(\frac{2+\sqrt5}{2}\)"),("B",r"\(\sqrt5\)"),("C",r"\(\sqrt6\)"),("D",r"\(\frac52\)"),("E",r"\(5-\sqrt5\)")]),
+19:(r"Circles \(A,B,\) and \(C\) are externally tangent to each other and internally tangent to circle \(D\). Circles \(B\) and \(C\) are congruent. Circle \(A\) has radius \(1\) and passes through the center of \(D\). What is the radius of circle \(B\)?",[("A",r"\(\frac23\)"),("B",r"\(\frac{\sqrt3}{2}\)"),("C",r"\(\frac78\)"),("D",r"\(\frac89\)"),("E",r"\(\frac{1+\sqrt3}{3}\)")]),
+20:(r"Select numbers \(a\) and \(b\) between \(0\) and \(1\) independently and at random, and let \(c\) be their sum. Let \(A,B,\) and \(C\) be the results when \(a,b,\) and \(c\), respectively, are rounded to the nearest integer. What is the probability that \(A+B=C\)?",[("A",r"\(\frac14\)"),("B",r"\(\frac13\)"),("C",r"\(\frac12\)"),("D",r"\(\frac23\)"),("E",r"\(\frac34\)")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Use the change in average after adding one quarter to find the number of coins.",
+12:"Find the two points on \(y=x\) by intersecting lines through the given point \(C\).",
+13:"Count all pairs of grid points, then correct for lines containing three points.",
+14:"Use the arithmetic progression parameter and the geometric mean condition.",
+15:"Compare first-meeting time with the time between consecutive meetings.",
+16:"Work outward through the nested logarithm domain restrictions.",
+17:"Iterate the recurrence on powers of \(2\) and add exponents.",
+18:"Use a coordinate model and the tangent distance from a point to a circle.",
+19:"Use symmetry and tangency distances between circle centers.",
+20:"Convert rounding conditions into areas in the unit square.",
+})
+
+NOTES_OVERRIDES.update({
+18:"This problem contains a diagram. The text determines the configuration; please refer to the original PDF or AoPS page for the figure.",
+19:"This problem contains a diagram. The tangency relationships are described in the text; please refer to the original PDF or AoPS page for the figure.",
+})
+
+SOL.update({
+11:[("Use the average change first",r"Let \(n\) be the number of coins in Paula's purse. The total value is \(20n\) cents."),("Add the extra quarter",r"With one more quarter, the total value becomes \(20n+25\) and the number of coins becomes \(n+1\). The new average is \(21\), so \[\frac{20n+25}{n+1}=21.\]"),("Solve for the number of coins",r"Multiplying gives \(20n+25=21n+21\), so \(n=4\). Paula has only four coins."),("Use the total value",r"The four coins total \(20\cdot4=80\) cents. To make \(80\) cents with four U.S. coins, the only possibility is three quarters and one nickel."),("Answer the question asked",r"That combination contains no dimes, so the number of dimes is \(\boxed{0}\)."),],
+12:[("Draw the two lines through C",r"The point \(A'\) lies both on \(y=x\) and on line \(AC\). The slope of \(AC\) from \(A=(0,9)\) to \(C=(2,8)\) is \(-\frac12\)."),("Find A prime",r"Line \(AC\) has equation \(y=9-\frac{x}{2}\). Intersecting with \(y=x\) gives \[x=9-\frac{x}{2},\] so \(x=6\). Thus \(A'=(6,6)\)."),("Find B prime similarly",r"The slope from \(B=(0,12)\) to \(C=(2,8)\) is \(-2\). The line is \(y=12-2x\), and \(y=x\) gives \(x=4\). Thus \(B'=(4,4)\)."),("Compute the distance",r"The distance between \((6,6)\) and \((4,4)\) is \[\sqrt{(6-4)^2+(6-4)^2}=\sqrt8=2\sqrt2.\]"),("Conclude",r"The answer is $\boxed{2\sqrt2}$."),],
+13:[("See the grid",r"The set \(S\) is the \(3\) by \(3\) grid of points with coordinates \(-1,0,1\). Any two distinct points determine a line."),("Start with all pairs",r"There are \(\binom92=36\) pairs of points. If no three points were collinear, this would give \(36\) lines."),("Identify triple-point lines",r"Some lines contain three grid points: \(3\) horizontal lines, \(3\) vertical lines, and the \(2\) main diagonals. These are \(8\) lines total."),("Correct the overcount",r"Each of those \(8\) lines was counted by \(\binom32=3\) pairs, but should count once. So each such line contributes an overcount of \(2\)."),("Compute",r"The number of distinct lines is \[36-8\cdot2=20.\]"),("Conclude",r"The answer is $\boxed{20}$."),],
+14:[("Parameterize the arithmetic progression",r"Let the three original terms be \(9,9+d,9+2d\). This keeps the common difference visible."),("Apply the changes",r"After adding \(2\) to the second term and \(20\) to the third, the new terms are \[9,\quad 11+d,\quad 29+2d.\]"),("Use the geometric progression condition",r"For three numbers in geometric progression, the square of the middle term equals the product of the outer terms: \[(11+d)^2=9(29+2d).\]"),("Solve for d",r"Expanding gives \(d^2+22d+121=261+18d\), or \[d^2+4d-140=0.\] Thus \(d=10\) or \(d=-14\)."),("Choose the smallest third term",r"The third term of the geometric progression is \(29+2d\). The two possibilities are \(49\) and \(1\), so the smallest is \(\boxed{1}\)."),],
+15:[("Name the track length",r"Let the track length be \(L\). Since Brenda and Sally start at diametrically opposite points, the first meeting happens after their combined distance is \(L/2\)."),("Use the first meeting",r"Brenda has run \(100\) meters at the first meeting. Therefore Sally has run \(L/2-100\) meters by then."),("Compare meeting intervals",r"After the first meeting, the next meeting requires their combined additional distance to be one full lap, \(L\). That is twice the combined distance needed before the first meeting, so the time between the first and second meetings is twice the first-meeting time."),("Use Sally's second distance",r"Sally runs \(150\) meters between the first and second meetings. Therefore in the first-meeting time she ran \(150/2=75\) meters."),("Find L",r"So \(L/2=100+75=175\), giving \(L=350\)."),("Conclude",r"The answer is $\boxed{350}$."),],
+16:[("Work from the outside inward",r"The outer logarithm \(\log_{2004}(\cdots)\) is defined only if its argument is positive."),("Translate the first restriction",r"So we need \(\log_{2003}(\log_{2002}(\log_{2001}x))>0\). Since the base \(2003>1\), this means \[\log_{2002}(\log_{2001}x)>1.\]"),("Move one layer inward",r"Because \(2002>1\), \(\log_{2002}(\log_{2001}x)>1\) means \[\log_{2001}x>2002.\]"),("Finish the innermost inequality",r"Since \(2001>1\), the inequality \(\log_{2001}x>2002\) becomes \[x>2001^{2002}.\]"),("Conclude",r"Thus \(c=2001^{2002}\), so the answer is $\boxed{2001^{2002}}$."),],
+17:[("Restrict to powers of two",r"The input is \(2^{100}\), so repeatedly applying \(f(2n)=n f(n)\) will eventually reduce to \(f(1)\)."),("Write the recurrence for powers",r"Let \(g(k)=f(2^k)\). Then \[g(k)=f(2\cdot2^{k-1})=2^{k-1}f(2^{k-1})=2^{k-1}g(k-1).\]"),("Multiply the factors",r"Starting from \(g(0)=f(1)=1\), we get \[g(100)=2^{99}\cdot2^{98}\cdots2^1\cdot2^0.\]"),("Add exponents",r"The exponent is \[0+1+2+\cdots+99=\frac{99\cdot100}{2}=4950.\]"),("Conclude",r"Therefore \(f(2^{100})=2^{4950}\), and the answer is $\boxed{2^{4950}}$."),],
+18:[("Choose coordinates",r"Place \(A=(0,0)\), \(B=(2,0)\), \(D=(0,2)\), and \(C=(2,2)\). The semicircle has center \((1,0)\) and radius \(1\)."),("Represent the tangent line",r"Let \(E=(0,e)\) on side \(AD\). The line through \(E\) and \(C\) has equation \[(2-e)x-2y+2e=0.\]"),("Use the tangent condition",r"A tangent line is exactly one radius away from the center of the circle. Therefore the distance from \((1,0)\) to the line is \(1\): \[\frac{|2+e|}{\sqrt{(2-e)^2+4}}=1.\]"),("Solve for E",r"Squaring gives \((e+2)^2=(2-e)^2+4\), so \(8e=4\) and \(e=\frac12\)."),("Find CE",r"Now \(C=(2,2)\) and \(E=(0,\frac12)\), so \[CE=\sqrt{2^2+\left(2-\frac12\right)^2}=\sqrt{4+\frac94}=\frac52.\]"),("Conclude",r"The answer is $\boxed{\frac52}$."),],
+19:[("Set up a symmetric picture",r"Let circle \(D\) have center \(O\). Circle \(A\) has radius \(1\) and passes through \(O\), so the distance from \(O\) to the center of \(A\) is \(1\). Since circle \(A\) is internally tangent to \(D\), circle \(D\) has radius \(2\)."),("Use symmetry for B and C",r"Let the congruent circles \(B\) and \(C\) have radius \(r\). Their centers are symmetric, so put them at \((x,r)\) and \((x,-r)\); then they are tangent to each other."),("Use tangency to D",r"Because each small circle is internally tangent to circle \(D\), its center is \(2-r\) units from \(O\). Thus \[x^2+r^2=(2-r)^2,\] so \(x^2=4-4r\)."),("Use tangency to A",r"Put the center of circle \(A\) at \((1,0)\). Tangency to circle \(A\) gives \[(x-1)^2+r^2=(r+1)^2.\] Simplifying, \(x^2-2x=2r\)."),("Solve for r",r"Using \(x^2=4-4r\), the equation \(x^2-2x=2r\) gives \(x=2-3r\). Substitute into \(x^2=4-4r\): \[(2-3r)^2=4-4r.\] Hence \(9r^2-8r=0\), so \(r=\frac89\)."),("Conclude",r"The radius of circle \(B\) is $\boxed{\frac89}$."),],
+20:[("Use the unit square",r"The pair \((a,b)\) is uniformly distributed over the unit square \(0<a<1,\ 0<b<1\). Areas in this square are probabilities."),("Understand rounding",r"Each of \(a\) and \(b\) rounds to \(0\) below \(\frac12\) and to \(1\) above \(\frac12\). The sum \(c=a+b\) rounds to \(0,1,2\) depending on whether \(c<\frac12\), \(\frac12<c<\frac32\), or \(c>\frac32\)."),("Count the lower-left case",r"If \(a<\frac12\) and \(b<\frac12\), then \(A+B=0\). We need \(C=0\), which means \(a+b<\frac12\). This is a right triangle of area \(\frac18\)."),("Count the mixed cases",r"If one of \(a,b\) is below \(\frac12\) and the other is above \(\frac12\), then \(A+B=1\). The sum \(a+b\) automatically lies between \(\frac12\) and \(\frac32\), so both mixed rectangles work. Their total area is \(\frac12\)."),("Count the upper-right case",r"If \(a>\frac12\) and \(b>\frac12\), then \(A+B=2\). We need \(a+b>\frac32\), the upper-right triangle of area \(\frac18\)."),("Add the favorable areas",r"The probability is \[\frac18+\frac12+\frac18=\frac34.\] Thus the answer is $\boxed{\frac34}$."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -825,7 +869,7 @@ def render(row):
     choices = choices or parsed
     ans, val = ANS[n]
     tags = "".join(f'<span class="badge">{esc(t)}</span>' for t in (row.get("tags") or "").split(";") if t)
-    notes = row.get("notes") or ""
+    notes = NOTES_OVERRIDES.get(n, row.get("notes") or "")
     note = "This problem contains a diagram. Please refer to the original PDF or AoPS page." if notes == "题面包含图形" else notes
     note_html = f'<section class="section"><h2>Notes</h2><p>{esc(note)}</p></section>' if note else ""
     choices_html = "".join(
@@ -962,7 +1006,7 @@ def main():
     )
 
     report_path = ROOT / "problem_pages_report.md"
-    latest = "\n".join(f"- `{it['source']}` -> `amc10/problems/{it['slug']}/`" for it in items)
+    latest = "\n".join(f"- `{it['source']}` -> `{CONTEST_DIR}/problems/{it['slug']}/`" for it in items)
     report_path.write_text(
         "# Problem Pages Report\n\n"
         + f"- Total manifest entries: {len(merged)}\n"
