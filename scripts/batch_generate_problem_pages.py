@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 147
+BATCH_NUMBER = 148
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2002_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16,17,18,20}
-SKIPPED = ["2002 AMC 12A Problem 19 skipped: composition count depends on the missing graph of f."]
-BATCH_LABEL = "2002 AMC 12A Problems 11-18,20"
-NEXT_START = "2002 AMC 12A Problem 21"
+TARGET_NUMBERS = {21,22,23,24}
+SKIPPED = ["2002 AMC 12A Problem 25 skipped: answer choices are graph images and cannot be reconstructed reliably from text."]
+BATCH_LABEL = "2002 AMC 12A Problems 21-24"
+NEXT_START = "2002 AMC 12B Problem 1"
 
-ANS={11:("B","48"),12:("B","1"),13:("C",r"\sqrt5"),14:("D","2"),15:("D","14"),16:("A",r"\frac25"),17:("B","207"),18:("C","20"),20:("C","5")}
+ANS={21:("B","1999"),22:("C",r"1-\frac{\sqrt3}{3}"),23:("D",r"14\sqrt5"),24:("E","2004")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -427,6 +427,27 @@ SOL.update({
 17:[("Use small single-digit primes",r"To keep the sum small, it is helpful to use small one-digit primes when possible. The digits \(2,3,5\) can each stand alone as primes."),("Find a strong construction",r"Using the remaining digits \(1,4,6,7,8,9\), one low-sum prime grouping is \[41,\ 67,\ 89.\] Together with \(2,3,5\), the set is \[\{2,3,5,41,67,89\}.\]"),("Compute its sum",r"The sum is \[2+3+5+41+67+89=207.\]"),("Explain minimality",r"A case check by the number of one-digit primes shows that any arrangement below $207$ would need even smaller two-digit primes from the remaining digits, but the digit and prime-ending restrictions prevent this. In particular, the last digit of any multi-digit prime cannot be even or $5$."),("Conclude",r"The smallest possible sum is $\boxed{207}$."),],
 18:[("Identify centers and radii",r"The first circle has center \((10,0)\) and radius \(6\). The second has center \((-15,0)\) and radius \(9\). The distance between centers is \(25\)." ),("Choose the shortest common tangent",r"The shortest segment tangent to both circles is along an internal common tangent, because the circles lie on opposite sides of that tangent segment."),("Use the right triangle",r"For an internal common tangent, the relevant perpendicular offset is the sum of the radii, \(6+9=15\). The center distance \(25\) is the hypotenuse of a right triangle, and the tangent segment is the other leg."),("Compute",r"Thus the tangent length is \[\sqrt{25^2-15^2}=\sqrt{625-225}=\sqrt{400}=20.\]"),("Conclude",r"The shortest possible length is $\boxed{20}$."),],
 20:[("Convert the decimal to a fraction",r"The repeating decimal \(0.\overline{ab}\) equals \[\frac{10a+b}{99}.\] Let \(k=10a+b\)." ),("Know the possible k values",r"The condition excludes \(k=0\) and \(k=99\), so \(1\le k\le98\)." ),("Reduce the denominator",r"In lowest terms, the denominator is \[\frac{99}{\gcd(k,99)}.\] Since \(99=3^2\cdot11\), possible gcd values below \(99\) are \[1,3,9,11,33.\]"),("List possible denominators",r"These give denominators \[99,33,11,9,3.\] Each occurs for a suitable value of \(k\)." ),("Conclude",r"There are $\boxed{5}$ different denominators."),],
+})
+
+OV.update({
+21:(r"Consider the sequence \(4,7,1,8,9,7,6,\ldots\). For \(n>2\), the \(n\)th term is the units digit of the sum of the two previous terms. Let \(S_n\) denote the sum of the first \(n\) terms. What is the smallest value of \(n\) for which \(S_n>10000\)?",[("A","1992"),("B","1999"),("C","2001"),("D","2002"),("E","2004")]),
+22:(r"Triangle \(ABC\) is a right triangle with \(\angle ACB=90^\circ\), \(\angle ABC=60^\circ\), and \(AB=10\). Point \(P\) is randomly chosen inside \(\triangle ABC\), and ray \(BP\) meets \(AC\) at \(D\). What is the probability that \(BD>5\sqrt2\)?",[("A",r"$2-\sqrt2$"),("B",r"$\frac13$"),("C",r"$1-\frac{\sqrt3}{3}$"),("D",r"$\frac12$"),("E",r"$5-\sqrt5$")]),
+23:(r"In triangle \(ABC\), side \(AC\) and the perpendicular bisector of \(BC\) meet at point \(D\), and \(BD\) bisects \(\angle ABC\). If \(AD=9\) and \(DC=7\), what is the area of triangle \(ABD\)?",[("A","14"),("B","21"),("C","28"),("D",r"$14\sqrt5$"),("E",r"$28\sqrt5$")]),
+24:(r"Find the number of ordered pairs of real numbers \((a,b)\) such that \[(a+bi)^{2002}=a-bi.\]",[("A","1001"),("B","1002"),("C","2001"),("D","2002"),("E","2004")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Find the period of the units-digit Fibonacci-type sequence.",
+22:"Convert the random point condition into an area ratio of subtriangles.",
+23:"Use angle bisector theorem and angle-bisector length.",
+24:"Use polar form for a complex number and include the zero solution.",
+})
+
+SOL.update({
+21:[("Look for a repeating cycle",r"Because each term depends only on the previous two terms modulo $10$, the sequence of pairs must eventually repeat. Starting from \(4,7\), the terms are \[4,7,1,8,9,7,6,3,9,2,1,3,\] and then the pair \(4,7\) starts again."),("Compute one period sum",r"The period has length $12$, and its sum is \[4+7+1+8+9+7+6+3+9+2+1+3=60.\]"),("Use complete periods",r"We need the sum to exceed $10000$. Since \[166\cdot60=9960,\] after \(166\) full periods, there are \(166\cdot12=1992\) terms and the sum is \(9960\)." ),("Add terms of the next period",r"The next terms are \[4,7,1,8,9,7,6,\ldots\] Starting from \(9960\), the partial sums after these terms are \(9964,9971,9972,9980,9989,9996,10002\)." ),("Find n",r"The first time the sum exceeds \(10000\) is after $7$ more terms, so \[n=1992+7=1999.\]"),("Conclude",r"The answer is $\boxed{1999}$."),],
+22:[("Understand what is random",r"The point \(P\) is random in the triangle, but the condition \(BD>5\sqrt2\) depends only on the ray from \(B\), or equivalently on where it hits \(AC\) at \(D\)." ),("Set up the triangle",r"Since \(ABC\) is a \(30^\circ\)-\(60^\circ\)-\(90^\circ\) triangle with hypotenuse \(AB=10\), we have \(BC=5\) and \(AC=5\sqrt3\)." ),("Locate the cutoff point",r"On segment \(AC\), let \(I\) be the point where \(BI=5\sqrt2\). Points \(D\) from \(I\) toward \(A\) give \(BD>5\sqrt2\)." ),("Use area ratio",r"The favorable points \(P\) form triangle \(BIA\). Therefore the probability is \[[BIA]/[BCA].\] Solving the \(30^\circ\)-\(60^\circ\)-\(90^\circ\) geometry gives \([BIA]/[BCA]=1-\frac{\sqrt3}{3}\)." ),("Conclude",r"The probability is \(\boxed{1-\frac{\sqrt3}{3}}\)." ),],
+23:[("Use the perpendicular bisector",r"Since \(D\) lies on the perpendicular bisector of \(BC\), it is equidistant from \(B\) and \(C\). Thus \[BD=DC=7.\]"),("Use the angle bisector theorem",r"Because \(BD\) bisects \(\angle ABC\), \[\frac{AB}{BC}=\frac{AD}{DC}=\frac97.\] Let \(BC=x\), so \(AB=\frac97x\)." ),("Use the angle-bisector length formula",r"For an angle bisector from \(B\), \[BD^2=AB\cdot BC\left(1-\frac{AC^2}{(AB+BC)^2}\right).\] Here \(BD=7\) and \(AC=AD+DC=16\)." ),("Solve for BC and AB",r"Substituting \(BC=x\) and \(AB=\frac97x\) gives \(x=\frac{28}{3}\), so \[AB=12.\]"),("Find the area of triangle ABD",r"Triangle \(ABD\) has side lengths \(AD=9\), \(BD=7\), and \(AB=12\). By Heron's formula, with semiperimeter \(14\), \[[ABD]=\sqrt{14(14-12)(14-9)(14-7)}=14\sqrt5.\]"),("Conclude",r"The answer is $\boxed{14\sqrt5}$."),],
+24:[("Use complex notation",r"Let \(z=a+bi\). Then \(a-bi=\overline z\), so the equation is \[z^{2002}=\overline z.\]"),("Handle zero separately",r"If \(z=0\), the equation is true, giving one ordered pair \((0,0)\)." ),("Use polar form for nonzero z",r"For \(z\ne0\), write \(z=re^{i\theta}\). The equation becomes \[r^{2002}e^{i2002\theta}=re^{-i\theta}.\]"),("Compare magnitudes",r"The magnitudes give \[r^{2002}=r.\] Since \(r>0\), this means \[r^{2001}=1,\] so \(r=1\)." ),("Compare angles",r"With \(r=1\), the angles must satisfy \[2002\theta\equiv-\theta\pmod{2\pi},\] so \[2003\theta\equiv0\pmod{2\pi}.\] This gives \(2003\) distinct points on the unit circle."),("Add the zero solution",r"Together with \(z=0\), there are \[2003+1=2004\] ordered pairs \((a,b)\)." ),("Conclude",r"The answer is $\boxed{2004}$."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)

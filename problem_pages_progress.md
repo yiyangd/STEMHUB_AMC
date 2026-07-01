@@ -2396,3 +2396,19 @@
 - Pushed: pending
 - Next batch should start from: 2002 AMC 12A Problem 21
 - Review notes: none.
+
+## Batch 148: 2002 AMC 12A Problems 21-24
+
+- Start time: 2026-07-01T05:00:38-07:00
+- End time: 2026-07-01T05:00:39-07:00
+- Processed contest: AMC 10
+- Processed range: 2002 AMC 12A Problems 21-24
+- Generated count: 4
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2002 AMC 12A Problem 25 skipped: answer choices are graph images and cannot be reconstructed reliably from text.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2002 AMC 12B Problem 1
+- Review notes: none.
