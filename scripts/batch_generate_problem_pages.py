@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 201
+BATCH_NUMBER = 202
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {21,23,24}
-SKIPPED = ["2010 AMC 12B Problem 22: skipped because the cyclic quadrilateral maximum diagonal problem needs a longer geometry derivation to avoid overconfident reasoning.", "2010 AMC 12B Problem 25: skipped because the product of pow(n) requires high-risk prime-exponent bookkeeping."]
-BATCH_LABEL = "2010 AMC 12B Problems 21, 23-24"
-NEXT_START = "2011 AMC 12A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,3,4,5,6,7,8,9,10}
+SKIPPED = ["2011 AMC 12A Problem 2: skipped because the coin stacking order depends on the original diagram."]
+BATCH_LABEL = "2011 AMC 12A Problems 1, 3-10"
+NEXT_START = "2011 AMC 12A Problem 11"
 
-ANS={21:("B","315"),23:("A",r"-100"),24:("C","3")}
+ANS={1:("D","28.00"),3:("E","15"),4:("C",r"\frac{88}{7}"),5:("C","40"),6:("A","13"),7:("B","11"),8:("C","25"),9:("B","441"),10:("B",r"\frac1{12}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2248,6 +2248,51 @@ SOL.update({
 ],
 })
 
+OV.update({
+1:(r"A cell phone plan costs $\$20$ each month, plus $5$ cents per text message sent, plus $10$ cents for each minute used over $30$ hours. In January Michelle sent $100$ text messages and talked for $30.5$ hours. How much did she have to pay?",[("A",r"$\$24.00$"),("B",r"$\$24.50$"),("C",r"$\$25.50$"),("D",r"$\$28.00$"),("E",r"$\$30.00$")]),
+3:(r"A small bottle of shampoo can hold $35$ milliliters of shampoo, whereas a large bottle can hold $500$ milliliters of shampoo. Jasmine wants to buy the minimum number of small bottles necessary to completely fill a large bottle. How many bottles must she buy?",[("A","11"),("B","12"),("C","13"),("D","14"),("E","15")]),
+4:(r"At an elementary school, the students in third grade, fourth grade, and fifth grade run an average of $12$, $15$, and $10$ minutes per day, respectively. There are twice as many third graders as fourth graders, and twice as many fourth graders as fifth graders. What is the average number of minutes run per day by these students?",[("A","12"),("B",r"$\frac{37}{3}$"),("C",r"$\frac{88}{7}$"),("D","13"),("E","14")]),
+5:(r"Last summer $30\%$ of the birds living on Town Lake were geese, $25\%$ were swans, $10\%$ were herons, and $35\%$ were ducks. What percent of the birds that were not swans were geese?",[("A","20"),("B","30"),("C","40"),("D","50"),("E","60")]),
+6:(r"The players on a basketball team made some three-point shots, some two-point shots, and some one-point free throws. They scored as many points with two-point shots as with three-point shots. Their number of successful free throws was one more than their number of successful two-point shots. The team's total score was $61$ points. How many free throws did they make?",[("A","13"),("B","14"),("C","15"),("D","16"),("E","17")]),
+7:(r"A majority of the $30$ students in Ms. Demeanor's class bought pencils at the school bookstore. Each of these students bought the same number of pencils, and this number was greater than $1$. The cost of a pencil in cents was greater than the number of pencils each student bought, and the total cost of all the pencils was $\$17.71$. What was the cost of a pencil in cents?",[("A","7"),("B","11"),("C","17"),("D","23"),("E","77")]),
+8:(r"In the eight-term sequence $A,B,C,D,E,F,G,H$, the value of $C$ is $5$ and the sum of any three consecutive terms is $30$. What is $A+H$?",[("A","17"),("B","18"),("C","25"),("D","26"),("E","43")]),
+9:(r"At a twins and triplets convention, there were $9$ sets of twins and $6$ sets of triplets, all from different families. Each twin shook hands with all the twins except his or her sibling and with half the triplets. Each triplet shook hands with all the triplets except his or her siblings and half the twins. How many handshakes took place?",[("A","324"),("B","441"),("C","630"),("D","648"),("E","882")]),
+10:(r"A pair of standard $6$-sided fair dice is rolled once. The sum of the numbers rolled determines the diameter of a circle. What is the probability that the numerical value of the area of the circle is less than the numerical value of the circle's circumference?",[("A",r"$\frac1{36}$"),("B",r"$\frac1{12}$"),("C",r"$\frac16$"),("D",r"$\frac14$"),("E",r"$\frac5{18}$")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Add base cost, text-message cost, and overage-minute cost.",
+3:"Use a ceiling because partial bottles cannot be bought.",
+4:"Compute a weighted average using the grade-size ratios.",
+5:"Condition on the birds that were not swans.",
+6:"Translate point totals into an equation.",
+7:"Factor the total cost and use the majority condition.",
+8:"Use the repeating pattern forced by equal consecutive triple sums.",
+9:"Count twin-twin, triplet-triplet, and cross handshakes separately.",
+10:"Compare circle area and circumference in terms of the diameter.",
+})
+
+SOL.update({
+1:[("Compute the fixed and texting costs",r"The monthly base cost is $\$20$. Michelle sent $100$ text messages, and each costs $5$ cents, so the texting cost is \[100\cdot\$0.05=\$5.\]"),("Compute the overage minutes",r"She talked for $30.5$ hours, which is $0.5$ hour over the included $30$ hours. That is $30$ extra minutes."),("Compute the overage cost",r"Each extra minute costs $10$ cents, so the overage cost is \[30\cdot\$0.10=\$3.\]"),("Add the costs",r"The total is \[\$20+\$5+\$3=\$28.\]"),("Conclude",r"She had to pay $\boxed{\$28.00}$."),
+],
+3:[("Divide the large amount by the small amount",r"Each small bottle holds $35$ milliliters, and the large bottle holds $500$ milliliters. We need at least \[\frac{500}{35}=\frac{100}{7}\approx14.29\] small bottles."),("Use a whole number of bottles",r"Jasmine cannot buy a fraction of a bottle, so she must round up."),("Check 14 bottles",r"Fourteen small bottles hold \[14\cdot35=490\] milliliters, which is not enough."),("Check 15 bottles",r"Fifteen small bottles hold \[15\cdot35=525\] milliliters, which is enough to fill the large bottle."),("Conclude",r"The minimum number of small bottles is $\boxed{15}$."),
+],
+4:[("Choose convenient grade sizes",r"Let the number of fifth graders be $x$. Then there are $2x$ fourth graders and $4x$ third graders."),("Compute the total running minutes",r"The total minutes run per day are \[4x\cdot12+2x\cdot15+x\cdot10=48x+30x+10x=88x.\]"),("Compute the total number of students",r"The total number of students is \[4x+2x+x=7x.\]"),("Find the weighted average",r"The average is \[\frac{88x}{7x}=\frac{88}{7}.\]"),("Conclude",r"The answer is \[\boxed{\frac{88}{7}}.\]"),
+],
+5:[("Identify the relevant group",r"The birds that were not swans make up \[100\%-25\%=75\%\] of all the birds."),("Use the geese percentage",r"Geese make up $30\%$ of all the birds."),("Compute the conditional percentage",r"Among the non-swans, the fraction that were geese is \[\frac{30}{75}=\frac25.\]"),("Convert to percent",r"The value $\frac25$ is $40\%$."),("Conclude",r"The answer is $\boxed{40}$."),
+],
+6:[("Let a variable count two-point shots",r"Let $t$ be the number of successful two-point shots. Then the team scored $2t$ points from two-point shots."),("Use the equal point condition",r"They scored as many points with three-point shots as with two-point shots, so three-point shots also contributed $2t$ points."),("Use the free-throw condition",r"The number of successful free throws was one more than the number of two-point shots, so they made $t+1$ free throws and scored $t+1$ free-throw points."),("Set up the total score",r"The total score is \[2t+2t+(t+1)=61.\] Thus \[5t+1=61,\] so $t=12$."),("Answer the question",r"The number of free throws was \[t+1=13.\]"),("Conclude",r"The answer is $\boxed{13}$."),
+],
+7:[("Convert dollars to cents",r"The total cost was $\$17.71$, or $1771$ cents."),("Set up the factorization",r"If $s$ students bought pencils, each bought $p$ pencils, and each pencil cost $c$ cents, then \[spc=1771.\] We know $s>15$, $p>1$, and $c>p$."),("Factor 1771",r"The number factors as \[1771=23\cdot77=23\cdot7\cdot11.\] Since $s$ is a majority of $30$ students, the only possible factor for $s$ greater than $15$ is $23$."),("Use the remaining factors",r"Then \[pc=\frac{1771}{23}=77.\] With $p>1$ and $c>p$, the factor pair must be \[p=7,\quad c=11.\]"),("Conclude",r"The cost of a pencil was $\boxed{11}$ cents."),
+],
+8:[("Compare consecutive triple sums",r"Since \[A+B+C=B+C+D,\] we get $A=D$. Similarly, comparing each pair of neighboring triple sums gives \[B=E,\quad C=F,\quad D=G,\quad E=H.\]"),("See the repeating pattern",r"The sequence repeats every three terms: \[A,B,C,A,B,C,A,B.\] Since $C=5$, the first triple sum gives \[A+B+5=30.\]"),("Find A+B",r"Thus \[A+B=25.\]"),("Relate H to B",r"From the repeating pattern, $H=B$. Therefore \[A+H=A+B=25.\]"),("Conclude",r"The answer is $\boxed{25}$."),
+],
+9:[("Count the people",r"There are $9$ sets of twins, so $18$ twins. There are $6$ sets of triplets, so $18$ triplets."),("Count twin-twin handshakes",r"Among all twins there are \[\binom{18}{2}=153\] pairs, but the $9$ sibling pairs do not shake hands. So twin-twin handshakes contribute \[153-9=144.\]"),("Count triplet-triplet handshakes",r"Among all triplets there are \[\binom{18}{2}=153\] pairs. In each triplet family, the $3$ sibling pairs do not shake hands, so subtract \[6\cdot3=18.\] This gives \[153-18=135.\]"),("Count twin-triplet handshakes",r"Each of the $18$ twins shook hands with half of the $18$ triplets, so the cross handshakes contribute \[18\cdot9=162.\]"),("Add all types",r"The total is \[144+135+162=441.\]"),("Conclude",r"The answer is $\boxed{441}$."),
+],
+10:[("Write area and circumference using diameter",r"If the diameter is $d$, then the radius is $\frac d2$. The area is \[\pi\left(\frac d2\right)^2=\frac{\pi d^2}{4},\] and the circumference is \[\pi d.\]"),("Compare the two quantities",r"We need \[\frac{\pi d^2}{4}<\pi d.\] Since $d>0$, divide by $\pi d$ to get \[\frac d4<1,\] so $d<4$."),("Translate to dice sums",r"The diameter is the sum of the dice, so we need a sum less than $4$. The possible sums are $2$ and $3$."),("Count outcomes",r"There is $1$ way to roll a sum of $2$ and $2$ ways to roll a sum of $3$, for $3$ favorable outcomes out of $36$ total."),("Compute the probability",r"The probability is \[\frac3{36}=\frac1{12}.\]"),("Conclude",r"The answer is \[\boxed{\frac1{12}}.\]"),
+],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -2354,7 +2399,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2010" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2011" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -2443,7 +2488,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2010 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2011 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
