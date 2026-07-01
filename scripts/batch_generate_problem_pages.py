@@ -8,65 +8,62 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 35
+BATCH_NUMBER = 36
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2007_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {1, 2, 3, 5, 6, 7, 8, 9, 10}
+TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 20}
 SKIPPED = [
-    "2007 AMC 10B Problem 4 skipped: statement references a circle diagram.",
+    "2007 AMC 10B Problem 18 skipped: statement depends on a diagram.",
+    "2007 AMC 10B Problem 19 skipped: statement depends on a spinner/checkerboard diagram.",
 ]
-BATCH_LABEL = "2007 AMC 10B Problems 1-3, 5-10"
-NEXT_START = "2007 AMC 10B Problem 11"
+BATCH_LABEL = "2007 AMC 10B Problems 11-17, 20"
+NEXT_START = "2007 AMC 10B Problem 21"
 
 ANS = {
-    1: ("E", "876"),
-    2: ("E", "16"),
-    3: ("B", "24"),
-    5: ("D", "All Crups are Arogs and are Brafs."),
-    6: ("D", "16"),
-    7: ("E", "150"),
-    8: ("D", "20"),
-    9: ("D", "s"),
-    10: ("A", "two parallel lines"),
+    11: ("C", r"\frac{81\pi}{32}"),
+    12: ("D", "5"),
+    13: ("D", r"2(\pi-2)"),
+    14: ("C", "8"),
+    15: ("D", "173"),
+    16: ("C", "93"),
+    17: ("D", r"4\sqrt3"),
+    20: ("C", "600"),
 }
 
 
 OV = {
-    1: (r"Isabella's house has $3$ bedrooms. Each bedroom is $12$ feet long, $10$ feet wide, and $8$ feet high. Isabella must paint the walls of all the bedrooms. Doorways and windows, which will not be painted, occupy $60$ square feet in each bedroom. How many square feet of walls must be painted?", [("A", "$678$"), ("B", "$768$"), ("C", "$786$"), ("D", "$867$"), ("E", "$876$")]),
-    2: (r"Define the operation $\star$ by $a\star b=(a+b)b$. What is $(3\star5)-(5\star3)$?", [("A", "$-16$"), ("B", "$-8$"), ("C", "$0$"), ("D", "$8$"), ("E", "$16$")]),
-    3: (r"A college student drove his compact car $120$ miles home for the weekend and averaged $30$ miles per gallon. On the return trip the student drove his parents' SUV and averaged only $20$ miles per gallon. What was the average gas mileage, in miles per gallon, for the round trip?", [("A", "$22$"), ("B", "$24$"), ("C", "$25$"), ("D", "$26$"), ("E", "$28$")]),
-    5: (r"In a certain land, all Arogs are Brafs, all Crups are Brafs, all Dramps are Arogs, and all Crups are Dramps. Which of the following statements is implied by these facts?", [("A", "All Dramps are Brafs and are Crups."), ("B", "All Brafs are Crups and are Dramps."), ("C", "All Arogs are Crups and are Dramps."), ("D", "All Crups are Arogs and are Brafs."), ("E", "All Arogs are Dramps and some Arogs may not be Crups.")]),
-    6: (r"The 2007 AMC 10 will be scored by awarding $6$ points for each correct response, $0$ points for each incorrect response, and $1.5$ points for each problem left unanswered. After looking over the $25$ problems, Sarah has decided to attempt the first $22$ and leave only the last $3$ unanswered. How many of the first $22$ problems must she solve correctly in order to score at least $100$ points?", [("A", "$13$"), ("B", "$14$"), ("C", "$15$"), ("D", "$16$"), ("E", "$17$")]),
-    7: (r"All sides of the convex pentagon $ABCDE$ are of equal length, and $\angle A=\angle B=90^\circ$. What is the degree measure of $\angle E$?", [("A", "$90$"), ("B", "$108$"), ("C", "$120$"), ("D", "$144$"), ("E", "$150$")]),
-    8: (r"On the trip home from the meeting where this AMC 10 was constructed, the Contest Chair noted that his airport parking receipt had digits of the form $bbcac$, where $0\le a<b<c\le9$, and $b$ was the average of $a$ and $c$. How many different five-digit numbers satisfy all these properties?", [("A", "$12$"), ("B", "$16$"), ("C", "$18$"), ("D", "$20$"), ("E", "$24$")]),
-    9: (r"A cryptographic code is designed as follows. The first time a letter appears in a given message it is replaced by the letter that is $1$ place to its right in the alphabet. The second time this same letter appears, it is replaced by the letter that is $1+2$ places to the right, the third time by $1+2+3$ places to the right, and so on. For example, with this code the word \"banana\" becomes \"cbodqg\". What letter will replace the last letter $s$ in the message \"Lee's sis is a Mississippi miss, Chriss!\"?", [("A", "g"), ("B", "h"), ("C", "o"), ("D", "s"), ("E", "t")]),
-    10: (r"Two points $B$ and $C$ are in a plane. Let $S$ be the set of all points $A$ in the plane for which $\triangle ABC$ has area $1$. Which of the following describes $S$?", [("A", "two parallel lines"), ("B", "a parabola"), ("C", "a circle"), ("D", "a line segment"), ("E", "two points")]),
+    11: (r"A circle passes through the three vertices of an isosceles triangle that has two sides of length $3$ and a base of length $2$. What is the area of this circle?", [("A", r"$2\pi$"), ("B", r"$\frac{5\pi}{2}$"), ("C", r"$\frac{81\pi}{32}$"), ("D", r"$3\pi$"), ("E", r"$\frac{7\pi}{2}$")]),
+    12: (r"Tom's age is $T$ years, which is also the sum of the ages of his three children. His age $N$ years ago was twice the sum of their ages then. What is $\frac{T}{N}$?", [("A", "$2$"), ("B", "$3$"), ("C", "$4$"), ("D", "$5$"), ("E", "$6$")]),
+    13: (r"Two circles of radius $2$ are centered at $(2,0)$ and at $(0,2)$. What is the area of the intersection of the interiors of the two circles?", [("A", r"$\pi-2$"), ("B", r"$\pi$"), ("C", r"$\frac{3\pi}{2}$"), ("D", r"$2(\pi-2)$"), ("E", r"$2\pi$")]),
+    14: (r"Some boys and girls are having a car wash to raise money for a class trip to China. Initially $40\%$ of the group are girls. Shortly thereafter two girls leave and two boys arrive, and then $30\%$ of the group are girls. How many girls were initially in the group?", [("A", "$4$"), ("B", "$6$"), ("C", "$8$"), ("D", "$10$"), ("E", "$12$")]),
+    15: (r"The angles of quadrilateral $ABCD$ satisfy $\angle A=2\angle B=3\angle C=4\angle D$. What is the degree measure of $\angle A$, rounded to the nearest whole number?", [("A", "$125$"), ("B", "$144$"), ("C", "$153$"), ("D", "$173$"), ("E", "$180$")]),
+    16: (r"A teacher gave a test to a class in which $10\%$ of the students are juniors and $90\%$ are seniors. The average score on the test was $84$. The juniors all received the same score, and the average score of the seniors was $83$. What score did each of the juniors receive on the test?", [("A", "$85$"), ("B", "$88$"), ("C", "$93$"), ("D", "$94$"), ("E", "$98$")]),
+    17: (r"Point $P$ is inside equilateral $\triangle ABC$. Points $Q,R,$ and $S$ are the feet of the perpendiculars from $P$ to $AB,BC,$ and $CA$, respectively. Given that $PQ=1$, $PR=2$, and $PS=3$, what is $AB$?", [("A", "$4$"), ("B", r"$3\sqrt3$"), ("C", "$6$"), ("D", r"$4\sqrt3$"), ("E", "$9$")]),
+    20: (r"A set of $25$ square blocks is arranged into a $5\times5$ square. How many different combinations of $3$ blocks can be selected from that set so that no two are in the same row or column?", [("A", "$100$"), ("B", "$125$"), ("C", "$600$"), ("D", "$2300$"), ("E", "$3600$")]),
 }
 
 
 KEY_OVERRIDES = {
-    1: "Compute wall area from room perimeter times height, then subtract unpainted area.",
-    2: "Evaluate the custom operation in each order; the operation is not symmetric.",
-    3: "Average miles per gallon means total miles divided by total gallons, not the average of the two rates.",
-    5: "Use subset logic to follow the implications from Crups to Dramps to Arogs to Brafs.",
-    6: "Set up a score inequality including unanswered points.",
-    7: "Use an equal-side construction to determine the remaining angle in the pentagon.",
-    8: "Count arithmetic triples of digits a,b,c with b as the midpoint.",
-    9: "Count occurrences of the letter s and reduce the triangular-number shift modulo 26.",
-    10: "For a fixed base, constant triangle area means constant perpendicular distance from the base line.",
+    11: "Find the circumradius of the isosceles triangle using area and side lengths.",
+    12: "Compare current and past total ages, remembering that all three children age by N years.",
+    13: "Compute the overlap of two equal circles using sectors minus triangles.",
+    14: "Use the unchanged group size and percentage change to solve for the initial total.",
+    15: "Express all angles in terms of angle A and use the quadrilateral angle sum.",
+    16: "Use a weighted average to isolate the juniors' score.",
+    17: "Apply Viviani's theorem: distances to the sides of an equilateral triangle sum to the altitude.",
+    20: "Choose rows, choose columns, then match them with a permutation.",
 }
 
 
 SOL = {
-    1: [("Find the wall area of one bedroom", r"A rectangular room has two walls measuring $12\times8$ and two walls measuring $10\times8$. So the wall area before subtracting openings is $2(12\cdot8)+2(10\cdot8)=192+160=352$ square feet."), ("Subtract unpainted openings", r"Doorways and windows occupy $60$ square feet in each bedroom, so one bedroom needs $352-60=292$ square feet painted."), ("Multiply by the number of bedrooms", r"There are $3$ identical bedrooms, so the total painted wall area is $3\cdot292=876$ square feet."), ("Check the setup", r"We do not paint floors or ceilings, only walls, so using perimeter times height was the right model."), ("Answer", r"The answer is $\boxed{876}$." )],
-    2: [("Apply the operation carefully", r"The rule is $a\star b=(a+b)b$. The value depends on which number is second, because the sum is multiplied by $b$."), ("Compute the first term", r"$3\star5=(3+5)5=8\cdot5=40$."), ("Compute the second term", r"$5\star3=(5+3)3=8\cdot3=24$."), ("Subtract", r"Thus $(3\star5)-(5\star3)=40-24=16$."), ("Answer", r"The answer is $\boxed{16}$." )],
-    3: [("Avoid averaging the rates", r"Average gas mileage is total distance divided by total gallons. Since the two cars use different amounts of gas, we should not average $30$ and $20$ directly."), ("Compute gallons used going home", r"The compact car travels $120$ miles at $30$ miles per gallon, so it uses $120/30=4$ gallons."), ("Compute gallons used returning", r"The SUV travels $120$ miles at $20$ miles per gallon, so it uses $120/20=6$ gallons."), ("Compute the overall mileage", r"The round trip is $240$ miles and uses $4+6=10$ gallons. Therefore the average mileage is $240/10=24$ miles per gallon."), ("Answer", r"The answer is $\boxed{24}$." )],
-    5: [("Translate each statement", r"The facts say $\text{Dramps}\subseteq\text{Arogs}$ and $\text{Arogs}\subseteq\text{Brafs}$. They also say $\text{Crups}\subseteq\text{Dramps}$."), ("Follow the chain from Crups", r"If something is a Crup, then it is a Dramp. Since every Dramp is an Arog, that Crup is also an Arog."), ("Continue to Brafs", r"Since every Arog is a Braf, every Crup is also a Braf."), ("Choose the implied statement", r"Therefore all Crups are Arogs and are Brafs. The other choices reverse implications or add information not guaranteed."), ("Answer", r"The answer is $\boxed{\text{D}}$." )],
-    6: [("Account for unanswered problems", r"Sarah leaves $3$ problems unanswered, and each is worth $1.5$ points. That contributes $3\cdot1.5=4.5$ points."), ("Let x be correct answers", r"Among the first $22$ problems, suppose she solves $x$ correctly. Incorrect responses get $0$, so her score is $6x+4.5$."), ("Set the target inequality", r"She needs at least $100$ points, so $6x+4.5\ge100$."), ("Solve", r"This gives $6x\ge95.5$, so $x\ge15.916\ldots$. Since $x$ must be an integer, she needs at least $16$ correct answers."), ("Answer", r"The answer is $\boxed{16}$." )],
-    7: [("Build a helpful picture mentally", r"Let the common side length be $1$. Since $\angle A=90^\circ$ and $\angle B=90^\circ$, we can place consecutive equal sides so that $E$ and $C$ lie one unit above $A$ and $B$, respectively."), ("Locate the remaining vertex", r"Then $CE$ also has length $1$. Since $CD=DE=1$, triangle $CDE$ is equilateral with side length $1$, sitting on segment $CE$."), ("Find the angle at E", r"At $E$, side $EA$ points straight downward, while side $ED$ makes a $60^\circ$ angle above the horizontal segment $EC$. The angle between downward vertical and $ED$ is $150^\circ$."), ("Check convexity", r"The convex pentagon uses the outside angle at $E$, so $150^\circ$ is the interior angle, not $30^\circ$."), ("Answer", r"The answer is $\boxed{150^\circ}$." )],
-    8: [("Translate the average condition", r"The condition that $b$ is the average of $a$ and $c$ means $a+c=2b$. Thus $a,b,c$ form an arithmetic progression of digits."), ("Use a step size", r"Let $d=b-a=c-b$. Then $d$ is a positive integer, $a=b-d\ge0$, and $c=b+d\le9$."), ("Count choices for each b", r"For a fixed $b$, the number of possible $d$ values is $\min(b,9-b)$. For $b=1,2,3,4,5,6,7,8$, these counts are $1,2,3,4,4,3,2,1$."), ("Add", r"The total number is $1+2+3+4+4+3+2+1=20$."), ("Answer", r"The answer is $\boxed{20}$." )],
-    9: [("Focus only on the letter s", r"The replacement for a letter depends on how many times that same letter has appeared before. So for the last $s$, we only need to count how many $s$'s have appeared in the message."), ("Count occurrences", r"In \"Lee's sis is a Mississippi miss, Chriss!\", the letter $s$ appears $12$ times in total, counting the final $s$ in \"Chriss\"."), ("Find the shift", r"The $12$th occurrence is shifted by $1+2+\cdots+12=\frac{12\cdot13}{2}=78$ places."), ("Reduce modulo the alphabet", r"Since the alphabet has $26$ letters and $78=3\cdot26$, shifting $78$ places returns to the same letter."), ("Answer", r"The last $s$ is replaced by $\boxed{s}$." )],
-    10: [("Use the area formula", r"For triangle $ABC$, take $BC$ as the base. The area is $\frac12\cdot BC\cdot h$, where $h$ is the perpendicular distance from $A$ to the line through $B$ and $C$."), ("Keep the area fixed", r"Since $B$ and $C$ are fixed and the area must be $1$, the height $h$ must be a fixed positive distance."), ("Describe all possible A", r"All points at a fixed distance from a line form two lines parallel to the original line, one on each side."), ("Exclude the base line", r"The distance cannot be $0$, because the area is $1$, so the set is not the line $BC$ itself."), ("Answer", r"The set $S$ is $\boxed{\text{two parallel lines}}$." )],
+    11: [("Find the triangle's height", r"The isosceles triangle has equal sides $3$ and base $2$. Dropping an altitude to the base splits the base into two segments of length $1$. The height is $\sqrt{3^2-1^2}=\sqrt8=2\sqrt2$."), ("Find the triangle area", r"The area is $K=\frac12\cdot2\cdot2\sqrt2=2\sqrt2$."), ("Use the circumradius formula", r"For a triangle with side lengths $a,b,c$ and area $K$, the circumradius is $R=\frac{abc}{4K}$. Here $a,b,c=3,3,2$, so $R=\frac{18}{4(2\sqrt2)}=\frac{9}{4\sqrt2}$."), ("Compute the circle area", r"Thus $R^2=\frac{81}{32}$, and the circle's area is $\pi R^2=\frac{81\pi}{32}$."), ("Answer", r"The answer is $\boxed{\frac{81\pi}{32}}$." )],
+    12: [("Use current ages", r"Tom's current age is $T$, and the sum of his three children's current ages is also $T$."), ("Move N years back", r"$N$ years ago, Tom's age was $T-N$. Each of the three children was $N$ years younger, so the sum of their ages then was $T-3N$."), ("Translate the condition", r"The problem says $T-N=2(T-3N)$."), ("Solve for the ratio", r"Expanding gives $T-N=2T-6N$, so $T=5N$. Therefore $\frac{T}{N}=5$."), ("Answer", r"The answer is $\boxed{5}$." )],
+    13: [("Find the distance between centers", r"The centers are $(2,0)$ and $(0,2)$, so their distance is $\sqrt{(2-0)^2+(0-2)^2}=2\sqrt2$."), ("Understand the overlap", r"Each circle has radius $2$. In each circle, the chord of intersection subtends a $90^\circ$ central angle because $\cos\theta=\frac{d}{2r}=\frac{2\sqrt2}{4}=\frac{\sqrt2}{2}$."), ("Compute one circular segment", r"One segment is a $90^\circ$ sector of radius $2$ minus an isosceles right triangle with legs $2$. The sector area is $\frac14\pi(2^2)=\pi$, and the triangle area is $2$."), ("Double the segment", r"The overlap consists of two such segments, so its area is $2(\pi-2)$."), ("Answer", r"The answer is $\boxed{2(\pi-2)}$." )],
+    14: [("Let the group size be N", r"The total number of people does not change, because two girls leave and two boys arrive. Let the total be $N$."), ("Write the initial number of girls", r"Initially $40\%$ are girls, so the number of girls is $0.4N$."), ("Write the later number of girls", r"After two girls leave, the number of girls is $0.4N-2$. This is $30\%$ of the same total, so $0.4N-2=0.3N$."), ("Solve", r"Then $0.1N=2$, so $N=20$. The initial number of girls is $0.4\cdot20=8$."), ("Answer", r"The answer is $\boxed{8}$." )],
+    15: [("Use one variable", r"Let $\angle A=x$. Since $x=2\angle B=3\angle C=4\angle D$, we have $\angle B=\frac{x}{2}$, $\angle C=\frac{x}{3}$, and $\angle D=\frac{x}{4}$."), ("Use the quadrilateral angle sum", r"The angles of a quadrilateral add to $360^\circ$, so $x+\frac{x}{2}+\frac{x}{3}+\frac{x}{4}=360$."), ("Combine fractions", r"The coefficient is $1+\frac12+\frac13+\frac14=\frac{25}{12}$, so $\frac{25}{12}x=360$."), ("Solve and round", r"Thus $x=360\cdot\frac{12}{25}=172.8$, which rounds to $173$."), ("Answer", r"The answer is $\boxed{173}$." )],
+    16: [("Use a weighted average", r"Juniors make up $10\%$ of the class and seniors make up $90\%$. Let the junior score be $j$."), ("Set up the average", r"The class average is $84$, so $0.10j+0.90(83)=84$."), ("Solve", r"Since $0.90\cdot83=74.7$, we get $0.10j+74.7=84$, so $0.10j=9.3$ and $j=93$."), ("Check", r"A small group of juniors must score above $84$ to pull the senior average of $83$ up to $84$, so $93$ is reasonable."), ("Answer", r"The juniors each scored $\boxed{93}$." )],
+    17: [("Recall the key property", r"In an equilateral triangle, the sum of the perpendicular distances from any interior point to the three sides equals the triangle's altitude. This is Viviani's theorem."), ("Find the altitude", r"Here the three distances are $1$, $2$, and $3$, so the altitude is $1+2+3=6$."), ("Relate altitude to side length", r"For an equilateral triangle with side length $s$, the altitude is $\frac{\sqrt3}{2}s$. Therefore $\frac{\sqrt3}{2}s=6$."), ("Solve", r"So $s=\frac{12}{\sqrt3}=4\sqrt3$."), ("Answer", r"The answer is $\boxed{4\sqrt3}$." )],
+    20: [("Choose the rows", r"No two selected blocks can be in the same row, so first choose which $3$ of the $5$ rows will contain selected blocks. This can be done in $\binom53$ ways."), ("Choose the columns", r"Similarly, choose which $3$ of the $5$ columns will contain selected blocks. This can also be done in $\binom53$ ways."), ("Match rows to columns", r"Once the rows and columns are chosen, each selected row must be paired with a different selected column. There are $3!$ such matchings."), ("Compute", r"The number of combinations is $\binom53\binom53\cdot3!=10\cdot10\cdot6=600$."), ("Answer", r"The answer is $\boxed{600}$." )],
 }
 
 
@@ -243,7 +240,7 @@ def main():
         + "- Commit hash: pending\n"
         + "- Pushed: pending\n"
         + f"- Next batch should start from: {NEXT_START}\n"
-        + "- Review notes: Skipped Problem 4 because it references a diagram.\n",
+        + "- Review notes: Skipped Problems 18 and 19 because they require diagrams.\n",
         encoding="utf-8",
     )
 
@@ -267,7 +264,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批跳过 2007 AMC 10B Problem 4：题面引用图形。\n"
+        + "本批跳过 2007 AMC 10B Problems 18, 19：题面依赖图形。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题；遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 teaching steps 后 commit/push。\n",
         encoding="utf-8",

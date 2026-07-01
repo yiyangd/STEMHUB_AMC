@@ -556,3 +556,19 @@
 - Pushed: pending
 - Next batch should start from: 2007 AMC 10B Problem 11
 - Review notes: Skipped Problem 4 because it references a diagram.
+
+## Batch 36: 2007 AMC 10B Problems 11-17, 20
+
+- Start time: 2026-06-30T18:35:05-07:00
+- End time: 2026-06-30T18:35:06-07:00
+- Processed contest: AMC 10
+- Processed range: 2007 AMC 10B Problems 11-17, 20
+- Generated count: 8
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2007 AMC 10B Problem 18 skipped: statement depends on a diagram.; 2007 AMC 10B Problem 19 skipped: statement depends on a spinner/checkerboard diagram.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2007 AMC 10B Problem 21
+- Review notes: Skipped Problems 18 and 19 because they require diagrams.
