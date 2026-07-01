@@ -8,32 +8,42 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 49
+BATCH_NUMBER = 50
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2009_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {21, 22, 23, 24, 25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_10A_Answer_Key"
+TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 SKIPPED = []
-BATCH_LABEL = "2009 AMC 10B Problems 21-25"
-NEXT_START = "2010 AMC 10A Problem 1"
+BATCH_LABEL = "2010 AMC 10A Problems 1-10"
+NEXT_START = "2010 AMC 10A Problem 11"
 
-ANS={21:("D","4"),22:("B",r"\frac{32}{5}"),23:("C",r"\frac{3}{16}"),24:("A","100"),25:("B",r"\frac{3}{16}")}
+ANS={1:("D","4"),2:("B",r"\frac43"),3:("D","25"),4:("B","51.5"),5:("E","144"),6:("C",r"\frac43"),7:("C",r"\sqrt3"),8:("D","13"),9:("E","24"),10:("E","2017")}
 
 OV={
-21:(r"What is the remainder when $3^0+3^1+3^2+\cdots+3^{2009}$ is divided by $8$?",[("A","$0$"),("B","$1$"),("C","$2$"),("D","$4$"),("E","$6$")]),
-22:(r"A cubical cake with edge length $2$ inches is iced on the sides and the top. It is cut vertically into three pieces as shown in a top view, where $M$ is the midpoint of a top edge. The piece whose top is triangle $B$ contains $c$ cubic inches of cake and $s$ square inches of icing. What is $c+s$?",[("A",r"$\frac{24}{5}$"),("B",r"$\frac{32}{5}$"),("C",r"$8+\sqrt5$"),("D",r"$5+\frac{16\sqrt5}{5}$"),("E",r"$10+5\sqrt5$")]),
-23:(r"Rachel and Robert run on a circular track. Rachel runs counterclockwise and completes a lap every $90$ seconds, and Robert runs clockwise and completes a lap every $80$ seconds. Both start from the starting line at the same time. At some random time between $10$ minutes and $11$ minutes after they begin to run, a photographer standing inside the track takes a picture that shows one-fourth of the track, centered on the starting line. What is the probability that both Rachel and Robert are in the picture?",[("A",r"$\frac{1}{16}$"),("B",r"$\frac18$"),("C",r"$\frac{3}{16}$"),("D",r"$\frac14$"),("E",r"$\frac{5}{16}$")]),
-24:(r"The keystone arch is an ancient architectural feature. It is composed of congruent isosceles trapezoids fitted together along the non-parallel sides, as shown. The bottom sides of the two end trapezoids are horizontal. In an arch made with $9$ trapezoids, let $x$ be the angle measure in degrees of the larger interior angle of the trapezoid. What is $x$?",[("A","$100$"),("B","$102$"),("C","$104$"),("D","$106$"),("E","$108$")]),
-25:(r"Each face of a cube is given a single narrow stripe painted from the center of one edge to the center of the opposite edge. The choice of the edge pairing is made at random and independently for each face. What is the probability that there is a continuous stripe encircling the cube?",[("A",r"$\frac18$"),("B",r"$\frac{3}{16}$"),("C",r"$\frac14$"),("D",r"$\frac38$"),("E",r"$\frac12$")]),
+1:(r"Mary's top book shelf holds five books with the following widths, in centimeters: $6$, $\frac12$, $1$, $2.5$, and $10$. What is the average book width, in centimeters?",[("A","$1$"),("B","$2$"),("C","$3$"),("D","$4$"),("E","$5$")]),
+2:(r"Four identical squares and one rectangle are placed together to form one large square. The four identical squares form a row across the top of the large square, and the rectangle fills the remaining space below them. The length of the rectangle is how many times as large as its width?",[("A",r"$\frac54$"),("B",r"$\frac43$"),("C",r"$\frac32$"),("D","$2$"),("E","$3$")]),
+3:(r"Tyrone had $97$ marbles and Eric had $11$ marbles. Tyrone then gave some of his marbles to Eric so that Tyrone ended with twice as many marbles as Eric. How many marbles did Tyrone give to Eric?",[("A","$3$"),("B","$13$"),("C","$18$"),("D","$25$"),("E","$29$")]),
+4:(r"A book that is to be recorded onto compact discs takes $412$ minutes to read aloud. Each disc can hold up to $56$ minutes of reading. Assume that the smallest possible number of discs is used and that each disc contains the same length of reading. How many minutes of reading will each disc contain?",[("A","$50.2$"),("B","$51.5$"),("C","$52.4$"),("D","$53.8$"),("E","$55.2$")]),
+5:(r"The area of a circle whose circumference is $24\pi$ is $k\pi$. What is the value of $k$?",[("A","$6$"),("B","$12$"),("C","$24$"),("D","$36$"),("E","$144$")]),
+6:(r"For positive numbers $x$ and $y$, the operation $x\spadesuit y$ is defined by $x\spadesuit y=x-\frac1y$. What is $2\spadesuit(2\spadesuit2)$?",[("A",r"$\frac23$"),("B","$1$"),("C",r"$\frac43$"),("D",r"$\frac53$"),("E","$2$")]),
+7:(r"Crystal has a running course marked out for her daily run. She begins this run by heading due north for one mile. She then runs northeast for one mile, then southeast for one mile. The last portion of her run takes her on a straight line back to where she started. How far, in miles, is this last portion of her run?",[("A","$1$"),("B",r"$\sqrt2$"),("C",r"$\sqrt3$"),("D","$2$"),("E",r"$2\sqrt2$")]),
+8:(r"Tony works $2$ hours a day and is paid $\$0.50$ per hour for each full year of his age. During a six month period Tony worked $50$ days and earned $\$630$. How old was Tony at the end of the six month period?",[("A","$9$"),("B","$11$"),("C","$12$"),("D","$13$"),("E","$14$")]),
+9:(r"A palindrome, such as $83438$, is a number that remains the same when its digits are reversed. The numbers $x$ and $x+32$ are three-digit and four-digit palindromes, respectively. What is the sum of the digits of $x$?",[("A","$20$"),("B","$21$"),("C","$22$"),("D","$23$"),("E","$24$")]),
+10:(r"Marvin had a birthday on Tuesday, May $27$ in the leap year $2008$. In what year will his birthday next fall on a Saturday?",[("A","$2011$"),("B","$2012$"),("C","$2013$"),("D","$2015$"),("E","$2017$")]),
 }
 
-KEY_OVERRIDES={21:"Use the repeating pattern of powers of 3 modulo 8.",22:"Use the top-view triangle area for volume and count only the original iced surfaces on that piece.",23:"Convert each runner's visible interval into a time interval and intersect them.",24:"Nine congruent trapezoids split a 180-degree turn, so each trapezoid turns by 20 degrees.",25:"A continuous stripe can encircle the cube in one of three belt directions, each requiring four independent face choices."}
+KEY_OVERRIDES={1:"Add the five widths and divide by 5.",2:"Use the four equal top squares to compare the large square side with the rectangle height.",3:"Use the total number of marbles and the final 2-to-1 ratio.",4:"Use the smallest number of discs that can hold the total time, then divide evenly.",5:"Use circumference to find radius, then compute area.",6:"Evaluate the custom operation from the inside out.",7:"Add direction vectors and use distance from the origin.",8:"Convert total pay to an average hourly rate and account for Tony's birthday during the six-month period.",9:"The only possible four-digit palindrome near a three-digit number plus 32 is 1001.",10:"Track weekday shifts from birthday to birthday, including leap-year shifts."}
 
 SOL={
-21:[("Find the cycle modulo 8",r"Modulo $8$, powers of $3$ alternate: $3^0\equiv1$, $3^1\equiv3$, $3^2\equiv1$, $3^3\equiv3$, and so on."),("Pair the terms",r"Each pair $3^{2k}+3^{2k+1}$ is congruent to $1+3=4\pmod8$."),("Count the terms",r"From exponent $0$ through $2009$ there are $2010$ terms, or $1005$ pairs."),("Reduce the total",r"The sum is congruent to $1005\cdot4\equiv 4\pmod8$, because an odd multiple of $4$ leaves remainder $4$ when divided by $8$."),("Answer",r"The remainder is $\boxed{4}$.")],
-22:[("Use the top-view geometry",r"In the top view, the square has side $2$. The triangular top of piece $B$ has the full right edge of length $2$ as a base, and its perpendicular distance to the opposite cut point is $\frac45$."),("Find the top area",r"So the top area of piece $B$ is $\frac12\cdot2\cdot\frac45=\frac45$ square inch."),("Find the cake volume",r"The cuts are vertical and the cake height is $2$, so the volume is $c=2\cdot\frac45=\frac85$."),("Find the icing area",r"The piece has icing on its top, area $\frac45$, and on the original right side of the cube, area $2\cdot2=4$. The new cut faces are not iced. Thus $s=4+\frac45=\frac{24}{5}$."),("Add",r"Therefore $c+s=\frac85+\frac{24}{5}=\frac{32}{5}$."),("Answer",r"The value is $\boxed{\frac{32}{5}}$.")],
-23:[("Translate the picture into time intervals",r"A photo shows one-fourth of the track centered at the starting line, so each runner is visible when within one-eighth of a lap on either side of the starting line."),("Find Rachel's visible times",r"Rachel completes a lap every $90$ seconds, so she is visible for $\frac18\cdot90=11.25$ seconds before and after each multiple of $90$. Between $600$ and $660$ seconds, the relevant multiple is $630$, giving $[618.75,641.25]$."),("Find Robert's visible times",r"Robert completes a lap every $80$ seconds, so he is visible for $10$ seconds before and after each multiple of $80$. The relevant multiple is $640$, giving $[630,650]$."),("Intersect the intervals",r"Both runners are visible from $630$ to $641.25$, a length of $11.25$ seconds."),("Compute the probability",r"The random time is chosen from a $60$-second interval, so the probability is $\frac{11.25}{60}=\frac{45}{240}=\frac{3}{16}$."),("Answer",r"The probability is $\boxed{\frac{3}{16}}$.")],
-24:[("Find the turn per trapezoid",r"The arch goes from one horizontal end to the other, making a total turn of $180^\circ$. With $9$ congruent trapezoids, each one accounts for $180^\circ/9=20^\circ$ of turning."),("Connect turn to trapezoid angles",r"In an isosceles trapezoid, the larger base angle exceeds $90^\circ$ by half of this turn angle."),("Compute the larger angle",r"So the larger interior angle is $90^\circ+\frac{20^\circ}{2}=100^\circ$."),("Answer",r"Thus $x=\boxed{100}$." )],
-25:[("Identify possible belts",r"A continuous stripe can encircle the cube around one of three directions, corresponding to the three pairs of opposite faces of the cube."),("Find the probability for one belt",r"For a fixed belt direction, the four side faces around that belt must each choose the stripe orientation that continues the belt. Each face has probability $\frac12$ of choosing that orientation."),("Multiply for one belt",r"Thus one specified belt occurs with probability $(\frac12)^4=\frac1{16}$. The two end faces do not affect that belt."),("Use the three directions",r"There are $3$ possible belt directions. Two different belt directions cannot occur at the same time because a shared face would need two perpendicular stripe orientations."),("Add the disjoint cases",r"Therefore the total probability is $3\cdot\frac1{16}=\frac3{16}$."),("Answer",r"The probability is $\boxed{\frac{3}{16}}$.")],
+1:[("Identify the data",r"The five widths are $6$, $\frac12$, $1$, $2.5$, and $10$ centimeters."),("Add the widths",r"Their sum is $6+0.5+1+2.5+10=20$."),("Divide by the number of books",r"There are $5$ books, so the average width is $20\div5=4$."),("Answer",r"The average width is $\boxed{4}$ centimeters.")],
+2:[("Name the small square side",r"Let each small square have side length $s$. Four of them placed in a row make the side length of the large square $4s$."),("Find the rectangle dimensions",r"The rectangle fills the space under the top row of squares. Its length is the full width $4s$, and its width is the remaining height $4s-s=3s$."),("Compute the ratio",r"The length-to-width ratio is $\frac{4s}{3s}=\frac43$."),("Answer",r"The rectangle's length is $\boxed{\frac43}$ times its width.")],
+3:[("Use the total",r"Together Tyrone and Eric have $97+11=108$ marbles, and giving marbles from one to the other does not change the total."),("Use the final ratio",r"At the end Tyrone has twice as many as Eric, so their final amounts are in the ratio $2:1$."),("Find Eric's final amount",r"Eric must have $\frac13$ of the total, which is $108\div3=36$ marbles."),("Find the transfer",r"Eric started with $11$ marbles and ended with $36$, so Tyrone gave him $36-11=25$ marbles."),("Answer",r"Tyrone gave Eric $\boxed{25}$ marbles.")],
+4:[("Estimate the number of discs",r"Each disc can hold at most $56$ minutes, so we compare $412$ with multiples of $56$."),("Choose the smallest possible number",r"Since $7\cdot56=392$ is too small and $8\cdot56=448$ is enough, the smallest possible number of discs is $8$."),("Divide the reading evenly",r"The reading is split equally among the $8$ discs, so each disc contains $412\div8=51.5$ minutes."),("Answer",r"Each disc contains $\boxed{51.5}$ minutes of reading.")],
+5:[("Find the radius",r"The circumference is $2\pi r=24\pi$, so $r=12$."),("Compute the area",r"The area is $\pi r^2=\pi\cdot12^2=144\pi$."),("Match k",r"Since the area is $k\pi$, we have $k=144$."),("Answer",r"The value of $k$ is $\boxed{144}$.")],
+6:[("Evaluate the inner operation",r"First compute $2\spadesuit2=2-\frac12=\frac32$."),("Use that as the second input",r"Now compute $2\spadesuit\frac32=2-\frac{1}{3/2}$."),("Simplify",r"Since $\frac{1}{3/2}=\frac23$, the value is $2-\frac23=\frac43$."),("Answer",r"The result is $\boxed{\frac43}$.")],
+7:[("Use vectors",r"Represent north as $(0,1)$. A one-mile northeast run contributes $(\frac{\sqrt2}{2},\frac{\sqrt2}{2})$, and a one-mile southeast run contributes $(\frac{\sqrt2}{2},-\frac{\sqrt2}{2})$."),("Add the displacement",r"The two diagonal runs have vertical components that cancel, and their horizontal components add to $\sqrt2$. Including the first mile north, Crystal's final position is $(\sqrt2,1)$."),("Find the distance home",r"The straight-line distance back to the starting point is $\sqrt{(\sqrt2)^2+1^2}=\sqrt3$."),("Answer",r"The last portion is $\boxed{\sqrt3}$ miles.")],
+8:[("Find Tony's average hourly pay",r"Tony worked $2\cdot50=100$ hours and earned $630$, so his average hourly pay was $\$6.30$."),("Translate pay into age",r"He is paid $\$0.50$ per hour for each full year of age, so an hourly rate of $\$6.30$ corresponds to an average credited age of $12.6$ years."),("Interpret the six-month period",r"A credited age between $12$ and $13$ means Tony was $12$ for part of the work period and $13$ for the rest. Therefore he must have turned $13$ during the six months."),("Answer",r"At the end of the period, Tony was $\boxed{13}$ years old.")],
+9:[("Restrict the four-digit palindrome",r"Since $x$ is three digits, $x+32$ is between $132$ and $1031$. The only four-digit palindrome in this range is $1001$."),("Find x",r"Thus $x+32=1001$, so $x=969$."),("Add the digits",r"The sum of the digits of $969$ is $9+6+9=24$."),("Answer",r"The digit sum is $\boxed{24}$.")],
+10:[("Track yearly shifts",r"From one May $27$ to the next, the weekday usually moves forward one day. It moves forward two days if the interval includes February $29$."),("List the birthdays",r"Starting from Tuesday in $2008$: $2009$ is Wednesday, $2010$ is Thursday, $2011$ is Friday, and because $2012$ is a leap year with February $29$ before May $27$, $2012$ is Sunday."),("Continue until Saturday",r"Then $2013$ is Monday, $2014$ Tuesday, $2015$ Wednesday, $2016$ Friday, and $2017$ Saturday."),("Answer",r"His birthday next falls on a Saturday in $\boxed{2017}$.")],
 }
 
 def esc(x, quote=True):
@@ -134,7 +144,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2009" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2010" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -175,7 +185,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {22, 24},
+                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {2},
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -223,7 +233,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2009 AMC 10B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2010 AMC 10A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
@@ -244,6 +254,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
