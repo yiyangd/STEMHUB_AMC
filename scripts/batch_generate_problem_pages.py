@@ -3,74 +3,114 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 55
+BATCH_NUMBER = 56
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_10A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
 SKIPPED = []
-BATCH_LABEL = "2010 AMC 10B Problems 21-25"
-NEXT_START = "2011 AMC 10A Problem 1"
+BATCH_LABEL = "2011 AMC 10A Problems 1-10"
+NEXT_START = "2011 AMC 10A Problem 11"
 
 ANS = {
-    21: ("E", r"\frac{1}{5}"),
-    22: ("C", "1932"),
-    23: ("D", "42"),
-    24: ("E", "34"),
-    25: ("B", "315"),
+    1: ("D", r"\$28.00"),
+    2: ("E", "15"),
+    3: ("D", r"\frac{7}{18}"),
+    4: ("A", "92"),
+    5: ("C", r"\frac{88}{7}"),
+    6: ("C", "20"),
+    7: ("B", r"|-3x|+5=0"),
+    8: ("C", "40"),
+    9: ("A", r"ac+ad+bc+bd"),
+    10: ("B", "11"),
 }
 
 OV = {
-    21: r"A palindrome between $1000$ and $10{,}000$ is chosen at random. What is the probability that it is divisible by $7$?",
-    22: r"Seven distinct pieces of candy are to be distributed among three bags. The red bag and the blue bag must each receive at least one piece of candy; the white bag may remain empty. How many arrangements are possible?",
-    23: r"The entries in a $3\times3$ array include all the digits from $1$ through $9$, arranged so that the entries in every row and every column are in increasing order. How many such arrays are there?",
-    24: r"A high school basketball game between the Raiders and Wildcats was tied at the end of the first quarter. The number of points scored by the Raiders in each of the four quarters formed an increasing geometric sequence, and the number of points scored by the Wildcats in each of the four quarters formed an increasing arithmetic sequence. At the end of the fourth quarter, the Raiders had won by one point. Neither team scored more than $100$ points. What was the total number of points scored by the two teams in the first half?",
-    25: r"Let $a>0$, and let $P(x)$ be a polynomial with integer coefficients such that $P(1)=P(3)=P(5)=P(7)=a$, and $P(2)=P(4)=P(6)=P(8)=-a$. What is the smallest possible value of $a$?",
+    1: (r"A cell phone plan costs $\$20$ each month, plus $5$ cents per text message sent, plus $10$ cents for each minute used over $30$ hours. In January Michelle sent $100$ text messages and talked for $30.5$ hours. How much did she have to pay?", [("A", r"\$24.00"),("B", r"\$24.50"),("C", r"\$25.50"),("D", r"\$28.00"),("E", r"\$30.00")]),
+    2: (r"A small bottle of shampoo can hold $35$ milliliters, whereas a large bottle can hold $500$ milliliters. Jasmine wants to buy the minimum number of small bottles necessary to completely fill a large bottle. How many bottles must she buy?", [("A","11"),("B","12"),("C","13"),("D","14"),("E","15")]),
+    3: (r"Suppose $[a\ b]$ denotes the average of $a$ and $b$, and $\{a\ b\ c\}$ denotes the average of $a,b,c$. What is $\{\{1\ 1\ 0\}\ [0\ 1]\ 0\}$?", [("A",r"\frac{2}{9}"),("B",r"\frac{5}{18}"),("C",r"\frac{1}{3}"),("D",r"\frac{7}{18}"),("E",r"\frac{2}{3}")]),
+    4: (r"Let $X$ and $Y$ be the following sums of arithmetic sequences: $X=10+12+14+\cdots+100$ and $Y=12+14+16+\cdots+102$. What is the value of $Y-X$?", [("A","92"),("B","98"),("C","100"),("D","102"),("E","112")]),
+    5: (r"At an elementary school, the students in third grade, fourth grade, and fifth grade run an average of $12$, $15$, and $10$ minutes per day, respectively. There are twice as many third graders as fourth graders, and twice as many fourth graders as fifth graders. What is the average number of minutes run per day by these students?", [("A","12"),("B",r"\frac{37}{3}"),("C",r"\frac{88}{7}"),("D","13"),("E","14")]),
+    6: (r"Set $A$ has $20$ elements, and set $B$ has $15$ elements. What is the smallest possible number of elements in $A\cup B$, the union of $A$ and $B$?", [("A","5"),("B","15"),("C","20"),("D","35"),("E","300")]),
+    7: (r"Which of the following equations does NOT have a solution?", [("A",r"(x+7)^2=0"),("B",r"|-3x|+5=0"),("C",r"\sqrt{-x}-2=0"),("D",r"\sqrt{x}-8=0"),("E",r"|-3x|-4=0")]),
+    8: (r"Last summer $30\%$ of the birds living on Town Lake were geese, $25\%$ were swans, $10\%$ were herons, and $35\%$ were ducks. What percent of the birds that were not swans were geese?", [("A","20"),("B","30"),("C","40"),("D","50"),("E","60")]),
+    9: (r"A rectangular region is bounded by the graphs of $y=a$, $y=-b$, $x=-c$, and $x=d$, where $a,b,c,d$ are all positive numbers. Which expression represents the area of this region?", [("A",r"ac+ad+bc+bd"),("B",r"ac-ad+bc-bd"),("C",r"ac+ad-bc-bd"),("D",r"-ac-ad+bc+bd"),("E",r"ac-ad-bc+bd")]),
+    10: (r"A majority of the $30$ students in Ms. Deameanor's class bought pencils at the school bookstore. Each of these students bought the same number of pencils, and this number was greater than $1$. The cost of a pencil in cents was greater than the number of pencils each student bought, and the total cost of all the pencils was $\$17.71$. What was the cost of a pencil in cents?", [("A","7"),("B","11"),("C","17"),("D","23"),("E","77")]),
 }
-OV = {k: (v, None) for k, v in OV.items()}
 
 KEY_OVERRIDES = {
-    21: "Write a four-digit palindrome algebraically and test divisibility by 7.",
-    22: "Use complementary counting to enforce nonempty red and blue bags.",
-    23: "Recognize the row-and-column increasing array as a standard Young tableau and use hook lengths.",
-    24: "Model the two teams' quarter scores with sequences and use the one-point final difference.",
-    25: "Use divisibility properties of integer-coefficient polynomials to force a lower bound, then construct it.",
+    1: "Break the monthly bill into base cost, text-message cost, and extra-minute cost.",
+    2: "Use ceiling division because a partial bottle still requires buying a whole bottle.",
+    3: "Evaluate nested averages from the inside outward.",
+    4: "Compare two shifted arithmetic sums term by term.",
+    5: "Use a weighted average because the grade levels have different numbers of students.",
+    6: "The smallest union occurs when the smaller set is entirely contained in the larger set.",
+    7: "Check whether each equation can reach zero using squares, square roots, and absolute values.",
+    8: "Condition on the group that is not swans, then compute the geese fraction inside that group.",
+    9: "Find the rectangle's width and height from coordinate boundaries, then multiply.",
+    10: "Factor the total cost into students, pencils per student, and cents per pencil.",
 }
 
 SOL = {
-    21: [
-        ("Describe the palindromes", r"A palindrome between $1000$ and $10{,}000$ has four digits, so it has the form $abba$. Algebraically this is $1000a+100b+10b+a=1001a+110b$, where $a$ can be $1$ through $9$ and $b$ can be $0$ through $9$."),
-        ("Count the total possibilities", r"There are $9$ choices for $a$ and $10$ choices for $b$, so there are $90$ palindromes total. Now we only need to count which of these are divisible by $7$."),
-        ("Use modular arithmetic", r"Since $1001=7\cdot143$, the term $1001a$ is always divisible by $7$. Therefore divisibility by $7$ depends only on $110b$. Because $110\equiv5\pmod7$, we need $5b\equiv0\pmod7$, so $b\equiv0\pmod7$."),
-        ("Count favorable palindromes", r"The digit $b$ can be $0$ or $7$. For each of those $2$ choices, $a$ can still be any of $9$ nonzero digits. Thus there are $18$ favorable palindromes."),
-        ("Compute the probability", r"The probability is $\frac{18}{90}=\frac15$. The answer is $\boxed{\frac15}$."),
+    1: [
+        ("Separate the parts of the bill", r"The plan has three possible costs: the fixed monthly cost, text messages, and minutes over $30$ hours. Listing these pieces prevents us from mixing hours and minutes."),
+        ("Compute the text-message cost", r"Michelle sent $100$ text messages. At $5$ cents each, the text cost is $100\cdot5=500$ cents, or $\$5.00$."),
+        ("Compute the extra-minute cost", r"She talked for $30.5$ hours, which is $0.5$ hour over the included $30$ hours. Since $0.5$ hour is $30$ minutes, the extra-minute cost is $30\cdot10=300$ cents, or $\$3.00$."),
+        ("Add the costs", r"The total is $\$20.00+\$5.00+\$3.00=\$28.00$. The answer is $\boxed{\$28.00}$."),
     ],
-    22: [
-        ("Start with all distributions", r"Each of the $7$ distinct candies can independently go into the red, blue, or white bag. Without restrictions, that gives $3^7$ possible distributions."),
-        ("Subtract distributions with an empty required bag", r"The red bag is not allowed to be empty. If it is empty, each candy has only two choices, blue or white, giving $2^7$ bad distributions. Similarly, there are $2^7$ distributions where the blue bag is empty."),
-        ("Correct for double subtraction", r"If both the red and blue bags are empty, then all candies are in the white bag. That one distribution was subtracted twice, so we add it back once."),
-        ("Calculate", r"The number of valid distributions is \[3^7-2^7-2^7+1=2187-128-128+1=1932.\]"),
-        ("Conclude", r"Therefore there are $\boxed{1932}$ arrangements."),
+    2: [
+        ("Translate the question", r"Each small bottle contributes $35$ milliliters. Jasmine needs enough small bottles so that their total capacity is at least $500$ milliliters."),
+        ("Divide to estimate", r"Compute $500\div35$. Since $35\cdot14=490$, fourteen bottles are close but not enough."),
+        ("Remember whole bottles", r"Jasmine cannot buy a fraction of a bottle. Because $14$ bottles hold only $490$ milliliters, she needs one more bottle."),
+        ("Conclude", r"The minimum number is $15$. The answer is $\boxed{15}$."),
     ],
-    23: [
-        ("Recognize the structure", r"The entries must increase left to right in every row and top to bottom in every column. This is exactly the same structure as filling a $3\times3$ Young diagram with $1$ through $9$ so that rows and columns increase."),
-        ("Use the hook-length idea", r"For this kind of increasing array, the number of fillings is \[\frac{9!}{\text{product of all hook lengths}}.\] A hook length counts the cell itself, the cells to its right, and the cells below it."),
-        ("List the hook lengths", r"For a $3\times3$ square, the hook lengths are \[\begin{matrix}5&4&3\\4&3&2\\3&2&1\end{matrix}.\] Their product is $5\cdot4\cdot3\cdot4\cdot3\cdot2\cdot3\cdot2\cdot1=8640$."),
-        ("Divide", r"Since $9!=362880$, the number of valid arrays is \[\frac{362880}{8640}=42.\]"),
-        ("Conclude", r"So the number of arrays is $\boxed{42}$."),
+    3: [
+        ("Work from the inside outward", r"The notation is nested, so we first evaluate the expressions inside the outer braces. The average of $1,1,0$ is $\frac{1+1+0}{3}=\frac23$."),
+        ("Evaluate the bracketed average", r"Next, $[0\ 1]$ means the average of $0$ and $1$, which is $\frac12$."),
+        ("Use the outer average", r"Now the full expression is the average of $\frac23$, $\frac12$, and $0$: \[\frac{\frac23+\frac12+0}{3}.\]"),
+        ("Calculate carefully", r"Since $\frac23+\frac12=\frac76$, dividing by $3$ gives $\frac76\cdot\frac13=\frac7{18}$. The answer is $\boxed{\frac7{18}}$."),
     ],
-    24: [
-        ("Set up the two score sequences", r"Let the Raiders' first-quarter score be $a$. Since the game was tied after the first quarter, the Wildcats also scored $a$ in the first quarter. Suppose the Raiders' geometric sequence has integer ratio $r>1$, so their scores are $a,ar,ar^2,ar^3$. The Wildcats' arithmetic sequence is $a,a+d,a+2d,a+3d$."),
-        ("Use the final one-point margin", r"The Raiders won by one point, so \[a(1+r+r^2+r^3)-\bigl(4a+6d\bigr)=1.\] This simplifies to \[a(r+r^2+r^3-3)-6d=1.\]"),
-        ("Limit the possible ratio", r"The Raiders scored fewer than $100$ total points, so $a(1+r+r^2+r^3)<100$. Testing integer ratios, $r=2$ is the only small ratio that can satisfy the congruence cleanly. With $r=2$, the equation becomes $11a-6d=1$."),
-        ("Solve the score pattern", r"From $11a-6d=1$, we get $11a\equiv1\pmod6$, so $5a\equiv1\pmod6$ and $a\equiv5\pmod6$. Also $15a<100$, so $a=5$. Then $55-6d=1$, giving $d=9$."),
-        ("Compute the first-half total", r"The Raiders scored $5+10=15$ in the first half. The Wildcats scored $5+14=19$ in the first half. Together they scored $15+19=34$, so the answer is $\boxed{34}$."),
+    4: [
+        ("Compare the sums instead of evaluating both", r"The two sums have the same number of terms, and most terms overlap. This is a good sign that subtracting term by term will be faster than finding each sum separately."),
+        ("Identify what changes", r"The sum $X$ starts with $10$ and ends with $100$. The sum $Y$ starts with $12$ and ends with $102$. All the middle even terms from $12$ through $100$ appear in both sums."),
+        ("Cancel the common terms", r"When we compute $Y-X$, the common terms cancel. What remains is $102-10$."),
+        ("Finish", r"Therefore $Y-X=92$. The answer is $\boxed{92}$."),
     ],
-    25: [
-        ("Use roots at the odd inputs", r"The condition $P(1)=P(3)=P(5)=P(7)=a$ means the polynomial $P(x)-a$ has roots $1,3,5,7$. Because these factors are monic with integer roots, we can write \[P(x)-a=(x-1)(x-3)(x-5)(x-7)Q(x)\] for some polynomial $Q(x)$ with integer coefficients."),
-        ("Plug in the even inputs", r"At $x=2,4,6,8$, we have $P(x)=-a$, so $P(x)-a=-2a$. The factor $(x-1)(x-3)(x-5)(x-7)$ takes the values $-15,9,-15,105$ at $x=2,4,6,8$."),
-        ("Get a divisibility condition", r"Because $Q$ has integer coefficients, $Q(2),Q(4),Q(6),Q(8)$ are integers. Therefore each of $15,9,15,105$ must divide $2a$. Their least common multiple is $315$, so $315$ divides $2a$. Since $315$ is odd, $315$ must divide $a$."),
-        ("Show the lower bound is attainable", r"It remains to know that $a=315$ is possible. One working choice is \[Q(x)=-8x^3+124x^2-576x+762.\] Then $Q(2)=42$, $Q(4)=-70$, $Q(6)=42$, and $Q(8)=-6$, exactly giving $P(x)-a=-630$ at the even inputs when $a=315$."),
-        ("Conclude", r"Thus $a$ must be a multiple of $315$, and $315$ can actually occur. The smallest possible value is $\boxed{315}$."),
+    5: [
+        ("Choose convenient group sizes", r"The fifth grade is the smallest group. Let there be $n$ fifth graders. Then there are $2n$ fourth graders and $4n$ third graders."),
+        ("Compute total running time", r"The third graders contribute $4n\cdot12=48n$ minutes. The fourth graders contribute $2n\cdot15=30n$ minutes. The fifth graders contribute $n\cdot10=10n$ minutes."),
+        ("Compute total students", r"The total number of students is $4n+2n+n=7n$. The total running time is $48n+30n+10n=88n$."),
+        ("Find the weighted average", r"The average is $\frac{88n}{7n}=\frac{88}{7}$. The answer is $\boxed{\frac{88}{7}}$."),
+    ],
+    6: [
+        ("Think about overlap", r"The union $A\cup B$ contains everything that is in either set. To make the union as small as possible, we want the two sets to overlap as much as possible."),
+        ("Use the smaller set", r"Set $B$ has only $15$ elements, while set $A$ has $20$. The greatest possible overlap happens when every element of $B$ is already inside $A$."),
+        ("Find the union size", r"If $B\subseteq A$, then adding $B$ contributes no new elements beyond the $20$ already in $A$. So the smallest possible union has $20$ elements."),
+        ("Conclude", r"The answer is $\boxed{20}$."),
+    ],
+    7: [
+        ("Use basic output facts", r"Squares are always nonnegative, square roots are always nonnegative, and absolute values are always nonnegative. The equation that cannot reach zero will usually be the one that adds a positive number to something nonnegative."),
+        ("Check choice B first", r"For choice B, $|-3x|\ge0$ for every real $x$. Therefore $|-3x|+5\ge5$, so it can never equal $0$. This already shows B has no solution."),
+        ("Confirm the others are solvable", r"Choice A works with $x=-7$. Choice C works with $x=-4$, since $\sqrt{-(-4)}-2=0$. Choice D works with $x=64$. Choice E works when $|-3x|=4$, such as $x=\frac43$."),
+        ("Conclude", r"Only choice B has no solution. The answer is $\boxed{|-3x|+5=0}$."),
+    ],
+    8: [
+        ("Identify the new denominator", r"The question is not asking what percent of all birds were geese. It asks what percent of the birds that were not swans were geese. So we must remove the swans from the denominator."),
+        ("Find the non-swan group", r"Since $25\%$ were swans, the non-swan birds make up $100\%-25\%=75\%$ of the birds."),
+        ("Compare geese to non-swans", r"Geese are $30\%$ of all birds. Among the non-swans, the geese fraction is $\frac{30}{75}$."),
+        ("Convert to a percent", r"The fraction $\frac{30}{75}=\frac25=40\%$. The answer is $\boxed{40}$."),
+    ],
+    9: [
+        ("Find the vertical distance", r"The top boundary is $y=a$ and the bottom boundary is $y=-b$. The height is the difference $a-(-b)=a+b$."),
+        ("Find the horizontal distance", r"The left boundary is $x=-c$ and the right boundary is $x=d$. The width is $d-(-c)=c+d$."),
+        ("Multiply width and height", r"The rectangle's area is $(a+b)(c+d)$. Expanding gives \[(a+b)(c+d)=ac+ad+bc+bd.\]"),
+        ("Conclude", r"The answer is $\boxed{ac+ad+bc+bd}$."),
+    ],
+    10: [
+        ("Translate total cost into factors", r"The total cost was $\$17.71$, or $1771$ cents. This equals \[(\text{number of students})(\text{pencils per student})(\text{cents per pencil}).\]"),
+        ("Use the majority condition", r"A majority of $30$ students means more than $15$ students bought pencils. So the number of buying students is an integer factor of $1771$ greater than $15$."),
+        ("Factor the total", r"The number factors as $1771=23\cdot77=23\cdot7\cdot11$. Since the pencil cost must be one of the answer choices, we can test which choice leaves a product that can include more than $15$ students and more than $1$ pencil per student."),
+        ("Find the consistent choice", r"If the cost is $11$ cents, then $1771\div11=161=23\cdot7$. This works: $23$ students each bought $7$ pencils, and $11>7$."),
+        ("Conclude", r"The cost of one pencil was $\boxed{11}$ cents."),
     ],
 }
 def esc(x, quote=True):
@@ -171,7 +211,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2010" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2011" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -260,7 +300,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2010 AMC 10B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2011 AMC 10A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
@@ -281,6 +321,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
