@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 164
+BATCH_NUMBER = 165
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2005_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
-SKIPPED = []
-BATCH_LABEL = "2005 AMC 12A Problems 1-10"
-NEXT_START = "2005 AMC 12A Problem 11"
+TARGET_NUMBERS = {11,12,13,14,15,16,18,19,20}
+SKIPPED = ["2005 AMC 12A Problem 17 skipped: the cube-cutting volume question strongly depends on the missing figures."]
+BATCH_LABEL = "2005 AMC 12A Problems 11-16,18-20"
+NEXT_START = "2005 AMC 12A Problem 21"
 
-ANS={1:("D","10"),2:("B","-4"),3:("B",r"\frac25x^2"),4:("A","100"),5:("B","24"),6:("B","5"),7:("C","36"),8:("D","4"),9:("A","-16"),10:("B","4")}
+ANS={11:("E","45"),12:("D","8"),13:("D","12"),14:("D",r"\frac{11}{21}"),15:("C",r"\frac13"),16:("D","9"),18:("A","100"),19:("B","1462"),20:("E",r"2^{2005}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -995,6 +995,47 @@ SOL.update({
 8:[("Factor 2005",r"We have \(2005=5\cdot401\). The factor \(A+M+C\) is a digit sum, so it must be between \(1\) and \(27\)."),("Identify the digit sum",r"Among the factors of \(2005\), the only possible digit sum in this range that can pair with a three-digit number is \(5\)."),("Find the three-digit number",r"Therefore \(100A+10M+C=401\)."),("Read A",r"The hundreds digit of \(401\) is \(4\), so \(A=4\)."),("Conclude",r"The answer is \(\boxed{4}\)."),],
 9:[("Combine like terms",r"The equation is \[4x^2+(a+8)x+9=0.\]"),("Use the one-solution condition",r"A quadratic has only one real solution when its discriminant is zero."),("Set the discriminant to zero",r"Thus \[(a+8)^2-4\cdot4\cdot9=0,\] so \[(a+8)^2=144.\]"),("Find the two a values",r"Then \(a+8=\pm12\), giving \(a=4\) or \(a=-20\)."),("Add them",r"The sum is \(4+(-20)=-16\)."),("Conclude",r"The answer is \(\boxed{-16}\)."),],
 10:[("Count red faces",r"Painting the original cube colors \(6n^2\) unit-square faces red, because each of the \(6\) large faces contains \(n^2\) small faces."),("Count all small-cube faces",r"After cutting, there are \(n^3\) unit cubes, each with \(6\) faces, so there are \(6n^3\) total small-cube faces."),("Use the fraction condition",r"Exactly one-fourth of all small-cube faces are red, so \[6n^2=\frac14(6n^3).\]"),("Solve",r"Canceling \(6n^2\) gives \(1=\frac{n}{4}\), so \(n=4\)."),("Conclude",r"The answer is \(\boxed{4}\)."),],
+})
+OV.update({
+11:(r"How many three-digit numbers satisfy the property that the middle digit is the average of the first and the last digits?",[("A","41"),("B","42"),("C","43"),("D","44"),("E","45")]),
+12:(r"A line passes through \(A(1,1)\) and \(B(100,1000)\). How many other points with integer coordinates are on the line and strictly between \(A\) and \(B\)?",[("A","0"),("B","2"),("C","3"),("D","8"),("E","9")]),
+13:(r"In the five-sided star shown, the letters \(A,B,C,D,\) and \(E\) are replaced by the numbers \(3,5,6,7,\) and \(9\), although not necessarily in this order. The sums of the numbers at the ends of the line segments \(\overline{AB},\overline{BC},\overline{CD},\overline{DE},\) and \(\overline{EA}\) form an arithmetic sequence, although not necessarily in this order. What is the middle term of the arithmetic sequence?",[("A","9"),("B","10"),("C","11"),("D","12"),("E","13")]),
+14:(r"On a standard die one of the dots is removed at random with each dot equally likely to be chosen. The die is then rolled. What is the probability that the top face has an odd number of dots?",[("A",r"\(\frac5{11}\)"),("B",r"\(\frac{10}{21}\)"),("C",r"\(\frac12\)"),("D",r"\(\frac{11}{21}\)"),("E",r"\(\frac6{11}\)")]),
+15:(r"Let \(\overline{AB}\) be a diameter of a circle and \(C\) be a point on \(\overline{AB}\) with \(2\cdot AC=BC\). Let \(D\) and \(E\) be points on the circle such that \(\overline{DC}\perp\overline{AB}\) and \(\overline{DE}\) is a second diameter. What is the ratio of the area of \(\triangle DCE\) to the area of \(\triangle ABD\)?",[("A",r"\(\frac16\)"),("B",r"\(\frac14\)"),("C",r"\(\frac13\)"),("D",r"\(\frac12\)"),("E",r"\(\frac23\)")]),
+16:(r"Three circles of radius \(s\) are drawn in the first quadrant of the \(xy\)-plane. The first circle is tangent to both axes, the second is tangent to the first circle and the \(x\)-axis, and the third is tangent to the first circle and the \(y\)-axis. A circle of radius \(r>s\) is tangent to both axes and to the second and third circles. What is \(r/s\)?",[("A","5"),("B","6"),("C","8"),("D","9"),("E","10")]),
+18:(r"Call a number \"prime-looking\" if it is composite but not divisible by \(2,3,\) or \(5\). The three smallest prime-looking numbers are \(49,77,\) and \(91\). There are \(168\) prime numbers less than \(1000\). How many prime-looking numbers are there less than \(1000\)?",[("A","100"),("B","102"),("C","104"),("D","106"),("E","108")]),
+19:(r"A faulty car odometer proceeds from digit \(3\) to digit \(5\), always skipping the digit \(4\), regardless of position. If the odometer now reads \(002005\), how many miles has the car actually traveled?",[("A","1404"),("B","1462"),("C","1604"),("D","1605"),("E","1804")]),
+20:(r"For each \(x\in[0,1]\), define \[f(x)=\begin{cases}2x,&0\le x\le \frac12,\\2-2x,&\frac12<x\le1.\end{cases}\] Let \(f^{[2]}(x)=f(f(x))\), and \(f^{[n+1]}(x)=f^{[n]}(f(x))\) for each integer \(n\ge2\). For how many values of \(x\in[0,1]\) is \(f^{[2005]}(x)=\frac12\)?",[("A","0"),("B","2005"),("C","4010"),("D",r"\(2005^2\)"),("E",r"\(2^{2005}\)")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Count first and last digit pairs with the same parity.",
+12:"Use the gcd of coordinate differences to count lattice points on a segment.",
+13:"Use the sum of all five edge sums.",
+14:"Average over the removed dot and the die roll.",
+15:"Use coordinates on a circle with a diameter.",
+16:"Use center coordinates and tangency distances.",
+18:"Count numbers not divisible by \(2,3,5\), then remove primes and \(1\).",
+19:"Interpret the odometer as base \(9\) with skipped digit \(4\).",
+20:"Each iteration of the tent map doubles the number of preimages of \(\frac12\).",
+})
+
+NOTES_OVERRIDES.update({
+13:"This problem contains a diagram. The star is a five-cycle using segments AB, BC, CD, DE, and EA; please refer to the original PDF or AoPS page for the figure.",
+15:"This problem contains a diagram. The diameter and perpendicular relationships are stated; please refer to the original PDF or AoPS page for the figure.",
+16:"This problem contains a diagram. The circle tangencies are fully described; please refer to the original PDF or AoPS page for the figure.",
+})
+
+SOL.update({
+11:[("Represent the number",r"Let the three-digit number have digits \(a,b,c\), where \(a\in\{1,\ldots,9\}\) and \(c\in\{0,\ldots,9\}\). The condition is \[b=\frac{a+c}{2}.\]"),("Identify the parity condition",r"The middle digit is an integer exactly when \(a+c\) is even. That means \(a\) and \(c\) have the same parity."),("Count odd pairs",r"There are \(5\) odd choices for \(a\) and \(5\) odd choices for \(c\), giving \(25\) pairs."),("Count even pairs",r"There are \(4\) even choices for \(a\) and \(5\) even choices for \(c\), giving \(20\) pairs."),("Add",r"The total is \(25+20=45\)."),("Conclude",r"The answer is \(\boxed{45}\)."),],
+12:[("Look at coordinate differences",r"From \(A(1,1)\) to \(B(100,1000)\), the changes are \[\Delta x=99,\qquad \Delta y=999.\]"),("Use the lattice-point fact",r"The number of equal steps between lattice points on a segment is \(\gcd(|\Delta x|,|\Delta y|)\)."),("Compute the gcd",r"\(\gcd(99,999)=9\). So the segment is divided into \(9\) equal lattice steps."),("Count interior points",r"That gives \(9+1\) lattice points including both endpoints, so the number strictly between them is \(9-1=8\)."),("Conclude",r"The answer is \(\boxed{8}\)."),],
+13:[("Focus on sums, not placement",r"The five edge sums are \(A+B,B+C,C+D,D+E,E+A\). Each of the five vertex numbers appears in exactly two of these sums."),("Compute the total of edge sums",r"The numbers are \(3,5,6,7,9\), whose sum is \(30\). Therefore the total of the five edge sums is \(2\cdot30=60\)."),("Use the arithmetic sequence property",r"For any five-term arithmetic sequence, the middle term equals the average of all five terms."),("Find the average",r"The average of the five edge sums is \[\frac{60}{5}=12.\]"),("Conclude",r"The middle term is \(\boxed{12}\)."),],
+14:[("Count equally likely outcomes",r"There are \(21\) dots on a standard die and \(6\) possible top faces after the die is rolled, so there are \(21\cdot6=126\) equally likely dot-removal and roll outcomes."),("Consider removing a dot from an odd face",r"If a dot is removed from a face with \(1,3,\) or \(5\) dots, that face becomes even. Then only \(2\) faces show an odd number of dots. There are \(1+3+5=9\) such dots, contributing \(9\cdot2=18\) favorable outcomes."),("Consider removing a dot from an even face",r"If a dot is removed from a face with \(2,4,\) or \(6\) dots, that face becomes odd. Then \(4\) faces show an odd number of dots. There are \(2+4+6=12\) such dots, contributing \(12\cdot4=48\) favorable outcomes."),("Compute probability",r"The total favorable outcomes are \(18+48=66\). Thus the probability is \[\frac{66}{126}=\frac{11}{21}.\]"),("Conclude",r"The answer is $\boxed{\frac{11}{21}}$."),],
+15:[("Choose convenient coordinates",r"Let \(A=(0,0)\), \(B=(3,0)\). Since \(2AC=BC\), we have \(AC=1\) and \(BC=2\), so \(C=(1,0)\)."),("Find D",r"The circle has center \((\frac32,0)\) and radius \(\frac32\). Since \(DC\perp AB\), point \(D\) has \(x=1\). The circle equation gives \[DC=\sqrt{\left(\frac32\right)^2-\left(\frac12\right)^2}=\sqrt2.\]"),("Find E from the diameter",r"Because \(\overline{DE}\) is a diameter, \(E\) is the point opposite \(D\) through the center. Thus \(E=(2,-\sqrt2)\)."),("Compute triangle areas",r"Triangle \(DCE\) has base \(DC=\sqrt2\) and horizontal height \(1\), so its area is \(\frac{\sqrt2}{2}\). Triangle \(ABD\) has base \(AB=3\) and height \(\sqrt2\), so its area is \(\frac{3\sqrt2}{2}\)."),("Take the ratio",r"The ratio is \[\frac{\sqrt2/2}{3\sqrt2/2}=\frac13.\]"),("Conclude",r"The answer is $\boxed{\frac13}$."),],
+16:[("Place the small centers",r"The first small circle has center \((s,s)\). The second, tangent to the first and the \(x\)-axis, has center \((3s,s)\). The third has center \((s,3s)\)."),("Place the large center",r"The large circle is tangent to both axes, so its center is \((r,r)\)."),("Use tangency to a small circle",r"The distance from \((r,r)\) to \((3s,s)\) is \(r+s\), so \[\sqrt{(r-3s)^2+(r-s)^2}=r+s.\]"),("Scale by s",r"Let \(t=r/s\). Dividing by \(s\), \[\sqrt{(t-3)^2+(t-1)^2}=t+1.\]"),("Solve",r"Squaring gives \(t^2-10t+9=0\), so \(t=1\) or \(t=9\). Since \(r>s\), \(t=9\)."),("Conclude",r"The answer is \(\boxed{9}\)."),],
+18:[("Count numbers not divisible by 2, 3, or 5",r"By inclusion-exclusion, the positive integers less than \(1000\) not divisible by \(2,3,\) or \(5\) number \[999-499-333-199+166+99+66-33=266.\]"),("Remove primes",r"Among the \(168\) primes less than \(1000\), the primes \(2,3,\) and \(5\) were not included in the \(266\). So \(165\) included numbers are prime."),("Remove 1",r"The number \(1\) is also included in the \(266\), but it is not composite."),("Compute composite count",r"The prime-looking numbers are therefore \[266-165-1=100.\]"),("Conclude",r"The answer is \(\boxed{100}\)."),],
+19:[("Recognize the odometer system",r"Since the odometer skips the digit \(4\), each digit position effectively has \(9\) possible symbols: \(0,1,2,3,5,6,7,8,9\)."),("Map displayed digits to base-9 values",r"Displayed digits \(0,1,2,3\) keep their values, while \(5,6,7,8,9\) represent values \(4,5,6,7,8\)."),("Convert the reading",r"The reading \(002005\) corresponds to base-\(9\) digits \(0,0,2,0,0,4\)."),("Evaluate",r"Thus the actual mileage is \[2\cdot9^3+4=2\cdot729+4=1462.\]"),("Conclude",r"The answer is \(\boxed{1462}\)."),],
+20:[("Understand one inverse step",r"The function is the tent map. For any value strictly between \(0\) and \(1\), there are exactly two preimages, one on each linear branch."),("Start with the target",r"The value \(\frac12\) is strictly between \(0\) and \(1\), so \(f(x)=\frac12\) has two solutions: \(x=\frac14\) and \(x=\frac34\)."),("Iterate the idea",r"Each additional inverse step doubles the number of solutions, because each existing target value lies in \((0,1)\) and has two preimages."),("Apply 2005 iterations",r"Therefore the equation \(f^{[2005]}(x)=\frac12\) has \[2^{2005}\] solutions in \([0,1]\)."),("Conclude",r"The answer is \(\boxed{2^{2005}}\)."),],
 })
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
