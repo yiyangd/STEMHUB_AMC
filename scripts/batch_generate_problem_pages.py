@@ -8,109 +8,91 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 27
+BATCH_NUMBER = 28
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2006_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {11, 13, 14, 15, 18, 19, 20}
-SKIPPED = ["2006 AMC 10A Problem 12: dog rope arrangement depends on preliminary drawings.", "2006 AMC 10A Problem 16: tangent-circles triangle depends on the original diagram.", "2006 AMC 10A Problem 17: WXYZ rectangle/trisection area depends on the original diagram."]
-BATCH_LABEL = "2006 AMC 10A Problem 11-20"
-NEXT_START = "2006 AMC 10A Problem 21"
+TARGET_NUMBERS = {21, 22, 23, 24, 25}
+SKIPPED = []
+BATCH_LABEL = "2006 AMC 10A Problem 21-25"
+NEXT_START = "2006 AMC 10B Problem 1"
 
 ANS = {
-    11: ("C", "two lines"),
-    13: ("D", "60"),
-    14: ("B", "173"),
-    15: ("D", "47"),
-    18: ("C", r"5\cdot10^4\cdot26^2"),
-    19: ("C", "59"),
-    20: ("E", "1"),
+    21: ("E", "5416"),
+    22: ("C", "30"),
+    23: ("B", r"\frac{44}{3}"),
+    24: ("B", r"\frac{1}{6}"),
+    25: ("C", r"\frac{2}{243}"),
 }
 
 
 OV = {
-    11: (
-        r"Which of the following describes the graph of the equation $(x+y)^2=x^2+y^2$?",
-        [("A", "the empty set"), ("B", "one point"), ("C", "two lines"), ("D", "a circle"), ("E", "the entire plane")],
+    21: (
+        r"How many four-digit positive integers have at least one digit that is a $2$ or a $3$?",
+        [("A", "$2439$"), ("B", "$4096$"), ("C", "$4903$"), ("D", "$4904$"), ("E", "$5416$")],
     ),
-    13: (
-        r"A player pays $5$ dollars to play a game. A die is rolled. If the number on the die is odd, the game is lost. If the number is even, the die is rolled again. In this case the player wins if the second number matches the first and loses otherwise. How much should the player win if the game is fair?",
-        [("A", "$12$"), ("B", "$30$"), ("C", "$50$"), ("D", "$60$"), ("E", "$100$")],
+    22: (
+        r"Two farmers agree that pigs are worth $\$300$ and goats are worth $\$210$. When one farmer owes the other money, he pays the debt in pigs or goats, with change received in the form of goats or pigs as necessary. What is the amount of the smallest positive debt that can be resolved in this way?",
+        [("A", "$5$"), ("B", "$10$"), ("C", "$30$"), ("D", "$90$"), ("E", "$210$")],
     ),
-    14: (
-        r"A number of linked rings, each $1$ cm thick, are hanging on a peg. The top ring has an outside diameter of $20$ cm. The outside diameter of each of the other rings is $1$ cm less than that of the ring above it. The bottom ring has an outside diameter of $3$ cm. What is the distance, in cm, from the top of the top ring to the bottom of the bottom ring?",
-        [("A", "$171$"), ("B", "$173$"), ("C", "$182$"), ("D", "$188$"), ("E", "$210$")],
+    23: (
+        r"Circles with centers $A$ and $B$ have radii $3$ and $8$, respectively. A common internal tangent intersects the circles at $C$ and $D$, respectively. Lines $AB$ and $CD$ intersect at $E$, and $AE=5$. What is $CD$?",
+        [("A", r"$\sqrt{13}$"), ("B", r"$\frac{44}{3}$"), ("C", r"$\sqrt{221}$"), ("D", r"$\sqrt{255}$"), ("E", r"$\frac{55}{3}$")],
     ),
-    18: (
-        r"A license plate in a certain state consists of $4$ digits, not necessarily distinct, and $2$ letters, also not necessarily distinct. These six characters may appear in any order, except that the two letters must appear next to each other. How many distinct license plates are possible?",
-        [("A", r"$10^4\cdot26^2$"), ("B", r"$10^3\cdot26^3$"), ("C", r"$5\cdot10^4\cdot26^2$"), ("D", r"$10^2\cdot26^4$"), ("E", r"$5\cdot10^3\cdot26^3$")],
+    24: (
+        r"Centers of adjacent faces of a unit cube are joined to form a regular octahedron. What is the volume of this octahedron?",
+        [("A", r"$\frac18$"), ("B", r"$\frac16$"), ("C", r"$\frac14$"), ("D", r"$\frac13$"), ("E", r"$\frac12$")],
     ),
-    20: (
-        r"Six distinct positive integers are randomly chosen between $1$ and $2006$, inclusive. What is the probability that some pair of these integers has a difference that is a multiple of $5$?",
-        [("A", r"$\frac12$"), ("B", r"$\frac35$"), ("C", r"$\frac23$"), ("D", r"$\frac45$"), ("E", "$1$")],
+    25: (
+        r"A bug starts at one vertex of a cube and moves along the edges of the cube according to the following rule. At each vertex the bug will choose to travel along one of the three edges emanating from that vertex. Each edge has equal probability of being chosen, and all choices are independent. What is the probability that after seven moves the bug will have visited every vertex exactly once?",
+        [("A", r"$\frac{1}{2187}$"), ("B", r"$\frac{1}{729}$"), ("C", r"$\frac{2}{243}$"), ("D", r"$\frac{1}{81}$"), ("E", r"$\frac{5}{243}$")],
     ),
 }
 
 
 KEY_OVERRIDES = {
-    11: "Expand and simplify the equation to identify the coordinate axes.",
-    13: "Compute the probability of winning and set expected payout equal to the cost.",
-    14: "Add the vertical contributions of linked rings using outside and inside radii.",
-    15: "Compare angular speeds on two circular lanes moving in opposite directions.",
-    18: "Treat the adjacent letters as one block, then arrange with the four digits.",
-    19: "An arithmetic progression of triangle angles must have middle angle 60 degrees.",
-    20: "Use the pigeonhole principle on residues modulo 5.",
+    21: "Use complement counting to avoid overcounting numbers with multiple 2s or 3s.",
+    22: "Find the smallest positive integer combination of 300 and 210 using the greatest common divisor.",
+    23: "Use internal similarity and the internal tangent length formula.",
+    24: "Place the cube face centers on coordinate axes and use the standard octahedron volume.",
+    25: "Count Hamiltonian paths on the cube from a fixed starting vertex.",
 }
 
 
 SOL = {
-    11: [
-        ("Expand the left side", r"The equation is $(x+y)^2=x^2+y^2$. Expanding gives $x^2+2xy+y^2=x^2+y^2$."),
-        ("Simplify", r"Subtract $x^2+y^2$ from both sides to get $2xy=0$."),
-        ("Interpret the product", r"The equation $2xy=0$ means $x=0$ or $y=0$."),
-        ("Identify the graph", r"The set $x=0$ is the $y$-axis, and the set $y=0$ is the $x$-axis. Together these are two lines."),
-        ("Answer", r"The graph is $\boxed{\text{two lines}}$."),
+    21: [
+        ("Count the complement", r"It is easier to count four-digit numbers with no digit equal to $2$ or $3$, then subtract from all four-digit numbers."),
+        ("Count all four-digit numbers", r"There are $9000$ four-digit positive integers, from $1000$ through $9999$."),
+        ("Count numbers avoiding 2 and 3", r"The thousands digit has $7$ choices: $1,4,5,6,7,8,9$. Each of the other three digits has $8$ choices, because it can be any digit except $2$ or $3$."),
+        ("Subtract", r"The complement has $7\cdot8^3=3584$ numbers. Therefore the desired count is $9000-3584=5416$."),
+        ("Answer", r"The answer is $\boxed{5416}$."),
     ],
-    13: [
-        ("Find the probability of reaching the second roll", r"The first roll must be even. A fair die has $3$ even faces out of $6$, so this happens with probability $1/2$."),
-        ("Find the probability of matching", r"Once the first roll is fixed, the second roll must match that exact number. This has probability $1/6$."),
-        ("Find the win probability", r"Therefore the probability of winning is $\frac12\cdot\frac16=\frac1{12}$."),
-        ("Use fairness", r"For a fair game, expected winnings equal the $5$ dollar cost. If the prize is $W$, then $\frac1{12}W=5$."),
-        ("Answer", r"Solving gives $W=60$, so the player should win $\boxed{60}$ dollars."),
+    22: [
+        ("Translate the exchange system", r"A debt can be resolved if it can be written as a difference between a total value of pigs and a total value of goats. So possible debts have the form $300a-210b$ for integers $a,b$."),
+        ("Use the greatest common divisor", r"Every such amount is a multiple of $\gcd(300,210)=30$. So no positive debt smaller than $30$ can always be represented in this system."),
+        ("Show that 30 works", r"For example, $300-210=90$, and combinations of pigs and goats can generate multiples of $30$; in particular, $300-210-210+300-300$ style exchanges are governed by the same gcd. More directly, $300(5)-210(7)=1500-1470=30$."),
+        ("Conclude", r"The smallest positive resolvable debt is $30$."),
+        ("Answer", r"The answer is $\boxed{30}$."),
     ],
-    14: [
-        ("Count the rings", r"The outside diameters are $20,19,18,\ldots,3$, so there are $18$ rings."),
-        ("Use inside radii", r"Each ring is $1$ cm thick, so a ring with outside diameter $D$ has inside radius $D/2-1$."),
-        ("Find center-to-center drops", r"For two linked rings with outside diameters $D_i$ and $D_{i+1}$, their centers are separated vertically by the sum of their inside radii: $(D_i/2-1)+(D_{i+1}/2-1)$."),
-        ("Add top and bottom radii", r"The total distance is the top outside radius $10$, plus all $17$ center-to-center drops, plus the bottom outside radius $3/2$."),
-        ("Compute", r"This gives $10+\sum_{D=20}^{4}\left((D/2-1)+((D-1)/2-1)\right)+\frac32=173$. The answer is $\boxed{173}$."),
+    23: [
+        ("Use the internal similarity point", r"For a common internal tangent, the intersection point $E$ of the tangent and the line of centers is the internal center of similarity. Therefore $AE:BE=3:8$."),
+        ("Find AB", r"Since $AE=5$, we have $BE=\frac83\cdot5=\frac{40}{3}$. Thus $AB=AE+BE=5+\frac{40}{3}=\frac{55}{3}$."),
+        ("Use the internal tangent length formula", r"For two circles with center distance $AB$ and radii $3$ and $8$, the length between tangent points on a common internal tangent is \[CD=\sqrt{AB^2-(3+8)^2}.\]"),
+        ("Compute", r"So \[CD=\sqrt{\left(\frac{55}{3}\right)^2-11^2}=\sqrt{\frac{3025-1089}{9}}=\sqrt{\frac{1936}{9}}=\frac{44}{3}.\]"),
+        ("Answer", r"The answer is $\boxed{\frac{44}{3}}$."),
     ],
-    15: [
-        ("Convert speeds to angular speeds", r"Odell's angular speed is $250/50=5$ radians per minute. Kershaw's angular speed is $300/60=5$ radians per minute."),
-        ("Use opposite directions", r"Since they run in opposite directions, their relative angular speed is $5+5=10$ radians per minute."),
-        ("Find total relative angle", r"In $30$ minutes, the relative angular distance is $30\cdot10=300$ radians."),
-        ("Count meetings after the start", r"They pass whenever the relative angular distance reaches a positive multiple of $2\pi$. The count is $\left\lfloor\frac{300}{2\pi}\right\rfloor$."),
-        ("Answer", r"Since $\frac{300}{2\pi}\approx47.7$, they pass $\boxed{47}$ times after the start."),
+    24: [
+        ("Place the cube in coordinates", r"Use a unit cube centered at the origin. The centers of its faces are $(\pm\frac12,0,0)$, $(0,\pm\frac12,0)$, and $(0,0,\pm\frac12)$."),
+        ("Recognize the octahedron", r"These six points are the vertices of a regular octahedron. It is the region satisfying $|x|+|y|+|z|\le\frac12$."),
+        ("Use the standard volume", r"An octahedron with axis radius $a$ has volume $\frac{4}{3}a^3$. Here $a=\frac12$."),
+        ("Compute", r"The volume is \[\frac43\left(\frac12\right)^3=\frac43\cdot\frac18=\frac16.\]"),
+        ("Answer", r"The volume is $\boxed{\frac16}$."),
     ],
-    18: [
-        ("Treat the two letters as a block", r"Because the two letters must be next to each other, view them as one letter-block plus four separate digit positions. That makes $5$ objects to arrange."),
-        ("Place the letter block", r"The block can occupy any of $5$ positions among the six characters."),
-        ("Choose characters", r"The four digits have $10^4$ choices because repetition is allowed. The two letters have $26^2$ choices because repetition is also allowed and order matters inside the block."),
-        ("Multiply", r"The total number of plates is $5\cdot10^4\cdot26^2$."),
-        ("Answer", r"The answer is $\boxed{5\cdot10^4\cdot26^2}$."),
-    ],
-    19: [
-        ("Use the arithmetic progression structure", r"If three angles are in arithmetic progression, write them as $60-d$, $60$, and $60+d$, because their sum must be $180$."),
-        ("Apply positivity", r"The smallest angle must be positive, so $60-d>0$. Thus $d<60$."),
-        ("Apply distinctness", r"The angles are distinct, so $d$ must be a positive integer."),
-        ("Count d values", r"Therefore $d$ can be $1,2,\ldots,59$, giving $59$ different angle triples."),
-        ("Answer", r"Each different angle triple gives a non-similar triangle, so the answer is $\boxed{59}$."),
-    ],
-    20: [
-        ("Think modulo 5", r"Two integers have a difference that is a multiple of $5$ exactly when they have the same remainder modulo $5$."),
-        ("Use pigeonhole principle", r"There are only $5$ possible remainders modulo $5$: $0,1,2,3,4$."),
-        ("Place six integers into five classes", r"Choosing $6$ distinct integers forces at least two of them to have the same remainder modulo $5$."),
-        ("Conclude", r"That pair has a difference divisible by $5$, no matter which six integers were chosen."),
-        ("Answer", r"The probability is therefore $\boxed{1}$."),
+    25: [
+        ("Count all possible walks", r"At each of the $7$ moves, the bug has $3$ equally likely edge choices. So there are $3^7=2187$ possible move sequences."),
+        ("Understand the successful walks", r"To visit every vertex exactly once after $7$ moves, the bug must follow a Hamiltonian path of the cube starting from the initial vertex."),
+        ("Count first two moves by symmetry", r"From the starting vertex there are $3$ choices for the first move. From there, to avoid returning immediately, there are $2$ choices for the second move."),
+        ("Finish the path count", r"After two moves, the path lies on one square face of the cube. A careful continuation count gives $3$ possible completions from each such start: one continues around that face before crossing, and two cross earlier to the opposite face. Thus the number of successful paths is $3\cdot2\cdot3=18$."),
+        ("Answer", r"The probability is $\frac{18}{2187}=\boxed{\frac{2}{243}}$."),
     ],
 }
 
@@ -313,7 +295,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批完成 2006 AMC 10A Problems 11、13、14、15、18、19、20；Problems 12、16、17 因图形依赖跳过。\n"
+        + "本批完成 2006 AMC 10A Problems 21-25，无跳过题；2006A 完成。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题，遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 steps 后 commit/push。\n",
         encoding="utf-8",
