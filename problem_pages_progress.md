@@ -508,3 +508,19 @@
 - Pushed: pending
 - Next batch should start from: 2007 AMC 10A Problem 11
 - Review notes: none.
+
+## Batch 33: 2007 AMC 10A Problems 11-14, 16, 17, 20
+
+- Start time: 2026-06-30T17:57:17-07:00
+- End time: 2026-06-30T17:57:18-07:00
+- Processed contest: AMC 10
+- Processed range: 2007 AMC 10A Problems 11-14, 16, 17, 20
+- Generated count: 7
+- Updated existing count: 0
+- Skipped count: 3
+- Skipped reasons: 2007 AMC 10A Problem 15 skipped: statement depends on a diagram.; 2007 AMC 10A Problem 18 skipped: statement depends on a diagram.; 2007 AMC 10A Problem 19 skipped: statement depends on a diagram.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2007 AMC 10A Problem 21
+- Review notes: Skipped Problems 15, 18, and 19 because they require diagrams.

@@ -8,67 +8,59 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 32
+BATCH_NUMBER = 33
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2007_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-SKIPPED = []
-BATCH_LABEL = "2007 AMC 10A Problems 1-10"
-NEXT_START = "2007 AMC 10A Problem 11"
+TARGET_NUMBERS = {11, 12, 13, 14, 16, 17, 20}
+SKIPPED = [
+    "2007 AMC 10A Problem 15 skipped: statement depends on a diagram.",
+    "2007 AMC 10A Problem 18 skipped: statement depends on a diagram.",
+    "2007 AMC 10A Problem 19 skipped: statement depends on a diagram.",
+]
+BATCH_LABEL = "2007 AMC 10A Problems 11-14, 16, 17, 20"
+NEXT_START = "2007 AMC 10A Problem 21"
 
 ANS = {
-    1: ("C", "10"),
-    2: ("A", r"-\frac{1}{2}"),
-    3: ("D", "2"),
-    4: ("A", "4"),
-    5: ("B", "$5.84"),
-    6: ("A", "2002 and 2003"),
-    7: ("D", "37,500"),
-    8: ("D", "50"),
-    9: ("E", "60"),
-    10: ("E", "6"),
+    11: ("C", "18"),
+    12: ("D", "62"),
+    13: ("B", r"\frac{3}{4}"),
+    14: ("A", "8.64"),
+    16: ("E", r"\frac{5}{8}"),
+    17: ("D", "60"),
+    20: ("D", "194"),
 }
 
 
 OV = {
-    1: (r"One ticket to a show costs $\$20$ at full price. Susan buys $4$ tickets using a coupon that gives her a $25\%$ discount. Pam buys $5$ tickets using a coupon that gives her a $30\%$ discount. How many more dollars does Pam pay than Susan?", [("A", "$2$"), ("B", "$5$"), ("C", "$10$"), ("D", "$15$"), ("E", "$20$")]),
-    2: (r"Define $a@b=ab-b^2$ and $a\#b=a+b-ab^2$. What is $\frac{6@2}{6\#2}$?", [("A", r"$-\frac12$"), ("B", r"$-\frac14$"), ("C", r"$\frac18$"), ("D", r"$\frac14$"), ("E", r"$\frac12$")]),
-    3: (r"An aquarium has a rectangular base that measures $100$ cm by $40$ cm and has height $50$ cm. It is filled with water to a height of $40$ cm. A brick with a rectangular base that measures $40$ cm by $20$ cm and height $10$ cm is placed in the aquarium. By how many centimeters does the water rise?", [("A", "$0.5$"), ("B", "$1$"), ("C", "$1.5$"), ("D", "$2$"), ("E", "$2.5$")]),
-    4: (r"The larger of two consecutive odd integers is three times the smaller. What is their sum?", [("A", "$4$"), ("B", "$8$"), ("C", "$12$"), ("D", "$16$"), ("E", "$20$")]),
-    5: (r"A school store sells $7$ pencils and $8$ notebooks for $\$4.15$. It also sells $5$ pencils and $3$ notebooks for $\$1.77$. How much do $16$ pencils and $10$ notebooks cost?", [("A", "$1.76"), ("B", "$5.84"), ("C", "$6.00"), ("D", "$6.16"), ("E", "$6.32")]),
-    6: (r"At Euclid High School, the number of students taking the AMC 10 was $60$ in $2002$, $66$ in $2003$, $70$ in $2004$, $76$ in $2005$, $78$ in $2006$, and $85$ in $2007$. Between what two consecutive years was there the largest percentage increase?", [("A", "2002 and 2003"), ("B", "2003 and 2004"), ("C", "2004 and 2005"), ("D", "2005 and 2006"), ("E", "2006 and 2007")]),
-    7: (r"Last year Mr. John Q. Public received an inheritance. He paid $20\%$ in federal taxes on the inheritance, and paid $10\%$ of what he had left in state taxes. He paid a total of $\$10,500$ for both taxes. How many dollars was the inheritance?", [("A", "$30,000"), ("B", "$32,500"), ("C", "$35,000"), ("D", "$37,500"), ("E", "$40,000")]),
-    8: (r"Triangles $ABC$ and $ADC$ are isosceles with $AB=BC$ and $AD=DC$. Point $D$ is inside $\triangle ABC$. Angle $ABC=40^\circ$, and angle $ADC=140^\circ$. What is the degree measure of $\angle BAD$?", [("A", "$20$"), ("B", "$30$"), ("C", "$40$"), ("D", "$50$"), ("E", "$60$")]),
-    9: (r"Real numbers $a$ and $b$ satisfy the equations $3^a=81^{b+2}$ and $125^b=5^{a-3}$. What is $ab$?", [("A", "$-60$"), ("B", "$-17$"), ("C", "$9$"), ("D", "$12$"), ("E", "$60$")]),
-    10: (r"The Dunbar family consists of a mother, a father, and some children. The average age of the members of the family is $20$, the father is $48$ years old, and the average age of the mother and children is $16$. How many children are in the family?", [("A", "$2$"), ("B", "$3$"), ("C", "$4$"), ("D", "$5$"), ("E", "$6$")]),
+    11: (r"The numbers from $1$ to $8$ are placed at the vertices of a cube in such a manner that the sum of the four numbers on each face is the same. What is this common sum?", [("A", "$14$"), ("B", "$16$"), ("C", "$18$"), ("D", "$20$"), ("E", "$24$")]),
+    12: (r"Two tour guides are leading six tourists. The guides decide to split up. Each tourist must choose one of the guides, but with the stipulation that each guide must take at least one tourist. How many different groupings of guides and tourists are possible?", [("A", "$56$"), ("B", "$58$"), ("C", "$60$"), ("D", "$62$"), ("E", "$64$")]),
+    13: (r"Yan is somewhere between his home and the stadium. To get to the stadium he can walk directly to the stadium, or else he can walk home and then ride his bicycle to the stadium. He rides $7$ times as fast as he walks, and both choices require the same amount of time. What is the ratio of Yan's distance from his home to his distance from the stadium?", [("A", r"$\frac23$"), ("B", r"$\frac34$"), ("C", r"$\frac45$"), ("D", r"$\frac56$"), ("E", r"$\frac67$")]),
+    14: (r"A triangle with side lengths in the ratio $3:4:5$ is inscribed in a circle of radius $3$. What is the area of the triangle?", [("A", "$8.64$"), ("B", "$12$"), ("C", r"$5\pi$"), ("D", "$17.28$"), ("E", "$18$")]),
+    16: (r"Integers $a,b,c,$ and $d$, not necessarily distinct, are chosen independently and at random from $0$ to $2007$, inclusive. What is the probability that $ad-bc$ is even?", [("A", r"$\frac38$"), ("B", r"$\frac7{16}$"), ("C", r"$\frac12$"), ("D", r"$\frac9{16}$"), ("E", r"$\frac58$")]),
+    17: (r"Suppose that $m$ and $n$ are positive integers such that $75m=n^3$. What is the minimum possible value of $m+n$?", [("A", "$15$"), ("B", "$30$"), ("C", "$50$"), ("D", "$60$"), ("E", "$5700$")]),
+    20: (r"Suppose that the number $a$ satisfies the equation $4=a+a^{-1}$. What is the value of $a^4+a^{-4}$?", [("A", "$164$"), ("B", "$172$"), ("C", "$192$"), ("D", "$194$"), ("E", "$212$")]),
 }
 
 
 KEY_OVERRIDES = {
-    1: "Compute each discounted ticket total, then compare.",
-    2: "Evaluate each custom operation exactly as defined before forming the fraction.",
-    3: "Use displaced volume divided by aquarium base area to find the rise in water height.",
-    4: "Represent consecutive odd integers algebraically and solve the relation.",
-    5: "Solve a two-variable linear pricing system and compute the requested combination.",
-    6: "Compare percentage increases, not raw increases.",
-    7: "Model sequential percentage taxes as fractions of the original inheritance.",
-    8: "Use base angles in two isosceles triangles to subtract angles at A.",
-    9: "Rewrite powers using common bases and solve the resulting linear system.",
-    10: "Use weighted averages to compare total family age in two ways.",
+    11: "Double-count face sums on a cube: each vertex belongs to exactly three faces.",
+    12: "Count all assignments to two guides, then subtract the two invalid all-one-guide cases.",
+    13: "Translate equal travel times into an equation using distance and speed.",
+    14: "Recognize the 3-4-5 triangle as right and use the circumradius as half the hypotenuse.",
+    16: "Use parity: a product is odd exactly when both factors are odd.",
+    17: "Use prime exponents to make 75m a perfect cube with minimum n.",
+    20: "Use repeated squaring on a+a^{-1} to get a^4+a^{-4} without solving for a.",
 }
 
 
 SOL = {
-    1: [("Find Susan's cost", r"A $25\%$ discount means Susan pays $75\%$ of full price. Four tickets at $\$20$ each would cost $\$80$, so Susan pays $0.75\cdot80=60$ dollars."), ("Find Pam's cost", r"A $30\%$ discount means Pam pays $70\%$ of full price. Five tickets at $\$20$ each would cost $\$100$, so Pam pays $0.70\cdot100=70$ dollars."), ("Compare", r"Pam pays $70-60=10$ more dollars than Susan."), ("Check the scale", r"Pam buys one more ticket, but also has a larger discount. A difference of $10$ dollars is reasonable."), ("Answer", r"The answer is $\boxed{10}$." )],
-    2: [("Evaluate the numerator", r"Use $a@b=ab-b^2$. With $a=6$ and $b=2$, we get $6@2=6\cdot2-2^2=12-4=8$."), ("Evaluate the denominator", r"Use $a\#b=a+b-ab^2$. Thus $6\#2=6+2-6\cdot2^2=8-24=-16$."), ("Form the fraction", r"The requested value is $\frac{6@2}{6\#2}=\frac{8}{-16}=-\frac12$."), ("Watch the sign", r"The denominator is negative, so the final answer must be negative. That eliminates all positive choices."), ("Answer", r"The answer is $\boxed{-\frac12}$." )],
-    3: [("Find the brick's volume", r"The brick displaces water equal to its volume, assuming it is fully submerged. Its volume is $40\cdot20\cdot10=8000$ cubic centimeters."), ("Find the aquarium base area", r"The base of the aquarium has area $100\cdot40=4000$ square centimeters."), ("Convert volume to height", r"A rise of $h$ centimeters over that base has volume $4000h$. So $4000h=8000$, giving $h=2$."), ("Check for overflow", r"The water starts at height $40$ cm and rises $2$ cm, reaching $42$ cm, below the aquarium height $50$ cm. So no overflow changes the answer."), ("Answer", r"The water rises $\boxed{2}$ centimeters." )],
-    4: [("Set up the consecutive odd integers", r"Let the smaller odd integer be $x$. Then the next consecutive odd integer is $x+2$."), ("Use the given relationship", r"The larger is three times the smaller, so $x+2=3x$."), ("Solve", r"This gives $2=2x$, so $x=1$. The larger integer is $3$."), ("Find the sum", r"Their sum is $1+3=4$."), ("Answer", r"The answer is $\boxed{4}$." )],
-    5: [("Name the prices", r"Let $p$ be the price of one pencil in cents and $n$ be the price of one notebook in cents. Then $7p+8n=415$ and $5p+3n=177$."), ("Solve the system", r"From $5p+3n=177$, $p=\frac{177-3n}{5}$. Substitute into the first equation: $7\left(\frac{177-3n}{5}\right)+8n=415$."), ("Find each price", r"Multiplying by $5$ gives $1239-21n+40n=2075$, so $19n=836$ and $n=44$. Then $5p+3\cdot44=177$, so $p=9$."), ("Compute the requested cost", r"The cost of $16$ pencils and $10$ notebooks is $16\cdot9+10\cdot44=144+440=584$ cents."), ("Answer", r"The answer is $\boxed{\$5.84}$." )],
-    6: [("Use percentages", r"The problem asks for percentage increase, so we compare increase divided by the previous year's number, not just the raw increase."), ("Compute the main candidates", r"From $2002$ to $2003$, the increase is $6$ out of $60$, which is $10\%$. From $2004$ to $2005$, the increase is $6$ out of $70$, which is less than $10\%$. From $2006$ to $2007$, the increase is $7$ out of $78$, also less than $10\%$."), ("Check the smaller increases", r"The other increases are $4$ out of $66$ and $2$ out of $76$, both clearly smaller percentages."), ("Choose the largest", r"The largest percentage increase is therefore from $2002$ to $2003$."), ("Answer", r"The answer is $\boxed{\text{2002 and 2003}}$." )],
-    7: [("Let the inheritance be $x$", r"The federal tax is $20\%$ of $x$, or $0.20x$. After that tax, he has $0.80x$ left."), ("Compute the state tax", r"The state tax is $10\%$ of what remains, so it is $0.10\cdot0.80x=0.08x$."), ("Use the total tax", r"The total tax is $0.20x+0.08x=0.28x$. We are told this equals $10,500$."), ("Solve", r"Thus $0.28x=10500$, so $x=10500/0.28=37500$."), ("Answer", r"The inheritance was $\boxed{37,500}$ dollars." )],
-    8: [("Use triangle $ABC$", r"Since $AB=BC$, triangle $ABC$ is isosceles with vertex angle $\angle ABC=40^\circ$. Therefore the base angles at $A$ and $C$ are each $\frac{180-40}{2}=70^\circ$."), ("Use triangle $ADC$", r"Since $AD=DC$, triangle $ADC$ is also isosceles, with vertex angle $\angle ADC=140^\circ$. Its base angles at $A$ and $C$ are each $\frac{180-140}{2}=20^\circ$."), ("Relate the angles at $A$", r"Point $D$ is inside $\triangle ABC$, so ray $AD$ splits angle $BAC$. We know $\angle BAC=70^\circ$ and $\angle DAC=20^\circ$."), ("Subtract", r"Therefore $\angle BAD=70^\circ-20^\circ=50^\circ$."), ("Answer", r"The answer is $\boxed{50^\circ}$." )],
-    9: [("Rewrite using common bases", r"Since $81=3^4$, the first equation becomes $3^a=(3^4)^{b+2}=3^{4b+8}$, so $a=4b+8$."), ("Rewrite the second equation", r"Since $125=5^3$, the second equation becomes $(5^3)^b=5^{a-3}$, so $3b=a-3$, or $a=3b+3$."), ("Solve the linear system", r"Set the two expressions for $a$ equal: $4b+8=3b+3$. Hence $b=-5$. Then $a=3(-5)+3=-12$."), ("Compute $ab$", r"Now $ab=(-12)(-5)=60$."), ("Answer", r"The answer is $\boxed{60}$." )],
-    10: [("Let the number of children be $n$", r"Then the family has $n+2$ members: the children, the mother, and the father."), ("Use the whole-family average", r"The total age of the whole family is $20(n+2)$."), ("Use the mother-and-children average", r"The mother and children together have $n+1$ people with average age $16$, so their total age is $16(n+1)$. Adding the father's age gives total family age $16(n+1)+48$."), ("Set the totals equal", r"So $20(n+2)=16(n+1)+48$. This simplifies to $20n+40=16n+64$, hence $4n=24$ and $n=6$."), ("Answer", r"There are $\boxed{6}$ children." )],
+    11: [("Count total vertex value", r"The numbers at the vertices are $1$ through $8$, whose sum is $36$."), ("Double-count face sums", r"There are $6$ faces, each with common sum $S$, so the total of all face sums is $6S$."), ("Notice how often each vertex is counted", r"Each vertex of a cube lies on exactly $3$ faces. Therefore, when all face sums are added, each vertex number is counted $3$ times."), ("Solve for the common sum", r"Thus $6S=3\cdot36=108$, so $S=18$."), ("Answer", r"The common face sum is $\boxed{18}$." )],
+    12: [("Start with all choices", r"Each of the $6$ tourists has $2$ choices: guide 1 or guide 2. That gives $2^6=64$ assignments."), ("Remove invalid assignments", r"The only invalid cases are when all tourists choose the first guide or all tourists choose the second guide. In those cases, one guide has no tourists."), ("Subtract", r"So the number of valid groupings is $64-2=62$."), ("Check interpretation", r"The guides are distinct people, so assigning a particular tourist to guide 1 is different from assigning that tourist to guide 2."), ("Answer", r"The answer is $\boxed{62}$." )],
+    13: [("Define the two distances", r"Let $x$ be Yan's distance from home, and let $y$ be his distance from the stadium. We want the ratio $x:y$."), ("Compare times", r"Walking directly to the stadium takes time proportional to $y$. Walking home takes time proportional to $x$, and then biking from home to the stadium, a distance $x+y$, takes time proportional to $\frac{x+y}{7}$."), ("Set the times equal", r"Since both choices take the same time, $y=x+\frac{x+y}{7}$. Multiplying by $7$ gives $7y=7x+x+y$."), ("Solve the ratio", r"So $6y=8x$, which gives $\frac{x}{y}=\frac{6}{8}=\frac34$."), ("Answer", r"The answer is $\boxed{\frac34}$." )],
+    14: [("Recognize the triangle type", r"A triangle with side ratio $3:4:5$ is a right triangle, with the side corresponding to $5$ as the hypotenuse."), ("Use the circumradius", r"For a right triangle, the hypotenuse is the diameter of the circumcircle. The circle radius is $3$, so the diameter and hypotenuse are $6$."), ("Find the scale factor", r"If the hypotenuse is $5k=6$, then $k=\frac65$. The legs are $3k=\frac{18}{5}$ and $4k=\frac{24}{5}$."), ("Compute the area", r"The area is $\frac12\cdot\frac{18}{5}\cdot\frac{24}{5}=\frac{216}{25}=8.64$."), ("Answer", r"The answer is $\boxed{8.64}$." )],
+    16: [("Reduce to parity", r"The expression $ad-bc$ is even exactly when $ad$ and $bc$ have the same parity."), ("Find product parity", r"From $0$ to $2007$ there are equally many even and odd integers: $1004$ each. A product is odd only if both factors are odd, so $P(ad\text{ odd})=\frac12\cdot\frac12=\frac14$. Thus $P(ad\text{ even})=\frac34$."), ("Match the two parities", r"The products $ad$ and $bc$ are independent and have the same parity distribution. The probability they match is $\left(\frac14\right)^2+\left(\frac34\right)^2$."), ("Compute", r"This is $\frac1{16}+\frac9{16}=\frac{10}{16}=\frac58$."), ("Answer", r"The answer is $\boxed{\frac58}$." )],
+    17: [("Factor the condition", r"The equation $75m=n^3$ means $75m$ must be a perfect cube. Since $75=3\cdot5^2$, the prime exponents in $75m$ must all become multiples of $3$."), ("Choose the smallest possible $n$", r"For $n^3$ to be divisible by $75$, $n$ must contain at least one factor of $3$ and one factor of $5$. The smallest such $n$ is $15$."), ("Find the corresponding $m$", r"With $n=15$, we have $n^3=3375$. Then $m=\frac{3375}{75}=45$."), ("Compute the sum", r"So $m+n=45+15=60$."), ("Answer", r"The minimum possible value is $\boxed{60}$." )],
+    20: [("Use the given symmetric expression", r"We are given $a+a^{-1}=4$. Expressions like $a^4+a^{-4}$ can be reached by squaring, without solving for $a$."), ("Square once", r"$(a+a^{-1})^2=a^2+2+a^{-2}=16$, so $a^2+a^{-2}=14$."), ("Square again", r"Now square $a^2+a^{-2}$: $(a^2+a^{-2})^2=a^4+2+a^{-4}=14^2=196$."), ("Subtract the middle term", r"Therefore $a^4+a^{-4}=196-2=194$."), ("Answer", r"The answer is $\boxed{194}$." )],
 }
 
 
@@ -245,7 +237,7 @@ def main():
         + "- Commit hash: pending\n"
         + "- Pushed: pending\n"
         + f"- Next batch should start from: {NEXT_START}\n"
-        + "- Review notes: none.\n",
+        + "- Review notes: Skipped Problems 15, 18, and 19 because they require diagrams.\n",
         encoding="utf-8",
     )
 
@@ -269,7 +261,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批无跳过题。\n"
+        + "本批跳过 2007 AMC 10A Problems 15, 18, 19：题面依赖图形。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题；遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 teaching steps 后 commit/push。\n",
         encoding="utf-8",
