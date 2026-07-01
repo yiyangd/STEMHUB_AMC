@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 195
+BATCH_NUMBER = 196
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15}
+TARGET_NUMBERS = {16,17,18,19,20}
 SKIPPED = []
-BATCH_LABEL = "2010 AMC 12A Problems 11-15"
-NEXT_START = "2010 AMC 12A Problem 16"
+BATCH_LABEL = "2010 AMC 12A Problems 16-20"
+NEXT_START = "2010 AMC 12A Problem 21"
 
-ANS={11:("C",r"\frac87"),12:("D","3"),13:("C","2"),14:("B","33"),15:("D",r"\frac{3-\sqrt3}{6}")}
+ANS={16:("B",r"\frac{37}{56}"),17:("E","6"),18:("D","1698"),19:("A","45"),20:("C","8")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2063,6 +2063,35 @@ SOL.update({
 14:[("Use the angle bisector theorem",r"Since $\overline{BD}$ bisects the angle at $B$, the Angle Bisector Theorem gives \[\frac{AB}{BC}=\frac{AD}{DC}=\frac38.\]"),("Represent the side lengths",r"Because $AB$ and $BC$ are integers in the ratio $3:8$, write \[AB=3m,\qquad BC=8m\] for some positive integer $m$. Also \[AC=AD+DC=3+8=11.\]"),("Use the triangle inequality",r"For a nondegenerate triangle, we need \[3m+11>8m,\] so $11>5m$ and $m<\frac{11}{5}$. We also need \[3m+8m>11,\] so $m>1$."),("Find the only possible m",r"The only positive integer satisfying \[1<m<\frac{11}{5}\] is $m=2$."),("Compute the perimeter",r"Then the side lengths are \[AB=6,\quad BC=16,\quad AC=11.\] The perimeter is \[6+16+11=33.\]"),("Conclude",r"The smallest possible perimeter is $\boxed{33}$."),
 ],
 15:[("Name the probability",r"Let $p$ be the probability that the coin lands on heads. We are told $p<\frac12$."),("Translate equal heads and tails",r"In four flips, having an equal number of heads and tails means exactly two heads and two tails. The probability is \[\binom42p^2(1-p)^2=6p^2(1-p)^2.\]"),("Use the given probability",r"The problem states \[6p^2(1-p)^2=\frac16.\] Dividing by $6$ gives \[p^2(1-p)^2=\frac1{36}.\] Since $0<p<1$, we can take the positive square root: \[p(1-p)=\frac16.\]"),("Solve the quadratic",r"This gives \[p-p^2=\frac16,\] or \[p^2-p+\frac16=0.\] The quadratic formula gives \[p=\frac{1\pm\sqrt{1-\frac23}}2=\frac{1\pm\frac1{\sqrt3}}2=\frac{3\pm\sqrt3}{6}.\]"),("Choose the probability less than one half",r"The value with the plus sign is greater than $\frac12$, so we choose \[p=\frac{3-\sqrt3}{6}.\]"),("Conclude",r"The answer is \[\boxed{\frac{3-\sqrt3}{6}}.\]"),
+],
+})
+
+OV.update({
+16:(r"Bernardo randomly picks $3$ distinct numbers from the set $\{1,2,3,4,5,6,7,8,9\}$ and arranges them in descending order to form a $3$-digit number. Silvia randomly picks $3$ distinct numbers from the set $\{1,2,3,4,5,6,7,8\}$ and also arranges them in descending order to form a $3$-digit number. What is the probability that Bernardo's number is larger than Silvia's number?",[("A",r"$\frac{47}{72}$"),("B",r"$\frac{37}{56}$"),("C",r"$\frac23$"),("D",r"$\frac{49}{72}$"),("E",r"$\frac{39}{56}$")]),
+17:(r"Equiangular hexagon $ABCDEF$ has side lengths $AB=CD=EF=1$ and $BC=DE=FA=r$. The area of $\triangle ACE$ is $70\%$ of the area of the hexagon. What is the sum of all possible values of $r$?",[("A",r"$\frac{4\sqrt3}{3}$"),("B",r"$\frac{10}{3}$"),("C","4"),("D",r"$\frac{17}{4}$"),("E","6")]),
+18:(r"A $16$-step path is to go from $(-4,-4)$ to $(4,4)$ with each step increasing either the $x$-coordinate or the $y$-coordinate by $1$. How many such paths stay outside or on the boundary of the square $-2\le x\le2$, $-2\le y\le2$ at each step?",[("A","92"),("B","144"),("C","1568"),("D","1698"),("E","12,800")]),
+19:(r"Each of $2010$ boxes in a line contains a single red marble, and for $1\le k\le2010$, the box in the $k^{\text{th}}$ position also contains $k$ white marbles. Isabella begins at the first box and successively draws a single marble at random from each box, in order. She stops when she first draws a red marble. Let $P(n)$ be the probability that Isabella stops after drawing exactly $n$ marbles. What is the smallest value of $n$ for which $P(n)<\frac1{2010}$?",[("A","45"),("B","63"),("C","64"),("D","201"),("E","1005")]),
+20:(r"Arithmetic sequences $(a_n)$ and $(b_n)$ have integer terms with $a_1=b_1=1<a_2\le b_2$ and $a_nb_n=2010$ for some $n$. What is the largest possible value of $n$?",[("A","2"),("B","3"),("C","8"),("D","288"),("E","2009")]),
+})
+
+KEY_OVERRIDES.update({
+16:"Condition on whether Bernardo chooses 9, then use symmetry for the remaining cases.",
+17:"Compare the area of triangle ACE to the area of an alternating equiangular hexagon.",
+18:"Use dynamic programming on allowed lattice points around the forbidden interior square.",
+19:"Use a telescoping product for drawing whites before the first red.",
+20:"Convert arithmetic-sequence terms into factor pairs congruent to 1 modulo n-1.",
+})
+
+SOL.update({
+16:[("Use the descending-order detail",r"Once the three numbers are chosen, the resulting number is completely determined because the digits are arranged in descending order. So we can compare the chosen $3$-element sets."),("Handle the easy winning case",r"Bernardo can choose the digit $9$, but Silvia cannot. The probability that Bernardo's set contains $9$ is \[\frac{3}{9}=\frac13.\] In this case Bernardo's number is automatically larger."),("Look at the remaining case",r"If Bernardo does not choose $9$, then both players are choosing $3$ distinct digits from $\{1,2,\ldots,8\}$. There are \[\binom83=56\] possible sets."),("Use symmetry",r"In this remaining case, the two numbers are equally likely to be ordered either way, except when the two chosen sets are exactly the same. The probability they are the same is \[\frac1{56}.\]"),("Compute the probability",r"Given that Bernardo did not choose $9$, the probability he wins is \[\frac12\left(1-\frac1{56}\right)=\frac{55}{112}.\] Therefore the total probability is \[\frac13+\frac23\cdot\frac{55}{112}=\frac13+\frac{55}{168}=\frac{111}{168}=\frac{37}{56}.\]"),("Conclude",r"The answer is \[\boxed{\frac{37}{56}}.\]"),
+],
+17:[("Use the structure of an equiangular hexagon",r"An equiangular hexagon has exterior turns of $60^\circ$. With side lengths alternating $1,r,1,r,1,r$, the three longer-side directions and the three shorter-side directions are arranged symmetrically."),("Find the area of triangle ACE",r"The triangle $\triangle ACE$ is equilateral in this configuration. Its side length squared is \[AE^2=r^2+r+1,\] so its area is \[\frac{\sqrt3}{4}(r^2+r+1).\]"),("Find the area of the hexagon",r"A useful way to compute the hexagon area is to place it inside a larger equilateral triangle and subtract three corner equilateral triangles. This gives \[[ABCDEF]=\frac{\sqrt3}{4}(r^2+4r+1).\]"),("Use the 70 percent condition",r"The condition says \[\frac{\frac{\sqrt3}{4}(r^2+r+1)}{\frac{\sqrt3}{4}(r^2+4r+1)}=\frac7{10}.\] The common factor $\frac{\sqrt3}{4}$ cancels."),("Solve for r",r"We get \[10(r^2+r+1)=7(r^2+4r+1),\] so \[3r^2-18r+3=0,\] or \[r^2-6r+1=0.\]"),("Use the sum of roots",r"The two possible values of $r$ are the two roots of this quadratic. Their sum is $6$, so the answer is $\boxed{6}$."),
+],
+18:[("Identify the forbidden lattice points",r"The path may touch the boundary of the square, but it may not go strictly inside it. Since the path uses integer lattice points, the forbidden points are those with \[-1\le x\le1,\qquad -1\le y\le1.\]"),("Set up dynamic programming",r"Let $N(x,y)$ be the number of valid paths from $(-4,-4)$ to $(x,y)$. For allowed points, \[N(x,y)=N(x-1,y)+N(x,y-1),\] because the last step came either from the left or from below. For forbidden points, set $N(x,y)=0$."),("Fill values around the obstacle",r"Starting from $N(-4,-4)=1$, the recurrence fills the grid row by row. The key is that the $3\times3$ forbidden block in the middle contributes zeros, forcing paths to go around it."),("Record the final rows",r"The top two rows of counts become \[1,8,36,64,92,120,176,352,849\] and then \[1,9,45,109,201,321,497,849,1698.\] The last entry is the count at $(4,4)$."),("Conclude",r"Therefore the number of valid paths is \[\boxed{1698}.\]"),
+],
+19:[("Write the stopping event",r"To stop after exactly $n$ marbles, Isabella must draw white marbles from boxes $1$ through $n-1$, and then draw a red marble from box $n$."),("Compute each probability",r"In box $k$, there are $k$ white marbles and $1$ red marble, so the probability of drawing white is \[\frac{k}{k+1}\] and the probability of drawing red is \[\frac1{k+1}.\]"),("Use telescoping",r"Thus \[P(n)=\left(\frac12\cdot\frac23\cdot\frac34\cdots\frac{n-1}{n}\right)\cdot\frac1{n+1}.\] The product telescopes to $\frac1n$, so \[P(n)=\frac1{n(n+1)}.\]"),("Apply the inequality",r"We need \[\frac1{n(n+1)}<\frac1{2010},\] which is equivalent to \[n(n+1)>2010.\]"),("Find the smallest n",r"Since \[44\cdot45=1980<2010,\] but \[45\cdot46=2070>2010,\] the smallest possible $n$ is $45$."),("Conclude",r"The answer is $\boxed{45}$."),
+],
+20:[("Write the arithmetic sequences",r"Let the common differences be $r$ and $s$, where $1<a_2\le b_2$ implies $1\le r\le s$. Then \[a_n=1+(n-1)r,\qquad b_n=1+(n-1)s.\]"),("Introduce m=n-1",r"Let $m=n-1$. The condition $a_nb_n=2010$ means that $2010$ must be written as a product of two factors, both congruent to $1$ modulo $m$."),("Use factor pairs of 2010",r"List the factor pairs with smaller factor first: \[(2,1005),(3,670),(5,402),(6,335),(10,201),(15,134),(30,67).\] For each pair $(A,B)$, the possible $m$ must divide both $A-1$ and $B-1$."),("Find the largest possible m",r"Compute \[\gcd(A-1,B-1)\] for these pairs. The largest value occurs for \[(15,134),\] where \[\gcd(14,133)=7.\] The other pairs give only smaller gcds."),("Build the sequences",r"With $m=7$, we have $n=8$. The factors are \[15=1+7\cdot2,\qquad 134=1+7\cdot19,\] so valid arithmetic sequences exist."),("Conclude",r"The largest possible value of $n$ is \[\boxed{8}.\]"),
 ],
 })
 
