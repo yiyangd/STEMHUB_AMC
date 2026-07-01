@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 194
+BATCH_NUMBER = 195
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,2,4,5,6,7,8,9,10}
-SKIPPED = ["2010 AMC 12A Problem 3: skipped because the problem depends on the original diagram for the rectangle-square overlap."]
-BATCH_LABEL = "2010 AMC 12A Problems 1-2, 4-10"
-NEXT_START = "2010 AMC 12A Problem 11"
+TARGET_NUMBERS = {11,12,13,14,15}
+SKIPPED = []
+BATCH_LABEL = "2010 AMC 12A Problems 11-15"
+NEXT_START = "2010 AMC 12A Problem 16"
 
-ANS={1:("C","40"),2:("A","585"),4:("D",r"-x^{-1}"),5:("C","42"),6:("E","24"),7:("C","0.4"),8:("C",r"90^\circ"),9:("A","7"),10:("A","8041")}
+ANS={11:("C",r"\frac87"),12:("D","3"),13:("C","2"),14:("B","33"),15:("D",r"\frac{3-\sqrt3}{6}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2034,6 +2034,35 @@ SOL.update({
 9:[("Start with the full cube",r"The original cube has volume \[3^3=27.\] Each tunnel is a rectangular prism of dimensions $2\times2\times3$, so each tunnel has volume $12$."),("Avoid over-subtracting",r"There are three perpendicular tunnels, one in each direction. If we subtract their volumes separately, we subtract the central $2\times2\times2$ cube more than once."),("Use inclusion-exclusion",r"Subtract the three tunnel volumes: \[27-3\cdot12.\] Each pair of tunnels overlaps in the same central cube of volume $8$, so add this back for the three pairs. Then subtract the triple overlap once."),("Compute",r"The remaining volume is \[27-36+3\cdot8-8=7.\]"),("Conclude",r"The volume of the remaining solid is $\boxed{7}$ cubic inches."),
 ],
 10:[("Use common differences",r"In an arithmetic sequence, consecutive differences are equal. Let the common difference be $d$."),("Write the differences",r"From the first two terms, \[d=9-p.\] From the third and fourth terms, \[d=(3p+q)-(3p-q)=2q.\] Thus \[9-p=2q.\]"),("Use the middle difference",r"The difference from the second to the third term is \[(3p-q)-9,\] so \[3p-q-9=2q.\] This gives \[3p-9=3q,\] or $q=p-3$."),("Solve for p and q",r"Substitute $q=p-3$ into $9-p=2q$: \[9-p=2p-6.\] Hence $15=3p$, so $p=5$, and then $q=2$. The common difference is $d=4$."),("Find the 2010th term",r"The first term is $5$, so the $2010^{\text{th}}$ term is \[5+(2010-1)\cdot4=5+8036=8041.\]"),("Conclude",r"The answer is $\boxed{8041}$."),
+],
+})
+
+OV.update({
+11:(r"The solution of the equation \[7^{x+7}=8^x\] can be expressed in the form \[x=\log_b 7^7.\] What is $b$?",[("A",r"$\frac7{15}$"),("B",r"$\frac78$"),("C",r"$\frac87$"),("D",r"$\frac{15}{8}$"),("E",r"$\frac{15}{7}$")]),
+12:(r"In a magical swamp there are two species of talking amphibians: toads, whose statements are always true, and frogs, whose statements are always false. Four amphibians, Brian, Chris, LeRoy, and Mike live together in this swamp, and they make the following statements. Brian: \"Mike and I are different species.\" Chris: \"LeRoy is a frog.\" LeRoy: \"Chris is a frog.\" Mike: \"Of the four of us, at least two are toads.\" How many of these four amphibians are frogs?",[("A","0"),("B","1"),("C","2"),("D","3"),("E","4")]),
+13:(r"For how many integer values of $k$ do the graphs of \[x^2+y^2=k^2\] and \[xy=k\] not intersect?",[("A","0"),("B","1"),("C","2"),("D","4"),("E","8")]),
+14:(r"Nondegenerate $\triangle ABC$ has integer side lengths, $\overline{BD}$ is an angle bisector, $AD=3$, and $DC=8$. What is the smallest possible value of the perimeter?",[("A","30"),("B","33"),("C","35"),("D","36"),("E","37")]),
+15:(r"A coin is altered so that the probability that it lands on heads is less than $\frac12$, and when the coin is flipped four times, the probability of an equal number of heads and tails is $\frac16$. What is the probability that the coin lands on heads?",[("A",r"$\frac{\sqrt{15}-3}{6}$"),("B",r"$\frac{6-\sqrt{6\sqrt6+2}}{12}$"),("C",r"$\frac{\sqrt2-1}{2}$"),("D",r"$\frac{3-\sqrt3}{6}$"),("E",r"$\frac{\sqrt3-1}{2}$")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Rewrite the exponential equation so the logarithm base is visible.",
+12:"Use truth-value consistency among the four speakers.",
+13:"Translate intersection into conditions for real numbers with given sum and product.",
+14:"Use the angle bisector theorem and triangle inequalities.",
+15:"Set up the binomial probability of exactly two heads in four flips.",
+})
+
+SOL.update({
+11:[("Isolate the part involving x",r"The equation is \[7^{x+7}=8^x.\] Rewrite the left side as \[7^x\cdot7^7=8^x.\]"),("Divide by 7^x",r"Dividing both sides by $7^x$ gives \[7^7=\left(\frac87\right)^x.\] This is the key step because it puts the equation into logarithm form."),("Read the logarithm base",r"If \[a=b^x,\] then $x=\log_b a$. Here $a=7^7$ and the base is $\frac87$."),("Write x in the requested form",r"Therefore \[x=\log_{8/7}7^7.\] The problem asks for $b$, so \[b=\frac87.\]"),("Conclude",r"The answer is \[\boxed{\frac87}.\]"),
+],
+12:[("Pair Chris and LeRoy first",r"Chris says LeRoy is a frog, and LeRoy says Chris is a frog. These two statements force exactly one of Chris and LeRoy to be a toad and the other to be a frog. If both were the same species, one of the two statements would contradict that species' truth rule."),("Test whether Mike could be a toad",r"If Mike were a toad, then his statement would be true, so at least two of the four would be toads. Now Brian's statement says Brian and Mike are different species. If Brian were a toad, that true statement would make Mike a frog; if Brian were a frog, that false statement would make Brian and Mike the same species. Either way this contradicts Mike being a toad. So Mike cannot be a toad."),("Set Mike as a frog",r"Since Mike is a frog, his statement is false. Therefore it is not true that at least two are toads; there must be fewer than two toads."),("Determine Brian",r"Chris and LeRoy already contribute exactly one toad. To keep the number of toads fewer than two, Brian must be a frog. Brian's statement then is false, which means Brian and Mike are not different species; both are frogs, consistent with Mike being a frog."),("Count frogs",r"The frogs are Brian, Mike, and one of Chris and LeRoy. That makes $3$ frogs."),("Conclude",r"The answer is $\boxed{3}$."),
+],
+13:[("Translate intersection into algebra",r"An intersection point must satisfy both \[x^2+y^2=k^2\quad\text{and}\quad xy=k.\] Since \[(x+y)^2=x^2+y^2+2xy,\] we get \[(x+y)^2=k^2+2k.\]"),("Require a real sum",r"The quantity $(x+y)^2$ must be nonnegative, so we need \[k^2+2k=k(k+2)\ge0.\] This means $k\le -2$ or $k\ge0$."),("Also require real x and y",r"If $x$ and $y$ have sum $s$ and product $k$, then they are real roots of \[t^2-st+k=0.\] The discriminant must be nonnegative: \[s^2-4k=(k^2+2k)-4k=k^2-2k=k(k-2)\ge0.\] Thus $k\le0$ or $k\ge2$."),("Combine the conditions",r"Both conditions hold when \[k\le -2,\quad k=0,\quad\text{or}\quad k\ge2.\] These are the values for which the graphs intersect."),("Find the missing integer values",r"The only integer values not covered are \[k=-1\quad\text{and}\quad k=1.\] Therefore there are $2$ integer values for which the graphs do not intersect."),("Conclude",r"The answer is $\boxed{2}$."),
+],
+14:[("Use the angle bisector theorem",r"Since $\overline{BD}$ bisects the angle at $B$, the Angle Bisector Theorem gives \[\frac{AB}{BC}=\frac{AD}{DC}=\frac38.\]"),("Represent the side lengths",r"Because $AB$ and $BC$ are integers in the ratio $3:8$, write \[AB=3m,\qquad BC=8m\] for some positive integer $m$. Also \[AC=AD+DC=3+8=11.\]"),("Use the triangle inequality",r"For a nondegenerate triangle, we need \[3m+11>8m,\] so $11>5m$ and $m<\frac{11}{5}$. We also need \[3m+8m>11,\] so $m>1$."),("Find the only possible m",r"The only positive integer satisfying \[1<m<\frac{11}{5}\] is $m=2$."),("Compute the perimeter",r"Then the side lengths are \[AB=6,\quad BC=16,\quad AC=11.\] The perimeter is \[6+16+11=33.\]"),("Conclude",r"The smallest possible perimeter is $\boxed{33}$."),
+],
+15:[("Name the probability",r"Let $p$ be the probability that the coin lands on heads. We are told $p<\frac12$."),("Translate equal heads and tails",r"In four flips, having an equal number of heads and tails means exactly two heads and two tails. The probability is \[\binom42p^2(1-p)^2=6p^2(1-p)^2.\]"),("Use the given probability",r"The problem states \[6p^2(1-p)^2=\frac16.\] Dividing by $6$ gives \[p^2(1-p)^2=\frac1{36}.\] Since $0<p<1$, we can take the positive square root: \[p(1-p)=\frac16.\]"),("Solve the quadratic",r"This gives \[p-p^2=\frac16,\] or \[p^2-p+\frac16=0.\] The quadratic formula gives \[p=\frac{1\pm\sqrt{1-\frac23}}2=\frac{1\pm\frac1{\sqrt3}}2=\frac{3\pm\sqrt3}{6}.\]"),("Choose the probability less than one half",r"The value with the plus sign is greater than $\frac12$, so we choose \[p=\frac{3-\sqrt3}{6}.\]"),("Conclude",r"The answer is \[\boxed{\frac{3-\sqrt3}{6}}.\]"),
 ],
 })
 
