@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 131
+BATCH_NUMBER = 132
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2022_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,17}
-SKIPPED = ["2022 AMC 10B Problem 16 skipped: rectangle-square overlap area depends on the missing diagram."]
-BATCH_LABEL = "2022 AMC 10B Problems 11-15,17"
-NEXT_START = "2022 AMC 10B Problem 18"
+TARGET_NUMBERS = {18,20}
+SKIPPED = ["2022 AMC 10B Problem 19 skipped: 5x5 cellular-grid transformation depends on the missing initial/transformed diagrams."]
+BATCH_LABEL = "2022 AMC 10B Problems 18,20"
+NEXT_START = "2022 AMC 10B Problem 21"
 
-ANS={11:("B","No school that sold more T-shirts than Euclid HS is bigger than Euclid HS."),12:("C","4"),13:("E","16"),14:("B","13"),15:("D","400"),17:("C",r"2^{607}-1")}
+ANS={18:("B","338"),20:("D",r"113^\circ")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -43,9 +43,11 @@ OV={
 14:(r"Suppose that $S$ is a subset of $\{1,2,3,\ldots,25\}$ such that the sum of any two, not necessarily distinct, elements of $S$ is never an element of $S$. What is the maximum number of elements $S$ may contain?",[("A","12"),("B","13"),("C","14"),("D","15"),("E","16")]),
 15:(r"Let $S_n$ be the sum of the first $n$ terms of an arithmetic sequence that has common difference $2$. The quotient $\frac{S_{3n}}{S_n}$ does not depend on $n$. What is $S_{20}$?",[("A","340"),("B","360"),("C","380"),("D","400"),("E","420")]),
 17:(r"One of the following numbers is not divisible by any prime number less than $10$. Which is it?",[("A",r"$2^{606}-1$"),("B",r"$2^{606}+1$"),("C",r"$2^{607}-1$"),("D",r"$2^{607}+1$"),("E",r"$2^{607}+3^{607}$")]),
+18:(r"Consider systems of three linear equations in $x,y,z$, where each coefficient is either $0$ or $1$. The three equations need not be distinct, and two systems containing the same equations in a different order are considered different. How many such systems have a solution other than $x=y=z=0$?",[("A","302"),("B","338"),("C","340"),("D","343"),("E","344")]),
+20:(r"Let $ABCD$ be a rhombus with $\angle ADC=46^\circ$. Let $E$ be the midpoint of $\overline{CD}$, and let $F$ be the point on $\overline{BE}$ such that $\overline{AF}\perp\overline{BE}$. What is the degree measure of $\angle BFC$?",[("A","110"),("B","111"),("C","112"),("D","113"),("E","114")]),
 }
 
-KEY_OVERRIDES={11:"Rewrite a universal negative statement using its contrapositive form.",12:"Use the complement probability of never rolling a sum of 7.",13:"Use the difference of cubes for twin primes.",14:"Use the maximum size of a sum-free subset of an initial interval.",15:"Use the arithmetic-sequence sum formula and force a constant quotient.",17:"Check divisibility by 2, 3, 5, and 7 using modular cycles."}
+KEY_OVERRIDES={18:"Count singular 0-1 coefficient matrices by subtracting nonsingular matrices.",20:"Extend the configuration to create similar triangles and a circle."}
 
 SOL={
 1:[("Start inside the parentheses",r"The operation is $x\diamond y=|x-y|$, so nested expressions should be evaluated from the inside outward."),("Compute the left nested part",r"First, \[2\diamond3=|2-3|=1.\] Then \[1\diamond(2\diamond3)=1\diamond1=|1-1|=0.\]"),("Compute the right nested part",r"Next, \[1\diamond2=|1-2|=1.\] Then \[(1\diamond2)\diamond3=1\diamond3=|1-3|=2.\]"),("Subtract the two results",r"The whole expression is \[0-2=-2.\]"),("Conclude",r"The answer is $\boxed{-2}$."),],
@@ -77,6 +79,8 @@ SOL={
 14:[("Find a large example first",r"The set \[\{13,14,15,\ldots,25\}\] has $13$ elements. The sum of any two of its elements is at least $26$, so no such sum can be in the set."),("Explain why more is impossible",r"A standard fact for sum-free subsets of $\{1,2,\ldots,n\}$ is that the largest possible size is $\lceil n/2\rceil$. Intuitively, once a set takes too many small and large numbers, some two chosen numbers must add to another chosen number."),("Apply the bound",r"Here $n=25$, so \[\left\lceil\frac{25}{2}\right\rceil=13.\] Since we already found a set with $13$ elements, this upper bound is attainable."),("Check the condition",r"In the example set, even the smallest possible sum is $13+13=26$, which lies outside $\{1,\ldots,25\}$. So the condition is definitely satisfied."),("Conclude",r"The maximum size is $\boxed{13}$."),],
 15:[("Write the arithmetic sequence",r"Let the first term be $a$. Since the common difference is $2$, the first $n$ terms are \[a,\ a+2,\ a+4,\ldots,a+2(n-1).\]"),("Use the sum formula",r"The sum of the first $n$ terms is \[S_n=\frac n2\bigl(2a+2(n-1)\bigr)=n(a+n-1).\]"),("Write the quotient",r"Then \[\frac{S_{3n}}{S_n}=\frac{3n(a+3n-1)}{n(a+n-1)}=3\cdot\frac{a+3n-1}{a+n-1}.\]"),("Force the quotient to be constant",r"For this fraction not to depend on $n$, the constant part $a-1$ must disappear. Thus $a-1=0$, so $a=1$."),("Compute S20",r"Now \[S_{20}=20(1+20-1)=20\cdot20=400.\]"),("Conclude",r"The answer is $\boxed{400}$."),],
 17:[("List the primes to check",r"The prime numbers less than $10$ are $2,3,5,$ and $7$. Each answer choice is odd, so divisibility by $2$ is not the issue."),("Eliminate choices using small moduli",r"Choice A, $2^{606}-1$, is divisible by $3$ because $2^{606}\equiv1\pmod3$. Choice D, $2^{607}+1$, is divisible by $3$ because $2^{607}\equiv2\pmod3$."),("Check choices B and E",r"Choice B is divisible by $5$ because $2^{606}\equiv 2^2\equiv4\pmod5$, so $2^{606}+1\equiv0\pmod5$. Choice E is divisible by $5$ because $2^{607}\equiv3\pmod5$ and $3^{607}\equiv2\pmod5$."),("Test choice C",r"For $2^{607}-1$, modulo $3$ it is $2-1\equiv1$. Modulo $5$, since $607\equiv3\pmod4$, it is $2^3-1=7\equiv2$. Modulo $7$, since powers of $2$ cycle every $3$ and $607\equiv1\pmod3$, it is $2-1\equiv1$."),("Conclude",r"Choice C is not divisible by $2,3,5,$ or $7$, so the answer is $\boxed{2^{607}-1}$."),],
+18:[("Turn the system into a matrix question",r"A nonzero solution exists exactly when the $3\times3$ coefficient matrix is singular. There are $8$ possible rows, so there are \[8^3=512\] ordered systems in all."),("Count the nonsingular systems instead",r"It is cleaner to count matrices with linearly independent rows and subtract. The first row can be any nonzero $0$-$1$ row, giving $7$ choices."),("Choose the second row",r"The second row must not be $0$ or equal to the first row. For $0$-$1$ rows, those are the only dependent choices with one nonzero row, so there are $6$ choices. Thus there are $7\cdot6=42$ ordered independent pairs of first two rows."),("Count the third row by plane type",r"For most of these $42$ ordered pairs, the plane they span contains $4$ of the $8$ possible $0$-$1$ rows, so the third row has $8-4=4$ independent choices. There are $36$ such pairs."),("Handle the special pairs",r"The remaining $6$ ordered pairs are formed by choosing two of $(1,1,0),(1,0,1),(0,1,1)$. Their span contains only $3$ cube vertices, so the third row has $8-3=5$ independent choices."),("Subtract",r"The number of nonsingular systems is \[36\cdot4+6\cdot5=174.\] Therefore the number with a nonzero solution is \[512-174=338.\] The answer is $\boxed{338}$."),],
+20:[("Create a useful extension",r"Extend $\overline{AD}$ and $\overline{BE}$ until they meet at a point $G$. This adds a point that lets us compare triangles using the parallel sides of the rhombus."),("Use similarity",r"Because $AB\parallel CD$ and $E,D,C$ are collinear, triangles $\triangle ABG$ and $\triangle DEG$ are similar. Also $AB=CD=2DE$, since $E$ is the midpoint of $\overline{CD}$."),("Locate the midpoint",r"The similarity ratio is $2:1$, so $AG=2DG$. Therefore $D$ is the midpoint of $\overline{AG}$."),("Use the right triangle",r"Since $F$ lies on $\overline{BE}$ and $AF\perp BE$, triangle $\triangle AFG$ is right at $F$. In a right triangle, the midpoint of the hypotenuse is equidistant from all three vertices, so \[DA=DF=DG.\] Because $ABCD$ is a rhombus, $DC=DA$ as well."),("Use the circle",r"Thus $A,C,F,G$ lie on the circle centered at $D$. The central angle \[\angle GDC=180^\circ-\angle ADC=180^\circ-46^\circ=134^\circ.\] The inscribed angle intercepting the same arc is \[\angle GFC=\frac{134^\circ}{2}=67^\circ.\]"),("Finish the angle",r"Points $B,F,G$ are collinear, so \[\angle BFC=180^\circ-\angle GFC=180^\circ-67^\circ=113^\circ.\] The answer is $\boxed{113^\circ}$."),],
 }
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
