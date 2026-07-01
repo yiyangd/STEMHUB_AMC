@@ -1468,3 +1468,19 @@
 - Pushed: pending
 - Next batch should start from: 2015 AMC 10B Problem 17
 - Review notes: none.
+
+## Batch 90: 2015 AMC 10B Problems 18,20,21,23,24,25
+
+- Start time: 2026-07-01T01:35:48-07:00
+- End time: 2026-07-01T01:35:49-07:00
+- Processed contest: AMC 10
+- Processed range: 2015 AMC 10B Problems 18,20,21,23,24,25
+- Generated count: 6
+- Updated existing count: 0
+- Skipped count: 3
+- Skipped reasons: 2015 AMC 10B Problem 17 skipped: prism dimensions depend on missing diagram; 2015 AMC 10B Problem 19 skipped: circle condition for constructed squares depends on diagram; 2015 AMC 10B Problem 22 skipped: pentagon segment labels depend on missing diagram
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2016 AMC 10A Problem 1
+- Review notes: none.
