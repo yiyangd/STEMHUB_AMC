@@ -3,105 +3,71 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 64
+BATCH_NUMBER = 65
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2012_AMC_10A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,16,17,19,20}
-SKIPPED = [
-    "2012 AMC 10A Problem 15 skipped: diagram-dependent area problem; original figure needed for reliable teaching solution.",
-    "2012 AMC 10A Problem 18 skipped: diagram-dependent circular-arc region; original figure needed for reliable teaching solution.",
-]
-BATCH_LABEL = "2012 AMC 10A Problems 11-20 excluding 15 and 18"
-NEXT_START = "2012 AMC 10A Problem 21"
+TARGET_NUMBERS = {21,22,23,24,25}
+SKIPPED = []
+BATCH_LABEL = "2012 AMC 10A Problems 21-25"
+NEXT_START = "2012 AMC 10B Problem 1"
 
 ANS = {
-    11: ("D", "12"),
-    12: ("A", "Friday"),
-    13: ("C", r"\frac{17}{8}"),
-    14: ("B", "481"),
-    16: ("C", "2500"),
-    17: ("C", "3"),
-    19: ("D", "48"),
-    20: ("A", r"\frac{49}{512}"),
+    21: ("C", r"\frac{3\sqrt5}{4}"),
+    22: ("A", "255"),
+    23: ("B", "170"),
+    24: ("E", "253"),
+    25: ("D", "10"),
 }
 
 OV = {
-    11: (r"Externally tangent circles with centers at points $A$ and $B$ have radii of lengths $5$ and $3$, respectively. A line externally tangent to both circles intersects ray $AB$ at point $C$. What is $BC$?", [("A","4"),("B","4.8"),("C","10.2"),("D","12"),("E","14.4")]),
-    12: (r"A year is a leap year if and only if the year number is divisible by $400$ or is divisible by $4$ but not by $100$. The $200$th anniversary of the birth of novelist Charles Dickens was celebrated on February $7,2012$, a Tuesday. On what day of the week was Dickens born?", [("A","Friday"),("B","Saturday"),("C","Sunday"),("D","Monday"),("E","Tuesday")]),
-    13: (r"An iterative average of the numbers $1,2,3,4,$ and $5$ is computed as follows. Arrange the five numbers in some order. Find the mean of the first two numbers, then find the mean of that with the third number, then the mean of that with the fourth number, and finally the mean of that with the fifth number. What is the difference between the largest and smallest possible values that can be obtained?", [("A",r"\frac{31}{16}"),("B","2"),("C",r"\frac{17}{8}"),("D","3"),("E",r"\frac{65}{16}")]),
-    14: (r"Chubby makes nonstandard checkerboards that have $31$ squares on each side. The checkerboards have a black square in every corner and alternate red and black squares along every row and column. How many black squares are there on such a checkerboard?", [("A","480"),("B","481"),("C","482"),("D","483"),("E","484")]),
-    16: (r"Three runners start running simultaneously from the same point on a $500$-meter circular track. They each run clockwise around the course maintaining constant speeds of $4.4$, $4.8$, and $5.0$ meters per second. The runners stop once they are all together again somewhere on the circular course. How many seconds do the runners run?", [("A","1000"),("B","1250"),("C","2500"),("D","5000"),("E","10000")]),
-    17: (r"Let $a$ and $b$ be relatively prime integers with $a>b>0$ and \[\frac{a^3-b^3}{(a-b)^3}=\frac{73}{3}.\] What is $a-b$?", [("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
-    19: (r"Paula the painter and her two helpers each paint at constant, but different, rates. They always start at $8{:}00$ AM, and all three always take the same amount of time to eat lunch. On Monday the three of them painted $50\%$ of a house, quitting at $4{:}00$ PM. On Tuesday, when Paula was not there, the two helpers painted only $24\%$ of the house and quit at $2{:}12$ PM. On Wednesday Paula worked by herself and finished the house by working until $7{:}12$ PM. How long, in minutes, was each day's lunch break?", [("A","30"),("B","36"),("C","42"),("D","48"),("E","60")]),
-    20: (r"A $3\times3$ square is partitioned into $9$ unit squares. Each unit square is painted either white or black with each color equally likely, chosen independently at random. The square is then rotated $90^\circ$ clockwise about its center, and every white square in a position formerly occupied by a black square is painted black. The colors of all other squares are left unchanged. What is the probability that the grid is now entirely black?", [("A",r"\frac{49}{512}"),("B",r"\frac{7}{64}"),("C",r"\frac{121}{1024}"),("D",r"\frac{81}{512}"),("E",r"\frac{9}{32}")]),
+    21: (r"Let points $A=(0,0,0)$, $B=(1,0,0)$, $C=(0,2,0)$, and $D=(0,0,3)$. Points $E,F,G,H$ are midpoints of $BD,AB,AC,DC$, respectively. What is the area of $EFGH$?", [("A",r"\sqrt2"),("B",r"\frac{2\sqrt5}{3}"),("C",r"\frac{3\sqrt5}{4}"),("D",r"\sqrt3"),("E",r"\frac{2\sqrt7}{3}")]),
+    22: (r"The sum of the first $m$ positive odd integers is $212$ more than the sum of the first $n$ positive even integers. What is the sum of all possible values of $n$?", [("A","255"),("B","256"),("C","257"),("D","258"),("E","259")]),
+    23: (r"Adam, Benin, Chiang, Deshawn, Esther, and Fiona have internet accounts. Some, but not all, of them are internet friends with each other, and none has a friend outside this group. Each has the same number of internet friends. In how many different ways can this happen?", [("A","60"),("B","170"),("C","290"),("D","320"),("E","660")]),
+    24: (r"Let $a,b,c$ be positive integers with $a\ge b\ge c$ such that $a^2-b^2-c^2+ab=2011$ and $a^2+3b^2+3c^2-3ab-2ac-2bc=-1997$. What is $a$?", [("A","249"),("B","250"),("C","251"),("D","252"),("E","253")]),
+    25: (r"Real numbers $x,y,z$ are chosen independently and at random from $[0,n]$ for some positive integer $n$. The probability that no two of $x,y,z$ are within $1$ unit of each other is greater than $\frac12$. What is the smallest possible value of $n$?", [("A","7"),("B","8"),("C","9"),("D","10"),("E","11")]),
 }
 
 KEY_OVERRIDES = {
-    11: "Use similar triangles or homothety from the external tangent point.",
-    12: "Count the day shift over 200 years, including leap days after February 7.",
-    13: "Write the final iterative average as a weighted sum and use rearrangement.",
-    14: "An odd checkerboard has one more black square than red square.",
-    16: "All runners meet again when each relative distance is a multiple of the track length.",
-    17: "Factor the difference of cubes and solve for the ratio $b/(a-b)$.",
-    19: "Set up rates after subtracting the common lunch break from each workday.",
-    20: "Analyze the rotation cycles and require no adjacent pair of whites in each cycle.",
+    21: "Use midpoint coordinates to identify a rectangle and compute its side lengths.",
+    22: "Convert sums to formulas and factor a difference of squares.",
+    23: "Count labeled regular graphs on six vertices by possible degree.",
+    24: "Add the equations to force the small differences among $a,b,c$.",
+    25: "Order the three random numbers and use a volume ratio.",
 }
 
 SOL = {
-    11: [
-        ("Identify the homothety point", r"The external tangent line and the line through the centers meet at $C$. From $C$, the two circles look like scaled copies of each other, so the distances from $C$ to the centers are in the same ratio as the radii."),
-        ("Use the radius ratio", r"The radii are $5$ and $3$, so $CA:CB=5:3$. Since the circles are externally tangent, $AB=5+3=8$."),
-        ("Place C on the ray", r"Point $C$ is on ray $AB$ beyond $B$, so $CA=CB+AB=CB+8$."),
-        ("Solve", r"Now \[\frac{CB+8}{CB}=\frac53.\] Thus $3CB+24=5CB$, so $CB=12$."),
-        ("Conclude", r"The answer is $\boxed{12}$."),
+    21: [
+        ("Compute the midpoints", r"The midpoints are $E=(\frac12,0,\frac32)$, $F=(\frac12,0,0)$, $G=(0,1,0)$, and $H=(0,1,\frac32)$. Coordinates let us avoid guessing the shape."),
+        ("Find side lengths", r"The vector $\overrightarrow{EF}=(0,0,-\frac32)$, so $EF=\frac32$. Also $\overrightarrow{FG}=(-\frac12,1,0)$, so $FG=\sqrt{\frac14+1}=\frac{\sqrt5}{2}$."),
+        ("Check the angle", r"The dot product of $\overrightarrow{EF}$ and $\overrightarrow{FG}$ is $0$, so the adjacent sides are perpendicular. Thus $EFGH$ is a rectangle."),
+        ("Compute the area", r"The area is $EF\cdot FG=\frac32\cdot\frac{\sqrt5}{2}=\frac{3\sqrt5}{4}$. The answer is $\boxed{\frac{3\sqrt5}{4}}$."),
     ],
-    12: [
-        ("Count ordinary day shifts", r"From February $7,1812$ to February $7,2012$ is $200$ years. Each ordinary year shifts the weekday by $1$ day because $365\equiv1\pmod7$. So $200$ ordinary years contribute $200\equiv4\pmod7$ days."),
-        ("Count leap days", r"The interval includes leap days from leap years after February $7,1812$ through $2011$. There are $50$ multiples of $4$ in this range, but $1900$ is not a leap year, so there are $49$ leap days. Since $49\equiv0\pmod7$, they do not change the weekday modulo $7$."),
-        ("Find the total shift", r"The total weekday shift is therefore $4$ days forward from Dickens's birth date to the anniversary in $2012$."),
-        ("Work backward", r"The anniversary was Tuesday. Four days before Tuesday is Friday."),
-        ("Conclude", r"Dickens was born on a $\boxed{\text{Friday}}$."),
+    22: [
+        ("Use sum formulas", r"The first $m$ odd integers sum to $m^2$, and the first $n$ positive even integers sum to $2(1+2+\cdots+n)=n(n+1)$. So $m^2=n(n+1)+212$."),
+        ("Complete the square", r"Multiply by $4$: $4m^2=4n^2+4n+848=(2n+1)^2+847$. Hence \[(2m-(2n+1))(2m+(2n+1))=847.\]"),
+        ("Use factor pairs", r"The positive factor pairs of $847=7\cdot11^2$ are $(1,847)$, $(7,121)$, and $(11,77)$. For each pair, $2n+1$ is half the difference of the two factors."),
+        ("Find n values", r"These give $2n+1=423,57,33$, so $n=211,28,16$. Their sum is $211+28+16=255$. The answer is $\boxed{255}$."),
     ],
-    13: [
-        ("Find the weights", r"Let the ordered numbers be $a,b,c,d,e$. The final value is \[\frac{1}{2}\left(\frac{1}{2}\left(\frac{1}{2}\left(\frac{a+b}{2}+c\right)+d\right)+e\right).\] Simplifying gives weights $\frac1{16},\frac1{16},\frac18,\frac14,\frac12$."),
-        ("Maximize the weighted sum", r"To make the value as large as possible, put the largest number on the largest weight. So the maximum uses $5,4,3,2,1$ paired with weights $\frac12,\frac14,\frac18,\frac1{16},\frac1{16}$."),
-        ("Minimize the weighted sum", r"To make the value as small as possible, put the smallest number on the largest weight. This reverses the pairing."),
-        ("Subtract efficiently", r"The difference is \[5\left(\frac12-\frac1{16}\right)+4\left(\frac14-\frac1{16}\right)+2\left(\frac1{16}-\frac14\right)+1\left(\frac1{16}-\frac12\right)=\frac{17}{8}.\]"),
-        ("Conclude", r"The difference is $\boxed{\frac{17}{8}}$."),
+    23: [
+        ("Translate to graphs", r"Represent each person as a vertex and each friendship as an edge. The condition says the graph on $6$ labeled vertices is regular, but not empty and not complete."),
+        ("List possible degrees", r"The common degree can be $1,2,3,$ or $4$. Degree $0$ would be no friendships, and degree $5$ would be all possible friendships."),
+        ("Count degrees 1 and 4", r"A $1$-regular graph is a perfect matching: $5\cdot3\cdot1=15$ ways. A $4$-regular graph is the complement of a $1$-regular graph, so it also gives $15$ ways."),
+        ("Count degrees 2 and 3", r"A $2$-regular graph is either one $6$-cycle or two $3$-cycles. There are $\frac{5!}{2}=60$ labeled $6$-cycles and $\frac{\binom63}{2}=10$ pairs of triangles, for $70$ total. Complements give $70$ graphs of degree $3$."),
+        ("Add", r"The total is $15+15+70+70=170$. The answer is $\boxed{170}$."),
     ],
-    14: [
-        ("Use odd board parity", r"A $31\times31$ board has $31^2=961$ squares. Because $31$ is odd and every corner is black, the alternating pattern has one more black square than red square."),
-        ("Split the total", r"If black squares exceed red squares by $1$, then the number of black squares is $\frac{961+1}{2}=481$."),
-        ("Check with rows", r"Equivalently, each odd-numbered row has $16$ black squares and each even-numbered row has $15$, giving $16\cdot16+15\cdot15=481$."),
-        ("Conclude", r"There are $\boxed{481}$ black squares."),
+    24: [
+        ("Add the equations", r"Adding the two equations gives \[2a^2+2b^2+2c^2-2ab-2ac-2bc=14.\] This is useful because it becomes a sum of squared differences."),
+        ("Rewrite as squares", r"The left side is $(a-b)^2+(a-c)^2+(b-c)^2$, so \[(a-b)^2+(a-c)^2+(b-c)^2=14.\]"),
+        ("Find the differences", r"Since $a\ge b\ge c$, the largest difference is $a-c$. The only possible square decomposition is $14=9+4+1$, so $a-c=3$ and the adjacent gaps are $1$ and $2$ in some order."),
+        ("Test the two cases", r"Either $(a,b,c)=(a,a-1,a-3)$ or $(a,a-2,a-3)$. Substituting into $a^2-b^2-c^2+ab=2011$, the first case gives $7a=2021$, not integral; the second gives $8a=2024$."),
+        ("Conclude", r"Thus $a=253$. The answer is $\boxed{253}$."),
     ],
-    16: [
-        ("Use relative speeds", r"The fastest runner at $5.0$ m/s must gain whole laps on each of the other two runners. The relative speeds are $5.0-4.8=0.2$ m/s and $5.0-4.4=0.6$ m/s."),
-        ("Write the lap conditions", r"They are all together again when both relative distances are multiples of $500$ meters. So $0.2t$ and $0.6t$ must both be multiples of $500$."),
-        ("Solve the conditions", r"The condition $0.2t=500k$ gives $t=2500k$. The condition $0.6t=500m$ gives $t=\frac{2500}{3}m$. The smallest positive time satisfying both is $t=2500$."),
-        ("Check", r"In $2500$ seconds, the relative gains are $500$ meters and $1500$ meters, both whole laps."),
-        ("Conclude", r"The runners run for $\boxed{2500}$ seconds."),
-    ],
-    17: [
-        ("Factor the numerator", r"Use $a^3-b^3=(a-b)(a^2+ab+b^2)$. Then \[\frac{a^3-b^3}{(a-b)^3}=\frac{a^2+ab+b^2}{(a-b)^2}=\frac{73}{3}.\]"),
-        ("Write a in terms of the gap", r"Let $d=a-b$. Then $a=b+d$. Substituting into the numerator gives $(b+d)^2+b(b+d)+b^2=3b^2+3bd+d^2$."),
-        ("Use the ratio t=b/d", r"Divide by $d^2$ and let $t=\frac bd$. We get $3t^2+3t+1=\frac{73}{3}$. Multiplying by $3$ gives $9t^2+9t-70=0$."),
-        ("Solve for t", r"The positive solution is $t=\frac73$, so $\frac bd=\frac73$. Thus $b=7k$ and $d=3k$."),
-        ("Use relative primality", r"Then $a=b+d=10k$. Since $a$ and $b$ are relatively prime, $k=1$. Therefore $a-b=d=3$, and the answer is $\boxed{3}$."),
-    ],
-    19: [
-        ("Use hours and subtract lunch", r"Let the lunch break be $L$ hours. Monday has $8-L$ hours of painting time, Tuesday has $6.2-L$ hours, and Wednesday has $11.2-L$ hours."),
-        ("Write the helper and Paula rates", r"The two helpers together painted $24\%$ on Tuesday, so their combined rate is $\frac{0.24}{6.2-L}$. Paula alone painted the remaining $26\%$ on Wednesday, so her rate is $\frac{0.26}{11.2-L}$."),
-        ("Use Monday's total rate", r"On Monday all three together painted $50\%$, so their combined rate is $\frac{0.50}{8-L}$. Therefore \[\frac{0.26}{11.2-L}+\frac{0.24}{6.2-L}=\frac{0.50}{8-L}.\]"),
-        ("Solve the equation", r"Solving this equation gives $L=0.8$ hours. Since $0.8$ hours is $0.8\cdot60=48$ minutes, the common lunch break was $48$ minutes."),
-        ("Conclude", r"The answer is $\boxed{48}$."),
-    ],
-    20: [
-        ("Break the grid into rotation cycles", r"A $90^\circ$ rotation fixes the center square. The four corners form one cycle of length $4$, and the four edge-middle squares form another cycle of length $4$."),
-        ("Understand the final color rule", r"A square is black after the operation if it was already black or if the square rotated into its position was black. So around each 4-cycle, we need every position to have itself or its predecessor black."),
-        ("Count valid colorings of one 4-cycle", r"Equivalently, a 4-cycle cannot have two adjacent white squares cyclically. The valid patterns are: all black, exactly one white, or two opposite whites. That gives $1+4+2=7$ valid patterns out of $16$."),
-        ("Include both cycles and the center", r"The corner cycle has $7$ valid patterns, the edge-middle cycle also has $7$, and the center must originally be black, which has probability $\frac12$."),
-        ("Compute the probability", r"The probability is \[\frac{7}{16}\cdot\frac{7}{16}\cdot\frac12=\frac{49}{512}.\] The answer is $\boxed{\frac{49}{512}}$."),
+    25: [
+        ("Order the three numbers", r"There are $6$ possible orders for $x,y,z$, all equally likely except on boundary cases of probability zero. Work with one order, say $0\le z\le y\le x\le n$, and multiply is unnecessary because the ratio is the same in every order."),
+        ("Find the total ordered volume", r"The region $0\le z\le y\le x\le n$ is one sixth of the cube $[0,n]^3$, so its volume is $\frac{n^3}{6}$."),
+        ("Impose the spacing", r"In this order, no two numbers are within $1$ unit means $y-z>1$ and $x-y>1$. Shift by setting $z'=z$, $y'=y-1$, and $x'=x-2$. Then $0\le z'\le y'\le x'\le n-2$."),
+        ("Compute the favorable ratio", r"The favorable ordered volume is $\frac{(n-2)^3}{6}$. Therefore the probability is \[\frac{(n-2)^3}{n^3}.\]"),
+        ("Test the threshold", r"For $n=9$, this is $\frac{7^3}{9^3}=\frac{343}{729}<\frac12$. For $n=10$, it is $\frac{8^3}{10^3}=\frac{512}{1000}>\frac12$. So the smallest possible $n$ is $\boxed{10}$."),
     ],
 }
 def esc(x, quote=True):
@@ -312,6 +278,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
