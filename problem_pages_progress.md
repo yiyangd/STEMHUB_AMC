@@ -2092,3 +2092,19 @@
 - Pushed: pending
 - Next batch should start from: 2022 AMC 10A Problem 21
 - Review notes: none.
+
+## Batch 129: 2022 AMC 10A Problems 22-24
+
+- Start time: 2026-07-01T03:57:45-07:00
+- End time: 2026-07-01T03:57:46-07:00
+- Processed contest: AMC 10
+- Processed range: 2022 AMC 10A Problems 22-24
+- Generated count: 3
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2022 AMC 10A Problem 21 skipped: bowl-rim octagon area depends on the missing hexagon diagram.; 2022 AMC 10A Problem 25 skipped: lattice-square intersection problem strongly depends on the missing diagram and exact layout.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2022 AMC 10B Problem 1
+- Review notes: none.
