@@ -3148,3 +3148,19 @@
 - Pushed: pending
 - Next batch should start from: 2010 AMC 12A Problem 1
 - Review notes: none.
+
+## Batch 194: 2010 AMC 12A Problems 1-2, 4-10
+
+- Start time: 2026-07-01T07:37:52-07:00
+- End time: 2026-07-01T07:37:54-07:00
+- Processed contest: AMC12
+- Processed range: 2010 AMC 12A Problems 1-2, 4-10
+- Generated count: 9
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2010 AMC 12A Problem 3: skipped because the problem depends on the original diagram for the rectangle-square overlap.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2010 AMC 12A Problem 11
+- Review notes: none.

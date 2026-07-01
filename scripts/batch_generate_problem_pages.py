@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 193
+BATCH_NUMBER = 194
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2009_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
-SKIPPED = []
-BATCH_LABEL = "2009 AMC 12B Problems 21-25"
-NEXT_START = "2010 AMC 12A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2010_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,4,5,6,7,8,9,10}
+SKIPPED = ["2010 AMC 12A Problem 3: skipped because the problem depends on the original diagram for the rectangle-square overlap."]
+BATCH_LABEL = "2010 AMC 12A Problems 1-2, 4-10"
+NEXT_START = "2010 AMC 12A Problem 11"
 
-ANS={21:("A","89"),22:("C","784"),23:("D",r"\frac79"),24:("B","4"),25:("E","225")}
+ANS={1:("C","40"),2:("A","585"),4:("D",r"-x^{-1}"),5:("C","42"),6:("E","24"),7:("C","0.4"),8:("C",r"90^\circ"),9:("A","7"),10:("A","8041")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1992,6 +1992,51 @@ SOL.update({
 ],
 })
 
+OV.update({
+1:(r"What is \[(20-(2010-201))+(2010-(201-20))?\]",[("A",r"$-4020$"),("B","0"),("C","40"),("D","401"),("E","4020")]),
+2:(r"A ferry boat shuttles tourists to an island every hour starting at $10$ AM until its last trip, which starts at $3$ PM. One day the boat captain notes that on the $10$ AM trip there were $100$ tourists on the ferry boat, and that on each successive trip, the number of tourists was $1$ fewer than on the previous trip. How many tourists did the ferry take to the island that day?",[("A","585"),("B","594"),("C","672"),("D","679"),("E","694")]),
+4:(r"If $x<0$, then which of the following must be positive?",[("A",r"$\frac{x}{|x|}$"),("B",r"$-x^2$"),("C",r"$-2^x$"),("D",r"$-x^{-1}$"),("E",r"$\sqrt[3]{x}$")]),
+5:(r"Halfway through a $100$-shot archery tournament, Chelsea leads by $50$ points. For each shot a bullseye scores $10$ points, with other possible scores being $8,4,2,$ and $0$ points. Chelsea always scores at least $4$ points on each shot. If Chelsea's next $n$ shots are bullseyes, she will be guaranteed victory. What is the minimum value for $n$?",[("A","38"),("B","40"),("C","42"),("D","44"),("E","46")]),
+6:(r"A palindrome, such as $83438$, is a number that remains the same when its digits are reversed. The numbers $x$ and $x+32$ are three-digit and four-digit palindromes, respectively. What is the sum of the digits of $x$?",[("A","20"),("B","21"),("C","22"),("D","23"),("E","24")]),
+7:(r"Logan is constructing a scaled model of his town. The city's water tower stands $40$ meters high, and the top portion is a sphere that holds $100{,}000$ liters of water. Logan's miniature water tower holds $0.1$ liters. How tall, in meters, should Logan make his tower?",[("A","0.04"),("B",r"$\frac{0.4}{\pi}$"),("C","0.4"),("D",r"$\frac4\pi$"),("E","4")]),
+8:(r"Triangle $ABC$ has $AB=2\cdot AC$. Let $D$ and $E$ be on $\overline{AB}$ and $\overline{BC}$, respectively, such that $\angle BAE=\angle ACD$. Let $F$ be the intersection of segments $\overline{AE}$ and $\overline{CD}$, and suppose that $\triangle CFE$ is equilateral. What is $\angle ACB$?",[("A",r"$60^\circ$"),("B",r"$75^\circ$"),("C",r"$90^\circ$"),("D",r"$105^\circ$"),("E",r"$120^\circ$")]),
+9:(r"A solid cube has side length $3$ inches. A $2$-inch by $2$-inch square hole is cut into the center of each face. The edges of each cut are parallel to the edges of the cube, and each hole goes all the way through the cube. What is the volume, in cubic inches, of the remaining solid?",[("A","7"),("B","8"),("C","10"),("D","12"),("E","15")]),
+10:(r"The first four terms of an arithmetic sequence are $p,9,3p-q,$ and $3p+q$. What is the $2010^{\text{th}}$ term of the sequence?",[("A","8041"),("B","8043"),("C","8045"),("D","8047"),("E","8049")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Simplify nested parentheses carefully.",
+2:"Count the number of hourly trips and sum an arithmetic sequence.",
+4:"Test the sign of each expression when x is negative.",
+5:"Compare Chelsea's guaranteed minimum with the opponent's possible maximum.",
+6:"Use the structure of three- and four-digit palindromes.",
+7:"Use the cube root of the volume scale factor for a scaled model.",
+8:"Use the equilateral angle to find angle A, then apply the Law of Sines.",
+9:"Use inclusion-exclusion for the three perpendicular square tunnels.",
+10:"Use equal common differences to determine the arithmetic sequence.",
+})
+
+SOL.update({
+1:[("Evaluate the inner parentheses first",r"The expression has two nested subtractions. Compute \[2010-201=1809\] and \[201-20=181.\]"),("Substitute back",r"The expression becomes \[(20-1809)+(2010-181).\]"),("Compute each part",r"We get \[20-1809=-1789,\qquad 2010-181=1829.\]"),("Add the two results",r"Now \[-1789+1829=40.\]"),("Conclude",r"The value is $\boxed{40}$."),
+],
+2:[("Count the trips",r"The ferry leaves at $10$ AM, $11$ AM, noon, $1$ PM, $2$ PM, and $3$ PM. That is $6$ trips total, not just $5$ intervals."),("List the passenger counts",r"The first trip has $100$ tourists, and each trip after that has one fewer. So the counts are \[100,99,98,97,96,95.\]"),("Pair the numbers",r"A quick way to add them is to pair first and last: \[100+95=195,\quad 99+96=195,\quad 98+97=195.\]"),("Add the pairs",r"There are three pairs, so the total is \[3\cdot195=585.\]"),("Conclude",r"The ferry took $\boxed{585}$ tourists to the island."),
+],
+4:[("Remember what x<0 means",r"We only know that $x$ is negative. A good strategy is to check the sign of each expression rather than trying to find a numerical value."),("Check the obviously negative choices",r"The expression $\frac{x}{|x|}$ equals $-1$ when $x<0$. Also, $-x^2$ is negative because $x^2$ is positive, and $\sqrt[3]{x}$ is negative because cube roots preserve sign."),("Be careful with the exponential choice",r"Since $2^x$ is positive for every real $x$, the expression $-2^x$ is negative. So choice C is not positive."),("Analyze the reciprocal",r"When $x<0$, the reciprocal $x^{-1}=\frac1x$ is also negative. Therefore \[-x^{-1}\] is positive."),("Conclude",r"The expression that must be positive is \[\boxed{-x^{-1}}.\]"),
+],
+5:[("Focus on the worst case",r"To guarantee victory, Chelsea must still win even if her opponent scores the maximum possible points on every remaining shot. There are $50$ shots left."),("Compute the opponent's possible gain",r"The opponent can score at most \[50\cdot10=500\] points in the second half."),("Compute Chelsea's guaranteed gain",r"If Chelsea makes her next $n$ shots as bullseyes, those shots give $10n$ points. On the remaining $50-n$ shots, she is guaranteed at least $4$ each. Her guaranteed second-half score is \[10n+4(50-n)=200+6n.\]"),("Use her current lead",r"Chelsea already leads by $50$, so she is guaranteed to finish ahead if \[50+(200+6n)>500.\] This simplifies to \[6n>250.\]"),("Find the smallest integer n",r"The smallest integer satisfying $6n>250$ is $n=42$, since $6\cdot41=246$ but $6\cdot42=252$."),("Conclude",r"The minimum value is $\boxed{42}$."),
+],
+6:[("Use the four-digit condition",r"Since $x+32$ is a four-digit number, $x$ must be at least $968$. The only four-digit palindrome close to this range and small enough to be $x+32$ is $1001$."),("Find x",r"Thus \[x+32=1001,\] so \[x=969.\] This is indeed a three-digit palindrome."),("Check that the next palindrome is too large",r"The next four-digit palindrome after $1001$ is $1111$, which would make $x=1079$, not three-digit. So $x=969$ is forced."),("Add the digits",r"The digit sum of $969$ is \[9+6+9=24.\]"),("Conclude",r"The answer is $\boxed{24}$."),
+],
+7:[("Recognize a scale-model relationship",r"In similar three-dimensional objects, volume scales as the cube of the linear scale factor. So we should compare volumes first, then take a cube root."),("Find the volume scale factor",r"The real water tower holds $100{,}000$ liters, while the model holds $0.1$ liters. The volume scale factor is \[\frac{0.1}{100000}=10^{-6}.\]"),("Convert volume scale to length scale",r"If the volume scale is $10^{-6}$, then the linear scale is \[\sqrt[3]{10^{-6}}=10^{-2}=0.01.\]"),("Scale the height",r"The real tower is $40$ meters high, so the model should be \[40\cdot0.01=0.4\] meters high."),("Conclude",r"The height should be $\boxed{0.4}$ meters."),
+],
+8:[("Name the equal angle",r"Let \[\angle BAE=\angle ACD=\alpha.\] Since $F$ lies on both $\overline{AE}$ and $\overline{CD}$, triangle $ACF$ uses the same two lines."),("Use the equilateral triangle to find angle A",r"In triangle $ACF$, the angle at $A$ is $\angle CAE=\angle BAC-\alpha$, and the angle at $C$ is $\angle ACF=\alpha$. Therefore \[\angle AFC=180^\circ-\angle BAC.\] But $\angle CFE$ is supplementary to $\angle AFC$, and $\triangle CFE$ is equilateral, so $\angle CFE=60^\circ$. Hence \[\angle BAC=60^\circ.\]"),("Apply the Law of Sines",r"Let \[\angle ACB=\theta.\] Then \[\angle ABC=120^\circ-\theta.\] Since $AB=2\cdot AC$, the Law of Sines gives \[\frac{AB}{AC}=\frac{\sin\theta}{\sin(120^\circ-\theta)}=2.\]"),("Solve the trig equation",r"Using \[\sin(120^\circ-\theta)=\frac{\sqrt3}{2}\cos\theta+\frac12\sin\theta,\] the equation becomes \[\sin\theta=2\left(\frac{\sqrt3}{2}\cos\theta+\frac12\sin\theta\right)=\sqrt3\cos\theta+\sin\theta.\] Thus $\cos\theta=0$."),("Find the angle",r"Because $\theta$ is an angle of a triangle, $\cos\theta=0$ gives \[\theta=90^\circ.\]"),("Conclude",r"Therefore \[\angle ACB=\boxed{90^\circ}.\]"),
+],
+9:[("Start with the full cube",r"The original cube has volume \[3^3=27.\] Each tunnel is a rectangular prism of dimensions $2\times2\times3$, so each tunnel has volume $12$."),("Avoid over-subtracting",r"There are three perpendicular tunnels, one in each direction. If we subtract their volumes separately, we subtract the central $2\times2\times2$ cube more than once."),("Use inclusion-exclusion",r"Subtract the three tunnel volumes: \[27-3\cdot12.\] Each pair of tunnels overlaps in the same central cube of volume $8$, so add this back for the three pairs. Then subtract the triple overlap once."),("Compute",r"The remaining volume is \[27-36+3\cdot8-8=7.\]"),("Conclude",r"The volume of the remaining solid is $\boxed{7}$ cubic inches."),
+],
+10:[("Use common differences",r"In an arithmetic sequence, consecutive differences are equal. Let the common difference be $d$."),("Write the differences",r"From the first two terms, \[d=9-p.\] From the third and fourth terms, \[d=(3p+q)-(3p-q)=2q.\] Thus \[9-p=2q.\]"),("Use the middle difference",r"The difference from the second to the third term is \[(3p-q)-9,\] so \[3p-q-9=2q.\] This gives \[3p-9=3q,\] or $q=p-3$."),("Solve for p and q",r"Substitute $q=p-3$ into $9-p=2q$: \[9-p=2p-6.\] Hence $15=3p$, so $p=5$, and then $q=2$. The common difference is $d=4$."),("Find the 2010th term",r"The first term is $5$, so the $2010^{\text{th}}$ term is \[5+(2010-1)\cdot4=5+8036=8041.\]"),("Conclude",r"The answer is $\boxed{8041}$."),
+],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -2098,7 +2143,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2009" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2010" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -2187,7 +2232,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2009 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2010 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
