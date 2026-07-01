@@ -1,17 +1,22 @@
 # Problem Pages Report
 
-- Total manifest entries: 774
-- Latest batch: 105 (2018 AMC 10A Problems 21-25)
-- Latest new generated count: 5
+- Total manifest entries: 784
+- Latest batch: 106 (2018 AMC 10B Problems 1-10)
+- Latest new generated count: 10
 - Latest updated existing count: 0
 - Latest skipped count: 0
 - MathJax validation: passed
-- Answer verification source: AoPS 2018 AMC 10A Answer Key
+- Answer verification source: AoPS 2018 AMC 10B Answer Key
 
 ## Latest Batch Pages
 
-- `2018 AMC 10A Problem 21` -> `amc10/problems/2018-amc-10a-problem-21/`
-- `2018 AMC 10A Problem 22` -> `amc10/problems/2018-amc-10a-problem-22/`
-- `2018 AMC 10A Problem 23` -> `amc10/problems/2018-amc-10a-problem-23/`
-- `2018 AMC 10A Problem 24` -> `amc10/problems/2018-amc-10a-problem-24/`
-- `2018 AMC 10A Problem 25` -> `amc10/problems/2018-amc-10a-problem-25/`
+- `2018 AMC 10B Problem 1` -> `amc10/problems/2018-amc-10b-problem-1/`
+- `2018 AMC 10B Problem 2` -> `amc10/problems/2018-amc-10b-problem-2/`
+- `2018 AMC 10B Problem 3` -> `amc10/problems/2018-amc-10b-problem-3/`
+- `2018 AMC 10B Problem 4` -> `amc10/problems/2018-amc-10b-problem-4/`
+- `2018 AMC 10B Problem 5` -> `amc10/problems/2018-amc-10b-problem-5/`
+- `2018 AMC 10B Problem 6` -> `amc10/problems/2018-amc-10b-problem-6/`
+- `2018 AMC 10B Problem 7` -> `amc10/problems/2018-amc-10b-problem-7/`
+- `2018 AMC 10B Problem 8` -> `amc10/problems/2018-amc-10b-problem-8/`
+- `2018 AMC 10B Problem 9` -> `amc10/problems/2018-amc-10b-problem-9/`
+- `2018 AMC 10B Problem 10` -> `amc10/problems/2018-amc-10b-problem-10/`
