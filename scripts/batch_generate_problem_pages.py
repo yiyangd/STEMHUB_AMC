@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 181
+BATCH_NUMBER = 182
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2007_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24,25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2008_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
 SKIPPED = []
-BATCH_LABEL = "2007 AMC 12B Problems 21-25"
-NEXT_START = "2008 AMC 12A Problem 1"
+BATCH_LABEL = "2008 AMC 12A Problems 1-10"
+NEXT_START = "2008 AMC 12A Problem 11"
 
-ANS={21:("A","100"),22:("A",r"\frac1{16}"),23:("A","6"),24:("A","4"),25:("C","2")}
+ANS={1:("D","4:30 PM"),2:("A",r"\frac67"),3:("C","3"),4:("B","502"),5:("B","It is even, but not necessarily a multiple of 3."),6:("A","750"),7:("D","8"),8:("C",r"2\sqrt2"),9:("D","2.7"),10:("D",r"\left(\frac15+\frac17\right)(t-1)=1")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -1586,6 +1586,49 @@ SOL.update({
 24:[("Put the expression over one denominator",r"The expression is \[\frac{a}{b}+\frac{14b}{9a}=\frac{9a^2+14b^2}{9ab}.\] We need \(9ab\) to divide \(9a^2+14b^2\)."),("Use divisibility modulo a",r"Modulo \(a\), the numerator is congruent to \(14b^2\). Since \(\gcd(a,b)=1\), this forces \(a\mid 14\). Thus \(a\in\{1,2,7,14\}\)."),("Use divisibility modulo b",r"Modulo \(b\), the numerator is congruent to \(9a^2\). Since \(\gcd(a,b)=1\), this forces \(b\mid 9\). Thus \(b\in\{1,3,9\}\)."),("Check the finite candidate list",r"Now only a few coprime pairs remain. Testing them in the original expression gives integer values for \[(a,b)=(1,3),(2,3),(7,3),(14,3).\]"),("Count",r"There are \(4\) valid pairs."),("Conclude",r"The answer is \(\boxed{4}\)."),],
 25:[("Set up coordinates",r"Place \(A=(0,0,0)\), \(B=(2,0,0)\), and \(C=(2,2,0)\). This satisfies \(AB=BC=2\) and \(\angle ABC=90^\circ\), with \(\triangle ABC\) in the plane \(z=0\)."),("Use the parallel condition",r"Since \(\overline{DE}\) is parallel to the plane of \(\triangle ABC\), we may choose coordinates so that \(\overline{DE}\) is horizontal in the \(xy\)-direction. A convenient realization is \[D=(1,2,\sqrt3),\qquad E=(1,0,\sqrt3).\]"),("Verify the required lengths",r"We have \(DE=2\). Also \[CD^2=(1-2)^2+(2-2)^2+(\sqrt3)^2=4,\] and \[EA^2=1^2+0^2+(\sqrt3)^2=4,\] so \(CD=EA=2\)."),("Verify the right angles",r"At \(D\), vector \(\overrightarrow{DC}=(1,0,-\sqrt3)\) is perpendicular to \(\overrightarrow{DE}=(0,-2,0)\). At \(E\), vector \(\overrightarrow{ED}=(0,2,0)\) is perpendicular to \(\overrightarrow{EA}=(-1,0,-\sqrt3)\). Thus the angle conditions are satisfied."),("Compute the area of triangle BDE",r"Use vectors from \(B\): \[\overrightarrow{BD}=(-1,2,\sqrt3),\qquad \overrightarrow{BE}=(-1,0,\sqrt3).\] The area is half the magnitude of their cross product."),("Evaluate the cross product",r"\[\overrightarrow{BD}\times\overrightarrow{BE}=(2\sqrt3,0,2),\] whose magnitude is \[\sqrt{12+4}=4.\] Therefore the area is \(\frac12\cdot4=2\)."),("Conclude",r"The answer is \(\boxed{2}\)."),],
 })
+
+OV.update({
+1:(r"A bakery owner turns on his doughnut machine at 8:30 AM. At 11:10 AM the machine has completed one third of the day's job. At what time will the doughnut machine complete the job?",[("A","1:50 PM"),("B","3:00 PM"),("C","3:30 PM"),("D","4:30 PM"),("E","5:50 PM")]),
+2:(r"What is the reciprocal of \(\frac12+\frac23\)?",[("A",r"\(\frac67\)"),("B",r"\(\frac76\)"),("C",r"\(\frac53\)"),("D","3"),("E",r"\(\frac72\)")]),
+3:(r"Suppose that \(\frac23\) of \(10\) bananas are worth as much as \(8\) oranges. How many oranges are worth as much as \(\frac12\) of \(5\) bananas?",[("A","2"),("B",r"\(\frac52\)"),("C","3"),("D",r"\(\frac72\)"),("E","4")]),
+4:(r"Which of the following is equal to the product \[\frac84\cdot\frac{12}{8}\cdot\frac{16}{12}\cdots\frac{4n+4}{4n}\cdots\frac{2008}{2004}?\]",[("A","251"),("B","502"),("C","1004"),("D","2008"),("E","4016")]),
+5:(r"Suppose that \[\frac{2x}{3}-\frac{x}{6}\] is an integer. Which of the following statements must be true about \(x\)?",[("A","It is negative."),("B",r"It is even, but not necessarily a multiple of \(3\)."),("C",r"It is a multiple of \(3\), but not necessarily even."),("D",r"It is a multiple of \(6\), but not necessarily a multiple of \(12\)."),("E",r"It is a multiple of \(12\).")]),
+6:(r"Heather compares the price of a new computer at two different stores. Store A offers \(15\%\) off the sticker price followed by a \(\$90\) rebate, and store B offers \(25\%\) off the same sticker price with no rebate. Heather saves \(\$15\) by buying the computer at store A instead of store B. What is the sticker price of the computer, in dollars?",[("A","750"),("B","900"),("C","1000"),("D","1050"),("E","1500")]),
+7:(r"While Steve and LeRoy are fishing \(1\) mile from shore, their boat springs a leak, and water comes in at a constant rate of \(10\) gallons per minute. The boat will sink if it takes in more than \(30\) gallons of water. Steve starts rowing toward the shore at a constant rate of \(4\) miles per hour while LeRoy bails water out of the boat. What is the slowest rate, in gallons per minute, at which LeRoy can bail if they are to reach the shore without sinking?",[("A","2"),("B","4"),("C","6"),("D","8"),("E","10")]),
+8:(r"What is the volume of a cube whose surface area is twice that of a cube with volume \(1\)?",[("A",r"\(\sqrt2\)"),("B","2"),("C",r"\(2\sqrt2\)"),("D","4"),("E","8")]),
+9:(r"Older television screens have an aspect ratio of \(4:3\). That is, the ratio of the width to the height is \(4:3\). The aspect ratio of many movies is not \(4:3\), so they are sometimes shown on a television screen by letterboxing, darkening strips of equal height at the top and bottom of the screen. Suppose a movie has an aspect ratio of \(2:1\) and is shown on an older television screen with a \(27\)-inch diagonal. What is the height, in inches, of each darkened strip?",[("A","2"),("B","2.25"),("C","2.5"),("D","2.7"),("E","3")]),
+10:(r"Doug can paint a room in \(5\) hours. Dave can paint the same room in \(7\) hours. Doug and Dave paint the room together and take a one-hour break for lunch. Let \(t\) be the total time, in hours, required for them to complete the job working together, including lunch. Which of the following equations is satisfied by \(t\)?",[("A",r"\(\left(\frac15+\frac17\right)(t+1)=1\)"),("B",r"\(\left(\frac15+\frac17\right)t+1=1\)"),("C",r"\(\left(\frac15+\frac17\right)t=1\)"),("D",r"\(\left(\frac15+\frac17\right)(t-1)=1\)"),("E",r"\((5+7)t=1\)")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Use the time for one third of the job to find the full job time.",
+2:"Add the fractions first, then take the reciprocal.",
+3:"Convert banana value to orange value using proportional reasoning.",
+4:"Recognize a telescoping product.",
+5:"Simplify the expression to \(\frac{x}{2}\).",
+6:"Compare the two store prices algebraically.",
+7:"Use travel time to shore and limit the net water gained.",
+8:"Relate cube surface area to side length.",
+9:"Use the \(3\)-\(4\)-\(5\) screen dimensions and compare movie height.",
+10:"Subtract the lunch hour from total time to get actual painting time.",
+})
+
+NOTES_OVERRIDES.update({
+9:"This problem contains a diagram illustrating letterboxing. The relevant dimensions and aspect ratios are included in the text; please refer to the original PDF or AoPS page for the figure.",
+})
+
+SOL.update({
+1:[("Find the time for one third of the job",r"From 8:30 AM to 11:10 AM is \(2\) hours and \(40\) minutes, or \(160\) minutes. That is the time needed to complete one third of the job."),("Scale to the full job",r"If one third takes \(160\) minutes, then the whole job takes \[3\cdot160=480\] minutes."),("Convert to hours",r"\(480\) minutes is \(8\) hours."),("Add to the starting time",r"The machine started at 8:30 AM. Eight hours after 8:30 AM is 4:30 PM."),("Conclude",r"The answer is \(\boxed{\text{4:30 PM}}\)."),],
+2:[("Add the two fractions",r"First compute the number whose reciprocal is wanted: \[\frac12+\frac23=\frac36+\frac46=\frac76.\]"),("Take the reciprocal",r"The reciprocal of \(\frac76\) is \(\frac67\)."),("Check the direction",r"It is easy to accidentally answer \(\frac76\), but the question asks for the reciprocal, so we flip the fraction."),("Conclude",r"The answer is \(\boxed{\frac67}\)."),],
+3:[("Find how many bananas match 8 oranges",r"\(\frac23\) of \(10\) bananas is \[\frac23\cdot10=\frac{20}{3}\] bananas. These are worth \(8\) oranges."),("Find oranges per banana",r"If \(\frac{20}{3}\) bananas are worth \(8\) oranges, then one banana is worth \[8\div\frac{20}{3}=8\cdot\frac3{20}=\frac65\] oranges."),("Find the target number of bananas",r"\(\frac12\) of \(5\) bananas is \[\frac52\] bananas."),("Convert to oranges",r"These are worth \[\frac52\cdot\frac65=3\] oranges."),("Conclude",r"The answer is \(\boxed{3}\)."),],
+4:[("Look for cancellation",r"The product is designed so that almost every numerator cancels with the next denominator."),("Write the pattern",r"\[\frac84\cdot\frac{12}{8}\cdot\frac{16}{12}\cdots\frac{2008}{2004}\] has \(8,12,16,\ldots,2004\) appearing once in a numerator and once in a denominator."),("Cancel the middle factors",r"After cancellation, only the final numerator and the first denominator remain: \[\frac{2008}{4}.\]"),("Compute",r"\[\frac{2008}{4}=502.\]"),("Conclude",r"The answer is \(\boxed{502}\)."),],
+5:[("Simplify the expression",r"The expression is \[\frac{2x}{3}-\frac{x}{6}=\frac{4x}{6}-\frac{x}{6}=\frac{3x}{6}=\frac{x}{2}.\]"),("Use the integer condition",r"If \(\frac{x}{2}\) is an integer, then \(x\) must be even."),("Check that stronger statements are not forced",r"An even number does not have to be a multiple of \(3\). For example, \(x=4\) makes \(\frac{x}{2}=2\), but \(4\) is not a multiple of \(3\), \(6\), or \(12\)."),("Choose the must-be-true statement",r"The only statement that must always be true is that \(x\) is even, but not necessarily a multiple of \(3\)."),("Conclude",r"The answer is \(\boxed{\text{B}}\)."),],
+6:[("Let the sticker price be P",r"Store A first takes \(15\%\) off, so the discounted price is \(0.85P\), and then applies a \(\$90\) rebate. Store A's final price is \(0.85P-90\)."),("Write Store B's price",r"Store B takes \(25\%\) off, so its final price is \(0.75P\)."),("Use the savings statement",r"Heather saves \(\$15\) by buying at Store A, so Store A is \(\$15\) cheaper: \[0.85P-90=0.75P-15.\]"),("Solve",r"Subtract \(0.75P\) from both sides: \[0.10P-90=-15.\] Thus \[0.10P=75,\] so \(P=750\)."),("Conclude",r"The sticker price is \(\boxed{750}\)."),],
+7:[("Find the time to shore",r"The boat is \(1\) mile from shore and rows at \(4\) miles per hour. The travel time is \[\frac14\text{ hour}=15\text{ minutes}.\]"),("Find the maximum net water rate",r"The boat sinks if it takes in more than \(30\) gallons. Over \(15\) minutes, the net water entering must be at most \(30\) gallons, so the net rate must be at most \[\frac{30}{15}=2\] gallons per minute."),("Relate leak rate and bailing rate",r"Water leaks in at \(10\) gallons per minute. If LeRoy bails at \(r\) gallons per minute, the net rate is \(10-r\)."),("Solve the inequality",r"We need \[10-r\le2,\] so \(r\ge8\)."),("Conclude",r"The slowest possible bailing rate is \(\boxed{8}\) gallons per minute."),],
+8:[("Start with the original cube",r"A cube with volume \(1\) has side length \(1\), so its surface area is \(6\)."),("Find the new surface area",r"The new cube has twice that surface area, so its surface area is \(12\)."),("Solve for the new side length",r"If the new side length is \(s\), then \[6s^2=12,\] so \(s^2=2\) and \(s=\sqrt2\)."),("Compute the volume",r"The new volume is \[s^3=(\sqrt2)^3=2\sqrt2.\]"),("Conclude",r"The answer is \(\boxed{2\sqrt2}\)."),],
+9:[("Find the screen dimensions",r"A \(4:3\) screen has diagonal ratio \(5\), so a \(27\)-inch diagonal means the scale factor is \(\frac{27}{5}=5.4\). Thus the width is \(4(5.4)=21.6\), and the height is \(3(5.4)=16.2\)."),("Fit the movie to the screen width",r"The movie has aspect ratio \(2:1\). If it uses the full screen width \(21.6\), then its height must be \[\frac{21.6}{2}=10.8.\]"),("Find the unused vertical height",r"The screen height is \(16.2\), so the total darkened height is \[16.2-10.8=5.4.\]"),("Split between top and bottom",r"The top and bottom strips have equal height, so each strip has height \[\frac{5.4}{2}=2.7.\]"),("Conclude",r"The answer is \(\boxed{2.7}\)."),],
+10:[("Separate total time from working time",r"The variable \(t\) includes the one-hour lunch break. Therefore Doug and Dave actually spend \(t-1\) hours painting."),("Find the combined work rate",r"Doug paints \(\frac15\) of the room per hour, and Dave paints \(\frac17\) of the room per hour. Together their rate is \[\frac15+\frac17.\]"),("Set work equal to one room",r"Work equals rate times time. Since they complete exactly one room, \[\left(\frac15+\frac17\right)(t-1)=1.\]"),("Match the choice",r"This is exactly choice D."),("Conclude",r"The answer is \(\boxed{\left(\frac15+\frac17\right)(t-1)=1}\)."),],
+})
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -1692,7 +1735,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2007" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2008" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -1781,7 +1824,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2007 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2008 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
