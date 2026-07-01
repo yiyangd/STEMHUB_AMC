@@ -379,7 +379,7 @@
 - Commit hash: pending
 - Pushed: pending
 - Next batch should start from: 2005 AMC 10B Problem 21
-- Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.
+- Review notes: Batch 24 completed 2005 AMC 10B Problems 11-20 with no skipped problems.
 
 ## Batch 25: 2005 AMC 10B Problem 21-25
 
@@ -395,4 +395,4 @@
 - Commit hash: pending
 - Pushed: pending
 - Next batch should start from: 2006 AMC 10A Problem 1
-- Review notes: Corrected 2003 AMC 10B Problem 10 answer choice from the AoPS answer key; Problem 20 uses the diagram data stated in text and should be visually reviewed later.
+- Review notes: Batch 25 completed 2005 AMC 10B Problems 21-25 with no skipped problems; 2005B complete.
