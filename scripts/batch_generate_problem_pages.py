@@ -8,38 +8,42 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 43
+BATCH_NUMBER = 44
 CONTEST_DIR = "amc10"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2008_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {21, 22, 23, 24, 25}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2009_AMC_10A_Answer_Key"
+TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 SKIPPED = []
-BATCH_LABEL = "2008 AMC 10B Problems 21-25"
-NEXT_START = "2009 AMC 10A Problem 1"
+BATCH_LABEL = "2009 AMC 10A Problems 1-10"
+NEXT_START = "2009 AMC 10A Problem 11"
 
-ANS = {21: ("C", "480"), 22: ("C", r"\frac{1}{6}"), 23: ("B", "2"), 24: ("C", "85"), 25: ("B", "5")}
+ANS = {1:("E","11"),2:("A","15"),3:("C",r"\frac{5}{3}"),4:("A",r"\frac{120}{11}"),5:("E","81"),6:("A",r"\frac{1}{2}"),7:("C",r"\frac{10}{3}"),8:("B","36"),9:("B","41"),10:("B",r"7\sqrt3")}
 
 OV = {
-    21: (r"Ten chairs are evenly spaced around a round table and numbered clockwise from $1$ through $10$. Five married couples are to sit in the chairs with men and women alternating, and no one is to sit either next to or directly across from his or her spouse. How many seating arrangements are possible?", [("A", "$240$"), ("B", "$360$"), ("C", "$480$"), ("D", "$540$"), ("E", "$720$")]),
-    22: (r"Three red beads, two white beads, and one blue bead are placed in a line in random order. What is the probability that no two neighboring beads are the same color?", [("A", r"$\frac{1}{12}$"), ("B", r"$\frac{1}{10}$"), ("C", r"$\frac{1}{6}$"), ("D", r"$\frac{1}{3}$"), ("E", r"$\frac{1}{2}$")]),
-    23: (r"A rectangular floor measures $a$ by $b$ feet, where $a$ and $b$ are positive integers with $b>a$. An artist paints a rectangle on the floor with the sides of the rectangle parallel to the sides of the floor. The unpainted part of the floor forms a border of width $1$ foot around the painted rectangle and occupies half of the area of the entire floor. How many possibilities are there for the ordered pair $(a,b)$?", [("A", "$1$"), ("B", "$2$"), ("C", "$3$"), ("D", "$4$"), ("E", "$5$")]),
-    24: (r"Quadrilateral $ABCD$ has $AB=BC=CD$, $\angle ABC=70^\circ$, and $\angle BCD=170^\circ$. What is the degree measure of $\angle BAD$?", [("A", "$75$"), ("B", "$80$"), ("C", "$85$"), ("D", "$90$"), ("E", "$95$")]),
-    25: (r"Michael walks at the rate of $5$ feet per second on a long straight path. Trash pails are located every $200$ feet along the path. A garbage truck travels at $10$ feet per second in the same direction as Michael and stops for $30$ seconds at each pail. As Michael passes a pail, he notices the truck ahead of him just leaving the next pail. How many times will Michael and the truck meet?", [("A", "$4$"), ("B", "$5$"), ("C", "$6$"), ("D", "$7$"), ("E", "$8$")]),
+  1:(r"One can holds $12$ ounces of soda. What is the minimum number of cans needed to provide a gallon, or $128$ ounces, of soda?",[("A","$7$"),("B","$8$"),("C","$9$"),("D","$10$"),("E","$11$")]),
+  2:(r"Four coins are picked out of a piggy bank that contains pennies, nickels, dimes, and quarters. Which of the following could not be the total value of the four coins, in cents?",[("A","$15$"),("B","$25$"),("C","$35$"),("D","$45$"),("E","$55$")]),
+  3:(r"Which of the following is equal to $1+\frac{1}{1+\frac{1}{1+1}}$?",[("A",r"$\frac54$"),("B",r"$\frac32$"),("C",r"$\frac53$"),("D","$2$"),("E","$3$")]),
+  4:(r"Eric plans to compete in a triathlon. He can average $2$ miles per hour in the $\frac14$-mile swim and $6$ miles per hour in the $3$-mile run. His goal is to finish the triathlon in $2$ hours. To accomplish his goal, what must his average speed, in miles per hour, be for the $15$-mile bicycle ride?",[("A",r"$\frac{120}{11}$"),("B","$11$"),("C",r"$\frac{56}{5}$"),("D",r"$\frac{45}{4}$"),("E","$12$")]),
+  5:(r"What is the sum of the digits of the square of $111{,}111{,}111$?",[("A","$18$"),("B","$27$"),("C","$45$"),("D","$63$"),("E","$81$")]),
+  6:(r"A circle of radius $2$ is inscribed in a semicircle. The area inside the semicircle but outside the circle is shaded. What fraction of the semicircle's area is shaded?",[("A",r"$\frac12$"),("B",r"$\frac{\pi}{6}$"),("C",r"$\frac{2}{\pi}$"),("D",r"$\frac23$"),("E",r"$\frac{3}{\pi}$")]),
+  7:(r"A carton contains milk that is $2\%$ fat, an amount that is $40\%$ less fat than the amount contained in a carton of whole milk. What is the percentage of fat in whole milk?",[("A",r"$\frac{12}{5}$"),("B","$3$"),("C",r"$\frac{10}{3}$"),("D",r"$\frac{38}{5}$"),("E",r"$\frac{42}{5}$")]),
+  8:(r"Three generations of the Wen family are going to the movies, two from each generation. The two members of the youngest generation receive a $50\%$ discount as children. The two members of the oldest generation receive a $25\%$ discount as senior citizens. The two members of the middle generation receive no discount. Grandfather Wen, whose senior ticket costs $\$6.00$, is paying for everyone. How many dollars must he pay?",[("A","$34$"),("B","$36$"),("C","$42$"),("D","$46$"),("E","$48$")]),
+  9:(r"Positive integers $a$, $b$, and $2009$, with $a<b<2009$, form a geometric sequence with an integer ratio. What is $a$?",[("A","$7$"),("B","$41$"),("C","$49$"),("D","$289$"),("E","$2009$")]),
+  10:(r"Triangle $ABC$ has a right angle at $B$. Point $D$ is the foot of the altitude from $B$ to $AC$, $AD=3$, and $DC=4$. What is the area of $\triangle ABC$?",[("A",r"$4\sqrt3$"),("B",r"$7\sqrt3$"),("C","$21$"),("D",r"$14\sqrt3$"),("E","$42$")]),
 }
 
-KEY_OVERRIDES = {
-    21: "Seat genders first, then count the two valid wife placements for each fixed seating of the men.",
-    22: "Count all bead arrangements and favorable arrangements with no adjacent equal colors.",
-    23: "Translate the border area condition into a factor equation.",
-    24: "Use isosceles triangle angles and a sine-law check in the second triangle.",
-    25: "Track the truck's 20-second driving intervals and 30-second stops against Michael's constant walking.",
-}
+KEY_OVERRIDES={1:"Round up after dividing ounces needed by ounces per can.",2:"Check four-coin totals using coin denominations.",3:"Simplify the nested fraction from the inside out.",4:"Subtract swim and run time from the total time to find the required biking speed.",5:"Use the repunit square pattern to avoid long multiplication.",6:"Relate the inscribed circle radius to the larger semicircle radius and compare areas.",7:"Translate '40 percent less' into 60 percent of the whole-milk fat percentage.",8:"Use the senior discount to recover the full ticket price, then price all six tickets.",9:"Use prime factorization of 2009 and the integer common ratio.",10:"Use the right-triangle altitude relation BD squared equals AD times DC."}
 
-SOL = {
-    21: [("Separate the gender pattern", r"Because the chairs are numbered, rotations are not being identified. Men and women must alternate, so there are $2$ possible gender patterns around the table."), ("Seat the men", r"Once a gender pattern is chosen, the five men can be placed in the five male-position chairs in $5!$ ways."), ("Study the wife positions for one fixed male seating", r"The five remaining chairs form five female positions around the circle. For each wife, the forbidden positions are the two chairs next to her husband and the chair directly across from him."), ("Count the valid wife placements", r"After labeling the female positions cyclically relative to the husbands, each wife has only two allowed positions. A short cycle check shows that all wives must shift the same way around the table, giving exactly $2$ valid placements of the wives."), ("Multiply", r"The total number of arrangements is $2\cdot5!\cdot2=480$."), ("Answer", r"The answer is $\boxed{480}$.")],
-    22: [("Count all arrangements first", r"There are $6$ beads with repetitions: $3$ red, $2$ white, and $1$ blue. The total number of distinct orders is $\frac{6!}{3!2!}=60$."), ("Place the red beads without touching", r"The three red beads must occupy non-adjacent positions. The possible red position sets are $\{1,3,5\}$, $\{1,3,6\}$, $\{1,4,6\}$, and $\{2,4,6\}$."), ("Place the white beads", r"For red positions $\{1,3,5\}$ or $\{2,4,6\}$, the remaining three spots are non-adjacent, so the two white beads can be placed in $3$ ways. For each of the other two red patterns, one adjacent pair remains, so only $2$ white placements work."), ("Count favorable arrangements", r"Thus there are $3+2+2+3=10$ favorable arrangements."), ("Convert to probability", r"The probability is $\frac{10}{60}=\frac16$."), ("Answer", r"The probability is $\boxed{\frac16}$.")],
-    23: [("Write the painted dimensions", r"A border of width $1$ foot on all sides means the painted rectangle has dimensions $(a-2)$ by $(b-2)$."), ("Use the area condition", r"The unpainted border occupies half the whole floor, so the painted area is also half the whole floor: $(a-2)(b-2)=\frac12ab$."), ("Turn it into a factor equation", r"Multiplying by $2$ and simplifying gives $2ab-4a-4b+8=ab$, so $ab-4a-4b=-8$. Add $16$ to both sides: $(a-4)(b-4)=8$."), ("Count integer pairs", r"Since $b>a$ and the dimensions must be positive, the positive factor pairs of $8$ give $(a-4,b-4)=(1,8)$ or $(2,4)$. These produce $(a,b)=(5,12)$ and $(6,8)$."), ("Answer", r"There are $\boxed{2}$ ordered pairs." )],
-    24: [("Use the first isosceles triangle", r"Since $AB=BC$ and $\angle ABC=70^\circ$, triangle $ABC$ is isosceles. The base angles are $\frac{180^\circ-70^\circ}{2}=55^\circ$, so $\angle BAC=\angle ACB=55^\circ$."), ("Find the angle at C in triangle ACD", r"At $C$, the whole angle $\angle BCD$ is $170^\circ$. Since $\angle ACB=55^\circ$, the angle $\angle ACD$ is $170^\circ-55^\circ=115^\circ$."), ("Relate the side AC", r"Let the common side length $AB=BC=CD$ be $1$. In triangle $ABC$, the base $AC=2\sin35^\circ$."), ("Find angle CAD", r"In triangle $ACD$, the angles other than $115^\circ$ sum to $65^\circ$. Checking $\angle CAD=30^\circ$ gives $\angle ADC=35^\circ$, and the sine law gives $\frac{CD}{\sin30^\circ}=\frac{AC}{\sin35^\circ}=2$, which matches $CD=1$ and $AC=2\sin35^\circ$."), ("Add the angle at A", r"Therefore $\angle BAD=\angle BAC+\angle CAD=55^\circ+30^\circ=85^\circ$."), ("Answer", r"The angle measure is $\boxed{85^\circ}$.")],
-    25: [("Set up the timeline", r"Let $t=0$ be the moment Michael passes a pail at position $0$ while the truck leaves the next pail at position $200$. The truck drives $200$ feet in $20$ seconds, then stops for $30$ seconds, so each pail cycle lasts $50$ seconds."), ("Track until the first meeting", r"At $t=170$ the truck reaches position $1000$ and stops until $t=200$. Michael reaches position $1000$ at $t=200$, so they meet once just as the truck leaves."), ("Continue through the close interval", r"After that, Michael and the truck are close enough to meet several times while the truck alternates between stopping and moving. They meet at $t=240$ at position $1200$, at $t=260$ while the truck is moving, at $t=280$ at position $1400$, and at $t=320$ at position $1600$."), ("Explain why there are no more", r"After $t=320$, Michael gets far enough ahead during the truck's stop that the truck can no longer catch him before reaching and stopping at the next pail. The gap pattern then grows rather than creating another meeting."), ("Count", r"The meeting times are $200,240,260,280,$ and $320$, for a total of $5$ meetings."), ("Answer", r"They meet $\boxed{5}$ times." )],
+SOL={
+1:[("Identify the unit",r"Each can contributes $12$ ounces, and the target is $128$ ounces."),("Divide to estimate",r"We compute $128\div12=10\frac{2}{3}$. This means $10$ cans would be too few."),("Round in the correct direction",r"Because cans come in whole numbers, we must round up, not down."),("Check the amount",r"With $11$ cans, the amount is $11\cdot12=132$ ounces, which is enough."),("Answer",r"The minimum number of cans is $\boxed{11}$.")],
+2:[("Use four coin values",r"The available coin values are $1,5,10,$ and $25$ cents. We need exactly four coins."),("Show the other choices are possible",r"We can make $25=10+5+5+5$, $35=10+10+10+5$, $45=25+10+5+5$, and $55=25+10+10+10$."),("Test 15 cents",r"With four coins, using a dime leaves $5$ cents for three coins, impossible because the smallest three coins sum to $3$ and no combination gives exactly $5$ with three coins except $1+1+3$, and there is no $3$-cent coin. Without a dime, four nickels already make $20$ if all are nickels, and adding pennies cannot reach $15$ with exactly four coins."),("Answer",r"The impossible total is $\boxed{15}$ cents.")],
+3:[("Start inside",r"The innermost denominator is $1+1=2$, so the inner fraction is $\frac{1}{2}$."),("Simplify the next denominator",r"Now the middle denominator is $1+\frac12=\frac32$. Thus the large fraction is $\frac{1}{3/2}=\frac23$."),("Finish",r"The whole expression is $1+\frac23=\frac53$."),("Answer",r"The value is $\boxed{\frac53}$.")],
+4:[("Find the swim time",r"The swim is $\frac14$ mile at $2$ miles per hour, so it takes $\frac{1/4}{2}=\frac18$ hour."),("Find the run time",r"The run is $3$ miles at $6$ miles per hour, so it takes $\frac36=\frac12$ hour."),("Find the bike time left",r"The total goal is $2$ hours, so the bike ride must take $2-\frac18-\frac12=\frac{11}{8}$ hours."),("Compute the biking speed",r"Speed is distance divided by time: $15\div\frac{11}{8}=15\cdot\frac8{11}=\frac{120}{11}$."),("Answer",r"The required speed is $\boxed{\frac{120}{11}}$ miles per hour.")],
+5:[("Notice the structure",r"The number $111{,}111{,}111$ is a repunit, a number made of nine $1$ digits."),("Use the repunit square pattern",r"Squaring a repunit with nine digits gives increasing digits up to $9$ and then decreasing digits: $12345678987654321$."),("Split the digit sum",r"The digit sum is $(1+2+\cdots+9)+(8+7+\cdots+1)$."),("Compute",r"These sums are $45$ and $36$, so the total digit sum is $81$."),("Answer",r"The sum of the digits is $\boxed{81}$.")],
+6:[("Infer the larger radius",r"For a circle of radius $2$ inscribed in a semicircle in the standard way, it is tangent to the diameter and the semicircular arc. The larger semicircle has radius $4$."),("Compare areas",r"The semicircle area is $\frac12\pi(4)^2=8\pi$. The small circle area is $\pi(2)^2=4\pi$."),("Find the shaded fraction",r"The shaded area is $8\pi-4\pi=4\pi$, which is half the semicircle area."),("Answer",r"The shaded fraction is $\boxed{\frac12}$.")],
+7:[("Translate the percent statement",r"Let $w$ be the fat percentage of whole milk. The $2\%$ milk has $40\%$ less fat, so it has $60\%$ of the whole-milk fat."),("Set up the equation",r"Thus $2=0.60w=\frac35w$."),("Solve",r"Multiplying by $\frac53$ gives $w=2\cdot\frac53=\frac{10}{3}$."),("Answer",r"Whole milk is $\boxed{\frac{10}{3}\%}$ fat.")],
+8:[("Recover the regular ticket price",r"A senior ticket has a $25\%$ discount, so it costs $75\%$ of the regular price. If $0.75$ of the regular price is $6$, then the regular price is $6\div0.75=8$ dollars."),("Price each generation",r"The two seniors cost $2\cdot6=12$ dollars. The two middle-generation tickets cost $2\cdot8=16$ dollars. The two children's tickets are half price, so they cost $2\cdot4=8$ dollars."),("Add",r"The total is $12+16+8=36$ dollars."),("Answer",r"Grandfather Wen must pay $\boxed{36}$ dollars.")],
+9:[("Use the geometric sequence form",r"Since $a,b,2009$ form a geometric sequence with integer ratio $r$, we have $b=ar$ and $2009=ar^2$."),("Factor 2009",r"We factor $2009=7^2\cdot41$. Therefore the square factor $r^2$ must be $7^2$, so $r=7$."),("Find a",r"Then $a=\frac{2009}{7^2}=41$. This also gives $b=287$, which satisfies $a<b<2009$."),("Answer",r"The value of $a$ is $\boxed{41}$.")],
+10:[("Use the altitude-to-hypotenuse relation",r"In a right triangle, the altitude from the right angle to the hypotenuse satisfies $BD^2=AD\cdot DC$. Here $AD=3$ and $DC=4$, so $BD^2=12$."),("Find the altitude",r"Thus $BD=2\sqrt3$."),("Use AC as the base",r"The hypotenuse is split into $AD+DC=3+4=7$, so $AC=7$."),("Compute area",r"Using base $AC$ and height $BD$, the area is $\frac12\cdot7\cdot2\sqrt3=7\sqrt3$."),("Answer",r"The area is $\boxed{7\sqrt3}$.")],
 }
 
 def esc(x, quote=True):
@@ -140,7 +144,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2008" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2009" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -181,7 +185,7 @@ def main():
                 "has_answer": True,
                 "has_choices": True,
                 "has_solution": True,
-                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in set(),
+                "needs_review": ("题面包含图形" in (r.get("notes") or "")) or int(r["problem_no"]) in {6, 10},
                 "batch_number": BATCH_NUMBER,
             }
         )
@@ -229,7 +233,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2008 AMC 10B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2009 AMC 10A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
@@ -250,6 +254,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
