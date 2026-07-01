@@ -8,121 +8,148 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 29
+BATCH_NUMBER = 30
 CONTEST_DIR = "amc10"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2006_AMC_10B_Answer_Key"
-TARGET_NUMBERS = {1, 2, 3, 4, 5, 9, 10}
+TARGET_NUMBERS = {11, 12, 13, 14, 16, 17, 18, 20}
 SKIPPED = [
-    "2006 AMC 10B Problem 6 skipped: statement depends on a diagram and OCR text is incomplete.",
-    "2006 AMC 10B Problem 7 skipped: OCR text for the expression is unreliable.",
-    "2006 AMC 10B Problem 8 skipped: statement depends on a diagram.",
+    "2006 AMC 10B Problem 15 skipped: statement depends on a diagram for the rhombus configuration.",
+    "2006 AMC 10B Problem 19 skipped: statement and shaded region depend on a diagram.",
 ]
-BATCH_LABEL = "2006 AMC 10B Problems 1-5, 9-10"
-NEXT_START = "2006 AMC 10B Problem 11"
+BATCH_LABEL = "2006 AMC 10B Problems 11-14, 16-18, 20"
+NEXT_START = "2006 AMC 10B Problem 21"
 
 ANS = {
-    1: ("C", "0"),
-    2: ("A", "-72"),
-    3: ("A", "10"),
-    4: ("D", "8"),
-    5: ("B", "25"),
-    9: ("B", "137"),
-    10: ("A", "43"),
+    11: ("C", "4"),
+    12: ("E", r"\frac{9}{4}"),
+    13: ("E", r"\frac{7}{6}"),
+    14: ("D", r"\frac{9}{2}"),
+    16: ("E", "Saturday"),
+    17: ("D", r"\frac{1}{3}"),
+    18: ("C", "3"),
+    20: ("E", "40,400"),
 }
 
 
 OV = {
-    1: (
-        r"What is $(-1)^1+(-1)^2+\cdots+(-1)^{2006}$?",
-        [("A", "$-2006$"), ("B", "$-1$"), ("C", "$0$"), ("D", "$1$"), ("E", "$2006$")],
+    11: (
+        r"What is the tens digit in the sum $7!+8!+9!+\cdots+2006!$?",
+        [("A", "$1$"), ("B", "$3$"), ("C", "$4$"), ("D", "$6$"), ("E", "$9$")],
     ),
-    2: (
-        r"For real numbers $x$ and $y$, define $x\spadesuit y=(x+y)(x-y)$. What is $3\spadesuit(4\spadesuit5)$?",
-        [("A", "$-72$"), ("B", "$-27$"), ("C", "$-24$"), ("D", "$24$"), ("E", "$72$")],
+    12: (
+        r"The lines $x=\frac14y+a$ and $y=\frac14x+b$ intersect at the point $(1,2)$. What is $a+b$?",
+        [("A", "$0$"), ("B", r"$\frac34$"), ("C", "$1$"), ("D", "$2$"), ("E", r"$\frac94$")],
     ),
-    3: (
-        r"A football game was played between two teams, the Cougars and the Panthers. The two teams scored a total of $34$ points, and the Cougars won by a margin of $14$ points. How many points did the Panthers score?",
-        [("A", "$10$"), ("B", "$14$"), ("C", "$17$"), ("D", "$20$"), ("E", "$24$")],
+    13: (
+        r"Joe and JoAnn each bought $12$ ounces of coffee in a $16$-ounce cup. Joe drank $2$ ounces of his coffee and then added $2$ ounces of cream. JoAnn added $2$ ounces of cream, stirred the coffee well, and then drank $2$ ounces. What is the resulting ratio of the amount of cream in Joe's coffee to that in JoAnn's coffee?",
+        [("A", r"$\frac67$"), ("B", r"$\frac{13}{14}$"), ("C", "$1$"), ("D", r"$\frac{14}{13}$"), ("E", r"$\frac76$")],
     ),
-    4: (
-        r"Circles of diameter $1$ inch and $3$ inches have the same center. The smaller circle is painted red, and the portion outside the smaller circle and inside the larger circle is painted blue. What is the ratio of the blue-painted area to the red-painted area?",
-        [("A", "$2$"), ("B", "$3$"), ("C", "$6$"), ("D", "$8$"), ("E", "$9$")],
+    14: (
+        r"Let $a$ and $b$ be the roots of the equation $x^2-mx+2=0$. Suppose that $a+\frac1b$ and $b+\frac1a$ are the roots of the equation $x^2-px+q=0$. What is $q$?",
+        [("A", r"$\frac52$"), ("B", r"$\frac72$"), ("C", "$4$"), ("D", r"$\frac92$"), ("E", "$8$")],
     ),
-    5: (
-        r"A $2\times3$ rectangle and a $3\times4$ rectangle are contained within a square without overlapping at any interior point, and the sides of the square are parallel to the sides of the two given rectangles. What is the smallest possible area of the square?",
-        [("A", "$16$"), ("B", "$25$"), ("C", "$36$"), ("D", "$49$"), ("E", "$64$")],
+    16: (
+        r"Leap Day, February $29$, $2004$, occurred on a Sunday. On what day of the week will Leap Day, February $29$, $2020$, occur?",
+        [("A", "Tuesday"), ("B", "Wednesday"), ("C", "Thursday"), ("D", "Friday"), ("E", "Saturday")],
     ),
-    9: (
-        r"Francesca uses $100$ grams of lemon juice, $100$ grams of sugar, and $400$ grams of water to make lemonade. There are $25$ calories in $100$ grams of lemon juice and $386$ calories in $100$ grams of sugar. Water contains no calories. How many calories are in $200$ grams of her lemonade?",
-        [("A", "$129$"), ("B", "$137$"), ("C", "$174$"), ("D", "$223$"), ("E", "$411$")],
+    17: (
+        r"Bob and Alice each have a bag that contains one ball of each of the colors blue, green, orange, red, and violet. Alice randomly selects one ball from her bag and puts it into Bob's bag. Bob then randomly selects one ball from his bag and puts it into Alice's bag. What is the probability that after this process, the contents of the two bags are the same?",
+        [("A", r"$\frac{1}{10}$"), ("B", r"$\frac16$"), ("C", r"$\frac15$"), ("D", r"$\frac13$"), ("E", r"$\frac12$")],
     ),
-    10: (
-        r"In a triangle with integer side lengths, one side is three times as long as a second side, and the length of the third side is $15$. What is the greatest possible perimeter of the triangle?",
-        [("A", "$43$"), ("B", "$44$"), ("C", "$45$"), ("D", "$46$"), ("E", "$47$")],
+    18: (
+        r"Let $a_1,a_2,\ldots$ be a sequence for which $a_1=2$, $a_2=3$, and $a_n=\frac{a_{n-1}}{a_{n-2}}$ for each positive integer $n\ge3$. What is $a_{2006}$?",
+        [("A", "$1$"), ("B", "$2$"), ("C", "$3$"), ("D", r"$\frac23$"), ("E", r"$\frac32$")],
+    ),
+    20: (
+        r"In rectangle $ABCD$, we have $A=(6,-22)$, $B=(2006,178)$, and $D=(8,y)$ for some integer $y$. What is the area of rectangle $ABCD$?",
+        [("A", "$4000$"), ("B", "$4040$"), ("C", "$4400$"), ("D", "$40,000$"), ("E", "$40,400$")],
     ),
 }
 
 
 KEY_OVERRIDES = {
-    1: "Pair alternating powers of -1 so that each pair cancels to zero.",
-    2: "Evaluate the custom operation from the inside outward, keeping track of signs.",
-    3: "Use the sum and difference of two scores to solve a simple system.",
-    4: "Compare annulus area to inner circle area using radii from the given diameters.",
-    5: "Find the smallest square side length that can contain both rectangles without overlap.",
-    9: "Use proportional reasoning: compute total calories first, then scale to 200 grams.",
-    10: "Use the triangle inequality to maximize the integer side length while keeping a triangle possible.",
+    11: "For large factorials, use place-value divisibility and only keep terms that can affect the tens digit.",
+    12: "Substitute the intersection point into both line equations to solve for the constants.",
+    13: "Track the actual amount of cream left after a mixed portion is removed.",
+    14: "Use Vieta's formulas and multiply the transformed roots directly.",
+    16: "Count weekday shifts between leap days using days modulo 7.",
+    17: "Condition on Alice's transferred color and ask what Bob must return to restore both bags.",
+    18: "Look for the repeating cycle in the recursively defined sequence.",
+    20: "Use perpendicular side vectors of a rectangle and the dot product to find the missing coordinate and area.",
 }
 
 
 SOL = {
-    1: [
-        ("Notice the repeating pattern", r"The powers of $-1$ alternate: $(-1)^1=-1$, $(-1)^2=1$, then the same pattern repeats. When a long expression alternates like this, pairing neighboring terms is usually cleaner than adding one by one."),
-        ("Pair the terms", r"Group the sum as $((-1)^1+(-1)^2)+((-1)^3+(-1)^4)+\cdots+((-1)^{2005}+(-1)^{2006})$. Each pair is $-1+1=0$."),
-        ("Check that no term is left over", r"There are $2006$ terms, which is even, so the terms divide into $1003$ complete pairs. This matters because an odd number of terms would leave one extra $-1$."),
-        ("Add the pairs", r"Since every pair contributes $0$, the whole sum is $0$."),
-        ("Answer", r"Therefore the answer is $\boxed{0}$."),
+    11: [
+        ("Decide which factorials matter", r"We only need the tens digit, so any term that is a multiple of $100$ cannot change it. Since $10!$ and every larger factorial contain the factors $2^2\cdot5^2=100$, all terms from $10!$ onward end in at least two zeros."),
+        ("Reduce the sum", r"That means the tens digit of $7!+8!+9!+\cdots+2006!$ is the same as the tens digit of $7!+8!+9!$."),
+        ("Compute the smaller factorials", r"We have $7!=5040$, $8!=40320$, and $9!=362880$. Adding gives \
+\[5040+40320+362880=408240.\]"),
+        ("Read the requested digit", r"The tens digit of $408240$ is $4$. The large later factorials do not change that digit because they all contribute $00$ in the last two places."),
+        ("Answer", r"Therefore the answer is $\boxed{4}$."),
     ],
-    2: [
-        ("Read the operation carefully", r"The symbol $\spadesuit$ is not a standard operation; the problem defines it for us. Whenever an AMC problem defines a new operation, we should substitute into the definition exactly as written."),
-        ("Evaluate the inside first", r"The expression is $3\spadesuit(4\spadesuit5)$, so first compute $4\spadesuit5$: \[4\spadesuit5=(4+5)(4-5)=9(-1)=-9.\]"),
-        ("Use the result as the second input", r"Now the original expression becomes $3\spadesuit(-9)$. Apply the same rule again, this time with $x=3$ and $y=-9$."),
-        ("Compute the final value", r"We get \[3\spadesuit(-9)=(3+(-9))(3-(-9))=(-6)(12)=-72.\] The negative sign is reasonable because one factor is negative and one is positive."),
-        ("Answer", r"Therefore the answer is $\boxed{-72}$."),
+    12: [
+        ("Use the meaning of intersection", r"If the two lines intersect at $(1,2)$, then $x=1$ and $y=2$ must satisfy both equations. This is more direct than trying to solve the two lines symbolically."),
+        ("Find $a$", r"Substitute $(x,y)=(1,2)$ into $x=\frac14y+a$: \
+\[1=\frac14\cdot2+a=\frac12+a.\] Thus $a=\frac12$."),
+        ("Find $b$", r"Substitute the same point into $y=\frac14x+b$: \
+\[2=\frac14\cdot1+b.\] Therefore $b=2-\frac14=\frac74$."),
+        ("Add the constants", r"Now \
+\[a+b=\frac12+\frac74=\frac24+\frac74=\frac94.\]"),
+        ("Answer", r"The answer is $\boxed{\frac94}$."),
     ],
-    3: [
-        ("Assign variables to the scores", r"Let $p$ be the Panthers' score. Since the Cougars won by $14$, the Cougars scored $p+14$. This turns the wording into an equation."),
-        ("Use the total points", r"The two teams scored $34$ points altogether, so \[p+(p+14)=34.\] This equation uses both pieces of information: total score and winning margin."),
-        ("Solve for the Panthers' score", r"Simplifying gives $2p+14=34$, so $2p=20$, and therefore $p=10$."),
-        ("Check the result", r"If the Panthers scored $10$, the Cougars scored $24$. The total is $34$ and the margin is $14$, so both conditions are satisfied."),
-        ("Answer", r"The Panthers scored $\boxed{10}$ points."),
+    13: [
+        ("Track Joe's cream", r"Joe first drinks $2$ ounces of pure coffee, so no cream is removed. Then he adds $2$ ounces of cream. Joe therefore has $2$ ounces of cream in his cup."),
+        ("Track JoAnn's mixture", r"JoAnn adds $2$ ounces of cream to $12$ ounces of coffee, making $14$ ounces total. Since the mixture is stirred well, the cream is evenly distributed."),
+        ("Find how much cream JoAnn drinks", r"The fraction of JoAnn's mixture that is cream is $\frac{2}{14}=\frac17$. When she drinks $2$ ounces, she removes $2\cdot\frac17=\frac27$ ounces of cream."),
+        ("Find JoAnn's remaining cream", r"JoAnn started with $2$ ounces of cream and drank $\frac27$ ounces of it, so she has $2-\frac27=\frac{12}{7}$ ounces of cream left."),
+        ("Form the ratio", r"The requested ratio is Joe's cream to JoAnn's cream: \
+\[\frac{2}{12/7}=2\cdot\frac7{12}=\frac76.\]"),
+        ("Answer", r"Therefore the answer is $\boxed{\frac76}$."),
     ],
-    4: [
-        ("Convert diameters to radii", r"Area formulas use radius, not diameter. The red circle has radius $\frac12$, and the larger circle has radius $\frac32$."),
-        ("Compute the red area", r"The red area is the area of the smaller circle: \[\pi\left(\frac12\right)^2=\frac{\pi}{4}.\]"),
-        ("Compute the blue area as a difference", r"The blue region is the larger circle minus the smaller circle: \[\pi\left(\frac32\right)^2-\pi\left(\frac12\right)^2=\frac{9\pi}{4}-\frac{\pi}{4}=2\pi.\]"),
-        ("Form the requested ratio", r"The ratio of blue area to red area is \[\frac{2\pi}{\pi/4}=8.\] The factor of $\pi$ cancels, as it often does in ratios of circular areas."),
-        ("Answer", r"Therefore the answer is $\boxed{8}$."),
+    14: [
+        ("Record what Vieta gives", r"Since $a$ and $b$ are roots of $x^2-mx+2=0$, Vieta's formulas tell us that $ab=2$. We do not actually need the value of $m$."),
+        ("Understand what $q$ represents", r"For the equation $x^2-px+q=0$, the constant term $q$ is the product of its two roots. So \
+\[q=\left(a+\frac1b\right)\left(b+\frac1a\right).\]"),
+        ("Multiply carefully", r"Expanding gives \
+\[ab+1+1+\frac1{ab}.\] The two middle terms are $a\cdot\frac1a=1$ and $\frac1b\cdot b=1$."),
+        ("Substitute $ab=2$", r"Thus \
+\[q=2+1+1+\frac12=\frac92.\]"),
+        ("Answer", r"The answer is $\boxed{\frac92}$."),
     ],
-    5: [
-        ("Think in terms of side length", r"The square must be large enough in both horizontal and vertical directions. Because the sides of all rectangles are parallel, we only need to reason about widths and heights."),
-        ("Find a lower bound", r"The $3\times4$ rectangle already requires one side of the square to be at least $4$. But the total area of the two rectangles is $2\cdot3+3\cdot4=18$, so a $4\times4$ square of area $16$ is impossible."),
-        ("Test the next possible answer size", r"The answer choices are square areas, so after $16$ the next candidate is $25$, which means a $5\times5$ square. We need to see whether the two rectangles can fit inside it."),
-        ("Give a fitting arrangement", r"Place the $3\times4$ rectangle using width $3$ and height $4$. Place the $2\times3$ rectangle beside it using width $2$ and height $3$. Together they fit in a $5$-wide by $4$-high region, which is inside a $5\times5$ square."),
-        ("Answer", r"So the smallest possible square area is $\boxed{25}$."),
+    16: [
+        ("Think in four-year jumps", r"We are comparing Leap Day to Leap Day, so it is natural to move in four-year intervals: $2004$ to $2008$, then to $2012$, $2016$, and $2020$."),
+        ("Find the weekday shift for one interval", r"From February $29$ of one leap year to February $29$ of the next leap year is $4\cdot365+1=1461$ days. Since $1461\equiv5\pmod7$, each four-year leap-day jump moves the weekday forward $5$ days."),
+        ("Count the intervals", r"There are four such jumps from $2004$ to $2020$. The total shift is $4\cdot5=20$ days, and $20\equiv6\pmod7$."),
+        ("Apply the shift", r"Starting from Sunday, moving forward $6$ days gives Saturday."),
+        ("Answer", r"Leap Day in $2020$ occurred on $\boxed{\text{Saturday}}$."),
     ],
-    9: [
-        ("Compute the total mass", r"The lemonade contains $100+100+400=600$ grams in all. The question asks about $200$ grams, which is one third of the total mixture."),
-        ("Compute the total calories", r"The lemon juice contributes $25$ calories, the sugar contributes $386$ calories, and the water contributes $0$. So the full $600$ grams has $25+386=411$ calories."),
-        ("Scale the calories", r"Since the ingredients are mixed evenly, a $200$-gram serving has the same fraction of the total calories as its fraction of the mass. That fraction is $\frac{200}{600}=\frac13$."),
-        ("Calculate", r"Therefore the calories in $200$ grams are \[\frac13\cdot411=137.\]"),
-        ("Answer", r"The answer is $\boxed{137}$."),
+    17: [
+        ("Condition on Alice's first move", r"Suppose Alice transfers a blue ball. The same reasoning applies no matter which color she transfers, so we can focus on this one case."),
+        ("Describe the bags after Alice's move", r"Alice is missing blue and still has one of each of the other four colors. Bob now has two blue balls and one of each of the other four colors, for $6$ balls total."),
+        ("Identify what Bob must return", r"For the bags to end with the same contents as before, Alice must get a blue ball back. If Bob returns any other color, Alice will still be missing blue and will have two of another color."),
+        ("Compute the probability", r"Bob has $2$ blue balls among his $6$ balls, so the probability that he returns blue is $\frac26=\frac13$."),
+        ("Answer", r"Therefore the answer is $\boxed{\frac13}$."),
     ],
-    10: [
-        ("Name the related sides", r"Let the shorter of the two related sides be $x$. Then the side three times as long is $3x$, and the third side is $15$. The perimeter is $x+3x+15=4x+15$, so we want $x$ as large as possible."),
-        ("Apply the key triangle inequality", r"For a triangle, the sum of the two shorter sides must be greater than the longest side. Since $3x$ is the potentially long side, we need $x+15>3x$."),
-        ("Solve the inequality", r"The inequality gives $15>2x$, so $x<7.5$. Because the side lengths are integers, the largest possible value is $x=7$."),
-        ("Check that it works", r"With $x=7$, the side lengths are $7$, $21$, and $15$. We have $7+15=22>21$, so the triangle is valid."),
-        ("Answer", r"The greatest possible perimeter is $7+21+15=\boxed{43}$."),
+    18: [
+        ("Compute early terms", r"For recursive sequence problems, a good first move is to list terms until a pattern appears. We are given $a_1=2$ and $a_2=3$."),
+        ("Use the recurrence", r"Now \
+\[a_3=\frac{a_2}{a_1}=\frac32,\quad a_4=\frac{a_3}{a_2}=\frac12,\quad a_5=\frac{a_4}{a_3}=\frac13,\quad a_6=\frac{a_5}{a_4}=\frac23.\]"),
+        ("Notice the cycle", r"Continuing one more term gives $a_7=\frac{a_6}{a_5}=2$, which is the same as $a_1$. Then $a_8=3$, matching $a_2$. So the sequence repeats every $6$ terms."),
+        ("Use the index modulo 6", r"Since $2006=6\cdot334+2$, the $2006$th term is in the same position of the cycle as $a_2$."),
+        ("Answer", r"Thus $a_{2006}=a_2=\boxed{3}$."),
+    ],
+    20: [
+        ("Use rectangle geometry", r"In rectangle $ABCD$, the sides $AB$ and $AD$ meet at a right angle. So the vectors $\overrightarrow{AB}$ and $\overrightarrow{AD}$ must be perpendicular."),
+        ("Write the two vectors", r"From $A=(6,-22)$ to $B=(2006,178)$, \
+\[\overrightarrow{AB}=(2000,200).\] From $A=(6,-22)$ to $D=(8,y)$, \
+\[\overrightarrow{AD}=(2,y+22).\]"),
+        ("Use the dot product", r"Perpendicular vectors have dot product $0$, so \
+\[(2000)(2)+200(y+22)=0.\] This gives $4000+200y+4400=0$, hence $200y=-8400$ and $y=-42$."),
+        ("Find side lengths", r"Now $AD=(2,-20)$, so $AD=\sqrt{2^2+(-20)^2}=\sqrt{404}$. Also $AB=\sqrt{2000^2+200^2}=\sqrt{4,040,000}=100\sqrt{404}$."),
+        ("Compute area", r"The area of the rectangle is \
+\[(\sqrt{404})(100\sqrt{404})=100\cdot404=40,400.\]"),
+        ("Answer", r"The answer is $\boxed{40,400}$."),
     ],
 }
 
@@ -300,7 +327,7 @@ def main():
         + "- Commit hash: pending\n"
         + "- Pushed: pending\n"
         + f"- Next batch should start from: {NEXT_START}\n"
-        + "- Review notes: Skipped Problems 6 and 8 because they require diagrams; skipped Problem 7 because OCR made the expression unreliable.\n",
+        + "- Review notes: Skipped Problems 15 and 19 because they require diagrams.\n",
         encoding="utf-8",
     )
 
@@ -324,7 +351,7 @@ def main():
     (ROOT / "resume_prompt.md").write_text(
         "请继续 STEMHUB AMC problem teaching pages 批量生成任务。\n\n"
         + f"当前状态：Batch {BATCH_NUMBER} 已生成/更新并通过本地脚本验证；最新范围为 {BATCH_LABEL}。\n"
-        + "本批跳过 2006 AMC 10B Problems 6, 7, 8：6 和 8 依赖图形，7 的公式 OCR 不可靠。\n"
+        + "本批跳过 2006 AMC 10B Problems 15, 19：题面依赖图形。\n"
         + f"下一批从 {NEXT_START} 开始。\n\n"
         + "继续策略：每批生成 5-10 道可靠题；遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 teaching steps 后 commit/push。\n",
         encoding="utf-8",
