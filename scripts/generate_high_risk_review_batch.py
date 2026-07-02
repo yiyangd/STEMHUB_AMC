@@ -266,7 +266,7 @@ def update_progress_and_report(items, skipped):
 def main():
     rows = read_rows()
     items = []
-    skipped = []
+    skipped = list(globals().get("REVIEW_SKIPPED", []))
     for source, spec in PROBLEMS.items():
         row = rows.get(source)
         if not row:

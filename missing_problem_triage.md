@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-02T16:11:26-07:00
-- Missing total: 305
+- Generated at: 2026-07-02T16:20:50-07:00
+- Missing total: 302
 - AMC10 missing total: 91
-- AMC12 missing total: 214
+- AMC12 missing total: 211
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 88 |
+| `solution_high_risk` | 85 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 87 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 84 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -164,14 +164,14 @@
 - `2015 AMC 12B Problem 24` [solution_high_risk]: 2015 AMC 12B Problem 24: four-circle radical-axis geometry high risk
 - `2015 AMC 12B Problem 25` [solution_high_risk]: 2015 AMC 12B Problem 25: long vector walk with radicals high risk
 - `2016 AMC 12A Problem 13` [ocr_or_statement_risk]: Skipped reasons: 2016 AMC 12A Problem 13: OCR text is unreliable for the probability threshold
-- `2016 AMC 12A Problem 14` [solution_high_risk]: 2016 AMC 12A Problem 14: cube-labeling proof risk is high for unattended generation
 - `2016 AMC 12A Problem 15` [ocr_or_statement_risk]: 2016 AMC 12A Problem 15: tangent-circle geometry choices/OCR are unclear
 - `2016 AMC 12A Problem 25` [ocr_or_statement_risk]: Skipped reasons: 2016 AMC 12A Problem 25: long blackboard-square process has high derivation/OCR risk
 - `2016 AMC 12B Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2016 AMC 12B Problem 21: recursive geometry statement is OCR-damaged
-- `2016 AMC 12B Problem 22` [solution_high_risk]: 2016 AMC 12B Problem 22: repeating-decimal period conditions need careful number-theory verification
 - `2016 AMC 12B Problem 25` [ocr_or_statement_risk]: 2016 AMC 12B Problem 25: recurrence formula is OCR-damaged
 - `2017 AMC 12A Problem 22` [solution_high_risk]: Skipped reasons: 2017 AMC 12A Problem 22: random-walk hitting probability needs a dedicated Markov derivation
 - `2017 AMC 12A Problem 25` [ocr_or_statement_risk]: 2017 AMC 12A Problem 25: complex-product probability statement is OCR-damaged
+- `2017 AMC 12B Problem 17` [ocr_or_statement_risk]: 2017 AMC 12B Problem 17: local CSV statement is truncated
+- `2017 AMC 12B Problem 22` [solution_high_risk]: Skipped reasons: 2017 AMC 12B Problem 22: four-player coin-transfer probability is high-risk for unattended derivation
 
 ## Suggested Next Step
 

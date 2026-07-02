@@ -4616,12 +4616,23 @@
 - Commit hash: pending
 - Pushed: pending
 
+
+## High-risk reviewed problem pages batch 2
+
+- Time: 2026-07-02T16:20:44-07:00
+- Generated count: 3
+- Skipped count: 2
+- Skipped reasons: 2021 Fall AMC 12A Problem 18: local CSV statement does not match the AoPS Fall problem statement; skipped for data repair before page generation.; 2021 Fall AMC 12A Problem 19: local CSV statement does not match the AoPS Fall problem statement; skipped for data repair before page generation.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+
 ## Missing/Skipped Problem Triage
 
-- Time: 2026-07-02T16:11:26-07:00
-- Missing total: 305
+- Time: 2026-07-02T16:20:50-07:00
+- Missing total: 302
 - AMC10 missing total: 91
-- AMC12 missing total: 214
-- Status counts: ready_to_generate=0, needs_diagram=161, ocr_or_statement_risk=56, solution_high_risk=88, needs_answer_verification=0, manual_review=0
+- AMC12 missing total: 211
+- Status counts: ready_to_generate=0, needs_diagram=161, ocr_or_statement_risk=56, solution_high_risk=85, needs_answer_verification=0, manual_review=0
 - Output files: `missing_problem_triage.csv`, `missing_problem_triage.md`
 - Validation result: pending commit
