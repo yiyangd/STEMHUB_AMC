@@ -3868,3 +3868,19 @@
 - Pushed: pending
 - Next batch should start from: 2018 AMC 12A Problem 11
 - Review notes: none.
+
+## Batch 239: 2018 AMC 12A Problems 12-16, 18-19
+
+- Start time: 2026-07-02T00:46:06-07:00
+- End time: 2026-07-02T00:46:07-07:00
+- Processed contest: AMC12
+- Processed range: 2018 AMC 12A Problems 12-16, 18-19
+- Generated count: 7
+- Updated existing count: 0
+- Skipped count: 3
+- Skipped reasons: 2018 AMC 12A Problem 11: folded triangle crease length requires original diagram; skipped; 2018 AMC 12A Problem 17: OCR ambiguity in square-to-hypotenuse distance; skipped; 2018 AMC 12A Problem 20: cyclic quadrilateral in isosceles right triangle is geometry high risk; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2018 AMC 12A Problem 21
+- Review notes: none.

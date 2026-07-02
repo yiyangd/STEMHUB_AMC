@@ -3,17 +3,19 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 238
+BATCH_NUMBER = 239
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2018_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,9,10}
+TARGET_NUMBERS = {12,13,14,15,16,18,19}
 SKIPPED = [
-    "2018 AMC 12A Problem 8: diagram-dependent similar-triangle area problem; skipped",
+    "2018 AMC 12A Problem 11: folded triangle crease length requires original diagram; skipped",
+    "2018 AMC 12A Problem 17: OCR ambiguity in square-to-hypotenuse distance; skipped",
+    "2018 AMC 12A Problem 20: cyclic quadrilateral in isosceles right triangle is geometry high risk; skipped",
 ]
-BATCH_LABEL = "2018 AMC 12A Problems 1-7, 9-10"
-NEXT_START = "2018 AMC 12A Problem 11"
+BATCH_LABEL = "2018 AMC 12A Problems 12-16, 18-19"
+NEXT_START = "2018 AMC 12A Problem 21"
 
-ANS={1:("D","50"),2:("C","50"),3:("E","24"),4:("D","(5,6)"),5:("E","10"),6:("B","21"),7:("E","9"),9:("E",r"0\le y\le\pi"),10:("C","3")}
+ANS={12:("C","4"),13:("D","3281"),14:("D",r"\frac4{27}"),15:("B","1022"),16:("E",r"a>\frac12"),18:("D","75"),19:("C","19")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3918,6 +3920,78 @@ SOL.update({
 ("Other sign cases do not work",r"If \(y<0\), then the line forces \(x>3\), and the absolute-value equation has no additional valid solution. Checking the remaining sign case similarly gives none."),
 ("Count the solutions",r"The valid ordered pairs are \[(0,1),\quad\left(\frac32,\frac12\right),\quad(-3,2).\]"),
 ("Conclude",r"There are \(\boxed{3}\) ordered pairs."),
+],
+})
+
+OV.update({
+12:(r"Let $S$ be a set of $6$ integers taken from \(\{1,2,\ldots,12\}\) with the property that if \(a\) and \(b\) are elements of \(S\) with \(a<b\), then \(b\) is not a multiple of \(a\). What is the least possible value of an element in \(S\)?",[("A","2"),("B","3"),("C","4"),("D","5"),("E","7")]),
+13:(r"How many nonnegative integers can be written in the form \[a_7\cdot3^7+a_6\cdot3^6+\cdots+a_1\cdot3+a_0,\] where \(a_i\in\{-1,0,1\}\) for \(0\le i\le7\)?",[("A","512"),("B","729"),("C","1094"),("D","3281"),("E","59048")]),
+14:(r"The solution to the equation \[\log_{3x}4=\log_{2x}8,\] where \(x\) is a positive real number other than \(\frac13\) or \(\frac12\), can be written as \(\frac pq\), where \(p\) and \(q\) are relatively prime positive integers. What is \(p+q\)?",[("A","5"),("B","13"),("C","17"),("D","31"),("E","35")]),
+15:(r"A scanning code consists of a \(7\times7\) grid of squares, with some squares black and the rest white. There must be at least one square of each color. A scanning code is called symmetric if it does not change under rotations by multiples of \(90^\circ\) or reflections across symmetry lines of the square. What is the total number of possible symmetric scanning codes?",[("A","510"),("B","1022"),("C","8190"),("D","8192"),("E","65534")]),
+16:(r"Which describes the set of values of \(a\) for which the curves \(x^2+y^2=a^2\) and \(y=x^2-a\) intersect in exactly \(3\) points in the real \(xy\)-plane?",[("A",r"$a=\frac14$"),("B",r"$\frac14<a<\frac12$"),("C",r"$a>\frac14$"),("D",r"$a=\frac12$"),("E",r"$a>\frac12$")]),
+18:(r"Triangle \(ABC\) with \(AB=50\) and \(AC=10\) has area \(120\). Let \(D\) be the midpoint of \(AB\), and let \(E\) be the midpoint of \(AC\). The angle bisector of \(\angle BAC\) intersects \(DE\) and \(BC\) at \(F\) and \(G\), respectively. What is the area of quadrilateral \(FDBG\)?",[("A","60"),("B","65"),("C","70"),("D","75"),("E","80")]),
+19:(r"Let \(A\) be the set of positive integers that have no prime factors other than \(2\), \(3\), or \(5\). The infinite sum of the reciprocals of the elements of \(A\) can be expressed as \(\frac mn\), where \(m\) and \(n\) are relatively prime positive integers. What is \(m+n\)?",[("A","16"),("B","17"),("C","19"),("D","23"),("E","36")]),
+})
+
+KEY_OVERRIDES.update({
+12:"Construct a large divisibility antichain and prove smaller minimum is impossible.",
+13:"Recognize balanced ternary representations with coefficients -1, 0, and 1.",
+14:"Use logarithm change of base and compare powers.",
+15:"Count cell orbits under the full symmetry group of a 7 by 7 square.",
+16:"Substitute the parabola into the circle and count real x-values.",
+18:"Use the angle-bisector theorem and the midline homothety.",
+19:"Factor the reciprocal sum as a product of geometric series.",
+})
+
+SOL.update({
+12:[
+("Try to make the minimum small",r"If the set contained \(1\), then every larger positive integer would be a multiple of \(1\), so the set could not have six elements. If it contained \(2\), then it could not contain \(4,6,8,10,12\), leaving too few choices."),
+("Rule out minimum 3",r"If the minimum were \(3\), then \(6,9,12\) could not be used. From the remaining numbers \(4,5,7,8,10,11\), we cannot use both \(4\) and \(8\), and cannot use both \(5\) and \(10\). Thus at most four additional numbers can be chosen, not enough for a set of size $6$."),
+("Show minimum 4 is possible",r"The set \[\{4,6,7,9,10,11\}\] works: no larger element in the set is a multiple of a smaller one."),
+("Conclude",r"The least possible value of an element of \(S\) is \(\boxed{4}\)."),
+],
+13:[
+("Recognize balanced ternary",r"Each coefficient \(a_i\) can be \(-1\), \(0\), or \(1\), so the expression is a balanced ternary representation using powers \(3^0\) through \(3^7\)."),
+("Use uniqueness",r"Balanced ternary representations with these eight positions are unique. There are \(3^8\) total choices of coefficients, and they represent consecutive integers symmetrically around \(0\)."),
+("Find the range",r"The largest value is \[1+3+3^2+\cdots+3^7=\frac{3^8-1}{2}.\] The smallest value is its negative."),
+("Count nonnegative values",r"Because the represented integers are symmetric and include \(0\), the number of nonnegative values is \[\frac{3^8+1}{2}=\frac{6561+1}{2}=3281.\]"),
+("Conclude",r"The answer is $\boxed{3281}$."),
+],
+14:[
+("Change to natural logarithms",r"The equation is \[\frac{\ln4}{\ln(3x)}=\frac{\ln8}{\ln(2x)}.\] Since \(\ln4=2\ln2\) and \(\ln8=3\ln2\), we can cancel \(\ln2\)."),
+("Cross-multiply",r"We get \[2\ln(2x)=3\ln(3x).\]"),
+("Rewrite as one logarithm",r"This means \[\ln((2x)^2)=\ln((3x)^3).\] Therefore \[(2x)^2=(3x)^3.\]"),
+("Solve for x",r"Since \(x>0\), \[4x^2=27x^3,\] so \[x=\frac4{27}.\]"),
+("Add numerator and denominator",r"Thus \(p=4\), \(q=27\), and \[p+q=31.\]"),
+("Conclude",r"The answer is $\boxed{31}$."),
+],
+15:[
+("Think in orbits of cells",r"A fully symmetric coloring must assign the same color to every cell that can be moved to another by a rotation or reflection of the square."),
+("Use coordinates from the center",r"Place the center cell at \((0,0)\). Under all square symmetries, a cell is determined by the unordered pair \((|x|,|y|)\), where \(0\le |y|\le |x|\le3\)."),
+("Count the orbits",r"The number of such pairs is \[1+2+3+4=10.\] So there are $10$ independent cell-orbits that can each be colored black or white."),
+("Apply the color condition",r"Without the requirement of both colors, there would be \(2^{10}\) symmetric colorings. We exclude the all-black and all-white colorings."),
+("Conclude",r"The number of valid codes is \[2^{10}-2=1022.\]"),
+],
+16:[
+("Substitute the parabola into the circle",r"From \(y=x^2-a\), substitute into \(x^2+y^2=a^2\): \[x^2+(x^2-a)^2=a^2.\]"),
+("Simplify",r"Expanding and canceling \(a^2\) gives \[x^2+x^4-2ax^2=0,\] or \[x^2(x^2+1-2a)=0.\]"),
+("Count intersections",r"The factor \(x^2=0\) gives the single point \(x=0\), \(y=-a\). The other factor gives \[x^2=2a-1.\]"),
+("Require two more points",r"To have exactly three intersection points, we need \(x^2=2a-1\) to give two nonzero real solutions. This requires \[2a-1>0,\] so \(a>\frac12\)."),
+("Conclude",r"The answer is \(\boxed{a>\frac12}\)."),
+],
+18:[
+("Use the angle-bisector theorem",r"The angle bisector from \(A\) meets \(BC\) at \(G\), so \[BG:GC=AB:AC=50:10=5:1.\] Therefore \([ABG]=\frac56[ABC]=\frac56\cdot120=100.\]"),
+("Use the midpoint segment",r"Since \(D\) and \(E\) are midpoints of \(AB\) and \(AC\), segment \(DE\) is parallel to \(BC\). The line \(DE\) is the image of \(BC\) under a homothety centered at \(A\) with scale factor \(\frac12\)."),
+("Locate F by scaling",r"Because \(F\) and \(G\) lie on the same angle bisector from \(A\), point \(F\) is the midpoint-scale image of \(G\). Thus triangle \(ADF\) is similar to triangle \(ABG\) with scale factor \(\frac12\)."),
+("Subtract areas",r"So \([ADF]=\frac14[ABG]=25.\] The quadrilateral \(FDBG\) is triangle \(ABG\) with triangle \(ADF\) removed, so its area is \[100-25=75.\]"),
+("Conclude",r"The answer is $\boxed{75}$."),
+],
+19:[
+("Describe the elements of A",r"Every element of \(A\) has the form \[2^a3^b5^c\] where \(a,b,c\ge0\)."),
+("Factor the reciprocal sum",r"The sum of reciprocals is \[\sum_{a,b,c\ge0}\frac1{2^a3^b5^c}=\left(\sum_{a\ge0}\frac1{2^a}\right)\left(\sum_{b\ge0}\frac1{3^b}\right)\left(\sum_{c\ge0}\frac1{5^c}\right).\]"),
+("Evaluate the geometric series",r"These sums are \[2,\quad \frac32,\quad \frac54.\]"),
+("Multiply",r"The total is \[2\cdot\frac32\cdot\frac54=\frac{15}{4}.\]"),
+("Conclude",r"Thus \(m+n=15+4=\boxed{19}\)."),
 ],
 })
 

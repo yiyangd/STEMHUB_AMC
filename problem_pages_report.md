@@ -1,25 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 1753
-- Latest batch: 238 (2018 AMC 12A Problems 1-7, 9-10)
-- Latest new generated count: 9
+- Total manifest entries: 1760
+- Latest batch: 239 (2018 AMC 12A Problems 12-16, 18-19)
+- Latest new generated count: 7
 - Latest updated existing count: 0
-- Latest skipped count: 1
+- Latest skipped count: 3
 - MathJax validation: passed
 - Answer verification source: AoPS 2018 AMC 12A Answer Key
 
 ## Latest Batch Pages
 
-- `2018 AMC 12A Problem 1` -> `amc12/problems/2018-amc-12a-problem-1/`
-- `2018 AMC 12A Problem 2` -> `amc12/problems/2018-amc-12a-problem-2/`
-- `2018 AMC 12A Problem 3` -> `amc12/problems/2018-amc-12a-problem-3/`
-- `2018 AMC 12A Problem 4` -> `amc12/problems/2018-amc-12a-problem-4/`
-- `2018 AMC 12A Problem 5` -> `amc12/problems/2018-amc-12a-problem-5/`
-- `2018 AMC 12A Problem 6` -> `amc12/problems/2018-amc-12a-problem-6/`
-- `2018 AMC 12A Problem 7` -> `amc12/problems/2018-amc-12a-problem-7/`
-- `2018 AMC 12A Problem 9` -> `amc12/problems/2018-amc-12a-problem-9/`
-- `2018 AMC 12A Problem 10` -> `amc12/problems/2018-amc-12a-problem-10/`
+- `2018 AMC 12A Problem 12` -> `amc12/problems/2018-amc-12a-problem-12/`
+- `2018 AMC 12A Problem 13` -> `amc12/problems/2018-amc-12a-problem-13/`
+- `2018 AMC 12A Problem 14` -> `amc12/problems/2018-amc-12a-problem-14/`
+- `2018 AMC 12A Problem 15` -> `amc12/problems/2018-amc-12a-problem-15/`
+- `2018 AMC 12A Problem 16` -> `amc12/problems/2018-amc-12a-problem-16/`
+- `2018 AMC 12A Problem 18` -> `amc12/problems/2018-amc-12a-problem-18/`
+- `2018 AMC 12A Problem 19` -> `amc12/problems/2018-amc-12a-problem-19/`
 
 ## Skipped in latest batch
 
-- 2018 AMC 12A Problem 8: diagram-dependent similar-triangle area problem; skipped
+- 2018 AMC 12A Problem 11: folded triangle crease length requires original diagram; skipped
+- 2018 AMC 12A Problem 17: OCR ambiguity in square-to-hypotenuse distance; skipped
+- 2018 AMC 12A Problem 20: cyclic quadrilateral in isosceles right triangle is geometry high risk; skipped
