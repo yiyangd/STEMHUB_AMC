@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 204
+BATCH_NUMBER = 205
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
-SKIPPED = ["2011 AMC 12A Problem 21: skipped because the recursive function definition is OCR-damaged.", "2011 AMC 12A Problem 22: skipped because the n-ray square partition geometry needs a dedicated derivation.", "2011 AMC 12A Problem 23: skipped because the complex rational-function formula is OCR-damaged.", "2011 AMC 12A Problem 24: skipped because the quadrilateral incircle maximum needs a careful geometry derivation.", "2011 AMC 12A Problem 25: skipped because the orthocenter/incenter/circumcenter area maximization is high-risk without a full derivation."]
-BATCH_LABEL = "2011 AMC 12B Problems 1-10"
-NEXT_START = "2011 AMC 12B Problem 11"
+TARGET_NUMBERS = {11,13,14,15,19}
+SKIPPED = ["2011 AMC 12B Problem 12: skipped because the octagon dart-board probability depends on the original diagram.", "2011 AMC 12B Problem 16: skipped because the Voronoi region inside the rhombus needs a careful geometry derivation.", "2011 AMC 12B Problem 17: skipped because the iterated logarithm/function statement is OCR-damaged.", "2011 AMC 12B Problem 18: skipped because the cube-in-pyramid spatial geometry needs a diagram-sensitive derivation.", "2011 AMC 12B Problem 20: skipped because the circumcircle intersection geometry is high-risk without a dedicated derivation."]
+BATCH_LABEL = "2011 AMC 12B Problems 11, 13-15, 19"
+NEXT_START = "2011 AMC 12B Problem 21"
 
-ANS={1:("C",r"\frac7{12}"),2:("E","95"),3:("C",r"\frac{B-A}{2}"),4:("E","224"),5:("A","3"),6:("C","36"),7:("B",r"\frac{33}{7}"),8:("A",r"\frac{\pi}{3}"),9:("D",r"\frac59"),10:("E","75")}
+ANS={11:("B","3"),13:("B","31"),14:("D",r"-\frac35"),15:("D","12"),19:("B",r"\frac{50}{99}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2376,6 +2376,35 @@ SOL.update({
 9:[("Identify when the product is positive",r"The product of two real numbers is greater than zero when both numbers are positive or both are negative."),("Find the interval lengths",r"The interval $[-20,10]$ has length $30$. The negative part has length $20$, and the positive part has length $10$."),("Compute both-negative probability",r"The probability both numbers are negative is \[\left(\frac{20}{30}\right)^2=\frac49.\]"),("Compute both-positive probability",r"The probability both numbers are positive is \[\left(\frac{10}{30}\right)^2=\frac19.\]"),("Add the cases",r"The total probability is \[\frac49+\frac19=\frac59.\]"),("Conclude",r"The answer is \[\boxed{\frac59}.\]"),
 ],
 10:[("Place the rectangle on coordinates",r"Let $A=(0,0)$, $B=(6,0)$, $C=(6,3)$, and $D=(0,3)$. Let $M=(m,0)$ on side $\overline{AB}$."),("Name the desired angle",r"Let \[\theta=\angle AMD.\] Since $MA$ points left horizontally and $D$ is $3$ units above $M$, we have \[\tan\theta=\frac3m.\]"),("Express the other small angle",r"The ray $MC$ rises $3$ units while moving $6-m$ units to the right. Let \[\beta=\arctan\frac{3}{6-m}.\] The direction of $MD$ lies in quadrant II, so the angle from $MC$ to $MD$ is \[180^\circ-\theta-\beta.\]"),("Use the given angle equality",r"The condition $\angle AMD=\angle CMD$ becomes \[\theta=180^\circ-\theta-\beta,\] so \[2\theta+\beta=180^\circ.\]"),("Match an AMC-friendly angle",r"The answer choices suggest special angles. If $\theta=75^\circ$, then $\beta=30^\circ$. This gives \[m=\frac3{\tan75^\circ}=6-3\sqrt3,\] and then \[6-m=3\sqrt3,\quad \tan\beta=\frac3{3\sqrt3}=\frac1{\sqrt3},\] so indeed $\beta=30^\circ$."),("Conclude",r"The condition is satisfied for \[\theta=75^\circ,\] so the answer is $\boxed{75}$."),
+],
+})
+
+OV.update({
+11:(r"A frog located at $(x,y)$, with both $x$ and $y$ integers, makes successive jumps of length $5$ and always lands on points with integer coordinates. Suppose that the frog starts at $(0,0)$ and ends at $(1,0)$. What is the smallest possible number of jumps the frog makes?",[("A","2"),("B","3"),("C","4"),("D","5"),("E","6")]),
+13:(r"Brian writes down four integers $w>x>y>z$ whose sum is $44$. The pairwise positive differences of these numbers are $1,3,4,5,6,$ and $9$. What is the sum of the possible values for $w$?",[("A","16"),("B","31"),("C","48"),("D","62"),("E","93")]),
+14:(r"A segment through the focus $F$ of a parabola with vertex $V$ is perpendicular to $\overline{FV}$ and intersects the parabola in points $A$ and $B$. What is $\cos(\angle AVB)$?",[("A",r"$-\frac{3\sqrt5}{7}$"),("B",r"$-\frac{2\sqrt5}{5}$"),("C",r"$-\frac45$"),("D",r"$-\frac35$"),("E",r"$-\frac12$")]),
+15:(r"How many positive two-digit integers are factors of $2^{24}-1$?",[("A","4"),("B","8"),("C","10"),("D","12"),("E","14")]),
+19:(r"A lattice point in an $xy$-coordinate system is any point $(x,y)$ where both $x$ and $y$ are integers. The graph of $y=mx+2$ passes through no lattice point with $0<x\le100$ for all $m$ such that \[\frac12<m<a.\] What is the maximum possible value of $a$?",[("A",r"$\frac{51}{101}$"),("B",r"$\frac{50}{99}$"),("C",r"$\frac{51}{100}$"),("D",r"$\frac{52}{101}$"),("E",r"$\frac{13}{25}$")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Classify integer displacement vectors of length 5 and use parity.",
+13:"Represent the four numbers by their gaps and match the six pairwise differences.",
+14:"Use the standard parabola and latus rectum endpoints.",
+15:"Factor 2^24-1 and count its two-digit divisors.",
+19:"Find the first rational slope above 1/2 with denominator at most 100.",
+})
+
+SOL.update({
+11:[("List possible integer jumps",r"A jump of length $5$ between lattice points must have displacement \[(\pm5,0),(0,\pm5),(\pm3,\pm4),(\pm4,\pm3).\] These come from the Pythagorean possibilities $5^2=5^2+0^2=3^2+4^2$."),("Rule out two jumps",r"Every possible jump changes $x+y$ by an odd number. After two jumps, $x+y$ would be even. But the target point $(1,0)$ has $x+y=1$, which is odd. So two jumps are impossible."),("Try three jumps",r"Three jumps are possible if we can find three allowed displacement vectors that add to $(1,0)$."),("Construct the path",r"For example, \[(3,4)+(3,-4)+(-5,0)=(1,0).\] Each vector has length $5$ and lands on lattice points."),("Conclude",r"The smallest possible number of jumps is $\boxed{3}$."),
+],
+13:[("Use the largest difference",r"The largest pairwise difference must be \[w-z=9.\] Let \[y=z+p,\quad x=z+q,\quad w=z+9,\] where $0<p<q<9$."),("Translate the six differences",r"The six pairwise differences are \[p,\ q,\ 9,\ q-p,\ 9-p,\ 9-q.\] These must equal the set \[\{1,3,4,5,6,9\}.\]"),("Find possible gap pairs",r"Checking the possible values from the set, the only pairs $(p,q)$ that work are \[(3,4)\quad\text{and}\quad(5,6).\]"),("Use the sum condition",r"If $(p,q)=(3,4)$, then \[z+(z+3)+(z+4)+(z+9)=44,\] so $4z+16=44$ and $z=7$. This gives $w=16$."),("Use the second gap pair",r"If $(p,q)=(5,6)$, then \[4z+20=44,\] so $z=6$. This gives $w=15$."),("Add possible w values",r"The possible values of $w$ are $16$ and $15$, whose sum is \[16+15=31.\] The answer is $\boxed{31}$."),
+],
+14:[("Use a standard coordinate model",r"Place the vertex at the origin and the focus at $(p,0)$. Then the parabola has equation \[y^2=4px.\]"),("Find A and B",r"The segment through the focus perpendicular to $\overline{FV}$ is the vertical line $x=p$. Substituting into the parabola gives \[y^2=4p^2,\] so \[y=\pm2p.\] Thus $A=(p,2p)$ and $B=(p,-2p)$."),("Use vectors from V",r"The vectors from $V$ to these points are \[\vec{VA}=(p,2p),\qquad \vec{VB}=(p,-2p).\]"),("Compute the cosine",r"The dot product is \[p^2-4p^2=-3p^2.\] Each vector has length \[p\sqrt5.\] Therefore \[\cos(\angle AVB)=\frac{-3p^2}{(p\sqrt5)(p\sqrt5)}=-\frac35.\]"),("Conclude",r"The answer is \[\boxed{-\frac35}.\]"),
+],
+15:[("Factor the number",r"Use repeated difference of squares: \[2^{24}-1=(2^{12}-1)(2^{12}+1).\] Continuing gives the prime factorization \[2^{24}-1=3^2\cdot5\cdot7\cdot13\cdot17\cdot241.\]"),("Ignore factors too large for two-digit divisors",r"The prime $241$ cannot appear in a two-digit divisor. So two-digit divisors must come from \[3^2\cdot5\cdot7\cdot13\cdot17.\]"),("List the two-digit divisors systematically",r"The positive two-digit divisors are \[13,15,17,21,35,39,45,51,63,65,85,91.\]"),("Count them",r"There are $12$ numbers in the list."),("Conclude",r"The answer is $\boxed{12}$."),
+],
+19:[("Translate lattice points into rational slopes",r"The line is \[y=mx+2.\] Since $2$ is already an integer, the point with integer $x$ has integer $y$ exactly when $mx$ is an integer."),("Understand the forbidden slopes",r"For some integer $x$ with $1\le x\le100$, this happens when \[m=\frac{k}{x}\] for an integer $k$. So we need the interval \((\frac12,a)\) to contain no fraction with denominator at most $100$."),("Find the first such fraction above one half",r"For each denominator $x$, the smallest numerator greater than $\frac{x}{2}$ gives the first fraction above $\frac12$. The closest one occurs when $x$ is as large as possible and odd: \[x=99,\quad k=50.\] This gives \[\frac{50}{99}.\]"),("Check nearby denominators",r"For $x=100$, the next fraction above $\frac12$ is $\frac{51}{100}$, which is larger. Any smaller denominator gives an even larger gap above $\frac12$."),("Conclude",r"The largest possible value of $a$ is \[\boxed{\frac{50}{99}}.\]"),
 ],
 })
 

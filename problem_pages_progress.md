@@ -3324,3 +3324,19 @@
 - Pushed: pending
 - Next batch should start from: 2011 AMC 12B Problem 11
 - Review notes: none.
+
+## Batch 205: 2011 AMC 12B Problems 11, 13-15, 19
+
+- Start time: 2026-07-01T19:42:08-07:00
+- End time: 2026-07-01T19:42:09-07:00
+- Processed contest: AMC12
+- Processed range: 2011 AMC 12B Problems 11, 13-15, 19
+- Generated count: 5
+- Updated existing count: 0
+- Skipped count: 5
+- Skipped reasons: 2011 AMC 12B Problem 12: skipped because the octagon dart-board probability depends on the original diagram.; 2011 AMC 12B Problem 16: skipped because the Voronoi region inside the rhombus needs a careful geometry derivation.; 2011 AMC 12B Problem 17: skipped because the iterated logarithm/function statement is OCR-damaged.; 2011 AMC 12B Problem 18: skipped because the cube-in-pyramid spatial geometry needs a diagram-sensitive derivation.; 2011 AMC 12B Problem 20: skipped because the circumcircle intersection geometry is high-risk without a dedicated derivation.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2011 AMC 12B Problem 21
+- Review notes: none.
