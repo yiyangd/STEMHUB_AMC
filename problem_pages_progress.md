@@ -4108,3 +4108,19 @@
 - Pushed: pending
 - Next batch should start from: 2020 AMC 12B Problem 11
 - Review notes: none.
+
+## Batch 254: 2020 AMC 12B Problems 12, 13, 15, 16, 17, 19, 20
+
+- Start time: 2026-07-02T07:32:46-07:00
+- End time: 2026-07-02T07:32:47-07:00
+- Processed contest: AMC12
+- Processed range: 2020 AMC 12B Problems 12, 13, 15, 16, 17, 19, 20
+- Generated count: 7
+- Updated existing count: 0
+- Skipped count: 3
+- Skipped reasons: 2020 AMC 12B Problem 11: shaded semicircle/hexagon area problem depends on the missing diagram; skipped; 2020 AMC 12B Problem 14: continuous interval game strategy is high-risk in current pass; skipped; 2020 AMC 12B Problem 18: area partition problem depends on the missing diagram; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2020 AMC 12B Problem 21
+- Review notes: none.

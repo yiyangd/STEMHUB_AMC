@@ -1,22 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 1847
-- Latest batch: 253 (2020 AMC 12B Problems 1-10)
-- Latest new generated count: 10
+- Total manifest entries: 1854
+- Latest batch: 254 (2020 AMC 12B Problems 12, 13, 15, 16, 17, 19, 20)
+- Latest new generated count: 7
 - Latest updated existing count: 0
-- Latest skipped count: 0
+- Latest skipped count: 3
 - MathJax validation: passed
 - Answer verification source: https://artofproblemsolving.com/wiki/index.php/2020_AMC_12B_Answer_Key
 
 ## Latest Batch Pages
 
-- `2020 AMC 12B Problem 1` -> `amc12/problems/2020-amc-12b-problem-1/`
-- `2020 AMC 12B Problem 2` -> `amc12/problems/2020-amc-12b-problem-2/`
-- `2020 AMC 12B Problem 3` -> `amc12/problems/2020-amc-12b-problem-3/`
-- `2020 AMC 12B Problem 4` -> `amc12/problems/2020-amc-12b-problem-4/`
-- `2020 AMC 12B Problem 5` -> `amc12/problems/2020-amc-12b-problem-5/`
-- `2020 AMC 12B Problem 6` -> `amc12/problems/2020-amc-12b-problem-6/`
-- `2020 AMC 12B Problem 7` -> `amc12/problems/2020-amc-12b-problem-7/`
-- `2020 AMC 12B Problem 8` -> `amc12/problems/2020-amc-12b-problem-8/`
-- `2020 AMC 12B Problem 9` -> `amc12/problems/2020-amc-12b-problem-9/`
-- `2020 AMC 12B Problem 10` -> `amc12/problems/2020-amc-12b-problem-10/`
+- `2020 AMC 12B Problem 12` -> `amc12/problems/2020-amc-12b-problem-12/`
+- `2020 AMC 12B Problem 13` -> `amc12/problems/2020-amc-12b-problem-13/`
+- `2020 AMC 12B Problem 15` -> `amc12/problems/2020-amc-12b-problem-15/`
+- `2020 AMC 12B Problem 16` -> `amc12/problems/2020-amc-12b-problem-16/`
+- `2020 AMC 12B Problem 17` -> `amc12/problems/2020-amc-12b-problem-17/`
+- `2020 AMC 12B Problem 19` -> `amc12/problems/2020-amc-12b-problem-19/`
+- `2020 AMC 12B Problem 20` -> `amc12/problems/2020-amc-12b-problem-20/`
+
+## Skipped in latest batch
+
+- 2020 AMC 12B Problem 11: shaded semicircle/hexagon area problem depends on the missing diagram; skipped
+- 2020 AMC 12B Problem 14: continuous interval game strategy is high-risk in current pass; skipped
+- 2020 AMC 12B Problem 18: area partition problem depends on the missing diagram; skipped

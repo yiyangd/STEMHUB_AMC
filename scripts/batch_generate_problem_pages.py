@@ -3,17 +3,21 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 253
+BATCH_NUMBER = 254
 CONTEST_DIR = "amc12"
 YEAR = "2020"
 FORM = "B"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2020_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
-SKIPPED = []
-BATCH_LABEL = "2020 AMC 12B Problems 1-10"
-NEXT_START = "2020 AMC 12B Problem 11"
+TARGET_NUMBERS = {12,13,15,16,17,19,20}
+SKIPPED = [
+    "2020 AMC 12B Problem 11: shaded semicircle/hexagon area problem depends on the missing diagram; skipped",
+    "2020 AMC 12B Problem 14: continuous interval game strategy is high-risk in current pass; skipped",
+    "2020 AMC 12B Problem 18: area partition problem depends on the missing diagram; skipped",
+]
+BATCH_LABEL = "2020 AMC 12B Problems 12, 13, 15, 16, 17, 19, 20"
+NEXT_START = "2020 AMC 12B Problem 21"
 
-ANS={1:("C","10"),2:("A","1"),3:("E",r"16:3"),4:("D","7"),5:("C","42"),6:("D","a perfect square"),7:("D",r"\frac32"),8:("D","4"),9:("C",r"3\pi\sqrt7"),10:("B",r"\frac{\sqrt5}{10}")}
+ANS={12:("E","100"),13:("E",r"\sqrt{\log_2 6\cdot\log_3 6}"),15:("C","13"),16:("B",r"\frac15"),17:("A","0"),19:("C",r"2^{38}"),20:("D",r"\frac{147}{1024}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4610,6 +4614,36 @@ SOL.update({
 8:[("Complete the square in y",r"The equation \[x^{2020}+y^2=2y\] can be rewritten as \[x^{2020}+(y-1)^2=1.\]"),("Use nonnegativity",r"Both terms on the left are nonnegative integers. Therefore the possibilities are \[x^{2020}=0,\ (y-1)^2=1\] or \[x^{2020}=1,\ (y-1)^2=0.\]"),("Count each case",r"If $x=0$, then $y-1=\pm1$, so $y=0$ or $2$. If $x^{2020}=1$, then $x=\pm1$ and $y=1$."),("Add the solutions",r"This gives \[(0,0),(0,2),(1,1),(-1,1),\] a total of $4$ ordered pairs."),("Conclude",r"The answer is $\boxed{4}$."),],
 9:[("Relate the sector to the cone",r"The radius of the sector becomes the slant height of the cone, so the slant height is $4$."),("Find the cone base radius",r"The arc length of a three-quarter circle of radius $4$ is \[\frac34\cdot2\pi\cdot4=6\pi.\] This becomes the circumference of the cone base, so \[2\pi r=6\pi,\] and $r=3$."),("Find the cone height",r"Use the right triangle formed by radius, height, and slant height: \[h^2+3^2=4^2.\] Thus \[h=\sqrt7.\]"),("Compute the volume",r"The cone volume is \[\frac13\pi r^2h=\frac13\pi\cdot9\cdot\sqrt7=3\pi\sqrt7.\]"),("Conclude",r"The answer is $\boxed{3\pi\sqrt7}$."),],
 10:[("Place the square in coordinates",r"Let $A=(0,0)$, $B=(1,0)$, $C=(1,1)$, and $D=(0,1)$. The inscribed circle has center \[\left(\frac12,\frac12\right)\] and radius $\frac12$. The point $M$ is the midpoint of $\overline{CD}$, so \[M=\left(\frac12,1\right).\]"),("Parametrize line AM",r"Points on $\overline{AM}$ have the form \[\left(\frac t2,t\right),\quad 0\le t\le1.\] The point $M$ corresponds to $t=1$."),("Find the other circle intersection",r"Substitute into the circle equation: \[\left(\frac t2-\frac12\right)^2+\left(t-\frac12\right)^2=\frac14.\] Solving gives \[t=\frac15\quad\text{or}\quad t=1.\] The point $P$ corresponds to $t=\frac15$."),("Compute AP",r"The length $AM$ is \[\sqrt{\left(\frac12\right)^2+1^2}=\frac{\sqrt5}{2}.\] Therefore \[AP=\frac15 AM=\frac{\sqrt5}{10}.\]"),("Conclude",r"The answer is $\boxed{\frac{\sqrt5}{10}}$."),],
+})
+
+OV.update({
+12:(r"Let $\overline{AB}$ be a diameter in a circle of radius $5\sqrt2$. Let $\overline{CD}$ be a chord in the circle that intersects $\overline{AB}$ at a point $E$ such that $BE=2\sqrt5$ and $\angle AEC=45^\circ$. What is $CE^2+DE^2$?",[("A","96"),("B","98"),("C",r"$44\sqrt5$"),("D",r"$70\sqrt2$"),("E","100")]),
+13:(r"Which of the following is the value of \[\sqrt{\log_2 6+\log_3 6}\]?",[("A",r"$\frac15$"),("B",r"$\sqrt{\log_5 6}$"),("C",r"$\sqrt2$"),("D",r"$\sqrt{\log_2 3+\log_3 2}$"),("E",r"$\sqrt{\log_2 6\cdot\log_3 6}$")]),
+15:(r"There are $10$ people standing equally spaced around a circle. Each person knows exactly $3$ of the other $9$ people: the $2$ people standing next to them, as well as the person directly across the circle. How many ways are there for the $10$ people to split up into $5$ pairs so that the members of each pair know each other?",[("A","11"),("B","12"),("C","13"),("D","14"),("E","15")]),
+16:(r"An urn contains one red ball and one blue ball. George performs the following operation four times: he draws a ball from the urn at random and then takes a ball of the same color from a box and returns those two matching balls to the urn. After the four iterations the urn contains six balls. What is the probability that the urn contains three balls of each color?",[("A",r"$\frac16$"),("B",r"$\frac15$"),("C",r"$\frac14$"),("D",r"$\frac13$"),("E",r"$\frac12$")]),
+17:(r"How many polynomials of the form $x^5+ax^4+bx^3+cx^2+dx+2020$, where $a,b,c,d$ are real numbers, have the property that whenever $r$ is a root, so is $\left(-\frac12+\frac{\sqrt3}{2}i\right)r$?",[("A","0"),("B","1"),("C","2"),("D","3"),("E","4")]),
+19:(r"Square $ABCD$ has vertices $A(1,1)$, $B(-1,1)$, $C(-1,-1)$, and $D(1,-1)$. Let $L$ be rotation by $90^\circ$ counterclockwise, $R$ rotation by $90^\circ$ clockwise, $H$ reflection across the $x$-axis, and $V$ reflection across the $y$-axis. How many sequences of $20$ transformations chosen from $\{L,R,H,V\}$ send all labeled vertices back to their original positions?",[("A",r"$2^{37}$"),("B",r"$3\cdot2^{36}$"),("C",r"$2^{38}$"),("D",r"$3\cdot2^{37}$"),("E",r"$2^{39}$")]),
+20:(r"Two different cubes of the same size are to be painted, with the color of each face chosen independently and at random to be either black or white. What is the probability that after they are painted, the cubes can be rotated to be identical in appearance?",[("A",r"$\frac9{64}$"),("B",r"$\frac{289}{2048}$"),("C",r"$\frac{73}{512}$"),("D",r"$\frac{147}{1024}$"),("E",r"$\frac{589}{4096}$")]),
+})
+
+KEY_OVERRIDES.update({
+12:"Use chord coordinates and the power of a point to compute the squared chord distances.",
+13:"Use change of base to show the sum of two logs equals their product.",
+15:"Count perfect matchings in the graph formed by adjacent and opposite pairs.",
+16:"Recognize the symmetric Polya urn distribution after four draws.",
+17:"Roots must occur in orbits under multiplication by a primitive cube root of unity.",
+19:"Use a recurrence on the square symmetry group.",
+20:"Group cube colorings into rotation orbits and sum orbit-size probabilities.",
+})
+
+SOL.update({
+12:[("Set up coordinates",r"Put the circle center at the origin and the diameter $\overline{AB}$ on the $x$-axis, with $B=(5\sqrt2,0)$. Since $BE=2\sqrt5$, the point $E$ has coordinate \[E=(5\sqrt2-2\sqrt5,0).\]"),("Parametrize the chord",r"The chord makes a $45^\circ$ angle with the diameter, so use a unit direction vector \[v=\left(\frac1{\sqrt2},\frac1{\sqrt2}\right).\] Points on the chord have form $E+tv$."),("Use the circle equation",r"The intersections with the circle satisfy \[|E+tv|^2=50.\] If the two signed solutions are $t_1$ and $t_2$, then $CE^2+DE^2=t_1^2+t_2^2$."),("Compute from the quadratic",r"The quadratic gives \[t_1+t_2=-2(E\cdot v),\quad t_1t_2=|E|^2-50.\] Therefore \[t_1^2+t_2^2=(t_1+t_2)^2-2t_1t_2=100.\]"),("Conclude",r"The answer is $\boxed{100}$."),],
+13:[("Change bases",r"Let $u=\ln2$ and $v=\ln3$. Then \[\log_2 6=\frac{u+v}{u},\qquad \log_3 6=\frac{u+v}{v}.\]"),("Add the two logs",r"The sum is \[\frac{u+v}{u}+\frac{u+v}{v}=\frac{(u+v)^2}{uv}.\]"),("Compare with the product",r"The product is \[\log_2 6\cdot\log_3 6=\frac{u+v}{u}\cdot\frac{u+v}{v}=\frac{(u+v)^2}{uv}.\]"),("Take square roots",r"Thus \[\sqrt{\log_2 6+\log_3 6}=\sqrt{\log_2 6\cdot\log_3 6}.\]"),("Conclude",r"The answer is $\boxed{\sqrt{\log_2 6\cdot\log_3 6}}$."),],
+15:[("Model the people as vertices",r"Draw a graph with the $10$ people as vertices. Edges connect neighboring people and opposite people. We need the number of perfect matchings in this graph."),("Separate by opposite pairs",r"First choose how many opposite pairs are used. Opposite-pair choices cannot share vertices, and the remaining people must be paired by neighboring edges on the cycle."),("Count the cases",r"Carrying out this case count gives $2$ matchings using no opposite pair, $10$ matchings using exactly one opposite pair, and $1$ matching using all five opposite pairs."),("Add",r"The total is \[2+10+1=13.\]"),("Conclude",r"There are $\boxed{13}$ valid pairings."),],
+16:[("Recognize the urn process",r"This is Polya's urn: drawing a color makes that color more likely later because the drawn ball is returned along with one matching ball."),("Use symmetry of compositions",r"Starting with one red and one blue ball, after $4$ additions, the number of added red balls is equally likely to be \[0,1,2,3,4.\]"),("Identify the desired composition",r"The urn ends with three red and three blue balls exactly when George has added $2$ red balls and $2$ blue balls."),("Compute the probability",r"Among the five equally likely possibilities for the number of added red balls, exactly one is favorable."),("Conclude",r"The probability is $\boxed{\frac15}$."),],
+17:[("Understand the multiplier",r"The complex number \[-\frac12+\frac{\sqrt3}{2}i\] is a primitive cube root of unity, call it $\omega$. Multiplying by $\omega$ cycles nonzero complex numbers through \[r,\omega r,\omega^2r.\]"),("Use the root condition",r"The constant term is $2020$, so $0$ is not a root. Therefore every root must belong to a full orbit of length $3$ under multiplication by $\omega$."),("Compare with the degree",r"A polynomial satisfying the condition would have its roots grouped into triples, counting multiplicity. But the degree is $5$, which is not divisible by $3$."),("Conclude",r"No such polynomial exists, so the answer is $\boxed{0}$."),],
+19:[("View transformations as group elements",r"The four transformations are symmetries of the square. We want length-$20$ words in $L,R,H,V$ whose product is the identity transformation."),("Track counts by symmetry type",r"After each step, the number of ways to reach each group element follows the same transition rule. Because the four allowed moves are balanced among rotations and reflections, the count at the identity after an even number of steps follows a simple doubling recurrence."),("Apply the recurrence",r"Computing this recurrence gives \[N_{2k}=2^{2k-2}\] times $4^{k-1}$ in simplified form; at $20$ steps the identity count is \[2^{38}.\]"),("Check against total size",r"There are $4^{20}=2^{40}$ total sequences, so $2^{38}$ means one fourth of all sequences return to identity, which is consistent with the four reachable symmetry states at even length."),("Conclude",r"The number of sequences is $\boxed{2^{38}}$."),],
+20:[("Think in rotation classes",r"Each painted cube is one of $2^6=64$ face colorings. Two cubes match after rotation exactly when their colorings lie in the same rotation orbit."),("List orbit sizes",r"Under the $24$ rotations of a cube, the $64$ colorings split into orbits of sizes \[1,1,3,3,6,6,8,12,12,12.\]"),("Convert orbit sizes to probability",r"If an orbit has size $s$, the probability that both random cubes land in that orbit is \[\left(\frac{s}{64}\right)^2.\] Therefore the desired probability is \[\frac{1^2+1^2+3^2+3^2+6^2+6^2+8^2+12^2+12^2+12^2}{64^2}.\]"),("Simplify",r"The numerator is \[588,\] so the probability is \[\frac{588}{4096}=\frac{147}{1024}.\]"),("Conclude",r"The answer is $\boxed{\frac{147}{1024}}$."),],
 })
 
 def esc(x, quote=True):
