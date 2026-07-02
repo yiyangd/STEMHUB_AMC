@@ -3,25 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 217
+BATCH_NUMBER = 218
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2014_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,7,10}
-SKIPPED = [
-    "2014 AMC 12A Problem 21: floor-function interval sum high risk; skipped",
-    "2014 AMC 12A Problem 22: exponential inequality counting high risk; skipped",
-    "2014 AMC 12A Problem 23: repeating decimal period digit sum high risk; skipped",
-    "2014 AMC 12A Problem 24: iterated absolute-value function high risk; skipped",
-    "2014 AMC 12A Problem 25: parabola with integer-coordinate count high risk; skipped",
-    "2014 AMC 12B Problem 5: diagram-dependent pane layout; skipped",
-    "2014 AMC 12B Problem 6: OCR statement is truncated; skipped",
-    "2014 AMC 12B Problem 8: addition diagram/OCR layout risk; skipped",
-    "2014 AMC 12B Problem 9: diagram-dependent quadrilateral geometry; skipped",
-]
-BATCH_LABEL = "2014 AMC 12B Problems 1-4, 7, 10"
-NEXT_START = "2014 AMC 12B Problem 11"
+TARGET_NUMBERS = {11,12,13,14,15,16,17,18}
+SKIPPED = []
+BATCH_LABEL = "2014 AMC 12B Problems 11-18"
+NEXT_START = "2014 AMC 12B Problem 19"
 
-ANS={1:("C","37"),2:("C","36"),3:("E",r"\frac{300}{7}"),4:("B",r"\frac53"),7:("D","7"),10:("D","37")}
+ANS={11:("E","35"),12:("B","9"),13:("C",r"\frac{3+\sqrt5}{2}"),14:("D",r"20\sqrt2"),15:("C",r"2^{16}"),16:("E","14k"),17:("E","80"),18:("B","2")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2806,6 +2796,39 @@ SOL.update({
 4:[("Name the prices",r"Let $m$ be the price of a muffin and $b$ be the price of a banana."),("Translate the spending relationship",r"Susie spends \[4m+3b.\] Calvin spends \[2m+16b,\] and this is twice Susie's spending, so \[2m+16b=2(4m+3b).\]"),("Simplify",r"\[2m+16b=8m+6b,\] so \[10b=6m.\]"),("Find the ratio",r"\[\frac{m}{b}=\frac{10}{6}=\frac53.\]"),("Conclude",r"A muffin is \[\boxed{\frac53}\] times as expensive as a banana.")],
 7:[("Use divisibility",r"For \[\frac{n}{30-n}\] to be a positive integer, the denominator $30-n$ must be positive and must divide $n$."),("Replace n",r"Let \[d=30-n.\] Then $d$ is a positive divisor of $n=30-d$."),("Use the divisor relationship",r"If $d$ divides $30-d$, then $d$ also divides \[30=(30-d)+d.\] So $d$ must be a positive divisor of $30$."),("Keep the quotient positive",r"We need $n>0$, so $d<30$. The positive divisors of $30$ less than $30$ are \[1,2,3,5,6,10,15.\]"),("Count",r"There are $7$ such divisors, giving $7$ possible values of $n$."),("Conclude",r"The answer is $\boxed{7}$.")],
 10:[("Write the odometer numbers",r"The starting mileage is \[100a+10b+c,\] and the ending mileage is \[100c+10b+a.\]"),("Use the driven distance",r"She drove for a whole number of hours at $55$ miles per hour, so the difference is a positive multiple of $55$: \[(100c+10b+a)-(100a+10b+c)=99(c-a).\]"),("Use divisibility",r"Thus $99(c-a)$ is divisible by $55$. Since \[\gcd(99,55)=11,\] we need $c-a$ to be divisible by $5$."),("Use the digit-sum condition",r"Because $a\ge1$ and $a+b+c\le7$, the only way for $c-a$ to be a positive multiple of $5$ is \[a=1,\qquad c=6,\qquad b=0.\]"),("Compute",r"\[a^2+b^2+c^2=1^2+0^2+6^2=37.\]"),("Conclude",r"The answer is $\boxed{37}$.")],
+})
+
+OV.update({
+11:(r"A list of $11$ positive integers has a mean of $10$, a median of $9$, and a unique mode of $8$. What is the largest possible value of an integer in the list?",[("A","24"),("B","30"),("C","31"),("D","33"),("E","35")]),
+12:(r"A set $S$ consists of triangles whose sides have integer lengths less than $5$, and no two elements of $S$ are congruent or similar. What is the largest number of elements that $S$ can have?",[("A","8"),("B","9"),("C","10"),("D","11"),("E","12")]),
+13:(r"Real numbers $a$ and $b$ are chosen with $1<a<b$ such that no triangle with positive area has side lengths $1,a,b$ or $\frac1b,\frac1a,1$. What is the smallest possible value of $b$?",[("A",r"$\frac{3+\sqrt3}{3}$"),("B",r"$\frac{\sqrt5}{2}$"),("C",r"$\frac{3+\sqrt5}{2}$"),("D",r"$\frac{3+\sqrt6}{2}$"),("E","3")]),
+14:(r"A rectangular box has a total surface area of $94$ square inches. The sum of the lengths of all its edges is $48$ inches. What is the sum of the lengths in inches of all of its interior diagonals?",[("A",r"$8\sqrt3$"),("B",r"$10\sqrt2$"),("C",r"$16\sqrt3$"),("D",r"$20\sqrt2$"),("E",r"$40\sqrt2$")]),
+15:(r"When \[p=\sum_{k=1}^{6} k\ln k,\] the number $e^p$ is an integer. What is the largest power of $2$ that is a factor of $e^p$?",[("A",r"$2^{12}$"),("B",r"$2^{14}$"),("C",r"$2^{16}$"),("D",r"$2^{18}$"),("E",r"$2^{20}$")]),
+16:(r"Let $P$ be a cubic polynomial with $P(0)=k$, $P(1)=2k$, and $P(-1)=3k$. What is $P(2)+P(-2)$?",[("A","0"),("B","k"),("C","6k"),("D","7k"),("E","14k")]),
+17:(r"Let $P$ be the parabola with equation $y=x^2$ and let $Q=(20,14)$. There are real numbers $r$ and $s$ such that the line through $Q$ with slope $m$ does not intersect $P$ if and only if $r<m<s$. What is $r+s$?",[("A","1"),("B","26"),("C","40"),("D","52"),("E","80")]),
+18:(r"The numbers $1,2,3,4,5$ are to be arranged in a circle. An arrangement is bad if it is not true that for every $n$ from $1$ to $15$ one can find a subset of the numbers that appear consecutively on the circle that sum to $n$. Arrangements that differ only by a rotation or a reflection are considered the same. How many different bad arrangements are there?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Minimize the other ten entries while keeping 8 as the unique mode and 9 as the median.",
+12:"List integer-sided triangles with side lengths 1 through 4 up to similarity.",
+13:"Use degenerate triangle inequalities for both side triples.",
+14:"Use symmetric sums of the box dimensions to find the space diagonal.",
+15:"Rewrite e^p as a product and count powers of 2.",
+16:"Write a general cubic and use symmetry in P(2)+P(-2).",
+17:"Use the discriminant of the intersection equation.",
+18:"Enumerate circular arrangements up to symmetry and check consecutive sums.",
+})
+
+SOL.update({
+11:[("Use the total sum",r"The mean is $10$ for $11$ integers, so the total sum is \[11\cdot10=110.\] To make one integer as large as possible, we should make the other ten integers as small as possible."),("Respect the median",r"After sorting the list, the sixth number must be $9$. Therefore five numbers are at most $9$, and five numbers are at least $9$."),("Make 8 the unique mode efficiently",r"Using three $8$'s is efficient: it makes $8$ the mode while still allowing another value to appear twice. A small beginning is \[1,1,8,8,8,9.\]"),("Minimize the remaining four numbers",r"The value $9$ may appear once more, and another number may appear twice without tying the three $8$'s. The smallest possible continuation is \[9,10,10,11.\]"),("Compute the forced small sum",r"The ten smaller entries can have sum \[1+1+8+8+8+9+9+10+10+11=75.\]"),("Find the largest entry",r"The largest possible entry is \[110-75=35.\] The answer is $\boxed{35}$.")],
+12:[("List possible side triples",r"Side lengths are positive integers less than $5$, so each side is in $\{1,2,3,4\}$. We list triples $a\le b\le c$ satisfying $a+b>c$."),("Remove similar copies",r"Triangles such as $(1,1,1)$, $(2,2,2)$, and $(3,3,3)$ are all similar, so only one representative can be used. Likewise $(1,2,2)$ and $(2,4,4)$ are similar."),("Build the representatives",r"A maximal list up to similarity is \[(1,1,1),(1,2,2),(1,3,3),(1,4,4),(2,2,3),(2,3,3),(2,3,4),(3,3,4),(3,4,4).\]"),("Check the count",r"These $9$ triangles all have integer side lengths less than $5$, satisfy the triangle inequality, and no two are similar."),("Conclude",r"The largest possible number is $\boxed{9}$.")],
+13:[("Translate the first non-triangle condition",r"Since $1<a<b$, the only way $1,a,b$ fails to make a positive-area triangle is \[b\ge a+1.\]"),("Translate the reciprocal condition",r"For \[\frac1b,\frac1a,1,\] the largest side is $1$. This triple fails to make a positive-area triangle when \[1\ge \frac1a+\frac1b.\]"),("Minimize b",r"At the smallest possible $b$, both boundary conditions should be tight: \[b=a+1,\qquad \frac1a+\frac1b=1.\]"),("Solve",r"Substitute $b=a+1$: \[\frac1a+\frac1{a+1}=1.\] This gives \[a^2-a-1=0,\] so \[a=\frac{1+\sqrt5}{2}.\]"),("Find b",r"Then \[b=a+1=\frac{3+\sqrt5}{2}.\]"),("Conclude",r"The answer is \[\boxed{\frac{3+\sqrt5}{2}}.\]")],
+14:[("Name the box dimensions",r"Let the side lengths of the box be $a,b,c$. The edge-sum condition gives \[4(a+b+c)=48,\] so \[a+b+c=12.\]"),("Use the surface area",r"The surface area is \[2(ab+bc+ca)=94,\] so \[ab+bc+ca=47.\]"),("Find one interior diagonal",r"Each interior diagonal has length \[\sqrt{a^2+b^2+c^2}.\] Use \[a^2+b^2+c^2=(a+b+c)^2-2(ab+bc+ca).\]"),("Compute",r"\[a^2+b^2+c^2=12^2-2\cdot47=144-94=50.\] So each interior diagonal has length \[\sqrt{50}=5\sqrt2.\]"),("Multiply by the number of interior diagonals",r"A rectangular box has $4$ interior diagonals, so their total length is \[4\cdot5\sqrt2=20\sqrt2.\]"),("Conclude",r"The answer is \[\boxed{20\sqrt2}.\]")],
+15:[("Rewrite the exponential",r"Since \[p=\sum_{k=1}^6 k\ln k,\] we have \[e^p=\prod_{k=1}^6 e^{k\ln k}=\prod_{k=1}^6 k^k.\]"),("Focus only on powers of 2",r"The exponent of $2$ in this product is \[\sum_{k=1}^6 k\,v_2(k),\] where $v_2(k)$ is the exponent of $2$ in $k$."),("Compute the contributions",r"The nonzero contributions are from $2,4,6$: \[2\cdot1+4\cdot2+6\cdot1=2+8+6=16.\]"),("State the largest power",r"Therefore the largest power of $2$ dividing $e^p$ is \[2^{16}.\]"),("Conclude",r"The answer is \[\boxed{2^{16}}.\]")],
+16:[("Write a general cubic",r"Let \[P(x)=ax^3+bx^2+cx+d.\] Since $P(0)=k$, we have $d=k$."),("Use P(1)",r"\[P(1)=a+b+c+k=2k,\] so \[a+b+c=k.\]"),("Use P(-1)",r"\[P(-1)=-a+b-c+k=3k,\] so \[-a+b-c=2k.\]"),("Find b",r"Add the two equations: \[(a+b+c)+(-a+b-c)=k+2k,\] so \[2b=3k,\qquad b=\frac{3k}{2}.\]"),("Use symmetry in P(2)+P(-2)",r"The odd-power terms cancel: \[P(2)+P(-2)=8b+2k.\] Substituting $b=\frac{3k}{2}$ gives \[8\cdot\frac{3k}{2}+2k=14k.\]"),("Conclude",r"The answer is $\boxed{14k}$.")],
+17:[("Write the line through Q",r"A line through $Q=(20,14)$ with slope $m$ has equation \[y-14=m(x-20).\]"),("Intersect with the parabola",r"Set $y=x^2$: \[x^2=m(x-20)+14.\] Rearranging gives \[x^2-mx+(20m-14)=0.\]"),("Use the discriminant",r"The line does not intersect the parabola exactly when this quadratic has no real solution, so its discriminant is negative: \[m^2-4(20m-14)<0.\]"),("Find the interval endpoints",r"The boundary roots satisfy \[m^2-80m+56=0.\] If the roots are $r$ and $s$, then by Vieta's formula \[r+s=80.\]"),("Conclude",r"The answer is $\boxed{80}$.")],
+18:[("Reduce by symmetry",r"Up to rotation and reflection, there are only \[\frac{5!}{2\cdot5}=12\] circular arrangements to check."),("Use consecutive sums",r"For any arrangement, the possible sums come from arcs of lengths $1,2,3,4,$ and $5$ around the circle. The total sum is $15$, so missing a sum $t$ is equivalent to missing the complementary sum $15-t$."),("Check the twelve cases systematically",r"A short enumeration of the $12$ symmetry classes shows that exactly two classes fail the condition. Representatives are \[(1,2,5,3,4)\quad\text{and}\quad(1,3,2,4,5).\]"),("Identify what is missing",r"For $(1,2,5,3,4)$, the missing sums are $6$ and $9$. For $(1,3,2,4,5)$, the missing sums are $7$ and $8$."),("Conclude",r"There are exactly $\boxed{2}$ bad arrangements.")],
 })
 
 def esc(x, quote=True):
