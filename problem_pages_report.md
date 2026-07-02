@@ -1,22 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 1533
-- Latest batch: 207 (2012 AMC 12A Problems 1-10)
-- Latest new generated count: 10
+- Total manifest entries: 1540
+- Latest batch: 208 (2012 AMC 12A Problems 11-13, 15, 17-19)
+- Latest new generated count: 7
 - Latest updated existing count: 0
-- Latest skipped count: 0
+- Latest skipped count: 3
 - MathJax validation: passed
 - Answer verification source: AoPS 2012 AMC 12A Answer Key
 
 ## Latest Batch Pages
 
-- `2012 AMC 12A Problem 1` -> `amc12/problems/2012-amc-12a-problem-1/`
-- `2012 AMC 12A Problem 2` -> `amc12/problems/2012-amc-12a-problem-2/`
-- `2012 AMC 12A Problem 3` -> `amc12/problems/2012-amc-12a-problem-3/`
-- `2012 AMC 12A Problem 4` -> `amc12/problems/2012-amc-12a-problem-4/`
-- `2012 AMC 12A Problem 5` -> `amc12/problems/2012-amc-12a-problem-5/`
-- `2012 AMC 12A Problem 6` -> `amc12/problems/2012-amc-12a-problem-6/`
-- `2012 AMC 12A Problem 7` -> `amc12/problems/2012-amc-12a-problem-7/`
-- `2012 AMC 12A Problem 8` -> `amc12/problems/2012-amc-12a-problem-8/`
-- `2012 AMC 12A Problem 9` -> `amc12/problems/2012-amc-12a-problem-9/`
-- `2012 AMC 12A Problem 10` -> `amc12/problems/2012-amc-12a-problem-10/`
+- `2012 AMC 12A Problem 11` -> `amc12/problems/2012-amc-12a-problem-11/`
+- `2012 AMC 12A Problem 12` -> `amc12/problems/2012-amc-12a-problem-12/`
+- `2012 AMC 12A Problem 13` -> `amc12/problems/2012-amc-12a-problem-13/`
+- `2012 AMC 12A Problem 15` -> `amc12/problems/2012-amc-12a-problem-15/`
+- `2012 AMC 12A Problem 17` -> `amc12/problems/2012-amc-12a-problem-17/`
+- `2012 AMC 12A Problem 18` -> `amc12/problems/2012-amc-12a-problem-18/`
+- `2012 AMC 12A Problem 19` -> `amc12/problems/2012-amc-12a-problem-19/`
+
+## Skipped in latest batch
+
+- 2012 AMC 12A Problem 14: skipped because the curve area problem depends on the original diagram.
+- 2012 AMC 12A Problem 16: skipped because the two-circle geometry needs a dedicated diagram-sensitive derivation.
+- 2012 AMC 12A Problem 20: skipped because the polynomial statement is truncated in the local CSV.

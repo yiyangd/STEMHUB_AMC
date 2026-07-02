@@ -3372,3 +3372,19 @@
 - Pushed: pending
 - Next batch should start from: 2012 AMC 12A Problem 11
 - Review notes: none.
+
+## Batch 208: 2012 AMC 12A Problems 11-13, 15, 17-19
+
+- Start time: 2026-07-01T19:49:30-07:00
+- End time: 2026-07-01T19:49:30-07:00
+- Processed contest: AMC12
+- Processed range: 2012 AMC 12A Problems 11-13, 15, 17-19
+- Generated count: 7
+- Updated existing count: 0
+- Skipped count: 3
+- Skipped reasons: 2012 AMC 12A Problem 14: skipped because the curve area problem depends on the original diagram.; 2012 AMC 12A Problem 16: skipped because the two-circle geometry needs a dedicated diagram-sensitive derivation.; 2012 AMC 12A Problem 20: skipped because the polynomial statement is truncated in the local CSV.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2012 AMC 12A Problem 21
+- Review notes: none.

@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 207
+BATCH_NUMBER = 208
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2012_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
-SKIPPED = []
-BATCH_LABEL = "2012 AMC 12A Problems 1-10"
-NEXT_START = "2012 AMC 12A Problem 11"
+TARGET_NUMBERS = {11,12,13,15,17,18,19}
+SKIPPED = ["2012 AMC 12A Problem 14: skipped because the curve area problem depends on the original diagram.", "2012 AMC 12A Problem 16: skipped because the two-circle geometry needs a dedicated diagram-sensitive derivation.", "2012 AMC 12A Problem 20: skipped because the polynomial statement is truncated in the local CSV."]
+BATCH_LABEL = "2012 AMC 12A Problems 11-13, 15, 17-19"
+NEXT_START = "2012 AMC 12A Problem 21"
 
-ANS={1:("E","15"),2:("D","25"),3:("D","240"),4:("C",r"\frac47"),5:("D","64"),6:("D","7"),7:("C","8"),8:("C",r"\frac{17}{8}"),9:("A","Friday"),10:("D",r"\frac23")}
+ANS={11:("B",r"\frac5{36}"),12:("D",r"\frac{2\sqrt{19}-4}{5}"),13:("D","48"),15:("A",r"\frac{49}{512}"),17:("B","13"),18:("A","15"),19:("B","170")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2475,6 +2475,43 @@ SOL.update({
 9:[("Count ordinary days",r"From February $7,1812$ to February $7,2012$ is $200$ years. Ignoring leap days, that is \[200\cdot365\] days."),("Count leap days",r"The leap years contributing February $29$ in this interval are $1812,1816,\ldots,2008$, except $1900$ because it is divisible by $100$ but not by $400$. This gives $49$ leap days."),("Find the weekday shift",r"The total number of days is \[200\cdot365+49=73049.\] Modulo $7$, this is congruent to $4$."),("Move backward from Tuesday",r"February $7,2012$ was a Tuesday. Dickens's birthday was $4$ weekdays earlier in the cycle, which is Friday."),("Conclude",r"Dickens was born on a $\boxed{\text{Friday}}$."),
 ],
 10:[("Use the area to find the altitude",r"The triangle has area $30$ and a side of length $10$. If the altitude to that side is $h$, then \[\frac12\cdot10\cdot h=30,\] so $h=6$."),("Relate the median to the altitude",r"The median to the side has length $9$. The acute angle $\theta$ between the side and the median forms a right triangle whose opposite height is $6$ and whose hypotenuse is the median $9$."),("Compute sine",r"Therefore \[\sin\theta=\frac{\text{opposite}}{\text{hypotenuse}}=\frac69=\frac23.\]"),("Conclude",r"The answer is \[\boxed{\frac23}.\]"),
+],
+})
+
+OV.update({
+11:(r"Alex, Mel, and Chelsea play a game that has $6$ rounds. In each round there is a single winner, and the outcomes of the rounds are independent. For each round the probability that Alex wins is $\frac12$, and Mel is twice as likely to win as Chelsea. What is the probability that Alex wins three rounds, Mel wins two rounds, and Chelsea wins one round?",[("A",r"$\frac5{72}$"),("B",r"$\frac5{36}$"),("C",r"$\frac16$"),("D",r"$\frac13$"),("E",r"$\frac12$")]),
+12:(r"A square region $ABCD$ is externally tangent to the circle with equation $x^2+y^2=1$ at the point $(0,1)$ on side $\overline{CD}$. Vertices $A$ and $B$ are on the circle with equation $x^2+y^2=4$. What is the side length of this square?",[("A",r"$\frac{\sqrt{10}+5}{10}$"),("B",r"$\frac{2\sqrt5}{5}$"),("C",r"$\frac{2\sqrt2}{3}$"),("D",r"$\frac{2\sqrt{19}-4}{5}$"),("E",r"$\frac{9-\sqrt{17}}{5}$")]),
+13:(r"Paula the painter and her two helpers each paint at constant, but different, rates. They always start at $8{:}00$ AM, and all three always take the same amount of time to eat lunch. On Monday the three of them painted $50\%$ of a house, quitting at $4{:}00$ PM. On Tuesday, when Paula wasn't there, the two helpers painted only $24\%$ of the house and quit at $2{:}12$ PM. On Wednesday Paula worked by herself and finished the house by working until $7{:}12$ PM. How long, in minutes, was each day's lunch break?",[("A","30"),("B","36"),("C","42"),("D","48"),("E","60")]),
+15:(r"A $3\times3$ square is partitioned into $9$ unit squares. Each unit square is painted either white or black with each color being equally likely, chosen independently at random. The square is then rotated $90^\circ$ clockwise about its center, and every white square in a position formerly occupied by a black square is painted black. The colors of all other squares are left unchanged. What is the probability that the grid is now entirely black?",[("A",r"$\frac{49}{512}$"),("B",r"$\frac7{64}$"),("C",r"$\frac{121}{1024}$"),("D",r"$\frac{81}{512}$"),("E",r"$\frac9{32}$")]),
+17:(r"Let $S$ be a subset of $\{1,2,3,\ldots,30\}$ with the property that no pair of distinct elements in $S$ has a sum divisible by $5$. What is the largest possible size of $S$?",[("A","10"),("B","13"),("C","15"),("D","16"),("E","18")]),
+18:(r"Triangle $ABC$ has $AB=27$, $AC=26$, and $BC=25$. Let $I$ denote the intersection of the internal angle bisectors of $\triangle ABC$. What is $BI$?",[("A","15"),("B",r"$5+\sqrt{26}+3\sqrt3$"),("C",r"$3\sqrt{26}$"),("D",r"$\frac{2\sqrt{546}}{3}$"),("E",r"$9\sqrt3$")]),
+19:(r"Adam, Benin, Chiang, Deshawn, Esther, and Fiona have internet accounts. Some, but not all, of them are internet friends with each other, and none of them has an internet friend outside this group. Each of them has the same number of internet friends. In how many different ways can this happen?",[("A","60"),("B","170"),("C","290"),("D","320"),("E","660")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Use a multinomial probability with individual win probabilities.",
+12:"Place the square symmetrically in coordinates and use the larger circle equation.",
+13:"Set up work-rate equations with an unknown lunch break.",
+15:"Analyze the 90-degree rotation cycles of the 3 by 3 grid.",
+17:"Group the numbers by residues modulo 5.",
+18:"Use inradius and half-angle geometry to find the distance from vertex B to the incenter.",
+19:"Count labeled regular graphs on six vertices with degrees 1 through 4.",
+})
+
+SOL.update({
+11:[("Find Mel and Chelsea's probabilities",r"Alex wins with probability $\frac12$, so Mel and Chelsea together have probability $\frac12$. Mel is twice as likely as Chelsea, so \[P(M)=\frac13,\qquad P(C)=\frac16.\]"),("Count arrangements of winners",r"We need Alex to win $3$ rounds, Mel $2$ rounds, and Chelsea $1$ round. The number of orders is \[\frac{6!}{3!2!1!}=60.\]"),("Multiply by one order's probability",r"One specific order has probability \[\left(\frac12\right)^3\left(\frac13\right)^2\left(\frac16\right).\]"),("Compute",r"The total probability is \[60\cdot\frac1{8}\cdot\frac1{9}\cdot\frac1{6}=\frac{60}{432}=\frac5{36}.\]"),("Conclude",r"The answer is \[\boxed{\frac5{36}}.\]"),
+],
+12:[("Use symmetry",r"The square is tangent to the unit circle at $(0,1)$, so its side $\overline{CD}$ is horizontal at $y=1$. Let the square have side length $s$ and be centered on the $y$-axis."),("Write coordinates for A and B",r"The top vertices are then \[\left(-\frac{s}{2},1+s\right)\quad\text{and}\quad\left(\frac{s}{2},1+s\right).\] These lie on the circle $x^2+y^2=4$."),("Use the circle equation",r"Substitute one top vertex: \[\left(\frac{s}{2}\right)^2+(1+s)^2=4.\]"),("Solve the quadratic",r"This gives \[\frac{s^2}{4}+1+2s+s^2=4,\] so \[5s^2+8s-12=0.\] The positive root is \[s=\frac{-8+\sqrt{64+240}}{10}=\frac{2\sqrt{19}-4}{5}.\]"),("Conclude",r"The side length is \[\boxed{\frac{2\sqrt{19}-4}{5}}.\]"),
+],
+13:[("Measure work time after lunch",r"Let the daily lunch break be $L$ hours. Monday's available time is $8-L$ hours, Tuesday's is $6.2-L=\frac{31}{5}-L$, and Wednesday's is $11.2-L=\frac{56}{5}-L$."),("Write the rates",r"Let Paula's rate be $p$ houses per hour and the two helpers' combined rate be $h$. The data give \[(p+h)(8-L)=\frac12,\] \[h\left(\frac{31}{5}-L\right)=\frac{6}{25},\] and \[p\left(\frac{56}{5}-L\right)=\frac{13}{50},\] because after Monday and Tuesday, $26\%$ of the house remains."),("Use the rates in Monday's equation",r"From Tuesday and Wednesday, \[h=\frac{6/25}{31/5-L},\qquad p=\frac{13/50}{56/5-L}.\] Substitute these into \[(p+h)(8-L)=\frac12.\]"),("Solve for L",r"The resulting equation simplifies to \[L=\frac45\] hour."),("Convert to minutes",r"\[\frac45\] hour is \[\frac45\cdot60=48\] minutes."),("Conclude",r"Each lunch break was $\boxed{48}$ minutes."),
+],
+15:[("Use rotation cycles",r"A $90^\circ$ rotation of the $3\times3$ grid has two four-cycles, the four corners and the four edge-centers, plus the center square fixed."),("Understand the final black condition",r"After rotation, a white square becomes black only if it lands in a position that was formerly black. So for each rotation cycle, we need every white square to land on a formerly black square."),("Count one four-cycle",r"For a four-cycle, the allowed colorings around the cycle are exactly the binary strings with no adjacent pair of the form black followed by white in the rotation direction after the operation. A direct cycle check gives $7$ allowed colorings out of $2^4=16$."),("Handle the center",r"The center maps to itself. It must already be black, giving probability $\frac12$."),("Multiply independent cycles",r"The two four-cycles are independent, so the probability is \[\left(\frac7{16}\right)^2\cdot\frac12=\frac{49}{512}.\]"),("Conclude",r"The answer is \[\boxed{\frac{49}{512}}.\]"),
+],
+17:[("Group by residues modulo 5",r"The numbers $1$ through $30$ contain $6$ numbers in each residue class modulo $5$."),("Identify incompatible residue classes",r"Two numbers have a sum divisible by $5$ when their residues add to $0$ modulo $5$. Thus residue classes $1$ and $4$ conflict, and residue classes $2$ and $3$ conflict."),("Handle residue 0",r"Any two distinct multiples of $5$ have sum divisible by $5$, so we can include at most one number from residue class $0$."),("Maximize the set",r"From the pair $1$ and $4$, choose all $6$ numbers from one class. From the pair $2$ and $3$, choose all $6$ numbers from one class. Also choose $1$ multiple of $5$."),("Compute the maximum",r"The largest possible size is \[6+6+1=13.\]"),("Conclude",r"The answer is $\boxed{13}$."),
+],
+18:[("Find the area and inradius",r"The side lengths are $25,26,27$, so the semiperimeter is \[s=\frac{25+26+27}{2}=39.\] Heron's formula gives area \[\sqrt{39\cdot14\cdot13\cdot12}=78\sqrt{14}.\] Thus the inradius is \[r=\frac{\Delta}{s}=2\sqrt{14}.\]"),("Relate BI to the half-angle at B",r"The incenter lies on the angle bisector at $B$, and the perpendicular distance from $I$ to a side is $r$. Therefore \[BI=\frac{r}{\sin(B/2)}.\]"),("Compute the half-angle sine",r"For angle $B$, the adjacent sides are $25$ and $27$, and the opposite side is $26$. The half-angle formula gives \[\sin^2\frac{B}{2}=\frac{(s-25)(s-27)}{25\cdot27}=\frac{14\cdot12}{675}=\frac{56}{225}.\]"),("Compute BI",r"So \[\sin\frac{B}{2}=\frac{2\sqrt{14}}{15}.\] Hence \[BI=\frac{2\sqrt{14}}{2\sqrt{14}/15}=15.\]"),("Conclude",r"The answer is $\boxed{15}$."),
+],
+19:[("Model the situation as a graph",r"Represent the six people as vertices, with an edge between two people if they are internet friends. The condition says the graph is regular: every vertex has the same degree."),("Exclude the empty and complete graphs",r"Some, but not all, friendships exist. So the common degree cannot be $0$ or $5$; it can be $1,2,3,$ or $4$."),("Count degree 1 and degree 4 graphs",r"A $1$-regular graph on $6$ labeled vertices is a perfect matching, and there are $15$ such matchings. By complementing edges, there are also $15$ regular graphs of degree $4$."),("Count degree 2 and degree 3 graphs",r"A $2$-regular graph on $6$ vertices is either one $6$-cycle or two $3$-cycles; this gives $70$ graphs. Taking complements gives $70$ regular graphs of degree $3$."),("Add the cases",r"The total number of possible friendship graphs is \[15+70+70+15=170.\]"),("Conclude",r"The answer is $\boxed{170}$."),
 ],
 })
 
