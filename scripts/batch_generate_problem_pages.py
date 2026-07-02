@@ -3,20 +3,25 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 216
+BATCH_NUMBER = 217
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2014_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2014_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,7,10}
 SKIPPED = [
-    "2014 AMC 12A Problem 17: 3D sphere-packing geometry high risk; skipped",
-    "2014 AMC 12A Problem 18: nested logarithm domain with OCR base ambiguity; skipped",
-    "2014 AMC 12A Problem 19: rational-parameter quadratic integer-root count high risk; skipped",
-    "2014 AMC 12A Problem 20: geometry minimization/path reflection high risk; skipped",
+    "2014 AMC 12A Problem 21: floor-function interval sum high risk; skipped",
+    "2014 AMC 12A Problem 22: exponential inequality counting high risk; skipped",
+    "2014 AMC 12A Problem 23: repeating decimal period digit sum high risk; skipped",
+    "2014 AMC 12A Problem 24: iterated absolute-value function high risk; skipped",
+    "2014 AMC 12A Problem 25: parabola with integer-coordinate count high risk; skipped",
+    "2014 AMC 12B Problem 5: diagram-dependent pane layout; skipped",
+    "2014 AMC 12B Problem 6: OCR statement is truncated; skipped",
+    "2014 AMC 12B Problem 8: addition diagram/OCR layout risk; skipped",
+    "2014 AMC 12B Problem 9: diagram-dependent quadrilateral geometry; skipped",
 ]
-BATCH_LABEL = "2014 AMC 12A Problems 11-16"
-NEXT_START = "2014 AMC 12A Problem 21"
+BATCH_LABEL = "2014 AMC 12B Problems 1-4, 7, 10"
+NEXT_START = "2014 AMC 12B Problem 11"
 
-ANS={11:("C","210"),12:("D",r"2+\sqrt3"),13:("B","2220"),14:("C","2"),15:("B","18"),16:("D","991")}
+ANS={1:("C","37"),2:("C","36"),3:("E",r"\frac{300}{7}"),4:("B",r"\frac53"),7:("D","7"),10:("D","37")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2776,6 +2781,33 @@ SOL.update({
 16:[("Look at small cases",r"Multiplying by $8$ gives a stable digit pattern: \[8\cdot88=704,\quad 8\cdot888=7104,\quad 8\cdot8888=71104.\]"),("Describe the pattern",r"For $k\ge2$, the product has digit sum \[7+(k-2)\cdot1+0+4=k+9.\] The middle consists of $k-2$ ones."),("Set the digit sum",r"We need \[k+9=1000.\]"),("Solve",r"\[k=991.\]"),("Conclude",r"The answer is $\boxed{991}$.")],
 })
 
+OV.update({
+1:(r"Leah has $13$ coins, all of which are pennies and nickels. If she had one more nickel than she has now, then she would have the same number of pennies and nickels. In cents, how much are Leah's coins worth?",[("A","33"),("B","35"),("C","37"),("D","39"),("E","41")]),
+2:(r"Orvin went to the store with just enough money to buy $30$ balloons. When he arrived, he discovered that the store had a special sale on balloons: buy $1$ balloon at the regular price and get a second at $\frac13$ off the regular price. What is the greatest number of balloons Orvin could buy?",[("A","33"),("B","34"),("C","36"),("D","38"),("E","39")]),
+3:(r"Randy drove the first third of his trip on a gravel road, the next $20$ miles on pavement, and the remaining one-fifth on a dirt road. In miles, how long was Randy's trip?",[("A","30"),("B",r"$\frac{400}{11}$"),("C","75"),("D",r"$\frac{40}{2}$"),("E",r"$\frac{300}{7}$")]),
+4:(r"Susie pays for $4$ muffins and $3$ bananas. Calvin spends twice as much paying for $2$ muffins and $16$ bananas. A muffin is how many times as expensive as a banana?",[("A","3"),("B",r"$\frac53$"),("C",r"$\frac74$"),("D","2"),("E",r"$\frac{13}{4}$")]),
+7:(r"For how many positive integers $n$ is $\frac{n}{30-n}$ also a positive integer?",[("A","4"),("B","5"),("C","6"),("D","7"),("E","8")]),
+10:(r"Danica drove her new car on a trip for a whole number of hours, averaging $55$ miles per hour. At the beginning of the trip, $abc$ miles were displayed on the odometer, where $abc$ is a three-digit number with $a\ge1$ and $a+b+c\le7$. At the end of the trip, the odometer showed $cba$ miles. What is $a^2+b^2+c^2$?",[("A","26"),("B","27"),("C","36"),("D","37"),("E","41")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Set up pennies and nickels with one-more-nickel condition.",
+2:"Compare the sale pair price with the regular price budget.",
+3:"Let total distance be T and account for each segment as a fraction of T.",
+4:"Translate spending statements into an equation for muffin and banana prices.",
+7:"Make 30-n a positive divisor of 30.",
+10:"Use the odometer difference and divisibility by 55.",
+})
+
+SOL.update({
+1:[("Use variables",r"Let $p$ be the number of pennies and $n$ the number of nickels. Then \[p+n=13.\]"),("Use the one-more-nickel condition",r"If Leah had one more nickel, the number of nickels would be $n+1$, and that would equal the number of pennies: \[p=n+1.\]"),("Solve",r"Substitute into the total: \[(n+1)+n=13,\] so \[2n=12,\quad n=6.\] Then $p=7$."),("Compute value",r"The coins are worth \[7\cdot1+6\cdot5=7+30=37\] cents."),("Conclude",r"The answer is $\boxed{37}$.")],
+2:[("Use one regular-price unit",r"Let the regular price of one balloon be $p$. Orvin has enough money for $30$ balloons, so he has $30p$ dollars."),("Find the sale pair price",r"Under the sale, two balloons cost \[p+\frac23p=\frac53p.\]"),("Use the full budget in pairs",r"With $30p$, the number of sale pairs he can buy is \[\frac{30p}{(5/3)p}=18.\]"),("Convert pairs to balloons",r"Each pair gives $2$ balloons, so he can buy \[18\cdot2=36\] balloons."),("Conclude",r"The answer is $\boxed{36}$.")],
+3:[("Let the total trip be T",r"Let the total distance be $T$ miles. The gravel part is $\frac{T}{3}$, the pavement part is $20$, and the dirt part is $\frac{T}{5}$."),("Set up the total",r"These three pieces make the whole trip: \[\frac{T}{3}+20+\frac{T}{5}=T.\]"),("Solve",r"\[\frac{8T}{15}+20=T,\] so \[20=\frac{7T}{15}.\] Hence \[T=\frac{300}{7}.\]"),("Conclude",r"The trip was \[\boxed{\frac{300}{7}}\] miles long.")],
+4:[("Name the prices",r"Let $m$ be the price of a muffin and $b$ be the price of a banana."),("Translate the spending relationship",r"Susie spends \[4m+3b.\] Calvin spends \[2m+16b,\] and this is twice Susie's spending, so \[2m+16b=2(4m+3b).\]"),("Simplify",r"\[2m+16b=8m+6b,\] so \[10b=6m.\]"),("Find the ratio",r"\[\frac{m}{b}=\frac{10}{6}=\frac53.\]"),("Conclude",r"A muffin is \[\boxed{\frac53}\] times as expensive as a banana.")],
+7:[("Use divisibility",r"For \[\frac{n}{30-n}\] to be a positive integer, the denominator $30-n$ must be positive and must divide $n$."),("Replace n",r"Let \[d=30-n.\] Then $d$ is a positive divisor of $n=30-d$."),("Use the divisor relationship",r"If $d$ divides $30-d$, then $d$ also divides \[30=(30-d)+d.\] So $d$ must be a positive divisor of $30$."),("Keep the quotient positive",r"We need $n>0$, so $d<30$. The positive divisors of $30$ less than $30$ are \[1,2,3,5,6,10,15.\]"),("Count",r"There are $7$ such divisors, giving $7$ possible values of $n$."),("Conclude",r"The answer is $\boxed{7}$.")],
+10:[("Write the odometer numbers",r"The starting mileage is \[100a+10b+c,\] and the ending mileage is \[100c+10b+a.\]"),("Use the driven distance",r"She drove for a whole number of hours at $55$ miles per hour, so the difference is a positive multiple of $55$: \[(100c+10b+a)-(100a+10b+c)=99(c-a).\]"),("Use divisibility",r"Thus $99(c-a)$ is divisible by $55$. Since \[\gcd(99,55)=11,\] we need $c-a$ to be divisible by $5$."),("Use the digit-sum condition",r"Because $a\ge1$ and $a+b+c\le7$, the only way for $c-a$ to be a positive multiple of $5$ is \[a=1,\qquad c=6,\qquad b=0.\]"),("Compute",r"\[a^2+b^2+c^2=1^2+0^2+6^2=37.\]"),("Conclude",r"The answer is $\boxed{37}$.")],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -2882,7 +2914,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2014" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2014" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -2971,7 +3003,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2014 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2014 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),

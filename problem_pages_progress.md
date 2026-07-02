@@ -3516,3 +3516,19 @@
 - Pushed: pending
 - Next batch should start from: 2014 AMC 12A Problem 21
 - Review notes: none.
+
+## Batch 217: 2014 AMC 12B Problems 1-4, 7, 10
+
+- Start time: 2026-07-01T20:20:01-07:00
+- End time: 2026-07-01T20:20:02-07:00
+- Processed contest: AMC12
+- Processed range: 2014 AMC 12B Problems 1-4, 7, 10
+- Generated count: 6
+- Updated existing count: 0
+- Skipped count: 9
+- Skipped reasons: 2014 AMC 12A Problem 21: floor-function interval sum high risk; skipped; 2014 AMC 12A Problem 22: exponential inequality counting high risk; skipped; 2014 AMC 12A Problem 23: repeating decimal period digit sum high risk; skipped; 2014 AMC 12A Problem 24: iterated absolute-value function high risk; skipped; 2014 AMC 12A Problem 25: parabola with integer-coordinate count high risk; skipped; 2014 AMC 12B Problem 5: diagram-dependent pane layout; skipped; 2014 AMC 12B Problem 6: OCR statement is truncated; skipped; 2014 AMC 12B Problem 8: addition diagram/OCR layout risk; skipped; 2014 AMC 12B Problem 9: diagram-dependent quadrilateral geometry; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2014 AMC 12B Problem 11
+- Review notes: none.
