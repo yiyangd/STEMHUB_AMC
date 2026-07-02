@@ -3,18 +3,18 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 243
+BATCH_NUMBER = 244
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2018_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {22,23,24}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2019_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,7,8,9}
 SKIPPED = [
-    "2018 AMC 12B Problem 21: incircle/circumcircle tangent configuration is diagram-sensitive; skipped",
-    "2018 AMC 12B Problem 25: three-circle tangent construction depends on the original diagram; skipped",
+    "2019 AMC 12A Problem 6: rigid-motion symmetry problem depends on the original recurring-pattern figure; skipped",
+    "2019 AMC 12A Problem 10: shaded circle arrangement requires the original diagram; skipped",
 ]
-BATCH_LABEL = "2018 AMC 12B Problems 22-24"
-NEXT_START = "2019 AMC 12A Problem 1"
+BATCH_LABEL = "2019 AMC 12A Problems 1-5, 7-9"
+NEXT_START = "2019 AMC 12A Problem 11"
 
-ANS={22:("D","220"),23:("C","120"),24:("C","199")}
+ANS={1:("E","78"),2:("D","200"),3:("B","76"),4:("D","90"),5:("C","6"),7:("E","14.5 < mean < median"),8:("D","19"),9:("E","8078")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4222,6 +4222,88 @@ SOL.update({
 ],
 })
 
+OV.update({
+1:(r"The area of a pizza with radius \(4\) inches is \(N\) percent larger than the area of a pizza with radius \(3\) inches. What is the integer closest to \(N\)?",[("A","25"),("B","33"),("C","44"),("D","66"),("E","78")]),
+2:(r"Suppose \(a\) is \(150\%\) of \(b\). What percent of \(a\) is \(3b\)?",[("A","50"),("B",r"$66\frac23$"),("C","150"),("D","200"),("E","450")]),
+3:(r"A box contains \(28\) red balls, \(20\) green balls, \(19\) yellow balls, \(13\) blue balls, \(11\) white balls, and \(9\) black balls. What is the minimum number of balls that must be drawn without replacement to guarantee that at least \(15\) balls of a single color will be drawn?",[("A","75"),("B","76"),("C","79"),("D","84"),("E","91")]),
+4:(r"What is the greatest number of consecutive integers whose sum is \(45\)?",[("A","9"),("B","25"),("C","45"),("D","90"),("E","120")]),
+5:(r"Two lines with slopes \(\frac12\) and \(2\) intersect at \((2,2)\). What is the area of the triangle enclosed by these two lines and the line \(x+y=10\)?",[("A","4"),("B",r"$4\sqrt2$"),("C","6"),("D","8"),("E",r"$6\sqrt2$")]),
+7:(r"Melanie computes the mean \(\mu\), the median \(M\), and the modes of the \(365\) values that are the dates in the months of \(2019\). Thus her data consist of twelve \(1\)'s, twelve \(2\)'s, \(\ldots\), twelve \(28\)'s, eleven \(29\)'s, eleven \(30\)'s, and seven \(31\)'s. Let \(d\) be the median of the modes. Which statement is true?",[("A",r"$\mu<d<M$"),("B",r"$M<d<\mu$"),("C",r"$d=M=\mu$"),("D",r"$d<M<\mu$"),("E",r"$d<\mu<M$")]),
+8:(r"For a set of four distinct lines in a plane, there are exactly \(N\) distinct points that lie on two or more of the lines. What is the sum of all possible values of \(N\)?",[("A","14"),("B","16"),("C","18"),("D","19"),("E","21")]),
+9:(r"A sequence is defined recursively by \(a_1=1\), \(a_2=\frac37\), and \[a_n=\frac{a_{n-2}a_{n-1}}{2a_{n-2}-a_{n-1}}\] for all \(n\ge3\). Then \(a_{2019}\) can be written as \(\frac pq\), where \(p\) and \(q\) are relatively prime positive integers. What is \(p+q\)?",[("A","2020"),("B","4039"),("C","6057"),("D","6061"),("E","8078")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Compare circle areas through the square of the radius.",
+2:"Translate percent language into a ratio.",
+3:"Use the pigeonhole principle with the largest safe draw count.",
+4:"Use the arithmetic-series formula for consecutive integers.",
+5:"Find the intersections of the two sloped lines with x plus y equals 10.",
+7:"Compute the median of the modal dates, then compare with the mean and median.",
+8:"Classify possible intersection counts for four distinct lines.",
+9:"Take reciprocals to turn the recurrence into an arithmetic sequence.",
+})
+
+SOL.update({
+1:[
+("Compare the two areas",r"Pizza area is proportional to \(r^2\). The radius \(4\) pizza has area \(16\pi\), and the radius \(3\) pizza has area \(9\pi\)."),
+("Find the percent increase",r"The increase is \[16\pi-9\pi=7\pi.\] As a fraction of the smaller pizza's area, this is \[\frac{7\pi}{9\pi}=\frac79.\]"),
+("Convert to a percent",r"\(\frac79\cdot100\approx77.78\%\)."),
+("Conclude",r"The closest integer is \(\boxed{78}\)."),
+],
+2:[
+("Translate the given relationship",r"If \(a\) is \(150\%\) of \(b\), then \[a=1.5b=\frac32b.\]"),
+("Ask for the requested percent",r"We want \(3b\) as a percent of \(a\), so compute \[\frac{3b}{a}=\frac{3b}{(3/2)b}=2.\]"),
+("Convert to percent",r"A ratio of \(2\) means \(200\%\)."),
+("Conclude",r"The answer is \(\boxed{200}\)."),
+],
+3:[
+("Avoid reaching 15 as long as possible",r"To delay getting \(15\) balls of one color, we can draw at most \(14\) balls of any color that has at least \(15\) balls available."),
+("Apply this to each color",r"For red, green, and yellow, we can draw \(14\) each without reaching \(15\). For blue, white, and black, we can draw all of them: \(13\), \(11\), and \(9\)."),
+("Find the largest safe number",r"The maximum number of balls that can be drawn without guaranteeing \(15\) of one color is \[14+14+14+13+11+9=75.\]"),
+("Add one more draw",r"Therefore the next draw, the \(76\)th, guarantees at least \(15\) balls of some color."),
+("Conclude",r"The minimum guaranteed number is \(\boxed{76}\)."),
+],
+4:[
+("Write the sum of k consecutive integers",r"Suppose the integers are \[a,a+1,\ldots,a+k-1.\] Their sum is \[\frac{k(2a+k-1)}2=45.\]"),
+("Use the equation",r"This means \[k(2a+k-1)=90.\] Therefore \(k\) must be a positive divisor of \(90\)."),
+("Maximize k",r"The largest possible divisor is \(k=90\). Then \[2a+89=1,\] so \(a=-44\), which is an integer."),
+("Check the sequence",r"The sequence from \(-44\) to \(45\) has \(90\) consecutive integers and sum \(45\)."),
+("Conclude",r"The greatest possible number is \(\boxed{90}\)."),
+],
+5:[
+("Write the first line",r"The line with slope \(\frac12\) through \((2,2)\) is \[y-2=\frac12(x-2),\] or \(y=\frac12x+1\)."),
+("Write the second line",r"The line with slope \(2\) through \((2,2)\) is \[y-2=2(x-2),\] or \(y=2x-2\)."),
+("Intersect with x plus y equals 10",r"For the first line, \(x+\frac12x+1=10\), so the point is \((6,4)\). For the second line, \(x+2x-2=10\), so the point is \((4,6)\)."),
+("Compute the triangle area",r"The triangle has vertices \((2,2)\), \((6,4)\), and \((4,6)\). Using vectors \((4,2)\) and \((2,4)\), the area is \[\frac12|4\cdot4-2\cdot2|=6.\]"),
+("Conclude",r"The area is \(\boxed{6}\)."),
+],
+7:[
+("Find the modes",r"The most frequent dates are \(1,2,\ldots,28\), each appearing \(12\) times. Thus the modes are the numbers \(1\) through \(28\)."),
+("Find d",r"The median of the modes \(1,2,\ldots,28\) is the average of the \(14\)th and \(15\)th values: \[d=\frac{14+15}{2}=14.5.\]"),
+("Find the median M",r"There are \(365\) data values, so the median is the \(183\)rd value. The dates \(1\) through \(15\) account for \(15\cdot12=180\) values, so the \(183\)rd value is \(16\). Thus \(M=16\)."),
+("Estimate the mean",r"The mean date is a little less than \(16\). More exactly, the total of all dates in 2019 is \(5738\), so \[\mu=\frac{5738}{365}\approx15.72.\]"),
+("Compare",r"Therefore \[d=14.5<\mu\approx15.72<M=16.\]"),
+("Conclude",r"The true statement is \(\boxed{d<\mu<M}\)."),
+],
+8:[
+("Start from the maximum",r"Four lines can have at most \(\binom42=6\) pairwise intersection points, so \(N\le6\)."),
+("List attainable configurations",r"If all four lines are parallel, \(N=0\). If all four are concurrent, \(N=1\). If three are parallel and the fourth crosses them, \(N=3\)."),
+("Find the remaining values",r"If two pairs are parallel, \(N=4\). If exactly two lines are parallel and the other two meet each other, \(N=5\). If no two are parallel and no three are concurrent, \(N=6\)."),
+("Collect possible values",r"The possible values are \[\{0,1,3,4,5,6\}.\]"),
+("Add them",r"Their sum is \[0+1+3+4+5+6=19.\]"),
+("Conclude",r"The answer is \(\boxed{19}\)."),
+],
+9:[
+("Take reciprocals",r"The recurrence is easier after taking reciprocals. Let \[b_n=\frac1{a_n}.\] Then \[b_n=\frac{2a_{n-2}-a_{n-1}}{a_{n-2}a_{n-1}}=2b_{n-1}-b_{n-2}.\]"),
+("Compute the first two b-values",r"Since \(a_1=1\), \(b_1=1\). Since \(a_2=\frac37\), \(b_2=\frac73\)."),
+("Recognize an arithmetic sequence",r"The recurrence \(b_n=2b_{n-1}-b_{n-2}\) means the first differences are constant. The difference is \[\frac73-1=\frac43.\]"),
+("Find b 2019",r"Thus \[b_n=1+(n-1)\frac43=\frac{4n-1}{3}.\] For \(n=2019\), \[b_{2019}=\frac{8075}{3}.\]"),
+("Invert",r"Therefore \[a_{2019}=\frac3{8075}.\] The numerator and denominator are relatively prime."),
+("Conclude",r"So \(p+q=3+8075=\boxed{8078}\)."),
+],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -4328,7 +4410,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2018" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2019" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -4417,7 +4499,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2018 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2019 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
