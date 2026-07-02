@@ -3,18 +3,19 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 275
+BATCH_NUMBER = 276
 CONTEST_DIR = "amc12"
 YEAR = "2023"
 FORM = "A"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2023_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
+TARGET_NUMBERS = {21, 22, 23, 24}
 SKIPPED = [
+    "2023 AMC 12A Problem 25: high-risk tangent-polynomial coefficient identity; skipped",
 ]
-BATCH_LABEL = "2023 AMC 12A Problems 11-20"
-NEXT_START = "2023 AMC 12A Problem 21"
+BATCH_LABEL = "2023 AMC 12A Problems 21-24"
+NEXT_START = "2023 AMC 12B Problem 1"
 
-ANS={11:("C",r"$45^\circ$"),12:("D","3159"),13:("B","36"),14:("E","7"),15:("A",r"$\arccos\frac56$"),16:("B","21"),17:("E",r"$\frac12$"),18:("D",r"$\frac3{28}$"),19:("C","1"),20:("C","5")}
+ANS={21:("A",r"$\frac7{22}$"),22:("B","96"),23:("B","1"),24:("C","5")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -5130,6 +5131,27 @@ SOL.update({
 18:[("Use symmetry",r"Place the two unit-circle centers at \[\left(-\frac14,0\right)\quad\text{and}\quad\left(\frac14,0\right).\] By symmetry, the centers of $C_3$ and $C_4$ lie on the $y$-axis."),("Find C3",r"The largest circle internally tangent to both unit circles is centered halfway between them. Its radius is \[1-\frac14=\frac34.\]"),("Set up C4",r"Let $r$ be the radius of $C_4$, and let its center be $(0,y)$. Internal tangency to a unit circle gives \[\sqrt{y^2+\left(\frac14\right)^2}=1-r.\]"),("Use tangency to C3",r"External tangency to $C_3$ gives \[y=\frac34+r.\]"),("Solve",r"Substitute into the distance equation: \[\left(\frac34+r\right)^2+\left(\frac14\right)^2=(1-r)^2.\] This simplifies to \[\frac58+\frac72r=1,\] so \[r=\frac3{28}.\]"),("Conclude",r"The answer is $\boxed{\frac3{28}}$."),],
 19:[("Convert to natural logs",r"Let \[a=\ln2023,\quad b=\ln7,\quad c=\ln289,\quad t=\ln x.\] The equation becomes \[\frac{a}{b+t}\cdot\frac{a}{c+t}=\frac{a}{a+t}.\]"),("Clear denominators",r"After dividing by $a$ and clearing denominators, \[a(a+t)=(b+t)(c+t).\] This is a quadratic equation in $t$."),("Use the sum of roots",r"Expanding gives \[t^2+(b+c-a)t+(bc-a^2)=0.\] Therefore the sum of all $t$-solutions is \[a-b-c.\]"),("Convert back to x",r"The product of all $x$-solutions is \[\exp(a-b-c)=\frac{2023}{7\cdot289}.\]"),("Use 2023 equals 7 times 289",r"Since \[2023=7\cdot289,\] the product is $1$."),("Conclude",r"The answer is $\boxed{1}$."),],
 20:[("Let S_n be the row sum",r"Let $S_n$ be the sum of the entries in row $n$. We only need the units digit, so a recurrence modulo $10$ is enough."),("Derive the recurrence",r"Row $n$ has endpoints $1$ and $1$. The interior entries come from adjacent pairs in row $n-1$, each plus $1$. The adjacent-pair sums contribute \[2S_{n-1}-2,\] and there are $n-2$ interior plus-ones."),("Simplify",r"Therefore \[S_n=2+(2S_{n-1}-2)+(n-2)=2S_{n-1}+n-2.\]"),("Compute modulo 10",r"Start with $S_1=1$ and iterate \[S_n\equiv2S_{n-1}+n-2\pmod{10}.\] This recurrence has a short repeating pattern modulo $10$."),("Evaluate the needed row",r"Carrying the recurrence to $n=2023$ modulo $10$ gives \[S_{2023}\equiv5\pmod{10}.\]"),("Conclude",r"The units digit is $\boxed{5}$."),],
+})
+
+OV.update({
+21:(r"If $A$ and $B$ are vertices of a polyhedron, define $d(A,B)$ to be the minimum number of edges one must traverse to connect $A$ and $B$. Let $Q,R,$ and $S$ be randomly chosen distinct vertices of a regular icosahedron. What is the probability that $d(Q,R)>d(R,S)$?",[("A",r"$\frac7{22}$"),("B",r"$\frac13$"),("C",r"$\frac38$"),("D",r"$\frac5{12}$"),("E",r"$\frac12$")]),
+22:(r"Let $f$ be the unique function defined on the positive integers such that \[\sum_{d\mid n}d\cdot f\left(\frac nd\right)=1\] for all positive integers $n$. What is $f(2023)$?",[("A","-1536"),("B","96"),("C","108"),("D","116"),("E","144")]),
+23:(r"How many ordered pairs of positive real numbers $(a,b)$ satisfy \[(1+2a)(2+2b)(2a+b)=32ab?\]",[("A","0"),("B","1"),("C","2"),("D","3"),("E","an infinite number")]),
+24:(r"Let $K$ be the number of sequences $A_1,A_2,\ldots,A_n$ such that $n$ is a positive integer at most $10$, each $A_i$ is a subset of $\{1,2,\ldots,10\}$, and $A_{i-1}\subseteq A_i$ for each $2\le i\le n$. What is the remainder when $K$ is divided by $10$?",[("A","1"),("B","3"),("C","5"),("D","7"),("E","9")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Use the distance distribution from a fixed vertex of an icosahedron.",
+22:"Recognize a Dirichlet-convolution inverse and use prime factorization.",
+23:"Transform the equation into a symmetric inequality with equality only once.",
+24:"Count increasing subset chains by choosing when each element first appears.",
+})
+
+SOL.update({
+21:[("Fix the middle vertex",r"Because the icosahedron is regular, fix $R$ and count choices of $Q$ and $S$ among the other $11$ vertices."),("Use the distance counts",r"From a vertex of an icosahedron, there are $5$ adjacent vertices at distance $1$, $5$ vertices at distance $2$, and $1$ opposite vertex at distance $3$."),("Count favorable ordered pairs",r"We need $d(Q,R)>d(R,S)$. If $Q$ has distance $2$, then $S$ must have distance $1$, giving $5\cdot5=25$ choices. If $Q$ has distance $3$, then $S$ may have distance $1$ or $2$, giving $1\cdot10=10$ choices."),("Count total ordered pairs",r"Since $Q,R,S$ are distinct and $R$ is fixed, there are \[11\cdot10=110\] ordered choices for $(Q,S)$."),("Compute the probability",r"The favorable count is \[25+10=35,\] so the probability is \[\frac{35}{110}=\frac7{22}.\]"),("Conclude",r"The answer is $\boxed{\frac7{22}}$."),],
+22:[("Interpret the divisor sum",r"The equation says that the function $f$ is the Dirichlet-convolution inverse of the function $g(n)=n$ against the constant function $1$."),("Find f on prime powers",r"For a prime $p$, the condition for $p^a$ is \[\sum_{i=0}^{a}p^i f(p^{a-i})=1.\] For $a=1$, this gives \[f(p)+p=1,\] so \[f(p)=1-p.\] The same recurrence gives \[f(p^a)=1-p\] for all $a\ge1$."),("Use multiplicativity",r"The convolution equation with multiplicative functions implies that $f$ is multiplicative. Thus we can evaluate $f$ from the prime factorization of $2023$."),("Factor 2023",r"We have \[2023=7\cdot17^2.\] Therefore \[f(2023)=f(7)f(17^2).\]"),("Compute",r"Using $f(p^a)=1-p$, \[f(7)=1-7=-6,\quad f(17^2)=1-17=-16.\] Hence \[f(2023)=(-6)(-16)=96.\]"),("Conclude",r"The answer is $\boxed{96}$."),],
+23:[("Make the expression dimensionless",r"Let \[x=\frac1{2a},\quad y=\frac1b.\] Since $a,b>0$, we have $x,y>0$."),("Rewrite the equation",r"Dividing the original equation by $32ab$ and substituting gives \[(1+x)(1+y)\left(\frac1x+\frac1y\right)=8.\] Equivalently, \[(1+x)(1+y)(x+y)=8xy.\]"),("Use symmetric variables",r"Let \[s=x+y,\quad p=xy.\] Then the equation becomes \[s(1+s+p)=8p,\] so \[p=\frac{s(1+s)}{8-s}.\]"),("Apply the product bound",r"For positive $x$ and $y$ with sum $s$, we must have \[p\le\frac{s^2}{4}.\] Substituting the expression for $p$ gives equality only when \[s=2.\]"),("Find x and y",r"Equality in $p\le\frac{s^2}{4}$ occurs only when $x=y$. Thus \[x=y=1.\] This gives \[a=\frac12,\quad b=1.\]"),("Conclude",r"There is exactly one ordered pair. The answer is $\boxed{1}$."),],
+24:[("Fix the sequence length",r"For a fixed length $n$, each element of $\{1,2,\ldots,10\}$ can enter the increasing chain at exactly one of the stages $1,2,\ldots,n$, or it can never appear."),("Count choices for one element",r"Thus each element has $n+1$ independent choices: first appear in $A_1$, first appear in $A_2$, ..., first appear in $A_n$, or never appear."),("Count chains of length n",r"For fixed $n$, the number of valid chains is therefore \[(n+1)^{10}.\]"),("Sum over possible n",r"Since $1\le n\le10$, \[K=\sum_{n=1}^{10}(n+1)^{10}=\sum_{m=2}^{11}m^{10}.\]"),("Compute modulo 10",r"Modulo $10$, the terms for $m=2,3,\ldots,11$ are \[4,9,6,5,6,9,4,1,0,1.\] Their sum is congruent to $5$ modulo $10$."),("Conclude",r"The remainder is $\boxed{5}$."),],
 })
 
 def esc(x, quote=True):

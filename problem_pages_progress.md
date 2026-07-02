@@ -4460,3 +4460,19 @@
 - Pushed: pending
 - Next batch should start from: 2023 AMC 12A Problem 21
 - Review notes: none.
+
+## Batch 276: 2023 AMC 12A Problems 21-24
+
+- Start time: 2026-07-02T08:29:08-07:00
+- End time: 2026-07-02T08:29:08-07:00
+- Processed contest: AMC12
+- Processed range: 2023 AMC 12A Problems 21-24
+- Generated count: 4
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2023 AMC 12A Problem 25: high-risk tangent-polynomial coefficient identity; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2023 AMC 12B Problem 1
+- Review notes: none.
