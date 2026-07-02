@@ -3,22 +3,19 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 261
+BATCH_NUMBER = 262
 CONTEST_DIR = "amc12"
-YEAR = "2021 Spring"
-FORM = "B"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2021_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {23}
+YEAR = "2021 Fall"
+FORM = "A"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2021_Fall_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9}
 SKIPPED = [
-    "2021 Spring AMC 12B Problem 21: exponential equation with irrational exponents is high-risk in current pass; skipped",
-    "2021 Spring AMC 12B Problem 22: impartial brick game requires Sprague-Grundy style analysis; skipped",
-    "2021 Spring AMC 12B Problem 24: parallelogram projection problem depends on the missing diagram; skipped",
-    "2021 Spring AMC 12B Problem 25: lattice-point line-count interval problem is high-risk in current pass; skipped",
+    "2021 Fall AMC 12A Problem 10: cone liquid-rise problem depends on the missing diagram; skipped",
 ]
-BATCH_LABEL = "2021 Spring AMC 12B Problem 23"
-NEXT_START = "2021 Fall AMC 12A Problem 1"
+BATCH_LABEL = "2021 Fall AMC 12A Problems 1-9"
+NEXT_START = "2021 Fall AMC 12A Problem 11"
 
-ANS={23:("A","55")}
+ANS={1:("B","50"),2:("D",r"ab=0 and a+b\ge0"),3:("D","14,238"),4:("D","Happy snakes are not purple."),5:("E","75"),6:("C","12"),7:("B","1"),8:("C","(E, O, E)"),9:("C",r"3^{128}-2^{128}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4804,6 +4801,42 @@ KEY_OVERRIDES.update({
 
 SOL.update({
 23:[("Describe evenly spaced distinct bins",r"Three distinct positive integers are evenly spaced exactly when they have the form \[a,\ a+d,\ a+2d\] for integers $a\ge1$ and $d\ge1$."),("Compute one unordered set's probability",r"For a fixed set $\{a,a+d,a+2d\}$, the three labeled balls can land in these three bins in $3!=6$ orders. The probability for one order is \[2^{-a}\cdot2^{-(a+d)}\cdot2^{-(a+2d)}=2^{-3a-3d}.\]"),("Sum over all starts and gaps",r"Therefore the total probability is \[\sum_{a=1}^{\infty}\sum_{d=1}^{\infty}6\cdot2^{-3a-3d}.\] This factors as \[6\left(\sum_{a=1}^{\infty}2^{-3a}\right)\left(\sum_{d=1}^{\infty}2^{-3d}\right).\]"),("Evaluate the geometric series",r"Since \[\sum_{a=1}^{\infty}2^{-3a}=\frac{1/8}{1-1/8}=\frac17,\] the probability is \[6\cdot\frac17\cdot\frac17=\frac6{49}.\]"),("Conclude",r"Thus $p+q=6+49=\boxed{55}$."),],
+})
+
+OV.update({
+1:(r"What is the value of \[2^{1+2+3}-(2^1+2^2+2^3)?\]",[("A","0"),("B","50"),("C","52"),("D","54"),("E","57")]),
+2:(r"Under what conditions is \[\sqrt{a^2+b^2}=a+b\] true, where $a$ and $b$ are real numbers?",[("A","It is never true."),("B","It is true if and only if $ab=0$."),("C","It is true if and only if $a+b\ge0$."),("D","It is true if and only if $ab=0$ and $a+b\ge0$."),("E","It is always true.")]),
+3:(r"The sum of two natural numbers is $17{,}402$. One of the two numbers is divisible by $10$. If the units digit of that number is erased, the other number is obtained. What is the difference of these two numbers?",[("A","10,272"),("B","11,700"),("C","13,362"),("D","14,238"),("E","15,426")]),
+4:(r"Tom has a collection of $13$ snakes, $4$ of which are purple and $5$ of which are happy. He observes that all happy snakes can add, none of his purple snakes can subtract, and all snakes that cannot subtract also cannot add. Which conclusion can be drawn?",[("A","Purple snakes can add."),("B","Purple snakes are happy."),("C","Snakes that can add are purple."),("D","Happy snakes are not purple."),("E","Happy snakes cannot subtract.")]),
+5:(r"When a student multiplied $66$ by the repeating decimal $1.\overline{ab}$, where $a$ and $b$ are digits, he did not notice the bar and multiplied $66$ by $1.ab$ instead. Later he found that his answer was $0.5$ less than the correct answer. What is the two-digit integer $\overline{ab}$?",[("A","15"),("B","30"),("C","45"),("D","60"),("E","75")]),
+6:(r"A deck of cards has only red cards and black cards. The probability of a randomly chosen card being red is $\frac13$. When $4$ black cards are added to the deck, the probability of choosing red becomes $\frac14$. How many cards were in the deck originally?",[("A","6"),("B","9"),("C","12"),("D","15"),("E","18")]),
+7:(r"What is the least possible value of \[(xy-1)^2+(x+y)^2\] for real numbers $x$ and $y$?",[("A","0"),("B","1"),("C",r"$\frac14$"),("D",r"$\frac12$"),("E","2")]),
+8:(r"A sequence is defined by $D_0=0$, $D_1=0$, $D_2=1$, and $D_n=D_{n-1}+D_{n-3}$ for $n\ge3$. What are the parities of $(D_{2021},D_{2022},D_{2023})$, where $E$ denotes even and $O$ denotes odd?",[("A","(O, E, O)"),("B","(E, E, O)"),("C","(E, O, E)"),("D","(O, O, E)"),("E","(O, O, O)")]),
+9:(r"Which of the following is equivalent to \[(2+3)(2^2+3^2)(2^4+3^4)(2^8+3^8)(2^{16}+3^{16})(2^{32}+3^{32})(2^{64}+3^{64})?\]",[("A",r"$3^{127}+2^{127}$"),("B",r"$3^{127}+2^{127}+2\cdot3^{63}+3\cdot2^{63}$"),("C",r"$3^{128}-2^{128}$"),("D",r"$3^{128}+2^{128}$"),("E",r"$5^{127}$")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Evaluate exponent notation carefully before subtracting.",
+2:"Square both sides while preserving the nonnegative condition.",
+3:"Model deleting a trailing zero as dividing by 10.",
+4:"Use implications and contrapositives carefully.",
+5:"Compare a repeating decimal with its truncated decimal.",
+6:"Write the red-card count two ways before and after adding black cards.",
+7:"Rewrite the expression as a product of two always-positive factors.",
+8:"Find the parity period of the recurrence.",
+9:"Use the difference-of-powers factorization telescope.",
+})
+
+SOL.update({
+1:[("Evaluate the exponent first",r"The exponent in the first term is \[1+2+3=6,\] so \[2^{1+2+3}=2^6=64.\]"),("Evaluate the sum in parentheses",r"The second part is \[2^1+2^2+2^3=2+4+8=14.\]"),("Subtract",r"The expression is \[64-14=50.\]"),("Conclude",r"The answer is $\boxed{50}$."),],
+2:[("Start with the sign condition",r"The left side $\sqrt{a^2+b^2}$ is always nonnegative, so we must have \[a+b\ge0.\]"),("Square both sides",r"If $a+b\ge0$, then squaring is reversible. We get \[a^2+b^2=(a+b)^2=a^2+2ab+b^2.\]"),("Simplify",r"The equality becomes \[2ab=0,\] so \[ab=0.\]"),("Combine conditions",r"Both conditions are needed: \[ab=0\quad\text{and}\quad a+b\ge0.\]"),("Conclude",r"The answer is $\boxed{\text{D}}$."),],
+3:[("Represent the number with a trailing zero",r"Let the number divisible by $10$ be $10k$. Erasing its units digit gives the other number, $k$."),("Use the sum",r"The two numbers add to \[10k+k=11k=17{,}402.\]"),("Solve for k",r"We get \[k=\frac{17{,}402}{11}=1582.\] Thus the two numbers are $15{,}820$ and $1{,}582$."),("Find the difference",r"The difference is \[15{,}820-1{,}582=14{,}238.\]"),("Conclude",r"The answer is $\boxed{14{,}238}$."),],
+4:[("Translate the statements",r"The observations say: happy implies can add, purple implies cannot subtract, and cannot subtract implies cannot add."),("Chain the purple implication",r"If a snake is purple, then it cannot subtract. Therefore it cannot add."),("Compare with happy snakes",r"Every happy snake can add. A purple snake cannot add, so a happy snake cannot be purple."),("Conclude",r"The conclusion that must be true is $\boxed{\text{Happy snakes are not purple.}}$"),],
+5:[("Write the two decimal values",r"If $N=\overline{ab}$ is the two-digit integer, then \[1.\overline{ab}=1+\frac{N}{99},\qquad 1.ab=1+\frac{N}{100}.\]"),("Use the answer difference",r"The correct product exceeds the mistaken product by \[66\left(\frac{N}{99}-\frac{N}{100}\right).\] This difference is $0.5$."),("Solve for N",r"So \[66N\left(\frac1{99}-\frac1{100}\right)=\frac12.\] Since \[\frac1{99}-\frac1{100}=\frac1{9900},\] this gives \[\frac{N}{150}=\frac12,\] so $N=75$."),("Conclude",r"The two-digit integer is $\boxed{75}$."),],
+6:[("Let the original deck size be N",r"Since the probability of red is $\frac13$, the number of red cards is \[\frac N3.\]"),("Add four black cards",r"After adding $4$ black cards, the number of red cards stays $\frac N3$, while the total number of cards becomes $N+4$."),("Use the new probability",r"We are told \[\frac{N/3}{N+4}=\frac14.\]"),("Solve",r"Cross-multiplying gives \[4N=3N+12,\] so $N=12$."),("Conclude",r"The original deck had $\boxed{12}$ cards."),],
+7:[("Expand carefully",r"The expression is \[(xy-1)^2+(x+y)^2=x^2y^2-2xy+1+x^2+2xy+y^2.\]"),("Notice cancellation",r"The $-2xy$ and $+2xy$ cancel, leaving \[x^2y^2+x^2+y^2+1.\]"),("Factor the expression",r"This factors as \[(x^2+1)(y^2+1).\]"),("Find the minimum",r"Since $x^2\ge0$ and $y^2\ge0$, each factor is at least $1$. The product is at least $1$, achieved when $x=0$ and $y=0$."),("Conclude",r"The least possible value is $\boxed{1}$."),],
+8:[("Work only modulo 2",r"We only need parity, so compute the recurrence modulo $2$. The initial values are \[0,0,1.\]"),("Find the pattern",r"Using \[D_n\equiv D_{n-1}+D_{n-3}\pmod2,\] the parity pattern begins \[0,0,1,1,1,0,1,\] and then repeats with period $7$."),("Reduce the indices",r"Since \[2021\equiv5\pmod7,\quad 2022\equiv6\pmod7,\quad 2023\equiv0\pmod7,\] we read positions $5,6,0$ of the period."),("Read the parities",r"These are \[0,1,0,\] which means \[(E,O,E).\]"),("Conclude",r"The answer is $\boxed{(E,O,E)}$."),],
+9:[("Recognize a difference of powers",r"The identity \[b^{2m}-a^{2m}=(b^m-a^m)(b^m+a^m)\] lets products of sums telescope."),("Apply the repeated factorization",r"Starting with $3-2=1$, we have \[(3-2)(3+2)=3^2-2^2.\] Multiplying by \[(3^2+2^2)\] gives $3^4-2^4$, and so on."),("Continue through the powers",r"After multiplying by the factors with exponents \[1,2,4,8,16,32,64,\] the result is \[3^{128}-2^{128}.\]"),("Conclude",r"The expression is $\boxed{3^{128}-2^{128}}$."),],
 })
 
 def esc(x, quote=True):

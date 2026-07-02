@@ -4236,3 +4236,19 @@
 - Pushed: pending
 - Next batch should start from: 2021 Fall AMC 12A Problem 1
 - Review notes: none.
+
+## Batch 262: 2021 Fall AMC 12A Problems 1-9
+
+- Start time: 2026-07-02T07:54:28-07:00
+- End time: 2026-07-02T07:54:29-07:00
+- Processed contest: AMC12
+- Processed range: 2021 Fall AMC 12A Problems 1-9
+- Generated count: 9
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2021 Fall AMC 12A Problem 10: cone liquid-rise problem depends on the missing diagram; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2021 Fall AMC 12A Problem 11
+- Review notes: none.
