@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 206
+BATCH_NUMBER = 207
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {21,22,23}
-SKIPPED = ["2011 AMC 12B Problem 24: skipped because the complex-plane polygon minimum perimeter problem needs a dedicated derivation.", "2011 AMC 12B Problem 25: skipped because the nearest-integer probability statement is OCR-damaged."]
-BATCH_LABEL = "2011 AMC 12B Problems 21-23"
-NEXT_START = "2012 AMC 12A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2012_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2012 AMC 12A Problems 1-10"
+NEXT_START = "2012 AMC 12A Problem 11"
 
-ANS={21:("D","66"),22:("D",r"\frac{1509}{128}"),23:("C","195")}
+ANS={1:("E","15"),2:("D","25"),3:("D","240"),4:("C",r"\frac47"),5:("D","64"),6:("D","7"),7:("C","8"),8:("C",r"\frac{17}{8}"),9:("A","Friday"),10:("D",r"\frac23")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2429,6 +2429,55 @@ SOL.update({
 ],
 })
 
+OV.update({
+1:(r"A bug crawls along a number line, starting at $-2$. It crawls to $-6$, then turns around and crawls to $5$. How many units does the bug crawl altogether?",[("A","9"),("B","11"),("C","13"),("D","14"),("E","15")]),
+2:(r"Cagney can frost a cupcake every $20$ seconds and Lacey can frost a cupcake every $30$ seconds. Working together, how many cupcakes can they frost in $5$ minutes?",[("A","10"),("B","15"),("C","20"),("D","25"),("E","30")]),
+3:(r"A box $2$ centimeters high, $3$ centimeters wide, and $5$ centimeters long can hold $40$ grams of clay. A second box with twice the height, three times the width, and the same length as the first box can hold $n$ grams of clay. What is $n$?",[("A","120"),("B","160"),("C","200"),("D","240"),("E","280")]),
+4:(r"In a bag of marbles, $\frac35$ of the marbles are blue and the rest are red. If the number of red marbles is doubled and the number of blue marbles stays the same, what fraction of the marbles will be red?",[("A",r"$\frac25$"),("B",r"$\frac37$"),("C",r"$\frac47$"),("D",r"$\frac35$"),("E",r"$\frac45$")]),
+5:(r"A fruit salad consists of blueberries, raspberries, grapes, and cherries. The fruit salad has a total of $280$ pieces of fruit. There are twice as many raspberries as blueberries, three times as many grapes as cherries, and four times as many cherries as raspberries. How many cherries are there in the fruit salad?",[("A","8"),("B","16"),("C","25"),("D","64"),("E","96")]),
+6:(r"The sums of three whole numbers taken in pairs are $12,17,$ and $19$. What is the middle number?",[("A","4"),("B","5"),("C","6"),("D","7"),("E","8")]),
+7:(r"Mary divides a circle into $12$ sectors. The central angles of these sectors, measured in degrees, are all integers and they form an arithmetic sequence. What is the degree measure of the smallest possible sector angle?",[("A","5"),("B","6"),("C","8"),("D","10"),("E","12")]),
+8:(r"An iterative average of the numbers $1,2,3,4,$ and $5$ is computed in the following way. Arrange the five numbers in some order. Find the mean of the first two numbers, then find the mean of that with the third number, then the mean of that with the fourth number, and finally the mean of that with the fifth number. What is the difference between the largest and smallest possible values that can be obtained using this procedure?",[("A",r"$\frac{31}{16}$"),("B","2"),("C",r"$\frac{17}{8}$"),("D","3"),("E",r"$\frac{65}{16}$")]),
+9:(r"A year is a leap year if and only if the year number is divisible by $400$ or is divisible by $4$ but not by $100$. The $200$th anniversary of the birth of novelist Charles Dickens was celebrated on February $7,2012$, a Tuesday. On what day of the week was Dickens born?",[("A","Friday"),("B","Saturday"),("C","Sunday"),("D","Monday"),("E","Tuesday")]),
+10:(r"A triangle has area $30$, one side of length $10$, and the median to that side of length $9$. Let $\theta$ be the acute angle formed by that side and the median. What is $\sin\theta$?",[("A",r"$\frac3{10}$"),("B",r"$\frac13$"),("C",r"$\frac9{20}$"),("D",r"$\frac23$"),("E",r"$\frac9{10}$")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Add distances traveled on the number line.",
+2:"Add frosting rates and multiply by total time.",
+3:"Use volume scaling for boxes of the same material.",
+4:"Track blue and red marbles as fractions of the original total.",
+5:"Express every fruit count in terms of one variable.",
+6:"Use pair sums to recover the individual numbers.",
+7:"Use the arithmetic-sequence sum formula and positivity.",
+8:"Write the final iterative average as a weighted sum.",
+9:"Count day shifts across 200 years including leap years.",
+10:"Use area to find the altitude, then use the median as the hypotenuse in a right triangle.",
+})
+
+SOL.update({
+1:[("Break the trip into two segments",r"On a number line, distance is absolute difference. From $-2$ to $-6$, the bug crawls \[|-6-(-2)|=4\] units."),("Compute the return segment",r"From $-6$ to $5$, the bug crawls \[|5-(-6)|=11\] units."),("Add the distances",r"The total distance is \[4+11=15.\]"),("Conclude",r"The bug crawls $\boxed{15}$ units altogether."),
+],
+2:[("Find each rate",r"Cagney frosts $1$ cupcake every $20$ seconds, so her rate is $\frac1{20}$ cupcake per second. Lacey's rate is $\frac1{30}$ cupcake per second."),("Add the rates",r"Together their rate is \[\frac1{20}+\frac1{30}=\frac3{60}+\frac2{60}=\frac1{12}\] cupcake per second."),("Convert the time",r"Five minutes is \[5\cdot60=300\] seconds."),("Multiply rate by time",r"In $300$ seconds, they can frost \[\frac1{12}\cdot300=25\] cupcakes."),("Conclude",r"The answer is $\boxed{25}$."),
+],
+3:[("Compare volumes",r"The amount of clay a box can hold is proportional to its volume."),("Find the scale factor",r"The second box has twice the height, three times the width, and the same length. So its volume is \[2\cdot3\cdot1=6\] times the first box's volume."),("Scale the clay amount",r"The first box holds $40$ grams, so the second box holds \[6\cdot40=240\] grams."),("Conclude",r"Thus $n=\boxed{240}$."),
+],
+4:[("Use the original total as 1",r"Originally, the blue fraction is $\frac35$, so the red fraction is \[1-\frac35=\frac25.\]"),("Double the red amount",r"After doubling, the red amount becomes \[2\cdot\frac25=\frac45\] of the original total. The blue amount stays $\frac35$ of the original total."),("Find the new total",r"The new total amount of marbles is \[\frac45+\frac35=\frac75\] of the original total."),("Compute the red fraction",r"The fraction that is red is \[\frac{\frac45}{\frac75}=\frac47.\]"),("Conclude",r"The answer is \[\boxed{\frac47}.\]"),
+],
+5:[("Choose one variable",r"Let the number of blueberries be $b$. Then the number of raspberries is $2b$."),("Express cherries and grapes",r"Cherries are four times raspberries, so \[c=4(2b)=8b.\] Grapes are three times cherries, so \[g=3c=24b.\]"),("Use the total",r"The total number of fruit pieces is \[b+2b+8b+24b=35b.\] This equals $280$."),("Solve",r"So \[35b=280,\] giving $b=8$. Then cherries are \[8b=64.\]"),("Conclude",r"There are $\boxed{64}$ cherries."),
+],
+6:[("Let the numbers be ordered",r"Let the three whole numbers be $a\le b\le c$. Their pair sums are $a+b$, $a+c$, and $b+c$."),("Add the pair sums",r"Adding the given pair sums gives \[12+17+19=48.\] This equals \[2(a+b+c),\] so \[a+b+c=24.\]"),("Recover the individual numbers",r"The largest pair sum is $19=b+c$, so \[a=24-19=5.\] Similarly, \[b=24-17=7,\quad c=24-12=12.\]"),("Identify the middle number",r"The middle number is $7$."),("Conclude",r"The answer is $\boxed{7}$."),
+],
+7:[("Use the average angle",r"The $12$ sector angles add to $360^\circ$, so their average is \[\frac{360}{12}=30^\circ.\]"),("Write the arithmetic sequence",r"Let the smallest angle be $a$ and the common difference be $d$, where both are integers and $a>0$. The sum of $12$ terms is \[\frac{12}{2}(2a+11d)=360,\] so \[2a+11d=60.\]"),("Minimize a",r"To make $a$ small, make $d$ large while keeping $a$ a positive integer. Since \[a=\frac{60-11d}{2},\] $d$ must be even and $60-11d>0$."),("Choose the largest possible d",r"The largest even $d$ satisfying this is $d=4$. Then \[a=\frac{60-44}{2}=8.\]"),("Conclude",r"The smallest possible sector angle is $\boxed{8^\circ}$."),
+],
+8:[("Write the final value as weights",r"If the arranged numbers are $a_1,a_2,a_3,a_4,a_5$, the final iterative average is \[\frac{a_1+a_2}{16}+\frac{a_3}{8}+\frac{a_4}{4}+\frac{a_5}{2}.\] Later numbers have larger weights."),("Maximize the value",r"To maximize the weighted sum, put the largest numbers in the largest weights: $a_5=5$, $a_4=4$, $a_3=3$, and $a_1,a_2=1,2$. The maximum is \[\frac{1+2}{16}+\frac38+\frac44+\frac52=\frac{65}{16}.\]"),("Minimize the value",r"To minimize, put the smallest numbers in the largest weights: $a_5=1$, $a_4=2$, $a_3=3$, and $a_1,a_2=4,5$. The minimum is \[\frac{4+5}{16}+\frac38+\frac24+\frac12=\frac{31}{16}.\]"),("Find the difference",r"The difference is \[\frac{65}{16}-\frac{31}{16}=\frac{34}{16}=\frac{17}{8}.\]"),("Conclude",r"The answer is \[\boxed{\frac{17}{8}}.\]"),
+],
+9:[("Count ordinary days",r"From February $7,1812$ to February $7,2012$ is $200$ years. Ignoring leap days, that is \[200\cdot365\] days."),("Count leap days",r"The leap years contributing February $29$ in this interval are $1812,1816,\ldots,2008$, except $1900$ because it is divisible by $100$ but not by $400$. This gives $49$ leap days."),("Find the weekday shift",r"The total number of days is \[200\cdot365+49=73049.\] Modulo $7$, this is congruent to $4$."),("Move backward from Tuesday",r"February $7,2012$ was a Tuesday. Dickens's birthday was $4$ weekdays earlier in the cycle, which is Friday."),("Conclude",r"Dickens was born on a $\boxed{\text{Friday}}$."),
+],
+10:[("Use the area to find the altitude",r"The triangle has area $30$ and a side of length $10$. If the altitude to that side is $h$, then \[\frac12\cdot10\cdot h=30,\] so $h=6$."),("Relate the median to the altitude",r"The median to the side has length $9$. The acute angle $\theta$ between the side and the median forms a right triangle whose opposite height is $6$ and whose hypotenuse is the median $9$."),("Compute sine",r"Therefore \[\sin\theta=\frac{\text{opposite}}{\text{hypotenuse}}=\frac69=\frac23.\]"),("Conclude",r"The answer is \[\boxed{\frac23}.\]"),
+],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -2535,7 +2584,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2011" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2012" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -2624,7 +2673,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2011 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2012 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
