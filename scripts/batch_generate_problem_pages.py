@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 210
+BATCH_NUMBER = 211
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2012_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16}
-SKIPPED = ["2012 AMC 12B Problem 17: skipped because the coordinate-square line incidence geometry needs a careful derivation.", "2012 AMC 12B Problem 18: skipped because the constrained list-counting problem needs a dedicated combinatorial proof.", "2012 AMC 12B Problem 19: skipped because the regular octahedron in a cube is spatial-geometry high risk.", "2012 AMC 12B Problem 20: skipped because the trapezoid area sum has a complex multi-case geometry derivation."]
-BATCH_LABEL = "2012 AMC 12B Problems 11-16"
-NEXT_START = "2013 AMC 12A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2013_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2013 AMC 12A Problems 1-10"
+NEXT_START = "2013 AMC 12A Problem 11"
 
-ANS={11:("C","13"),12:("E","382"),13:("D",r"\frac{31}{36}"),14:("A","7"),15:("C",r"\frac{\sqrt{10}}{10}"),16:("B","132")}
+ANS={1:("E","8"),2:("C","45"),3:("E","70"),4:("C",r"\frac53"),5:("B","20"),6:("B","18"),7:("C","10"),8:("D","2"),9:("C","56"),10:("D","143")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2565,36 +2565,42 @@ SOL.update({
 })
 
 OV.update({
-11:(r"In the equation below, $A$ and $B$ are consecutive positive integers, and $A$, $B$, and $A+B$ represent number bases: \[132_A+43_B=69_{A+B}.\] What is $A+B$?",[("A","9"),("B","11"),("C","13"),("D","15"),("E","17")]),
-12:(r"How many sequences of zeros and ones of length $20$ have all the zeros consecutive, or all the ones consecutive, or both?",[("A","190"),("B","192"),("C","211"),("D","380"),("E","382")]),
-13:(r"Two parabolas have equations $y=x^2+ax+b$ and $y=x^2+cx+d$, where $a,b,c,$ and $d$ are integers, each chosen independently by rolling a fair six-sided die. What is the probability that the parabolas have at least one point in common?",[("A",r"$\frac12$"),("B",r"$\frac{25}{36}$"),("C",r"$\frac56$"),("D",r"$\frac{31}{36}$"),("E","1")]),
-14:(r"Bernardo and Silvia play the following game. An integer between $0$ and $999$, inclusive, is selected and given to Bernardo. Whenever Bernardo receives a number, he doubles it and passes the result to Silvia. Whenever Silvia receives a number, she adds $50$ to it and passes the result to Bernardo. The winner is the last person who produces a number less than $1000$. Let $N$ be the smallest initial number that results in a win for Bernardo. What is the sum of the digits of $N$?",[("A","7"),("B","8"),("C","9"),("D","10"),("E","11")]),
-15:(r"Jesse cuts a circular paper disk of radius $12$ along two radii to form two sectors, the smaller having a central angle of $120^\circ$. He makes two circular cones, using each sector to form the lateral surface of a cone. What is the ratio of the volume of the smaller cone to that of the larger?",[("A",r"$\frac18$"),("B",r"$\frac14$"),("C",r"$\frac{\sqrt{10}}{10}$"),("D",r"$\frac{\sqrt5}{6}$"),("E",r"$\frac{\sqrt{10}}5$")]),
-16:(r"Amy, Beth, and Jo listen to four different songs and discuss which ones they like. No song is liked by all three. Furthermore, for each of the three pairs of the girls, there is at least one song liked by those two girls but disliked by the third. In how many different ways is this possible?",[("A","108"),("B","132"),("C","671"),("D","846"),("E","1105")]),
+1:(r"Square $ABCD$ has side length $10$. Point $E$ is on $\overline{BC}$, and the area of $\triangle ABE$ is $40$. What is $BE$?",[("A","4"),("B","5"),("C","6"),("D","7"),("E","8")]),
+2:(r"A softball team played ten games, scoring $1,2,3,4,5,6,7,8,9,$ and $10$ runs. They lost by one run in exactly five games. In each of the other games, they scored twice as many runs as their opponent. How many total runs did their opponents score?",[("A","35"),("B","40"),("C","45"),("D","50"),("E","55")]),
+3:(r"A flower bouquet contains pink roses, red roses, pink carnations, and red carnations. One third of the pink flowers are roses, three fourths of the red flowers are carnations, and six tenths of the flowers are pink. What percent of the flowers are carnations?",[("A","15"),("B","30"),("C","40"),("D","60"),("E","70")]),
+4:(r"What is the value of \[\frac{2^{2014}+2^{2012}}{2^{2014}-2^{2012}}?\]",[("A",r"$-\frac13$"),("B","1"),("C",r"$\frac53$"),("D","2013"),("E",r"$2^{4024}$")]),
+5:(r"Tom, Dorothy, and Sammy went on a vacation and agreed to split the costs evenly. During their trip Tom paid $\$105$, Dorothy paid $\$125$, and Sammy paid $\$175$. In order to share the costs equally, Tom gave Sammy $t$ dollars, and Dorothy gave Sammy $d$ dollars. What is $t-d$?",[("A","15"),("B","20"),("C","25"),("D","30"),("E","35")]),
+6:(r"In a recent basketball game, Shenille attempted only three-point shots and two-point shots. She was successful on $20\%$ of her three-point shots and $30\%$ of her two-point shots. Shenille attempted $30$ shots. How many points did she score?",[("A","12"),("B","18"),("C","24"),("D","30"),("E","36")]),
+7:(r"The sequence $S_1,S_2,S_3,\ldots,S_{10}$ has the property that every term beginning with the third is the sum of the previous two. That is, $S_n=S_{n-2}+S_{n-1}$ for $n\ge3$. Suppose that $S_9=110$ and $S_7=42$. What is $S_4$?",[("A","4"),("B","6"),("C","10"),("D","12"),("E","16")]),
+8:(r"Given that $x$ and $y$ are distinct nonzero real numbers such that \[x+\frac2x=y+\frac2y,\] what is $xy$?",[("A",r"$\frac14$"),("B",r"$\frac12$"),("C","1"),("D","2"),("E","4")]),
+9:(r"In $\triangle ABC$, $AB=AC=28$ and $BC=20$. Points $D,E,$ and $F$ are on sides $\overline{AB},\overline{BC},$ and $\overline{AC}$, respectively, such that $\overline{DE}\parallel\overline{AC}$ and $\overline{EF}\parallel\overline{AB}$. What is the perimeter of parallelogram $ADEF$?",[("A","48"),("B","52"),("C","56"),("D","60"),("E","72")]),
+10:(r"Let $S$ be the set of positive integers $n$ for which $\frac1n$ has the repeating decimal representation $0.\overline{ab}=0.ababab\cdots$, with $a$ and $b$ different digits. What is the sum of the elements of $S$?",[("A","11"),("B","44"),("C","110"),("D","143"),("E","155")]),
 })
 
 KEY_OVERRIDES.update({
-11:"Convert the base equation to ordinary decimal notation.",
-12:"Use inclusion-exclusion on sequences with consecutive zeros or consecutive ones.",
-13:"The parabolas fail to meet only when their linear terms match but constants differ.",
-14:"Analyze the game backwards or by threshold intervals.",
-15:"Convert sector arc lengths into cone base radii and use volume.",
-16:"Use inclusion-exclusion over the required pair-only song types.",
+1:"Use triangle area with perpendicular square sides.",
+2:"Separate odd-score one-run losses from even-score games where the team doubled the opponent.",
+3:"Convert the flower conditions into percentages of the whole bouquet.",
+4:"Factor out the common power of 2.",
+5:"Compare each person's payment to the equal share.",
+6:"Use x+y=30 and note both shot types contribute 0.6 points per attempt under the given success rates.",
+7:"Work backward through the recurrence.",
+8:"Subtract the two equations and use x not equal y.",
+9:"Use parallel-line similarity/parallelogram coordinates to show AD+AF equals the side length.",
+10:"Represent a two-digit repetend as k/99, allowing leading zero.",
 })
 
 SOL.update({
-11:[("Convert each numeral",r"The base-$A$ number $132_A$ means \[A^2+3A+2.\] The base-$B$ number $43_B$ means \[4B+3.\] The base-$(A+B)$ number $69_{A+B}$ means \[6(A+B)+9.\]"),("Use consecutive bases",r"The digits require $A>3$ and $B>4$. Since $A$ and $B$ are consecutive and $B$ must be larger in the useful case, let \[B=A+1.\]"),("Set up the equation",r"Substitute into \[A^2+3A+2+4B+3=6(A+B)+9.\] With $B=A+1$, this becomes \[A^2+7A+9=12A+15.\]"),("Solve",r"So \[A^2-5A-6=0,\] or \[(A-6)(A+1)=0.\] Hence $A=6$ and $B=7$."),("Conclude",r"Therefore \[A+B=13,\] so the answer is $\boxed{13}$."),
-],
-12:[("Count sequences with consecutive zeros",r"If there are $k$ zeros, where $1\le k\le20$, the block of zeros can start in $21-k$ positions. This gives \[\sum_{k=1}^{20}(21-k)=210\] sequences. Also include the all-ones sequence with $k=0$, so there are $211$ sequences with all zeros consecutive."),("Use symmetry for ones",r"Similarly, there are $211$ sequences with all ones consecutive."),("Count the overlap",r"Both zeros and ones are consecutive in the all-zero sequence, the all-one sequence, and the two-block sequences \[00\cdots011\cdots1\quad\text{or}\quad11\cdots100\cdots0.\] With both symbols present, there are $19$ split points for each order, so the overlap has \[2+2\cdot19=40\] sequences."),("Apply inclusion-exclusion",r"The required number is \[211+211-40=382.\]"),("Conclude",r"The answer is $\boxed{382}$."),
-],
-13:[("Subtract the equations",r"Common points satisfy \[x^2+ax+b=x^2+cx+d.\] The $x^2$ terms cancel, leaving \[(a-c)x=d-b.\]"),("Handle different linear coefficients",r"If $a\ne c$, this linear equation has a real solution, so the parabolas meet."),("Find the failure case",r"The only way they do not meet is if $a=c$ but $b\ne d$, producing a contradiction \[0=d-b.\]"),("Compute the failure probability",r"The probability that $a=c$ is $\frac16$. Given that, the probability that $b\ne d$ is $\frac56$. So the failure probability is \[\frac16\cdot\frac56=\frac5{36}.\]"),("Take the complement",r"The probability that the parabolas have at least one common point is \[1-\frac5{36}=\frac{31}{36}.\]"),("Conclude",r"The answer is \[\boxed{\frac{31}{36}}.\]"),
-],
-14:[("Understand the stopping rule",r"The winner is the last person to produce a number less than $1000$. Once someone produces a number at least $1000$, the game stops and the previous producer wins."),("Track Bernardo-winning intervals",r"Starting with $N$, the produced numbers alternate as \[2N,\quad 2N+50,\quad 4N+100,\quad 4N+150,\quad 8N+300,\ldots\] Bernardo wins when one of his outputs is below $1000$ and Silvia's next output is at least $1000$."),("Work backward to small N",r"Checking the threshold intervals from the end backward gives Bernardo-winning starting values \[16\le N\le18,\quad82\le N\le87,\quad213\le N\le224,\quad475\le N\le499.\]"),("Choose the smallest",r"The smallest initial number that makes Bernardo win is \[N=16.\]"),("Add digits",r"The sum of the digits of $16$ is \[1+6=7.\]"),("Conclude",r"The answer is $\boxed{7}$."),
-],
-15:[("Convert sector arcs to cone base circumferences",r"The disk radius $12$ becomes the slant height of each cone. The smaller sector has angle $120^\circ$, one third of a full circle, so its arc length is \[\frac13\cdot2\pi\cdot12=8\pi.\] Thus the smaller cone has base radius $4$."),("Find the larger cone radius",r"The larger sector has angle $240^\circ$, so its arc length is \[16\pi,\] giving base radius $8$."),("Compute cone heights",r"For the smaller cone, height is \[\sqrt{12^2-4^2}=\sqrt{128}=8\sqrt2.\] For the larger cone, height is \[\sqrt{12^2-8^2}=\sqrt{80}=4\sqrt5.\]"),("Form the volume ratio",r"Cone volume is \[\frac13\pi r^2h.\] Therefore the ratio is \[\frac{4^2\cdot8\sqrt2}{8^2\cdot4\sqrt5}=\frac{\sqrt2}{2\sqrt5}=\frac{\sqrt{10}}{10}.\]"),("Conclude",r"The answer is \[\boxed{\frac{\sqrt{10}}{10}}.\]"),
-],
-16:[("Classify possible song-like sets",r"For each song, the set of girls who like it can be any subset of the three girls except the full set of all three. So there are $7$ allowed liking patterns per song."),("Identify required patterns",r"The condition requires that each pair-only pattern appears at least once: Amy-Beth only, Amy-Jo only, and Beth-Jo only."),("Use inclusion-exclusion",r"With four labeled songs, there are $7^4$ total assignments. If a particular required pair pattern is missing, there are $6^4$ assignments. If two required patterns are missing, there are $5^4$. If all three are missing, there are $4^4$."),("Compute",r"The count is \[7^4-3\cdot6^4+3\cdot5^4-4^4=2401-3888+1875-256=132.\]"),("Conclude",r"The answer is $\boxed{132}$."),
-],
+1:[("Use the square side as the height",r"Since $E$ lies on $\overline{BC}$, segment $BE$ is perpendicular to $\overline{AB}$. The triangle $\triangle ABE$ has height $AB=10$ and base $BE$."),("Set up the area equation",r"The area is \[\frac12\cdot10\cdot BE=40.\]"),("Solve",r"This gives \[5\cdot BE=40,\] so \[BE=8.\]"),("Conclude",r"The answer is $\boxed{8}$.")],
+2:[("Identify the doubled-score games",r"If the team scored twice as many runs as its opponent, then the team's score in that game must be even. Among $1,2,\ldots,10$, the five even scores are $2,4,6,8,10$."),("Score the opponents in those games",r"For those games, the opponent scores were \[1,2,3,4,5,\] with total $15$."),("Use the one-run losses",r"The remaining five scores, $1,3,5,7,9$, must be the games they lost by one run. The opponents scored \[2,4,6,8,10,\] with total $30$."),("Add",r"The opponents scored \[15+30=45\] total runs."),("Conclude",r"The answer is $\boxed{45}$.")],
+3:[("Use a total of 100 flowers",r"Take the bouquet to have $100$ flowers. Then $60$ are pink and $40$ are red."),("Count pink carnations",r"One third of the pink flowers are roses, so pink roses number \[\frac13\cdot60=20.\] Thus pink carnations number \[60-20=40.\]"),("Count red carnations",r"Three fourths of the red flowers are carnations, so red carnations number \[\frac34\cdot40=30.\]"),("Find total carnations",r"The total number of carnations is \[40+30=70.\]"),("Conclude",r"The bouquet is $\boxed{70\%}$ carnations.")],
+4:[("Look for a common factor",r"The two exponents differ by $2$, so it is natural to factor out the smaller power, $2^{2012}$, from every term."),("Factor the common power",r"Both numerator and denominator contain $2^{2012}$. Factoring gives \[\frac{2^{2012}(2^2+1)}{2^{2012}(2^2-1)}.\]"),("Cancel",r"The common factor cancels, leaving \[\frac{4+1}{4-1}=\frac53.\]"),("Check the form",r"The expression is positive because the numerator and denominator are both positive, so $\frac53$ is reasonable."),("Conclude",r"The answer is \[\boxed{\frac53}.\]")],
+5:[("Find the equal share",r"The total cost was \[105+125+175=405.\] Split equally among three people, each person should pay \[405/3=135.\]"),("Find what Tom owes",r"Tom paid $105$, so he owes \[135-105=30\] dollars. Thus $t=30$."),("Find what Dorothy owes",r"Dorothy paid $125$, so she owes \[135-125=10\] dollars. Thus $d=10$."),("Subtract",r"\[t-d=30-10=20.\]"),("Conclude",r"The answer is $\boxed{20}$.")],
+6:[("Let the shot counts be variables",r"Let $x$ be the number of three-point shots and $y$ the number of two-point shots. Then \[x+y=30.\]"),("Compute points from each type",r"She makes $20\%$ of her three-point shots, so those contribute \[3(0.20x)=0.6x\] points. She makes $30\%$ of her two-point shots, so those contribute \[2(0.30y)=0.6y\] points."),("Add the points",r"Her total score is \[0.6x+0.6y=0.6(x+y)=0.6\cdot30=18.\]"),("Conclude",r"She scored $\boxed{18}$ points.")],
+7:[("Work backward from known terms",r"The recurrence gives \[S_9=S_7+S_8.\] Since $S_9=110$ and $S_7=42$, we get \[S_8=68.\]"),("Continue backward",r"Now \[S_8=S_6+S_7,\] so \[S_6=68-42=26.\]"),("Find S5",r"Since \[S_7=S_5+S_6,\] we get \[S_5=42-26=16.\]"),("Find S4",r"Finally, \[S_6=S_4+S_5,\] so \[S_4=26-16=10.\]"),("Conclude",r"The answer is $\boxed{10}$.")],
+8:[("Subtract the equations",r"Start with \[x+\frac2x=y+\frac2y.\] Move the right side to the left: \[(x-y)+2\left(\frac1x-\frac1y\right)=0.\]"),("Factor",r"Since \[\frac1x-\frac1y=\frac{y-x}{xy},\] the left side becomes \[(x-y)-\frac{2(x-y)}{xy}=(x-y)\left(1-\frac2{xy}\right).\]"),("Use x and y distinct",r"Because $x\ne y$, the factor $x-y$ is not zero. Therefore \[1-\frac2{xy}=0.\]"),("Solve",r"This gives \[xy=2.\]"),("Conclude",r"The answer is $\boxed{2}$.")],
+9:[("Use fractions along the equal sides",r"Let \[AD=x,\qquad AF=y.\] Since $AB=AC=28$, the fractions along the two sides are $x/28$ and $y/28$."),("Use the parallelogram condition",r"Because $\overline{DE}\parallel\overline{AC}$ and $\overline{EF}\parallel\overline{AB}$, point $E$ is obtained by moving from $A$ by the same two side-direction fractions. For $E$ to lie on $\overline{BC}$, these fractions must add to $1$."),("Find x+y",r"Thus \[\frac{x}{28}+\frac{y}{28}=1,\] so \[x+y=28.\]"),("Compute perimeter",r"The parallelogram has adjacent sides $AD=x$ and $AF=y$, so its perimeter is \[2(x+y)=2\cdot28=56.\]"),("Conclude",r"The answer is $\boxed{56}$.")],
+10:[("Convert the repeating decimal",r"A two-digit repetend satisfies \[0.\overline{ab}=\frac{10a+b}{99}.\] The digit $a$ is allowed to be $0$, as in $0.\overline{09}$."),("Set it equal to 1/n",r"We need \[\frac1n=\frac{k}{99},\] where $k=10a+b$ and the two digits of $k$ are different. Thus \[n=\frac{99}{k},\] so $k$ must divide $99$."),("Check divisors of 99",r"The divisors $k$ that give valid two-digit repetends with different digits are \[1,3,9,\] corresponding to $01,03,09$."),("Find n values",r"These give \[n=99,\ 33,\ 11.\]"),("Add",r"The sum is \[99+33+11=143.\]"),("Conclude",r"The answer is $\boxed{143}$.")],
 })
 
 def esc(x, quote=True):
@@ -2703,7 +2709,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2012" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2013" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -2792,7 +2798,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2012 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2013 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),

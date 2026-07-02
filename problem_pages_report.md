@@ -1,25 +1,22 @@
 # Problem Pages Report
 
-- Total manifest entries: 1556
-- Latest batch: 210 (2012 AMC 12B Problems 11-16)
-- Latest new generated count: 6
+- Total manifest entries: 1566
+- Latest batch: 211 (2013 AMC 12A Problems 1-10)
+- Latest new generated count: 10
 - Latest updated existing count: 0
-- Latest skipped count: 4
+- Latest skipped count: 0
 - MathJax validation: passed
-- Answer verification source: AoPS 2012 AMC 12B Answer Key
+- Answer verification source: AoPS 2013 AMC 12A Answer Key
 
 ## Latest Batch Pages
 
-- `2012 AMC 12B Problem 11` -> `amc12/problems/2012-amc-12b-problem-11/`
-- `2012 AMC 12B Problem 12` -> `amc12/problems/2012-amc-12b-problem-12/`
-- `2012 AMC 12B Problem 13` -> `amc12/problems/2012-amc-12b-problem-13/`
-- `2012 AMC 12B Problem 14` -> `amc12/problems/2012-amc-12b-problem-14/`
-- `2012 AMC 12B Problem 15` -> `amc12/problems/2012-amc-12b-problem-15/`
-- `2012 AMC 12B Problem 16` -> `amc12/problems/2012-amc-12b-problem-16/`
-
-## Skipped in latest batch
-
-- 2012 AMC 12B Problem 17: skipped because the coordinate-square line incidence geometry needs a careful derivation.
-- 2012 AMC 12B Problem 18: skipped because the constrained list-counting problem needs a dedicated combinatorial proof.
-- 2012 AMC 12B Problem 19: skipped because the regular octahedron in a cube is spatial-geometry high risk.
-- 2012 AMC 12B Problem 20: skipped because the trapezoid area sum has a complex multi-case geometry derivation.
+- `2013 AMC 12A Problem 1` -> `amc12/problems/2013-amc-12a-problem-1/`
+- `2013 AMC 12A Problem 2` -> `amc12/problems/2013-amc-12a-problem-2/`
+- `2013 AMC 12A Problem 3` -> `amc12/problems/2013-amc-12a-problem-3/`
+- `2013 AMC 12A Problem 4` -> `amc12/problems/2013-amc-12a-problem-4/`
+- `2013 AMC 12A Problem 5` -> `amc12/problems/2013-amc-12a-problem-5/`
+- `2013 AMC 12A Problem 6` -> `amc12/problems/2013-amc-12a-problem-6/`
+- `2013 AMC 12A Problem 7` -> `amc12/problems/2013-amc-12a-problem-7/`
+- `2013 AMC 12A Problem 8` -> `amc12/problems/2013-amc-12a-problem-8/`
+- `2013 AMC 12A Problem 9` -> `amc12/problems/2013-amc-12a-problem-9/`
+- `2013 AMC 12A Problem 10` -> `amc12/problems/2013-amc-12a-problem-10/`
