@@ -1,8 +1,12 @@
-请继续 STEMHUB AMC problem teaching pages 批量生成任务。
+请继续 STEMHUB AMC problem teaching pages 补完阶段。
 
-当前状态：Batch 284 已生成/更新并通过本地脚本验证；最新范围为 2024 AMC 12B Problems 21-23,25。
-本批跳过题：
-- 2024 AMC 12B Problem 24: altitude/inradius finite enumeration is high-risk in this pass; skipped
-下一批从 AMC12 complete; review skipped high-risk problems 开始。
+当前状态：missing/skipped problem triage 已生成并通过本地验证。
+- Missing total: 310
+- Status counts: ready_to_generate=0, needs_diagram=161, ocr_or_statement_risk=56, solution_high_risk=93, needs_answer_verification=0, manual_review=0
 
-继续策略：每批生成 5-10 道可靠题；遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 teaching steps 后 commit/push。
+下一步建议：优先从 `missing_problem_triage.md` 的 ready_to_generate 列表中挑 5-10 道题生成详情页；diagram/OCR/high-risk 题先不要硬编。
+
+推荐下一批：
+- 没有自动推荐题；请先人工检查 diagram/OCR/high-risk 列表。
+
+继续要求：每批生成、验证 MathJax/manifest/detail links/teaching steps，然后 commit/push；不要提交 PDF、input、tmp、缓存文件。
