@@ -3,19 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 234
+BATCH_NUMBER = 235
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2017_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {21,23}
-SKIPPED = [
-    "2017 AMC 12A Problem 22: random-walk hitting probability needs a dedicated Markov derivation; skipped",
-    "2017 AMC 12A Problem 24: cyclic quadrilateral construction is diagram/OCR high risk; skipped",
-    "2017 AMC 12A Problem 25: complex-product probability statement is OCR-damaged; skipped",
-]
-BATCH_LABEL = "2017 AMC 12A Problems 21, 23"
-NEXT_START = "2017 AMC 12B Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2017_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2017 AMC 12B Problems 1-10"
+NEXT_START = "2017 AMC 12B Problem 11"
 
-ANS={21:("D","9"),23:("C","-7007")}
+ANS={1:("E","25"),2:("E","y+z"),3:("D","2"),4:("C","2.8"),5:("B","1"),6:("D","8"),7:("B",r"\pi"),8:("C",r"\frac{\sqrt5-1}{2}"),9:("A","3"),10:("D","25%")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3636,6 +3632,101 @@ SOL.update({
 ],
 })
 
+OV.update({
+1:(r"Kymbrea's comic book collection currently has $30$ comic books, and she is adding to her collection at the rate of $2$ comic books per month. LaShawn's collection currently has $10$ comic books, and he is adding to his collection at the rate of $6$ comic books per month. After how many months will LaShawn's collection have twice as many comic books as Kymbrea's?",[("A","1"),("B","4"),("C","5"),("D","20"),("E","25")]),
+2:(r"Real numbers $x$, $y$, and $z$ satisfy \(0<x<1\), \(-1<y<0\), and \(1<z<2\). Which of the following numbers is necessarily positive?",[("A",r"$y+x^2$"),("B",r"$y+xz$"),("C",r"$y+y^2$"),("D",r"$y+2y^2$"),("E",r"$y+z$")]),
+3:(r"Suppose that $x$ and $y$ are nonzero real numbers such that \[\frac{3x+y}{x-3y}=-2.\] What is the value of \[\frac{x+3y}{3x-y}?\]",[("A","-3"),("B","-1"),("C","1"),("D","2"),("E","3")]),
+4:(r"Samia set off on her bicycle to visit her friend, traveling at an average speed of $17$ kilometers per hour. When she had gone half the distance, a tire went flat, and she walked the rest of the way at $5$ kilometers per hour. In all it took her $44$ minutes to reach her friend's house. In kilometers rounded to the nearest tenth, how far did Samia walk?",[("A","2.0"),("B","2.2"),("C","2.8"),("D","3.4"),("E","4.4")]),
+5:(r"The data set \([6,19,33,33,39,41,41,43,51,57]\) has median \(Q_2=40\), first quartile \(Q_1=33\), and third quartile \(Q_3=43\). An outlier is more than \(1.5\) times the interquartile range below \(Q_1\) or above \(Q_3\). How many outliers does this data set have?",[("A","0"),("B","1"),("C","2"),("D","3"),("E","4")]),
+6:(r"The circle having \((0,0)\) and \((8,6)\) as the endpoints of a diameter intersects the $x$-axis at a second point. What is the $x$-coordinate of this point?",[("A",r"$4\sqrt2$"),("B","6"),("C",r"$5\sqrt2$"),("D","8"),("E",r"$6\sqrt2$")]),
+7:(r"The functions $\sin x$ and $\cos x$ are periodic with least period \(2\pi\). What is the least period of the function \(\cos(\sin x)\)?",[("A",r"$\frac{\pi}{2}$"),("B",r"$\pi$"),("C",r"$2\pi$"),("D",r"$4\pi$"),("E","It is not periodic.")]),
+8:(r"The ratio of the short side of a certain rectangle to the long side is equal to the ratio of the long side to the diagonal. What is the square of the ratio of the short side to the long side of this rectangle?",[("A",r"$\frac{\sqrt3-1}{2}$"),("B",r"$\frac12$"),("C",r"$\frac{\sqrt5-1}{2}$"),("D",r"$\frac{\sqrt2}{2}$"),("E",r"$\frac{\sqrt6-1}{2}$")]),
+9:(r"A circle has center \((-10,-4)\) and radius \(13\). Another circle has center \((3,9)\) and radius \(\sqrt{65}\). The line passing through the two points of intersection of the two circles has equation \(x+y=c\). What is \(c\)?",[("A","3"),("B",r"$3\sqrt3$"),("C",r"$4\sqrt2$"),("D","6"),("E",r"$\frac{13}{2}$")]),
+10:(r"At Typico High School, $60\%$ of the students like dancing, and the rest dislike it. Of those who like dancing, $80\%$ say that they like it, and the rest say that they dislike it. Of those who dislike dancing, $90\%$ say that they dislike it, and the rest say that they like it. What fraction of students who say they dislike dancing actually like it?",[("A","10%"),("B","12%"),("C","20%"),("D","25%"),("E",r"$33\frac13\%$")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Set up linear growth expressions and solve when one is twice the other.",
+2:"Use interval bounds to identify an expression that must be positive.",
+3:"Solve the given fractional equation for the relationship between x and y.",
+4:"Use time equals distance divided by speed for the biking and walking halves.",
+5:"Compute the interquartile range and the outlier fences.",
+6:"Use the circle equation or Thales' theorem for a diameter.",
+7:"Use the symmetry cos(-u)=cos(u) together with sin(x+pi)=-sin x.",
+8:"Translate the side-to-diagonal ratio into an equation for the squared ratio.",
+9:"Subtract circle equations to find the radical axis.",
+10:"Use conditional percentages with a concrete 100-student model.",
+})
+
+SOL.update({
+1:[
+("Write both collection sizes",r"After \(m\) months, Kymbrea has \[30+2m\] comic books, and LaShawn has \[10+6m\] comic books."),
+("Set up the twice-as-many condition",r"We need LaShawn's collection to be twice Kymbrea's collection: \[10+6m=2(30+2m).\]"),
+("Solve for m",r"This gives \[10+6m=60+4m,\] so \[2m=50,\quad m=25.\]"),
+("Conclude",r"The answer is $\boxed{25}$ months."),
+],
+2:[
+("Use the ranges",r"We know \(y\) is negative but greater than \(-1\), while \(z\) is greater than \(1\)."),
+("Test the guaranteed expression",r"For \(y+z\), the smallest possible behavior is just above \(-1+1=0\). Since both inequalities are strict, \[y+z>0.\]"),
+("See why the others can fail",r"Expressions such as \(y+x^2\) or \(y+xz\) can be negative if \(y\) is close to \(-1\) and \(x\) is very small. Expressions involving \(y+y^2\) also need not be positive for \(-1<y<0\)."),
+("Conclude",r"The necessarily positive expression is $\boxed{y+z}$."),
+],
+3:[
+("Use the given equation",r"We are told \[\frac{3x+y}{x-3y}=-2.\] Cross-multiplying gives \[3x+y=-2x+6y.\]"),
+("Find the relationship between x and y",r"Move terms to get \[5x=5y,\] so \(x=y\). Since the variables are nonzero, substitution into the requested expression is safe."),
+("Evaluate the requested ratio",r"Now \[\frac{x+3y}{3x-y}=\frac{x+3x}{3x-x}=\frac{4x}{2x}=2.\]"),
+("Conclude",r"The answer is $\boxed{2}$."),
+],
+4:[
+("Let the walking distance be d",r"Samia biked half the trip and walked half the trip. Let the distance she walked be \(d\) kilometers; then she also biked \(d\) kilometers."),
+("Convert total time",r"The total time is \(44\) minutes, or \(\frac{44}{60}=\frac{11}{15}\) hours."),
+("Write the time equation",r"The biking time is \(\frac d{17}\), and the walking time is \(\frac d5\). Thus \[\frac d{17}+\frac d5=\frac{11}{15}.\]"),
+("Solve for d",r"The left side is \[d\left(\frac{22}{85}\right),\] so \[d=\frac{11}{15}\cdot\frac{85}{22}=\frac{17}{6}\approx2.833.\]"),
+("Round",r"Rounded to the nearest tenth, Samia walked \(2.8\) kilometers."),
+("Conclude",r"The answer is $\boxed{2.8}$."),
+],
+5:[
+("Find the interquartile range",r"The interquartile range is \[Q_3-Q_1=43-33=10.\]"),
+("Compute the outlier fences",r"One and a half times the interquartile range is \(1.5\cdot10=15\). So low outliers are below \[33-15=18,\] and high outliers are above \[43+15=58.\]"),
+("Check the data",r"The only value below $18$ is \(6\). There are no values above \(58\), since the largest data value is \(57\)."),
+("Conclude",r"There is \(\boxed{1}\) outlier."),
+],
+6:[
+("Use the diameter condition",r"A point \((x,y)\) on the circle with diameter endpoints \((0,0)\) and \((8,6)\) satisfies \[x(x-8)+y(y-6)=0.\] This comes from the right angle formed by the diameter endpoints."),
+("Restrict to the x-axis",r"On the $x$-axis, \(y=0\). Substituting gives \[x(x-8)=0.\]"),
+("Find the two intersections",r"The solutions are \(x=0\) and \(x=8\). The point \((0,0)\) is one endpoint of the diameter, so the second x-axis intersection has \(x=8\)."),
+("Conclude",r"The answer is $\boxed{8}$."),
+],
+7:[
+("Use the sine shift by pi",r"We know \[\sin(x+\pi)=-\sin x.\]"),
+("Use cosine symmetry",r"Cosine is even, so \[\cos(-u)=\cos u.\] Therefore \[\cos(\sin(x+\pi))=\cos(-\sin x)=\cos(\sin x).\]"),
+("Show pi is a period",r"The function repeats after adding \(\pi\), so \(\pi\) is a period."),
+("Check that a smaller listed period does not work",r"For example, adding \(\frac{\pi}{2}\) changes \(\sin x\) to \(\cos x\), and \(\cos(\cos x)\) is not always equal to \(\cos(\sin x)\)."),
+("Conclude",r"The least period is \(\boxed{\pi}\)."),
+],
+8:[
+("Define the ratio",r"Let the long side be \(1\), and let the short-to-long ratio be \(r\). Then the short side is \(r\), and the diagonal is \(\sqrt{1+r^2}\)."),
+("Translate the condition",r"The given ratio condition says \[r=\frac{1}{\sqrt{1+r^2}}.\]"),
+("Square and substitute",r"Squaring gives \[r^2=\frac{1}{1+r^2}.\] Let \(u=r^2\). Then \[u=\frac1{1+u},\] so \[u^2+u-1=0.\]"),
+("Choose the positive root",r"The positive solution is \[u=\frac{-1+\sqrt5}{2}=\frac{\sqrt5-1}{2}.\]"),
+("Conclude",r"The square of the ratio is \[\boxed{\frac{\sqrt5-1}{2}}.\]"),
+],
+9:[
+("Write the circle equations",r"The first circle is \[(x+10)^2+(y+4)^2=169.\] The second circle is \[(x-3)^2+(y-9)^2=65.\]"),
+("Use the radical axis idea",r"The common chord of two intersecting circles lies on the line where the two circle equations are both true. Subtracting the equations eliminates \(x^2\) and \(y^2\)."),
+("Subtract and simplify",r"Set the left sides equal after moving radii: \[(x+10)^2+(y+4)^2-169=(x-3)^2+(y-9)^2-65.\] Simplifying gives \[26x+26y=78.\]"),
+("Find c",r"Thus \[x+y=3,\] so \(c=3\)."),
+("Conclude",r"The answer is $\boxed{3}$."),
+],
+10:[
+("Use a 100-student model",r"Imagine there are $100$ students. Then $60$ actually like dancing, and $40$ actually dislike it."),
+("Count those who say they dislike it",r"Of the $60$ who like dancing, \(20\%\) say they dislike it, giving \(12\) students. Of the $40$ who dislike dancing, \(90\%\) say they dislike it, giving \(36\) students."),
+("Find the total saying dislike",r"Altogether, \[12+36=48\] students say they dislike dancing."),
+("Find the desired fraction",r"Among those $48$, the number who actually like dancing is $12$. So the fraction is \[\frac{12}{48}=\frac14=25\%.\]"),
+("Conclude",r"The answer is $\boxed{25\%}$."),
+],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -3742,7 +3833,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2017" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2017" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -3831,7 +3922,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2017 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2017 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
