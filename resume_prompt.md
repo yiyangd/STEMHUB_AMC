@@ -1,10 +1,7 @@
 请继续 STEMHUB AMC problem teaching pages 批量生成任务。
 
-当前状态：Batch 264 已生成/更新并通过本地脚本验证；最新范围为 2021 Fall AMC 12A Problems 22-23。
-本批跳过题：
-- 2021 Fall AMC 12A Problem 21: complex-root ellipse eccentricity problem requires a longer analytic geometry derivation; skipped
-- 2021 Fall AMC 12A Problem 24: semicircle/circle chord geometry requires a longer derivation; skipped
-- 2021 Fall AMC 12A Problem 25: divisor-function global maximum problem is high-risk in current pass; skipped
-下一批从 2021 Fall AMC 12B Problem 1 开始。
+当前状态：Batch 265 已生成/更新并通过本地脚本验证；最新范围为 2021 Fall AMC 12B Problems 1-10。
+本批无跳过题。
+下一批从 2021 Fall AMC 12B Problem 11 开始。
 
 继续策略：每批生成 5-10 道可靠题；遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 teaching steps 后 commit/push。
