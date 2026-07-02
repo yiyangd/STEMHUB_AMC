@@ -1,20 +1,14 @@
 # Problem Pages Report
 
-- Total manifest entries: 2040
-- Latest batch: 284 (2024 AMC 12B Problems 21-23,25)
-- Latest new generated count: 4
-- Latest updated existing count: 0
-- Latest skipped count: 1
+- Latest reviewed batch: High-risk reviewed problem pages batch 1
+- Generated count: 5
+- Skipped count: 0
 - MathJax validation: passed
-- Answer verification source: https://artofproblemsolving.com/wiki/index.php/2024_AMC_12B_Answer_Key
 
-## Latest Batch Pages
+## Latest Reviewed Pages
 
-- `2024 AMC 12B Problem 21` -> `amc12/problems/2024-amc-12b-problem-21/`
-- `2024 AMC 12B Problem 22` -> `amc12/problems/2024-amc-12b-problem-22/`
-- `2024 AMC 12B Problem 23` -> `amc12/problems/2024-amc-12b-problem-23/`
-- `2024 AMC 12B Problem 25` -> `amc12/problems/2024-amc-12b-problem-25/`
-
-## Skipped in latest batch
-
-- 2024 AMC 12B Problem 24: altitude/inradius finite enumeration is high-risk in this pass; skipped
+- `2010 AMC 10A Problem 24` -> `amc10/problems/2010-amc-10a-problem-24/`
+- `2015 AMC 12B Problem 20` -> `amc12/problems/2015-amc-12b-problem-20/`
+- `2020 AMC 12A Problem 19` -> `amc12/problems/2020-amc-12a-problem-19/`
+- `2021 Spring AMC 12A Problem 18` -> `amc12/problems/2021-spring-amc-12a-problem-18/`
+- `2021 Spring AMC 12A Problem 19` -> `amc12/problems/2021-spring-amc-12a-problem-19/`

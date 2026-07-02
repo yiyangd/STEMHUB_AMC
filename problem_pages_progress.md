@@ -4605,12 +4605,23 @@
 - Next batch should start from: AMC12 complete; review skipped high-risk problems
 - Review notes: none.
 
+
+## High-risk reviewed problem pages batch 1
+
+- Time: 2026-07-02T16:11:21-07:00
+- Generated count: 5
+- Skipped count: 0
+- Skipped reasons: none
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+
 ## Missing/Skipped Problem Triage
 
-- Time: 2026-07-02T15:45:12-07:00
-- Missing total: 310
-- AMC10 missing total: 92
-- AMC12 missing total: 218
-- Status counts: ready_to_generate=0, needs_diagram=161, ocr_or_statement_risk=56, solution_high_risk=93, needs_answer_verification=0, manual_review=0
+- Time: 2026-07-02T16:11:26-07:00
+- Missing total: 305
+- AMC10 missing total: 91
+- AMC12 missing total: 214
+- Status counts: ready_to_generate=0, needs_diagram=161, ocr_or_statement_risk=56, solution_high_risk=88, needs_answer_verification=0, manual_review=0
 - Output files: `missing_problem_triage.csv`, `missing_problem_triage.md`
 - Validation result: pending commit

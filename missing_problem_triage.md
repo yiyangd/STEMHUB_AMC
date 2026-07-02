@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-02T15:45:12-07:00
-- Missing total: 310
-- AMC10 missing total: 92
-- AMC12 missing total: 218
+- Generated at: 2026-07-02T16:11:26-07:00
+- Missing total: 305
+- AMC10 missing total: 91
+- AMC12 missing total: 214
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 93 |
+| `solution_high_risk` | 88 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -20,8 +20,8 @@
 
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
-| AMC 10 | 0 | 83 | 7 | 2 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 91 | 0 | 0 |
+| AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 87 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -99,7 +99,6 @@
 - `2006 AMC 10B Problem 7` [ocr_or_statement_risk]: 2006 AMC 10B Problem 7 skipped: OCR text for the expression is unreliable.
 - `2008 AMC 10A Problem 9` [ocr_or_statement_risk]: Skipped reasons: 2008 AMC 10A Problem 9 skipped: OCR makes the fractional expression unreliable.
 - `2010 AMC 10A Problem 19` [solution_high_risk]: 2010 AMC 10A Problem 19 skipped: equiangular hexagon area relation needs more careful derivation
-- `2010 AMC 10A Problem 24` [solution_high_risk]: Skipped reasons: 2010 AMC 10A Problem 24 skipped: last two nonzero digits of 90! needs careful modular arithmetic write-up
 - `2024 AMC 10B Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2024 AMC 10B Problem 21 skipped: PDF text is truncated and omits key pipe-radius and geometry information.
 - `2009 AMC 12A Problem 24` [ocr_or_statement_risk]: Skipped reasons: 2009 AMC 12A Problem 24: skipped for separate review because the tower/log notation is OCR-fragile.
 - `2009 AMC 12A Problem 25` [ocr_or_statement_risk]: 2009 AMC 12A Problem 25: skipped for separate review because the tangent-recursion notation is OCR-fragile.
@@ -162,7 +161,6 @@
 - `2015 AMC 12A Problem 24` [ocr_or_statement_risk]: 2015 AMC 12A Problem 24: rational-number probability with OCR fraction ambiguity
 - `2015 AMC 12A Problem 25` [solution_high_risk]: 2015 AMC 12A Problem 25: layered tangent-circle construction high risk
 - `2015 AMC 12B Problem 19` [solution_high_risk]: Skipped reasons: 2015 AMC 12B Problem 19: circle condition on constructed squares high-risk geometry
-- `2015 AMC 12B Problem 20` [solution_high_risk]: 2015 AMC 12B Problem 20: recursive function/modular iteration high risk
 - `2015 AMC 12B Problem 24` [solution_high_risk]: 2015 AMC 12B Problem 24: four-circle radical-axis geometry high risk
 - `2015 AMC 12B Problem 25` [solution_high_risk]: 2015 AMC 12B Problem 25: long vector walk with radicals high risk
 - `2016 AMC 12A Problem 13` [ocr_or_statement_risk]: Skipped reasons: 2016 AMC 12A Problem 13: OCR text is unreliable for the probability threshold
@@ -172,6 +170,8 @@
 - `2016 AMC 12B Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2016 AMC 12B Problem 21: recursive geometry statement is OCR-damaged
 - `2016 AMC 12B Problem 22` [solution_high_risk]: 2016 AMC 12B Problem 22: repeating-decimal period conditions need careful number-theory verification
 - `2016 AMC 12B Problem 25` [ocr_or_statement_risk]: 2016 AMC 12B Problem 25: recurrence formula is OCR-damaged
+- `2017 AMC 12A Problem 22` [solution_high_risk]: Skipped reasons: 2017 AMC 12A Problem 22: random-walk hitting probability needs a dedicated Markov derivation
+- `2017 AMC 12A Problem 25` [ocr_or_statement_risk]: 2017 AMC 12A Problem 25: complex-product probability statement is OCR-damaged
 
 ## Suggested Next Step
 
