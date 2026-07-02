@@ -3,20 +3,18 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 279
+BATCH_NUMBER = 280
 CONTEST_DIR = "amc12"
-YEAR = "2023"
-FORM = "B"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2023_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {22, 23, 24}
+YEAR = "2024"
+FORM = "A"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2024_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 SKIPPED = [
-    "2023 AMC 12B Problem 21: frustum surface shortest path geometry is high-risk in current pass; skipped",
-    "2023 AMC 12B Problem 25: folded regular pentagon area depends on a delicate geometric construction; skipped",
 ]
-BATCH_LABEL = "2023 AMC 12B Problems 22-24"
-NEXT_START = "2024 AMC 12A Problem 1"
+BATCH_LABEL = "2024 AMC 12A Problems 1-10"
+NEXT_START = "2024 AMC 12A Problem 11"
 
-ANS={22:("E","-2"),23:("A","11"),24:("C","3")}
+ANS={1:("A","2"),2:("B","246"),3:("B","21"),4:("D","23"),5:("D","7"),6:("B","3"),7:("D","2024"),8:("A","0"),9:("E","8"),10:("C",r"$\frac{\pi}{2}-2\alpha$")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -5246,6 +5244,45 @@ SOL.update({
 22:[("Check the zero function",r"The function $f(x)=0$ for all $x$ satisfies the equation, so $f(1)=0$ is possible."),("Look for standard nonzero solutions",r"The identity resembles the cosine addition formula: \[\cos(a+b)+\cos(a-b)=2\cos a\cos b.\] Therefore functions such as $f(x)=\cos(cx)$ work."),("Get values between -1 and 1",r"By choosing $c$, the value $f(1)=\cos c$ can be any number in the interval $[-1,1]$. This includes $1$ and $-1$."),("Get values at least 1",r"There is also a hyperbolic cosine version: \[\cosh(a+b)+\cosh(a-b)=2\cosh a\cosh b.\] Thus $f(x)=\cosh(cx)$ works and gives $f(1)\ge1$, including $2$ for a suitable $c$."),("Exclude negative values below -1",r"The cosine family never goes below $-1$, the hyperbolic cosine family is at least $1$, and the zero function only gives $0$. So $-2$ cannot occur."),("Conclude",r"The answer is $\boxed{-2}$."),],
 23:[("Translate products into prime exponents",r"Every die value uses only primes $2,3,5$: \[1=1,\quad2=2,\quad3=3,\quad4=2^2,\quad5=5,\quad6=2\cdot3.\] So a product is determined by its exponent triple $(\alpha,\beta,\gamma)$ for $2^\alpha3^\beta5^\gamma$."),("Fix the number of fives",r"Suppose exactly $\gamma$ factors of $5$ appear in the product. Then the remaining $m=n-\gamma$ dice contribute only factors from $\{1,2,3,4,6\}$."),("Count pairs for the remaining dice",r"For $m$ dice using $\{1,2,3,4,6\}$, fix the exponent $\beta$ of $3$. We can have $\beta=0,1,\ldots,m$. For a fixed $\beta$, the possible exponents of $2$ range from $0$ through $2m-\beta$, giving $2m-\beta+1$ choices."),("Sum for a fixed m",r"The number of possible $(\alpha,\beta)$ pairs is \[\sum_{\beta=0}^{m}(2m-\beta+1)=\frac{(m+1)(3m+2)}2.\]"),("Sum over gamma",r"Thus the number of possible products for $n$ dice is \[\sum_{m=0}^{n}\frac{(m+1)(3m+2)}2.\] Checking the answer choices, for $n=11$ this sum equals $936$."),("Conclude",r"Therefore $n=\boxed{11}$."),],
 24:[("Separate the primes",r"For each prime $2,3,5$, write its exponents in $a,b,c,d$ as a four-tuple. The product condition gives the sum of the four exponents, and each lcm condition gives the maximum of a pair of exponents."),("Handle the prime 2",r"For prime $2$, the exponent sum is $6$, and the pairwise maximums are \[3,3,3,1,2,2.\] The possible exponent tuples force the minimum exponent to be $0$. So $2$ does not divide the gcd."),("Handle the prime 3",r"For prime $3$, the exponent sum is $9$, and the pairwise maximums are \[2,3,3,3,3,3.\] The tuples are forced up to swapping $a$ and $b$, and the minimum exponent is $1$. So the gcd contains exactly one factor of $3$."),("Handle the prime 5",r"For prime $5$, the exponent sum is $7$, and the pairwise maximums are \[3,3,3,2,2,2.\] The minimum exponent is $0$. So $5$ does not divide the gcd."),("Assemble the gcd",r"The gcd has prime factorization \[2^0\cdot3^1\cdot5^0=3.\]"),("Conclude",r"The answer is $\boxed{3}$."),],
+})
+
+OV.update({
+1:(r"What is the value of \[9901\cdot101-99\cdot10101?\]",[("A","2"),("B","20"),("C","200"),("D","202"),("E","2020")]),
+2:(r"A model used to estimate hiking time has the form \[T=aL+bG,\] where $T$ is in minutes, $L$ is trail length in miles, and $G$ is altitude gain in feet. It gives $69$ minutes for $(L,G)=(1.5,800)$ and also for $(1.2,1100)$. How many minutes does it estimate for $(4.2,4000)$?",[("A","240"),("B","246"),("C","252"),("D","258"),("E","264")]),
+3:(r"The number $2024$ is written as the sum of not necessarily distinct two-digit numbers. What is the least number of two-digit numbers needed?",[("A","20"),("B","21"),("C","22"),("D","23"),("E","24")]),
+4:(r"What is the least value of $n$ such that $n!$ is a multiple of $2024$?",[("A","11"),("B","21"),("C","22"),("D","23"),("E","253")]),
+5:(r"A data set containing $20$ numbers, some of which are $6$, has mean $45$. When all the $6$s are removed, the data set has mean $66$. How many $6$s were in the original data set?",[("A","4"),("B","5"),("C","6"),("D","7"),("E","8")]),
+6:(r"The product of three integers is $60$. What is the least possible positive sum of the three integers?",[("A","2"),("B","3"),("C","5"),("D","6"),("E","13")]),
+7:(r"In right isosceles triangle $ABC$, $\angle ABC=90^\circ$ and $BA=BC=\sqrt2$. Points $P_1,\ldots,P_{2024}$ divide hypotenuse $\overline{AC}$ into equal parts. What is the length of \[\overrightarrow{BP_1}+\overrightarrow{BP_2}+\cdots+\overrightarrow{BP_{2024}}?\]",[("A","1011"),("B","1012"),("C","2023"),("D","2024"),("E","2025")]),
+8:(r"How many angles $\theta$ with $0\le\theta\le2\pi$ satisfy \[\log(\sin(3\theta))+\log(\cos(2\theta))=0?\]",[("A","0"),("B","1"),("C","2"),("D","3"),("E","4")]),
+9:(r"Let $M$ be the greatest integer such that both $M+1213$ and $M+3773$ are perfect squares. What is the units digit of $M$?",[("A","1"),("B","2"),("C","3"),("D","6"),("E","8")]),
+10:(r"Let $\alpha$ be the smallest angle in a $3$-$4$-$5$ right triangle, and let $\beta$ be the smallest angle in a $7$-$24$-$25$ right triangle. In terms of $\alpha$, what is $\beta$?",[("A",r"$\frac{\alpha}{3}$"),("B",r"$\alpha-\frac{\pi}{8}$"),("C",r"$\frac{\pi}{2}-2\alpha$"),("D",r"$\frac{\alpha}{2}$"),("E",r"$\pi-4\alpha$")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Rewrite the large factors to cancel the main product.",
+2:"Solve the linear model or rescale variables to compute the target time.",
+3:"Use the largest possible two-digit summands and check achievability.",
+4:"Factor 2024 and find when all required prime factors appear in n factorial.",
+5:"Use total-sum equations before and after removing the sixes.",
+6:"Use two negative factors and one positive factor to make a small positive sum.",
+7:"Use the average location of equally spaced points on the hypotenuse.",
+8:"Use logarithm domain and the fact that both sine and cosine factors are at most 1.",
+9:"Turn the two square conditions into a difference of squares.",
+10:"Compare tangent values using angle addition.",
+})
+
+SOL.update({
+1:[("Rewrite the numbers",r"The key is to avoid multiplying large numbers directly. Notice \[9901=99\cdot100+1,\quad 10101=101\cdot100+1.\]"),("Substitute",r"The expression becomes \[(99\cdot100+1)\cdot101-99(101\cdot100+1).\]"),("Cancel the large part",r"Expanding only enough to see cancellation gives \[99\cdot100\cdot101+101-99\cdot101\cdot100-99.\]"),("Finish",r"The large products cancel, leaving \[101-99=2.\]"),("Conclude",r"The answer is $\boxed{2}$."),],
+2:[("Set up the two equations",r"The two given hikes produce \[69=1.5a+800b,\] and \[69=1.2a+1100b.\]"),("Subtract to find a relation",r"Subtracting the equations gives \[0=0.3a-300b,\] so \[a=1000b.\]"),("Solve for b",r"Substitute into the first equation: \[69=1.5(1000b)+800b=2300b,\] so \[b=\frac3{100}.\] Then $a=30$."),("Evaluate the target trail",r"For $(L,G)=(4.2,4000)$, \[T=30(4.2)+\frac3{100}(4000)=126+120=246.\]"),("Conclude",r"The answer is $\boxed{246}$."),],
+3:[("Use an upper bound",r"To minimize the number of two-digit summands, make each summand as large as possible. The largest two-digit number is $99$."),("Show 20 is not enough",r"With $20$ two-digit numbers, the largest possible sum is \[20\cdot99=1980,\] which is less than $2024$."),("Show 21 works",r"We can write \[2024=20\cdot99+44.\] This uses twenty copies of $99$ and one copy of $44$, all two-digit numbers."),("Conclude",r"The least number needed is $\boxed{21}$."),],
+4:[("Factor the target number",r"The prime factorization is \[2024=2^3\cdot11\cdot23.\]"),("Think about factorials",r"For $n!$ to be divisible by $2024$, it must contain factors $2^3$, $11$, and $23$."),("Find the limiting prime",r"The factor $23$ first appears in $23!$. Before that, no factorial contains a factor of $23$."),("Check sufficiency",r"At $n=23$, the factorial $23!$ contains $23$, $11$, and many factors of $2$, so it is divisible by $2024$."),("Conclude",r"The least possible $n$ is $\boxed{23}$."),],
+5:[("Use the original total",r"The original data set has $20$ numbers with mean $45$, so its total is \[20\cdot45=900.\]"),("Let x be the number of sixes",r"If there are $x$ sixes, then after removing them there are $20-x$ numbers left, with total \[900-6x.\]"),("Use the new mean",r"The new mean is $66$, so \[\frac{900-6x}{20-x}=66.\]"),("Solve",r"This gives \[900-6x=1320-66x,\] hence \[60x=420,\] so $x=7$."),("Conclude",r"There were $\boxed{7}$ sixes."),],
+6:[("Think about signs",r"The product is positive. To make the sum small but positive, a useful strategy is one positive integer and two negative integers."),("Search by factor triples",r"Write the factors as $a,-b,-c$, where $abc=60$. The sum is \[a-b-c,\] so we want this positive and as small as possible."),("Try balanced factor pairs",r"The triple \[10,-6,-1\] has product $60$ and sum \[10-6-1=3.\]"),("Check why smaller positive sums do not occur",r"Using a positive factor smaller than $10$ makes the two negative factors have sum too large in magnitude, producing a nonpositive total. The next feasible positive total is therefore $3$."),("Conclude",r"The least possible positive sum is $\boxed{3}$."),],
+7:[("Use average position",r"The points $P_1,\ldots,P_{2024}$ are equally spaced along $\overline{AC}$, so their average position is the midpoint of $\overline{AC}$."),("Convert vector sums to average vectors",r"Therefore \[\overrightarrow{BP_1}+\cdots+\overrightarrow{BP_{2024}}=2024\cdot\overrightarrow{BM},\] where $M$ is the midpoint of $\overline{AC}$."),("Find BM",r"In a right triangle, the midpoint of the hypotenuse is equidistant from all three vertices. Since $BA=BC=\sqrt2$, the hypotenuse has length $2$, so \[BM=1.\]"),("Compute the length",r"The vector sum has length \[2024\cdot1=2024.\]"),("Conclude",r"The answer is $\boxed{2024}$."),],
+8:[("Use the logarithm rule carefully",r"The logarithms are real only when \[\sin(3\theta)>0\quad\text{and}\quad \cos(2\theta)>0.\] Then the equation becomes \[\log(\sin(3\theta)\cos(2\theta))=0.\]"),("Translate log equals zero",r"Since $\log(1)=0$, we need \[\sin(3\theta)\cos(2\theta)=1.\]"),("Use the maximum possible product",r"Both factors are at most $1$, and both are positive. Their product can be $1$ only if \[\sin(3\theta)=1\quad\text{and}\quad \cos(2\theta)=1.\]"),("Compare the angle conditions",r"The first condition gives \[\theta=\frac{\pi}{6}+\frac{2\pi k}{3},\] while the second gives \[\theta=m\pi.\] These two forms cannot agree."),("Conclude",r"There are no such angles, so the answer is $\boxed{0}$."),],
+9:[("Set up the two squares",r"Let \[M+1213=P^2,\quad M+3773=Q^2.\] Subtracting gives \[Q^2-P^2=2560.\]"),("Factor the difference",r"We get \[(Q-P)(Q+P)=2560.\] To make $M$ as large as possible, we want $P$ and $Q$ as large as possible, so choose the smallest positive value for $Q-P$ with the same parity as $Q+P$."),("Choose the factors",r"Both factors must be even, so take \[Q-P=2,\quad Q+P=1280.\] This gives \[P=639,\quad Q=641.\]"),("Find the units digit",r"Then \[M=P^2-1213.\] Since $639^2$ has units digit $1$ and $1213$ has units digit $3$, the units digit of $M$ is \[1-3\equiv8\pmod{10}.\]"),("Conclude",r"The answer is $\boxed{8}$."),],
+10:[("Write the tangent values",r"In the $3$-$4$-$5$ triangle, \[\tan\alpha=\frac34.\] In the $7$-$24$-$25$ triangle, \[\tan\beta=\frac7{24}.\]"),("Add the angles",r"Use the tangent addition formula: \[\tan(\alpha+\beta)=\frac{\frac34+\frac7{24}}{1-\frac34\cdot\frac7{24}}.\]"),("Simplify",r"The numerator is \[\frac{18}{24}+\frac7{24}=\frac{25}{24},\] and the denominator is \[1-\frac{21}{96}=\frac{75}{96}=\frac{25}{32}.\] Thus \[\tan(\alpha+\beta)=\frac{25/24}{25/32}=\frac43.\]"),("Recognize the complementary angle",r"If $\tan\alpha=\frac34$, then the complementary angle has tangent $\frac43$. Therefore \[\alpha+\beta=\frac{\pi}{2}-\alpha.\]"),("Conclude",r"So \[\beta=\frac{\pi}{2}-2\alpha.\] The answer is $\boxed{\frac{\pi}{2}-2\alpha}$."),],
 })
 
 def esc(x, quote=True):
