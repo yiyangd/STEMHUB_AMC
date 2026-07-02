@@ -3,20 +3,18 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 242
+BATCH_NUMBER = 243
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2018_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {12,13,15,17,18,19}
+TARGET_NUMBERS = {22,23,24}
 SKIPPED = [
-    "2018 AMC 12B Problem 11: wrapping-paper geometry depends on original diagram; skipped",
-    "2018 AMC 12B Problem 14: age wording/OCR leaves implicit assumptions; skipped",
-    "2018 AMC 12B Problem 16: regular-octagon minimum area requires careful radical matching; skipped",
-    "2018 AMC 12B Problem 20: hexagon intersection region is diagram-dependent; skipped",
+    "2018 AMC 12B Problem 21: incircle/circumcircle tangent configuration is diagram-sensitive; skipped",
+    "2018 AMC 12B Problem 25: three-circle tangent construction depends on the original diagram; skipped",
 ]
-BATCH_LABEL = "2018 AMC 12B Problems 12,13,15,17,18,19"
-NEXT_START = "2018 AMC 12B Problem 21"
+BATCH_LABEL = "2018 AMC 12B Problems 22-24"
+NEXT_START = "2019 AMC 12A Problem 1"
 
-ANS={12:("C","18"),13:("C","200"),15:("A","96"),17:("A","7"),18:("B","2017"),19:("C","340")}
+ANS={22:("D","220"),23:("C","120"),24:("C","199")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4180,6 +4178,47 @@ SOL.update({
 ("Show 340 is possible",r"For \(340=2^2\cdot5\cdot17\), \[\operatorname{lcm}(323,340)=2^2\cdot5\cdot17\cdot19=6460,\] which is an even four-digit number."),
 ("Check no smaller listed value works",r"The smaller listed candidates cannot occur for a four-digit \(n\), while \(340\) can occur. Thus the smallest possible next divisor is \(340\)."),
 ("Conclude",r"The answer is \(\boxed{340}\)."),
+],
+})
+
+OV.update({
+22:(r"Consider polynomials \(P(x)\) of degree at most \(3\), each of whose coefficients is an element of \(\{0,1,2,3,4,5,6,7,8,9\}\). How many such polynomials satisfy \(P(-1)=-9\)?",[("A","110"),("B","143"),("C","165"),("D","220"),("E","286")]),
+23:(r"Ajay is standing at point \(A\) near Pontianak, Indonesia, \(0^\circ\) latitude and \(110^\circ\) E longitude. Billy is standing at point \(B\) near Big Baldy Mountain, Idaho, USA, \(45^\circ\) N latitude and \(115^\circ\) W longitude. Assume that Earth is a perfect sphere with center \(C\). What is the degree measure of \(\angle ACB\)?",[("A","105"),("B",r"$112\frac12$"),("C","120"),("D","135"),("E","150")]),
+24:(r"Let \(\lfloor x\rfloor\) denote the greatest integer less than or equal to \(x\). How many real numbers \(x\) satisfy \[x^2+10000\lfloor x\rfloor=10000x?\]",[("A","197"),("B","198"),("C","199"),("D","200"),("E","201")]),
+})
+
+KEY_OVERRIDES.update({
+22:"Convert P(-1) into a digit-sum equation and count pairs by their sums.",
+23:"Use spherical-coordinate unit vectors and the dot product to find the central angle.",
+24:"Rewrite the equation using the fractional part of x and count one solution per interval.",
+})
+
+SOL.update({
+22:[
+("Write the polynomial coefficients",r"Let \[P(x)=ax^3+bx^2+cx+d,\] where \(a,b,c,d\) are digits from \(0\) to \(9\). Degree at most \(3\) is allowed, so \(a\) may be \(0\)."),
+("Evaluate at negative one",r"We need \[P(-1)=-a+b-c+d=-9.\] Rearranging gives \[a+c=b+d+9.\]"),
+("Count by pair sums",r"Let \(N(s)\) be the number of ordered digit pairs with sum \(s\). For \(0\le s\le9\), \(N(s)=s+1\). For \(9\le s\le18\), the values decrease symmetrically, so \(N(9+t)=10-t\) for \(0\le t\le9\)."),
+("Match the two pair sums",r"The pair \((b,d)\) can have sum \(t\), where \(0\le t\le9\), and then \((a,c)\) must have sum \(t+9\). So the number of polynomials is \[\sum_{t=0}^{9}N(t)N(t+9).\]"),
+("Evaluate the sum",r"This is \[1\cdot10+2\cdot9+3\cdot8+\cdots+10\cdot1=220.\]"),
+("Conclude",r"There are \(\boxed{220}\) such polynomials."),
+],
+23:[
+("Represent the locations on a unit sphere",r"For latitude \(\phi\) and longitude \(\lambda\), a point on the unit sphere has vector \[(\cos\phi\cos\lambda,\ \cos\phi\sin\lambda,\ \sin\phi).\] The central angle is found from the dot product of the two unit vectors."),
+("Use Ajay's coordinates",r"Ajay is at latitude \(0^\circ\), longitude \(110^\circ\) E. His vector is \[(\cos110^\circ,\ \sin110^\circ,\ 0).\]"),
+("Use Billy's coordinates",r"Billy is at latitude \(45^\circ\) N and longitude \(115^\circ\) W, which is \(-115^\circ\). His vector has horizontal scale \(\cos45^\circ=\frac{\sqrt2}{2}\)."),
+("Compute the dot product",r"The longitude difference is \[110^\circ-(-115^\circ)=225^\circ.\] Thus \[\cos\angle ACB=\cos0^\circ\cos45^\circ\cos225^\circ+\sin0^\circ\sin45^\circ.\]"),
+("Simplify",r"This equals \[1\cdot\frac{\sqrt2}{2}\cdot\left(-\frac{\sqrt2}{2}\right)+0=-\frac12.\]"),
+("Find the angle",r"The angle whose cosine is \(-\frac12\) is \(120^\circ\)."),
+("Conclude",r"The degree measure of \(\angle ACB\) is \(\boxed{120}\)."),
+],
+24:[
+("Use the fractional part",r"Let \(k=\lfloor x\rfloor\). Then \(x-k\) is the fractional part of \(x\), so \(0\le x-k<1\)."),
+("Rewrite the equation",r"The equation \[x^2+10000k=10000x\] becomes \[x^2=10000(x-k).\] Therefore \[x-k=\frac{x^2}{10000}.\]"),
+("Restrict x",r"Because \(0\le x-k<1\), we must have \[0\le\frac{x^2}{10000}<1,\] so \[-100<x<100.\]"),
+("Look on one integer interval",r"On the interval \(k\le x<k+1\), the equation becomes \[x-k-\frac{x^2}{10000}=0.\] For \(-100\le k\le98\), the left side is negative at \(x=k\) and positive just before \(x=k+1\). It is also increasing throughout this range, so there is exactly one solution in each such interval."),
+("Check the endpoints",r"There is no solution for \(k=99\), because the only possible endpoint would force \(x=100\), which is outside the allowed range. The interval beginning at \(k=-100\) does contribute one solution with \(x>-100\)."),
+("Count the intervals",r"The integers \(k=-100,-99,\ldots,98\) give \[98-(-100)+1=199\] intervals."),
+("Conclude",r"There are \(\boxed{199}\) real solutions."),
 ],
 })
 
