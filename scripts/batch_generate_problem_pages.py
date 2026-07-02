@@ -3,19 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 240
+BATCH_NUMBER = 241
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2018_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {21,24}
-SKIPPED = [
-    "2018 AMC 12A Problem 22: complex square-root parallelogram area high risk; skipped",
-    "2018 AMC 12A Problem 23: angle geometry requires a dedicated derivation; skipped",
-    "2018 AMC 12A Problem 25: repeated-digit equation requires long number-theory proof; skipped",
-]
-BATCH_LABEL = "2018 AMC 12A Problems 21, 24"
-NEXT_START = "2018 AMC 12B Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2018_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2018 AMC 12B Problems 1-10"
+NEXT_START = "2018 AMC 12B Problem 11"
 
-ANS={21:("B",r"x^{17}+2018x^{11}+1"),24:("B",r"\frac{13}{24}")}
+ANS={1:("A","90"),2:("D","67"),3:("B","10"),4:("B",r"50\pi"),5:("D","240"),6:("B",r"\frac{4DS}{Q}"),7:("C","6"),8:("C","50"),9:("E","1010000"),10:("D","225")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4024,6 +4020,100 @@ SOL.update({
 ],
 })
 
+OV.update({
+1:(r"Kate bakes a \(20\)-inch by \(18\)-inch pan of cornbread. The cornbread is cut into pieces that measure \(2\) inches by \(2\) inches. How many pieces of cornbread does the pan contain?",[("A","90"),("B","100"),("C","180"),("D","200"),("E","360")]),
+2:(r"Sam drove \(96\) miles in \(90\) minutes. His average speed during the first \(30\) minutes was \(60\) mph, and his average speed during the second \(30\) minutes was \(65\) mph. What was his average speed, in mph, during the last \(30\) minutes?",[("A","64"),("B","65"),("C","66"),("D","67"),("E","68")]),
+3:(r"A line with slope \(2\) intersects a line with slope \(6\) at the point \((40,30)\). What is the distance between the \(x\)-intercepts of these two lines?",[("A","5"),("B","10"),("C","20"),("D","25"),("E","50")]),
+4:(r"A circle has a chord of length \(10\), and the distance from the center of the circle to the chord is \(5\). What is the area of the circle?",[("A",r"$25\pi$"),("B",r"$50\pi$"),("C",r"$75\pi$"),("D",r"$100\pi$"),("E",r"$125\pi$")]),
+5:(r"How many subsets of \(\{2,3,4,5,6,7,8,9\}\) contain at least one prime number?",[("A","128"),("B","192"),("C","224"),("D","240"),("E","256")]),
+6:(r"Suppose \(S\) cans of soda can be purchased from a vending machine for \(Q\) quarters. Which expression describes the number of cans of soda that can be purchased for \(D\) dollars, where \(1\) dollar is worth \(4\) quarters?",[("A",r"$4DQ$"),("B",r"$\frac{4DS}{Q}$"),("C",r"$\frac{4Q}{DS}$"),("D",r"$\frac{DQ}{4S}$"),("E",r"$\frac{DS}{4Q}$")]),
+7:(r"What is the value of \[\log_3 7\cdot\log_5 9\cdot\log_7 11\cdot\log_9 13\cdots\log_{21}25\cdot\log_{23}27?\]",[("A","3"),("B",r"$3\log_7 23$"),("C","6"),("D","9"),("E","10")]),
+8:(r"Line segment \(AB\) is a diameter of a circle with \(AB=24\). Point \(C\), not equal to \(A\) or \(B\), lies on the circle. As \(C\) moves around the circle, the centroid of \(\triangle ABC\) traces out a closed curve missing two points. To the nearest positive integer, what is the area of the region bounded by this curve?",[("A","25"),("B","38"),("C","50"),("D","63"),("E","75")]),
+9:(r"What is \[\sum_{i=1}^{100}\sum_{j=1}^{100}(i+j)?\]",[("A","100100"),("B","500500"),("C","505000"),("D","1001000"),("E","1010000")]),
+10:(r"A list of \(2018\) positive integers has a unique mode, which occurs exactly \(10\) times. What is the least number of distinct values that can occur in the list?",[("A","202"),("B","223"),("C","224"),("D","225"),("E","234")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Divide the pan area by the area of one square piece.",
+2:"Compute distances in each half-hour interval.",
+3:"Use point-slope form to find each x-intercept.",
+4:"Use the right triangle from the center to the midpoint of the chord.",
+5:"Count all subsets and subtract those with no primes.",
+6:"Convert dollars to quarters and use the cans-per-quarter rate.",
+7:"Use change of base and telescoping logarithms.",
+8:"The centroid is an affine image of the moving vertex, so the locus is a scaled circle.",
+9:"Separate the double sum into an i part and a j part.",
+10:"Pack all non-mode values in groups of at most nine.",
+})
+
+SOL.update({
+1:[
+("Find the pan area",r"The pan has area \[20\cdot18=360\] square inches."),
+("Find one piece area",r"Each piece measures \(2\) inches by \(2\) inches, so each has area \[2\cdot2=4\] square inches."),
+("Divide",r"The number of pieces is \[\frac{360}{4}=90.\]"),
+("Conclude",r"The answer is $\boxed{90}$."),
+],
+2:[
+("Convert each 30-minute block",r"Each \(30\)-minute interval is \(\frac12\) hour."),
+("Find the first two distances",r"In the first interval Sam drove \(60\cdot\frac12=30\) miles. In the second interval he drove \(65\cdot\frac12=32.5\) miles."),
+("Find the remaining distance",r"He drove \(96\) miles total, so the last \(30\) minutes covered \[96-30-32.5=33.5\] miles."),
+("Convert to speed",r"Traveling \(33.5\) miles in \(\frac12\) hour means his speed was \[33.5\div\frac12=67\] mph."),
+("Conclude",r"The answer is $\boxed{67}$."),
+],
+3:[
+("Use point-slope form",r"A line with slope \(m\) through \((40,30)\) has equation \[y-30=m(x-40).\]"),
+("Find the x-intercept formula",r"At the \(x\)-intercept, \(y=0\). Thus \[-30=m(x-40),\] so \[x=40-\frac{30}{m}.\]"),
+("Apply each slope",r"For \(m=2\), the intercept is \(40-15=25\). For \(m=6\), the intercept is \(40-5=35\)."),
+("Compute distance",r"The distance between the intercepts is \[35-25=10.\]"),
+("Conclude",r"The answer is $\boxed{10}$."),
+],
+4:[
+("Use the perpendicular bisector of a chord",r"The radius to the midpoint of a chord is perpendicular to the chord. Half the chord has length \(5\), and the distance from the center to the chord is also \(5\)."),
+("Find the radius",r"These form a right triangle with hypotenuse equal to the circle's radius: \[r^2=5^2+5^2=50.\]"),
+("Find the area",r"The circle area is \[\pi r^2=50\pi.\]"),
+("Conclude",r"The answer is \(\boxed{50\pi}\)."),
+],
+5:[
+("Count all subsets",r"The set has \(8\) elements, so it has \[2^8=256\] total subsets."),
+("Subtract subsets with no primes",r"The primes in the set are \(2,3,5,7\). A subset with no primes can only use \(\{4,6,8,9\}\), giving \[2^4=16\] subsets."),
+("Compute",r"The number with at least one prime is \[256-16=240.\]"),
+("Conclude",r"The answer is $\boxed{240}$."),
+],
+6:[
+("Find cans per quarter",r"If \(S\) cans cost \(Q\) quarters, then each quarter buys \(\frac{S}{Q}\) cans."),
+("Convert dollars to quarters",r"\(D\) dollars equals \(4D\) quarters."),
+("Multiply",r"The number of cans is \[4D\cdot\frac{S}{Q}=\frac{4DS}{Q}.\]"),
+("Conclude",r"The answer is \(\boxed{\frac{4DS}{Q}}\)."),
+],
+7:[
+("Use change of base",r"Write each logarithm as a quotient of natural logs. The product becomes \[\frac{\ln7}{\ln3}\cdot\frac{\ln9}{\ln5}\cdot\frac{\ln11}{\ln7}\cdots\frac{\ln25}{\ln21}\cdot\frac{\ln27}{\ln23}.\]"),
+("Cancel the middle terms",r"Most terms from \(\ln7\) through \(\ln23\) cancel. The product becomes \[\frac{\ln25\cdot\ln27}{\ln3\cdot\ln5}.\]"),
+("Use powers",r"Since \(\ln25=2\ln5\) and \(\ln27=3\ln3\), the value is \[\frac{(2\ln5)(3\ln3)}{\ln3\ln5}=6.\]"),
+("Conclude",r"The answer is $\boxed{6}$."),
+],
+8:[
+("Use coordinates for the centroid",r"The centroid of triangle \(ABC\) is \[\frac{A+B+C}{3}\] as a vector average."),
+("Keep A and B fixed",r"Since \(A\) and \(B\) are fixed, the centroid moves as an affine image of \(C\), scaled by a factor of \(\frac13\)."),
+("Find the original circle radius",r"The diameter \(AB\) is \(24\), so the circle containing \(C\) has radius \(12\)."),
+("Find the centroid locus",r"The centroid therefore traces a circle of radius \(\frac{12}{3}=4\), except for two missing points corresponding to \(C=A\) or \(C=B\). Missing points do not change the enclosed area."),
+("Compute area",r"The enclosed area is \[\pi(4^2)=16\pi\approx50.3.\] To the nearest positive integer, this is \(50\)."),
+("Conclude",r"The answer is $\boxed{50}$."),
+],
+9:[
+("Separate the sum",r"We can write \[\sum_{i=1}^{100}\sum_{j=1}^{100}(i+j)=\sum_{i=1}^{100}\sum_{j=1}^{100}i+\sum_{i=1}^{100}\sum_{j=1}^{100}j.\]"),
+("Count repetitions",r"Each \(i\) appears for \(100\) values of \(j\), and each \(j\) appears for \(100\) values of \(i\)."),
+("Compute",r"The sum is \[100\sum_{i=1}^{100}i+100\sum_{j=1}^{100}j=200\cdot\frac{100\cdot101}{2}=1{,}010{,}000.\]"),
+("Conclude",r"The answer is $\boxed{1{,}010{,}000}$."),
+],
+10:[
+("Use the unique mode condition",r"The mode occurs exactly \(10\) times. Every other value must occur at most \(9\) times, otherwise the mode would not be unique."),
+("Fill the remaining entries efficiently",r"After the \(10\) copies of the mode, there are \[2018-10=2008\] entries left."),
+("Minimize distinct values",r"To use as few other values as possible, each other value should appear \(9\) times, except possibly one leftover group. We need \[\left\lceil\frac{2008}{9}\right\rceil=224\] other distinct values."),
+("Add the mode value",r"Including the mode itself, the least number of distinct values is \[224+1=225.\]"),
+("Conclude",r"The answer is $\boxed{225}$."),
+],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -4130,7 +4220,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2018" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2018" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -4219,7 +4309,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2018 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2018 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
