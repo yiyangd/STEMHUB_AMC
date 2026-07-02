@@ -3,15 +3,17 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 232
+BATCH_NUMBER = 233
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2017_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
-SKIPPED = []
-BATCH_LABEL = "2017 AMC 12A Problems 1-10"
-NEXT_START = "2017 AMC 12A Problem 11"
+TARGET_NUMBERS = {11,12,13,14,15,17,18,19,20}
+SKIPPED = [
+    "2017 AMC 12A Problem 16: tangent semicircle diagram required; skipped",
+]
+BATCH_LABEL = "2017 AMC 12A Problems 11-15, 17-20"
+NEXT_START = "2017 AMC 12A Problem 21"
 
-ANS={1:("D","13"),2:("C","4"),3:("B","If Lewis did not receive an A, then he got at least one multiple choice question wrong."),4:("A","30%"),5:("B","245"),6:("B","17"),7:("B","2018"),8:("D","20"),9:("E","three rays with a common endpoint"),10:("C",r"\frac34")}
+ANS={11:("D","143"),12:("B","3"),13:("B","135"),14:("C","28"),15:("D","(3,4)"),17:("D","12"),18:("D","1239"),19:("D",r"\frac{37}{35}"),20:("E","597")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3501,6 +3503,103 @@ SOL.update({
 ("Divide by total area",r"The total rectangle area is \[2017\cdot4034=2(2017)^2.\] Thus the failure probability is \[\frac{\frac12(2017)^2}{2(2017)^2}=\frac14.\]"),
 ("Subtract from 1",r"The desired probability is \[1-\frac14=\frac34.\]"),
 ("Conclude",r"The answer is \[\boxed{\frac34}.\]"),
+],
+})
+
+OV.update({
+11:(r"Claire adds the degree measures of the interior angles of a convex polygon and arrives at a sum of $2017$. She then discovers that she forgot to include one angle. What is the degree measure of the forgotten angle?",[("A","37"),("B","63"),("C","117"),("D","143"),("E","163")]),
+12:(r"There are $10$ horses, named Horse $1$, Horse $2$, $\ldots$, Horse $10$. Horse $k$ runs one lap in exactly $k$ minutes. At time $0$ all the horses are together at the starting point. Let $T>0$ be the least time, in minutes, such that at least $5$ of the horses are again at the starting point. What is the sum of the digits of $T$?",[("A","2"),("B","3"),("C","4"),("D","5"),("E","6")]),
+13:(r"Driving at a constant speed, Sharon usually takes $180$ minutes to drive from her house to her mother's house. One day Sharon begins the drive at her usual speed, but after driving $\frac13$ of the way, she hits a snowstorm and reduces her speed by $20$ miles per hour. This time the trip takes her a total of $276$ minutes. How many miles is it from Sharon's house to her mother's house?",[("A","132"),("B","135"),("C","138"),("D","141"),("E","144")]),
+14:(r"Alice refuses to sit next to either Bob or Carla. Derek refuses to sit next to Eric. How many ways are there for the five of them to sit in a row of $5$ chairs under these conditions?",[("A","12"),("B","16"),("C","28"),("D","32"),("E","40")]),
+15:(r"Let \[f(x)=\sin x+2\cos x+3\tan x,\] using radian measure for $x$. In what interval does the smallest positive value of $x$ for which $f(x)=0$ lie?",[("A","(0,1)"),("B","(1,2)"),("C","(2,3)"),("D","(3,4)"),("E","(4,5)")]),
+17:(r"There are $24$ different complex numbers $z$ such that $z^{24}=1$. For how many of these is $z^6$ a real number?",[("A","1"),("B","3"),("C","6"),("D","12"),("E","24")]),
+18:(r"Let $S(n)$ equal the sum of the digits of positive integer $n$. For a particular positive integer $n$, $S(n)=1274$. Which of the following could be the value of $S(n+1)$?",[("A","1"),("B","3"),("C","12"),("D","1239"),("E","1265")]),
+19:(r"A square with side length $x$ is inscribed in a right triangle with sides of length $3$, $4$, and $5$ so that one vertex of the square coincides with the right-angle vertex of the triangle. A square with side length $y$ is inscribed so that one side of the square lies on the hypotenuse of the triangle. What is $\frac{x}{y}$?",[("A",r"$\frac{12}{13}$"),("B",r"$\frac{35}{37}$"),("C","1"),("D",r"$\frac{37}{35}$"),("E",r"$\frac{13}{12}$")]),
+20:(r"How many ordered pairs $(a,b)$ such that $a$ is a positive real number and $b$ is an integer between $2$ and $200$, inclusive, satisfy the equation \[(\log_b a)^{2017}=\log_b(a^{2017})?\]",[("A","198"),("B","199"),("C","398"),("D","399"),("E","597")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Use the polygon angle-sum formula modulo 180.",
+12:"Find the smallest time divisible by at least five of the integers from 1 to 10.",
+13:"Translate the changed speed trip into time equations.",
+14:"Use inclusion-exclusion on forbidden adjacent pairs.",
+15:"Analyze signs of the trigonometric expression across standard intervals.",
+17:"Represent 24th roots of unity by their exponents.",
+18:"Track how digit sum changes when adding 1 through trailing 9s.",
+19:"Use similar triangles to compare two inscribed-square sizes.",
+20:"Let x equal log base b of a and solve the resulting power equation.",
+})
+
+SOL.update({
+11:[
+("Use the polygon angle sum",r"The sum of the interior angles of an \(n\)-gon is \[180(n-2),\] so the true full sum must be a multiple of $180$."),
+("Add the missing angle",r"Let the forgotten angle be \(\theta\). Then \[2017+\theta\] must be a multiple of $180$."),
+("Find the needed remainder",r"Since \[2017=180\cdot11+37,\] we need to add \[180-37=143\] to reach the next multiple of $180$."),
+("Check that it is a valid angle",r"A convex polygon angle must be less than $180^\circ$, and \(143^\circ\) is valid."),
+("Conclude",r"The forgotten angle is $\boxed{143^\circ}$."),
+],
+12:[
+("Translate the condition",r"Horse \(k\) is at the starting point exactly at times that are multiples of \(k\). So we need the smallest positive integer \(T\) divisible by at least five numbers from \(1\) through \(10\)."),
+("Test small candidates conceptually",r"A number less than $12$ cannot be divisible by five different numbers from \(1\) through \(10\). For example, $6$ is divisible by \(1,2,3,6\), only four numbers."),
+("Check T equals 12",r"The number \(12\) is divisible by \[1,2,3,4,6,\] which are five of the horse lap times."),
+("Find the digit sum",r"Thus the least such time is \(T=12\), and the sum of its digits is \[1+2=3.\]"),
+("Conclude",r"The answer is $\boxed{3}$."),
+],
+13:[
+("Use hours for time",r"The usual trip takes $180$ minutes, or $3$ hours. Let Sharon's usual speed be \(v\) miles per hour, so the total distance is \(3v\)."),
+("Handle the first third",r"The first third of the trip is distance \(v\), so at her usual speed it takes exactly $1$ hour."),
+("Use the total storm-day time",r"The storm-day trip takes \(276\) minutes, or \(4.6\) hours. Therefore the last two thirds take \(4.6-1=3.6\) hours."),
+("Set up the slower-speed equation",r"The last two thirds have distance \(2v\), and the speed is \(v-20\). Thus \[\frac{2v}{v-20}=3.6.\]"),
+("Solve and find the distance",r"This gives \[2v=3.6v-72,\] so \(1.6v=72\) and \(v=45\). The full distance is \[3v=135.\]"),
+("Conclude",r"The distance is $\boxed{135}$ miles."),
+],
+14:[
+("Start with all arrangements",r"Without restrictions, the five people can sit in \[5!=120\] ways."),
+("Define the bad events",r"Let \(AB\) mean Alice sits next to Bob, \(AC\) mean Alice sits next to Carla, and \(DE\) mean Derek sits next to Eric. We subtract arrangements with any of these bad adjacencies."),
+("Count single bad events",r"Each adjacent pair can be treated as a block in \(2\cdot4!=48\) ways. So the three single counts contribute \(48+48+48\)."),
+("Count overlaps",r"For \(AB\) and \(AC\), Alice must be between Bob and Carla, giving \(2\cdot3!=12\) arrangements. For \(AB\) with \(DE\), or \(AC\) with \(DE\), there are \(2\cdot2\cdot3!=24\) arrangements each."),
+("Add back the triple overlap",r"If all three bad adjacencies occur, Alice is between Bob and Carla and Derek is next to Eric, giving \(2\cdot2\cdot2!=8\) arrangements."),
+("Apply inclusion-exclusion",r"The number of bad arrangements is \[48+48+48-12-24-24+8=92.\] Therefore the valid arrangements total \[120-92=28.\]"),
+("Conclude",r"The answer is $\boxed{28}$."),
+],
+15:[
+("Check the early positive interval",r"For \(0<x<\frac{\pi}{2}\), all three terms \(\sin x\), \(2\cos x\), and \(3\tan x\) are positive, so there is no zero there."),
+("Remove the interval from pi over 2 to pi",r"On \(\frac{\pi}{2}<x<\pi\), multiply by the negative number \(\cos x\). The equation \(f(x)=0\) is equivalent to \[\sin x\cos x+2\cos^2x+3\sin x=0.\] In this interval, this expression is positive, so \(f(x)\) cannot be zero."),
+("Look near pi",r"At \(x=\pi\), \[f(\pi)=0+2(-1)+0=-2,\] so the function is negative just after \(\pi\)."),
+("Test x equals 4",r"At \(x=4\), \(\sin4<0\), \(\cos4<0\), and \(\tan4>0\). Numerically, \[f(4)=\sin4+2\cos4+3\tan4>0.\]"),
+("Locate the first root",r"Since \(f\) changes from negative near \(\pi\approx3.14\) to positive by \(x=4\), the smallest positive zero lies between \(3\) and \(4\)."),
+("Conclude",r"The answer is $\boxed{(3,4)}$."),
+],
+17:[
+("Write the 24th roots",r"The solutions to \(z^{24}=1\) are \[z=e^{2\pi ik/24}\] for \(k=0,1,2,\ldots,23\)."),
+("Raise to the sixth power",r"Then \[z^6=e^{2\pi ik/4}=i^k.\]"),
+("Decide when this is real",r"The powers of \(i\) are real exactly when \(k\) is even: \(i^0=1\), \(i^2=-1\), and the pattern repeats."),
+("Count even k values",r"Among \(0,1,\ldots,23\), exactly $12$ values of \(k\) are even."),
+("Conclude",r"There are $\boxed{12}$ such complex numbers."),
+],
+18:[
+("Understand adding 1",r"When adding $1$ to \(n\), the digit sum usually increases by $1$. But if \(n\) ends in trailing $9$s, each trailing $9$ becomes $0$, reducing the digit sum by $9$."),
+("Write the formula",r"If \(n\) ends in exactly \(k\) trailing $9$s, then \[S(n+1)=S(n)+1-9k=1275-9k.\]"),
+("Use congruence",r"So \(S(n+1)\) must be congruent to \(1275\) modulo $9$. Since \(1275\equiv6\pmod9\), the only listed value congruent to $6$ modulo $9$ is \(1239\)."),
+("Check that it is possible",r"We have \[1275-1239=36=9\cdot4,\] so this corresponds to \(k=4\) trailing $9$s, which is possible."),
+("Conclude",r"The possible value is $\boxed{1239}$."),
+],
+19:[
+("Place the right triangle on axes",r"Put the legs of lengths $3$ and $4$ on the coordinate axes. The hypotenuse has equation \[\frac{X}{3}+\frac{Y}{4}=1.\]"),
+("Find the square at the right angle",r"The square with one vertex at the right angle has opposite vertex \((x,x)\) on the hypotenuse. Thus \[\frac{x}{3}+\frac{x}{4}=1,\] so \[x=\frac{12}{7}.\]"),
+("Use the altitude to the hypotenuse",r"The altitude from the right angle to the hypotenuse is \[h=\frac{3\cdot4}{5}=\frac{12}{5}.\]"),
+("Find the square on the hypotenuse",r"If the square on the hypotenuse has side \(y\), then the slice parallel to the hypotenuse at distance \(y\) has length \(5\left(1-\frac yh\right)\). This must equal \(y\), so \[y=5\left(1-\frac yh\right).\]"),
+("Solve for y",r"Using \(h=\frac{12}{5}\), \[y=\frac{5h}{5+h}=\frac{5\cdot12/5}{5+12/5}=\frac{60}{37}.\]"),
+("Compute the ratio",r"Therefore \[\frac{x}{y}=\frac{12/7}{60/37}=\frac{37}{35}.\]"),
+("Conclude",r"The answer is \[\boxed{\frac{37}{35}}.\]"),
+],
+20:[
+("Substitute one variable",r"Let \[x=\log_b a.\] Then \(\log_b(a^{2017})=2017\log_b a=2017x\)."),
+("Solve the equation in x",r"The equation becomes \[x^{2017}=2017x,\] or \[x(x^{2016}-2017)=0.\]"),
+("Count possible x values",r"There are three real solutions: \[x=0,\quad x=2017^{1/2016},\quad x=-2017^{1/2016}.\]"),
+("Convert back to a",r"For each allowed integer base \(b\), each real value of \(x\) gives exactly one positive value \(a=b^x\)."),
+("Count bases",r"The integer \(b\) can be any value from $2$ through $200$, inclusive, giving \(199\) choices. With $3$ choices of \(x\) for each base, the total is \[3\cdot199=597.\]"),
+("Conclude",r"The answer is $\boxed{597}$."),
 ],
 })
 

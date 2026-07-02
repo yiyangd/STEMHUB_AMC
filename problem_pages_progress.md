@@ -3772,3 +3772,19 @@
 - Pushed: pending
 - Next batch should start from: 2017 AMC 12A Problem 11
 - Review notes: none.
+
+## Batch 233: 2017 AMC 12A Problems 11-15, 17-20
+
+- Start time: 2026-07-02T00:32:07-07:00
+- End time: 2026-07-02T00:32:09-07:00
+- Processed contest: AMC12
+- Processed range: 2017 AMC 12A Problems 11-15, 17-20
+- Generated count: 9
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2017 AMC 12A Problem 16: tangent semicircle diagram required; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2017 AMC 12A Problem 21
+- Review notes: none.
