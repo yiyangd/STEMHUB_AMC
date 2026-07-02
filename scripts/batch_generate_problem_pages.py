@@ -3,20 +3,17 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 227
+BATCH_NUMBER = 228
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2016_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,16,18,19,20}
+TARGET_NUMBERS = {21,22,23,24}
 SKIPPED = [
-    "2016 AMC 12A Problem 13: OCR text is unreliable for the probability threshold; skipped",
-    "2016 AMC 12A Problem 14: cube-labeling proof risk is high for unattended generation; skipped",
-    "2016 AMC 12A Problem 15: tangent-circle geometry choices/OCR are unclear; skipped",
-    "2016 AMC 12A Problem 17: exterior equilateral-triangle diagram geometry skipped for reliability",
+    "2016 AMC 12A Problem 25: long blackboard-square process has high derivation/OCR risk; skipped",
 ]
-BATCH_LABEL = "2016 AMC 12A Problems 11,12,16,18,19,20"
-NEXT_START = "2016 AMC 12A Problem 21"
+BATCH_LABEL = "2016 AMC 12A Problems 21-24"
+NEXT_START = "2016 AMC 12B Problem 1"
 
-ANS={11:("E","64"),12:("C",r"2:1"),16:("D","5"),18:("D","325"),19:("B","151"),20:("A","109")}
+ANS={21:("E","500"),22:("A","15"),23:("C",r"\frac12"),24:("B","9")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3130,6 +3127,55 @@ SOL.update({
 ("Solve for x",r"The equation becomes \[336x=100,\] so \[x=\frac{100}{336}=\frac{25}{84}.\]"),
 ("Add numerator and denominator",r"The fraction is already in lowest terms, so \(p=25\) and \(q=84\). Therefore \[p+q=25+84=109.\]"),
 ("Conclude",r"The answer is $\boxed{109}$."),
+],
+})
+
+OV.update({
+21:(r"A quadrilateral is inscribed in a circle of radius $200\sqrt2$. Three of the sides of this quadrilateral have length $200$. What is the length of the fourth side?",[("A","200"),("B",r"$200\sqrt2$"),("C",r"$200\sqrt3$"),("D",r"$300\sqrt2$"),("E","500")]),
+22:(r"How many ordered triples $(x,y,z)$ of positive integers satisfy \[\operatorname{lcm}(x,y)=72,\qquad \operatorname{lcm}(x,z)=600,\qquad \operatorname{lcm}(y,z)=900?\]",[("A","15"),("B","16"),("C","24"),("D","27"),("E","64")]),
+23:(r"Three numbers in the interval $[0,1]$ are chosen independently and at random. What is the probability that the chosen numbers are the side lengths of a triangle with positive area?",[("A",r"$\frac16$"),("B",r"$\frac13$"),("C",r"$\frac12$"),("D",r"$\frac23$"),("E",r"$\frac56$")]),
+24:(r"There is a smallest positive real number $a$ such that there exists a positive real number $b$ for which all the roots of the polynomial \[x^3-ax^2+bx-a\] are real. In fact, for this value of $a$, the value of $b$ is unique. What is this value of $b$?",[("A","8"),("B","9"),("C","10"),("D","11"),("E","12")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Convert equal chord lengths into equal central angles and use a triple-angle identity.",
+22:"Count possible prime exponents independently for each prime in the three LCM equations.",
+23:"Use the complement: one chosen length is at least the sum of the other two.",
+24:"Use Vieta's formulas and AM-GM on the real roots with positive b.",
+})
+
+SOL.update({
+21:[
+("Convert the repeated side length to a central angle",r"Each side of a cyclic quadrilateral is a chord. Let the central angle for a chord of length $200$ be $\theta$. Since the radius is $200\sqrt2$, \[200=2(200\sqrt2)\sin\frac{\theta}{2},\] so \[\sin\frac{\theta}{2}=\frac{1}{2\sqrt2}.\]"),
+("Use the arcs around the circle",r"The three equal sides use three equal central angles, each equal to $\theta$. The fourth side corresponds to the remaining central angle \[2\pi-3\theta.\]"),
+("Write the fourth chord length",r"The fourth chord length is \[2(200\sqrt2)\sin\left(\frac{2\pi-3\theta}{2}\right)=400\sqrt2\sin\left(\pi-\frac{3\theta}{2}\right).\] Since $\sin(\pi-u)=\sin u$, this is \[400\sqrt2\sin\frac{3\theta}{2}.\]"),
+("Apply the triple-angle identity",r"Let $\alpha=\frac{\theta}{2}$. We know \(\sin\alpha=\frac{1}{2\sqrt2}\). Then \[\sin3\alpha=3\sin\alpha-4\sin^3\alpha=\frac{5}{4\sqrt2}.\]"),
+("Compute the chord",r"Thus the fourth side has length \[400\sqrt2\cdot\frac{5}{4\sqrt2}=500.\]"),
+("Conclude",r"The length of the fourth side is $\boxed{500}$."),
+],
+22:[
+("Factor the three LCM values",r"We have \[72=2^3\cdot3^2,\quad600=2^3\cdot3\cdot5^2,\quad900=2^2\cdot3^2\cdot5^2.\] Because LCMs work prime by prime, we can count exponent choices for $2$, $3$, and $5$ separately."),
+("Count exponents for prime 2",r"Let the exponents of $2$ in $x,y,z$ be $a,b,c$. Then \[\max(a,b)=3,\quad\max(a,c)=3,\quad\max(b,c)=2.\] The last equation forces $b,c\le2$ and at least one of them equals $2$, while the first two force $a=3$. There are \[3^2-2^2=5\] choices for $(b,c)$."),
+("Count exponents for prime 3",r"For the prime $3$, let the exponents be $a,b,c$. The equations are \[\max(a,b)=2,\quad\max(a,c)=1,\quad\max(b,c)=2.\] Since $a,c\le1$, we must have $b=2$. Also \(\max(a,c)=1\), giving $3$ choices for $(a,c)$: \[(1,0),(0,1),(1,1).\]"),
+("Count exponents for prime 5",r"For the prime $5$, the first LCM has exponent $0$, so $x$ and $y$ both have exponent $0$. The other two LCMs require $z$ to have exponent $2$. This gives $1$ choice."),
+("Multiply independent choices",r"The total number of ordered triples is \[5\cdot3\cdot1=15.\]"),
+("Conclude",r"The answer is $\boxed{15}$."),
+],
+23:[
+("Use the triangle inequality",r"Three positive lengths form a triangle exactly when no one length is at least the sum of the other two. Since the numbers are chosen continuously, equality has probability $0$, so we can use $>$ or $\ge$ without changing the probability."),
+("Count the complement for one side",r"Let the three chosen numbers be $x,y,z$. Consider the bad event \(x\ge y+z\). For fixed $y$ and $z$ with $y+z\le1$, the variable $x$ can range from $y+z$ to $1$, a length of \(1-y-z\)."),
+("Compute that volume",r"The probability volume for \(x\ge y+z\) is \[\int_0^1\int_0^{1-y}(1-y-z)\,dz\,dy=\frac16.\]"),
+("Use symmetry",r"The same probability applies to \(y\ge x+z\) and to \(z\ge x+y\). These three bad events cannot overlap except on boundary cases of probability $0$."),
+("Subtract from 1",r"The total bad probability is \[3\cdot\frac16=\frac12.\] Therefore the good probability is \[1-\frac12=\frac12.\]"),
+("Conclude",r"The probability is \[\boxed{\frac12}.\]"),
+],
+24:[
+("Use Vieta's formulas",r"Let the real roots be $r,s,t$. From \[x^3-ax^2+bx-a,\] Vieta's formulas give \[r+s+t=a,\quad rs+rt+st=b,\quad rst=a.\] Thus \[r+s+t=rst=a.\]"),
+("Use the positivity of b",r"The problem requires $b>0$. If two roots were negative and one positive, then \(rs+rt+st\) would be negative under the condition \(r+s+t=rst>0\). So the roots must be positive for the minimizing case."),
+("Apply AM-GM",r"For positive roots, \[r+s+t\ge3\sqrt[3]{rst}.\] Since \(r+s+t=rst=a\), this becomes \[a\ge3\sqrt[3]{a}.\]"),
+("Find the smallest possible a",r"Dividing by \(\sqrt[3]{a}\) gives \[a^{2/3}\ge3,\] so \[a\ge3\sqrt3.\] Equality occurs when \[r=s=t=\sqrt3.\]"),
+("Find the corresponding b",r"When all three roots are $\sqrt3$, we have \[b=rs+rt+st=3(\sqrt3)^2=9.\] This also shows the value of $b$ is unique at the minimum."),
+("Conclude",r"The required value is $\boxed{9}$."),
 ],
 })
 
