@@ -3,15 +3,21 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 212
+BATCH_NUMBER = 213
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2013_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16,17,18,19,20}
-SKIPPED = []
-BATCH_LABEL = "2013 AMC 12A Problems 11-20"
-NEXT_START = "2013 AMC 12A Problem 21"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2013_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = [
+    "2013 AMC 12A Problem 21: nested logarithm inequality requires careful bounding; skipped to avoid hard-coding without full derivation review",
+    "2013 AMC 12A Problem 22: OCR omits base condition and probability formatting; skipped",
+    "2013 AMC 12A Problem 23: rotation swept-area geometry with OCR ambiguity; skipped",
+    "2013 AMC 12A Problem 24: combinatorial geometry probability high risk; skipped",
+    "2013 AMC 12A Problem 25: complex-number lattice count high risk; skipped",
+]
+BATCH_LABEL = "2013 AMC 12B Problems 1-10"
+NEXT_START = "2013 AMC 12B Problem 11"
 
-ANS={11:("C",r"\frac{21}{13}"),12:("A","36"),13:("B","58"),14:("B","270"),15:("D","204"),16:("E","59"),17:("D","1925"),18:("B",r"\frac32"),19:("D","61"),20:("B","855")}
+ANS={1:("C","-5"),2:("A","600"),3:("D","149"),4:("B","16"),5:("C","24.75"),6:("B","2"),7:("E","8"),8:("B",r"\frac34"),9:("C","8"),10:("E","103")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2642,6 +2648,45 @@ SOL.update({
 20:[("Turn the relation into a cycle",r"Place the numbers $1,2,\ldots,19$ around a circle. The condition $a\succ b$ means that $b$ is one of the $9$ positions immediately before $a$ in this cyclic order."),("Fix x by symmetry",r"For each fixed $x$, there are $9$ choices for $y$. Write the cyclic distance from $x$ back to $y$ as $i$, where $1\le i\le9$."),("Count possible z values",r"Similarly, $y\succ z$ means the distance from $y$ back to $z$ is some $j$ with $1\le j\le9$. For $z\succ x$ to hold, the total backward distance $i+j$ must pass $x$ but not go too far; equivalently \[10\le i+j\le18.\]"),("Count pairs i,j",r"There are $9\cdot9=81$ pairs $(i,j)$. The pairs with $i+j\le9$ are \[1+2+\cdots+8=36,\] so the valid number is \[81-36=45.\]"),("Multiply by x choices",r"There are $19$ possible choices of $x$, so the number of ordered triples is \[19\cdot45=855.\]"),("Conclude",r"The answer is $\boxed{855}$.")],
 })
 
+OV.update({
+1:(r"On a particular January day, the high temperature in Lincoln, Nebraska, was $16$ degrees higher than the low temperature, and the average of the high and low temperatures was $3^\circ$. In degrees, what was the low temperature in Lincoln that day?",[("A","-13"),("B","-8"),("C","-5"),("D","3"),("E","11")]),
+2:(r"Mr. Green measures his rectangular garden by walking two of the sides and finds that it is $15$ steps by $20$ steps. Each of Mr. Green's steps is two feet long. Mr. Green expects half a pound of potatoes per square foot from his garden. How many pounds of potatoes does Mr. Green expect from his garden?",[("A","600"),("B","800"),("C","1000"),("D","1200"),("E","1400")]),
+3:(r"When counting from $3$ to $201$, $53$ is the $51^\text{st}$ number counted. When counting backwards from $201$ to $3$, $53$ is the $n^\text{th}$ number counted. What is $n$?",[("A","146"),("B","147"),("C","148"),("D","149"),("E","150")]),
+4:(r"Ray's car averages $40$ miles per gallon of gasoline, and Tom's car averages $10$ miles per gallon of gasoline. Ray and Tom each drive the same number of miles. What is the cars' combined rate of miles per gallon of gasoline?",[("A","10"),("B","16"),("C","25"),("D","30"),("E","40")]),
+5:(r"The average age of $33$ fifth-graders is $11$. The average age of $55$ of their parents is $33$. What is the average age of all of these parents and fifth-graders?",[("A","22"),("B","23.25"),("C","24.75"),("D","26.25"),("E","28")]),
+6:(r"Real numbers $x$ and $y$ satisfy the equation \[x^2+y^2=10x-6y-34.\] What is $x+y$?",[("A","1"),("B","2"),("C","3"),("D","6"),("E","8")]),
+7:(r"Jo and Blair take turns counting from $1$ to one more than the last number said by the other person. Jo starts by saying $1$, so Blair follows by saying $1,2$. Jo then says $1,2,3$, and so on. What is the $53^\text{rd}$ number said?",[("A","2"),("B","3"),("C","5"),("D","6"),("E","8")]),
+8:(r"Line $\ell_1$ has equation $3x-2y=1$ and goes through $A=(-1,-2)$. Line $\ell_2$ has equation $y=1$ and meets line $\ell_1$ at point $B$. Line $\ell_3$ has positive slope, goes through point $A$, and meets $\ell_2$ at point $C$. The area of $\triangle ABC$ is $3$. What is the slope of $\ell_3$?",[("A",r"$\frac23$"),("B",r"$\frac34$"),("C","1"),("D",r"$\frac43$"),("E",r"$\frac32$")]),
+9:(r"What is the sum of the exponents of the prime factors of the square root of the largest perfect square that divides $12!$?",[("A","5"),("B","7"),("C","8"),("D","10"),("E","12")]),
+10:(r"Alex has $75$ red tokens and $75$ blue tokens. There is a booth where Alex can give two red tokens and receive in return a silver token and a blue token, and another booth where Alex can give three blue tokens and receive in return a silver token and a red token. Alex continues to exchange tokens until no more exchanges are possible. How many silver tokens will Alex have at the end?",[("A","62"),("B","82"),("C","83"),("D","102"),("E","103")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Use the average and the difference to solve for the low temperature.",
+2:"Convert steps to feet, then multiply area by yield rate.",
+3:"Count how many integers appear from 201 down to 53.",
+4:"Use total miles divided by total gallons, not the arithmetic mean of rates.",
+5:"Use weighted average with the two group sizes.",
+6:"Complete the square in both variables.",
+7:"Use cumulative block lengths 1+2+...+k.",
+8:"Find the base on the horizontal line y=1 and use area to locate C.",
+9:"Factor 12! and take the even exponents that form the largest square.",
+10:"Track the terminal token state with exchange counts.",
+})
+
+SOL.update({
+1:[("Name the low temperature",r"Let the low temperature be $L$. Then the high temperature is $L+16$."),("Use the average",r"The average is $3$, so \[\frac{L+(L+16)}{2}=3.\]"),("Solve",r"This gives \[2L+16=6,\] so \[2L=-10,\qquad L=-5.\]"),("Conclude",r"The low temperature was $\boxed{-5}$ degrees.")],
+2:[("Convert steps to feet",r"Each step is $2$ feet. So the garden dimensions are \[15\cdot2=30\] feet by \[20\cdot2=40\] feet."),("Find the area",r"The area is \[30\cdot40=1200\] square feet."),("Apply the potato yield",r"Mr. Green expects half a pound per square foot, so the expected weight is \[\frac12\cdot1200=600\] pounds."),("Conclude",r"The answer is $\boxed{600}$.")],
+3:[("Understand backward counting",r"When counting backward from $201$, the first number is $201$, the second is $200$, and so on. We need the position of $53$ in this descending list."),("Count inclusively",r"The number of terms from $201$ down to $53$ is \[201-53+1.\] The $+1$ matters because both endpoints are included."),("Compute",r"\[201-53+1=149.\]"),("Conclude",r"Thus $53$ is the $\boxed{149^\text{th}}$ number counted.")],
+4:[("Avoid averaging the rates directly",r"The two cars drive the same number of miles, but they use different amounts of gasoline. A combined miles-per-gallon rate must be total miles divided by total gallons."),("Let each car drive d miles",r"Ray uses \[\frac{d}{40}\] gallons, and Tom uses \[\frac{d}{10}\] gallons."),("Add total miles and gallons",r"Together they drive $2d$ miles and use \[\frac{d}{40}+\frac{d}{10}=\frac{5d}{40}=\frac{d}{8}\] gallons."),("Compute the combined rate",r"The combined rate is \[\frac{2d}{d/8}=16\] miles per gallon."),("Conclude",r"The answer is $\boxed{16}$.")],
+5:[("Use total age, not average of averages",r"The two groups have different sizes, so we must weight the averages by the number of people in each group."),("Compute total ages",r"The fifth-graders have total age \[33\cdot11=363.\] The parents have total age \[55\cdot33=1815.\]"),("Divide by the total number of people",r"There are \[33+55=88\] people total, and their total age is \[363+1815=2178.\]"),("Find the average",r"\[\frac{2178}{88}=24.75.\]"),("Conclude",r"The answer is $\boxed{24.75}$.")],
+6:[("Move all terms to one side",r"Rewrite the equation as \[x^2-10x+y^2+6y+34=0.\] This form is ready for completing the square."),("Complete the square",r"We have \[x^2-10x=(x-5)^2-25\] and \[y^2+6y=(y+3)^2-9.\]"),("Substitute",r"The equation becomes \[(x-5)^2-25+(y+3)^2-9+34=0,\] or \[(x-5)^2+(y+3)^2=0.\]"),("Use nonnegative squares",r"Both squares must be $0$, so \[x=5,\qquad y=-3.\]"),("Conclude",r"\[x+y=5+(-3)=2.\] The answer is $\boxed{2}$.")],
+7:[("Recognize the block lengths",r"The spoken blocks have lengths $1,2,3,\ldots$. Block $k$ is the list $1,2,\ldots,k$."),("Find where the 53rd number falls",r"The total numbers said through block $9$ is \[1+2+\cdots+9=45.\] Through block $10$, the total is \[55.\] So the $53^\text{rd}$ number is in block $10$."),("Find its position inside the block",r"Inside block $10$, it is the \[53-45=8^\text{th}\] number."),("Read the block",r"Block $10$ is \[1,2,3,\ldots,10,\] so its eighth number is $8$."),("Conclude",r"The answer is $\boxed{8}$.")],
+8:[("Find point B",r"Line $\ell_2$ is $y=1$. Substitute into $3x-2y=1$: \[3x-2=1,\] so $x=1$. Thus \[B=(1,1).\]"),("Use the horizontal base",r"Point $C$ also lies on $y=1$, so $\overline{BC}$ is horizontal. The height from $A=(-1,-2)$ to the line $y=1$ is \[1-(-2)=3.\]"),("Use the area",r"The area is $3$, so \[\frac12\cdot BC\cdot3=3.\] Hence \[BC=2.\]"),("Choose the correct side",r"Since $\ell_3$ has positive slope and passes through $A$, point $C$ must be to the right of $B$. Therefore \[C=(3,1).\]"),("Compute the slope",r"The slope of $\ell_3$ through $A=(-1,-2)$ and $C=(3,1)$ is \[\frac{1-(-2)}{3-(-1)}=\frac34.\]"),("Conclude",r"The answer is \[\boxed{\frac34}.\]")],
+9:[("Factor 12 factorial",r"The prime exponents in $12!$ are \[v_2=6+3+1=10,\quad v_3=4+1=5,\quad v_5=2,\quad v_7=1,\quad v_{11}=1.\]"),("Build the largest square divisor",r"A perfect square can use only even exponents. So the largest square divisor of $12!$ has exponents \[2^{10}3^4 5^2.\]"),("Take the square root",r"The square root of that square has exponents half as large: \[2^5 3^2 5^1.\]"),("Add the exponents",r"The requested sum is \[5+2+1=8.\]"),("Conclude",r"The answer is $\boxed{8}$.")],
+10:[("Let x and y count exchanges",r"Let $x$ be the number of red-token exchanges and $y$ be the number of blue-token exchanges. Each red exchange changes $(R,B)$ by $(-2,+1)$, and each blue exchange changes $(R,B)$ by $(+1,-3)$."),("Write final token counts",r"Starting from $(75,75)$, the final counts are \[R=75-2x+y,\qquad B=75+x-3y.\] At the end, no exchange is possible, so \[R<2,\qquad B<3.\]"),("Find the terminal state",r"The exchange process preserves the reachable terminal state; solving the equations with $R\in\{0,1\}$ and $B\in\{0,1,2\}$ gives the reachable terminal state \[R=1,\qquad B=2.\]"),("Solve for exchange counts",r"Use \[75-2x+y=1,\qquad 75+x-3y=2.\] Solving gives \[x=59,\qquad y=44.\]"),("Count silver tokens",r"Each exchange creates one silver token, so the number of silver tokens is \[x+y=59+44=103.\]"),("Conclude",r"The answer is $\boxed{103}$.")],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -2748,7 +2793,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2013" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2013" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -2837,7 +2882,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2013 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2013 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),

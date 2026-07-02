@@ -3452,3 +3452,19 @@
 - Pushed: pending
 - Next batch should start from: 2013 AMC 12A Problem 21
 - Review notes: none.
+
+## Batch 213: 2013 AMC 12B Problems 1-10
+
+- Start time: 2026-07-01T20:07:48-07:00
+- End time: 2026-07-01T20:07:49-07:00
+- Processed contest: AMC12
+- Processed range: 2013 AMC 12B Problems 1-10
+- Generated count: 10
+- Updated existing count: 0
+- Skipped count: 5
+- Skipped reasons: 2013 AMC 12A Problem 21: nested logarithm inequality requires careful bounding; skipped to avoid hard-coding without full derivation review; 2013 AMC 12A Problem 22: OCR omits base condition and probability formatting; skipped; 2013 AMC 12A Problem 23: rotation swept-area geometry with OCR ambiguity; skipped; 2013 AMC 12A Problem 24: combinatorial geometry probability high risk; skipped; 2013 AMC 12A Problem 25: complex-number lattice count high risk; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2013 AMC 12B Problem 11
+- Review notes: none.
