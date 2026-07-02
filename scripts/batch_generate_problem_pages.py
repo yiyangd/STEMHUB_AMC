@@ -3,15 +3,17 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 229
+BATCH_NUMBER = 230
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2016_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
-SKIPPED = []
-BATCH_LABEL = "2016 AMC 12B Problems 1-10"
-NEXT_START = "2016 AMC 12B Problem 11"
+TARGET_NUMBERS = {11,12,13,14,15,16,18,19,20}
+SKIPPED = [
+    "2016 AMC 12B Problem 17: angle-bisector/altitude geometry depends on the original diagram; skipped",
+]
+BATCH_LABEL = "2016 AMC 12B Problems 11-16, 18-20"
+NEXT_START = "2016 AMC 12B Problem 21"
 
-ANS={1:("D","10"),2:("A","2"),3:("D","4032"),4:("C","135"),5:("B","Saturday"),6:("C","8"),7:("D","64"),8:("D",r"\frac{100}{3}"),9:("B","336"),10:("A","4")}
+ANS={11:("D","50"),12:("C","7"),13:("E","5.5"),14:("E","4"),15:("D","729"),16:("E","7"),18:("B",r"\pi+2"),19:("B",r"\frac17"),20:("A","385")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3275,6 +3277,102 @@ SOL.update({
 ("Use the given area",r"We are told the area is $16$, so \[2(a-b)(a+b)=16,\] or \[(a-b)(a+b)=8.\]"),
 ("Solve the integer factorization",r"Since $a>b>0$, both factors are positive. The factor pair that gives integer $a$ and $b$ is \[a-b=2,\quad a+b=4.\] Thus \(a=3\) and \(b=1\)."),
 ("Conclude",r"Therefore \[a+b=4,\] so the answer is $\boxed{4}$."),
+],
+})
+
+OV.update({
+11:(r"How many squares whose sides are parallel to the axes and whose vertices have integer coordinates lie entirely within the region bounded by the line $y=\pi x$, the line $y=-0.1$, and the line $x=5.1$?",[("A","30"),("B","41"),("C","45"),("D","50"),("E","57")]),
+12:(r"All the numbers $1,2,3,4,5,6,7,8,9$ are written in a $3\times3$ array of squares, one number in each square, in such a way that if two numbers are consecutive then they occupy squares that share an edge. The numbers in the four corners add up to $18$. What is the number in the center?",[("A","5"),("B","6"),("C","7"),("D","8"),("E","9")]),
+13:(r"Alice and Bob live $10$ miles apart. One day Alice looks due north from her house and sees an airplane. At the same time Bob looks due west from his house and sees the same airplane. The angle of elevation of the airplane is $30^\circ$ from Alice's position and $60^\circ$ from Bob's position. Which of the following is closest to the airplane's altitude, in miles?",[("A","3.5"),("B","4"),("C","4.5"),("D","5"),("E","5.5")]),
+14:(r"The sum of an infinite geometric series is a positive number $S$, and the second term in the series is $1$. What is the smallest possible value of $S$?",[("A",r"$\frac{1+\sqrt5}{2}$"),("B","2"),("C",r"$\sqrt5$"),("D","3"),("E","4")]),
+15:(r"All the numbers $2,3,4,5,6,7$ are assigned to the six faces of a cube, one number to each face. For each of the eight vertices of the cube, a product of three numbers is computed, where the three numbers are the numbers assigned to the three faces that include that vertex. What is the greatest possible value of the sum of these eight products?",[("A","312"),("B","343"),("C","625"),("D","729"),("E","1680")]),
+16:(r"In how many ways can $345$ be written as the sum of an increasing sequence of two or more consecutive positive integers?",[("A","1"),("B","3"),("C","5"),("D","6"),("E","7")]),
+18:(r"What is the area of the region enclosed by the graph of the equation \[x^2+y^2=|x|+|y|?\]",[("A",r"$\pi$"),("B",r"$\pi+2$"),("C",r"$\pi+2\sqrt2$"),("D",r"$2\pi+2$"),("E",r"$2\pi+2\sqrt2$")]),
+19:(r"Tom, Dick, and Harry are playing a game. Starting at the same time, each of them flips a fair coin repeatedly until he gets his first head, at which point he stops. What is the probability that all three flip their coins the same number of times?",[("A",r"$\frac18$"),("B",r"$\frac17$"),("C",r"$\frac16$"),("D",r"$\frac14$"),("E",r"$\frac13$")]),
+20:(r"A set of teams held a round-robin tournament in which every team played every other team exactly once. Every team won $10$ games and lost $10$ games; there were no ties. How many sets of three teams $\{A,B,C\}$ were there in which $A$ beat $B$, $B$ beat $C$, and $C$ beat $A$?",[("A","385"),("B","665"),("C","945"),("D","1140"),("E","1330")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Count integer-coordinate axis-parallel squares by their side length and lower-left corner.",
+12:"Use checkerboard coloring of the 3 by 3 grid and parity of the consecutive-number path.",
+13:"Set up the horizontal right triangle formed by the airplane's ground projection.",
+14:"Express the geometric sum in terms of the common ratio and maximize a quadratic denominator.",
+15:"Pair opposite faces and maximize the product of the three opposite-face sums.",
+16:"Use the divisor-count interpretation of representations as consecutive sums.",
+18:"Use polar coordinates and symmetry with absolute values.",
+19:"Sum the probabilities that all three first heads occur on the same flip number.",
+20:"Count all triples of teams, subtracting transitive triples.",
+})
+
+SOL.update({
+11:[
+("Describe an integer square",r"An axis-parallel square with integer-coordinate vertices has an integer side length $s$ and an integer lower-left corner \((i,j)\)."),
+("Translate the three boundaries",r"To lie above \(y=-0.1\), the integer lower edge must have \(j\ge0\). To lie left of \(x=5.1\), the right edge must satisfy \(i+s\le5\)."),
+("Use the slanted line",r"The most restrictive point for the line \(y=\pi x\) is the upper-left corner \((i,j+s)\), because that has the smallest $x$ and largest $y$. So we need \[j+s\le \pi i.\]"),
+("Count by side length",r"For \(s=1\), the possible integer lower-left corners give $30$ squares. For \(s=2\), they give $15$ squares. For \(s=3\), they give $5$ squares. No larger side length can fit because \(i+s\le5\) and the slanted boundary becomes too restrictive."),
+("Add the counts",r"The total number of squares is \[30+15+5=50.\]"),
+("Conclude",r"The answer is $\boxed{50}$."),
+],
+12:[
+("View consecutive numbers as a path",r"The condition says that the cells containing \(1,2,3,\ldots,9\) form a path through the $3\times3$ grid, moving edge-to-edge at each step."),
+("Color the grid like a checkerboard",r"In a $3\times3$ checkerboard coloring, the four corners and the center have the same color. The other four edge-center cells have the opposite color."),
+("Use parity of the path",r"A path that moves edge-to-edge alternates colors at every step. Therefore the numbers \(1,3,5,7,9\) occupy one color class, and the numbers \(2,4,6,8\) occupy the other."),
+("Identify the corner-plus-center sum",r"The four corners and center together must contain exactly the five odd-position numbers \(1,3,5,7,9\). Their sum is \[1+3+5+7+9=25.\]"),
+("Use the given corner sum",r"The corners add to $18$, so the center must be \[25-18=7.\]"),
+("Conclude",r"The number in the center is $\boxed{7}$."),
+],
+13:[
+("Set up the ground projection",r"Let the airplane's ground projection be directly north of Alice and directly west of Bob. If the airplane's altitude is $h$, then Alice's horizontal distance to the projection is \(h/\tan30^\circ=\sqrt3h\)."),
+("Use Bob's angle",r"Bob's angle of elevation is \(60^\circ\), so Bob's horizontal distance to the projection is \[h/\tan60^\circ=\frac{h}{\sqrt3}.\]"),
+("Use the distance between Alice and Bob",r"These two horizontal distances are perpendicular because Alice looks north and Bob looks west. Since Alice and Bob are $10$ miles apart, \[(\sqrt3h)^2+\left(\frac{h}{\sqrt3}\right)^2=10^2.\]"),
+("Solve for h",r"This gives \[3h^2+\frac{h^2}{3}=100,\] so \[\frac{10}{3}h^2=100,\quad h^2=30.\] Hence \[h=\sqrt{30}\approx5.48.\]"),
+("Choose the closest answer",r"The closest listed value is $5.5$."),
+("Conclude",r"The airplane's altitude is closest to $\boxed{5.5}$ miles."),
+],
+14:[
+("Name the first term and ratio",r"Let the first term be $a$ and the common ratio be $r$, with \(|r|<1\). The second term is \(ar=1\), so \(a=\frac1r\)."),
+("Write the sum",r"The infinite sum is \[S=\frac{a}{1-r}=\frac{1}{r(1-r)}.\] Since \(S\) is positive, we need \(0<r<1\)."),
+("Minimize by maximizing the denominator",r"To make \(S\) as small as possible, maximize \(r(1-r)\) on \(0<r<1\). This quadratic is largest at \(r=\frac12\), where \[r(1-r)=\frac14.\]"),
+("Find the minimum sum",r"Thus \[S_{\min}=\frac{1}{1/4}=4.\]"),
+("Conclude",r"The smallest possible value is $\boxed{4}$."),
+],
+15:[
+("Pair opposite faces",r"Opposite faces of a cube never meet at a vertex. If opposite face pairs have labels \((a,b)\), \((c,d)\), and \((e,f)\), then each vertex chooses one number from each pair."),
+("Rewrite the sum of vertex products",r"Summing the eight vertex products is the same as expanding \[(a+b)(c+d)(e+f).\] So the problem becomes: pair the numbers $2,3,4,5,6,7$ to maximize the product of the three pair sums."),
+("Balance the pair sums",r"The total of all six numbers is \[2+3+4+5+6+7=27.\] For a fixed total, the product of three positive sums is largest when the sums are as equal as possible."),
+("Make equal sums",r"We can pair the numbers as \[(2,7),\quad(3,6),\quad(4,5),\] giving pair sums \(9,9,9\)."),
+("Compute the maximum",r"The greatest possible sum of vertex products is \[9\cdot9\cdot9=729.\]"),
+("Conclude",r"The answer is $\boxed{729}$."),
+],
+16:[
+("Use the consecutive-sum structure",r"A sum of \(k\) consecutive positive integers starting at \(a\) is \[a+(a+1)+\cdots+(a+k-1)=\frac{k(2a+k-1)}2.\]"),
+("Use the standard divisor fact",r"The number of ways to write a positive integer as a sum of consecutive positive integers equals the number of odd divisors of that integer. This comes from matching the odd part of the length or the average term."),
+("Factor 345",r"We have \[345=3\cdot5\cdot23.\] Since it is squarefree and odd, it has \[2^3=8\] odd divisors."),
+("Remove the one-term representation",r"One of these representations is the trivial one-term sum \(345\). The problem asks for two or more consecutive positive integers, so we subtract that one case."),
+("Conclude",r"The number of valid representations is \[8-1=\boxed{7}.\]"),
+],
+18:[
+("Use polar coordinates",r"Let \(x=r\cos\theta\) and \(y=r\sin\theta\). Then \(x^2+y^2=r^2\), and the equation becomes \[r^2=r(|\cos\theta|+|\sin\theta|).\]"),
+("Find the boundary radius",r"Besides the origin, the boundary has \[r=|\cos\theta|+|\sin\theta|.\] The area enclosed by a polar curve is \[\frac12\int r^2\,d\theta.\]"),
+("Use symmetry",r"The expression is symmetric in all four quadrants. In the first quadrant, \(r=\cos\theta+\sin\theta\), so the total area is \[4\cdot\frac12\int_0^{\pi/2}(\cos\theta+\sin\theta)^2\,d\theta.\]"),
+("Evaluate the integral",r"Since \[(\cos\theta+\sin\theta)^2=1+\sin2\theta,\] the area is \[2\int_0^{\pi/2}(1+\sin2\theta)\,d\theta=2\left(\frac{\pi}{2}+1\right).\]"),
+("Simplify",r"This equals \[\pi+2.\]"),
+("Conclude",r"The enclosed area is $\boxed{\pi+2}$."),
+],
+19:[
+("Find one person's stopping probability",r"The probability that a player first gets heads on flip \(n\) is \[\left(\frac12\right)^n,\] because the first \(n-1\) flips must be tails and the \(n\)th flip must be heads."),
+("Require all three to stop on the same n",r"For a fixed \(n\), the probability that all three stop on flip \(n\) is \[\left(\frac1{2^n}\right)^3=\frac1{8^n}.\]"),
+("Sum over all possible n",r"The desired probability is \[\sum_{n=1}^{\infty}\frac1{8^n}.\] This is a geometric series with first term \(\frac18\) and ratio \(\frac18\)."),
+("Evaluate the series",r"The sum is \[\frac{1/8}{1-1/8}=\frac{1/8}{7/8}=\frac17.\]"),
+("Conclude",r"The probability is \[\boxed{\frac17}.\]"),
+],
+20:[
+("Find the number of teams",r"Each team won $10$ games and lost $10$ games, so each team played $20$ games. Therefore there are $21$ teams."),
+("Count all triples",r"The total number of three-team sets is \[\binom{21}{3}=1330.\] Each triple is either cyclic or transitive."),
+("Count transitive triples",r"In a transitive triple, one team beats the other two. For each team, choose two of the $10$ teams it beat; this forms a transitive triple with that team as the top team."),
+("Avoid overcounting",r"Every transitive triple has exactly one top team, so the number of transitive triples is \[21\binom{10}{2}=21\cdot45=945.\]"),
+("Subtract from all triples",r"The cyclic triples are therefore \[1330-945=385.\]"),
+("Conclude",r"The number of desired triples is $\boxed{385}$."),
 ],
 })
 
