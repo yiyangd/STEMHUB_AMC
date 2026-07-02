@@ -3596,3 +3596,19 @@
 - Pushed: pending
 - Next batch should start from: 2015 AMC 12A Problem 19
 - Review notes: none.
+
+## Batch 222: 2015 AMC 12A Problems 19-20
+
+- Start time: 2026-07-02T00:02:44-07:00
+- End time: 2026-07-02T00:02:45-07:00
+- Processed contest: AMC12
+- Processed range: 2015 AMC 12A Problems 19-20
+- Generated count: 2
+- Updated existing count: 0
+- Skipped count: 5
+- Skipped reasons: 2015 AMC 12A Problem 21: ellipse/foci circle-intersection interval high risk; skipped; 2015 AMC 12A Problem 22: long recurrence modulo 12 high risk; skipped; 2015 AMC 12A Problem 23: square boundary geometric probability high risk; skipped; 2015 AMC 12A Problem 24: rational-number probability with OCR fraction ambiguity; skipped; 2015 AMC 12A Problem 25: layered tangent-circle construction high risk; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2015 AMC 12B Problem 1
+- Review notes: none.

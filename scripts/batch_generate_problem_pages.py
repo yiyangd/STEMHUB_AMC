@@ -3,15 +3,21 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 221
+BATCH_NUMBER = 222
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2015_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16,17,18}
-SKIPPED = []
-BATCH_LABEL = "2015 AMC 12A Problems 11-18"
-NEXT_START = "2015 AMC 12A Problem 19"
+TARGET_NUMBERS = {19,20}
+SKIPPED = [
+    "2015 AMC 12A Problem 21: ellipse/foci circle-intersection interval high risk; skipped",
+    "2015 AMC 12A Problem 22: long recurrence modulo 12 high risk; skipped",
+    "2015 AMC 12A Problem 23: square boundary geometric probability high risk; skipped",
+    "2015 AMC 12A Problem 24: rational-number probability with OCR fraction ambiguity; skipped",
+    "2015 AMC 12A Problem 25: layered tangent-circle construction high risk; skipped",
+]
+BATCH_LABEL = "2015 AMC 12A Problems 19-20"
+NEXT_START = "2015 AMC 12B Problem 1"
 
-ANS={11:("D","5"),12:("B","1.5"),13:("E","The highest score must be at least 12."),14:("D","24"),15:("C","26"),16:("C",r"\frac{24}{5}"),17:("A",r"\frac{47}{256}"),18:("C","16")}
+ANS={19:("B","31"),20:("A","3")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2919,6 +2925,21 @@ SOL.update({
 16:[("Place the base triangle",r"Since $AC=3$, $BC=4$, and $AB=5$, triangle $ABC$ is right. Put \[C=(0,0,0),\quad A=(3,0,0),\quad B=(0,4,0).\]"),("Let D have coordinates",r"Let \[D=(x,y,z).\] The distances give \[x^2+y^2+z^2=\left(\frac{12\sqrt2}{5}\right)^2=\frac{288}{25}.\]"),("Use distances to A and B",r"From $AD=3$, subtract the $CD$ equation from \[(x-3)^2+y^2+z^2=9\] to get \[x=\frac{48}{25}.\] From $BD=4$, similarly get \[y=\frac{36}{25}.\]"),("Find the height",r"Then \[z^2=\frac{288}{25}-\left(\frac{48}{25}\right)^2-\left(\frac{36}{25}\right)^2=\frac{144}{25},\] so the height from $D$ to the base plane is \[\frac{12}{5}.\]"),("Compute volume",r"The area of right triangle $ABC$ is \[\frac12\cdot3\cdot4=6.\] Thus the tetrahedron volume is \[\frac13\cdot6\cdot\frac{12}{5}=\frac{24}{5}.\]"),("Conclude",r"The answer is \[\boxed{\frac{24}{5}}.\]")],
 17:[("Model heads as standing",r"Each coin flip gives either standing or seated. We need binary circular arrangements of length $8$ with no adjacent standing people."),("Use the circular count formula",r"The number of circular binary strings of length $n$ with no adjacent $1$'s is \[F_{n-1}+F_{n+1},\] where $F_1=F_2=1$."),("Apply n equals 8",r"For $n=8$, this count is \[F_7+F_9=13+34=47.\]"),("Divide by all outcomes",r"There are \[2^8=256\] equally likely coin-flip outcomes."),("Conclude",r"The probability is \[\boxed{\frac{47}{256}}.\]")],
 18:[("Use integer roots",r"Let the integer zeroes be $r$ and $s$. Then by Vieta's formulas, \[r+s=a,\qquad rs=2a.\]"),("Eliminate a",r"Since $a=r+s$, the product condition becomes \[rs=2(r+s).\]"),("Factor",r"Move terms and complete the rectangle: \[rs-2r-2s=0,\] so \[(r-2)(s-2)=4.\]"),("List factor pairs",r"The integer factor pairs of $4$ are \[(1,4),(2,2),(4,1),(-1,-4),(-2,-2),(-4,-1).\] These give possible values of \[a=r+s=(r-2)+(s-2)+4\] equal to \[9,8,9,-1,0,-1.\]"),("Use distinct possible values",r"The distinct possible values of $a$ are \[9,8,-1,0.\] Their sum is \[9+8-1+0=16.\]"),("Conclude",r"The answer is $\boxed{16}$.")],
+})
+
+OV.update({
+19:(r"For some positive integers $p$, there is a quadrilateral $ABCD$ with positive integer side lengths, perimeter $p$, right angles at $B$ and $C$, $AB=2$, and $CD=AD$. How many different values of $p<2015$ are possible?",[("A","30"),("B","31"),("C","61"),("D","62"),("E","63")]),
+20:(r"Isosceles triangles $T$ and $T'$ are not congruent but have the same area and the same perimeter. The sides of $T$ have lengths $5,5,8$, while those of $T'$ have lengths $a,a,b$. Which of the following numbers is closest to $b$?",[("A","3"),("B","4"),("C","5"),("D","6"),("E","8")]),
+})
+
+KEY_OVERRIDES.update({
+19:"Use coordinates for the right-angle quadrilateral and parameterize integer side lengths.",
+20:"Use equal area and perimeter to form an equation for the new base.",
+})
+
+SOL.update({
+19:[("Set up coordinates",r"Place \[B=(0,0),\quad C=(u,0),\quad A=(0,2).\] Because the angle at $C$ is right, let \[D=(u,v).\] Then $BC=u$ and $CD=v$."),("Use CD equals AD",r"The condition $CD=AD$ gives \[v^2=u^2+(v-2)^2.\] Expanding and simplifying, \[v^2=u^2+v^2-4v+4,\] so \[u^2=4(v-1).\]"),("Parameterize integer solutions",r"Since $u$ is an integer, write $u=2t$. Then \[4t^2=4(v-1),\] so \[v=t^2+1.\]"),("Write the perimeter",r"The perimeter is \[p=AB+BC+CD+AD=2+u+v+v.\] Substituting gives \[p=2+2t+2(t^2+1)=2t^2+2t+4.\]"),("Count valid t",r"We need \[2t^2+2t+4<2015.\] Testing the boundary, $t=31$ gives $p=1988$, while $t=32$ gives $p=2116$. Thus $t=1,2,\ldots,31$ are possible."),("Conclude",r"There are $\boxed{31}$ possible values of $p$.")],
+20:[("Compute the original triangle data",r"Triangle $T$ has sides $5,5,8$. Its perimeter is \[18.\] Its height to the base $8$ is \[\sqrt{5^2-4^2}=3,\] so its area is \[\frac12\cdot8\cdot3=12.\]"),("Use the same perimeter",r"For $T'$ with sides $a,a,b$, the perimeter condition gives \[2a+b=18,\] so \[a=\frac{18-b}{2}.\]"),("Use the same area",r"The height of $T'$ is \[\sqrt{a^2-\left(\frac b2\right)^2}.\] Its area is \[\frac12 b\sqrt{a^2-\left(\frac b2\right)^2}=12.\]"),("Substitute a",r"Substituting $a=\frac{18-b}{2}$ simplifies the area equation to \[b^2(9-b)=64.\]"),("Find the noncongruent base",r"The base $b=8$ gives the original triangle, so use the other positive solution. Factoring gives \[(b-8)(b^2-b-8)=0,\] hence \[b=\frac{1+\sqrt{33}}{2}\approx3.37.\]"),("Conclude",r"The closest listed number is $\boxed{3}$.")],
 })
 
 def esc(x, quote=True):
