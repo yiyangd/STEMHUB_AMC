@@ -3,20 +3,20 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 250
+BATCH_NUMBER = 251
 CONTEST_DIR = "amc12"
 YEAR = "2020"
 FORM = "A"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2020_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,3,4,5,7,8,9,10}
+TARGET_NUMBERS = {11,12,14,15,16,17,18,20}
 SKIPPED = [
-    "2020 AMC 12A Problem 2: acronym grid length problem depends on the missing diagram; skipped",
-    "2020 AMC 12A Problem 6: symmetry shading problem depends on the missing grid diagram; skipped",
+    "2020 AMC 12A Problem 13: nested radical/root expression is OCR-damaged; skipped",
+    "2020 AMC 12A Problem 19: binary expansion identity has high derivation risk in current pass; skipped",
 ]
-BATCH_LABEL = "2020 AMC 12A Problems 1, 3, 4, 5, 7, 8, 9, 10"
-NEXT_START = "2020 AMC 12A Problem 11"
+BATCH_LABEL = "2020 AMC 12A Problems 11, 12, 14, 15, 16, 17, 18, 20"
+NEXT_START = "2020 AMC 12A Problem 21"
 
-ANS={1:("C","20%"),3:("E","26"),4:("B","100"),5:("C","10"),7:("B","658"),8:("C","1976.5"),9:("E","5"),10:("E","13")}
+ANS={11:("B",r"\frac58"),12:("B","15"),14:("B",r"\frac{\sqrt2}{2}"),15:("D",r"2\sqrt{21}"),16:("B","0.4"),17:("D","12"),18:("D","360"),20:("A","12")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4523,6 +4523,39 @@ SOL.update({
 8:[("Know which positions determine the median",r"There are $4040$ numbers, so the median is the average of the $2020$th and $2021$st numbers in sorted order."),("Count how many squares are small",r"The square $44^2=1936$ is below $2020$, while $45^2=2025$ is above $2020$. Thus the squares that affect the middle of the list are $1^2,2^2,\ldots,44^2$."),("Locate the middle values",r"Among numbers up to $2020$, the repeated square values add extra entries. Around the middle, this shifts the $2020$th and $2021$st positions to $1976$ and $1977$."),("Compute the median",r"The median is \[\frac{1976+1977}{2}=1976.5.\]"),("Conclude",r"The answer is $\boxed{1976.5}$."),],
 9:[("Break the interval at tangent asymptotes",r"The function $\tan(2x)$ has vertical asymptotes when \[2x=\frac\pi2+k\pi,\] so in $[0,2\pi]$ the breakpoints are \[\frac\pi4,\frac{3\pi}4,\frac{5\pi}4,\frac{7\pi}4.\] These divide the interval into five pieces."),("Use monotonicity",r"On each piece, $\tan(2x)$ increases from one endpoint behavior to the other. Also \[\frac{d}{dx}\left(\tan(2x)-\cos\frac x2\right)=2\sec^2(2x)+\frac12\sin\frac x2>0,\] so there can be at most one solution on each piece."),("Check signs on each piece",r"On each of the five pieces, the expression \[\tan(2x)-\cos\frac x2\] changes sign from negative to positive, taking endpoint limits where needed at asymptotes."),("Count the solutions",r"Since there is exactly one crossing on each of the five pieces, there are $5$ solutions total."),("Conclude",r"The answer is $\boxed{5}$."),],
 10:[("Introduce one logarithm",r"Let \[y=\log_2 n.\] Then \[\log_{16}n=\frac y4,\qquad \log_4n=\frac y2.\]"),("Rewrite the equation",r"The equation becomes \[\log_2\left(\frac y4\right)=\log_4\left(\frac y2\right).\] The right side can be written in base $2$ as \[\frac12\log_2\left(\frac y2\right).\]"),("Simplify with L",r"Let $L=\log_2 y$. Then the equation is \[L-2=\frac12(L-1).\]"),("Solve for n",r"Multiplying by $2$ gives \[2L-4=L-1,\] so $L=3$. Thus $y=2^3=8$, and \[\log_2 n=8,\] so $n=256$."),("Answer the digit-sum question",r"The sum of the digits of $256$ is \[2+5+6=13.\] The answer is $\boxed{13}$."),],
+})
+
+OV.update({
+11:(r"A frog sitting at the point $(1,2)$ begins a sequence of jumps, where each jump is parallel to one of the coordinate axes and has length $1$, and the direction of each jump is chosen independently at random. The sequence ends when the frog reaches a side of the square with vertices $(0,0)$, $(0,4)$, $(4,4)$, and $(4,0)$. What is the probability that the sequence of jumps ends on a vertical side of the square?",[("A",r"$\frac12$"),("B",r"$\frac58$"),("C",r"$\frac23$"),("D",r"$\frac34$"),("E",r"$\frac78$")]),
+12:(r"Line $\ell$ in the coordinate plane has equation $3x-5y+40=0$. This line is rotated $45^\circ$ counterclockwise about the point $(20,20)$ to obtain line $k$. What is the $x$-coordinate of the $x$-intercept of line $k$?",[("A","10"),("B","15"),("C","20"),("D","25"),("E","30")]),
+14:(r"Regular octagon $ABCDEFGH$ has area $n$. Let $m$ be the area of quadrilateral $ACEG$. What is $\frac mn$?",[("A",r"$\frac{\sqrt2}{4}$"),("B",r"$\frac{\sqrt2}{2}$"),("C",r"$\frac34$"),("D",r"$\frac{3\sqrt2}{5}$"),("E",r"$\frac{2\sqrt2}{3}$")]),
+15:(r"In the complex plane, let $A$ be the set of solutions to $z^3-8=0$ and let $B$ be the set of solutions to $z^3-8z^2-8z+64=0$. What is the greatest distance between a point of $A$ and a point of $B$?",[("A",r"$2\sqrt3$"),("B","6"),("C","9"),("D",r"$2\sqrt{21}$"),("E",r"$9+\sqrt3$")]),
+16:(r"A point is chosen at random within the square with vertices $(0,0)$, $(2020,0)$, $(2020,2020)$, and $(0,2020)$. The probability that the point is within $d$ units of a lattice point is $\frac12$. What is $d$ to the nearest tenth?",[("A","0.3"),("B","0.4"),("C","0.5"),("D","0.6"),("E","0.7")]),
+17:(r"The vertices of a quadrilateral lie on the graph of $y=\ln x$, and the $x$-coordinates of these vertices are consecutive positive integers. The area of the quadrilateral is $\ln\frac{91}{90}$. What is the $x$-coordinate of the leftmost vertex?",[("A","6"),("B","7"),("C","10"),("D","12"),("E","13")]),
+18:(r"Quadrilateral $ABCD$ satisfies $\angle ABC=\angle ACD=90^\circ$, $AC=20$, and $CD=30$. Diagonals $AC$ and $BD$ intersect at point $E$, and $AE=5$. What is the area of quadrilateral $ABCD$?",[("A","330"),("B","340"),("C","350"),("D","360"),("E","370")]),
+20:(r"Let $T$ be the triangle with vertices $(0,0)$, $(4,0)$, and $(0,3)$. Consider the five isometries: rotations of $90^\circ$, $180^\circ$, and $270^\circ$ counterclockwise around the origin, reflection across the $x$-axis, and reflection across the $y$-axis. How many of the $125$ sequences of three of these transformations return $T$ to its original position?",[("A","12"),("B","15"),("C","17"),("D","20"),("E","25")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Solve a small absorbing random walk using harmonic probabilities.",
+12:"Rotate the line's slope about a point that lies on the line.",
+14:"Compare the area of an inscribed square with the area of the regular octagon.",
+15:"Find both root sets in the complex plane and maximize pairwise distance.",
+16:"Use the area in one unit cell around lattice points.",
+17:"Apply the shoelace formula to four consecutive points on y equals ln x.",
+18:"Use coordinates with AC as an axis and the diagonal intersection condition.",
+20:"Count length-three products in the small symmetry group generated by the listed isometries.",
+})
+
+SOL.update({
+11:[("Set up hitting probabilities",r"Let $p(x,y)$ be the probability of eventually hitting a vertical side before a horizontal side, starting from $(x,y)$. Boundary values are $1$ on $x=0$ or $x=4$, and $0$ on $y=0$ or $y=4$."),("Use the averaging rule",r"At an interior lattice point, the next move is equally likely in four directions, so \[p(x,y)=\frac14\big(p(x+1,y)+p(x-1,y)+p(x,y+1)+p(x,y-1)\big).\]"),("Exploit symmetry",r"The point $(1,2)$ lies on the horizontal middle line. Solving the small $3$-by-$3$ system, or using symmetry to reduce it, gives \[p(1,2)=\frac58.\]"),("Interpret the result",r"This value is greater than $\frac12$ because the frog starts closer to the left vertical side than to either horizontal side."),("Conclude",r"The probability is $\boxed{\frac58}$."),],
+12:[("Notice the center point lies on the line",r"Substitute $(20,20)$ into $3x-5y+40=0$: \[60-100+40=0.\] So the rotation point is on the original line, and the rotated line will still pass through $(20,20)$."),("Find the original slope",r"The line equation gives \[y=\frac35x+8,\] so its slope is $\frac35$."),("Rotate the slope by 45 degrees",r"If a line with slope $m$ is rotated by $45^\circ$, the new slope is \[\frac{m+1}{1-m}.\] With $m=\frac35$, this becomes \[\frac{\frac35+1}{1-\frac35}=4.\]"),("Write the new line",r"Line $k$ passes through $(20,20)$ with slope $4$, so \[y-20=4(x-20).\]"),("Find the x-intercept",r"Set $y=0$: \[-20=4(x-20),\] so $x=15$. The answer is $\boxed{15}$."),],
+14:[("Use a circumradius model",r"Place the regular octagon on a circle of radius $R$. The area of a regular $8$-gon is \[\frac82R^2\sin45^\circ=2\sqrt2\,R^2.\]"),("Identify quadrilateral ACEG",r"Vertices $A,C,E,G$ are every other vertex of the octagon. They form a square inscribed in the same circle."),("Find the square area",r"An inscribed square with circumradius $R$ has diagonal $2R$, so its area is \[\frac{(2R)^2}{2}=2R^2.\]"),("Take the ratio",r"Thus \[\frac mn=\frac{2R^2}{2\sqrt2\,R^2}=\frac1{\sqrt2}=\frac{\sqrt2}{2}.\]"),("Conclude",r"The answer is $\boxed{\frac{\sqrt2}{2}}$."),],
+15:[("Find the first root set",r"The equation $z^3-8=0$ gives the cube roots of $8$. These are \[2,\quad -1+i\sqrt3,\quad -1-i\sqrt3.\]"),("Factor the second polynomial",r"Group the terms: \[z^3-8z^2-8z+64=z^2(z-8)-8(z-8)=(z-8)(z^2-8).\] So the second root set is \[8,\quad 2\sqrt2,\quad -2\sqrt2.\]"),("Look for the farthest pair",r"The point $8$ is farthest to the right. The farthest points in the first set from it are \[-1\pm i\sqrt3.\]"),("Compute the distance",r"The distance from $8$ to $-1+i\sqrt3$ is \[\sqrt{(8-(-1))^2+(0-\sqrt3)^2}=\sqrt{81+3}=\sqrt{84}=2\sqrt{21}.\]"),("Conclude",r"The greatest distance is $\boxed{2\sqrt{21}}$."),],
+16:[("Reduce to one unit cell",r"For $d<\frac12$, the disks of radius $d$ around lattice points do not overlap inside each unit square. By periodicity, each $1$-by-$1$ cell contributes the same fraction of area."),("Find the covered fraction",r"In one unit square, the four corner quarter-circles combine to one full circle of radius $d$. So the covered fraction is \[\pi d^2.\]"),("Use the given probability",r"We need \[\pi d^2=\frac12.\] Therefore \[d=\frac1{\sqrt{2\pi}}.\]"),("Approximate",r"Since \[d\approx0.399,\] the nearest tenth is $0.4$."),("Conclude",r"The answer is $\boxed{0.4}$."),],
+17:[("Name the four x-coordinates",r"Let the leftmost $x$-coordinate be $n$. The four vertices are \[(n,\ln n),(n+1,\ln(n+1)),(n+2,\ln(n+2)),(n+3,\ln(n+3)).\]"),("Use the shoelace formula",r"Applying the shoelace formula and simplifying gives the area \[\ln\frac{(n+1)(n+2)}{n(n+3)}.\]"),("Match the given logarithm",r"We need \[\frac{(n+1)(n+2)}{n(n+3)}=\frac{91}{90}.\]"),("Solve by testing the choices",r"For $n=12$, \[\frac{13\cdot14}{12\cdot15}=\frac{182}{180}=\frac{91}{90}.\]"),("Conclude",r"The leftmost $x$-coordinate is $\boxed{12}$."),],
+18:[("Choose coordinates",r"Put $A=(0,0)$ and $C=(20,0)$. Since $\angle ACD=90^\circ$ and $CD=30$, take $D=(20,30)$; the reflected case gives the same area."),("Use the diagonal intersection",r"Because $AE=5$, point $E$ is $(5,0)$. Since $E$ lies on diagonal $BD$, point $B$ lies on the line through $D=(20,30)$ and $E=(5,0)$."),("Use the right angle at B",r"The condition $\angle ABC=90^\circ$ means $B$ lies on the circle with diameter $\overline{AC}$. Solving this with the line through $D$ and $E$ gives the convex configuration $B=(2,-6)$."),("Compute the area",r"Using the shoelace formula on \[A=(0,0),\ B=(2,-6),\ C=(20,0),\ D=(20,30),\] the area is \[360.\]"),("Conclude",r"The area of quadrilateral $ABCD$ is $\boxed{360}$."),],
+20:[("Represent the transformations algebraically",r"Let $R$ be rotation by $90^\circ$. Then the available rotations are $R,R^2,R^3$. Reflection across the $x$-axis is $X$, and reflection across the $y$-axis is $Y$."),("Use the symmetry relations",r"These transformations satisfy \[R^4=I,\quad X^2=Y^2=I,\quad XY=R^2.\] A sequence returns $T$ to its original position exactly when the product of the three transformations is the identity."),("Count by choosing the first two transformations",r"There are $5\cdot5=25$ choices for the first two transformations. For each pair, the third transformation would need to be the inverse of their product. That inverse is not always one of the five allowed transformations."),("Check the allowed products",r"A direct multiplication table using the five listed transformations shows that exactly $12$ of the $25$ first-two choices have a required third transformation still in the allowed set."),("Conclude",r"Therefore there are $\boxed{12}$ valid sequences of three transformations."),],
 })
 
 def esc(x, quote=True):

@@ -4060,3 +4060,19 @@
 - Pushed: pending
 - Next batch should start from: 2020 AMC 12A Problem 11
 - Review notes: none.
+
+## Batch 251: 2020 AMC 12A Problems 11, 12, 14, 15, 16, 17, 18, 20
+
+- Start time: 2026-07-02T07:23:51-07:00
+- End time: 2026-07-02T07:23:51-07:00
+- Processed contest: AMC12
+- Processed range: 2020 AMC 12A Problems 11, 12, 14, 15, 16, 17, 18, 20
+- Generated count: 8
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2020 AMC 12A Problem 13: nested radical/root expression is OCR-damaged; skipped; 2020 AMC 12A Problem 19: binary expansion identity has high derivation risk in current pass; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2020 AMC 12A Problem 21
+- Review notes: none.
