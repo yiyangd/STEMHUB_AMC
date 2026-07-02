@@ -3,21 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 222
+BATCH_NUMBER = 223
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2015_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {19,20}
-SKIPPED = [
-    "2015 AMC 12A Problem 21: ellipse/foci circle-intersection interval high risk; skipped",
-    "2015 AMC 12A Problem 22: long recurrence modulo 12 high risk; skipped",
-    "2015 AMC 12A Problem 23: square boundary geometric probability high risk; skipped",
-    "2015 AMC 12A Problem 24: rational-number probability with OCR fraction ambiguity; skipped",
-    "2015 AMC 12A Problem 25: layered tangent-circle construction high risk; skipped",
-]
-BATCH_LABEL = "2015 AMC 12A Problems 19-20"
-NEXT_START = "2015 AMC 12B Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2015_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2015 AMC 12B Problems 1-10"
+NEXT_START = "2015 AMC 12B Problem 11"
 
-ANS={19:("B","31"),20:("A","3")}
+ANS={1:("C",r"\frac74"),2:("B","3:30 PM"),3:("A","8"),4:("B","Hikmet"),5:("B","37"),6:("A","0.21"),7:("D","39"),8:("D","2015"),9:("C",r"\frac23"),10:("C","5")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2942,6 +2936,45 @@ SOL.update({
 20:[("Compute the original triangle data",r"Triangle $T$ has sides $5,5,8$. Its perimeter is \[18.\] Its height to the base $8$ is \[\sqrt{5^2-4^2}=3,\] so its area is \[\frac12\cdot8\cdot3=12.\]"),("Use the same perimeter",r"For $T'$ with sides $a,a,b$, the perimeter condition gives \[2a+b=18,\] so \[a=\frac{18-b}{2}.\]"),("Use the same area",r"The height of $T'$ is \[\sqrt{a^2-\left(\frac b2\right)^2}.\] Its area is \[\frac12 b\sqrt{a^2-\left(\frac b2\right)^2}=12.\]"),("Substitute a",r"Substituting $a=\frac{18-b}{2}$ simplifies the area equation to \[b^2(9-b)=64.\]"),("Find the noncongruent base",r"The base $b=8$ gives the original triangle, so use the other positive solution. Factoring gives \[(b-8)(b^2-b-8)=0,\] hence \[b=\frac{1+\sqrt{33}}{2}\approx3.37.\]"),("Conclude",r"The closest listed number is $\boxed{3}$.")],
 })
 
+OV.update({
+1:(r"What is the value of \[2-(-2)^{-2}?\]",[("A",r"$-\frac12$"),("B",r"$\frac16$"),("C",r"$\frac74$"),("D",r"$\frac94$"),("E","4")]),
+2:(r"Marie does three equally time-consuming tasks in a row without taking breaks. She begins the first task at 1:00 PM and finishes the second task at 2:40 PM. When does she finish the third task?",[("A","3:10 PM"),("B","3:30 PM"),("C","4:00 PM"),("D","4:10 PM"),("E","4:30 PM")]),
+3:(r"Isaac has written down one integer two times and another integer three times. The sum of the five numbers is $100$, and one of the numbers is $28$. What is the other number?",[("A","8"),("B","11"),("C","14"),("D","15"),("E","18")]),
+4:(r"David, Hikmet, Jack, Marta, Rand, and Todd were in a 12-person race with 6 other people. Rand finished 6 places ahead of Hikmet. Marta finished 1 place behind Jack. David finished 2 places behind Hikmet. Jack finished 2 places behind Todd. Todd finished 1 place behind Rand. Marta finished in 6th place. Who finished in 8th place?",[("A","David"),("B","Hikmet"),("C","Jack"),("D","Rand"),("E","Todd")]),
+5:(r"The Tigers beat the Sharks $2$ out of the first $3$ times they played. They then played $N$ more times, and the Sharks ended up winning at least $95\%$ of all the games played. What is the minimum possible value for $N$?",[("A","35"),("B","37"),("C","39"),("D","41"),("E","43")]),
+6:(r"Back in 1930, Tillie had to memorize her multiplication tables from $0\times0$ through $12\times12$. The multiplication table she was given had rows and columns labeled with the factors, and the products formed the body of the table. To the nearest hundredth, what fraction of the numbers in the body of the table are odd?",[("A","0.21"),("B","0.25"),("C","0.46"),("D","0.50"),("E","0.75")]),
+7:(r"A regular $15$-gon has $L$ lines of symmetry, and the smallest positive angle for which it has rotational symmetry is $R$ degrees. What is $L+R$?",[("A","24"),("B","27"),("C","32"),("D","39"),("E","54")]),
+8:(r"What is the value of \[\left(625^{\log_5 2015}\right)^{1/4}?\]",[("A","5"),("B",r"$\sqrt[4]{2015}$"),("C","625"),("D","2015"),("E",r"$\sqrt[4]{5^{2015}}$")]),
+9:(r"Larry and Julius are playing a game, taking turns throwing a ball at a bottle sitting on a ledge. Larry throws first. The winner is the first person to knock the bottle off the ledge. At each turn the probability that a player knocks the bottle off the ledge is $\frac12$, independently of what has happened before. What is the probability that Larry wins the game?",[("A",r"$\frac12$"),("B",r"$\frac35$"),("C",r"$\frac23$"),("D",r"$\frac34$"),("E",r"$\frac45$")]),
+10:(r"How many noncongruent integer-sided triangles with positive area and perimeter less than $15$ are neither equilateral, isosceles, nor right triangles?",[("A","3"),("B","4"),("C","5"),("D","6"),("E","7")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Evaluate the negative exponent before subtracting.",
+2:"Divide the elapsed time for two equal tasks by 2.",
+3:"Test whether 28 is the repeated-twice or repeated-thrice integer.",
+4:"Use relative positions from Marta's fixed sixth-place finish.",
+5:"Assume the Sharks win all remaining games to minimize N.",
+6:"A product is odd exactly when both factors are odd.",
+7:"Use symmetry facts for a regular n-gon.",
+8:"Rewrite 625 as 5^4 and use logarithm exponent rules.",
+9:"Set up a recurrence after both players miss.",
+10:"List scalene non-right integer triangles with perimeter below 15.",
+})
+
+SOL.update({
+1:[("Evaluate the negative exponent",r"First, \[(-2)^{-2}=\frac{1}{(-2)^2}=\frac14.\]"),("Subtract",r"So the expression is \[2-\frac14=\frac84-\frac14=\frac74.\]"),("Check the size",r"The value should be a little less than $2$, because we subtract $\frac14$ from $2$. The result $\frac74=1.75$ is reasonable."),("Conclude",r"The answer is \[\boxed{\frac74}.\]")],
+2:[("Find the time for two tasks",r"From 1:00 PM to 2:40 PM is $100$ minutes. That covers the first two equally long tasks."),("Find one task length",r"Each task takes \[100/2=50\] minutes."),("Add the third task",r"The third task starts at 2:40 PM and lasts $50$ minutes, ending at 3:30 PM."),("Conclude",r"The answer is $\boxed{\text{3:30 PM}}$.")],
+3:[("Consider where 28 appears",r"One integer is written twice and the other is written three times. The number $28$ is one of these integers."),("Test 28 as the twice-written integer",r"If $28$ is written twice, the remaining total is \[100-2\cdot28=44,\] which cannot be three copies of an integer."),("Use 28 as the thrice-written integer",r"If $28$ is written three times, the remaining total is \[100-3\cdot28=16.\]"),("Find the other integer",r"The other integer is written twice, so it is \[16/2=8.\]"),("Conclude",r"The answer is $\boxed{8}$.")],
+4:[("Start from Marta",r"Marta finished in $6^\text{th}$ place. Since Marta finished $1$ place behind Jack, Jack finished $5^\text{th}$."),("Work backward through the chain",r"Jack finished $2$ places behind Todd, so Todd finished $3^\text{rd}$. Todd finished $1$ place behind Rand, so Rand finished $2^\text{nd}$."),("Place Hikmet",r"Rand finished $6$ places ahead of Hikmet, so Hikmet finished \[2+6=8^\text{th}.\]"),("Check David",r"David finished $2$ places behind Hikmet, so David finished $10^\text{th}$."),("Conclude",r"The person in $8^\text{th}$ place was $\boxed{\text{Hikmet}}$.")],
+5:[("Make the most favorable assumption for the Sharks",r"To minimize $N$, assume the Sharks win all of the additional $N$ games."),("Write the final win fraction",r"The Sharks won $1$ of the first $3$ games, so after $N$ more wins their win fraction is \[\frac{N+1}{N+3}.\]"),("Set the 95 percent condition",r"We need \[\frac{N+1}{N+3}\ge0.95=\frac{19}{20}.\]"),("Solve",r"\[20(N+1)\ge19(N+3),\] so \[20N+20\ge19N+57,\] and \[N\ge37.\]"),("Conclude",r"The minimum possible value is $\boxed{37}$.")],
+6:[("Count entries in the table",r"The factors range from $0$ through $12$, giving $13$ row labels and $13$ column labels. There are \[13^2=169\] products."),("Decide when a product is odd",r"A product is odd exactly when both factors are odd."),("Count odd labels",r"Among $0,1,2,\ldots,12$, the odd labels are \[1,3,5,7,9,11,\] so there are $6$ of them."),("Compute the fraction",r"There are \[6\cdot6=36\] odd products, so the fraction is \[\frac{36}{169}\approx0.213.\]"),("Round",r"To the nearest hundredth, this is $\boxed{0.21}$.")],
+7:[("Lines of symmetry",r"A regular $15$-gon has one line of symmetry for each vertex, so \[L=15.\]"),("Smallest rotational symmetry",r"The smallest positive rotation that maps it to itself is \[\frac{360^\circ}{15}=24^\circ.\] Thus $R=24$."),("Add",r"\[L+R=15+24=39.\]"),("Conclude",r"The answer is $\boxed{39}$.")],
+8:[("Rewrite 625",r"Since \[625=5^4,\] the expression is \[\left((5^4)^{\log_5 2015}\right)^{1/4}.\]"),("Use exponent rules",r"Inside the parentheses, \[(5^4)^{\log_5 2015}=5^{4\log_5 2015}.\]"),("Apply the one-fourth power",r"Taking the fourth root gives \[\left(5^{4\log_5 2015}\right)^{1/4}=5^{\log_5 2015}.\]"),("Simplify",r"\[5^{\log_5 2015}=2015.\]"),("Conclude",r"The answer is $\boxed{2015}$.")],
+9:[("Let P be Larry's winning probability",r"Larry can win immediately on his first throw with probability $\frac12$."),("Consider what happens if both miss",r"If Larry misses and then Julius misses, which has probability \[\frac12\cdot\frac12=\frac14,\] the game returns to the same situation with Larry to throw."),("Set up the recurrence",r"Therefore \[P=\frac12+\frac14P.\]"),("Solve",r"\[\frac34P=\frac12,\] so \[P=\frac23.\]"),("Conclude",r"The answer is \[\boxed{\frac23}.\]")],
+10:[("List possible triangles carefully",r"We need integer-sided triangles with perimeter less than $15$, but not equilateral, not isosceles, and not right. So we only list scalene triples $a<b<c$ with $a+b>c$ and $a+b+c<15$."),("Enumerate by small sides",r"The valid triples are \[(2,3,4),\ (2,4,5),\ (2,5,6),\ (3,4,6),\ (3,5,6).\]"),("Check exclusions",r"Each listed triangle is scalene. None satisfies the Pythagorean theorem, so none is right."),("Count",r"There are $5$ such triangles."),("Conclude",r"The answer is $\boxed{5}$.")],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -3048,7 +3081,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2015" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2015" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -3137,7 +3170,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2015 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2015 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
