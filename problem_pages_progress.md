@@ -4044,3 +4044,19 @@
 - Pushed: pending
 - Next batch should start from: 2020 AMC 12A Problem 1
 - Review notes: none.
+
+## Batch 250: 2020 AMC 12A Problems 1, 3, 4, 5, 7, 8, 9, 10
+
+- Start time: 2026-07-02T07:20:36-07:00
+- End time: 2026-07-02T07:20:37-07:00
+- Processed contest: AMC12
+- Processed range: 2020 AMC 12A Problems 1, 3, 4, 5, 7, 8, 9, 10
+- Generated count: 8
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2020 AMC 12A Problem 2: acronym grid length problem depends on the missing diagram; skipped; 2020 AMC 12A Problem 6: symmetry shading problem depends on the missing grid diagram; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2020 AMC 12A Problem 11
+- Review notes: none.
