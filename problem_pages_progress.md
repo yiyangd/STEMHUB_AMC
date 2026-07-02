@@ -3404,3 +3404,19 @@
 - Pushed: pending
 - Next batch should start from: 2012 AMC 12B Problem 11
 - Review notes: none.
+
+## Batch 210: 2012 AMC 12B Problems 11-16
+
+- Start time: 2026-07-01T19:54:31-07:00
+- End time: 2026-07-01T19:54:32-07:00
+- Processed contest: AMC12
+- Processed range: 2012 AMC 12B Problems 11-16
+- Generated count: 6
+- Updated existing count: 0
+- Skipped count: 4
+- Skipped reasons: 2012 AMC 12B Problem 17: skipped because the coordinate-square line incidence geometry needs a careful derivation.; 2012 AMC 12B Problem 18: skipped because the constrained list-counting problem needs a dedicated combinatorial proof.; 2012 AMC 12B Problem 19: skipped because the regular octahedron in a cube is spatial-geometry high risk.; 2012 AMC 12B Problem 20: skipped because the trapezoid area sum has a complex multi-case geometry derivation.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2013 AMC 12A Problem 1
+- Review notes: none.

@@ -1,30 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 1550
-- Latest batch: 209 (2012 AMC 12B Problems 1-10)
-- Latest new generated count: 10
+- Total manifest entries: 1556
+- Latest batch: 210 (2012 AMC 12B Problems 11-16)
+- Latest new generated count: 6
 - Latest updated existing count: 0
-- Latest skipped count: 5
+- Latest skipped count: 4
 - MathJax validation: passed
 - Answer verification source: AoPS 2012 AMC 12B Answer Key
 
 ## Latest Batch Pages
 
-- `2012 AMC 12B Problem 1` -> `amc12/problems/2012-amc-12b-problem-1/`
-- `2012 AMC 12B Problem 2` -> `amc12/problems/2012-amc-12b-problem-2/`
-- `2012 AMC 12B Problem 3` -> `amc12/problems/2012-amc-12b-problem-3/`
-- `2012 AMC 12B Problem 4` -> `amc12/problems/2012-amc-12b-problem-4/`
-- `2012 AMC 12B Problem 5` -> `amc12/problems/2012-amc-12b-problem-5/`
-- `2012 AMC 12B Problem 6` -> `amc12/problems/2012-amc-12b-problem-6/`
-- `2012 AMC 12B Problem 7` -> `amc12/problems/2012-amc-12b-problem-7/`
-- `2012 AMC 12B Problem 8` -> `amc12/problems/2012-amc-12b-problem-8/`
-- `2012 AMC 12B Problem 9` -> `amc12/problems/2012-amc-12b-problem-9/`
-- `2012 AMC 12B Problem 10` -> `amc12/problems/2012-amc-12b-problem-10/`
+- `2012 AMC 12B Problem 11` -> `amc12/problems/2012-amc-12b-problem-11/`
+- `2012 AMC 12B Problem 12` -> `amc12/problems/2012-amc-12b-problem-12/`
+- `2012 AMC 12B Problem 13` -> `amc12/problems/2012-amc-12b-problem-13/`
+- `2012 AMC 12B Problem 14` -> `amc12/problems/2012-amc-12b-problem-14/`
+- `2012 AMC 12B Problem 15` -> `amc12/problems/2012-amc-12b-problem-15/`
+- `2012 AMC 12B Problem 16` -> `amc12/problems/2012-amc-12b-problem-16/`
 
 ## Skipped in latest batch
 
-- 2012 AMC 12A Problem 21: skipped because the system of equations is OCR-damaged.
-- 2012 AMC 12A Problem 22: skipped because the cube-plane intersection problem needs a dedicated spatial derivation.
-- 2012 AMC 12A Problem 23: skipped because the translated-square lattice probability problem is high-risk without a full derivation.
-- 2012 AMC 12A Problem 24: skipped because the recursively defined decimal sequence is OCR-damaged.
-- 2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged.
+- 2012 AMC 12B Problem 17: skipped because the coordinate-square line incidence geometry needs a careful derivation.
+- 2012 AMC 12B Problem 18: skipped because the constrained list-counting problem needs a dedicated combinatorial proof.
+- 2012 AMC 12B Problem 19: skipped because the regular octahedron in a cube is spatial-geometry high risk.
+- 2012 AMC 12B Problem 20: skipped because the trapezoid area sum has a complex multi-case geometry derivation.

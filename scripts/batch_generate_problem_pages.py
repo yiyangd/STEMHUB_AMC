@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 209
+BATCH_NUMBER = 210
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2012_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
-SKIPPED = ["2012 AMC 12A Problem 21: skipped because the system of equations is OCR-damaged.", "2012 AMC 12A Problem 22: skipped because the cube-plane intersection problem needs a dedicated spatial derivation.", "2012 AMC 12A Problem 23: skipped because the translated-square lattice probability problem is high-risk without a full derivation.", "2012 AMC 12A Problem 24: skipped because the recursively defined decimal sequence is OCR-damaged.", "2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged."]
-BATCH_LABEL = "2012 AMC 12B Problems 1-10"
-NEXT_START = "2012 AMC 12B Problem 11"
+TARGET_NUMBERS = {11,12,13,14,15,16}
+SKIPPED = ["2012 AMC 12B Problem 17: skipped because the coordinate-square line incidence geometry needs a careful derivation.", "2012 AMC 12B Problem 18: skipped because the constrained list-counting problem needs a dedicated combinatorial proof.", "2012 AMC 12B Problem 19: skipped because the regular octahedron in a cube is spatial-geometry high risk.", "2012 AMC 12B Problem 20: skipped because the trapezoid area sum has a complex multi-case geometry derivation."]
+BATCH_LABEL = "2012 AMC 12B Problems 11-16"
+NEXT_START = "2013 AMC 12A Problem 1"
 
-ANS={1:("C","64"),2:("E","200"),3:("D","48"),4:("B","4"),5:("A","1"),6:("A","Her estimate is larger than x-y"),7:("E","22.5"),8:("A","729"),9:("B","40"),10:("B","27")}
+ANS={11:("C","13"),12:("E","382"),13:("D",r"\frac{31}{36}"),14:("A","7"),15:("C",r"\frac{\sqrt{10}}{10}"),16:("B","132")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2561,6 +2561,39 @@ SOL.update({
 9:[("Use rates",r"Let one escalator length be $1$. Clea's walking rate on a stopped escalator is \[\frac1{60}\] escalator per second."),("Use the combined rate",r"When the escalator operates and she walks, her combined rate is \[\frac1{24}.\]"),("Find the escalator's rate",r"The escalator's own rate is \[\frac1{24}-\frac1{60}=\frac{5-2}{120}=\frac1{40}.\]"),("Convert rate to time",r"If she just stands, she moves at the escalator's rate, so it takes $40$ seconds."),("Conclude",r"The answer is $\boxed{40}$."),
 ],
 10:[("Solve the intersections",r"The curves are \[x^2+y^2=25\] and \[(x-4)^2+9y^2=81.\] Solving the system gives the three intersection points \[(-5,0),\quad(4,3),\quad(4,-3).\]"),("Recognize the polygon",r"These three points form a triangle. The vertical side from $(4,-3)$ to $(4,3)$ has length $6$."),("Find the height",r"The horizontal distance from $(-5,0)$ to the line $x=4$ is $9$."),("Compute area",r"The triangle's area is \[\frac12\cdot6\cdot9=27.\]"),("Conclude",r"The answer is $\boxed{27}$."),
+],
+})
+
+OV.update({
+11:(r"In the equation below, $A$ and $B$ are consecutive positive integers, and $A$, $B$, and $A+B$ represent number bases: \[132_A+43_B=69_{A+B}.\] What is $A+B$?",[("A","9"),("B","11"),("C","13"),("D","15"),("E","17")]),
+12:(r"How many sequences of zeros and ones of length $20$ have all the zeros consecutive, or all the ones consecutive, or both?",[("A","190"),("B","192"),("C","211"),("D","380"),("E","382")]),
+13:(r"Two parabolas have equations $y=x^2+ax+b$ and $y=x^2+cx+d$, where $a,b,c,$ and $d$ are integers, each chosen independently by rolling a fair six-sided die. What is the probability that the parabolas have at least one point in common?",[("A",r"$\frac12$"),("B",r"$\frac{25}{36}$"),("C",r"$\frac56$"),("D",r"$\frac{31}{36}$"),("E","1")]),
+14:(r"Bernardo and Silvia play the following game. An integer between $0$ and $999$, inclusive, is selected and given to Bernardo. Whenever Bernardo receives a number, he doubles it and passes the result to Silvia. Whenever Silvia receives a number, she adds $50$ to it and passes the result to Bernardo. The winner is the last person who produces a number less than $1000$. Let $N$ be the smallest initial number that results in a win for Bernardo. What is the sum of the digits of $N$?",[("A","7"),("B","8"),("C","9"),("D","10"),("E","11")]),
+15:(r"Jesse cuts a circular paper disk of radius $12$ along two radii to form two sectors, the smaller having a central angle of $120^\circ$. He makes two circular cones, using each sector to form the lateral surface of a cone. What is the ratio of the volume of the smaller cone to that of the larger?",[("A",r"$\frac18$"),("B",r"$\frac14$"),("C",r"$\frac{\sqrt{10}}{10}$"),("D",r"$\frac{\sqrt5}{6}$"),("E",r"$\frac{\sqrt{10}}5$")]),
+16:(r"Amy, Beth, and Jo listen to four different songs and discuss which ones they like. No song is liked by all three. Furthermore, for each of the three pairs of the girls, there is at least one song liked by those two girls but disliked by the third. In how many different ways is this possible?",[("A","108"),("B","132"),("C","671"),("D","846"),("E","1105")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Convert the base equation to ordinary decimal notation.",
+12:"Use inclusion-exclusion on sequences with consecutive zeros or consecutive ones.",
+13:"The parabolas fail to meet only when their linear terms match but constants differ.",
+14:"Analyze the game backwards or by threshold intervals.",
+15:"Convert sector arc lengths into cone base radii and use volume.",
+16:"Use inclusion-exclusion over the required pair-only song types.",
+})
+
+SOL.update({
+11:[("Convert each numeral",r"The base-$A$ number $132_A$ means \[A^2+3A+2.\] The base-$B$ number $43_B$ means \[4B+3.\] The base-$(A+B)$ number $69_{A+B}$ means \[6(A+B)+9.\]"),("Use consecutive bases",r"The digits require $A>3$ and $B>4$. Since $A$ and $B$ are consecutive and $B$ must be larger in the useful case, let \[B=A+1.\]"),("Set up the equation",r"Substitute into \[A^2+3A+2+4B+3=6(A+B)+9.\] With $B=A+1$, this becomes \[A^2+7A+9=12A+15.\]"),("Solve",r"So \[A^2-5A-6=0,\] or \[(A-6)(A+1)=0.\] Hence $A=6$ and $B=7$."),("Conclude",r"Therefore \[A+B=13,\] so the answer is $\boxed{13}$."),
+],
+12:[("Count sequences with consecutive zeros",r"If there are $k$ zeros, where $1\le k\le20$, the block of zeros can start in $21-k$ positions. This gives \[\sum_{k=1}^{20}(21-k)=210\] sequences. Also include the all-ones sequence with $k=0$, so there are $211$ sequences with all zeros consecutive."),("Use symmetry for ones",r"Similarly, there are $211$ sequences with all ones consecutive."),("Count the overlap",r"Both zeros and ones are consecutive in the all-zero sequence, the all-one sequence, and the two-block sequences \[00\cdots011\cdots1\quad\text{or}\quad11\cdots100\cdots0.\] With both symbols present, there are $19$ split points for each order, so the overlap has \[2+2\cdot19=40\] sequences."),("Apply inclusion-exclusion",r"The required number is \[211+211-40=382.\]"),("Conclude",r"The answer is $\boxed{382}$."),
+],
+13:[("Subtract the equations",r"Common points satisfy \[x^2+ax+b=x^2+cx+d.\] The $x^2$ terms cancel, leaving \[(a-c)x=d-b.\]"),("Handle different linear coefficients",r"If $a\ne c$, this linear equation has a real solution, so the parabolas meet."),("Find the failure case",r"The only way they do not meet is if $a=c$ but $b\ne d$, producing a contradiction \[0=d-b.\]"),("Compute the failure probability",r"The probability that $a=c$ is $\frac16$. Given that, the probability that $b\ne d$ is $\frac56$. So the failure probability is \[\frac16\cdot\frac56=\frac5{36}.\]"),("Take the complement",r"The probability that the parabolas have at least one common point is \[1-\frac5{36}=\frac{31}{36}.\]"),("Conclude",r"The answer is \[\boxed{\frac{31}{36}}.\]"),
+],
+14:[("Understand the stopping rule",r"The winner is the last person to produce a number less than $1000$. Once someone produces a number at least $1000$, the game stops and the previous producer wins."),("Track Bernardo-winning intervals",r"Starting with $N$, the produced numbers alternate as \[2N,\quad 2N+50,\quad 4N+100,\quad 4N+150,\quad 8N+300,\ldots\] Bernardo wins when one of his outputs is below $1000$ and Silvia's next output is at least $1000$."),("Work backward to small N",r"Checking the threshold intervals from the end backward gives Bernardo-winning starting values \[16\le N\le18,\quad82\le N\le87,\quad213\le N\le224,\quad475\le N\le499.\]"),("Choose the smallest",r"The smallest initial number that makes Bernardo win is \[N=16.\]"),("Add digits",r"The sum of the digits of $16$ is \[1+6=7.\]"),("Conclude",r"The answer is $\boxed{7}$."),
+],
+15:[("Convert sector arcs to cone base circumferences",r"The disk radius $12$ becomes the slant height of each cone. The smaller sector has angle $120^\circ$, one third of a full circle, so its arc length is \[\frac13\cdot2\pi\cdot12=8\pi.\] Thus the smaller cone has base radius $4$."),("Find the larger cone radius",r"The larger sector has angle $240^\circ$, so its arc length is \[16\pi,\] giving base radius $8$."),("Compute cone heights",r"For the smaller cone, height is \[\sqrt{12^2-4^2}=\sqrt{128}=8\sqrt2.\] For the larger cone, height is \[\sqrt{12^2-8^2}=\sqrt{80}=4\sqrt5.\]"),("Form the volume ratio",r"Cone volume is \[\frac13\pi r^2h.\] Therefore the ratio is \[\frac{4^2\cdot8\sqrt2}{8^2\cdot4\sqrt5}=\frac{\sqrt2}{2\sqrt5}=\frac{\sqrt{10}}{10}.\]"),("Conclude",r"The answer is \[\boxed{\frac{\sqrt{10}}{10}}.\]"),
+],
+16:[("Classify possible song-like sets",r"For each song, the set of girls who like it can be any subset of the three girls except the full set of all three. So there are $7$ allowed liking patterns per song."),("Identify required patterns",r"The condition requires that each pair-only pattern appears at least once: Amy-Beth only, Amy-Jo only, and Beth-Jo only."),("Use inclusion-exclusion",r"With four labeled songs, there are $7^4$ total assignments. If a particular required pair pattern is missing, there are $6^4$ assignments. If two required patterns are missing, there are $5^4$. If all three are missing, there are $4^4$."),("Compute",r"The count is \[7^4-3\cdot6^4+3\cdot5^4-4^4=2401-3888+1875-256=132.\]"),("Conclude",r"The answer is $\boxed{132}$."),
 ],
 })
 
