@@ -3,21 +3,21 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 214
+BATCH_NUMBER = 215
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2013_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {11,12,14,17,18}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2014_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
 SKIPPED = [
-    "2013 AMC 12B Problem 13: angle-chasing similarity problem with high derivation risk; skipped",
-    "2013 AMC 12B Problem 15: factorial representation/minimality proof high risk; skipped",
-    "2013 AMC 12B Problem 16: equiangular pentagon star geometry and OCR radicals high risk; skipped",
-    "2013 AMC 12B Problem 19: multi-step geometry with OCR fraction ambiguity; skipped",
-    "2013 AMC 12B Problem 20: trigonometric trapezoid condition with OCR radical ambiguity; skipped",
+    "2013 AMC 12B Problem 21: parabola intersection counting high risk; skipped",
+    "2013 AMC 12B Problem 22: logarithm equation/minimal integer high risk; skipped",
+    "2013 AMC 12B Problem 23: base representation digit-counting high risk; skipped",
+    "2013 AMC 12B Problem 24: complex triangle geometry with OCR radical ambiguity; skipped",
+    "2013 AMC 12B Problem 25: polynomial with Gaussian-integer roots high risk; skipped",
 ]
-BATCH_LABEL = "2013 AMC 12B Problems 11, 12, 14, 17, 18"
-NEXT_START = "2013 AMC 12B Problem 21"
+BATCH_LABEL = "2014 AMC 12A Problems 1-10"
+NEXT_START = "2014 AMC 12A Problem 11"
 
-ANS={11:("A","A east, B west"),12:("D","16"),14:("C","104"),17:("D",r"\frac{16}{3}"),18:("B","Jenna will win with 2013 coins, and whoever goes first will win with 2014 coins")}
+ANS={1:("C",r"\frac{25}{2}"),2:("B",r"\$38.50"),3:("B","3"),4:("A",r"\frac{bde}{ac}"),5:("C","3"),6:("D","99"),7:("A","1"),8:("C",r"\$219.95"),9:("B",r"a+4"),10:("B",r"\frac{\sqrt3}{3}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2711,6 +2711,45 @@ SOL.update({
 18:[("Build small winning states",r"Because the allowed moves are small, the pattern repeats. Track the winner for each number of coins depending on whose turn it is."),("Find the first pattern",r"For $n=1,2,3,4,5$, the outcomes are: $n=1$ Jenna wins; $n=2$ whoever starts wins; $n=3$ Jenna wins; $n=4$ whoever starts wins; $n=5$ whoever goes second wins."),("Observe the period",r"After these first five cases, the same pattern repeats every $5$ coins. This happens because Barbara removes an even number and Jenna removes an odd number, so each player can move the game into the corresponding earlier state modulo $5$."),("Apply to 2013",r"Since \[2013\equiv3\pmod5,\] it matches the $n=3$ case. Jenna wins regardless of who starts."),("Apply to 2014",r"Since \[2014\equiv4\pmod5,\] it matches the $n=4$ case. Whoever goes first wins."),("Conclude",r"The answer is $\boxed{\text{Jenna wins with 2013 coins, and whoever goes first wins with 2014 coins}}$.")],
 })
 
+OV.update({
+1:(r"What is \[10\left(\frac12+\frac15+\frac1{10}\right)^{-1}?\]",[("A","3"),("B","8"),("C",r"$\frac{25}{2}$"),("D",r"$\frac{170}{3}$"),("E","170")]),
+2:(r"At the theater children get in for half price. The price for $5$ adult tickets and $4$ child tickets is $\$24.50$. How much would $8$ adult tickets and $6$ child tickets cost?",[("A",r"$\$35$"),("B",r"$\$38.50$"),("C",r"$\$40$"),("D",r"$\$42$"),("E",r"$\$42.50$")]),
+3:(r"Walking down Jane Street, Ralph passed four houses in a row, each painted a different color. He passed the orange house before the red house, and he passed the blue house before the yellow house. The blue house was not next to the yellow house. How many orderings of the colored houses are possible?",[("A","2"),("B","3"),("C","4"),("D","5"),("E","6")]),
+4:(r"Suppose that $a$ cows give $b$ gallons of milk in $c$ days. At this rate, how many gallons of milk will $d$ cows give in $e$ days?",[("A",r"$\frac{bde}{ac}$"),("B",r"$\frac{ac}{bde}$"),("C",r"$\frac{abde}{c}$"),("D",r"$\frac{bcde}{a}$"),("E",r"$\frac{abc}{de}$")]),
+5:(r"On an algebra quiz, $10\%$ of the students scored $70$ points, $35\%$ scored $80$ points, $30\%$ scored $90$ points, and the rest scored $100$ points. What is the difference between the mean and median score of the students' scores on this quiz?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+6:(r"The difference between a two-digit number and the number obtained by reversing its digits is $5$ times the sum of the digits of either number. What is the sum of the two-digit number and its reverse?",[("A","44"),("B","55"),("C","77"),("D","99"),("E","110")]),
+7:(r"The first three terms of a geometric progression are $\sqrt3$, $\sqrt[3]{3}$, and $\sqrt[6]{3}$. What is the fourth term?",[("A","1"),("B",r"$\sqrt[7]{3}$"),("C",r"$\sqrt[8]{3}$"),("D",r"$\sqrt[9]{3}$"),("E",r"$\sqrt[10]{3}$")]),
+8:(r"A customer who intends to purchase an appliance has three coupons, only one of which may be used: Coupon 1 gives $10\%$ off the listed price if the listed price is at least $\$50$; Coupon 2 gives $\$20$ off the listed price if the listed price is at least $\$100$; Coupon 3 gives $18\%$ off the amount by which the listed price exceeds $\$100$. For which of the following listed prices will Coupon 1 offer a greater price reduction than either Coupon 2 or Coupon 3?",[("A",r"$\$179.95$"),("B",r"$\$199.95$"),("C",r"$\$219.95$"),("D",r"$\$239.95$"),("E",r"$\$259.95$")]),
+9:(r"Five positive consecutive integers starting with $a$ have average $b$. What is the average of $5$ consecutive integers that start with $b$?",[("A",r"$a+3$"),("B",r"$a+4$"),("C",r"$a+5$"),("D",r"$a+6$"),("E",r"$a+7$")]),
+10:(r"Three congruent isosceles triangles are constructed with their bases on the sides of an equilateral triangle of side length $1$. The sum of the areas of the three isosceles triangles is the same as the area of the equilateral triangle. What is the length of one of the two congruent sides of one of the isosceles triangles?",[("A",r"$\frac{\sqrt3}{4}$"),("B",r"$\frac{\sqrt3}{3}$"),("C",r"$\frac23$"),("D",r"$\frac{\sqrt2}{2}$"),("E",r"$\frac{\sqrt3}{2}$")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Add the fractions first, then apply the reciprocal.",
+2:"Use the half-price relationship to find the adult ticket price.",
+3:"Count permutations satisfying two order constraints, then remove adjacent blue-yellow cases.",
+4:"Convert the given milk production into a per-cow per-day rate.",
+5:"Compute the weighted mean and compare it with the median score.",
+6:"Write the number and its reverse using digits.",
+7:"Use exponent notation for radicals in a geometric progression.",
+8:"Translate each coupon into an inequality for the listed price.",
+9:"The average of five consecutive integers is the middle term.",
+10:"Use area to find the height of each isosceles triangle, then use the Pythagorean theorem.",
+})
+
+SOL.update({
+1:[("Add inside the parentheses",r"First compute the fraction sum: \[\frac12+\frac15+\frac1{10}=\frac5{10}+\frac2{10}+\frac1{10}=\frac8{10}=\frac45.\]"),("Apply the exponent -1",r"An exponent of $-1$ means reciprocal, so \[\left(\frac45\right)^{-1}=\frac54.\]"),("Multiply by 10",r"Now \[10\cdot\frac54=\frac{50}{4}=\frac{25}{2}.\]"),("Conclude",r"The answer is \[\boxed{\frac{25}{2}}.\]")],
+2:[("Let the adult price be A",r"Since children get in for half price, each child ticket costs $\frac{A}{2}$."),("Use the first purchase",r"The cost of $5$ adult tickets and $4$ child tickets is \[5A+4\cdot\frac{A}{2}=7A.\] This equals $\$24.50$, so \[A=3.50.\]"),("Compute the new purchase",r"Eight adult tickets cost \[8(3.50)=28.\] Six child tickets cost \[6(1.75)=10.50.\]"),("Add",r"The total is \[28+10.50=38.50.\]"),("Conclude",r"The answer is $\boxed{\$38.50}$.")],
+3:[("Start with the order constraints",r"Without the adjacency condition, the two constraints are orange before red and blue before yellow. In a random ordering, each of those has probability $\frac12$, so there are \[\frac{4!}{4}=6\] orderings."),("Count the bad adjacent cases",r"Now count the orderings where blue is immediately before yellow. Treat $BY$ as one block, together with $O$ and $R$."),("Apply orange-before-red",r"The three objects are $BY$, $O$, and $R$. There are $3!=6$ orders, and exactly half have $O$ before $R$, so there are $3$ bad orders."),("Subtract",r"The valid number is \[6-3=3.\]"),("Conclude",r"The answer is $\boxed{3}$.")],
+4:[("Find the production rate",r"If $a$ cows give $b$ gallons in $c$ days, then the production rate per cow per day is \[\frac{b}{ac}.\]"),("Scale to d cows",r"For $d$ cows, the daily production is \[d\cdot\frac{b}{ac}=\frac{bd}{ac}.\]"),("Scale to e days",r"For $e$ days, multiply by $e$: \[\frac{bd}{ac}\cdot e=\frac{bde}{ac}.\]"),("Conclude",r"The answer is \[\boxed{\frac{bde}{ac}}.\]")],
+5:[("Find the missing percentage",r"The listed percentages add to $10+35+30=75\%$, so $25\%$ of the students scored $100$."),("Compute the mean",r"The weighted mean is \[0.10(70)+0.35(80)+0.30(90)+0.25(100)=7+28+27+25=87.\]"),("Find the median",r"The first $10\%$ scored $70$, and the next $35\%$ scored $80$, so $45\%$ scored $80$ or below. The next group scored $90$, so the median is $90$."),("Compare",r"The difference between median and mean is \[90-87=3.\]"),("Conclude",r"The answer is $\boxed{3}$.")],
+6:[("Write the digits",r"Let the two-digit number be $10a+b$ and its reverse be $10b+a$."),("Use the difference condition",r"The difference between them is \[|10a+b-(10b+a)|=9|a-b|.\] The sum of the digits is $a+b$, so \[9|a-b|=5(a+b).\]"),("Choose the possible direction",r"The digit relation that works is \[9(b-a)=5(a+b),\] which simplifies to \[4b=14a,\quad 2b=7a.\]"),("Find the digits",r"The digit solution is $a=2$, $b=7$, giving the numbers $27$ and $72$."),("Add the number and its reverse",r"\[27+72=99.\]"),("Conclude",r"The answer is $\boxed{99}$.")],
+7:[("Use exponents for radicals",r"Rewrite the terms as \[3^{1/2},\quad 3^{1/3},\quad 3^{1/6}.\]"),("Find the common ratio",r"The ratio from the first term to the second is \[\frac{3^{1/3}}{3^{1/2}}=3^{-1/6}.\] The ratio from the second to the third is also \[3^{1/6-1/3}=3^{-1/6}.\]"),("Multiply once more",r"The fourth term is \[3^{1/6}\cdot3^{-1/6}=3^0=1.\]"),("Conclude",r"The answer is $\boxed{1}$.")],
+8:[("Write the discounts",r"For a listed price $P$, Coupon 1 gives $0.10P$, Coupon 2 gives $20$, and Coupon 3 gives \[0.18(P-100).\]"),("Beat Coupon 2",r"Coupon 1 must give more than $\$20$, so \[0.10P>20,\] which means \[P>200.\]"),("Beat Coupon 3",r"Coupon 1 must also beat Coupon 3: \[0.10P>0.18(P-100).\] This gives \[0.10P>0.18P-18,\] so \[P<225.\]"),("Check the answer choices",r"The listed price must satisfy \[200<P<225.\] Among the choices, only $\$219.95$ is in this interval."),("Conclude",r"The answer is $\boxed{\$219.95}$.")],
+9:[("Average the first five integers",r"The five consecutive integers are \[a,\ a+1,\ a+2,\ a+3,\ a+4.\] Their average is the middle term, so \[b=a+2.\]"),("Average the next sequence",r"The five consecutive integers starting with $b$ have average \[b+2.\]"),("Substitute for b",r"Since $b=a+2$, the new average is \[b+2=a+4.\]"),("Conclude",r"The answer is $\boxed{a+4}$.")],
+10:[("Find the area of each small triangle",r"The equilateral triangle of side $1$ has area \[\frac{\sqrt3}{4}.\] The three congruent isosceles triangles have the same total area, so each has area \[\frac13\cdot\frac{\sqrt3}{4}=\frac{\sqrt3}{12}.\]"),("Use base 1",r"Each isosceles triangle has base $1$. If its height is $h$, then \[\frac12\cdot1\cdot h=\frac{\sqrt3}{12}.\] Thus \[h=\frac{\sqrt3}{6}.\]"),("Use half the base",r"The congruent side of the isosceles triangle is the hypotenuse of a right triangle with legs \[\frac12\quad\text{and}\quad \frac{\sqrt3}{6}.\]"),("Apply the Pythagorean theorem",r"The side length is \[\sqrt{\left(\frac12\right)^2+\left(\frac{\sqrt3}{6}\right)^2}=\sqrt{\frac14+\frac{3}{36}}=\sqrt{\frac13}=\frac{\sqrt3}{3}.\]"),("Conclude",r"The answer is \[\boxed{\frac{\sqrt3}{3}}.\]")],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -2817,7 +2856,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2013" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2014" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -2906,7 +2945,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2013 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2014 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),

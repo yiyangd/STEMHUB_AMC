@@ -1,25 +1,30 @@
 # Problem Pages Report
 
-- Total manifest entries: 1591
-- Latest batch: 214 (2013 AMC 12B Problems 11, 12, 14, 17, 18)
-- Latest new generated count: 5
+- Total manifest entries: 1601
+- Latest batch: 215 (2014 AMC 12A Problems 1-10)
+- Latest new generated count: 10
 - Latest updated existing count: 0
 - Latest skipped count: 5
 - MathJax validation: passed
-- Answer verification source: AoPS 2013 AMC 12B Answer Key
+- Answer verification source: AoPS 2014 AMC 12A Answer Key
 
 ## Latest Batch Pages
 
-- `2013 AMC 12B Problem 11` -> `amc12/problems/2013-amc-12b-problem-11/`
-- `2013 AMC 12B Problem 12` -> `amc12/problems/2013-amc-12b-problem-12/`
-- `2013 AMC 12B Problem 14` -> `amc12/problems/2013-amc-12b-problem-14/`
-- `2013 AMC 12B Problem 17` -> `amc12/problems/2013-amc-12b-problem-17/`
-- `2013 AMC 12B Problem 18` -> `amc12/problems/2013-amc-12b-problem-18/`
+- `2014 AMC 12A Problem 1` -> `amc12/problems/2014-amc-12a-problem-1/`
+- `2014 AMC 12A Problem 2` -> `amc12/problems/2014-amc-12a-problem-2/`
+- `2014 AMC 12A Problem 3` -> `amc12/problems/2014-amc-12a-problem-3/`
+- `2014 AMC 12A Problem 4` -> `amc12/problems/2014-amc-12a-problem-4/`
+- `2014 AMC 12A Problem 5` -> `amc12/problems/2014-amc-12a-problem-5/`
+- `2014 AMC 12A Problem 6` -> `amc12/problems/2014-amc-12a-problem-6/`
+- `2014 AMC 12A Problem 7` -> `amc12/problems/2014-amc-12a-problem-7/`
+- `2014 AMC 12A Problem 8` -> `amc12/problems/2014-amc-12a-problem-8/`
+- `2014 AMC 12A Problem 9` -> `amc12/problems/2014-amc-12a-problem-9/`
+- `2014 AMC 12A Problem 10` -> `amc12/problems/2014-amc-12a-problem-10/`
 
 ## Skipped in latest batch
 
-- 2013 AMC 12B Problem 13: angle-chasing similarity problem with high derivation risk; skipped
-- 2013 AMC 12B Problem 15: factorial representation/minimality proof high risk; skipped
-- 2013 AMC 12B Problem 16: equiangular pentagon star geometry and OCR radicals high risk; skipped
-- 2013 AMC 12B Problem 19: multi-step geometry with OCR fraction ambiguity; skipped
-- 2013 AMC 12B Problem 20: trigonometric trapezoid condition with OCR radical ambiguity; skipped
+- 2013 AMC 12B Problem 21: parabola intersection counting high risk; skipped
+- 2013 AMC 12B Problem 22: logarithm equation/minimal integer high risk; skipped
+- 2013 AMC 12B Problem 23: base representation digit-counting high risk; skipped
+- 2013 AMC 12B Problem 24: complex triangle geometry with OCR radical ambiguity; skipped
+- 2013 AMC 12B Problem 25: polynomial with Gaussian-integer roots high risk; skipped
