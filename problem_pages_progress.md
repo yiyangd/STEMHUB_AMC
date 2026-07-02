@@ -4076,3 +4076,19 @@
 - Pushed: pending
 - Next batch should start from: 2020 AMC 12A Problem 21
 - Review notes: none.
+
+## Batch 252: 2020 AMC 12A Problems 21-23
+
+- Start time: 2026-07-02T07:26:48-07:00
+- End time: 2026-07-02T07:26:48-07:00
+- Processed contest: AMC12
+- Processed range: 2020 AMC 12A Problems 21-23
+- Generated count: 3
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2020 AMC 12A Problem 24: equilateral-triangle distance condition requires a longer geometry derivation; skipped; 2020 AMC 12A Problem 25: floor/fractional-part parameter problem is high-risk in current pass; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2020 AMC 12B Problem 1
+- Review notes: none.

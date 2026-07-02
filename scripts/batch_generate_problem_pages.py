@@ -3,20 +3,20 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 251
+BATCH_NUMBER = 252
 CONTEST_DIR = "amc12"
 YEAR = "2020"
 FORM = "A"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2020_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,14,15,16,17,18,20}
+TARGET_NUMBERS = {21,22,23}
 SKIPPED = [
-    "2020 AMC 12A Problem 13: nested radical/root expression is OCR-damaged; skipped",
-    "2020 AMC 12A Problem 19: binary expansion identity has high derivation risk in current pass; skipped",
+    "2020 AMC 12A Problem 24: equilateral-triangle distance condition requires a longer geometry derivation; skipped",
+    "2020 AMC 12A Problem 25: floor/fractional-part parameter problem is high-risk in current pass; skipped",
 ]
-BATCH_LABEL = "2020 AMC 12A Problems 11, 12, 14, 15, 16, 17, 18, 20"
-NEXT_START = "2020 AMC 12A Problem 21"
+BATCH_LABEL = "2020 AMC 12A Problems 21-23"
+NEXT_START = "2020 AMC 12B Problem 1"
 
-ANS={11:("B",r"\frac58"),12:("B","15"),14:("B",r"\frac{\sqrt2}{2}"),15:("D",r"2\sqrt{21}"),16:("B","0.4"),17:("D","12"),18:("D","360"),20:("A","12")}
+ANS={21:("D","48"),22:("B",r"\frac7{16}"),23:("A",r"\frac7{36}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4556,6 +4556,24 @@ SOL.update({
 17:[("Name the four x-coordinates",r"Let the leftmost $x$-coordinate be $n$. The four vertices are \[(n,\ln n),(n+1,\ln(n+1)),(n+2,\ln(n+2)),(n+3,\ln(n+3)).\]"),("Use the shoelace formula",r"Applying the shoelace formula and simplifying gives the area \[\ln\frac{(n+1)(n+2)}{n(n+3)}.\]"),("Match the given logarithm",r"We need \[\frac{(n+1)(n+2)}{n(n+3)}=\frac{91}{90}.\]"),("Solve by testing the choices",r"For $n=12$, \[\frac{13\cdot14}{12\cdot15}=\frac{182}{180}=\frac{91}{90}.\]"),("Conclude",r"The leftmost $x$-coordinate is $\boxed{12}$."),],
 18:[("Choose coordinates",r"Put $A=(0,0)$ and $C=(20,0)$. Since $\angle ACD=90^\circ$ and $CD=30$, take $D=(20,30)$; the reflected case gives the same area."),("Use the diagonal intersection",r"Because $AE=5$, point $E$ is $(5,0)$. Since $E$ lies on diagonal $BD$, point $B$ lies on the line through $D=(20,30)$ and $E=(5,0)$."),("Use the right angle at B",r"The condition $\angle ABC=90^\circ$ means $B$ lies on the circle with diameter $\overline{AC}$. Solving this with the line through $D$ and $E$ gives the convex configuration $B=(2,-6)$."),("Compute the area",r"Using the shoelace formula on \[A=(0,0),\ B=(2,-6),\ C=(20,0),\ D=(20,30),\] the area is \[360.\]"),("Conclude",r"The area of quadrilateral $ABCD$ is $\boxed{360}$."),],
 20:[("Represent the transformations algebraically",r"Let $R$ be rotation by $90^\circ$. Then the available rotations are $R,R^2,R^3$. Reflection across the $x$-axis is $X$, and reflection across the $y$-axis is $Y$."),("Use the symmetry relations",r"These transformations satisfy \[R^4=I,\quad X^2=Y^2=I,\quad XY=R^2.\] A sequence returns $T$ to its original position exactly when the product of the three transformations is the identity."),("Count by choosing the first two transformations",r"There are $5\cdot5=25$ choices for the first two transformations. For each pair, the third transformation would need to be the inverse of their product. That inverse is not always one of the five allowed transformations."),("Check the allowed products",r"A direct multiplication table using the five listed transformations shows that exactly $12$ of the $25$ first-two choices have a required third transformation still in the allowed set."),("Conclude",r"Therefore there are $\boxed{12}$ valid sequences of three transformations."),],
+})
+
+OV.update({
+21:(r"How many positive integers $n$ are there such that $n$ is a multiple of $5$, and the least common multiple of $5!$ and $n$ equals $5$ times the greatest common divisor of $10!$ and $n$?",[("A","12"),("B","24"),("C","36"),("D","48"),("E","72")]),
+22:(r"Let $(a_n)$ and $(b_n)$ be the sequences of real numbers such that \[(2+i)^n=a_n+b_ni\] for all integers $n\ge0$, where $i=\sqrt{-1}$. What is \[\sum_{n=0}^{\infty}\frac{a_nb_n}{7^n}?\]",[("A",r"$\frac38$"),("B",r"$\frac7{16}$"),("C",r"$\frac12$"),("D",r"$\frac9{16}$"),("E",r"$\frac47$")]),
+23:(r"Jason rolls three fair standard six-sided dice. Then he looks at the rolls and chooses a subset of the dice, possibly empty and possibly all three dice, to reroll. After rerolling, he wins if and only if the sum of the numbers face up on the three dice is exactly $7$. Jason always plays to optimize his chances of winning. What is the probability that he chooses to reroll exactly two of the dice?",[("A",r"$\frac7{36}$"),("B",r"$\frac5{24}$"),("C",r"$\frac29$"),("D",r"$\frac{17}{72}$"),("E",r"$\frac14$")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Compare prime exponents in the LCM and GCD condition.",
+22:"Convert a product of real and imaginary parts into the imaginary part of a geometric series.",
+23:"Compare the best winning probabilities for rerolling zero, one, two, or three dice.",
+})
+
+SOL.update({
+21:[("Factor the fixed factorials",r"We have \[5!=2^3\cdot3\cdot5,\qquad 10!=2^8\cdot3^4\cdot5^2\cdot7.\] Since $n$ is a multiple of $5$, write \[n=2^a3^b5^c7^d\] with $c\ge1$. No other prime can appear, because it would appear in the LCM but not in the GCD."),("Compare powers of 2",r"For prime $2$, the LCM exponent is $\max(3,a)$, and the GCD exponent is $\min(8,a)$. The equation requires \[\max(3,a)=\min(8,a),\] so \[a=3,4,5,6,7,8,\] giving $6$ choices."),("Compare powers of 3",r"For prime $3$, we need \[\max(1,b)=\min(4,b),\] so \[b=1,2,3,4,\] giving $4$ choices."),("Compare powers of 5 and 7",r"The extra factor of $5$ on the right means the $5$-exponent condition is \[\max(1,c)=1+\min(2,c).\] With $c\ge1$, this forces $c=3$. For prime $7$, we need \[d=\min(1,d),\] so $d=0$ or $1$."),("Multiply the choices",r"The total number of possible $n$ is \[6\cdot4\cdot1\cdot2=48.\]"),("Conclude",r"The answer is $\boxed{48}$."),],
+22:[("Relate a_n b_n to a complex square",r"If \[(2+i)^n=a_n+b_ni,\] then \[(a_n+b_ni)^2=a_n^2-b_n^2+2a_nb_ni.\] So \[a_nb_n=\frac12\operatorname{Im}\left((2+i)^{2n}\right).\]"),("Simplify the base",r"We have \[(2+i)^2=3+4i.\] Therefore \[\frac{a_nb_n}{7^n}=\frac12\operatorname{Im}\left(\left(\frac{3+4i}{7}\right)^n\right).\]"),("Use a geometric series",r"Because \[\left|\frac{3+4i}{7}\right|=\frac57<1,\] the infinite series converges, and \[\sum_{n=0}^{\infty}\left(\frac{3+4i}{7}\right)^n=\frac1{1-\frac{3+4i}{7}}=\frac{7}{4-4i}.\]"),("Find the imaginary part",r"Rationalize: \[\frac{7}{4-4i}=\frac{7(4+4i)}{32}=\frac78+\frac78i.\] Its imaginary part is $\frac78$."),("Conclude",r"The desired sum is half of that imaginary part: \[\frac12\cdot\frac78=\frac7{16}.\] The answer is $\boxed{\frac7{16}}$."),],
+23:[("Compare possible reroll sizes",r"If Jason keeps two dice and rerolls one die, the best possible success probability is $\frac16$, because one die must hit one exact value. If he rerolls all three dice, the probability of sum $7$ is $\frac{15}{216}$."),("Analyze rerolling exactly two dice",r"If Jason keeps a die showing $m$, then the two rerolled dice must sum to $7-m$. The number of successful ordered pairs is \[5,4,3,2,1,0\] for $m=1,2,3,4,5,6$, respectively."),("When can rerolling two be best?",r"Rerolling two dice beats rerolling all three only when the kept die is $1$, $2$, or $3$. It also must beat rerolling one die, so no pair of the original dice may have sum at most $6$; otherwise keeping that pair gives probability $\frac16$."),("Count the rolls",r"Thus the smallest die must be $1$, $2$, or $3$, and the sum of the two smallest dice must be greater than $6$. Counting ordered rolls gives \[3+15+24=42\] favorable initial rolls."),("Convert to probability",r"There are $6^3=216$ equally likely initial rolls, so the probability is \[\frac{42}{216}=\frac7{36}.\]"),("Conclude",r"The answer is $\boxed{\frac7{36}}$."),],
 })
 
 def esc(x, quote=True):
