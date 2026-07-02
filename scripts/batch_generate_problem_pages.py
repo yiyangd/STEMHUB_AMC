@@ -3,19 +3,18 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 273
+BATCH_NUMBER = 274
 CONTEST_DIR = "amc12"
-YEAR = "2022"
-FORM = "B"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2022_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {21, 22, 23, 24}
+YEAR = "2023"
+FORM = "A"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2023_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 SKIPPED = [
-    "2022 AMC 12B Problem 25: nonconvex polygon area depends on the missing figure; skipped",
 ]
-BATCH_LABEL = "2022 AMC 12B Problems 21-24"
-NEXT_START = "2023 AMC 12A Problem 1"
+BATCH_LABEL = "2023 AMC 12A Problems 1-10"
+NEXT_START = "2023 AMC 12A Problem 11"
 
-ANS={21:("E",r"$136\pi$"),22:("C",r"$\frac23$"),23:("A","6"),24:("C","147")}
+ANS={1:("E","27"),2:("A",r"$1\frac45$"),3:("A","8"),4:("E","18"),5:("B",r"$\frac{49}{216}$"),6:("D",r"$4\sqrt5$"),7:("E","9"),8:("D","7"),9:("C",r"$2-\sqrt3$"),10:("D","36")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -5053,6 +5052,45 @@ SOL.update({
 22:[("Separate time from distance",r"The stopping step depends only on the time variables $t_i$, while the final position depends only on the distance increments $x_i$. These two parts are independent, so we can split into cases."),("Find the stopping step probabilities",r"She cannot stop after one step because $t_1<1$. She stops after step $2$ exactly when \[t_1+t_2>1,\] which has probability $\frac12$. Otherwise she takes step $3$, also with probability $\frac12$."),("Handle two steps",r"If she stops after step $2$, her position is $x_1+x_2$. For two independent uniform variables on $(0,1)$, \[P(x_1+x_2>1)=\frac12.\]"),("Handle three steps",r"If she takes three steps, her position is $x_1+x_2+x_3$. The probability that this sum is at most $1$ is the volume of a simplex in the unit cube: \[\frac1{3!}=\frac16.\] So \[P(x_1+x_2+x_3>1)=\frac56.\]"),("Combine the cases",r"The desired probability is \[\frac12\cdot\frac12+\frac12\cdot\frac56=\frac14+\frac5{12}=\frac23.\]"),("Conclude",r"The answer is $\boxed{\frac23}$."),],
 23:[("Interpret the congruence",r"The number $S_n$ is the integer whose first $n$ binary digits are $x_0,x_1,\ldots,x_{n-1}$. The condition says that these prefixes represent the inverse of $7$ modulo powers of $2$."),("Find the inverse pattern",r"Since $7=8-1$, we have formally \[\frac1{7}=\frac1{8-1}=-\frac1{1-8}.\] In modulo powers of $2$, this produces a repeating binary pattern after adjustment: \[1+6(1+8+8^2+\cdots).\]"),("Read the bits",r"The binary digits are \[1,1,1,0,1,1,0,1,1,0,\ldots.\] After the first digit, the pattern $1,1,0$ repeats."),("Locate the needed indices",r"For $k\ge1$, the digit $x_k$ is $0$ exactly when $k$ is divisible by $3$, and is $1$ otherwise."),("Apply this to the four indices",r"We have \[2019\equiv0,\quad2020\equiv1,\quad2021\equiv2,\quad2022\equiv0\pmod3.\] Thus \[x_{2019},x_{2020},x_{2021},x_{2022}=0,1,1,0.\]"),("Conclude",r"The requested value is \[0+2(1)+4(1)+8(0)=6.\] The answer is $\boxed{6}$."),],
 24:[("Group equal chord lengths",r"In a regular $7$-gon, the $21$ pairs of vertices fall into three chord lengths: step $1$, step $2$, and step $3$ around the polygon. Each length occurs $7$ times."),("Write the chord lengths",r"For a unit circle, the chord length for step $k$ is \[2\sin\frac{k\pi}{7},\quad k=1,2,3.\]"),("Set up the sum",r"The required sum is \[7\sum_{k=1}^3\left(2\sin\frac{k\pi}{7}\right)^4=112\sum_{k=1}^3\sin^4\frac{k\pi}{7}.\]"),("Use symmetry and a standard identity",r"The values for $k=1,2,3$ repeat symmetrically for $k=4,5,6$. Also, \[\sum_{k=1}^{6}\sin^4\frac{k\pi}{7}=\frac{3\cdot7}{8}=\frac{21}{8}.\] Therefore \[\sum_{k=1}^{3}\sin^4\frac{k\pi}{7}=\frac{21}{16}.\]"),("Compute the total",r"Thus the desired sum is \[112\cdot\frac{21}{16}=7\cdot21=147.\]"),("Conclude",r"The answer is $\boxed{147}$."),],
+})
+
+OV.update({
+1:(r"Cities $A$ and $B$ are $45$ miles apart. Alicia lives in $A$ and Beth lives in $B$. Alicia bikes toward $B$ at $18$ miles per hour. Leaving at the same time, Beth bikes toward $A$ at $12$ miles per hour. How many miles from City $A$ will they be when they meet?",[("A","20"),("B","24"),("C","25"),("D","26"),("E","27")]),
+2:(r"The weight of $\frac13$ of a large pizza together with $3\frac12$ cups of orange slices is the same as the weight of $\frac34$ of a large pizza together with $\frac12$ cup of orange slices. A cup of orange slices weighs $\frac14$ of a pound. What is the weight, in pounds, of a large pizza?",[("A",r"$1\frac45$"),("B","2"),("C",r"$2\frac25$"),("D","3"),("E",r"$3\frac35$")]),
+3:(r"How many positive perfect squares less than $2023$ are divisible by $5$?",[("A","8"),("B","9"),("C","10"),("D","11"),("E","12")]),
+4:(r"How many digits are in the base-ten representation of $8^5\cdot5^{10}\cdot15^5$?",[("A","14"),("B","15"),("C","16"),("D","17"),("E","18")]),
+5:(r"Janet rolls a standard $6$-sided die $4$ times and keeps a running total of the numbers she rolls. What is the probability that at some point, her running total will equal $3$?",[("A",r"$\frac29$"),("B",r"$\frac{49}{216}$"),("C",r"$\frac{25}{108}$"),("D",r"$\frac{17}{72}$"),("E",r"$\frac{13}{54}$")]),
+6:(r"Points $A$ and $B$ lie on the graph of $y=\log_2 x$. The midpoint of $\overline{AB}$ is $(6,2)$. What is the positive difference between the $x$-coordinates of $A$ and $B$?",[("A",r"$2\sqrt{11}$"),("B",r"$4\sqrt3$"),("C","8"),("D",r"$4\sqrt5$"),("E","9")]),
+7:(r"A digital display shows the current date as an $8$-digit integer consisting of a $4$-digit year, followed by a $2$-digit month, followed by a $2$-digit date within the month. For example, Arbor Day in $2023$ is displayed as $20230428$. For how many dates in $2023$ will each digit appear an even number of times in the $8$-digit display for that date?",[("A","5"),("B","6"),("C","7"),("D","8"),("E","9")]),
+8:(r"Maureen is keeping track of the mean of her quiz scores this semester. If Maureen scores an $11$ on the next quiz, her mean will increase by $1$. If she scores an $11$ on each of the next three quizzes, her mean will increase by $2$. What is the mean of her quiz scores currently?",[("A","4"),("B","5"),("C","6"),("D","7"),("E","8")]),
+9:(r"A square of area $2$ is inscribed in a square of area $3$, creating four congruent right triangles. What is the ratio of the shorter leg to the longer leg in one of those right triangles?",[("A",r"$\frac15$"),("B",r"$\frac14$"),("C",r"$2-\sqrt3$"),("D",r"$\sqrt3-\sqrt2$"),("E",r"$\sqrt2-1$")]),
+10:(r"Positive real numbers $x$ and $y$ satisfy $y^3=x^2$ and $(y-x)^2=4y^2$. What is $x+y$?",[("A","12"),("B","18"),("C","24"),("D","36"),("E","42")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Use relative speed to find the meeting point.",
+2:"Set up a balance equation using the pizza weight and orange-slice weight.",
+3:"A square divisible by 5 must have a square root divisible by 5.",
+4:"Combine powers of 2 and 5 to count decimal digits.",
+5:"Count sequences of die rolls that hit total 3 before passing it.",
+6:"Use midpoint coordinates to get the sum and product of the two x-coordinates.",
+7:"Track digit parity in the fixed year 2023 and list valid month-day strings.",
+8:"Convert changing averages into two equations.",
+9:"Relate the side lengths of the two squares to the legs of the congruent right triangles.",
+10:"Parametrize positive solutions of y cubed equals x squared.",
+})
+
+SOL.update({
+1:[("Use relative speed",r"The two cyclists move toward each other, so the distance between them shrinks at \[18+12=30\] miles per hour."),("Find the meeting time",r"They start $45$ miles apart, so the time until they meet is \[\frac{45}{30}=1.5\text{ hours}.\]"),("Find Alicia's distance",r"Alicia starts from City $A$ and rides at $18$ miles per hour, so she travels \[18\cdot1.5=27\] miles."),("Answer the exact question",r"The problem asks for the distance from City $A$, which is Alicia's distance traveled."),("Conclude",r"The answer is $\boxed{27}$."),],
+2:[("Name the pizza weight",r"Let $p$ be the weight of a large pizza, in pounds. One cup of orange slices weighs $\frac14$ pound."),("Set up the balance",r"The given equality is \[\frac13p+3\frac12\cdot\frac14=\frac34p+\frac12\cdot\frac14.\]"),("Compare the orange slices",r"The left side has $3$ more cups of orange slices than the right side, and those $3$ cups weigh \[3\cdot\frac14=\frac34\] pound."),("Compare the pizza amounts",r"The right side has \[\frac34-\frac13=\frac5{12}\] more pizza than the left side. So \[\frac5{12}p=\frac34.\]"),("Solve",r"This gives \[p=\frac34\cdot\frac{12}{5}=\frac95=1\frac45.\]"),("Conclude",r"The answer is $\boxed{1\frac45}$."),],
+3:[("Translate the divisibility condition",r"If a perfect square $n^2$ is divisible by $5$, then $n$ itself must be divisible by $5$."),("Find the largest possible n",r"We need $n^2<2023$. Since \[44^2=1936\quad\text{and}\quad45^2=2025,\] we have $1\le n\le44$."),("Count multiples of 5",r"The multiples of $5$ from $1$ to $44$ are \[5,10,15,20,25,30,35,40.\]"),("Conclude",r"There are $8$ such values of $n$, so the answer is $\boxed{8}$."),],
+4:[("Rewrite the powers",r"We have \[8^5=(2^3)^5=2^{15}\] and \[15^5=(3\cdot5)^5=3^5\cdot5^5.\]"),("Combine factors",r"The product is \[2^{15}\cdot5^{10}\cdot3^5\cdot5^5=2^{15}\cdot5^{15}\cdot3^5.\]"),("Create a power of 10",r"Since $2^{15}\cdot5^{15}=10^{15}$, the number is \[3^5\cdot10^{15}=243\cdot10^{15}.\]"),("Count digits",r"This is $243$ followed by $15$ zeros, so it has \[3+15=18\] digits."),("Conclude",r"The answer is $\boxed{18}$."),],
+5:[("Notice totals only increase",r"Because each die roll is positive, once the running total passes $3$, it can never return to $3$. So we count ways to hit $3$ exactly."),("Hit 3 on the first roll",r"If the first roll is $3$, the remaining three rolls can be anything, giving \[6^3=216\] sequences."),("Hit 3 on the second roll",r"The first two rolls must be $(1,2)$ or $(2,1)$, and the final two rolls can be anything. This gives \[2\cdot6^2=72\] sequences."),("Hit 3 on the third roll",r"The first three rolls must be $(1,1,1)$, and the final roll can be anything, giving $6$ sequences."),("Divide by all outcomes",r"The favorable count is \[216+72+6=294.\] The total number of four-roll sequences is $6^4=1296$, so the probability is \[\frac{294}{1296}=\frac{49}{216}.\]"),("Conclude",r"The answer is $\boxed{\frac{49}{216}}$."),],
+6:[("Use the midpoint x-coordinate",r"Let the two $x$-coordinates be $a$ and $b$. Since the midpoint has $x$-coordinate $6$, \[\frac{a+b}{2}=6,\] so \[a+b=12.\]"),("Use the midpoint y-coordinate",r"The corresponding $y$-coordinates are $\log_2 a$ and $\log_2 b$. Their average is $2$, so \[\frac{\log_2 a+\log_2 b}{2}=2.\]"),("Turn logs into a product",r"This gives \[\log_2(ab)=4,\] so \[ab=16.\]"),("Find the difference",r"Using \[(a-b)^2=(a+b)^2-4ab,\] we get \[(a-b)^2=12^2-4\cdot16=144-64=80.\]"),("Conclude",r"The positive difference is \[\sqrt{80}=4\sqrt5.\] The answer is $\boxed{4\sqrt5}$."),],
+7:[("Start with the fixed year",r"The year $2023$ contributes two $2$s, one $0$, and one $3$. The two $2$s already occur an even number of times, so the month-day digits must contribute an odd number of $0$s and $3$s, and an even number of every other digit."),("Search by valid dates",r"The month-day part has only four digits, so we can systematically list valid month-day strings that satisfy the parity requirement and are real dates in $2023$."),("List the valid month-days",r"The valid strings are \[0113,0131,0223,0311,0322,1013,1031,1103,1130.\]"),("Count",r"These are $9$ valid dates."),("Conclude",r"The answer is $\boxed{9}$."),],
+8:[("Name the current mean",r"Let Maureen currently have $n$ quiz scores with mean $m$. Her current total is $nm$."),("Use the next-quiz condition",r"If she scores $11$ on the next quiz, \[\frac{nm+11}{n+1}=m+1.\] Simplifying gives \[n+m=10.\]"),("Use the next-three-quizzes condition",r"If she scores $11$ on each of the next three quizzes, \[\frac{nm+33}{n+3}=m+2.\] Simplifying gives \[2n+3m=27.\]"),("Solve",r"From $n+m=10$, we have $n=10-m$. Substitute into the second equation: \[2(10-m)+3m=27,\] so $m=7$."),("Conclude",r"Her current mean is $\boxed{7}$."),],
+9:[("Translate areas into side lengths",r"The outer square has side length $\sqrt3$, and the inner square has side length $\sqrt2$."),("Name the triangle legs",r"Each corner triangle has legs $a$ and $b$ along the sides of the outer square. Because the triangles fill one side of the outer square, \[a+b=\sqrt3.\] The hypotenuse is a side of the inner square, so \[a^2+b^2=2.\]"),("Find the product",r"Using \[(a+b)^2=a^2+b^2+2ab,\] we get \[3=2+2ab,\] so \[ab=\frac12.\]"),("Solve for the ratio",r"Let $r=\frac{a}{b}$ be the ratio of the shorter leg to the longer leg. Then \[\frac{(a+b)^2}{ab}=r+2+\frac1r.\] The left side is \[\frac{3}{1/2}=6,\] so \[r+\frac1r=4.\]"),("Choose the smaller ratio",r"The solutions are \[r=2\pm\sqrt3.\] Since the ratio is less than $1$, we use \[r=2-\sqrt3.\]"),("Conclude",r"The answer is $\boxed{2-\sqrt3}$."),],
+10:[("Parametrize the first equation",r"Because $y^3=x^2$ and $x,y$ are positive, write \[x=t^3,\quad y=t^2\] for some positive $t$."),("Use the second equation",r"The equation \[(y-x)^2=4y^2\] means \[|y-x|=2y.\] Since $x,y>0$, the only possible case is $x-y=2y$, so \[x=3y.\]"),("Substitute the parametrization",r"Using $x=t^3$ and $y=t^2$, the equation $x=3y$ becomes \[t^3=3t^2.\] Since $t>0$, we get $t=3$."),("Find x and y",r"Then \[x=3^3=27,\quad y=3^2=9.\]"),("Conclude",r"Thus \[x+y=27+9=36.\] The answer is $\boxed{36}$."),],
 })
 
 def esc(x, quote=True):

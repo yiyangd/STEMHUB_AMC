@@ -1,20 +1,22 @@
 # Problem Pages Report
 
-- Total manifest entries: 1958
-- Latest batch: 273 (2022 AMC 12B Problems 21-24)
-- Latest new generated count: 4
+- Total manifest entries: 1968
+- Latest batch: 274 (2023 AMC 12A Problems 1-10)
+- Latest new generated count: 10
 - Latest updated existing count: 0
-- Latest skipped count: 1
+- Latest skipped count: 0
 - MathJax validation: passed
-- Answer verification source: https://artofproblemsolving.com/wiki/index.php/2022_AMC_12B_Answer_Key
+- Answer verification source: https://artofproblemsolving.com/wiki/index.php/2023_AMC_12A_Answer_Key
 
 ## Latest Batch Pages
 
-- `2022 AMC 12B Problem 21` -> `amc12/problems/2022-amc-12b-problem-21/`
-- `2022 AMC 12B Problem 22` -> `amc12/problems/2022-amc-12b-problem-22/`
-- `2022 AMC 12B Problem 23` -> `amc12/problems/2022-amc-12b-problem-23/`
-- `2022 AMC 12B Problem 24` -> `amc12/problems/2022-amc-12b-problem-24/`
-
-## Skipped in latest batch
-
-- 2022 AMC 12B Problem 25: nonconvex polygon area depends on the missing figure; skipped
+- `2023 AMC 12A Problem 1` -> `amc12/problems/2023-amc-12a-problem-1/`
+- `2023 AMC 12A Problem 2` -> `amc12/problems/2023-amc-12a-problem-2/`
+- `2023 AMC 12A Problem 3` -> `amc12/problems/2023-amc-12a-problem-3/`
+- `2023 AMC 12A Problem 4` -> `amc12/problems/2023-amc-12a-problem-4/`
+- `2023 AMC 12A Problem 5` -> `amc12/problems/2023-amc-12a-problem-5/`
+- `2023 AMC 12A Problem 6` -> `amc12/problems/2023-amc-12a-problem-6/`
+- `2023 AMC 12A Problem 7` -> `amc12/problems/2023-amc-12a-problem-7/`
+- `2023 AMC 12A Problem 8` -> `amc12/problems/2023-amc-12a-problem-8/`
+- `2023 AMC 12A Problem 9` -> `amc12/problems/2023-amc-12a-problem-9/`
+- `2023 AMC 12A Problem 10` -> `amc12/problems/2023-amc-12a-problem-10/`
