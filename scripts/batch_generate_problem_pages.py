@@ -3,20 +3,17 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 281
+BATCH_NUMBER = 282
 CONTEST_DIR = "amc12"
 YEAR = "2024"
-FORM = "A"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2024_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 20}
-SKIPPED = [
-    "2024 AMC 12A Problem 18: rectangular-card rotation problem depends on the missing figure; skipped",
-    "2024 AMC 12A Problem 19: cyclic quadrilateral diagonal geometry is high-risk in current pass; skipped",
-]
-BATCH_LABEL = "2024 AMC 12A Problems 11-17,20"
-NEXT_START = "2024 AMC 12B Problem 1"
+FORM = "B"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2024_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+SKIPPED = []
+BATCH_LABEL = "2024 AMC 12B Problems 1-10"
+NEXT_START = "2024 AMC 12B Problem 11"
 
-ANS={11:("D","20"),12:("E","21"),13:("D",r"$(0,\frac12)$"),14:("C","29"),15:("D","125"),16:("C","389"),17:("D","276"),20:("D",r"$(\frac34,\frac78]$")}
+ANS={1:("B","2022"),2:("B","0"),3:("E","21"),4:("D","D"),5:("B","15"),6:("B","20"),7:("C","15"),8:("C","36"),9:("B","71"),10:("C","3")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -5362,6 +5359,100 @@ SOL.update({
 ("Turn the probability into an area in the unit square","The pair $(x,y)$ is uniformly distributed in the unit square. So the probability is the area of the region\n\n\\[xy<\\frac12.\\]\n\nFor $0\\le x\\le\\frac12$, every $y$ from $0$ to $1$ works. For $\\frac12<x\\le1$, we need $y<\\frac{1}{2x}$."),
 ("Compute the area","The desired area is\n\n\\[\\int_0^{1/2}1\\,dx+\\int_{1/2}^1\\frac{1}{2x}\\,dx.\\]\n\nThis equals\n\n\\[\\frac12+\\frac12\\ln 2.\\]\n\nNumerically, this is approximately $0.8466$."),
 ("Choose the interval","The value $0.8466$ is greater than $\\frac34=0.75$ and less than $\\frac78=0.875$. Therefore the probability lies in\n\n\\[(\\tfrac34,\\tfrac78].\\]"),
+],
+})
+
+OV.update({
+1:("In a long line of people, the $1013$th person from the left is also the $1010$th person from the right. How many people are in the line?",[("A","2021"),("B","2022"),("C","2023"),("D","2024"),("E","2025")]),
+2:("What is $10!-7!\\cdot6!$?",[("A","$-120$"),("B","0"),("C","120"),("D","600"),("E","720")]),
+3:("For how many integer values of $x$ is $|2x|\\le 7\\pi$?",[("A","16"),("B","17"),("C","19"),("D","20"),("E","21")]),
+4:("Balls numbered $1,2,3,\\ldots$ are deposited in five bins, labeled A, B, C, D, and E. Ball $1$ is deposited in bin A, balls $2$ and $3$ are deposited in bin B, the next three balls are deposited in bin C, the next four in bin D, and so on, cycling back to bin A after bin E. In which bin is ball $2024$ deposited?",[("A","A"),("B","B"),("C","C"),("D","D"),("E","E")]),
+5:("In the expression $1+3+5+7+\\cdots+97+99$, Melanie changes some plus signs to minus signs. The new expression is negative. What is the least number of plus signs that Melanie could have changed to minus signs?",[("A","14"),("B","15"),("C","16"),("D","17"),("E","18")]),
+6:("The national debt of the United States is on track to reach $5\\cdot10^{13}$ dollars by 2033. How many digits does this number have when written as a numeral in base $5$? Use $\\log_{10}5\\approx0.7$.",[("A","18"),("B","20"),("C","22"),("D","24"),("E","26")]),
+7:("In rectangle $WXYZ$ with $WX=4$ and $WZ=8$, point $M$ lies on $XY$, point $A$ lies on $YZ$, $\\angle WMA$ is a right angle, and the areas of $\\triangle WXM$ and $\\triangle WAZ$ are equal. What is the area of $\\triangle WMA$?",[("A","13"),("B","14"),("C","15"),("D","16"),("E","17")]),
+8:("What value of $x$ satisfies $\\dfrac{\\log_2 x\\cdot\\log_3 x}{\\log_2 x+\\log_3 x}=2$?",[("A","25"),("B","32"),("C","36"),("D","42"),("E","48")]),
+9:("A dartboard is the region $B$ in the coordinate plane consisting of points $(x,y)$ such that $|x|+|y|\\le8$. A target $T$ is the region where $(x^2+y^2-25)^2\\le49$. A dart is thrown uniformly at random in $B$. The probability that the dart lands in $T$ can be expressed as $\\frac{m\\pi}{n}$, where $m$ and $n$ are relatively prime positive integers. What is $m+n$?",[("A","39"),("B","71"),("C","73"),("D","75"),("E","135")]),
+10:("A list of $9$ real numbers consists of $1,2.2,3.2,5.2,6.2,7$, as well as $x,y,z$ with $x\\le y\\le z$. The range of the list is $7$, and the mean and median are both positive integers. How many ordered triples $(x,y,z)$ are possible?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","infinitely many")]),
+})
+KEY_OVERRIDES.update({
+1:"Combine the two position counts and subtract the person counted twice.",
+2:"Factor out a common factorial to compare the two terms efficiently.",
+3:"Turn the absolute value inequality into a symmetric interval and count the integers.",
+4:"Locate which block contains ball 2024, then use the block number modulo 5.",
+5:"Changing a plus to a minus lowers the sum by twice that odd number, so choose largest terms first.",
+6:"Use the base-b digit count formula with logarithms.",
+7:"Place the rectangle on coordinates, translate the equal-area and right-angle conditions, then compute the area.",
+8:"Use change of base to simplify the expression to a logarithm base 6.",
+9:"Recognize the target as a circular annulus inside the diamond-shaped dartboard.",
+10:"Use the range condition to split into endpoint cases, then impose integer mean and median.",
+})
+NOTES_OVERRIDES.update({7:"题面包含图形"})
+SOL.update({
+1:[
+("Identify what the two positions count","The $1013$th person from the left means there are $1012$ people to that person's left. The $1010$th person from the right means there are $1009$ people to that person's right.\n\nThe same person is being described from two directions."),
+("Avoid double-counting the same person","If we add the two position numbers directly, that middle person is counted twice. The total number of people is therefore\n\n\\[1013+1010-1.\\]\n\nThe $-1$ removes the duplicate count."),
+("Compute the total","Now calculate\n\n\\[1013+1010-1=2022.\\]\n\nSo there are $2022$ people in the line."),
+("Check the answer logically","If there are $2022$ people, then the person in position $1013$ from the left has $2022-1013+1=1010$ as the position from the right. This matches the problem, so the answer is $2022$."),
+],
+2:[
+("Look for a common factorial factor","The expression is\n\n\\[10!-7!\\cdot6!.\\]\n\nA direct computation would use large numbers, but both terms contain $7!$ in a useful way."),
+("Rewrite $10!$ using $7!$","We have\n\n\\[10!=10\\cdot9\\cdot8\\cdot7!.\\]\n\nAlso $6!=720$, and\n\n\\[10\\cdot9\\cdot8=720.\\]"),
+("Compare the two terms","So\n\n\\[10!=720\\cdot7!\\]\n\nand\n\n\\[7!\\cdot6!=7!\\cdot720.\\]\n\nThese are exactly the same number."),
+("Subtract","Therefore\n\n\\[10!-7!\\cdot6!=0.\\]\n\nThe answer is $0$."),
+],
+3:[
+("Understand what is being counted","The problem asks for integer values of $x$, not for a length of an interval. After solving the inequality, we must count the integers inside it."),
+("Isolate $x$ inside the absolute value","The inequality is\n\n\\[|2x|\\le7\\pi.\\]\n\nSince $|2x|=2|x|$, divide both sides by $2$ to get\n\n\\[|x|\\le\\frac{7\\pi}{2}.\\]"),
+("Estimate the endpoint only as much as needed","We only need to know which integers fit. Since $\\pi$ is a little more than $3$, $\\frac{7\\pi}{2}$ is a little more than $10.5$. Since $\\pi<\\frac{22}{7}$, we also have $\\frac{7\\pi}{2}<11$.\n\nSo the cutoff is between $10.5$ and $11$."),
+("List the possible integers","The allowed integers are\n\n\\[-10,-9,\\ldots,-1,0,1,\\ldots,9,10.\\]\n\nThat is $10$ negative integers, $0$, and $10$ positive integers."),
+("Count and check the endpoints","The total is\n\n\\[10+1+10=21.\\]\n\nThe endpoint $11$ is too large, but $10$ is allowed. Therefore the answer is $21$."),
+],
+4:[
+("Recognize the block pattern","The balls are placed in blocks of sizes $1,2,3,4,\\ldots$. Block $1$ goes to A, block $2$ goes to B, block $3$ goes to C, and so on, cycling every five blocks.\n\nSo we first need to find which block contains ball $2024$."),
+("Use triangular numbers to locate the block","After $n$ blocks, the total number of balls placed is\n\n\\[1+2+\\cdots+n=\\frac{n(n+1)}2.\\]\n\nNow\n\n\\[\\frac{63\\cdot64}{2}=2016\\]\n\nand\n\n\\[\\frac{64\\cdot65}{2}=2080.\\]\n\nThus ball $2024$ is in block $64$."),
+("Convert the block number to a bin","The bin cycle is A, B, C, D, E, then repeats. Since block numbers congruent to $1,2,3,4,0$ modulo $5$ correspond to A, B, C, D, E, respectively, we compute\n\n\\[64\\equiv4\\pmod5.\\]"),
+("Choose the bin","A remainder of $4$ corresponds to bin D. Therefore ball $2024$ is deposited in bin D."),
+],
+5:[
+("Find the original value of the expression","The sum of the first $50$ positive odd numbers is $50^2$. Therefore\n\n\\[1+3+5+\\cdots+99=2500.\\]\n\nTo make the expression negative, Melanie must reduce this sum by more than $2500$."),
+("Understand the effect of changing one sign","If a term $t$ changes from $+t$ to $-t$, the total changes by $-2t$. So changing signs on terms whose sum is $S$ decreases the expression by $2S$.\n\nWe need\n\n\\[2500-2S<0,\\]\n\nso $S>1250$."),
+("Choose the largest odd numbers first","To use the fewest sign changes, Melanie should choose the largest terms: $99,97,95,\\ldots$. The sum of the $k$ largest odd numbers from $1$ to $99$ is\n\n\\[k(100-k).\\]"),
+("Find the smallest $k$ that works","For $k=14$,\n\n\\[14(86)=1204,\\]\n\nwhich is not enough. For $k=15$,\n\n\\[15(85)=1275,\\]\n\nwhich is greater than $1250$."),
+("Conclude the minimum","Thus $14$ changes cannot make the expression negative, but $15$ changes can. The least number is $15$."),
+],
+6:[
+("Recall how base digits are counted","A positive integer $N$ has\n\n\\[\\lfloor\\log_b N\\rfloor+1\\]\n\ndigits when written in base $b$. Here $N=5\\cdot10^{13}$ and $b=5$."),
+("Compute the common logarithm of the number","Using the given approximation,\n\n\\[\\log_{10}(5\\cdot10^{13})=\\log_{10}5+13\\approx0.7+13=13.7.\\]"),
+("Change from base 10 to base 5","By change of base,\n\n\\[\\log_5(5\\cdot10^{13})=\\frac{\\log_{10}(5\\cdot10^{13})}{\\log_{10}5}\\approx\\frac{13.7}{0.7}.\\]\n\nThis is approximately $19.57$."),
+("Convert the logarithm into a digit count","Since the logarithm is between $19$ and $20$, the number has\n\n\\[\\lfloor19.57\\rfloor+1=20\\]\n\ndigits in base $5$."),
+],
+7:[
+("Set up coordinates from the rectangle","Place the rectangle so that\n\n\\[W=(0,0),\\quad X=(4,0),\\quad Y=(4,8),\\quad Z=(0,8).\\]\n\nLet $M=(4,m)$ on side $XY$ and $A=(a,8)$ on side $YZ$. This converts the geometry into algebra."),
+("Translate the equal-area condition","The area of $\\triangle WXM$ is\n\n\\[\\frac12\\cdot4\\cdot m=2m.\\]\n\nThe area of $\\triangle WAZ$ is\n\n\\[\\frac12\\cdot8\\cdot a=4a.\\]\n\nSince the areas are equal, $2m=4a$, so $a=\\frac m2$."),
+("Use the right angle condition","The angle $WMA$ is right, so vectors $\\overrightarrow{MW}$ and $\\overrightarrow{MA}$ are perpendicular. Their dot product is $0$:\n\n\\[(-4,-m)\\cdot(a-4,8-m)=0.\\]\n\nThis gives\n\n\\[-4a+16-8m+m^2=0.\\]"),
+("Solve for the position","Substitute $a=\\frac m2$:\n\n\\[m^2-10m+16=0.\\]\n\nSo $(m-2)(m-8)=0$. The nondegenerate point gives $m=2$, and then $a=1$."),
+("Compute the requested area","The area of $\\triangle WMA$ is\n\n\\[\\frac12|4\\cdot8-m a|=\\frac12(32-2)=15.\\]\n\nTherefore the answer is $15$."),
+],
+8:[
+("Name the two logarithms","Let\n\n\\[a=\\log_2x,\\qquad b=\\log_3x.\\]\n\nThe expression is $\\frac{ab}{a+b}$, which often simplifies nicely if we use change of base."),
+("Rewrite using natural logarithms","Using $\\log_2x=\\frac{\\ln x}{\\ln2}$ and $\\log_3x=\\frac{\\ln x}{\\ln3}$, the numerator is\n\n\\[\\frac{(\\ln x)^2}{\\ln2\\ln3}.\\]\n\nThe denominator is\n\n\\[\\ln x\\left(\\frac1{\\ln2}+\\frac1{\\ln3}\\right)=\\frac{\\ln x(\\ln2+\ln3)}{\ln2\ln3}.\\]"),
+("Cancel the common factors","Dividing the numerator by the denominator leaves\n\n\\[\\frac{\\ln x}{\\ln2+\ln3}=\\frac{\\ln x}{\\ln6}=\\log_6x.\\]\n\nSo the original equation becomes\n\n\\[\\log_6x=2.\\]"),
+("Solve the logarithmic equation","The equation $\\log_6x=2$ means\n\n\\[x=6^2=36.\\]\n\nThus the answer is $36$."),
+],
+9:[
+("Understand the two regions","The dartboard is $|x|+|y|\\le8$, a diamond. Its diagonals have lengths $16$ and $16$, so its area is\n\n\\[\\frac12\cdot16\cdot16=128.\\]"),
+("Simplify the target condition","The target satisfies\n\n\\[(x^2+y^2-25)^2\\le49.\\]\n\nTaking square roots gives\n\n\\[-7\\le x^2+y^2-25\\le7,\\]\n\nso\n\n\\[18\\le x^2+y^2\\le32.\\]"),
+("Interpret the target geometrically","This is an annulus centered at the origin, with inner radius $\\sqrt{18}$ and outer radius $\\sqrt{32}$. The diamond has its smallest distance to the origin at the midpoints of its sides, also $\\sqrt{32}$.\n\nTherefore the entire annulus lies inside the dartboard."),
+("Compute the target area","The area of the annulus is\n\n\\[\\pi(32)-\\pi(18)=14\\pi.\\]\n\nSince the dartboard area is $128$, the probability is\n\n\\[\\frac{14\\pi}{128}=\\frac{7\pi}{64}.\\]"),
+("Answer the requested sum","Thus $m=7$ and $n=64$, so\n\n\\[m+n=71.\\]\n\nThe answer is $71$."),
+],
+10:[
+("Start with the fixed numbers","The six fixed numbers have sum\n\n\\[1+2.2+3.2+5.2+6.2+7=24.8.\\]\n\nThe range of these fixed numbers alone is $6$, so the new numbers must extend the range to exactly $7$."),
+("List the range possibilities","Because the fixed minimum and maximum are $1$ and $7$, the final range can be $7$ in three ways: the minimum is $0$ and the maximum remains $7$; the maximum is $8$ and the minimum remains $1$; or one new value is below $1$ and another is exactly $7$ more than it."),
+("Use the mean condition","The total sum must be a positive integer multiple of $9$. This strongly restricts $x+y+z$, because the fixed sum is $24.8$.\n\nWe can now test the three range cases while also requiring the median, the fifth number in sorted order, to be a positive integer."),
+("Count the endpoint cases","If $x=0$ and $z\\le7$, the only possibility is\n\n\\[(x,y,z)=(0,5,6.2).\\]\n\nIf $z=8$ and $x\\ge1$, the only possibility is\n\n\\[(x,y,z)=(6,6.2,8).\\]\n\nBoth have integer mean and integer median."),
+("Count the split-beyond-both-ends case","If $x<1$ and $z=x+7>7$, then the median can be an integer only when $y=4$ or $y=5$. The mean condition leaves the valid triple\n\n\\[(x,y,z)=(0.1,4,7.1).\\]\n\nThe other candidate would not keep the true range equal to $7$."),
+("Finish the count","There are exactly three ordered triples:\n\n\\[(0,5,6.2),\\quad (6,6.2,8),\\quad (0.1,4,7.1).\\]\n\nTherefore the answer is $3$."),
 ],
 })
 
