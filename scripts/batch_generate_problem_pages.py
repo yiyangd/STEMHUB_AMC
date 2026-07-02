@@ -3,17 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 228
+BATCH_NUMBER = 229
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2016_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {21,22,23,24}
-SKIPPED = [
-    "2016 AMC 12A Problem 25: long blackboard-square process has high derivation/OCR risk; skipped",
-]
-BATCH_LABEL = "2016 AMC 12A Problems 21-24"
-NEXT_START = "2016 AMC 12B Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2016_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2016 AMC 12B Problems 1-10"
+NEXT_START = "2016 AMC 12B Problem 11"
 
-ANS={21:("E","500"),22:("A","15"),23:("C",r"\frac12"),24:("B","9")}
+ANS={1:("D","10"),2:("A","2"),3:("D","4032"),4:("C","135"),5:("B","Saturday"),6:("C","8"),7:("D","64"),8:("D",r"\frac{100}{3}"),9:("B","336"),10:("A","4")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3179,6 +3177,107 @@ SOL.update({
 ],
 })
 
+OV.update({
+1:(r"What is the value of \[\frac{2a^{-1}+\frac{a^{-1}}{2}}{a}\] when $a=\frac12$?",[("A","1"),("B","2"),("C",r"$\frac52$"),("D","10"),("E","20")]),
+2:(r"The harmonic mean of two numbers can be calculated as twice their product divided by their sum. The harmonic mean of $1$ and $2016$ is closest to which integer?",[("A","2"),("B","45"),("C","504"),("D","1008"),("E","2015")]),
+3:(r"Let $x=-2016$. What is the value of \[\left||x|-x\right|-|x|-x?\]",[("A",r"$-2016$"),("B","0"),("C","2016"),("D","4032"),("E","6048")]),
+4:(r"The ratio of the measures of two acute angles is $5:4$, and the complement of one of these two angles is twice as large as the complement of the other. What is the sum of the degree measures of the two angles?",[("A","75"),("B","90"),("C","135"),("D","150"),("E","270")]),
+5:(r"The War of 1812 started with a declaration of war on Thursday, June 18, 1812. The peace treaty to end the war was signed $919$ days later, on December 24, 1814. On what day of the week was the treaty signed?",[("A","Friday"),("B","Saturday"),("C","Sunday"),("D","Monday"),("E","Tuesday")]),
+6:(r"All three vertices of $\triangle ABC$ lie on the parabola defined by $y=x^2$, with $A$ at the origin and $\overline{BC}$ parallel to the $x$-axis. The area of the triangle is $64$. What is the length of $BC$?",[("A","4"),("B","6"),("C","8"),("D","10"),("E","16")]),
+7:(r"Josh writes the numbers $1,2,3,\ldots,99,100$. He marks out $1$, skips the next number, marks out $3$, and continues skipping and marking out the next number to the end of the list. Then he goes back to the start of his list, marks out the first remaining number, skips the next remaining number, and continues in this manner until only one number remains. What is that number?",[("A","13"),("B","32"),("C","56"),("D","64"),("E","96")]),
+8:(r"A thin piece of wood of uniform density in the shape of an equilateral triangle with side length $3$ inches weighs $12$ ounces. A second piece of the same type of wood, with the same thickness, also in the shape of an equilateral triangle, has side length $5$ inches. Which of the following is closest to the weight, in ounces, of the second piece?",[("A","14.0"),("B","16.0"),("C","20.0"),("D","33.3"),("E","55.6")]),
+9:(r"Carl decided to fence in his rectangular garden. He bought $20$ fence posts, placed one on each of the four corners, and spaced out the rest evenly along the edges of the garden, leaving exactly $4$ yards between neighboring posts. The longer side of his garden, including the corners, has twice as many posts as the shorter side, including the corners. What is the area, in square yards, of Carl's garden?",[("A","256"),("B","336"),("C","384"),("D","448"),("E","512")]),
+10:(r"A quadrilateral has vertices $P(a,b)$, $Q(b,a)$, $R(-a,-b)$, and $S(-b,-a)$, where $a$ and $b$ are integers with $a>b>0$. The area of $PQRS$ is $16$. What is $a+b$?",[("A","4"),("B","5"),("C","6"),("D","12"),("E","13")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Substitute a equals one half and simplify negative exponents carefully.",
+2:"Use the harmonic mean formula and estimate the resulting fraction.",
+3:"Evaluate nested absolute values after substituting the negative value.",
+4:"Represent the two acute angles as 5k and 4k, then use complements.",
+5:"Use the remainder of 919 modulo 7 to shift weekdays.",
+6:"Use symmetry of a horizontal chord on the parabola y equals x squared.",
+7:"Recognize repeated deletion of every other remaining number as keeping powers of 2.",
+8:"Weights scale with area, and similar triangles have area ratio equal to side ratio squared.",
+9:"Count fence posts on sides carefully, remembering corner posts are shared.",
+10:"Compute the parallelogram area from coordinate vectors.",
+})
+
+SOL.update({
+1:[
+("Start with the reciprocal",r"When \(a=\frac12\), we have \[a^{-1}=2.\] This is the main simplification, because negative exponent $-1$ means reciprocal."),
+("Simplify the numerator",r"The numerator is \[2a^{-1}+\frac{a^{-1}}2=2(2)+\frac22=4+1=5.\]"),
+("Divide by a",r"The whole expression is \[\frac{5}{a}=\frac{5}{1/2}=10.\]"),
+("Check the size",r"Dividing by \(\frac12\) doubles the numerator, so a final value of $10$ is reasonable."),
+("Conclude",r"The answer is $\boxed{10}$."),
+],
+2:[
+("Write the harmonic mean formula",r"For numbers $1$ and $2016$, the harmonic mean is \[\frac{2(1)(2016)}{1+2016}=\frac{4032}{2017}.\]"),
+("Estimate the fraction",r"Since $2017\cdot2=4034$, the fraction \(\frac{4032}{2017}\) is just a tiny bit less than $2$."),
+("Compare with the choices",r"The closest integer among the choices is therefore $2$. The other choices are much larger."),
+("Conclude",r"The answer is $\boxed{2}$."),
+],
+3:[
+("Substitute x",r"We are given \(x=-2016\), so \[|x|=2016.\]"),
+("Evaluate the inner difference",r"The expression inside the larger absolute value is \[|x|-x=2016-(-2016)=4032.\] Its absolute value is still $4032$."),
+("Finish the remaining terms",r"Now substitute into the whole expression: \[\left||x|-x\right|-|x|-x=4032-2016-(-2016).\]"),
+("Simplify",r"The last two terms cancel: \[-2016+2016=0.\] Thus the value is $4032$."),
+("Conclude",r"The answer is $\boxed{4032}$."),
+],
+4:[
+("Represent the angle ratio",r"Let the two acute angles be \(5k\) and \(4k\) degrees. Their complements are \(90-5k\) and \(90-4k\)."),
+("Decide which complement is larger",r"The smaller angle is \(4k\), so its complement \(90-4k\) is larger. Therefore it is the one that can be twice the other complement."),
+("Set up the equation",r"We have \[90-4k=2(90-5k).\]"),
+("Solve for k",r"Expanding gives \[90-4k=180-10k,\] so \[6k=90,\quad k=15.\]"),
+("Find the required sum",r"The angle sum is \[5k+4k=9k=9(15)=135.\]"),
+("Conclude",r"The answer is $\boxed{135}$."),
+],
+5:[
+("Reduce the number of days modulo 7",r"The weekday pattern repeats every $7$ days. Since \[919=7\cdot131+2,\] moving ahead $919$ days is the same weekday shift as moving ahead $2$ days."),
+("Shift from Thursday",r"One day after Thursday is Friday, and two days after Thursday is Saturday."),
+("Check the wording",r"The treaty was signed $919$ days later, so we do count forward by that many days from Thursday. The remainder calculation already handles the full interval."),
+("Conclude",r"The treaty was signed on $\boxed{\text{Saturday}}$."),
+],
+6:[
+("Use the horizontal chord",r"Because \(BC\) is parallel to the $x$-axis, points $B$ and $C$ have the same $y$-coordinate. On \(y=x^2\), a horizontal line \(y=h\) meets the parabola at \(x=\pm\sqrt h\)."),
+("Write the base and height",r"Thus \[BC=2\sqrt h.\] The height from $A=(0,0)$ to the horizontal line \(y=h\) is \(h\)."),
+("Use the area",r"The triangle area is \[\frac12(2\sqrt h)(h)=h^{3/2}.\] We are told this equals $64$."),
+("Solve for h",r"So \[h^{3/2}=64=8^2,\] which gives \(\sqrt h=4\) and \(h=16\)."),
+("Find BC",r"Therefore \[BC=2\sqrt{16}=8.\]"),
+("Conclude",r"The answer is $\boxed{8}$."),
+],
+7:[
+("Understand one pass",r"In the first pass Josh marks out every other number starting with the first. The numbers left are the even numbers: \[2,4,6,\ldots,100.\]"),
+("See what the second pass does",r"In the second pass he again removes every other remaining number starting with the first remaining number. From the even list, this leaves \[4,8,12,\ldots,100,\] the multiples of $4$."),
+("Continue the pattern",r"Each full pass doubles the divisibility requirement. After several passes, the remaining numbers are multiples of \(2^k\)."),
+("Find the last possible power of 2",r"The final remaining number must be the largest power of $2$ not exceeding $100$. We have \[2^6=64,\quad2^7=128>100.\]"),
+("Conclude",r"The last number remaining is $\boxed{64}$."),
+],
+8:[
+("Use area, not side length",r"The two wooden triangles have the same density and thickness, so weight is proportional to area. For similar triangles, area scales as the square of the side length."),
+("Find the area ratio",r"The side lengths are $3$ and $5$, so the area ratio is \[\left(\frac53\right)^2=\frac{25}{9}.\]"),
+("Scale the weight",r"The second weight is \[12\cdot\frac{25}{9}=\frac{100}{3}\approx33.3.\]"),
+("Choose the closest value",r"The listed value closest to \(\frac{100}{3}\) is $33.3$."),
+("Conclude",r"The answer is $\boxed{33.3}$."),
+],
+9:[
+("Let the shorter side have s posts",r"Let the shorter side have $s$ posts including its two corner posts. Then the longer side has $2s$ posts including its corners."),
+("Avoid double-counting corners",r"Counting around the rectangle, the total number of distinct posts is \[2s+2(2s)-4,\] because the four corner posts would otherwise be counted twice."),
+("Solve for s",r"The total is $20$, so \[2s+4s-4=20,\] giving \[6s=24,\quad s=4.\] Thus the longer side has $8$ posts."),
+("Convert posts to lengths",r"With $4$ posts on the shorter side, there are $3$ intervals of $4$ yards, so the shorter side is $12$ yards. With $8$ posts on the longer side, there are $7$ intervals, so the longer side is $28$ yards."),
+("Compute area",r"The area is \[12\cdot28=336.\]"),
+("Conclude",r"The answer is $\boxed{336}$."),
+],
+10:[
+("Notice the symmetry",r"The points $R$ and $S$ are the opposites of $P$ and $Q$, so the quadrilateral is a parallelogram centered at the origin."),
+("Use adjacent side vectors",r"From $P(a,b)$ to $Q(b,a)$, the vector is \[(b-a,a-b).\] From $Q(b,a)$ to $R(-a,-b)$, the vector is \[-(a+b),-(a+b)].\]"),
+("Compute the area",r"The parallelogram area is the absolute value of the determinant of these vectors: \[|(b-a)(-(a+b))-(a-b)(-(a+b))|=2(a-b)(a+b).\]"),
+("Use the given area",r"We are told the area is $16$, so \[2(a-b)(a+b)=16,\] or \[(a-b)(a+b)=8.\]"),
+("Solve the integer factorization",r"Since $a>b>0$, both factors are positive. The factor pair that gives integer $a$ and $b$ is \[a-b=2,\quad a+b=4.\] Thus \(a=3\) and \(b=1\)."),
+("Conclude",r"Therefore \[a+b=4,\] so the answer is $\boxed{4}$."),
+],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -3285,7 +3384,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2016" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2016" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -3374,7 +3473,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2016 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2016 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
