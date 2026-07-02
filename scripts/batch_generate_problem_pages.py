@@ -3,19 +3,20 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 269
+BATCH_NUMBER = 270
 CONTEST_DIR = "amc12"
 YEAR = "2022"
 FORM = "A"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2022_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 18, 19}
+TARGET_NUMBERS = {21, 23, 24}
 SKIPPED = [
-    "2022 AMC 12A Problem 20: isosceles trapezoid distance geometry is high-risk in current pass; skipped",
+    "2022 AMC 12A Problem 22: complex-plane quadrilateral area maximization is high-risk in current pass; skipped",
+    "2022 AMC 12A Problem 25: tangent segment integer-radius configuration is high-risk in current pass; skipped",
 ]
-BATCH_LABEL = "2022 AMC 12A Problems 11-19"
-NEXT_START = "2022 AMC 12A Problem 21"
+BATCH_LABEL = "2022 AMC 12A Problems 21,23,24"
+NEXT_START = "2022 AMC 12B Problem 1"
 
-ANS={11:("E","81"),12:("B",r"$\frac13$"),13:("A","13"),14:("C","2"),15:("D","30"),16:("D","18"),17:("A","-4"),18:("A","359"),19:("D","8178")}
+ANS={21:("E",r"$x^6+x^3+1$"),23:("D","8"),24:("E","1296")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4945,6 +4946,24 @@ SOL.update({
 17:[("Use identities to isolate cosine",r"For $x\in(0,\pi)$, $\sin x>0$. Using \[\sin2x=2\sin x\cos x\] and \[\sin3x=\sin x(4\cos^2x-1),\] the equation becomes \[a(1+2c)=4c^2-1,\] where $c=\cos x$."),("Notice the special value",r"When $c=-\frac12$, both sides of the equation are $0$, so $x=\frac{2\pi}{3}$ is always a solution for every $a$."),("Find when another solution exists",r"For $c\ne-\frac12$, factor the right side: \[4c^2-1=(2c-1)(2c+1).\] Then \[a=2c-1.\]"),("Find the range of a",r"Since $c$ ranges over $(-1,1)$, the expression $2c-1$ ranges over $(-3,1)$. But $c=-\frac12$ corresponds to $a=-2$, and that gives only the special solution, not a second one."),("Write the set",r"Thus the values of $a$ with more than one solution are \[(-3,-2)\cup(-2,1).\]"),("Conclude",r"Here $p=-3$, $q=-2$, and $r=1$, so \[p+q+r=-4.\] The answer is $\boxed{-4}$."),],
 18:[("Track only the angle",r"The point $(1,0)$ starts at angle $0^\circ$. Rotation by $k^\circ$ sends angle $\theta$ to $\theta+k$, and reflection across the $y$-axis sends an angle $\alpha$ to $180^\circ-\alpha$."),("Write the transformation rule",r"Therefore \[T_k(\theta)=180^\circ-\theta-k^\circ.\] Applying two transformations in a row gives \[T_b(T_a(\theta))=\theta+a-b.\]"),("Group transformations in pairs",r"After $2m$ transformations, the angle is \[(1-2)+(3-4)+\cdots+((2m-1)-2m)=-m^\circ.\]"),("Check even n",r"For an even number $n=2m$ to return to $0^\circ$, we need $m$ to be a multiple of $360$, giving $n=720$ at the earliest."),("Check odd n",r"After $2m+1$ transformations, apply $T_{2m+1}$ to $-m^\circ$: \[180-(-m)-(2m+1)=179-m.\] We need \[179-m\equiv0\pmod{360}.\] The smallest nonnegative $m$ is $179$."),("Conclude",r"Thus \[n=2m+1=359.\] The answer is $\boxed{359}$."),],
 19:[("Translate passes into positions",r"Let $p_i$ be the position of card $i$ in the row. While picking up cards in increasing order, we stay on the same pass whenever \[p_{i+1}>p_i.\] A new pass is needed exactly when \[p_{i+1}<p_i.\]"),("Connect to descents",r"So the number of passes is one more than the number of descents in the permutation \[p_1,p_2,\ldots,p_{13}.\] Exactly two passes means exactly one descent."),("Count permutations with one descent",r"The number of permutations of $1,2,\ldots,n$ with exactly one descent is the Eulerian number \[A(n,1)=2^n-n-1.\] A quick way to see this is to split the numbers into two increasing blocks; there are $2^n$ ways to choose the first block, excluding the empty/full cases and the $n-1$ cases that do not create a genuine descent."),("Apply n equals 13",r"Thus the count is \[A(13,1)=2^{13}-13-1=8192-14=8178.\]"),("Conclude",r"The answer is $\boxed{8178}$."),],
+})
+
+OV.update({
+21:(r"Let \[P(x)=x^{2022}+x^{1011}+1.\] Which of the following polynomials is a factor of $P(x)$?",[("A",r"$x^2-x+1$"),("B",r"$x^2+x+1$"),("C",r"$x^4+1$"),("D",r"$x^6-x^3+1$"),("E",r"$x^6+x^3+1$")]),
+23:(r"Let $h_n$ and $k_n$ be the unique relatively prime positive integers such that \[\frac11+\frac12+\frac13+\cdots+\frac1n=\frac{h_n}{k_n}.\] Let $L_n$ denote the least common multiple of the numbers $1,2,3,\ldots,n$. For how many integers $n$ with $1\le n\le22$ is $k_n<L_n$?",[("A","0"),("B","3"),("C","7"),("D","8"),("E","10")]),
+24:(r"How many strings of length $5$ formed from the digits $0,1,2,3,4$ are there such that for each $j\in\{1,2,3,4\}$, at least $j$ of the digits are less than $j$?",[("A","500"),("B","625"),("C","1089"),("D","1199"),("E","1296")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Use roots of the proposed factor and reduce the exponent modulo 3.",
+23:"Track reduced harmonic denominators against the running LCM.",
+24:"Recognize the sorted-digit condition as the parking-function condition.",
+})
+
+SOL.update({
+21:[("Look for a substitution",r"The exponents $2022$ and $1011$ suggest setting \[y=x^{1011}.\] Then \[P(x)=y^2+y+1.\]"),("Connect to a candidate factor",r"The polynomial $x^6+x^3+1$ has the same shape if we set $u=x^3$: \[x^6+x^3+1=u^2+u+1.\]"),("Use the roots of the candidate factor",r"If $x^6+x^3+1=0$, then with $u=x^3$ we have \[u^2+u+1=0.\] This means $u^3=1$ and $u\ne1$."),("Reduce the large exponent",r"Since $x^{1011}=(x^3)^{337}=u^{337}$, and $337\equiv1\pmod3$, we get \[x^{1011}=u.\]"),("Evaluate P at those roots",r"Then \[P(x)=x^{2022}+x^{1011}+1=u^2+u+1=0.\] So every root of $x^6+x^3+1$ is a root of $P(x)$."),("Conclude",r"Therefore $x^6+x^3+1$ is a factor. The answer is $\boxed{x^6+x^3+1}$."),],
+23:[("Understand what must be checked",r"The denominator $k_n$ is the denominator after the harmonic sum is reduced. The denominator $L_n$ is a natural common denominator before reducing. Thus $k_n<L_n$ exactly when cancellation occurs after writing the sum over denominator $L_n$."),("Use a running computation",r"Because $n\le22$, a systematic table is safe and short. At each step, update \[H_n=H_{n-1}+\frac1n\] and reduce the fraction, while also updating \[L_n=\operatorname{lcm}(1,2,\ldots,n).\]"),("Record the first cancellation interval",r"For $n=1,2,3,4,5$, the reduced denominator equals $L_n$. For \[n=6,7,8,\] cancellation occurs, giving \[k_6=20<60,\quad k_7=140<420,\quad k_8=280<840.\]"),("Record the middle interval",r"From $n=9$ through $n=17$, the reduced denominator again equals $L_n$. This contributes no additional values."),("Record the final interval",r"From $n=18$ through $n=22$, cancellation occurs again: \[k_{18}<L_{18},\ k_{19}<L_{19},\ k_{20}<L_{20},\ k_{21}<L_{21},\ k_{22}<L_{22}.\]"),("Count",r"The successful values are \[6,7,8,18,19,20,21,22,\] for a total of $8$."),("Conclude",r"The answer is $\boxed{8}$."),],
+24:[("Sort the digits",r"For a given string, sort its digits as \[b_1\le b_2\le b_3\le b_4\le b_5.\] The condition that at least $j$ digits are less than $j$ is equivalent to \[b_j<j\] for $j=1,2,3,4$. The fifth condition is automatic because all digits are at most $4$."),("Recognize the structure",r"This is exactly the parking-function condition for $5$ cars, with preferences labeled $0,1,2,3,4$. The order of the original string matters, so we count labeled parking functions, not just sorted digit multisets."),("Use the circular parking argument",r"For $n$ cars, the number of parking functions is $(n+1)^{n-1}$. One way to see this is to place $n+1$ parking spots on a circle. Among the $(n+1)^n$ circular preference lists, rotations group them into sets of $n+1$, and exactly one rotation leaves the extra spot empty."),("Apply n equals 5",r"Here $n=5$, so the number of valid strings is \[(5+1)^{5-1}=6^4.\]"),("Compute",r"We have \[6^4=1296.\]"),("Conclude",r"The answer is $\boxed{1296}$."),],
 })
 
 def esc(x, quote=True):
