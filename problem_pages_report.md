@@ -1,20 +1,22 @@
 # Problem Pages Report
 
-- Total manifest entries: 1704
-- Latest batch: 231 (2016 AMC 12B Problems 23-24)
-- Latest new generated count: 2
+- Total manifest entries: 1714
+- Latest batch: 232 (2017 AMC 12A Problems 1-10)
+- Latest new generated count: 10
 - Latest updated existing count: 0
-- Latest skipped count: 3
+- Latest skipped count: 0
 - MathJax validation: passed
-- Answer verification source: AoPS 2016 AMC 12B Answer Key
+- Answer verification source: AoPS 2017 AMC 12A Answer Key
 
 ## Latest Batch Pages
 
-- `2016 AMC 12B Problem 23` -> `amc12/problems/2016-amc-12b-problem-23/`
-- `2016 AMC 12B Problem 24` -> `amc12/problems/2016-amc-12b-problem-24/`
-
-## Skipped in latest batch
-
-- 2016 AMC 12B Problem 21: recursive geometry statement is OCR-damaged; skipped
-- 2016 AMC 12B Problem 22: repeating-decimal period conditions need careful number-theory verification; skipped
-- 2016 AMC 12B Problem 25: recurrence formula is OCR-damaged; skipped
+- `2017 AMC 12A Problem 1` -> `amc12/problems/2017-amc-12a-problem-1/`
+- `2017 AMC 12A Problem 2` -> `amc12/problems/2017-amc-12a-problem-2/`
+- `2017 AMC 12A Problem 3` -> `amc12/problems/2017-amc-12a-problem-3/`
+- `2017 AMC 12A Problem 4` -> `amc12/problems/2017-amc-12a-problem-4/`
+- `2017 AMC 12A Problem 5` -> `amc12/problems/2017-amc-12a-problem-5/`
+- `2017 AMC 12A Problem 6` -> `amc12/problems/2017-amc-12a-problem-6/`
+- `2017 AMC 12A Problem 7` -> `amc12/problems/2017-amc-12a-problem-7/`
+- `2017 AMC 12A Problem 8` -> `amc12/problems/2017-amc-12a-problem-8/`
+- `2017 AMC 12A Problem 9` -> `amc12/problems/2017-amc-12a-problem-9/`
+- `2017 AMC 12A Problem 10` -> `amc12/problems/2017-amc-12a-problem-10/`

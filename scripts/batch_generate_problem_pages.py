@@ -3,19 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 231
+BATCH_NUMBER = 232
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2016_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {23,24}
-SKIPPED = [
-    "2016 AMC 12B Problem 21: recursive geometry statement is OCR-damaged; skipped",
-    "2016 AMC 12B Problem 22: repeating-decimal period conditions need careful number-theory verification; skipped",
-    "2016 AMC 12B Problem 25: recurrence formula is OCR-damaged; skipped",
-]
-BATCH_LABEL = "2016 AMC 12B Problems 23-24"
-NEXT_START = "2017 AMC 12A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2017_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2017 AMC 12A Problems 1-10"
+NEXT_START = "2017 AMC 12A Problem 11"
 
-ANS={23:("A",r"\frac16"),24:("D","27720")}
+ANS={1:("D","13"),2:("C","4"),3:("B","If Lewis did not receive an A, then he got at least one multiple choice question wrong."),4:("A","30%"),5:("B","245"),6:("B","17"),7:("B","2018"),8:("D","20"),9:("E","three rays with a common endpoint"),10:("C",r"\frac34")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3408,6 +3404,106 @@ SOL.update({
 ],
 })
 
+OV.update({
+1:(r"Pablo buys popsicles for his friends. The store sells single popsicles for $\$1$ each, $3$-popsicle boxes for $\$2$, and $5$-popsicle boxes for $\$3$. What is the greatest number of popsicles that Pablo can buy with $\$8$?",[("A","8"),("B","11"),("C","12"),("D","13"),("E","15")]),
+2:(r"The sum of two nonzero real numbers is $4$ times their product. What is the sum of the reciprocals of the two numbers?",[("A","1"),("B","2"),("C","4"),("D","8"),("E","12")]),
+3:(r"Ms. Carroll promised that anyone who got all the multiple choice questions right on the upcoming exam would receive an A on the exam. Which of these statements necessarily follows logically?",[("A","If Lewis did not receive an A, then he got all of the multiple choice questions wrong."),("B","If Lewis did not receive an A, then he got at least one of the multiple choice questions wrong."),("C","If Lewis got at least one of the multiple choice questions wrong, then he did not receive an A."),("D","If Lewis received an A, then he got all of the multiple choice questions right."),("E","If Lewis received an A, then he got at least one of the multiple choice questions right.")]),
+4:(r"Jerry and Silvia wanted to go from the southwest corner of a square field to the northeast corner. Jerry walked due east and then due north to reach the goal, but Silvia headed northeast and reached the goal walking in a straight line. Which of the following is closest to how much shorter Silvia's trip was, compared to Jerry's trip?",[("A","30%"),("B","40%"),("C","50%"),("D","60%"),("E","70%")]),
+5:(r"At a gathering of $30$ people, there are $20$ people who all know each other and $10$ people who know no one. People who know each other hug, and people who do not know each other shake hands. How many handshakes occur?",[("A","240"),("B","245"),("C","290"),("D","480"),("E","490")]),
+6:(r"Joy has $30$ thin rods, one each of every integer length from $1$ cm through $30$ cm. She places the rods with lengths $3$ cm, $7$ cm, and $15$ cm on a table. She then wants to choose a fourth rod that she can put with these three to form a quadrilateral with positive area. How many of the remaining rods can she choose as the fourth rod?",[("A","16"),("B","17"),("C","18"),("D","19"),("E","20")]),
+7:(r"Define a function on the positive integers recursively by $f(1)=2$, $f(n)=f(n-1)+1$ if $n$ is even, and $f(n)=f(n-2)+2$ if $n$ is odd and greater than $1$. What is $f(2017)$?",[("A","2017"),("B","2018"),("C","4034"),("D","4035"),("E","4036")]),
+8:(r"The region consisting of all points in three-dimensional space within $3$ units of line segment $\overline{AB}$ has volume $216\pi$. What is the length $AB$?",[("A","6"),("B","12"),("C","18"),("D","20"),("E","24")]),
+9:(r"Let $S$ be the set of points $(x,y)$ in the coordinate plane such that two of the three quantities $3$, $x+2$, and $y-4$ are equal and the third of the three quantities is no greater than this common value. Which of the following is a correct description of $S$?",[("A","a single point"),("B","two intersecting lines"),("C","three lines whose pairwise intersections are three distinct points"),("D","a triangle"),("E","three rays with a common endpoint")]),
+10:(r"Chloe chooses a real number uniformly at random from the interval $[0,2017]$. Independently, Laurent chooses a real number uniformly at random from the interval $[0,4034]$. What is the probability that Laurent's number is greater than Chloe's number?",[("A",r"$\frac12$"),("B",r"$\frac23$"),("C",r"$\frac34$"),("D",r"$\frac56$"),("E",r"$\frac78$")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Compare popsicle bundle values and use the budget efficiently.",
+2:"Rewrite the reciprocal sum as the sum divided by the product.",
+3:"Use the contrapositive of a conditional statement.",
+4:"Compare a two-leg path with the diagonal of a square.",
+5:"Count all pairs, then subtract the pairs that hug.",
+6:"Use the polygon inequality for four side lengths.",
+7:"Find the pattern in the recursive definition.",
+8:"Model the solid as a cylinder with two hemispherical caps.",
+9:"Check the three possible equality cases among the three expressions.",
+10:"Use area in a rectangle of possible choices.",
+})
+
+SOL.update({
+1:[
+("Compare the best deal",r"The $5$-popsicle box costs $\$3$, so it gives the most popsicles per dollar. We should try to use as many of those as possible without exceeding $\$8$."),
+("Start with two 5-popsicle boxes",r"Two $5$-popsicle boxes cost \[2\cdot3=6\] dollars and give \(10\) popsicles. Pablo has \(\$2\) left."),
+("Use the remaining money",r"With the remaining \(\$2\), he can buy one $3$-popsicle box. That adds $3$ more popsicles."),
+("Check that three 5-boxes do not fit",r"Three $5$-popsicle boxes would cost \(\$9\), which is too much. So this plan is optimal."),
+("Conclude",r"The greatest number of popsicles is \[10+3=\boxed{13}.\]"),
+],
+2:[
+("Name the numbers",r"Let the two nonzero real numbers be $x$ and $y$. The statement says \[x+y=4xy.\]"),
+("Write the desired reciprocal sum",r"The sum of the reciprocals is \[\frac1x+\frac1y=\frac{x+y}{xy}.\]"),
+("Substitute the given relationship",r"Since \(x+y=4xy\), we get \[\frac{x+y}{xy}=\frac{4xy}{xy}=4.\]"),
+("Conclude",r"The sum of the reciprocals is $\boxed{4}$."),
+],
+3:[
+("Identify the logical form",r"The promise says: if a student got all multiple choice questions right, then that student received an A. Symbolically, \(P\Rightarrow Q\)."),
+("Use the contrapositive",r"The statement that must also be true is the contrapositive: if \(Q\) is false, then \(P\) is false."),
+("Translate back to the exam",r"If Lewis did not receive an A, then it cannot be true that he got all the multiple choice questions right. Therefore he got at least one multiple choice question wrong."),
+("Avoid the common reversal mistake",r"The promise does not say that receiving an A is possible only by getting all multiple choice questions right. So choices that reverse the implication are not guaranteed."),
+("Conclude",r"The statement that necessarily follows is $\boxed{\text{B}}$."),
+],
+4:[
+("Let the square have side length s",r"Jerry walks one side length east and one side length north, so his distance is \[2s.\]"),
+("Find Silvia's distance",r"Silvia walks along the diagonal of the square, whose length is \[s\sqrt2.\]"),
+("Compute the fractional reduction",r"The amount saved is \[2s-s\sqrt2=s(2-\sqrt2).\] As a fraction of Jerry's trip, this is \[\frac{2-\sqrt2}{2}\approx0.293.\]"),
+("Compare with the choices",r"A saving of about \(29.3\%\) is closest to \(30\%\)."),
+("Conclude",r"Silvia's trip was about $\boxed{30\%}$ shorter."),
+],
+5:[
+("Count all pairs of people",r"There are \(\binom{30}{2}=435\) pairs of people in the gathering."),
+("Identify pairs who do not shake hands",r"The only pairs who hug are pairs among the $20$ people who all know each other. There are \[\binom{20}{2}=190\] such pairs."),
+("Subtract hugging pairs",r"All other pairs shake hands, so the number of handshakes is \[435-190=245.\]"),
+("Conclude",r"The answer is $\boxed{245}$."),
+],
+6:[
+("Use the quadrilateral inequality",r"Four positive lengths can form a quadrilateral with positive area exactly when the longest length is less than the sum of the other three."),
+("Let the fourth rod have length x",r"The existing lengths are \(3,7,15\). If \(x\le15\), the longest side is \(15\), so we need \[15<3+7+x,\] giving \(x>5\)."),
+("Handle x greater than 15",r"If \(x>15\), then \(x\) is the longest side, so we need \[x<3+7+15=25.\]"),
+("Combine the range",r"Thus the possible integer values are \[6\le x\le24.\] There are \(19\) integers in this range."),
+("Remove rods already used",r"The rods of lengths \(7\) and \(15\) are already on the table, so they are not available as the fourth rod. That leaves \[19-2=17\] choices."),
+("Conclude",r"The answer is $\boxed{17}$."),
+],
+7:[
+("Compute the first few values",r"We have \(f(1)=2\). Since \(2\) is even, \(f(2)=f(1)+1=3\). Since \(3\) is odd, \(f(3)=f(1)+2=4\)."),
+("Notice the pattern",r"The values suggest \[f(n)=n+1.\] We should check that this works with both recursive rules."),
+("Check even n",r"If \(n\) is even and \(f(n-1)=n\), then \[f(n)=f(n-1)+1=n+1.\]"),
+("Check odd n",r"If \(n\) is odd and greater than $1$, and \(f(n-2)=n-1\), then \[f(n)=f(n-2)+2=n+1.\]"),
+("Apply the pattern",r"Therefore \[f(2017)=2017+1=2018.\]"),
+("Conclude",r"The answer is $\boxed{2018}$."),
+],
+8:[
+("Visualize the solid",r"The points within $3$ units of a line segment form a cylinder of radius $3$ along the segment, together with two hemispherical caps at the ends."),
+("Write the volume",r"If \(AB=L\), the cylinder volume is \[\pi(3^2)L=9\pi L.\] The two hemispheres make one full sphere of radius $3$, whose volume is \[\frac43\pi(3^3)=36\pi.\]"),
+("Use the given volume",r"So \[9\pi L+36\pi=216\pi.\]"),
+("Solve",r"Dividing by \(9\pi\), \[L+4=24,\] so \(L=20\)."),
+("Conclude",r"The length \(AB\) is $\boxed{20}$."),
+],
+9:[
+("Check 3 equals x plus 2",r"If \(3=x+2\), then \(x=1\). The third quantity \(y-4\) must be no greater than $3$, so \(y\le7\). This gives a vertical ray ending at \((1,7)\)."),
+("Check 3 equals y minus 4",r"If \(3=y-4\), then \(y=7\). The third quantity \(x+2\) must be no greater than $3$, so \(x\le1\). This gives a horizontal ray ending at \((1,7)\)."),
+("Check x plus 2 equals y minus 4",r"If \(x+2=y-4\), then \(y=x+6\). The third quantity $3$ must be no greater than the common value, so \(3\le x+2\), giving \(x\ge1\). This gives a diagonal ray starting at \((1,7)\)."),
+("Combine the cases",r"The set \(S\) is exactly three rays, all sharing the endpoint \((1,7)\)."),
+("Conclude",r"The correct description is $\boxed{\text{three rays with a common endpoint}}$."),
+],
+10:[
+("Scale the intervals",r"Laurent's interval \([0,4034]\) is twice as long as Chloe's interval \([0,2017]\), since \(4034=2\cdot2017\)."),
+("Use area in a rectangle",r"Think of the pair \((C,L)\) as a point in a rectangle with width \(2017\) and height \(4034\). All points in this rectangle are equally likely."),
+("Count the losing region",r"Laurent fails to be greater than Chloe when \(L\le C\). This is a right triangle with legs \(2017\) and \(2017\), so its area is \[\frac12(2017)^2.\]"),
+("Divide by total area",r"The total rectangle area is \[2017\cdot4034=2(2017)^2.\] Thus the failure probability is \[\frac{\frac12(2017)^2}{2(2017)^2}=\frac14.\]"),
+("Subtract from 1",r"The desired probability is \[1-\frac14=\frac34.\]"),
+("Conclude",r"The answer is \[\boxed{\frac34}.\]"),
+],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -3514,7 +3610,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2016" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2017" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -3603,7 +3699,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2016 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2017 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
