@@ -1,22 +1,22 @@
 # Problem Pages Report
 
-- Total manifest entries: 1624
-- Latest batch: 219 (2014 AMC 12B Problems 20, 22, 23)
-- Latest new generated count: 3
+- Total manifest entries: 1634
+- Latest batch: 220 (2015 AMC 12A Problems 1-10)
+- Latest new generated count: 10
 - Latest updated existing count: 0
-- Latest skipped count: 4
+- Latest skipped count: 0
 - MathJax validation: passed
-- Answer verification source: AoPS 2014 AMC 12B Answer Key
+- Answer verification source: AoPS 2015 AMC 12A Answer Key
 
 ## Latest Batch Pages
 
-- `2014 AMC 12B Problem 20` -> `amc12/problems/2014-amc-12b-problem-20/`
-- `2014 AMC 12B Problem 22` -> `amc12/problems/2014-amc-12b-problem-22/`
-- `2014 AMC 12B Problem 23` -> `amc12/problems/2014-amc-12b-problem-23/`
-
-## Skipped in latest batch
-
-- 2014 AMC 12B Problem 19: diagram-dependent truncated cone/sphere geometry; skipped
-- 2014 AMC 12B Problem 21: diagram-dependent square/rectangle geometry; skipped
-- 2014 AMC 12B Problem 24: cyclic pentagon diagonal sum high risk; skipped
-- 2014 AMC 12B Problem 25: trigonometric equation with OCR ambiguity; skipped
+- `2015 AMC 12A Problem 1` -> `amc12/problems/2015-amc-12a-problem-1/`
+- `2015 AMC 12A Problem 2` -> `amc12/problems/2015-amc-12a-problem-2/`
+- `2015 AMC 12A Problem 3` -> `amc12/problems/2015-amc-12a-problem-3/`
+- `2015 AMC 12A Problem 4` -> `amc12/problems/2015-amc-12a-problem-4/`
+- `2015 AMC 12A Problem 5` -> `amc12/problems/2015-amc-12a-problem-5/`
+- `2015 AMC 12A Problem 6` -> `amc12/problems/2015-amc-12a-problem-6/`
+- `2015 AMC 12A Problem 7` -> `amc12/problems/2015-amc-12a-problem-7/`
+- `2015 AMC 12A Problem 8` -> `amc12/problems/2015-amc-12a-problem-8/`
+- `2015 AMC 12A Problem 9` -> `amc12/problems/2015-amc-12a-problem-9/`
+- `2015 AMC 12A Problem 10` -> `amc12/problems/2015-amc-12a-problem-10/`

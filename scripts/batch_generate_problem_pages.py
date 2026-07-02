@@ -3,20 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 219
+BATCH_NUMBER = 220
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2014_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {20,22,23}
-SKIPPED = [
-    "2014 AMC 12B Problem 19: diagram-dependent truncated cone/sphere geometry; skipped",
-    "2014 AMC 12B Problem 21: diagram-dependent square/rectangle geometry; skipped",
-    "2014 AMC 12B Problem 24: cyclic pentagon diagonal sum high risk; skipped",
-    "2014 AMC 12B Problem 25: trigonometric equation with OCR ambiguity; skipped",
-]
-BATCH_LABEL = "2014 AMC 12B Problems 20, 22, 23"
-NEXT_START = "2015 AMC 12A Problem 1"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2015_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2015 AMC 12A Problems 1-10"
+NEXT_START = "2015 AMC 12A Problem 11"
 
-ANS={20:("B","18"),22:("C",r"\frac{63}{146}"),23:("C","1024")}
+ANS={1:("C",r"\frac15"),2:("E","72"),3:("E","95"),4:("B",r"\frac32"),5:("D","She rounds a up, and she rounds b and c down."),6:("B","4"),7:("D","The first height is 21% more than the second."),8:("C",r"\frac{12}{25}"),9:("C",r"\frac15"),10:("E","26")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2854,6 +2849,45 @@ SOL.update({
 23:[("Reduce the top number modulo 2017",r"Since $2017$ is prime and \[2014\equiv -3\pmod{2017},\] we can work with binomial coefficients modulo $2017$."),("Use the negative binomial identity",r"For $0\le k<2017$, \[\binom{2014}{k}\equiv \binom{-3}{k}\pmod{2017}.\] Also \[\binom{-3}{k}=(-1)^k\binom{k+2}{2}.\]"),("Rewrite the sum",r"Thus \[S\equiv \sum_{k=0}^{62}(-1)^k\binom{k+2}{2}\pmod{2017}.\]"),("Pair terms",r"Pair $k=2j$ and $k=2j+1$. The pair contribution is \[\binom{2j+2}{2}-\binom{2j+3}{2}=-(2j+2).\] There are $31$ such pairs from $k=0$ to $61$."),("Add the last term",r"The paired sum is \[-\sum_{j=0}^{30}(2j+2)=-2(1+2+\cdots+31)=-992.\] The last term for $k=62$ is \[\binom{64}{2}=2016.\] So \[S\equiv -992+2016=1024.\]"),("Conclude",r"The remainder is $\boxed{1024}$.")],
 })
 
+OV.update({
+1:(r"What is the value of \[(2^0-1+5^2+0)^{-1}\times5?\]",[("A","-125"),("B","-120"),("C",r"$\frac15$"),("D","5"),("E","24")]),
+2:(r"Two of the three sides of a triangle are $20$ and $15$. Which of the following numbers is not a possible perimeter of the triangle?",[("A","52"),("B","57"),("C","62"),("D","67"),("E","72")]),
+3:(r"Mr. Patrick teaches math to $15$ students. He was grading tests and found that when he graded everyone's test except Payton's, the average grade for the class was $80$. After he graded Payton's test, the class average became $81$. What was Payton's score on the test?",[("A","81"),("B","85"),("C","91"),("D","94"),("E","95")]),
+4:(r"The sum of two positive numbers is $5$ times their difference. What is the ratio of the larger number to the smaller?",[("A",r"$\frac54$"),("B",r"$\frac32$"),("C",r"$\frac95$"),("D","2"),("E",r"$\frac52$")]),
+5:(r"Amelia needs to estimate the quantity $\frac{a}{b}-c$, where $a,b,$ and $c$ are large positive integers. She rounds each of the integers so that the calculation will be easier to do mentally. In which of these situations will her answer necessarily be greater than the exact value of $\frac{a}{b}-c$?",[("A","She rounds all three numbers up."),("B","She rounds $a$ and $b$ up, and she rounds $c$ down."),("C","She rounds $a$ and $c$ up, and she rounds $b$ down."),("D","She rounds $a$ up, and she rounds $b$ and $c$ down."),("E","She rounds $c$ up, and she rounds $a$ and $b$ down.")]),
+6:(r"Two years ago Pete was three times as old as his cousin Claire. Two years before that, Pete was four times as old as Claire. In how many years will the ratio of their ages be $2:1$?",[("A","2"),("B","4"),("C","5"),("D","6"),("E","8")]),
+7:(r"Two right circular cylinders have the same volume. The radius of the second cylinder is $10\%$ more than the radius of the first. What is the relationship between the heights of the two cylinders?",[("A","The second height is $10\%$ less than the first."),("B","The first height is $10\%$ more than the second."),("C","The second height is $21\%$ less than the first."),("D","The first height is $21\%$ more than the second."),("E","The second height is $80\%$ of the first.")]),
+8:(r"The ratio of the length to the width of a rectangle is $4:3$. If the rectangle has diagonal of length $d$, then the area may be expressed as $kd^2$ for some constant $k$. What is $k$?",[("A",r"$\frac27$"),("B",r"$\frac37$"),("C",r"$\frac{12}{25}$"),("D",r"$\frac{16}{25}$"),("E",r"$\frac34$")]),
+9:(r"A box contains $2$ red marbles, $2$ green marbles, and $2$ yellow marbles. Carol takes $2$ marbles from the box at random; then Claudia takes $2$ of the remaining marbles at random; and then Cheryl takes the last two marbles. What is the probability that Cheryl gets $2$ marbles of the same color?",[("A",r"$\frac1{10}$"),("B",r"$\frac16$"),("C",r"$\frac15$"),("D",r"$\frac13$"),("E",r"$\frac12$")]),
+10:(r"Integers $x$ and $y$ with $x>y>0$ satisfy \[x+y+xy=80.\] What is $x$?",[("A","8"),("B","10"),("C","15"),("D","18"),("E","26")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Evaluate the expression inside the parentheses before taking the reciprocal.",
+2:"Use the triangle inequality to find the possible range of the third side.",
+3:"Compare total scores before and after Payton's test is included.",
+4:"Let the larger and smaller numbers be variables and solve the ratio equation.",
+5:"Increase a/b and decrease the subtracted quantity.",
+6:"Translate the two past age relationships into equations.",
+7:"Equal cylinder volumes imply height is inversely proportional to radius squared.",
+8:"Use the 3-4-5 rectangle scaling relationship.",
+9:"By symmetry, Cheryl's final pair is just a random pair from the six marbles.",
+10:"Factor xy+x+y by adding 1 to both variables.",
+})
+
+SOL.update({
+1:[("Evaluate powers first",r"Inside the parentheses, \[2^0=1\quad\text{and}\quad5^2=25.\] So the expression inside is \[1-1+25+0=25.\]"),("Apply the exponent -1",r"The exponent $-1$ means reciprocal, so \[25^{-1}=\frac1{25}.\]"),("Multiply by 5",r"\[\frac1{25}\cdot5=\frac15.\]"),("Conclude",r"The answer is \[\boxed{\frac15}.\]")],
+2:[("Let the third side be x",r"The known side lengths are $20$ and $15$. If the third side is $x$, the triangle inequality gives \[|20-15|<x<20+15.\]"),("Find the range for x",r"So \[5<x<35.\]"),("Convert to perimeter",r"The perimeter is \[20+15+x=35+x,\] so it must satisfy \[40<P<70.\]"),("Check the choices",r"The only listed perimeter outside this range is $72$."),("Conclude",r"The answer is $\boxed{72}$.")],
+3:[("Find the total before Payton",r"There are $14$ graded tests before Payton's test is included. Their average is $80$, so their total is \[14\cdot80=1120.\]"),("Find the final total",r"After all $15$ tests are included, the average is $81$, so the total is \[15\cdot81=1215.\]"),("Subtract to find Payton's score",r"Payton's score is \[1215-1120=95.\]"),("Conclude",r"The answer is $\boxed{95}$.")],
+4:[("Name the numbers",r"Let the larger number be $L$ and the smaller number be $S$. The condition says \[L+S=5(L-S).\]"),("Solve the equation",r"Expand the right side: \[L+S=5L-5S.\] Move terms to get \[6S=4L.\]"),("Find the ratio",r"\[\frac{L}{S}=\frac{6}{4}=\frac32.\]"),("Conclude",r"The answer is \[\boxed{\frac32}.\]")],
+5:[("Understand what makes the expression larger",r"The expression is \[\frac{a}{b}-c.\] To make it larger, we want the fraction $\frac{a}{b}$ larger and the subtracted number $c$ smaller."),("Increase the fraction",r"The fraction $\frac{a}{b}$ increases if the numerator $a$ is rounded up and the denominator $b$ is rounded down."),("Decrease the subtracted part",r"Because $c$ is subtracted, rounding $c$ down makes \[-c\] larger."),("Combine the effects",r"Rounding $a$ up, $b$ down, and $c$ down all push the estimate upward. This guarantees the estimate is greater than the exact value."),("Conclude",r"The answer is $\boxed{\text{D}}$.")],
+6:[("Let current ages be variables",r"Let Pete's current age be $P$ and Claire's current age be $C$."),("Use the two-year-ago statement",r"Two years ago, \[P-2=3(C-2).\] This simplifies to \[P=3C-4.\]"),("Use the four-year-ago statement",r"Four years ago, \[P-4=4(C-4).\] This simplifies to \[P=4C-12.\]"),("Solve current ages",r"Set the two expressions equal: \[3C-4=4C-12,\] so \[C=8\] and \[P=20.\]"),("Find when the ratio is 2 to 1",r"In $t$ years, \[\frac{20+t}{8+t}=2.\] Thus \[20+t=16+2t,\] so \[t=4.\]"),("Conclude",r"The answer is $\boxed{4}$.")],
+7:[("Use the volume formula",r"A cylinder has volume \[V=\pi r^2h.\] Equal volumes mean \[r_1^2h_1=r_2^2h_2.\]"),("Use the radius relationship",r"The second radius is $10\%$ more than the first, so \[r_2=1.1r_1.\]"),("Solve for the height relationship",r"\[h_2=\frac{r_1^2}{(1.1r_1)^2}h_1=\frac{1}{1.21}h_1=\frac{100}{121}h_1.\]"),("Interpret the comparison",r"This means \[h_1=\frac{121}{100}h_2=1.21h_2.\] So the first height is $21\%$ more than the second."),("Conclude",r"The answer is $\boxed{\text{D}}$.")],
+8:[("Use the 3-4-5 relationship",r"The length-to-width ratio is $4:3$, so let the sides be $4t$ and $3t$."),("Find the diagonal",r"The diagonal is \[\sqrt{(4t)^2+(3t)^2}=5t.\] Since this equals $d$, we have \[t=\frac d5.\]"),("Compute area",r"The area is \[(4t)(3t)=12t^2=12\left(\frac d5\right)^2=\frac{12}{25}d^2.\]"),("Read off k",r"Thus \[k=\frac{12}{25}.\]"),("Conclude",r"The answer is \[\boxed{\frac{12}{25}}.\]")],
+9:[("Use symmetry of the final pair",r"Even though Carol and Claudia draw first, Cheryl's final two marbles are equally likely to be any pair of $2$ marbles from the original $6$."),("Count all possible final pairs",r"There are \[\binom62=15\] possible pairs."),("Count same-color pairs",r"For each of the three colors, the two marbles of that color form exactly one same-color pair. So there are $3$ favorable pairs."),("Compute probability",r"The probability is \[\frac3{15}=\frac15.\]"),("Conclude",r"The answer is \[\boxed{\frac15}.\]")],
+10:[("Add 1 to factor",r"The expression \[xy+x+y\] is close to a product. Add $1$ to both sides: \[xy+x+y+1=81.\]"),("Factor",r"This gives \[(x+1)(y+1)=81.\]"),("Use positive integers and order",r"Since $x>y>0$, we need factor pairs of $81$ with the larger factor equal to $x+1$ and the smaller equal to $y+1$."),("Choose the valid pair",r"The factor pair \[27\cdot3=81\] gives \[x+1=27,\quad y+1=3.\] Thus \[x=26,\quad y=2.\]"),("Conclude",r"The answer is $\boxed{26}$.")],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -2960,7 +2994,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2014" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2015" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -3049,7 +3083,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2014 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2015 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
