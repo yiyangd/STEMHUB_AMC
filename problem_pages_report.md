@@ -1,22 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 1665
-- Latest batch: 225 (2015 AMC 12B Problems 21-23)
-- Latest new generated count: 3
+- Total manifest entries: 1673
+- Latest batch: 226 (2016 AMC 12A Problems 1-7, 10)
+- Latest new generated count: 8
 - Latest updated existing count: 0
-- Latest skipped count: 4
+- Latest skipped count: 2
 - MathJax validation: passed
-- Answer verification source: AoPS 2015 AMC 12B Answer Key
+- Answer verification source: AoPS 2016 AMC 12A Answer Key
 
 ## Latest Batch Pages
 
-- `2015 AMC 12B Problem 21` -> `amc12/problems/2015-amc-12b-problem-21/`
-- `2015 AMC 12B Problem 22` -> `amc12/problems/2015-amc-12b-problem-22/`
-- `2015 AMC 12B Problem 23` -> `amc12/problems/2015-amc-12b-problem-23/`
+- `2016 AMC 12A Problem 1` -> `amc12/problems/2016-amc-12a-problem-1/`
+- `2016 AMC 12A Problem 2` -> `amc12/problems/2016-amc-12a-problem-2/`
+- `2016 AMC 12A Problem 3` -> `amc12/problems/2016-amc-12a-problem-3/`
+- `2016 AMC 12A Problem 4` -> `amc12/problems/2016-amc-12a-problem-4/`
+- `2016 AMC 12A Problem 5` -> `amc12/problems/2016-amc-12a-problem-5/`
+- `2016 AMC 12A Problem 6` -> `amc12/problems/2016-amc-12a-problem-6/`
+- `2016 AMC 12A Problem 7` -> `amc12/problems/2016-amc-12a-problem-7/`
+- `2016 AMC 12A Problem 10` -> `amc12/problems/2016-amc-12a-problem-10/`
 
 ## Skipped in latest batch
 
-- 2015 AMC 12B Problem 19: circle condition on constructed squares high-risk geometry; skipped
-- 2015 AMC 12B Problem 20: recursive function/modular iteration high risk; skipped
-- 2015 AMC 12B Problem 24: four-circle radical-axis geometry high risk; skipped
-- 2015 AMC 12B Problem 25: long vector walk with radicals high risk; skipped
+- 2016 AMC 12A Problem 8: shaded-region diagram missing; skipped
+- 2016 AMC 12A Problem 9: diagram-dependent square configuration; skipped

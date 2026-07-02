@@ -3,20 +3,18 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 225
+BATCH_NUMBER = 226
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2015_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {21,22,23}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2016_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,10}
 SKIPPED = [
-    "2015 AMC 12B Problem 19: circle condition on constructed squares high-risk geometry; skipped",
-    "2015 AMC 12B Problem 20: recursive function/modular iteration high risk; skipped",
-    "2015 AMC 12B Problem 24: four-circle radical-axis geometry high risk; skipped",
-    "2015 AMC 12B Problem 25: long vector walk with radicals high risk; skipped",
+    "2016 AMC 12A Problem 8: shaded-region diagram missing; skipped",
+    "2016 AMC 12A Problem 9: diagram-dependent square configuration; skipped",
 ]
-BATCH_LABEL = "2015 AMC 12B Problems 21-23"
-NEXT_START = "2016 AMC 12A Problem 1"
+BATCH_LABEL = "2016 AMC 12A Problems 1-7, 10"
+NEXT_START = "2016 AMC 12A Problem 11"
 
-ANS={21:("D","13"),22:("D","20"),23:("B","10")}
+ANS={1:("B","100"),2:("C","3"),3:("B",r"-\frac1{40}"),4:("D","90"),5:("E","an even integer greater than 2 that cannot be written as the sum of two prime numbers"),6:("D","9"),7:("D","three lines that do not all pass through a common point"),10:("B","2")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3031,6 +3029,39 @@ SOL.update({
 23:[("Write the equation",r"The volume is \[abc,\] and the surface area is \[2(ab+bc+ca).\] The condition is \[abc=2(ab+bc+ca).\]"),("Solve for c",r"Rearrange as \[abc-2ac-2bc=2ab,\] or \[c(ab-2a-2b)=2ab.\] Thus \[c=\frac{2ab}{ab-2a-2b}.\]"),("Bound a and b",r"The denominator must be positive, so \[ab-2a-2b>0.\] Since $a\le b\le c$, only small values of $a$ and $b$ can work; once $a$ is fixed, the formula determines $c$."),("List valid triples",r"Checking integer values with $1\le a\le b\le c$ gives \[(3,7,42),(3,8,24),(3,9,18),(3,10,15),(3,12,12),\]\[(4,5,20),(4,6,12),(4,8,8),(5,5,10),(6,6,6).\]"),("Count",r"There are $10$ valid triples."),("Conclude",r"The answer is $\boxed{10}$.")],
 })
 
+OV.update({
+1:(r"What is the value of \[\frac{11!-10!}{9!}?\]",[("A","99"),("B","100"),("C","110"),("D","121"),("E","132")]),
+2:(r"For what value of $x$ does \[10^x\cdot100^{2x}=1000^5?\]",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+3:(r"The remainder can be defined for all real numbers $x$ and $y$ with $y\ne0$ by \[\operatorname{rem}(x,y)=x-y\left\lfloor\frac{x}{y}\right\rfloor.\] What is the value of $\operatorname{rem}\left(\frac38,-\frac25\right)$?",[("A",r"$-\frac38$"),("B",r"$-\frac1{40}$"),("C","0"),("D",r"$\frac38$"),("E",r"$\frac{31}{40}$")]),
+4:(r"The mean, median, and mode of the $7$ data values $60,100,x,40,50,200,90$ are all equal to $x$. What is the value of $x$?",[("A","50"),("B","60"),("C","75"),("D","90"),("E","100")]),
+5:(r"Goldbach's conjecture states that every even integer greater than $2$ can be written as the sum of two prime numbers. What would a counterexample consist of?",[("A","an odd integer greater than $2$ that can be written as the sum of two prime numbers"),("B","an odd integer greater than $2$ that cannot be written as the sum of two prime numbers"),("C","an even integer greater than $2$ that can be written as the sum of two numbers that are not prime"),("D","an even integer greater than $2$ that can be written as the sum of two prime numbers"),("E","an even integer greater than $2$ that cannot be written as the sum of two prime numbers")]),
+6:(r"A triangular array of $2016$ coins has $1$ coin in the first row, $2$ coins in the second row, $3$ coins in the third row, and so on up to $N$ coins in the $N^\text{th}$ row. What is the sum of the digits of $N$?",[("A","6"),("B","7"),("C","8"),("D","9"),("E","10")]),
+7:(r"Which of these describes the graph of \[x^2(x+y+1)=y^2(x+y+1)?\]",[("A","two parallel lines"),("B","two intersecting lines"),("C","three lines that all pass through a common point"),("D","three lines that do not all pass through a common point"),("E","a line and a parabola")]),
+10:(r"Five friends sat in a movie theater in a row containing $5$ seats, numbered $1$ to $5$ from left to right. During the movie Ada went to the lobby to get some popcorn. When she returned, she found that Bea had moved two seats to the right, Ceci had moved one seat to the left, and Dee and Edie had switched seats, leaving an end seat for Ada. In which seat had Ada been sitting before she got up?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Factor the factorial expression before canceling.",
+2:"Rewrite all terms as powers of 10.",
+3:"Apply the floor definition carefully with a negative divisor.",
+4:"Use the mean equation first, then check median and mode.",
+5:"A counterexample must satisfy the hypothesis but fail the conclusion.",
+6:"Solve the triangular-number equation N(N+1)/2=2016.",
+7:"Factor the equation into linear factors.",
+10:"Track the forced seat changes after Ada leaves.",
+})
+
+SOL.update({
+1:[("Factor the numerator",r"Both terms in the numerator contain $10!$: \[11!-10!=11\cdot10!-10!=10!(11-1)=10\cdot10!.\]"),("Relate 10 factorial to 9 factorial",r"Since \[10!=10\cdot9!,\] the numerator is \[10\cdot10\cdot9!=100\cdot9!.\]"),("Cancel",r"\[\frac{11!-10!}{9!}=\frac{100\cdot9!}{9!}=100.\]"),("Conclude",r"The answer is $\boxed{100}$.")],
+2:[("Rewrite bases as powers of 10",r"We have \[100=10^2\quad\text{and}\quad1000=10^3.\]"),("Simplify the left side",r"\[10^x\cdot100^{2x}=10^x\cdot(10^2)^{2x}=10^x\cdot10^{4x}=10^{5x}.\]"),("Simplify the right side",r"\[1000^5=(10^3)^5=10^{15}.\]"),("Equate exponents",r"Since the bases are equal, \[5x=15,\] so \[x=3.\]"),("Conclude",r"The answer is $\boxed{3}$.")],
+3:[("Compute the quotient inside the floor",r"\[\frac{x}{y}=\frac{3/8}{-2/5}=-\frac{15}{16}.\]"),("Take the floor carefully",r"The greatest integer less than or equal to \[-\frac{15}{16}\] is \[-1.\]"),("Apply the definition",r"\[\operatorname{rem}\left(\frac38,-\frac25\right)=\frac38-\left(-\frac25\right)(-1).\]"),("Compute",r"\[\frac38-\frac25=\frac{15}{40}-\frac{16}{40}=-\frac1{40}.\]"),("Conclude",r"The answer is \[\boxed{-\frac1{40}}.\]")],
+4:[("Use the mean condition",r"The sum of the fixed six values is \[60+100+40+50+200+90=540.\] Since the mean of all seven values is $x$, \[\frac{540+x}{7}=x.\]"),("Solve for x",r"\[540+x=7x,\] so \[540=6x,\qquad x=90.\]"),("Check median and mode",r"With $x=90$, the sorted list is \[40,50,60,90,90,100,200.\] The median is $90$ and the mode is also $90$."),("Conclude",r"The answer is $\boxed{90}$.")],
+5:[("Identify the hypothesis",r"Goldbach's conjecture only talks about even integers greater than $2$."),("Identify the conclusion",r"The conclusion is that such a number can be written as the sum of two prime numbers."),("Negate the conclusion",r"A counterexample must satisfy the hypothesis but fail the conclusion."),("State the counterexample type",r"So it would be an even integer greater than $2$ that cannot be written as the sum of two prime numbers."),("Conclude",r"The answer is $\boxed{\text{E}}$.")],
+6:[("Use the triangular number formula",r"The total number of coins is \[1+2+\cdots+N=\frac{N(N+1)}2.\]"),("Set equal to 2016",r"\[\frac{N(N+1)}2=2016,\] so \[N(N+1)=4032.\]"),("Factor near the square root",r"Since \[63\cdot64=4032,\] we get \[N=63.\]"),("Find the digit sum",r"The sum of the digits of $63$ is \[6+3=9.\]"),("Conclude",r"The answer is $\boxed{9}$.")],
+7:[("Move everything to one side by factoring",r"The equation is \[x^2(x+y+1)=y^2(x+y+1).\] Bring the right side over: \[(x^2-y^2)(x+y+1)=0.\]"),("Factor the difference of squares",r"\[x^2-y^2=(x-y)(x+y).\]"),("List the lines",r"The graph is the union of the three lines \[x-y=0,\quad x+y=0,\quad x+y+1=0.\]"),("Describe their intersections",r"The lines $x+y=0$ and $x+y+1=0$ are parallel, so the three lines cannot all pass through one common point."),("Conclude",r"The graph is $\boxed{\text{three lines that do not all pass through a common point}}$.")],
+10:[("Use the end-seat clue",r"When Ada returns, the only empty seat is an end seat. Since Bea moves two seats right and Ceci moves one seat left, we can track possible original positions."),("Constrain Bea and Ceci",r"Bea could not have started in seats $4$ or $5$, and Ceci could not have started in seat $1$. Also, their new seats must not collide with Dee and Edie's switched seats."),("Test the forced arrangement",r"The consistent arrangements have Bea originally in seat $1$, Ada in seat $2$, and Ceci in seat $3$. Dee and Edie occupy seats $4$ and $5$ in either order."),("Check what happens after Ada leaves",r"Bea moves from $1$ to $3$, Ceci moves from $3$ to $2$, and Dee and Edie switch seats $4$ and $5$. This leaves seat $1$, an end seat, for Ada."),("Conclude",r"Ada had been sitting in seat $\boxed{2}$.")],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -3137,7 +3168,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2015" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2016" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -3226,7 +3257,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2015 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2016 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
