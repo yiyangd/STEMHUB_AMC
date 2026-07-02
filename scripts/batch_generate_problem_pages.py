@@ -3,18 +3,19 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 244
+BATCH_NUMBER = 245
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2019_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,7,8,9}
+TARGET_NUMBERS = {11,12,13,14,15,17,20}
 SKIPPED = [
-    "2019 AMC 12A Problem 6: rigid-motion symmetry problem depends on the original recurring-pattern figure; skipped",
-    "2019 AMC 12A Problem 10: shaded circle arrangement requires the original diagram; skipped",
+    "2019 AMC 12A Problem 16: 3-by-3 grid parity probability is diagram/grid-structure heavy; skipped",
+    "2019 AMC 12A Problem 18: sphere tangent-to-triangle spatial geometry needs a dedicated derivation; skipped",
+    "2019 AMC 12A Problem 19: integer triangle with three cosine constraints is high-risk without extended derivation; skipped",
 ]
-BATCH_LABEL = "2019 AMC 12A Problems 1-5, 7-9"
-NEXT_START = "2019 AMC 12A Problem 11"
+BATCH_LABEL = "2019 AMC 12A Problems 11-15, 17, 20"
+NEXT_START = "2019 AMC 12A Problem 21"
 
-ANS={1:("E","78"),2:("D","200"),3:("B","76"),4:("D","90"),5:("C","6"),7:("E","14.5 < mean < median"),8:("D","19"),9:("E","8078")}
+ANS={11:("D","16"),12:("B","20"),13:("E","432"),14:("E",r"\sqrt{10}"),15:("D",r"10^{164}"),17:("D","10"),20:("B",r"\frac7{16}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4301,6 +4302,83 @@ SOL.update({
 ("Find b 2019",r"Thus \[b_n=1+(n-1)\frac43=\frac{4n-1}{3}.\] For \(n=2019\), \[b_{2019}=\frac{8075}{3}.\]"),
 ("Invert",r"Therefore \[a_{2019}=\frac3{8075}.\] The numerator and denominator are relatively prime."),
 ("Conclude",r"So \(p+q=3+8075=\boxed{8078}\)."),
+],
+})
+
+OV.update({
+11:(r"For some positive integer \(k\), the repeating base-\(k\) representation of the base-ten fraction \(\frac7{51}\) is \[0.\overline{23}_k=0.232323\ldots_k.\] What is \(k\)?",[("A","13"),("B","14"),("C","15"),("D","16"),("E","17")]),
+12:(r"Positive real numbers \(x\ne1\) and \(y\ne1\) satisfy \(\log_2 x=\log_y16\) and \(xy=64\). What is \(\left(\log_2\frac{x}{y}\right)^2\)?",[("A",r"$\frac{25}{2}$"),("B","20"),("C",r"$\frac{45}{2}$"),("D","25"),("E","32")]),
+13:(r"How many ways are there to paint each of the integers \(2,3,\ldots,9\) either red, green, or blue so that each number has a different color from each of its proper divisors?",[("A","144"),("B","216"),("C","256"),("D","384"),("E","432")]),
+14:(r"For a certain complex number \(c\), the polynomial \[P(x)=(x^2-2x+2)(x^2-cx+4)(x^2-4x+8)\] has exactly \(4\) distinct roots. What is \(|c|\)?",[("A",r"$\sqrt2$"),("B",r"$\sqrt6$"),("C",r"$2\sqrt2$"),("D","3"),("E",r"$\sqrt{10}$")]),
+15:(r"Positive real numbers \(a\) and \(b\) have the property that \[\sqrt{\log a}+\sqrt{\log b}+\log\sqrt a+\log\sqrt b=100,\] and all four terms on the left are positive integers, where \(\log\) denotes base \(10\) logarithm. What is \(ab\)?",[("A",r"$10^{52}$"),("B",r"$10^{100}$"),("C",r"$10^{144}$"),("D",r"$10^{164}$"),("E",r"$10^{200}$")]),
+17:(r"Let \(s_k\) denote the sum of the \(k\)th powers of the roots of the polynomial \(x^3-5x^2+8x-13\). In particular, \(s_0=3\), \(s_1=5\), and \(s_2=9\). Let \(a,b,c\) be real numbers such that \[s_{k+1}=as_k+bs_{k-1}+cs_{k-2}\] for \(k=2,3,\ldots\). What is \(a+b+c\)?",[("A","-6"),("B","0"),("C","6"),("D","10"),("E","26")]),
+20:(r"Real numbers between \(0\) and \(1\), inclusive, are chosen as follows. A fair coin is flipped. If it lands heads, it is flipped again and the chosen number is \(0\) if the second flip is heads and \(1\) if the second flip is tails. If the first coin flip is tails, the number is chosen uniformly at random from \([0,1]\). Two random numbers \(x\) and \(y\) are chosen independently in this manner. What is the probability that \(|x-y|>\frac12\)?",[("A",r"$\frac13$"),("B",r"$\frac7{16}$"),("C",r"$\frac12$"),("D",r"$\frac9{16}$"),("E",r"$\frac23$")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Convert the repeating base-k decimal to a rational expression and solve for k.",
+12:"Use logarithm variables for log base 2 of x and y.",
+13:"Count proper-divisor colorings using the small divisibility graph.",
+14:"Force the middle quadratic to share exactly two roots with the outer quadratics.",
+15:"Convert the integer log conditions into triangular-number equations.",
+17:"Use the cubic equation satisfied by each root to get the power-sum recurrence.",
+20:"Break the mixed distribution into atom-atom, atom-continuous, and continuous-continuous cases.",
+})
+
+SOL.update({
+11:[
+("Convert the repeating base-k number",r"In base \(k\), the repeating block \(23\) has value \[0.\overline{23}_k=\frac{2k+3}{k^2-1}.\] This is the same idea as \(0.\overline{23}_{10}=\frac{23}{99}\)."),
+("Set it equal to the given fraction",r"We need \[\frac{2k+3}{k^2-1}=\frac7{51}.\]"),
+("Solve the quadratic",r"Cross-multiplying gives \[51(2k+3)=7(k^2-1),\] so \[7k^2-102k-160=0.\]"),
+("Find the positive root",r"The discriminant is \(122^2\), so \[k=\frac{102+122}{14}=16.\]"),
+("Conclude",r"The base is \(\boxed{16}\)."),
+],
+12:[
+("Name the logarithms",r"Let \[A=\log_2 x,\qquad B=\log_2 y.\] Then \(xy=64\) gives \[A+B=\log_2 64=6.\]"),
+("Use the other logarithm equation",r"The equation \(\log_2 x=\log_y16\) becomes \[A=\frac{\log_2 16}{\log_2 y}=\frac4B.\] Thus \[AB=4.\]"),
+("Target the requested expression",r"We want \[\left(\log_2\frac{x}{y}\right)^2=(A-B)^2.\]"),
+("Use sum and product",r"Since \(A+B=6\) and \(AB=4\), \[(A-B)^2=(A+B)^2-4AB=6^2-4(4)=20.\]"),
+("Conclude",r"The answer is \(\boxed{20}\)."),
+],
+13:[
+("Build the divisibility graph",r"The only restrictions among \(2,3,\ldots,9\) are from proper divisors: \(2\) differs from \(4,6,8\); \(3\) differs from \(6,9\); and \(4\) differs from \(8\)."),
+("Choose colors for 2 and 3",r"There are \(3\) choices for the color of \(2\) and \(3\) choices for the color of \(3\), so \(9\) choices so far."),
+("Color the dependent numbers",r"Number \(4\) has \(2\) choices because it cannot match \(2\). Number \(9\) has \(2\) choices because it cannot match \(3\)."),
+("Split into two cases",r"If \(2\) and \(3\) have the same color, there are \(3\) choices for that shared color. Then \(4,6,9\) each have \(2\) choices, \(8\) has \(1\) choice after \(4\) is chosen, and \(5,7\) each have \(3\) choices. This gives \[3\cdot2\cdot2\cdot2\cdot1\cdot3\cdot3=216.\]"),
+("Count the different-color case",r"If \(2\) and \(3\) have different colors, there are \(3\cdot2=6\) choices. Then \(4\) and \(9\) each have \(2\) choices, \(6\) has \(1\) choice, \(8\) has \(1\) choice after \(4\) is chosen, and \(5,7\) are free. This gives \[6\cdot2\cdot2\cdot1\cdot1\cdot3\cdot3=216.\]"),
+("Add the cases",r"The total number of valid colorings is \[216+216=432.\]"),
+("Conclude",r"There are \(\boxed{432}\) ways."),
+],
+14:[
+("Look at the known roots",r"The first quadratic has roots \(1\pm i\). The third quadratic has roots \(2\pm2i\). These four roots are distinct."),
+("Use the condition of exactly four roots",r"The middle quadratic \(x^2-cx+4\) must not introduce two new roots. It must share its two roots with the four roots already present."),
+("Use the product of roots",r"The two roots of the middle quadratic have product \(4\). We need to choose one root from the first quadratic and one from the third so that their product is \(4\)."),
+("Choose a matching pair",r"For example, \[(1+i)(2-2i)=4.\] Then the sum of these two roots is \[(1+i)+(2-2i)=3-i.\] Therefore \(c=3-i\)."),
+("Find the magnitude",r"Thus \[|c|=|3-i|=\sqrt{3^2+(-1)^2}=\sqrt{10}.\]"),
+("Conclude",r"The answer is \(\boxed{\sqrt{10}}\)."),
+],
+15:[
+("Introduce integer variables",r"Let \[\sqrt{\log a}=x,\qquad \sqrt{\log b}=y.\] These are positive integers. Since \(\log\sqrt a=\frac12\log a=\frac{x^2}{2}\) is also an integer, \(x\) must be even; similarly \(y\) is even."),
+("Write x and y as even numbers",r"Let \(x=2m\) and \(y=2n\), where \(m,n\) are positive integers."),
+("Translate the sum condition",r"The equation becomes \[2m+2n+2m^2+2n^2=100,\] or \[m(m+1)+n(n+1)=50.\]"),
+("Find m and n",r"Testing positive integers gives \[(m,n)=(4,5)\] or \((5,4)\), because \(4\cdot5+5\cdot6=20+30=50\)."),
+("Compute ab",r"We have \[\log a=x^2=4m^2,\qquad \log b=y^2=4n^2.\] Therefore \[\log(ab)=4m^2+4n^2=4(16+25)=164.\]"),
+("Conclude",r"So \(ab=10^{164}\), and the answer is \(\boxed{10^{164}}\)."),
+],
+17:[
+("Use the equation satisfied by each root",r"If \(r\) is a root of \(x^3-5x^2+8x-13\), then \[r^3=5r^2-8r+13.\]"),
+("Multiply by powers of r",r"Multiplying by \(r^{k-2}\) gives \[r^{k+1}=5r^k-8r^{k-1}+13r^{k-2}.\]"),
+("Sum over all roots",r"Adding this equation for the three roots gives \[s_{k+1}=5s_k-8s_{k-1}+13s_{k-2}.\]"),
+("Read off the coefficients",r"Thus \(a=5\), \(b=-8\), and \(c=13\)."),
+("Conclude",r"Therefore \[a+b+c=5-8+13=\boxed{10}.\]"),
+],
+20:[
+("Understand the distribution",r"Each chosen number has probability \(\frac14\) of being \(0\), probability \(\frac14\) of being \(1\), and probability \(\frac12\) of being uniformly distributed on \([0,1]\)."),
+("Count atom-atom wins",r"If one number is \(0\) and the other is \(1\), then the difference is greater than \(\frac12\). This has probability \[2\cdot\frac14\cdot\frac14=\frac18.\]"),
+("Count atom-continuous wins",r"If one number is an endpoint atom and the other is uniform, the uniform number must lie in the far half of the interval. Accounting for both endpoints and both orders gives \[4\cdot\frac14\cdot\frac12\cdot\frac12=\frac14.\]"),
+("Count continuous-continuous wins",r"If both numbers are uniform, the probability that their distance is greater than \(\frac12\) is \(\frac14\). Since this case has probability \((\frac12)^2=\frac14\), it contributes \[\frac14\cdot\frac14=\frac1{16}.\]"),
+("Add the cases",r"The total probability is \[\frac18+\frac14+\frac1{16}=\frac{2+4+1}{16}=\frac7{16}.\]"),
+("Conclude",r"The answer is \(\boxed{\frac7{16}}\)."),
 ],
 })
 
