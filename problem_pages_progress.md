@@ -3500,3 +3500,19 @@
 - Pushed: pending
 - Next batch should start from: 2014 AMC 12A Problem 11
 - Review notes: none.
+
+## Batch 216: 2014 AMC 12A Problems 11-16
+
+- Start time: 2026-07-01T20:17:14-07:00
+- End time: 2026-07-01T20:17:15-07:00
+- Processed contest: AMC12
+- Processed range: 2014 AMC 12A Problems 11-16
+- Generated count: 6
+- Updated existing count: 0
+- Skipped count: 4
+- Skipped reasons: 2014 AMC 12A Problem 17: 3D sphere-packing geometry high risk; skipped; 2014 AMC 12A Problem 18: nested logarithm domain with OCR base ambiguity; skipped; 2014 AMC 12A Problem 19: rational-parameter quadratic integer-root count high risk; skipped; 2014 AMC 12A Problem 20: geometry minimization/path reflection high risk; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2014 AMC 12A Problem 21
+- Review notes: none.

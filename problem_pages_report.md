@@ -1,30 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 1601
-- Latest batch: 215 (2014 AMC 12A Problems 1-10)
-- Latest new generated count: 10
+- Total manifest entries: 1607
+- Latest batch: 216 (2014 AMC 12A Problems 11-16)
+- Latest new generated count: 6
 - Latest updated existing count: 0
-- Latest skipped count: 5
+- Latest skipped count: 4
 - MathJax validation: passed
 - Answer verification source: AoPS 2014 AMC 12A Answer Key
 
 ## Latest Batch Pages
 
-- `2014 AMC 12A Problem 1` -> `amc12/problems/2014-amc-12a-problem-1/`
-- `2014 AMC 12A Problem 2` -> `amc12/problems/2014-amc-12a-problem-2/`
-- `2014 AMC 12A Problem 3` -> `amc12/problems/2014-amc-12a-problem-3/`
-- `2014 AMC 12A Problem 4` -> `amc12/problems/2014-amc-12a-problem-4/`
-- `2014 AMC 12A Problem 5` -> `amc12/problems/2014-amc-12a-problem-5/`
-- `2014 AMC 12A Problem 6` -> `amc12/problems/2014-amc-12a-problem-6/`
-- `2014 AMC 12A Problem 7` -> `amc12/problems/2014-amc-12a-problem-7/`
-- `2014 AMC 12A Problem 8` -> `amc12/problems/2014-amc-12a-problem-8/`
-- `2014 AMC 12A Problem 9` -> `amc12/problems/2014-amc-12a-problem-9/`
-- `2014 AMC 12A Problem 10` -> `amc12/problems/2014-amc-12a-problem-10/`
+- `2014 AMC 12A Problem 11` -> `amc12/problems/2014-amc-12a-problem-11/`
+- `2014 AMC 12A Problem 12` -> `amc12/problems/2014-amc-12a-problem-12/`
+- `2014 AMC 12A Problem 13` -> `amc12/problems/2014-amc-12a-problem-13/`
+- `2014 AMC 12A Problem 14` -> `amc12/problems/2014-amc-12a-problem-14/`
+- `2014 AMC 12A Problem 15` -> `amc12/problems/2014-amc-12a-problem-15/`
+- `2014 AMC 12A Problem 16` -> `amc12/problems/2014-amc-12a-problem-16/`
 
 ## Skipped in latest batch
 
-- 2013 AMC 12B Problem 21: parabola intersection counting high risk; skipped
-- 2013 AMC 12B Problem 22: logarithm equation/minimal integer high risk; skipped
-- 2013 AMC 12B Problem 23: base representation digit-counting high risk; skipped
-- 2013 AMC 12B Problem 24: complex triangle geometry with OCR radical ambiguity; skipped
-- 2013 AMC 12B Problem 25: polynomial with Gaussian-integer roots high risk; skipped
+- 2014 AMC 12A Problem 17: 3D sphere-packing geometry high risk; skipped
+- 2014 AMC 12A Problem 18: nested logarithm domain with OCR base ambiguity; skipped
+- 2014 AMC 12A Problem 19: rational-parameter quadratic integer-root count high risk; skipped
+- 2014 AMC 12A Problem 20: geometry minimization/path reflection high risk; skipped

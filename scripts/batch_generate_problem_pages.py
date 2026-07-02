@@ -3,21 +3,20 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 215
+BATCH_NUMBER = 216
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2014_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+TARGET_NUMBERS = {11,12,13,14,15,16}
 SKIPPED = [
-    "2013 AMC 12B Problem 21: parabola intersection counting high risk; skipped",
-    "2013 AMC 12B Problem 22: logarithm equation/minimal integer high risk; skipped",
-    "2013 AMC 12B Problem 23: base representation digit-counting high risk; skipped",
-    "2013 AMC 12B Problem 24: complex triangle geometry with OCR radical ambiguity; skipped",
-    "2013 AMC 12B Problem 25: polynomial with Gaussian-integer roots high risk; skipped",
+    "2014 AMC 12A Problem 17: 3D sphere-packing geometry high risk; skipped",
+    "2014 AMC 12A Problem 18: nested logarithm domain with OCR base ambiguity; skipped",
+    "2014 AMC 12A Problem 19: rational-parameter quadratic integer-root count high risk; skipped",
+    "2014 AMC 12A Problem 20: geometry minimization/path reflection high risk; skipped",
 ]
-BATCH_LABEL = "2014 AMC 12A Problems 1-10"
-NEXT_START = "2014 AMC 12A Problem 11"
+BATCH_LABEL = "2014 AMC 12A Problems 11-16"
+NEXT_START = "2014 AMC 12A Problem 21"
 
-ANS={1:("C",r"\frac{25}{2}"),2:("B",r"\$38.50"),3:("B","3"),4:("A",r"\frac{bde}{ac}"),5:("C","3"),6:("D","99"),7:("A","1"),8:("C",r"\$219.95"),9:("B",r"a+4"),10:("B",r"\frac{\sqrt3}{3}")}
+ANS={11:("C","210"),12:("D",r"2+\sqrt3"),13:("B","2220"),14:("C","2"),15:("B","18"),16:("D","991")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2748,6 +2747,33 @@ SOL.update({
 8:[("Write the discounts",r"For a listed price $P$, Coupon 1 gives $0.10P$, Coupon 2 gives $20$, and Coupon 3 gives \[0.18(P-100).\]"),("Beat Coupon 2",r"Coupon 1 must give more than $\$20$, so \[0.10P>20,\] which means \[P>200.\]"),("Beat Coupon 3",r"Coupon 1 must also beat Coupon 3: \[0.10P>0.18(P-100).\] This gives \[0.10P>0.18P-18,\] so \[P<225.\]"),("Check the answer choices",r"The listed price must satisfy \[200<P<225.\] Among the choices, only $\$219.95$ is in this interval."),("Conclude",r"The answer is $\boxed{\$219.95}$.")],
 9:[("Average the first five integers",r"The five consecutive integers are \[a,\ a+1,\ a+2,\ a+3,\ a+4.\] Their average is the middle term, so \[b=a+2.\]"),("Average the next sequence",r"The five consecutive integers starting with $b$ have average \[b+2.\]"),("Substitute for b",r"Since $b=a+2$, the new average is \[b+2=a+4.\]"),("Conclude",r"The answer is $\boxed{a+4}$.")],
 10:[("Find the area of each small triangle",r"The equilateral triangle of side $1$ has area \[\frac{\sqrt3}{4}.\] The three congruent isosceles triangles have the same total area, so each has area \[\frac13\cdot\frac{\sqrt3}{4}=\frac{\sqrt3}{12}.\]"),("Use base 1",r"Each isosceles triangle has base $1$. If its height is $h$, then \[\frac12\cdot1\cdot h=\frac{\sqrt3}{12}.\] Thus \[h=\frac{\sqrt3}{6}.\]"),("Use half the base",r"The congruent side of the isosceles triangle is the hypotenuse of a right triangle with legs \[\frac12\quad\text{and}\quad \frac{\sqrt3}{6}.\]"),("Apply the Pythagorean theorem",r"The side length is \[\sqrt{\left(\frac12\right)^2+\left(\frac{\sqrt3}{6}\right)^2}=\sqrt{\frac14+\frac{3}{36}}=\sqrt{\frac13}=\frac{\sqrt3}{3}.\]"),("Conclude",r"The answer is \[\boxed{\frac{\sqrt3}{3}}.\]")],
+})
+
+OV.update({
+11:(r"David drives from his home to the airport to catch a flight. He drives $35$ miles in the first hour, but realizes that he will be $1$ hour late if he continues at this speed. He increases his speed by $15$ miles per hour for the rest of the way to the airport and arrives $30$ minutes early. How many miles is the airport from his home?",[("A","140"),("B","175"),("C","210"),("D","245"),("E","280")]),
+12:(r"Two circles intersect at points $A$ and $B$. The minor arcs $AB$ measure $30^\circ$ on one circle and $60^\circ$ on the other circle. What is the ratio of the area of the larger circle to the area of the smaller circle?",[("A","2"),("B",r"$1+\sqrt3$"),("C","3"),("D",r"$2+\sqrt3$"),("E","4")]),
+13:(r"A fancy bed and breakfast inn has $5$ rooms, each with a distinctive color-coded decor. One day $5$ friends arrive to spend the night. There are no other guests that night. The friends can room in any combination they wish, but with no more than $2$ friends per room. In how many ways can the innkeeper assign the guests to the rooms?",[("A","2100"),("B","2220"),("C","3000"),("D","3120"),("E","3125")]),
+14:(r"Let $a<b<c$ be three integers such that $a,b,c$ is an arithmetic progression and $a,c,b$ is a geometric progression. What is the smallest possible value of $c$?",[("A","-2"),("B","1"),("C","2"),("D","4"),("E","6")]),
+15:(r"A five-digit palindrome is a positive integer with respective digits $abcba$, where $a$ is nonzero. Let $S$ be the sum of all five-digit palindromes. What is the sum of the digits of $S$?",[("A","9"),("B","18"),("C","27"),("D","36"),("E","45")]),
+16:(r"The product $(8)(888\ldots8)$, where the second factor has $k$ digits, is an integer whose digits have a sum of $1000$. What is $k$?",[("A","901"),("B","911"),("C","919"),("D","991"),("E","999")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Compare the scheduled remaining time under two different speeds.",
+12:"Use the same chord length in two circles with different central angles.",
+13:"Separate room assignments by whether there are zero, one, or two pairs of roommates.",
+14:"Parameterize the arithmetic progression and impose the geometric progression condition.",
+15:"Sum five-digit palindromes by digit position.",
+16:"Find the digit pattern of 8 times a string of k eights.",
+})
+
+SOL.update({
+11:[("Separate the first hour",r"David has already driven $35$ miles in the first hour. Let $d$ be the remaining distance after that hour."),("Compare the two arrival predictions",r"If he continues at $35$ mph, he will be $1$ hour late. If he drives at $50$ mph for the remaining distance, he arrives $30$ minutes early. These two predictions differ by $1.5$ hours."),("Set up the time equation",r"The remaining travel times are \[\frac{d}{35}\quad\text{and}\quad \frac{d}{50}.\] Their difference is \[\frac{d}{35}-\frac{d}{50}=1.5.\]"),("Solve for the remaining distance",r"\[\frac{15d}{1750}=\frac32,\] so \[d=175.\]"),("Add the first hour",r"The total distance is \[35+175=210.\]"),("Conclude",r"The airport is $\boxed{210}$ miles from his home.")],
+12:[("Use the chord formula",r"The same chord $AB$ belongs to both circles. If a circle has radius $R$ and central angle $\theta$ for chord $AB$, then \[AB=2R\sin\frac{\theta}{2}.\]"),("Identify the larger circle",r"The smaller central angle corresponds to the larger radius. So the circle with $30^\circ$ minor arc is the larger circle."),("Relate the radii",r"Let the larger radius be $R$ and the smaller radius be $r$. Then \[2R\sin15^\circ=2r\sin30^\circ.\] Thus \[\frac{R}{r}=\frac{\sin30^\circ}{\sin15^\circ}.\]"),("Square for area ratio",r"The area ratio is \[\left(\frac{R}{r}\right)^2=\left(\frac{\sin30^\circ}{\sin15^\circ}\right)^2.\] Using \[\sin^2 15^\circ=\frac{1-\cos30^\circ}{2}=\frac{2-\sqrt3}{4},\] this becomes \[\frac{1/4}{(2-\sqrt3)/4}=\frac1{2-\sqrt3}=2+\sqrt3.\]"),("Conclude",r"The answer is \[\boxed{2+\sqrt3}.\]")],
+13:[("Classify possible rooming patterns",r"With $5$ friends and at most $2$ per room, the possible patterns are: everyone alone, exactly one pair, or exactly two pairs and one single."),("Everyone alone",r"Assign $5$ distinct friends to $5$ distinct rooms in \[5!=120\] ways."),("Exactly one pair",r"Choose the pair in \[\binom52=10\] ways. Then assign the pair and the three single friends to $4$ of the $5$ rooms in \[5\cdot4\cdot3\cdot2=120\] ways. This gives \[10\cdot120=1200.\]"),("Two pairs and one single",r"Choose the single friend in $5$ ways, then split the remaining four friends into two unordered pairs in $3$ ways. Assign the two pairs and the single to $3$ of the $5$ rooms in \[5\cdot4\cdot3=60\] ways. This gives \[5\cdot3\cdot60=900.\]"),("Add the cases",r"The total is \[120+1200+900=2220.\]"),("Conclude",r"The answer is $\boxed{2220}$.")],
+14:[("Parameterize the arithmetic progression",r"Since $a,b,c$ is an arithmetic progression, write \[b=a+d,\qquad c=a+2d,\] where $d>0$."),("Use the geometric progression",r"The sequence $a,c,b$ is geometric, so \[\frac{c}{a}=\frac{b}{c},\] or \[c^2=ab.\]"),("Substitute",r"\[(a+2d)^2=a(a+d).\] Expanding gives \[a^2+4ad+4d^2=a^2+ad,\] so \[3ad+4d^2=0.\]"),("Solve the integer condition",r"Because $d>0$, we get \[3a+4d=0,\] so \[a=-\frac{4d}{3}.\] Thus $d$ must be a multiple of $3$."),("Minimize c",r"Let $d=3t$. Then \[a=-4t,\quad b=-t,\quad c=2t.\] The smallest positive integer choice is $t=1$, giving $c=2$."),("Conclude",r"The answer is $\boxed{2}$.")],
+15:[("Write a palindrome by place value",r"A palindrome $abcba$ equals \[10001a+1010b+100c.\] Here $a$ ranges from $1$ to $9$, while $b$ and $c$ range from $0$ to $9$."),("Sum the a contribution",r"For each value of $a$, there are $100$ choices of $b,c$. Since \[1+2+\cdots+9=45,\] the $a$ contribution is \[10001\cdot100\cdot45=45,004,500.\]"),("Sum the b and c contributions",r"For each value of $b$, there are $9\cdot10=90$ choices of $a,c$, so the $b$ contribution is \[1010\cdot90\cdot45=4,090,500.\] Similarly, the $c$ contribution is \[100\cdot90\cdot45=405,000.\]"),("Find S",r"Thus \[S=45,004,500+4,090,500+405,000=49,500,000.\]"),("Add digits",r"The digit sum of $49,500,000$ is \[4+9+5=18.\]"),("Conclude",r"The answer is $\boxed{18}$.")],
+16:[("Look at small cases",r"Multiplying by $8$ gives a stable digit pattern: \[8\cdot88=704,\quad 8\cdot888=7104,\quad 8\cdot8888=71104.\]"),("Describe the pattern",r"For $k\ge2$, the product has digit sum \[7+(k-2)\cdot1+0+4=k+9.\] The middle consists of $k-2$ ones."),("Set the digit sum",r"We need \[k+9=1000.\]"),("Solve",r"\[k=991.\]"),("Conclude",r"The answer is $\boxed{991}$.")],
 })
 
 def esc(x, quote=True):
