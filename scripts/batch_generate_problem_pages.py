@@ -3,18 +3,20 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 280
+BATCH_NUMBER = 281
 CONTEST_DIR = "amc12"
 YEAR = "2024"
 FORM = "A"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2024_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 20}
 SKIPPED = [
+    "2024 AMC 12A Problem 18: rectangular-card rotation problem depends on the missing figure; skipped",
+    "2024 AMC 12A Problem 19: cyclic quadrilateral diagonal geometry is high-risk in current pass; skipped",
 ]
-BATCH_LABEL = "2024 AMC 12A Problems 1-10"
-NEXT_START = "2024 AMC 12A Problem 11"
+BATCH_LABEL = "2024 AMC 12A Problems 11-17,20"
+NEXT_START = "2024 AMC 12B Problem 1"
 
-ANS={1:("A","2"),2:("B","246"),3:("B","21"),4:("D","23"),5:("D","7"),6:("B","3"),7:("D","2024"),8:("A","0"),9:("E","8"),10:("C",r"$\frac{\pi}{2}-2\alpha$")}
+ANS={11:("D","20"),12:("E","21"),13:("D",r"$(0,\frac12)$"),14:("C","29"),15:("D","125"),16:("C","389"),17:("D","276"),20:("D",r"$(\frac34,\frac78]$")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -5283,6 +5285,84 @@ SOL.update({
 8:[("Use the logarithm rule carefully",r"The logarithms are real only when \[\sin(3\theta)>0\quad\text{and}\quad \cos(2\theta)>0.\] Then the equation becomes \[\log(\sin(3\theta)\cos(2\theta))=0.\]"),("Translate log equals zero",r"Since $\log(1)=0$, we need \[\sin(3\theta)\cos(2\theta)=1.\]"),("Use the maximum possible product",r"Both factors are at most $1$, and both are positive. Their product can be $1$ only if \[\sin(3\theta)=1\quad\text{and}\quad \cos(2\theta)=1.\]"),("Compare the angle conditions",r"The first condition gives \[\theta=\frac{\pi}{6}+\frac{2\pi k}{3},\] while the second gives \[\theta=m\pi.\] These two forms cannot agree."),("Conclude",r"There are no such angles, so the answer is $\boxed{0}$."),],
 9:[("Set up the two squares",r"Let \[M+1213=P^2,\quad M+3773=Q^2.\] Subtracting gives \[Q^2-P^2=2560.\]"),("Factor the difference",r"We get \[(Q-P)(Q+P)=2560.\] To make $M$ as large as possible, we want $P$ and $Q$ as large as possible, so choose the smallest positive value for $Q-P$ with the same parity as $Q+P$."),("Choose the factors",r"Both factors must be even, so take \[Q-P=2,\quad Q+P=1280.\] This gives \[P=639,\quad Q=641.\]"),("Find the units digit",r"Then \[M=P^2-1213.\] Since $639^2$ has units digit $1$ and $1213$ has units digit $3$, the units digit of $M$ is \[1-3\equiv8\pmod{10}.\]"),("Conclude",r"The answer is $\boxed{8}$."),],
 10:[("Write the tangent values",r"In the $3$-$4$-$5$ triangle, \[\tan\alpha=\frac34.\] In the $7$-$24$-$25$ triangle, \[\tan\beta=\frac7{24}.\]"),("Add the angles",r"Use the tangent addition formula: \[\tan(\alpha+\beta)=\frac{\frac34+\frac7{24}}{1-\frac34\cdot\frac7{24}}.\]"),("Simplify",r"The numerator is \[\frac{18}{24}+\frac7{24}=\frac{25}{24},\] and the denominator is \[1-\frac{21}{96}=\frac{75}{96}=\frac{25}{32}.\] Thus \[\tan(\alpha+\beta)=\frac{25/24}{25/32}=\frac43.\]"),("Recognize the complementary angle",r"If $\tan\alpha=\frac34$, then the complementary angle has tangent $\frac43$. Therefore \[\alpha+\beta=\frac{\pi}{2}-\alpha.\]"),("Conclude",r"So \[\beta=\frac{\pi}{2}-2\alpha.\] The answer is $\boxed{\frac{\pi}{2}-2\alpha}$."),],
+})
+
+OV.update({
+11:("There are exactly $K$ positive integers $b$ with $5 \\le b \\le 2024$ such that the base-$b$ integer $2024_b$ is divisible by $16$. What is the sum of the digits of $K$?",[("A","16"),("B","17"),("C","18"),("D","20"),("E","21")]),
+12:("The first three terms of a geometric sequence are the integers $a$, $720$, and $b$, where $a<720<b$. What is the sum of the digits of the least possible value of $b$?",[("A","9"),("B","12"),("C","16"),("D","18"),("E","21")]),
+13:("The graph of $y=e^{x+1}+e^{-x}-2$ has an axis of symmetry. What is the reflection of the point $(-1,\\frac12)$ over this axis?",[("A","$(-1,-\\frac32)$"),("B","$(-1,0)$"),("C","$(-1,\\frac12)$"),("D","$(0,\\frac12)$"),("E","$(3,\\frac12)$")]),
+14:("The entries in each row and in each column of a $5\\times5$ array of integers form arithmetic progressions. If the entries in positions $(5,5)$, $(2,4)$, $(4,3)$, and $(3,1)$ are $0$, $48$, $16$, and $12$, respectively, what is the entry in position $(1,2)$?",[("A","19"),("B","24"),("C","29"),("D","34"),("E","39")]),
+15:("The roots of $x^3+2x^2-x+3=0$ are $p$, $q$, and $r$. What is $(p^2+4)(q^2+4)(r^2+4)$?",[("A","64"),("B","75"),("C","100"),("D","125"),("E","144")]),
+16:("A box contains twelve tokens: three red, two white, one blue, and six black. The tokens are randomly distributed to three players so that each player receives four tokens. The probability that one player receives all three red tokens, another receives all two white tokens, and the remaining player receives the blue token is $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. What is $m+n$?",[("A","387"),("B","388"),("C","389"),("D","390"),("E","391")]),
+17:("Integers $a$, $b$, and $c$ satisfy $ab+c=100$, $bc+a=87$, and $ca+b=60$. What is $ab+bc+ca$?",[("A","212"),("B","247"),("C","258"),("D","276"),("E","284")]),
+20:("Points $P$ and $Q$ are chosen independently and uniformly at random on sides $AB$ and $AC$, respectively, of equilateral triangle $ABC$. Which interval contains the probability that the area of triangle $APQ$ is less than half the area of triangle $ABC$?",[("A","$[\\frac38,\\frac12]$"),("B","$(\\frac12,\\frac23]$"),("C","$(\\frac23,\\frac34]$"),("D","$(\\frac34,\\frac78]$"),("E","$(\\frac78,1]$")]),
+})
+KEY_OVERRIDES.update({
+11:"Translate the base-b number into a polynomial in b, then count valid residue classes modulo 8.",
+12:"Use the fact that consecutive terms in a geometric sequence satisfy middle squared equals product of neighbors.",
+13:"Rewrite the exponential terms around their midpoint to identify the vertical axis of symmetry.",
+14:"Model a table whose rows and columns are arithmetic as a bilinear expression in the row and column indices.",
+15:"Evaluate the cubic at complex numbers to compute a symmetric product over its roots.",
+16:"Count labeled distributions of colored tokens, then reduce the probability.",
+17:"Subtract the equations to force a small divisor condition, then check the resulting integer cases.",
+20:"Convert side positions into two independent uniform variables and compute the area where their product is below one half.",
+})
+SOL.update({
+11:[
+("Translate the base notation into ordinary algebra","The notation $2024_b$ means the digits $2,0,2,4$ are written in base $b$. So the actual value is\n\n\\[2b^3+0b^2+2b+4.\\]\n\nBecause the problem asks for divisibility by $16$, we want this expression to be congruent to $0$ modulo $16$."),
+("Simplify the divisibility condition","The expression is $2b^3+2b+4=2(b^3+b+2)$. For this to be divisible by $16$, the factor $b^3+b+2$ must be divisible by $8$.\n\nThus we need\n\n\\[b^3+b+2\\equiv 0\\pmod 8.\\]\n\nThis is a good place to switch from huge values of $b$ to residues modulo $8$."),
+("Find the valid residue classes","Testing $b\\equiv 0,1,2,\\ldots,7\\pmod 8$ gives the valid residues $3$, $6$, and $7$. That means every complete block of eight possible values of $b$ contributes three working values.\n\nThis residue approach avoids checking hundreds of bases individually."),
+("Count carefully in the requested interval","The interval $1\\le b\\le 2024$ contains $253$ complete blocks of eight, because $2024=8\\cdot253$. That would give $3\\cdot253=759$ valid bases from $1$ through $2024$.\n\nBut the problem starts at $b=5$, so the valid base $b=3$ must be removed. Therefore $K=758$."),
+("Finish with the requested digit sum","The problem does not ask for $K$ itself; it asks for the sum of its digits. Since\n\n\\[7+5+8=20,\\]\n\nthe answer is $20$."),
+],
+12:[
+("Use the structure of a geometric sequence","For three consecutive terms $a,720,b$ in a geometric sequence, the middle term squared equals the product of the two outside terms. Therefore\n\n\\[a b=720^2.\\]\n\nWe need $a$ and $b$ to be integers with $a<720<b$, so $b$ must be a divisor of $720^2$ that is just larger than $720$."),
+("Factor the central term","Prime factorization helps us understand the divisors:\n\n\\[720=2^4\\cdot3^2\\cdot5,\\qquad 720^2=2^8\\cdot3^4\\cdot5^2.\\]\n\nThe least possible $b$ greater than $720$ should be the smallest divisor of this number that exceeds $720$."),
+("Look for the nearest divisor above 720","A natural candidate is to keep a large power of $2$ and a small factor of $3$:\n\n\\[2^8\\cdot3=256\\cdot3=768.\\]\n\nThis is greater than $720$, and it divides $720^2$. The paired value is\n\n\\[a=\\frac{720^2}{768}=675,\\]\n\nwhich is less than $720$, so the order condition works."),
+("Check why this is minimal","The divisors just above $720$ are limited by the prime factors $2$, $3$, and $5$. Checking the nearby divisor structure confirms there is no divisor of $720^2$ strictly between $720$ and $768$.\n\nSo the least possible value of $b$ is $768$."),
+("Answer the digit-sum question","The sum of the digits of $768$ is\n\n\\[7+6+8=21.\\]\n\nThus the answer is $21$."),
+],
+13:[
+("Look for symmetry in the two exponential terms","The expression is\n\n\\[y=e^{x+1}+e^{-x}-2.\\]\n\nThe exponents $x+1$ and $-x$ become equal when $x+1=-x$, so the midpoint occurs at $x=-\\frac12$. This strongly suggests a vertical axis of symmetry."),
+("Rewrite around the midpoint","Let $u=x+\\frac12$. Then $x+1=u+\\frac12$ and $-x=-u+\\frac12$. The expression becomes\n\n\\[y=e^{u+1/2}+e^{-u+1/2}-2.\\]\n\nThe two terms are symmetric when $u$ is replaced by $-u$, so the graph is symmetric about $u=0$, or $x=-\\frac12$."),
+("Reflect the point across a vertical line","Reflecting across the vertical line $x=-\\frac12$ keeps the $y$-coordinate unchanged. The point $(-1,\\frac12)$ is $\\frac12$ unit to the left of the line.\n\nIts reflection must be $\\frac12$ unit to the right of the line."),
+("Compute the reflected coordinate","Moving $\\frac12$ unit to the right of $-\\frac12$ gives $0$. The $y$-coordinate remains $\\frac12$.\n\nSo the reflected point is\n\n\\[(0,\\tfrac12).\\]"),
+],
+14:[
+("Model what row and column arithmetic progressions mean","If each row and each column is an arithmetic progression, then the entry can be modeled by a bilinear expression\n\n\\[f(i,j)=Aij+Bi+Cj+D.\\]\n\nThis form works because changing $j$ by $1$ gives a constant difference within a fixed row, and changing $i$ by $1$ gives a constant difference within a fixed column."),
+("Substitute the four given entries","Using the four positions gives the system\n\n\\[25A+5B+5C+D=0,\\]\n\\[8A+2B+4C+D=48,\\]\n\\[12A+4B+3C+D=16,\\]\n\\[3A+3B+C+D=12.\\]\n\nThe unknowns are the four coefficients $A,B,C,D$."),
+("Solve for the table formula","Solving this linear system gives\n\n\\[A=-5,\\qquad B=5,\\qquad C=22,\\qquad D=-10.\\]\n\nSo the entry in position $(i,j)$ is\n\n\\[f(i,j)=-5ij+5i+22j-10.\\]"),
+("Evaluate the requested position","For position $(1,2)$, substitute $i=1$ and $j=2$:\n\n\\[f(1,2)=-5(1)(2)+5(1)+22(2)-10.\\]\n\nThis equals\n\n\\[-10+5+44-10=29.\\]"),
+("Check that the answer fits the pattern","The formula also reproduces the given values, which is a good consistency check for a table problem. Therefore the requested entry is $29$."),
+],
+15:[
+("Recognize the product over roots","Let\n\n\\[f(x)=x^3+2x^2-x+3.\\]\n\nSince $p,q,r$ are the roots, we want\n\n\\[(p^2+4)(q^2+4)(r^2+4).\\]\n\nThe factor $p^2+4$ can be written as $(p-2i)(p+2i)$, which suggests evaluating the polynomial at complex numbers."),
+("Connect polynomial values to root products","For a monic cubic, we have\n\n\\[f(x)=(x-p)(x-q)(x-r).\\]\n\nTherefore\n\n\\[f(2i)=(2i-p)(2i-q)(2i-r),\\]\n\nand similarly for $f(-2i)$. Multiplying $f(2i)$ and $f(-2i)$ will produce exactly the desired factors."),
+("Evaluate the polynomial at $2i$","Compute using $i^2=-1$ and $i^3=-i$:\n\n\\[f(2i)=(2i)^3+2(2i)^2-2i+3.\\]\n\nThis becomes\n\n\\[-8i-8-2i+3=-5-10i.\\]"),
+("Use the conjugate value","Because the polynomial has real coefficients,\n\n\\[f(-2i)=-5+10i.\\]\n\nNow multiply the conjugates:\n\n\\[f(2i)f(-2i)=(-5-10i)(-5+10i)=25+100=125.\\]"),
+("Conclude the desired product","The product $f(2i)f(-2i)$ equals $(p^2+4)(q^2+4)(r^2+4)$. Hence the answer is $125$."),
+],
+16:[
+("Count all possible distributions first","The players are distinct, and each receives four of the twelve tokens. Ignoring colors for the moment, the number of ways to distribute the tokens is\n\n\\[\\frac{12!}{4!4!4!}=34650.\\]\n\nThis will be the denominator before simplifying."),
+("Assign the special color roles","One player must get all three red tokens, a different player must get both white tokens, and the remaining player must get the blue token. The three roles can be assigned to the three players in\n\n\\[3!=6\\]\n\nways."),
+("Fill the remaining spaces with black tokens","After the color roles are assigned, the red player needs one more token, the white player needs two more tokens, and the blue player needs three more tokens. These must all be black.\n\nChoose them as\n\n\\[\\binom61\\binom52\\binom33=6\\cdot10\\cdot1=60.\\]"),
+("Compute the favorable count and probability","The number of favorable distributions is\n\n\\[6\\cdot60=360.\\]\n\nThus the probability is\n\n\\[\\frac{360}{34650}=\\frac4{385}.\\]"),
+("Answer the requested sum","The relatively prime numerator and denominator are $m=4$ and $n=385$. Therefore\n\n\\[m+n=389.\\]"),
+],
+17:[
+("Create smaller equations by subtracting","The equations are large, but subtracting them creates factors. From\n\n\\[ab+c=100\\quad\\text{and}\\quad bc+a=87,\\]\n\nwe get\n\n\\[ab-bc+c-a=13.\\]\n\nThis factors as\n\n\\[(a-c)(b-1)=13.\\]"),
+("Use the fact that 13 has few divisors","Since $a$, $b$, and $c$ are integers, both factors are integers. Therefore $b-1$ must be one of\n\n\\[1,13,-1,-13.\\]\n\nSo\n\n\\[b\\in\\{2,14,0,-12\\}.\\]\n\nThis turns a three-variable problem into a few cases."),
+("Test the possible values of $b$","Substituting each possible value of $b$ into the original system, only $b=-12$ gives an integer solution satisfying all three equations. The corresponding values are\n\n\\[a=-9,\\qquad b=-12,\\qquad c=-8.\\]\n\nThis is much safer than trying to solve the full nonlinear system directly."),
+("Compute the requested expression","Now calculate\n\n\\[ab+bc+ca=(-9)(-12)+(-12)(-8)+(-8)(-9).\\]\n\nThat is\n\n\\[108+96+72=276.\\]"),
+("Check against the original equations","The values give $ab+c=108-8=100$, $bc+a=96-9=87$, and $ca+b=72-12=60$. So the solution is consistent, and the answer is $276$."),
+],
+20:[
+("Represent the random positions with variables","Let\n\n\\[x=\\frac{AP}{AB},\\qquad y=\\frac{AQ}{AC}.\\]\n\nBecause $P$ and $Q$ are chosen uniformly and independently on the two sides, $x$ and $y$ are independent uniform variables on $[0,1]$."),
+("Relate the small triangle area to $x$ and $y$","Triangles $APQ$ and $ABC$ share angle $A$, and their two side lengths from $A$ are scaled by factors $x$ and $y$. Therefore the area ratio is\n\n\\[\\frac{[APQ]}{[ABC]}=xy.\\]\n\nWe need $xy<\\frac12$."),
+("Turn the probability into an area in the unit square","The pair $(x,y)$ is uniformly distributed in the unit square. So the probability is the area of the region\n\n\\[xy<\\frac12.\\]\n\nFor $0\\le x\\le\\frac12$, every $y$ from $0$ to $1$ works. For $\\frac12<x\\le1$, we need $y<\\frac{1}{2x}$."),
+("Compute the area","The desired area is\n\n\\[\\int_0^{1/2}1\\,dx+\\int_{1/2}^1\\frac{1}{2x}\\,dx.\\]\n\nThis equals\n\n\\[\\frac12+\\frac12\\ln 2.\\]\n\nNumerically, this is approximately $0.8466$."),
+("Choose the interval","The value $0.8466$ is greater than $\\frac34=0.75$ and less than $\\frac78=0.875$. Therefore the probability lies in\n\n\\[(\\tfrac34,\\tfrac78].\\]"),
+],
 })
 
 def esc(x, quote=True):

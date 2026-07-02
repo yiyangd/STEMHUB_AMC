@@ -4540,3 +4540,19 @@
 - Pushed: pending
 - Next batch should start from: 2024 AMC 12A Problem 11
 - Review notes: none.
+
+## Batch 281: 2024 AMC 12A Problems 11-17,20
+
+- Start time: 2026-07-02T09:12:50-07:00
+- End time: 2026-07-02T09:12:51-07:00
+- Processed contest: AMC12
+- Processed range: 2024 AMC 12A Problems 11-17,20
+- Generated count: 8
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2024 AMC 12A Problem 18: rectangular-card rotation problem depends on the missing figure; skipped; 2024 AMC 12A Problem 19: cyclic quadrilateral diagonal geometry is high-risk in current pass; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2024 AMC 12B Problem 1
+- Review notes: none.
