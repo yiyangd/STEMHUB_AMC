@@ -3,22 +3,21 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 263
+BATCH_NUMBER = 264
 CONTEST_DIR = "amc12"
 YEAR = "2021 Fall"
 FORM = "A"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2021_Fall_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16}
+TARGET_NUMBERS = {22,23}
 SKIPPED = [
-    "2021 Fall AMC 12A Problem 17: trapezoid diagonal geometry requires a longer derivation; skipped",
-    "2021 Fall AMC 12A Problem 18: multiplicative rational function comparison is high-risk in current pass; skipped",
-    "2021 Fall AMC 12A Problem 19: trigonometric equation count is high-risk in current pass; skipped",
-    "2021 Fall AMC 12A Problem 20: parabola focus/vertex locus problem is high-risk in current pass; skipped",
+    "2021 Fall AMC 12A Problem 21: complex-root ellipse eccentricity problem requires a longer analytic geometry derivation; skipped",
+    "2021 Fall AMC 12A Problem 24: semicircle/circle chord geometry requires a longer derivation; skipped",
+    "2021 Fall AMC 12A Problem 25: divisor-function global maximum problem is high-risk in current pass; skipped",
 ]
-BATCH_LABEL = "2021 Fall AMC 12A Problems 11-16"
-NEXT_START = "2021 Fall AMC 12A Problem 21"
+BATCH_LABEL = "2021 Fall AMC 12A Problems 22-23"
+NEXT_START = "2021 Fall AMC 12B Problem 1"
 
-ANS={11:("C",r"10\sqrt2"),12:("A","-88"),13:("B",r"-\sqrt3+i"),14:("E","21,000"),15:("D","95"),16:("C","142")}
+ANS={22:("D",r"\frac1{32}"),23:("D",r"\frac{25}{32}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
