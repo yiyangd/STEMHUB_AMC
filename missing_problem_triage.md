@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-02T16:20:50-07:00
-- Missing total: 302
+- Generated at: 2026-07-02T16:31:57-07:00
+- Missing total: 297
 - AMC10 missing total: 91
-- AMC12 missing total: 211
+- AMC12 missing total: 206
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 85 |
+| `solution_high_risk` | 80 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 84 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 79 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -147,16 +147,11 @@
 - `2014 AMC 12A Problem 18` [ocr_or_statement_risk]: 2014 AMC 12A Problem 18: nested logarithm domain with OCR base ambiguity
 - `2014 AMC 12A Problem 19` [solution_high_risk]: 2014 AMC 12A Problem 19: rational-parameter quadratic integer-root count high risk
 - `2014 AMC 12A Problem 20` [solution_high_risk]: 2014 AMC 12A Problem 20: geometry minimization/path reflection high risk
-- `2014 AMC 12A Problem 21` [solution_high_risk]: Skipped reasons: 2014 AMC 12A Problem 21: floor-function interval sum high risk
-- `2014 AMC 12A Problem 22` [solution_high_risk]: 2014 AMC 12A Problem 22: exponential inequality counting high risk
-- `2014 AMC 12A Problem 23` [solution_high_risk]: 2014 AMC 12A Problem 23: repeating decimal period digit sum high risk
-- `2014 AMC 12A Problem 24` [solution_high_risk]: 2014 AMC 12A Problem 24: iterated absolute-value function high risk
 - `2014 AMC 12A Problem 25` [solution_high_risk]: 2014 AMC 12A Problem 25: parabola with integer-coordinate count high risk
 - `2014 AMC 12B Problem 6` [ocr_or_statement_risk]: 2014 AMC 12B Problem 6: OCR statement is truncated
 - `2014 AMC 12B Problem 24` [solution_high_risk]: 2014 AMC 12B Problem 24: cyclic pentagon diagonal sum high risk
 - `2014 AMC 12B Problem 25` [ocr_or_statement_risk]: 2014 AMC 12B Problem 25: trigonometric equation with OCR ambiguity
 - `2015 AMC 12A Problem 21` [solution_high_risk]: Skipped reasons: 2015 AMC 12A Problem 21: ellipse/foci circle-intersection interval high risk
-- `2015 AMC 12A Problem 22` [solution_high_risk]: 2015 AMC 12A Problem 22: long recurrence modulo 12 high risk
 - `2015 AMC 12A Problem 23` [solution_high_risk]: 2015 AMC 12A Problem 23: square boundary geometric probability high risk
 - `2015 AMC 12A Problem 24` [ocr_or_statement_risk]: 2015 AMC 12A Problem 24: rational-number probability with OCR fraction ambiguity
 - `2015 AMC 12A Problem 25` [solution_high_risk]: 2015 AMC 12A Problem 25: layered tangent-circle construction high risk
@@ -172,6 +167,11 @@
 - `2017 AMC 12A Problem 25` [ocr_or_statement_risk]: 2017 AMC 12A Problem 25: complex-product probability statement is OCR-damaged
 - `2017 AMC 12B Problem 17` [ocr_or_statement_risk]: 2017 AMC 12B Problem 17: local CSV statement is truncated
 - `2017 AMC 12B Problem 22` [solution_high_risk]: Skipped reasons: 2017 AMC 12B Problem 22: four-player coin-transfer probability is high-risk for unattended derivation
+- `2017 AMC 12B Problem 25` [solution_high_risk]: 2017 AMC 12B Problem 25: tournament subset-average combinatorics requires a long proof
+- `2018 AMC 12A Problem 17` [ocr_or_statement_risk]: 2018 AMC 12A Problem 17: OCR ambiguity in square-to-hypotenuse distance
+- `2018 AMC 12A Problem 20` [solution_high_risk]: 2018 AMC 12A Problem 20: cyclic quadrilateral in isosceles right triangle is geometry high risk
+- `2018 AMC 12A Problem 22` [solution_high_risk]: Skipped reasons: 2018 AMC 12A Problem 22: complex square-root parallelogram area high risk
+- `2018 AMC 12A Problem 23` [solution_high_risk]: 2018 AMC 12A Problem 23: angle geometry requires a dedicated derivation
 
 ## Suggested Next Step
 

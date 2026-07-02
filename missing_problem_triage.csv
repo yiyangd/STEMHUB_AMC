@@ -166,10 +166,6 @@ AMC 12,2014,A,17,2014 AMC 12A Problem 17,几何,空间几何,空间几何;体积
 AMC 12,2014,A,18,2014 AMC 12A Problem 18,数论,质因数与整除,质因数;整除,,2014 AMC 12A Problem 18: nested logarithm domain with OCR base ambiguity,ocr_or_statement_risk
 AMC 12,2014,A,19,2014 AMC 12A Problem 19,数论,整数构造,整数;构造,,2014 AMC 12A Problem 19: rational-parameter quadratic integer-root count high risk,solution_high_risk
 AMC 12,2014,A,20,2014 AMC 12A Problem 20,代数,运算与化简,代数;化简,自动分类依据较弱，按代数主线暂归类,2014 AMC 12A Problem 20: geometry minimization/path reflection high risk,solution_high_risk
-AMC 12,2014,A,21,2014 AMC 12A Problem 21,数论,整数构造,整数;构造,,Skipped reasons: 2014 AMC 12A Problem 21: floor-function interval sum high risk,solution_high_risk
-AMC 12,2014,A,22,2014 AMC 12A Problem 22,数论,整数构造,整数;构造,,2014 AMC 12A Problem 22: exponential inequality counting high risk,solution_high_risk
-AMC 12,2014,A,23,2014 AMC 12A Problem 23,数论,进制与数字,数字;进制,,2014 AMC 12A Problem 23: repeating decimal period digit sum high risk,solution_high_risk
-AMC 12,2014,A,24,2014 AMC 12A Problem 24,代数,运算与化简,代数;化简,自动分类依据较弱，按代数主线暂归类,2014 AMC 12A Problem 24: iterated absolute-value function high risk,solution_high_risk
 AMC 12,2014,A,25,2014 AMC 12A Problem 25,几何,三角形,三角形;角度,,2014 AMC 12A Problem 25: parabola with integer-coordinate count high risk,solution_high_risk
 AMC 12,2014,B,5,2014 AMC 12B Problem 5,几何,三角形,三角形;角度,题面包含图形,2014 AMC 12B Problem 5: diagram-dependent pane layout,needs_diagram
 AMC 12,2014,B,6,2014 AMC 12B Problem 6,代数,运算与化简,代数;化简,自动分类依据较弱，按代数主线暂归类,2014 AMC 12B Problem 6: OCR statement is truncated,ocr_or_statement_risk
@@ -180,7 +176,6 @@ AMC 12,2014,B,21,2014 AMC 12B Problem 21,几何,三角形,三角形;角度,题�
 AMC 12,2014,B,24,2014 AMC 12B Problem 24,几何,圆与曲线,圆;曲线,,2014 AMC 12B Problem 24: cyclic pentagon diagonal sum high risk,solution_high_risk
 AMC 12,2014,B,25,2014 AMC 12B Problem 25,代数,三角恒等式,三角函数;恒等式,,2014 AMC 12B Problem 25: trigonometric equation with OCR ambiguity,ocr_or_statement_risk
 AMC 12,2015,A,21,2015 AMC 12A Problem 21,几何,圆与曲线,圆;曲线,,Skipped reasons: 2015 AMC 12A Problem 21: ellipse/foci circle-intersection interval high risk,solution_high_risk
-AMC 12,2015,A,22,2015 AMC 12A Problem 22,组合数学,递推与序列计数,递推;序列,,2015 AMC 12A Problem 22: long recurrence modulo 12 high risk,solution_high_risk
 AMC 12,2015,A,23,2015 AMC 12A Problem 23,概率与统计,几何概率,几何概率;面积,,2015 AMC 12A Problem 23: square boundary geometric probability high risk,solution_high_risk
 AMC 12,2015,A,24,2015 AMC 12A Problem 24,概率与统计,组合概率,概率;计数,,2015 AMC 12A Problem 24: rational-number probability with OCR fraction ambiguity,ocr_or_statement_risk
 AMC 12,2015,A,25,2015 AMC 12A Problem 25,几何,坐标几何,坐标;几何,,2015 AMC 12A Problem 25: layered tangent-circle construction high risk,solution_high_risk
@@ -262,7 +257,7 @@ AMC 12,2021 Spring,B,24,2021 Spring AMC 12B Problem 24,几何,面积与相似,�
 AMC 12,2021 Spring,B,25,2021 Spring AMC 12B Problem 25,几何,坐标几何,坐标;几何,题面包含图形,2021 Spring AMC 12B Problem 25: lattice-point line-count interval problem is high-risk in current pass,needs_diagram
 AMC 12,2021 Fall,A,10,2021 Fall AMC 12A Problem 10,几何,空间几何,空间几何;体积,题面包含图形,Skipped reasons: 2021 Fall AMC 12A Problem 10: cone liquid-rise problem depends on the missing diagram,needs_diagram
 AMC 12,2021 Fall,A,17,2021 Fall AMC 12A Problem 17,几何,三角形,三角形;角度,,Skipped reasons: 2021 Fall AMC 12A Problem 17: trapezoid diagonal geometry requires a longer derivation,solution_high_risk
-AMC 12,2021 Fall,A,18,2021 Fall AMC 12A Problem 18,数论,质因数与整除,质因数;整除,,2021 Fall AMC 12A Problem 18: multiplicative rational function comparison is high-risk in current pass | Skipped reasons: 2021 Fall AMC 12A Problem 18: local CSV statement does not match the AoPS Fall problem statement | 2021 Fall AMC 12A Problem 18: local CSV statement does not match the AoPS Fall problem statement,solution_high_risk
+AMC 12,2021 Fall,A,18,2021 Fall AMC 12A Problem 18,数论,质因数与整除,质因数;整除,,2021 Fall AMC 12A Problem 18: multiplicative rational function comparison is high-risk in current pass | Skipped reasons: 2021 Fall AMC 12A Problem 18: local CSV statement does not match the AoPS Fall problem statement,solution_high_risk
 AMC 12,2021 Fall,A,19,2021 Fall AMC 12A Problem 19,代数,三角恒等式,三角函数;恒等式,,2021 Fall AMC 12A Problem 19: trigonometric equation count is high-risk in current pass | 2021 Fall AMC 12A Problem 19: local CSV statement does not match the AoPS Fall problem statement,solution_high_risk
 AMC 12,2021 Fall,A,20,2021 Fall AMC 12A Problem 20,几何,三角形,三角形;角度,,2021 Fall AMC 12A Problem 20: parabola focus/vertex locus problem is high-risk in current pass,solution_high_risk
 AMC 12,2021 Fall,A,21,2021 Fall AMC 12A Problem 21,几何,坐标几何,坐标;几何,,Skipped reasons: 2021 Fall AMC 12A Problem 21: complex-root ellipse eccentricity problem requires a longer analytic geometry derivation,solution_high_risk
