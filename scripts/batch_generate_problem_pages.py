@@ -3,15 +3,20 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 224
+BATCH_NUMBER = 225
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2015_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16,17,18}
-SKIPPED = []
-BATCH_LABEL = "2015 AMC 12B Problems 11-18"
-NEXT_START = "2015 AMC 12B Problem 19"
+TARGET_NUMBERS = {21,22,23}
+SKIPPED = [
+    "2015 AMC 12B Problem 19: circle condition on constructed squares high-risk geometry; skipped",
+    "2015 AMC 12B Problem 20: recursive function/modular iteration high risk; skipped",
+    "2015 AMC 12B Problem 24: four-circle radical-axis geometry high risk; skipped",
+    "2015 AMC 12B Problem 25: long vector walk with radicals high risk; skipped",
+]
+BATCH_LABEL = "2015 AMC 12B Problems 21-23"
+NEXT_START = "2016 AMC 12A Problem 1"
 
-ANS={11:("E",r"\frac{281}{13}"),12:("D","16.5"),13:("B","6"),14:("D",r"4(\pi-\sqrt3)"),15:("D",r"\frac{11}{24}"),16:("C",r"36\sqrt{21}"),17:("D","11"),18:("D","the set of integers greater than 3")}
+ANS={21:("D","13"),22:("D","20"),23:("B","10")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3006,6 +3011,24 @@ SOL.update({
 16:[("Understand the folded shape",r"When the triangles fold up, their outer vertices meet at the pyramid apex. Each lateral edge from the apex to a base vertex has length $8$."),("Use the base geometry",r"A regular hexagon of side $6$ has circumradius $6$, so the distance from the base center to any vertex is $6$."),("Find the height",r"The apex, the base center, and a base vertex form a right triangle with hypotenuse $8$ and one leg $6$. The pyramid height is \[\sqrt{8^2-6^2}=\sqrt{28}=2\sqrt7.\]"),("Find the base area",r"A regular hexagon of side $6$ consists of $6$ equilateral triangles of side $6$, so its area is \[6\cdot\frac{\sqrt3}{4}\cdot6^2=54\sqrt3.\]"),("Compute volume",r"The volume is \[\frac13(54\sqrt3)(2\sqrt7)=36\sqrt{21}.\]"),("Conclude",r"The answer is \[\boxed{36\sqrt{21}}.\]")],
 17:[("Write the two probabilities",r"The probability of exactly two heads is \[\binom n2\left(\frac14\right)^2\left(\frac34\right)^{n-2}.\] The probability of exactly three heads is \[\binom n3\left(\frac14\right)^3\left(\frac34\right)^{n-3}.\]"),("Set them equal",r"Equating and dividing by common factors gives \[1=\frac{\binom n3}{\binom n2}\cdot\frac{1/4}{3/4}.\]"),("Simplify the binomial ratio",r"\[\frac{\binom n3}{\binom n2}=\frac{n-2}{3}.\] Also \[\frac{1/4}{3/4}=\frac13.\]"),("Solve",r"Thus \[1=\frac{n-2}{9},\] so \[n=11.\]"),("Conclude",r"The answer is $\boxed{11}$.")],
 18:[("Find the smallest possible value",r"A composite number has at least two prime factors counted with multiplicity. The smallest possible sum is \[2+2=4,\] from $n=4$."),("Show every integer at least 4 is possible",r"Every integer $m\ge4$ can be written as a sum of $2$'s and $3$'s with at least two terms: \[4=2+2,\quad5=2+3,\] and larger values follow by adding more $2$'s."),("Convert sums to composite numbers",r"If \[m=p_1+p_2+\cdots+p_k\] is such a sum of primes with $k\ge2$, take \[n=p_1p_2\cdots p_k.\] Then $n$ is composite and \[r(n)=m.\]"),("Exclude small values",r"No composite number can have $r(n)=1,2,$ or $3$, because at least two prime factors are needed."),("Conclude",r"The range is exactly the set of integers greater than $3$, so the answer is $\boxed{\text{D}}$.")],
+})
+
+OV.update({
+21:(r"Cozy the Cat and Dash the Dog are going up a staircase with a certain number of steps. Cozy goes two steps up with each jump, except that if necessary he jumps just the last step. Dash goes five steps up with each jump, except that if necessary he jumps the last steps if fewer than $5$ steps remain. Suppose Dash takes $19$ fewer jumps than Cozy to reach the top. Let $s$ denote the sum of all possible numbers of steps this staircase can have. What is the sum of the digits of $s$?",[("A","9"),("B","11"),("C","12"),("D","13"),("E","15")]),
+22:(r"Six chairs are evenly spaced around a circular table. One person is seated in each chair. Each person gets up and sits down in a chair that is not the same chair and is not adjacent to the chair he or she originally occupied, so that again one person is seated in each chair. In how many ways can this be done?",[("A","14"),("B","16"),("C","18"),("D","20"),("E","24")]),
+23:(r"A rectangular box measures $a\times b\times c$, where $a,b,$ and $c$ are integers and $1\le a\le b\le c$. The volume and surface area of the box are numerically equal. How many ordered triples $(a,b,c)$ are possible?",[("A","4"),("B","10"),("C","12"),("D","21"),("E","26")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Use ceiling functions for the number of jumps.",
+22:"Count restricted permutations on a 6-cycle.",
+23:"Turn volume equals surface area into a divisor equation for c.",
+})
+
+SOL.update({
+21:[("Write the jump counts",r"If the staircase has $n$ steps, Cozy takes \[\left\lceil\frac n2\right\rceil\] jumps and Dash takes \[\left\lceil\frac n5\right\rceil\] jumps."),("Use the condition",r"We need \[\left\lceil\frac n2\right\rceil-\left\lceil\frac n5\right\rceil=19.\]"),("Check the narrow range",r"The expression grows roughly like \[\frac n2-\frac n5=\frac{3n}{10},\] so $n$ should be near \[\frac{190}{3}\approx63.3.\] We only need to test nearby integers."),("List the solutions",r"Testing values near $63$ gives \[n=63,\ 64,\ 66.\] These are the only values for which the ceiling difference is $19$."),("Sum and take digit sum",r"The sum is \[s=63+64+66=193.\] The sum of the digits is \[1+9+3=13.\]"),("Conclude",r"The answer is $\boxed{13}$.")],
+22:[("Model the chairs as numbers",r"Label the chairs $0,1,2,3,4,5$ around the table. A person originally in chair $i$ may move only to chairs not equal to $i$ and not adjacent to $i$."),("Find the allowed choices for one person",r"For each $i$, the allowed destination chairs are \[i+2,\ i+3,\ i+4\pmod6.\] So each person has three possible destination types before considering collisions."),("Split by person 0's destination",r"By symmetry, person $0$ can go to chair $2$, $3$, or $4$. A direct completion count gives $6$ valid arrangements if person $0$ goes to $2$, $8$ if person $0$ goes to $3$, and $6$ if person $0$ goes to $4$."),("Explain the completion count",r"After fixing person $0$'s chair, the remaining five people must be assigned injectively to their allowed chairs. This is a small matching count on the remaining allowed-destination table; checking row by row gives the counts $6,8,6$."),("Add",r"The total number of valid reseatings is \[6+8+6=20.\]"),("Conclude",r"The answer is $\boxed{20}$.")],
+23:[("Write the equation",r"The volume is \[abc,\] and the surface area is \[2(ab+bc+ca).\] The condition is \[abc=2(ab+bc+ca).\]"),("Solve for c",r"Rearrange as \[abc-2ac-2bc=2ab,\] or \[c(ab-2a-2b)=2ab.\] Thus \[c=\frac{2ab}{ab-2a-2b}.\]"),("Bound a and b",r"The denominator must be positive, so \[ab-2a-2b>0.\] Since $a\le b\le c$, only small values of $a$ and $b$ can work; once $a$ is fixed, the formula determines $c$."),("List valid triples",r"Checking integer values with $1\le a\le b\le c$ gives \[(3,7,42),(3,8,24),(3,9,18),(3,10,15),(3,12,12),\]\[(4,5,20),(4,6,12),(4,8,8),(5,5,10),(6,6,6).\]"),("Count",r"There are $10$ valid triples."),("Conclude",r"The answer is $\boxed{10}$.")],
 })
 
 def esc(x, quote=True):
