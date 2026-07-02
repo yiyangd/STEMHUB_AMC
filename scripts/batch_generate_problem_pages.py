@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 220
+BATCH_NUMBER = 221
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2015_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+TARGET_NUMBERS = {11,12,13,14,15,16,17,18}
 SKIPPED = []
-BATCH_LABEL = "2015 AMC 12A Problems 1-10"
-NEXT_START = "2015 AMC 12A Problem 11"
+BATCH_LABEL = "2015 AMC 12A Problems 11-18"
+NEXT_START = "2015 AMC 12A Problem 19"
 
-ANS={1:("C",r"\frac15"),2:("E","72"),3:("E","95"),4:("B",r"\frac32"),5:("D","She rounds a up, and she rounds b and c down."),6:("B","4"),7:("D","The first height is 21% more than the second."),8:("C",r"\frac{12}{25}"),9:("C",r"\frac15"),10:("E","26")}
+ANS={11:("D","5"),12:("B","1.5"),13:("E","The highest score must be at least 12."),14:("D","24"),15:("C","26"),16:("C",r"\frac{24}{5}"),17:("A",r"\frac{47}{256}"),18:("C","16")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2886,6 +2886,39 @@ SOL.update({
 8:[("Use the 3-4-5 relationship",r"The length-to-width ratio is $4:3$, so let the sides be $4t$ and $3t$."),("Find the diagonal",r"The diagonal is \[\sqrt{(4t)^2+(3t)^2}=5t.\] Since this equals $d$, we have \[t=\frac d5.\]"),("Compute area",r"The area is \[(4t)(3t)=12t^2=12\left(\frac d5\right)^2=\frac{12}{25}d^2.\]"),("Read off k",r"Thus \[k=\frac{12}{25}.\]"),("Conclude",r"The answer is \[\boxed{\frac{12}{25}}.\]")],
 9:[("Use symmetry of the final pair",r"Even though Carol and Claudia draw first, Cheryl's final two marbles are equally likely to be any pair of $2$ marbles from the original $6$."),("Count all possible final pairs",r"There are \[\binom62=15\] possible pairs."),("Count same-color pairs",r"For each of the three colors, the two marbles of that color form exactly one same-color pair. So there are $3$ favorable pairs."),("Compute probability",r"The probability is \[\frac3{15}=\frac15.\]"),("Conclude",r"The answer is \[\boxed{\frac15}.\]")],
 10:[("Add 1 to factor",r"The expression \[xy+x+y\] is close to a product. Add $1$ to both sides: \[xy+x+y+1=81.\]"),("Factor",r"This gives \[(x+1)(y+1)=81.\]"),("Use positive integers and order",r"Since $x>y>0$, we need factor pairs of $81$ with the larger factor equal to $x+1$ and the smaller equal to $y+1$."),("Choose the valid pair",r"The factor pair \[27\cdot3=81\] gives \[x+1=27,\quad y+1=3.\] Thus \[x=26,\quad y=2.\]"),("Conclude",r"The answer is $\boxed{26}$.")],
+})
+
+OV.update({
+11:(r"On a sheet of paper, Isabella draws a circle of radius $2$, a circle of radius $3$, and all possible lines simultaneously tangent to both circles. Isabella notices that she has drawn exactly $k\ge0$ lines. How many different values of $k$ are possible?",[("A","2"),("B","3"),("C","4"),("D","5"),("E","6")]),
+12:(r"The parabolas $y=ax^2-2$ and $y=4-bx^2$ intersect the coordinate axes in exactly four points, and these four points are the vertices of a kite of area $12$. What is $a+b$?",[("A","1"),("B","1.5"),("C","2"),("D","2.5"),("E","3")]),
+13:(r"A league with $12$ teams holds a round-robin tournament, with each team playing every other team once. Games either end with one team victorious or else end in a draw. A team scores $2$ points for every game it wins and $1$ point for every game it draws. Which of the following is not a true statement about the list of $12$ scores?",[("A","There must be an even number of odd scores."),("B","There must be an even number of even scores."),("C","There cannot be two scores of $0$."),("D","The sum of the scores must be at least $100$."),("E","The highest score must be at least $12$.")]),
+14:(r"What is the value of $a$ for which \[\frac1{\log_2 a}+\frac1{\log_3 a}+\frac1{\log_4 a}=1?\]",[("A","9"),("B","12"),("C","18"),("D","24"),("E","36")]),
+15:(r"What is the minimum number of digits to the right of the decimal point needed to express the fraction \[\frac{123456789}{2^{26}\cdot5^4}\] as a decimal?",[("A","4"),("B","22"),("C","26"),("D","30"),("E","104")]),
+16:(r"Tetrahedron $ABCD$ has $AB=5$, $AC=3$, $BC=4$, $BD=4$, $AD=3$, and $CD=\frac{12\sqrt2}{5}$. What is the volume of the tetrahedron?",[("A",r"$3\sqrt2$"),("B",r"$2\sqrt5$"),("C",r"$\frac{24}{5}$"),("D",r"$3\sqrt3$"),("E",r"$\frac{24\sqrt2}{5}$")]),
+17:(r"Eight people are sitting around a circular table, each holding a fair coin. All eight people flip their coins and those who flip heads stand while those who flip tails remain seated. What is the probability that no two adjacent people will stand?",[("A",r"$\frac{47}{256}$"),("B",r"$\frac{3}{16}$"),("C",r"$\frac{49}{256}$"),("D",r"$\frac{25}{128}$"),("E",r"$\frac{51}{256}$")]),
+18:(r"The zeroes of the function $f(x)=x^2-ax+2a$ are integers. What is the sum of all possible values of $a$?",[("A","7"),("B","8"),("C","16"),("D","17"),("E","18")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Classify the number of common tangents by the distance between circle centers.",
+12:"Use the kite diagonals formed by the shared axis intercepts.",
+13:"Check which score-list properties are forced by total points and parity.",
+14:"Use reciprocal logarithm identities.",
+15:"A terminating decimal denominator needs only powers of 2 and 5.",
+16:"Place the right-triangle base in coordinates and compute the height of D.",
+17:"Count circular binary strings with no adjacent heads.",
+18:"Use integer roots and factor after adding 4.",
+})
+
+SOL.update({
+11:[("Think about center distance",r"The number of common tangent lines depends on the distance $d$ between the centers of the two circles. The radii are different: $2$ and $3$."),("When one circle is inside the other",r"If $d<1$, the smaller circle lies strictly inside the larger circle, so there are no common tangents. If $d=0$, the concentric case also gives $0$ common tangents."),("When internally tangent",r"If $d=1$, the circles are internally tangent. There is exactly one common tangent line at the point of tangency."),("When separated but overlapping",r"If $1<d<5$, the circles overlap but neither contains the other. There are exactly $2$ common external tangents."),("When externally tangent or disjoint",r"If $d=5$, there are $3$ common tangents. If $d>5$, there are $4$ common tangents."),("Count possible values",r"The possible values of $k$ are \[0,1,2,3,4,\] so there are $\boxed{5}$ different values.")],
+12:[("Identify the intercepts",r"The first parabola has $y$-intercept $(0,-2)$ and the second has $y$-intercept $(0,4)$. For the four axis intercepts to form a kite, the two parabolas must share the same pair of $x$-intercepts."),("Use the kite area",r"The vertical diagonal from $(0,-2)$ to $(0,4)$ has length $6$. Let the shared $x$-intercepts be $(\pm t,0)$, so the horizontal diagonal has length $2t$."),("Solve for t",r"The kite area is \[\frac12\cdot6\cdot2t=6t.\] Since the area is $12$, we get \[t=2.\]"),("Find a and b",r"For $y=ax^2-2$, the $x$-intercepts satisfy \[0=at^2-2,\] so with $t=2$, \[a=\frac12.\] For $y=4-bx^2$, \[0=4-bt^2,\] so \[b=1.\]"),("Conclude",r"\[a+b=\frac12+1=1.5.\] The answer is $\boxed{1.5}$.")],
+13:[("Find the total score",r"There are \[\binom{12}{2}=66\] games. Each game contributes $2$ total points, whether it is a win-loss game or a draw. Therefore the total score is \[132.\]"),("Check parity statements",r"Because the total score is even, the number of odd team scores must be even. Since there are $12$ teams, the number of even scores is also even."),("Check the zero-score statement",r"Two teams cannot both have score $0$, because they play each other. In their mutual game, at least one of them receives points."),("Check the total-score statement",r"The total score is exactly $132$, so it is certainly at least $100$."),("Find the false statement",r"It is possible for every game to be a draw. Then each team scores $11$, so the highest score is $11$, not at least $12$."),("Conclude",r"The statement that is not always true is $\boxed{\text{E}}$.")],
+14:[("Use reciprocal logarithms",r"The identity \[\frac1{\log_b a}=\log_a b\] changes the equation into \[\log_a2+\log_a3+\log_a4=1.\]"),("Combine logs",r"The left side becomes \[\log_a(2\cdot3\cdot4)=\log_a24.\]"),("Solve",r"So \[\log_a24=1,\] which means \[a=24.\]"),("Conclude",r"The answer is $\boxed{24}$.")],
+15:[("Check whether the fraction reduces by 2 or 5",r"The numerator $123456789$ is not divisible by $2$ or $5$, so the denominator keeps the factors \[2^{26}\cdot5^4.\]"),("Make the denominator a power of 10",r"A decimal with $n$ digits after the decimal point has denominator dividing $10^n=2^n5^n$. We need at least $26$ factors of $2$ and at least $4$ factors of $5$."),("Choose the larger exponent",r"The limiting exponent is $26$, so $10^{26}$ is enough after multiplying by extra factors of $5$."),("Conclude",r"The minimum number of digits needed is $\boxed{26}$.")],
+16:[("Place the base triangle",r"Since $AC=3$, $BC=4$, and $AB=5$, triangle $ABC$ is right. Put \[C=(0,0,0),\quad A=(3,0,0),\quad B=(0,4,0).\]"),("Let D have coordinates",r"Let \[D=(x,y,z).\] The distances give \[x^2+y^2+z^2=\left(\frac{12\sqrt2}{5}\right)^2=\frac{288}{25}.\]"),("Use distances to A and B",r"From $AD=3$, subtract the $CD$ equation from \[(x-3)^2+y^2+z^2=9\] to get \[x=\frac{48}{25}.\] From $BD=4$, similarly get \[y=\frac{36}{25}.\]"),("Find the height",r"Then \[z^2=\frac{288}{25}-\left(\frac{48}{25}\right)^2-\left(\frac{36}{25}\right)^2=\frac{144}{25},\] so the height from $D$ to the base plane is \[\frac{12}{5}.\]"),("Compute volume",r"The area of right triangle $ABC$ is \[\frac12\cdot3\cdot4=6.\] Thus the tetrahedron volume is \[\frac13\cdot6\cdot\frac{12}{5}=\frac{24}{5}.\]"),("Conclude",r"The answer is \[\boxed{\frac{24}{5}}.\]")],
+17:[("Model heads as standing",r"Each coin flip gives either standing or seated. We need binary circular arrangements of length $8$ with no adjacent standing people."),("Use the circular count formula",r"The number of circular binary strings of length $n$ with no adjacent $1$'s is \[F_{n-1}+F_{n+1},\] where $F_1=F_2=1$."),("Apply n equals 8",r"For $n=8$, this count is \[F_7+F_9=13+34=47.\]"),("Divide by all outcomes",r"There are \[2^8=256\] equally likely coin-flip outcomes."),("Conclude",r"The probability is \[\boxed{\frac{47}{256}}.\]")],
+18:[("Use integer roots",r"Let the integer zeroes be $r$ and $s$. Then by Vieta's formulas, \[r+s=a,\qquad rs=2a.\]"),("Eliminate a",r"Since $a=r+s$, the product condition becomes \[rs=2(r+s).\]"),("Factor",r"Move terms and complete the rectangle: \[rs-2r-2s=0,\] so \[(r-2)(s-2)=4.\]"),("List factor pairs",r"The integer factor pairs of $4$ are \[(1,4),(2,2),(4,1),(-1,-4),(-2,-2),(-4,-1).\] These give possible values of \[a=r+s=(r-2)+(s-2)+4\] equal to \[9,8,9,-1,0,-1.\]"),("Use distinct possible values",r"The distinct possible values of $a$ are \[9,8,-1,0.\] Their sum is \[9+8-1+0=16.\]"),("Conclude",r"The answer is $\boxed{16}$.")],
 })
 
 def esc(x, quote=True):

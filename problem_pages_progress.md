@@ -3580,3 +3580,19 @@
 - Pushed: pending
 - Next batch should start from: 2015 AMC 12A Problem 11
 - Review notes: none.
+
+## Batch 221: 2015 AMC 12A Problems 11-18
+
+- Start time: 2026-07-02T00:00:26-07:00
+- End time: 2026-07-02T00:00:27-07:00
+- Processed contest: AMC12
+- Processed range: 2015 AMC 12A Problems 11-18
+- Generated count: 8
+- Updated existing count: 0
+- Skipped count: 0
+- Skipped reasons: none
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2015 AMC 12A Problem 19
+- Review notes: none.
