@@ -3,22 +3,20 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 267
+BATCH_NUMBER = 268
 CONTEST_DIR = "amc12"
-YEAR = "2021 Fall"
-FORM = "B"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2021_Fall_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {23}
+YEAR = "2022"
+FORM = "A"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2022_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1, 2, 4, 5, 6, 8, 9, 10}
 SKIPPED = [
-    "2021 Fall AMC 12B Problem 21: exponential equation with irrational exponents is high-risk in current pass; skipped",
-    "2021 Fall AMC 12B Problem 22: impartial brick game requires Sprague-Grundy style analysis; skipped",
-    "2021 Fall AMC 12B Problem 24: parallelogram projection problem depends on the missing diagram; skipped",
-    "2021 Fall AMC 12B Problem 25: lattice-point line-count interval problem is high-risk in current pass; skipped",
+    "2022 AMC 12A Problem 3: rectangle arrangement depends on the missing diagram; skipped",
+    "2022 AMC 12A Problem 7: coloring adjacency structure depends on the missing diagram; skipped",
 ]
-BATCH_LABEL = "2021 Fall AMC 12B Problem 23"
-NEXT_START = "2022 AMC 12A Problem 1"
+BATCH_LABEL = "2022 AMC 12A Problems 1,2,4,5,6,8,9,10"
+NEXT_START = "2022 AMC 12A Problem 11"
 
-ANS={23:("A","55")}
+ANS={1:("D",r"$\frac{109}{33}$"),2:("E","5"),4:("B","6"),5:("C","841"),6:("D","36"),8:("A",r"$\sqrt{10}$"),9:("A","7"),10:("E","144")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4879,6 +4877,39 @@ SOL.update({
 8:[("Represent chord lengths by distances from the center",r"If a chord is distance $h$ from the center of a circle with radius $R$, then its half-length satisfies \[\left(\frac L2\right)^2=R^2-h^2.\]"),("Use the equal chords",r"The two chords of length $38$ are equally far from the center. Since the three lines are equally spaced, those two equal chords must be adjacent lines with the center halfway between them."),("Place the distances",r"If the spacing between adjacent lines is $d$, then the two $38$-chords are at distance $\frac d2$ from the center, while the $34$-chord is at distance $\frac{3d}{2}$."),("Subtract the equations",r"For chord lengths $38$ and $34$, the half-lengths are $19$ and $17$. Thus \[R^2-\left(\frac d2\right)^2=19^2,\] and \[R^2-\left(\frac{3d}{2}\right)^2=17^2.\] Subtracting gives \[2d^2=19^2-17^2=72.\]"),("Conclude",r"Therefore $d^2=36$, so $d=6$. The answer is $\boxed{6}$."),],
 9:[("Use reciprocal log identities",r"Because \[\frac{1}{\log_{40}2}=\log_2 40,\] the first term is \[\log_2 80\cdot\log_2 40.\] Similarly, the second term is \[\log_2 160\cdot\log_2 20.\]"),("Let a be log base 2 of 5",r"Let $a=\log_2 5$. Then \[\log_2 80=a+4,\quad \log_2 40=a+3,\] and \[\log_2 160=a+5,\quad \log_2 20=a+2.\]"),("Subtract",r"The expression is \[(a+4)(a+3)-(a+5)(a+2).\]"),("Simplify",r"This equals \[(a^2+7a+12)-(a^2+7a+10)=2.\]"),("Conclude",r"The answer is $\boxed{2}$."),],
 10:[("Find the total sum",r"The sum of the integers from $1$ to $37$ is \[\frac{37\cdot38}{2}=703.\]"),("Set up the removed numbers",r"Let the two selected numbers be $a$ and $b$. The sum of the remaining numbers is \[703-a-b,\] and this equals $ab$."),("Factor",r"So \[ab+a+b=703.\] Adding $1$ gives \[(a+1)(b+1)=704.\]"),("Find the factor pair",r"Since the numbers are between $1$ and $37$, $a+1$ and $b+1$ are between $2$ and $38$. The factor pair of $704$ in this range is \[22\cdot32.\]"),("Conclude",r"Thus the selected numbers are $21$ and $31$, whose difference is \[\boxed{10}.\]"),],
+})
+
+OV.update({
+1:(r"What is the value of \[3+\frac{1}{3+\frac{1}{3+\frac13}}?\]",[("A",r"$\frac{31}{10}$"),("B",r"$\frac{49}{15}$"),("C",r"$\frac{33}{10}$"),("D",r"$\frac{109}{33}$"),("E",r"$\frac{15}{4}$")]),
+2:(r"The sum of three numbers is $96$. The first number is $6$ times the third number, and the third number is $40$ less than the second number. What is the absolute value of the difference between the first and second numbers?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+4:(r"The least common multiple of a positive integer $n$ and $18$ is $180$, and the greatest common divisor of $n$ and $45$ is $15$. What is the sum of the digits of $n$?",[("A","3"),("B","6"),("C","8"),("D","9"),("E","12")]),
+5:(r"The taxicab distance between points $(x_1,y_1)$ and $(x_2,y_2)$ in the coordinate plane is given by \[|x_1-x_2|+|y_1-y_2|.\] For how many points $P$ with integer coordinates is the taxicab distance between $P$ and the origin less than or equal to $20$?",[("A","441"),("B","761"),("C","841"),("D","921"),("E","924")]),
+6:(r"A data set consists of $6$ not necessarily distinct positive integers: $1,7,5,2,5,$ and $X$. The average of the $6$ numbers equals a value in the data set. What is the sum of all possible positive values of $X$?",[("A","10"),("B","26"),("C","32"),("D","36"),("E","40")]),
+8:(r"The infinite product \[\sqrt[3]{10}\cdot\sqrt[3]{\sqrt[3]{10}}\cdot\sqrt[3]{\sqrt[3]{\sqrt[3]{10}}}\cdots\] evaluates to a real number. What is that number?",[("A",r"$\sqrt{10}$"),("B",r"$\sqrt[3]{100}$"),("C",r"$\sqrt[4]{1000}$"),("D","10"),("E",r"$10\sqrt[3]{10}$")]),
+9:(r"On Halloween $31$ children walked into the principal's office asking for candy. They can be classified into three types: some always lie, some always tell the truth, and some alternately lie and tell the truth. The alternaters arbitrarily choose their first response, either a lie or the truth, but each subsequent statement has the opposite truth value from its predecessor. The principal asked everyone the same three questions in this order. First: \"Are you a truth-teller?\" The principal gave candy to each of the $22$ children who answered yes. Second: \"Are you an alternater?\" The principal gave candy to each of the $15$ children who answered yes. Third: \"Are you a liar?\" The principal gave candy to each of the $9$ children who answered yes. How many pieces of candy in all did the principal give to the children who always tell the truth?",[("A","7"),("B","12"),("C","21"),("D","27"),("E","31")]),
+10:(r"How many ways are there to split the integers $1$ through $14$ into $7$ pairs such that in each pair, the greater number is at least $2$ times the lesser number?",[("A","108"),("B","120"),("C","126"),("D","132"),("E","144")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Evaluate the continued fraction from the inside outward.",
+2:"Translate the verbal relationships into a small linear equation.",
+4:"Use prime exponents to satisfy both LCM and GCD conditions.",
+5:"Count lattice points in a taxicab-distance diamond.",
+6:"List possible data-set values for the mean and solve for X.",
+8:"Rewrite the nested radical product as powers of 10 and sum a geometric series of exponents.",
+9:"Classify the answer patterns for truth-tellers, liars, and alternaters.",
+10:"Pair the small numbers with large numbers and count constrained matchings.",
+})
+
+SOL.update({
+1:[("Start from the deepest fraction",r"Continued fractions become much easier when we simplify from the inside outward. The innermost denominator is \[3+\frac13=\frac{10}{3}.\]"),("Move one level outward",r"Now the middle denominator is \[3+\frac{1}{10/3}=3+\frac{3}{10}=\frac{33}{10}.\] This turns the messy nested expression into one more simple reciprocal."),("Finish the outer level",r"The whole expression is \[3+\frac{1}{33/10}=3+\frac{10}{33}=\frac{99}{33}+\frac{10}{33}=\frac{109}{33}.\]"),("Match the answer choice",r"The value is exactly $\frac{109}{33}$, so we choose the answer choice containing that fraction."),("Conclude",r"The answer is $\boxed{\frac{109}{33}}$."),],
+2:[("Name the easiest variable",r"The statement compares the other two numbers to the third number, so let the third number be $x$."),("Translate the relationships",r"The first number is $6x$. Since the third number is $40$ less than the second, the second number is $x+40$."),("Use the sum",r"The three numbers add to $96$, so \[6x+x+(x+40)=96.\] Thus \[8x+40=96,\] and $x=7$."),("Find the two numbers being compared",r"The first number is $6x=42$, and the second number is $x+40=47$."),("Conclude",r"The absolute value of their difference is \[|42-47|=5.\] The answer is $\boxed{5}$."),],
+4:[("Factor the fixed numbers",r"Prime factorization keeps both LCM and GCD information visible: \[18=2\cdot3^2,\quad 180=2^2\cdot3^2\cdot5,\quad 45=3^2\cdot5,\quad 15=3\cdot5.\]"),("Use the LCM condition",r"For $\operatorname{lcm}(n,18)$ to be $180$, $n$ must contribute a second factor of $2$ and one factor of $5$. Also, $n$ cannot have any prime factor not already appearing in $180$."),("Use the GCD condition",r"The condition $\gcd(n,45)=15$ means $n$ has exactly one factor of $3$ in common with $45$, and it has a factor of $5$."),("Determine n",r"Putting the prime exponents together gives \[n=2^2\cdot3\cdot5=60.\]"),("Conclude",r"The sum of the digits of $60$ is $6+0=6$, so the answer is $\boxed{6}$."),],
+5:[("Understand the shape",r"The condition is \[|x|+|y|\le20.\] In the coordinate plane this forms a diamond, but because we only need integer-coordinate points, we can count by distance layers."),("Count one taxicab layer",r"For a positive integer $r$, the points with \[|x|+|y|=r\] are the $4r$ points around the diamond boundary. For example, each quadrant contributes $r$ steps, with the axes included correctly by this formula."),("Add all layers",r"There is $1$ point at distance $0$, namely the origin. Then for $r=1$ through $20$, we add $4r$ points."),("Compute the total",r"The count is \[1+\sum_{r=1}^{20}4r=1+4\cdot\frac{20\cdot21}{2}=1+840=841.\]"),("Conclude",r"There are $\boxed{841}$ integer-coordinate points."),],
+6:[("Write the mean in terms of X",r"The known five numbers have sum \[1+7+5+2+5=20.\] So the average of all six numbers is \[\frac{20+X}{6}.\]"),("Use the key condition",r"The average must equal one of the values in the data set. That means it could be $1,2,5,7,$ or $X$."),("Test the fixed values",r"If the mean is $m$, then \[\frac{20+X}{6}=m,\] so $X=6m-20$. For $m=1,2,5,7$, this gives $X=-14,-8,10,22$. The positive values from these are $10$ and $22$."),("Test the possibility that the mean equals X",r"If the mean equals $X$, then \[\frac{20+X}{6}=X.\] This gives $20=5X$, so $X=4$."),("Add all possible positive values",r"The possible positive values are $4,10,$ and $22$, whose sum is \[4+10+22=36.\]"),("Conclude",r"The answer is $\boxed{36}$."),],
+8:[("Rewrite each factor as a power",r"Each factor is a power of $10$. The first is $10^{1/3}$, the second is $10^{1/9}$, the third is $10^{1/27}$, and this pattern continues."),("Turn the product into an exponent sum",r"Multiplying powers of $10$ means adding exponents, so the product is \[10^{1/3+1/9+1/27+\cdots}.\]"),("Sum the geometric series",r"The exponent is a geometric series with first term $\frac13$ and ratio $\frac13$: \[\frac13+\frac19+\frac1{27}+\cdots=\frac{\frac13}{1-\frac13}=\frac12.\]"),("Evaluate the product",r"Therefore the infinite product equals \[10^{1/2}=\sqrt{10}.\]"),("Conclude",r"The answer is $\boxed{\sqrt{10}}$."),],
+9:[("Separate the three types",r"Let $T$ be the number of truth-tellers, $L$ the number of liars, and let the alternaters be split by their first response pattern. An alternater who starts truthfully will answer truth, lie, truth; one who starts with a lie will answer lie, truth, lie."),("Find each type's yes pattern",r"A truth-teller answers yes, no, no to the three questions. A liar answers yes, yes, no, because every true identity question is answered falsely. An alternater starting truthfully answers no, no, no, while an alternater starting with a lie answers yes, yes, yes."),("Use the third question first",r"Only alternaters who start with a lie answer yes to \"Are you a liar?\" Therefore there are $9$ such alternaters."),("Use the second question",r"The second question has $15$ yes answers. These come from the liars and the $9$ lie-first alternaters, so \[L+9=15,\] giving $L=6$."),("Use the first question",r"The first question has $22$ yes answers. These come from truth-tellers, liars, and the $9$ lie-first alternaters, so \[T+6+9=22.\] Thus $T=7$."),("Conclude",r"Each truth-teller received candy only on the first question, so the total candy given to truth-tellers is $\boxed{7}$."),],
+10:[("Identify which numbers must be small partners",r"The numbers $8$ through $14$ cannot be the smaller number in a valid pair, because twice any of them is greater than $14$. So the smaller partners must be $1$ through $7$, and the larger partners must be $8$ through $14$."),("List the restrictive small numbers",r"The small numbers $1,2,3,4$ can pair with any of $8$ through $14$. The number $5$ can pair only with $10,11,12,13,14$; $6$ can pair only with $12,13,14$; and $7$ can pair only with $14$."),("Place the most restricted pair first",r"The number $7$ must be paired with $14$. Then $6$ can be paired with either $12$ or $13$, giving $2$ choices."),("Place the next restricted number",r"After choosing the partner for $6$, the number $5$ has $3$ available choices among $10,11,12,13$."),("Arrange the remaining pairs",r"Once partners for $5,6,7$ are chosen, the remaining four large numbers can be paired with $1,2,3,4$ in any order, giving $4!$ choices."),("Conclude",r"The total number of pairings is \[1\cdot2\cdot3\cdot4!=144.\] The answer is $\boxed{144}$."),],
 })
 
 def esc(x, quote=True):
