@@ -4012,3 +4012,19 @@
 - Pushed: pending
 - Next batch should start from: 2019 AMC 12B Problem 11
 - Review notes: none.
+
+## Batch 248: 2019 AMC 12B Problems 11, 13, 14, 16, 17, 18, 19, 20
+
+- Start time: 2026-07-02T07:14:06-07:00
+- End time: 2026-07-02T07:14:06-07:00
+- Processed contest: AMC12
+- Processed range: 2019 AMC 12B Problems 11, 13, 14, 16, 17, 18, 19, 20
+- Generated count: 8
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2019 AMC 12B Problem 12: triangle construction depends on the missing diagram; skipped; 2019 AMC 12B Problem 15: shaded circle/semicircle area problem depends on the missing diagram; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2019 AMC 12B Problem 21
+- Review notes: none.
