@@ -1,22 +1,20 @@
 # Problem Pages Report
 
-- Total manifest entries: 2001
-- Latest batch: 278 (2023 AMC 12B Problems 11-20)
-- Latest new generated count: 10
+- Total manifest entries: 2004
+- Latest batch: 279 (2023 AMC 12B Problems 22-24)
+- Latest new generated count: 3
 - Latest updated existing count: 0
-- Latest skipped count: 0
+- Latest skipped count: 2
 - MathJax validation: passed
 - Answer verification source: https://artofproblemsolving.com/wiki/index.php/2023_AMC_12B_Answer_Key
 
 ## Latest Batch Pages
 
-- `2023 AMC 12B Problem 11` -> `amc12/problems/2023-amc-12b-problem-11/`
-- `2023 AMC 12B Problem 12` -> `amc12/problems/2023-amc-12b-problem-12/`
-- `2023 AMC 12B Problem 13` -> `amc12/problems/2023-amc-12b-problem-13/`
-- `2023 AMC 12B Problem 14` -> `amc12/problems/2023-amc-12b-problem-14/`
-- `2023 AMC 12B Problem 15` -> `amc12/problems/2023-amc-12b-problem-15/`
-- `2023 AMC 12B Problem 16` -> `amc12/problems/2023-amc-12b-problem-16/`
-- `2023 AMC 12B Problem 17` -> `amc12/problems/2023-amc-12b-problem-17/`
-- `2023 AMC 12B Problem 18` -> `amc12/problems/2023-amc-12b-problem-18/`
-- `2023 AMC 12B Problem 19` -> `amc12/problems/2023-amc-12b-problem-19/`
-- `2023 AMC 12B Problem 20` -> `amc12/problems/2023-amc-12b-problem-20/`
+- `2023 AMC 12B Problem 22` -> `amc12/problems/2023-amc-12b-problem-22/`
+- `2023 AMC 12B Problem 23` -> `amc12/problems/2023-amc-12b-problem-23/`
+- `2023 AMC 12B Problem 24` -> `amc12/problems/2023-amc-12b-problem-24/`
+
+## Skipped in latest batch
+
+- 2023 AMC 12B Problem 21: frustum surface shortest path geometry is high-risk in current pass; skipped
+- 2023 AMC 12B Problem 25: folded regular pentagon area depends on a delicate geometric construction; skipped

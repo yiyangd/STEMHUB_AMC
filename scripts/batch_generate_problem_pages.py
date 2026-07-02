@@ -3,18 +3,20 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 278
+BATCH_NUMBER = 279
 CONTEST_DIR = "amc12"
 YEAR = "2023"
 FORM = "B"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2023_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
+TARGET_NUMBERS = {22, 23, 24}
 SKIPPED = [
+    "2023 AMC 12B Problem 21: frustum surface shortest path geometry is high-risk in current pass; skipped",
+    "2023 AMC 12B Problem 25: folded regular pentagon area depends on a delicate geometric construction; skipped",
 ]
-BATCH_LABEL = "2023 AMC 12B Problems 11-20"
-NEXT_START = "2023 AMC 12B Problem 21"
+BATCH_LABEL = "2023 AMC 12B Problems 22-24"
+NEXT_START = "2024 AMC 12A Problem 1"
 
-ANS={11:("D",r"$\frac32$"),12:("E",r"$5\sqrt2$"),13:("D",r"$\frac94$"),14:("A","5"),15:("E","II and III only"),16:("D","11"),17:("E",r"$15\sqrt3$"),18:("A","Yolanda's quiz average was 22 points higher"),19:("E",r"$\frac14$"),20:("E",r"$\frac{2\arcsin(1/4)}{\pi}$")}
+ANS={22:("E","-2"),23:("A","11"),24:("C","3")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -5226,6 +5228,24 @@ SOL.update({
 18:[("Normalize Zelda's semester averages",r"Let Zelda's first-semester average be $z$. Then Yolanda's first-semester average is $z+3$. Yolanda's second-semester average is $z+21$, so Zelda's second-semester average is $z+18$."),("Think about yearly averages",r"Each student's yearly average is a weighted average of that student's two semester averages, with weights depending on how many quizzes they took."),("Find the possible ranges",r"Zelda's yearly average must lie between $z$ and $z+18$. Yolanda's yearly average must lie between $z+3$ and $z+21$."),("Bound the difference",r"The largest possible gap would be approached when Yolanda's quizzes are mostly second-semester and Zelda's are mostly first-semester, giving a gap less than or equal to $21$."),("Conclude",r"A $22$-point yearly gap is impossible, while the other relationships can be arranged with suitable weights. The answer is $\boxed{\text{A}}$."),],
 19:[("Use parity only",r"We only care whether each bin has an odd or even number of balls. Since $2023$ is odd, the possible parity patterns have either exactly one odd bin or three odd bins."),("Use symmetry",r"For many independent balls, the parity patterns are essentially balanced, and an exact root-of-unity parity calculation gives \[P(\text{all three odd})=\frac18\left(2-\frac{6}{3^{2023}}\right).\]"),("Estimate",r"This value is extremely close to \[\frac{2}{8}=\frac14.\]"),("Choose the closest answer",r"The closest listed probability is $\frac14$."),("Conclude",r"The answer is $\boxed{\frac14}$."),],
 20:[("Use the angle between jumps",r"After the first jump, only the angle $\theta$ between the first and second jump directions matters. This angle is uniformly distributed from $0$ to $2\pi$."),("Write the final distance",r"By the Law of Cosines, the squared distance from the start is \[2^2+2^2+2\cdot2\cdot2\cos\theta=8+8\cos\theta.\]"),("Convert to a half-angle",r"Since \[8+8\cos\theta=16\cos^2\frac{\theta}{2},\] the final distance is \[4\left|\cos\frac{\theta}{2}\right|.\]"),("Apply the condition",r"We need \[4\left|\cos\frac{\theta}{2}\right|<1,\] so \[\left|\cos\frac{\theta}{2}\right|<\frac14.\]"),("Measure the allowed angles",r"For $\phi=\frac{\theta}{2}$ in $[0,\pi)$, the allowed interval has length \[2\arcsin\frac14.\] Dividing by the total length $\pi$ gives the probability."),("Conclude",r"The probability is \[\boxed{\frac{2\arcsin(1/4)}{\pi}}.\]"),],
+})
+
+OV.update({
+22:(r"A real-valued function $f$ has the property that for all real numbers $a$ and $b$, \[f(a+b)+f(a-b)=2f(a)f(b).\] Which one of the following cannot be the value of $f(1)$?",[("A","0"),("B","1"),("C","-1"),("D","2"),("E","-2")]),
+23:(r"When $n$ standard six-sided dice are rolled, the product of the numbers rolled can be any of $936$ possible values. What is $n$?",[("A","11"),("B","6"),("C","8"),("D","10"),("E","9")]),
+24:(r"Positive integers $a,b,c,d$ satisfy \[abcd=2^6\cdot3^9\cdot5^7,\] \[\operatorname{lcm}(a,b)=2^3\cdot3^2\cdot5^3,\quad \operatorname{lcm}(a,c)=2^3\cdot3^3\cdot5^3,\quad \operatorname{lcm}(a,d)=2^3\cdot3^3\cdot5^3,\] \[\operatorname{lcm}(b,c)=2^1\cdot3^3\cdot5^2,\quad \operatorname{lcm}(b,d)=2^2\cdot3^3\cdot5^2,\quad \operatorname{lcm}(c,d)=2^2\cdot3^3\cdot5^2.\] Find $\gcd(a,b,c,d)$.",[("A","30"),("B","45"),("C","3"),("D","15"),("E","6")]),
+})
+
+KEY_OVERRIDES.update({
+22:"Recognize cosine/cosh-type solutions and use bounds on possible f(1).",
+23:"Count possible prime-exponent triples in products of dice rolls.",
+24:"Work prime by prime using exponent sums and pairwise maximums.",
+})
+
+SOL.update({
+22:[("Check the zero function",r"The function $f(x)=0$ for all $x$ satisfies the equation, so $f(1)=0$ is possible."),("Look for standard nonzero solutions",r"The identity resembles the cosine addition formula: \[\cos(a+b)+\cos(a-b)=2\cos a\cos b.\] Therefore functions such as $f(x)=\cos(cx)$ work."),("Get values between -1 and 1",r"By choosing $c$, the value $f(1)=\cos c$ can be any number in the interval $[-1,1]$. This includes $1$ and $-1$."),("Get values at least 1",r"There is also a hyperbolic cosine version: \[\cosh(a+b)+\cosh(a-b)=2\cosh a\cosh b.\] Thus $f(x)=\cosh(cx)$ works and gives $f(1)\ge1$, including $2$ for a suitable $c$."),("Exclude negative values below -1",r"The cosine family never goes below $-1$, the hyperbolic cosine family is at least $1$, and the zero function only gives $0$. So $-2$ cannot occur."),("Conclude",r"The answer is $\boxed{-2}$."),],
+23:[("Translate products into prime exponents",r"Every die value uses only primes $2,3,5$: \[1=1,\quad2=2,\quad3=3,\quad4=2^2,\quad5=5,\quad6=2\cdot3.\] So a product is determined by its exponent triple $(\alpha,\beta,\gamma)$ for $2^\alpha3^\beta5^\gamma$."),("Fix the number of fives",r"Suppose exactly $\gamma$ factors of $5$ appear in the product. Then the remaining $m=n-\gamma$ dice contribute only factors from $\{1,2,3,4,6\}$."),("Count pairs for the remaining dice",r"For $m$ dice using $\{1,2,3,4,6\}$, fix the exponent $\beta$ of $3$. We can have $\beta=0,1,\ldots,m$. For a fixed $\beta$, the possible exponents of $2$ range from $0$ through $2m-\beta$, giving $2m-\beta+1$ choices."),("Sum for a fixed m",r"The number of possible $(\alpha,\beta)$ pairs is \[\sum_{\beta=0}^{m}(2m-\beta+1)=\frac{(m+1)(3m+2)}2.\]"),("Sum over gamma",r"Thus the number of possible products for $n$ dice is \[\sum_{m=0}^{n}\frac{(m+1)(3m+2)}2.\] Checking the answer choices, for $n=11$ this sum equals $936$."),("Conclude",r"Therefore $n=\boxed{11}$."),],
+24:[("Separate the primes",r"For each prime $2,3,5$, write its exponents in $a,b,c,d$ as a four-tuple. The product condition gives the sum of the four exponents, and each lcm condition gives the maximum of a pair of exponents."),("Handle the prime 2",r"For prime $2$, the exponent sum is $6$, and the pairwise maximums are \[3,3,3,1,2,2.\] The possible exponent tuples force the minimum exponent to be $0$. So $2$ does not divide the gcd."),("Handle the prime 3",r"For prime $3$, the exponent sum is $9$, and the pairwise maximums are \[2,3,3,3,3,3.\] The tuples are forced up to swapping $a$ and $b$, and the minimum exponent is $1$. So the gcd contains exactly one factor of $3$."),("Handle the prime 5",r"For prime $5$, the exponent sum is $7$, and the pairwise maximums are \[3,3,3,2,2,2.\] The minimum exponent is $0$. So $5$ does not divide the gcd."),("Assemble the gcd",r"The gcd has prime factorization \[2^0\cdot3^1\cdot5^0=3.\]"),("Conclude",r"The answer is $\boxed{3}$."),],
 })
 
 def esc(x, quote=True):
