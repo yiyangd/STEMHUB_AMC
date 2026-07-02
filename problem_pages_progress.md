@@ -4412,3 +4412,19 @@
 - Pushed: pending
 - Next batch should start from: 2022 AMC 12B Problem 21
 - Review notes: none.
+
+## Batch 273: 2022 AMC 12B Problems 21-24
+
+- Start time: 2026-07-02T08:20:37-07:00
+- End time: 2026-07-02T08:20:37-07:00
+- Processed contest: AMC12
+- Processed range: 2022 AMC 12B Problems 21-24
+- Generated count: 4
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2022 AMC 12B Problem 25: nonconvex polygon area depends on the missing figure; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2023 AMC 12A Problem 1
+- Review notes: none.

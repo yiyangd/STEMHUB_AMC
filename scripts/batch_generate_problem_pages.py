@@ -3,21 +3,19 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 272
+BATCH_NUMBER = 273
 CONTEST_DIR = "amc12"
 YEAR = "2022"
 FORM = "B"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2022_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {11, 12, 14, 15, 16, 17, 20}
+TARGET_NUMBERS = {21, 22, 23, 24}
 SKIPPED = [
-    "2022 AMC 12B Problem 13: rectangle-square overlap depends on the missing diagram; skipped",
-    "2022 AMC 12B Problem 18: cellular-grid transformation depends on diagrams and exhaustive state analysis; skipped",
-    "2022 AMC 12B Problem 19: OCR explicitly lacks original wording and the geometry diagram; skipped",
+    "2022 AMC 12B Problem 25: nonconvex polygon area depends on the missing figure; skipped",
 ]
-BATCH_LABEL = "2022 AMC 12B Problems 11,12,14,15,16,17,20"
-NEXT_START = "2022 AMC 12B Problem 21"
+BATCH_LABEL = "2022 AMC 12B Problems 21-24"
+NEXT_START = "2023 AMC 12A Problem 1"
 
-ANS={11:("E","2"),12:("D",r"$\frac{61}{81}$"),14:("E",r"$\frac47$"),15:("C",r"$2^{607}-1$"),16:("C",r"$3+\sqrt2$"),17:("D","576"),20:("E","23")}
+ANS={21:("E",r"$136\pi$"),22:("C",r"$\frac23$"),23:("A","6"),24:("C","147")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -5034,6 +5032,27 @@ SOL.update({
 16:[("Take logarithms of the first equation",r"Let \[r=\log_2 y\quad\text{and}\quad s=\log_2\log_2 x.\] From $x^y=2^{64}$, taking $\log_2$ gives \[y\log_2 x=64.\] Taking $\log_2$ again gives \[r+s=6.\]"),("Take logarithms of the second equation",r"The second equation is \[(\log_2 x)^{\log_2 y}=2^7.\] Taking $\log_2$ gives \[(\log_2 y)(\log_2\log_2 x)=7,\] so \[rs=7.\]"),("Solve the quadratic system",r"The two numbers $r$ and $s$ have sum $6$ and product $7$. Therefore they are roots of \[t^2-6t+7=0.\]"),("Find the possible values",r"The roots are \[t=\frac{6\pm\sqrt{36-28}}2=3\pm\sqrt2.\]"),("Maximize log base 2 of y",r"Since $r=\log_2 y$, the greatest possible value is the larger root, \[3+\sqrt2.\]"),("Conclude",r"The answer is $\boxed{3+\sqrt2}$."),],
 17:[("Use the distinct sums",r"The row sums are $1,2,3,4$ in some order, and these four sums are distinct. So after choosing the order of the rows, we can sort them by sum. The same idea applies to the columns."),("Count row and column orders",r"There are $4!$ possible orders for the row sums and $4!$ possible orders for the column sums."),("Find the canonical matrix",r"Now suppose the row sums are exactly $1,2,3,4$ from top to bottom, and the column sums are exactly $1,2,3,4$ from left to right. The row with sum $4$ must be \[1\ 1\ 1\ 1.\] To make the first column sum only $1$, all entries above it are $0$. Then the remaining rows are forced step by step."),("Write the forced form",r"The unique canonical matrix is \[\begin{pmatrix}0&0&0&1\\0&0&1&1\\0&1&1&1\\1&1&1&1\end{pmatrix}.\] It has row sums and column sums $1,2,3,4$."),("Multiply by orders",r"Because the row sums and column sums are distinct, different row or column orders give different arrays. Thus the total number is \[4!\cdot4!=24\cdot24=576.\]"),("Conclude",r"The answer is $\boxed{576}$."),],
 20:[("Use the least possible degree",r"The two divisors are relatively prime quadratics, so the least-degree polynomial can be taken to have degree less than $4$. Write \[P(x)=ax^3+bx^2+cx+d.\]"),("Reduce modulo x squared plus x plus 1",r"Modulo $x^2+x+1$, we have $x^2=-x-1$ and $x^3=1$. Thus the remainder is \[(c-b)x+(a-b+d).\] This must equal $x+2$."),("Reduce modulo x squared plus 1",r"Modulo $x^2+1$, we have $x^2=-1$ and $x^3=-x$. Thus the remainder is \[(-a+c)x+(-b+d).\] This must equal $2x+1$."),("Solve the coefficient equations",r"The equations are \[c-b=1,\quad a-b+d=2,\quad -a+c=2,\quad -b+d=1.\] From these, $c=b+1$, $a=b-1$, and $d=b+1$. Substituting into $a-b+d=2$ gives $b=2$."),("Find the polynomial",r"Therefore \[a=1,\quad b=2,\quad c=3,\quad d=3,\] so \[P(x)=x^3+2x^2+3x+3.\]"),("Conclude",r"The sum of the squares of the coefficients is \[1^2+2^2+3^2+3^2=23.\] The answer is $\boxed{23}$."),],
+})
+
+OV.update({
+21:(r"Let $S$ be the set of circles in the coordinate plane that are tangent to each of the three circles with equations \[x^2+y^2=4,\quad x^2+y^2=64,\quad (x-5)^2+y^2=3.\] What is the sum of the areas of all circles in $S$?",[("A",r"$48\pi$"),("B",r"$68\pi$"),("C",r"$96\pi$"),("D",r"$102\pi$"),("E",r"$136\pi$")]),
+22:(r"Ant Amelia starts on the number line at $0$. For $n=1,2,3$, she chooses a time duration $t_n$ and an increment $x_n$ independently and uniformly at random from $(0,1)$. During the $n$th step she moves $x_n$ units in the positive direction, using $t_n$ minutes. If the total elapsed time has exceeded $1$ minute during the $n$th step, she stops at the end of that step; otherwise, she continues with the next step, taking at most $3$ steps in all. What is the probability that her final position is greater than $1$?",[("A",r"$\frac13$"),("B",r"$\frac12$"),("C",r"$\frac23$"),("D",r"$\frac34$"),("E",r"$\frac56$")]),
+23:(r"Let $x_0,x_1,x_2,\ldots$ be a sequence of numbers, where each $x_k$ is either $0$ or $1$. For each positive integer $n$, define \[S_n=\sum_{k=0}^{n-1}x_k2^k.\] Suppose $7S_n\equiv1\pmod{2^n}$ for all $n\ge1$. What is \[x_{2019}+2x_{2020}+4x_{2021}+8x_{2022}?\]",[("A","6"),("B","7"),("C","12"),("D","14"),("E","15")]),
+24:(r"A regular $7$-gon is inscribed in a unit circle. What is the sum of the fourth powers of the lengths of all $21$ of its edges and diagonals?",[("A","49"),("B","98"),("C","147"),("D","168"),("E","196")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Use tangency to the two concentric circles to determine possible radii.",
+22:"Separate stopping-time cases from distance-sum probabilities.",
+23:"Interpret the congruence as the binary expansion of the 2-adic inverse of 7.",
+24:"Group equal chord lengths in a regular heptagon and use a sine-power identity.",
+})
+
+SOL.update({
+21:[("First use the two concentric circles",r"A circle tangent to both $x^2+y^2=4$ and $x^2+y^2=64$ must be tangent to circles centered at the origin with radii $2$ and $8$."),("Find the possible radii",r"There are two possible types. A circle inside the annulus has center distance $5$ from the origin and radius $3$, because $5-3=2$ and $5+3=8$. A circle containing the smaller circle internally has center distance $3$ and radius $5$, because $5-3=2$ and $5+3=8$."),("Use the third circle",r"The third circle has center $(5,0)$ and radius $\sqrt3$. For each of the two possible radii, the new center must also lie on a circle centered at $(5,0)$ with radius $r+\sqrt3$ or $|r-\sqrt3|$."),("Count the possible circles",r"For radius $3$, the center is on the circle of radius $5$ about the origin, and the two tangency choices with the third circle each give two intersections, for $4$ circles. The same reasoning gives $4$ circles of radius $5$."),("Add the areas",r"The total area is \[4\pi(3^2)+4\pi(5^2)=36\pi+100\pi=136\pi.\]"),("Conclude",r"The answer is $\boxed{136\pi}$."),],
+22:[("Separate time from distance",r"The stopping step depends only on the time variables $t_i$, while the final position depends only on the distance increments $x_i$. These two parts are independent, so we can split into cases."),("Find the stopping step probabilities",r"She cannot stop after one step because $t_1<1$. She stops after step $2$ exactly when \[t_1+t_2>1,\] which has probability $\frac12$. Otherwise she takes step $3$, also with probability $\frac12$."),("Handle two steps",r"If she stops after step $2$, her position is $x_1+x_2$. For two independent uniform variables on $(0,1)$, \[P(x_1+x_2>1)=\frac12.\]"),("Handle three steps",r"If she takes three steps, her position is $x_1+x_2+x_3$. The probability that this sum is at most $1$ is the volume of a simplex in the unit cube: \[\frac1{3!}=\frac16.\] So \[P(x_1+x_2+x_3>1)=\frac56.\]"),("Combine the cases",r"The desired probability is \[\frac12\cdot\frac12+\frac12\cdot\frac56=\frac14+\frac5{12}=\frac23.\]"),("Conclude",r"The answer is $\boxed{\frac23}$."),],
+23:[("Interpret the congruence",r"The number $S_n$ is the integer whose first $n$ binary digits are $x_0,x_1,\ldots,x_{n-1}$. The condition says that these prefixes represent the inverse of $7$ modulo powers of $2$."),("Find the inverse pattern",r"Since $7=8-1$, we have formally \[\frac1{7}=\frac1{8-1}=-\frac1{1-8}.\] In modulo powers of $2$, this produces a repeating binary pattern after adjustment: \[1+6(1+8+8^2+\cdots).\]"),("Read the bits",r"The binary digits are \[1,1,1,0,1,1,0,1,1,0,\ldots.\] After the first digit, the pattern $1,1,0$ repeats."),("Locate the needed indices",r"For $k\ge1$, the digit $x_k$ is $0$ exactly when $k$ is divisible by $3$, and is $1$ otherwise."),("Apply this to the four indices",r"We have \[2019\equiv0,\quad2020\equiv1,\quad2021\equiv2,\quad2022\equiv0\pmod3.\] Thus \[x_{2019},x_{2020},x_{2021},x_{2022}=0,1,1,0.\]"),("Conclude",r"The requested value is \[0+2(1)+4(1)+8(0)=6.\] The answer is $\boxed{6}$."),],
+24:[("Group equal chord lengths",r"In a regular $7$-gon, the $21$ pairs of vertices fall into three chord lengths: step $1$, step $2$, and step $3$ around the polygon. Each length occurs $7$ times."),("Write the chord lengths",r"For a unit circle, the chord length for step $k$ is \[2\sin\frac{k\pi}{7},\quad k=1,2,3.\]"),("Set up the sum",r"The required sum is \[7\sum_{k=1}^3\left(2\sin\frac{k\pi}{7}\right)^4=112\sum_{k=1}^3\sin^4\frac{k\pi}{7}.\]"),("Use symmetry and a standard identity",r"The values for $k=1,2,3$ repeat symmetrically for $k=4,5,6$. Also, \[\sum_{k=1}^{6}\sin^4\frac{k\pi}{7}=\frac{3\cdot7}{8}=\frac{21}{8}.\] Therefore \[\sum_{k=1}^{3}\sin^4\frac{k\pi}{7}=\frac{21}{16}.\]"),("Compute the total",r"Thus the desired sum is \[112\cdot\frac{21}{16}=7\cdot21=147.\]"),("Conclude",r"The answer is $\boxed{147}$."),],
 })
 
 def esc(x, quote=True):
