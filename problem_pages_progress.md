@@ -4316,3 +4316,19 @@
 - Pushed: pending
 - Next batch should start from: 2021 Fall AMC 12B Problem 21
 - Review notes: none.
+
+## Batch 267: 2021 Fall AMC 12B Problem 23
+
+- Start time: 2026-07-02T08:01:44-07:00
+- End time: 2026-07-02T08:01:44-07:00
+- Processed contest: AMC12
+- Processed range: 2021 Fall AMC 12B Problem 23
+- Generated count: 1
+- Updated existing count: 0
+- Skipped count: 4
+- Skipped reasons: 2021 Fall AMC 12B Problem 21: exponential equation with irrational exponents is high-risk in current pass; skipped; 2021 Fall AMC 12B Problem 22: impartial brick game requires Sprague-Grundy style analysis; skipped; 2021 Fall AMC 12B Problem 24: parallelogram projection problem depends on the missing diagram; skipped; 2021 Fall AMC 12B Problem 25: lattice-point line-count interval problem is high-risk in current pass; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2022 AMC 12A Problem 1
+- Review notes: none.
