@@ -3,19 +3,19 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 283
+BATCH_NUMBER = 284
 CONTEST_DIR = "amc12"
 YEAR = "2024"
 FORM = "B"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2024_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 18, 20}
+TARGET_NUMBERS = {21, 22, 23, 25}
 SKIPPED = [
-    "2024 AMC 12B Problem 19: rotated equilateral-triangle hexagon depends strongly on the missing figure; skipped",
+    "2024 AMC 12B Problem 24: altitude/inradius finite enumeration is high-risk in this pass; skipped",
 ]
-BATCH_LABEL = "2024 AMC 12B Problems 11-18,20"
-NEXT_START = "2024 AMC 12B Problem 21"
+BATCH_LABEL = "2024 AMC 12B Problems 21-23,25"
+NEXT_START = "AMC12 complete; review skipped high-risk problems"
 
-ANS={11:("E",r"$\frac{91}{180}$"),12:("D",r"$\frac32$"),13:("C","-34"),14:("B","2"),15:("B",r"$\log_2\frac{3}{\sqrt7}$"),16:("A","5"),17:("C",r"$\frac1{105}$"),18:("B","319"),20:("C","911")}
+ANS={21:("C","154"),22:("C","15"),23:("B",r"$\frac{1+\sqrt2}{2}$"),25:("A","243")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -5539,6 +5539,49 @@ SOL.update({
 ("Optimize the expression","Let $u=x^2$. Then\n\n\\[f(x)^2=-u^2+1682u-1681.\\]\n\nThis parabola is maximized at\n\n\\[u=\\frac{1682}{2}=841.\\]\n\nThus $x=29$, so $s=29$."),
 ("Find the maximum area","At $u=841$,\n\n\\[f(x)^2=841^2-1681=705600.\\]\n\nTherefore\n\n\\[f(x)=840,\\]\n\nso $r=840$."),
 ("Add the requested quantities","Finally,\n\n\\[p+q+r+s=1+41+840+29=911.\\]\n\nThe answer is $911$."),
+],
+})
+
+OV.update({
+21:("The measures of the smallest angles of three different right triangles sum to $90^\\circ$. All three triangles have side lengths that are primitive Pythagorean triples. Two of them are $3$-$4$-$5$ and $5$-$12$-$13$. What is the perimeter of the third triangle?",[("A","40"),("B","126"),("C","154"),("D","176"),("E","208")]),
+22:("Let $\\triangle ABC$ have integer side lengths and the property that $\\angle B=2\\angle A$. What is the least possible perimeter of such a triangle?",[("A","13"),("B","14"),("C","15"),("D","16"),("E","17")]),
+23:("A right pyramid has regular octagon $ABCDEFGH$ with side length $1$ as its base and apex $V$. Segments $AV$ and $DV$ are perpendicular. What is the square of the height of the pyramid?",[("A",r"$\frac12$"),("B",r"$\frac{1+\sqrt2}{2}$"),("C",r"$\frac23$"),("D",r"$\sqrt3$"),("E",r"$2+\sqrt2$")]),
+25:("Pablo will decorate each of $6$ identical white balls with either a striped or dotted pattern, using either red or blue paint. He makes the color and pattern decisions by fair coin flips. Frida randomly selects one ball from the urn and notes its color and pattern. The probability that the events \"the selected ball is red\" and \"the selected ball is striped\" are independent is $\\frac mn$, in lowest terms. What is $m$?",[("A","243"),("B","245"),("C","247"),("D","249"),("E","251")]),
+})
+KEY_OVERRIDES.update({
+21:"Use tangent addition for the two known small angles, then identify the third primitive Pythagorean triangle.",
+22:"Use the Law of Sines and Law of Cosines to derive a side-length condition, then find the smallest integer triangle.",
+23:"Place the right pyramid over the center of the octagon and use a vector dot product.",
+25:"Translate independence into a condition on a 2-by-2 count table and count labeled coin-flip outcomes.",
+})
+SOL.update({
+21:[
+("Convert the known angles to tangents","For the $3$-$4$-$5$ triangle, the smallest angle has tangent $\\frac34$. For the $5$-$12$-$13$ triangle, the smallest angle has tangent $\\frac5{12}$.\n\nLet these two angles be $\\alpha$ and $\\beta$."),
+("Find the tangent of their sum","Using the tangent addition formula,\n\n\\[\\tan(\\alpha+\\beta)=\\frac{\\frac34+\frac5{12}}{1-\frac34\cdot\frac5{12}}.\\]\n\nThe numerator is $\\frac{14}{12}$, and the denominator is $1-\frac{15}{48}=\\frac{33}{48}$. So\n\n\\[\\tan(\\alpha+\\beta)=\\frac{56}{33}.\\]"),
+("Use the fact that the three angles sum to 90 degrees","If the third smallest angle is $\\gamma$, then\n\n\\[\\gamma=90^\\circ-(\\alpha+\beta).\\]\n\nTherefore\n\n\\[\\tan\\gamma=\\cot(\alpha+\beta)=\\frac{33}{56}.\\]"),
+("Identify the primitive Pythagorean triangle","A right triangle whose smallest angle has tangent $\\frac{33}{56}$ has legs $33$ and $56$. The hypotenuse is\n\n\\[\\sqrt{33^2+56^2}=65.\\]\n\nThis is a primitive Pythagorean triple."),
+("Compute the perimeter","The perimeter is\n\n\\[33+56+65=154.\\]\n\nSo the answer is $154$."),
+],
+22:[
+("Name the sides opposite the angles","Let $a,b,c$ be the side lengths opposite angles $A,B,C$, respectively. Since $B=2A$, the Law of Sines gives\n\n\\[\\frac ba=\\frac{\\sin B}{\\sin A}=\\frac{\\sin 2A}{\\sin A}=2\\cos A.\\]"),
+("Use the Law of Cosines for cos A","The Law of Cosines gives\n\n\\[\\cos A=\\frac{b^2+c^2-a^2}{2bc}.\\]\n\nSubstituting this into $\\frac ba=2\\cos A$ gives a relation among the side lengths."),
+("Simplify the side relation","After substitution and simplification, the nondegenerate integer triangles must satisfy\n\n\\[b^2=a(a+c).\\]\n\nThis condition is much easier to search than the original angle condition."),
+("Find the smallest integer solution","Trying small side lengths, the first valid solution is\n\n\\[a=4,\qquad b=6,\qquad c=5.\\]\n\nIndeed, $b^2=36$ and $a(a+c)=4(9)=36$. The triangle inequalities also hold."),
+("Compute the perimeter","The perimeter is\n\n\\[4+6+5=15.\\]\n\nNo smaller perimeter gives a valid integer triangle satisfying the side relation, so the answer is $15$."),
+],
+23:[
+("Place the pyramid in coordinates","Because this is a right pyramid, the apex $V$ lies directly above the center of the regular octagon. Put the octagon in the plane $z=0$ with center at the origin, and let the height be $h$.\n\nThe vectors from $V$ to base vertices $A$ and $D$ are then $(\\vec a,-h)$ and $(\\vec d,-h)$, where $\\vec a$ and $\\vec d$ are base-plane vectors from the center."),
+("Use the perpendicular condition","The condition $AV\\perp DV$ means the dot product is zero:\n\n\\[(\\vec a,-h)\\cdot(\\vec d,-h)=\\vec a\\cdot\\vec d+h^2=0.\\]\n\nSo\n\n\\[h^2=-\\vec a\\cdot\\vec d.\\]"),
+("Find the angle between the base vectors","In a regular octagon, vertices $A$ and $D$ are separated by three side steps, so the central angle between them is\n\n\\[3\\cdot45^\\circ=135^\\circ.\\]\n\nIf $R$ is the circumradius of the octagon, then\n\n\\[\\vec a\\cdot\\vec d=R^2\cos135^\\circ=-\\frac{R^2\\sqrt2}{2}.\\]"),
+("Compute the circumradius","For a regular octagon with side length $1$,\n\n\\[1=2R\sin22.5^\\circ.\\]\n\nThis gives\n\n\\[R^2=\\frac{1}{2-\sqrt2}=\\frac{2+\sqrt2}{2}.\\]"),
+("Finish h squared","Therefore\n\n\\[h^2=\\frac{R^2\\sqrt2}{2}=\\frac{1+\sqrt2}{2}.\\]\n\nSo the square of the height is $\\frac{1+\sqrt2}{2}$."),
+],
+25:[
+("Represent the outcome with a 2-by-2 table","After the six balls are decorated, let the counts be\n\n\\[\\begin{array}{c|cc} & \\text{striped} & \\text{dotted}\\\\ \\hline \\text{red} & a & b\\\\ \\text{blue} & c & d\\end{array}\\]\n\nwith $a+b+c+d=6$."),
+("Translate independence into an equation","The events red and striped are independent exactly when\n\n\\[\\frac a6=\\frac{a+b}{6}\\cdot\\frac{a+c}{6}.\\]\n\nEquivalently,\n\n\\[6a=(a+b)(a+c),\\]\n\nwhich is the same as\n\n\\[ad=bc.\\]"),
+("Count by row and column totals","Let $r=a+b$ be the number of red balls and $s=a+c$ be the number of striped balls. Independence forces\n\n\\[a=\\frac{rs}{6}.\\]\n\nSo we only keep pairs $(r,s)$ for which this and the other three table entries are integers."),
+("Add the labeled coin-flip outcomes","For each valid table $(a,b,c,d)$, the number of labeled outcomes is\n\n\\[\\frac{6!}{a!b!c!d!}.\\]\n\nSumming over the valid independent tables gives $972$ labeled outcomes. This is a small finite enumeration over $0\\le r,s\\le6$, not a probability approximation."),
+("Reduce the probability","There are $4^6=4096$ total color-pattern outcomes for the six coin-flipped balls. Thus the probability is\n\n\\[\\frac{972}{4096}=\\frac{243}{1024}.\\]\n\nThe numerator is $243$."),
 ],
 })
 

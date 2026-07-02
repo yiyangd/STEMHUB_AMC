@@ -4588,3 +4588,19 @@
 - Pushed: pending
 - Next batch should start from: 2024 AMC 12B Problem 21
 - Review notes: none.
+
+## Batch 284: 2024 AMC 12B Problems 21-23,25
+
+- Start time: 2026-07-02T09:23:31-07:00
+- End time: 2026-07-02T09:23:31-07:00
+- Processed contest: AMC12
+- Processed range: 2024 AMC 12B Problems 21-23,25
+- Generated count: 4
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2024 AMC 12B Problem 24: altitude/inradius finite enumeration is high-risk in this pass; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: AMC12 complete; review skipped high-risk problems
+- Review notes: none.
