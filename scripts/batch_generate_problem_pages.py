@@ -3,15 +3,20 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 218
+BATCH_NUMBER = 219
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2014_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16,17,18}
-SKIPPED = []
-BATCH_LABEL = "2014 AMC 12B Problems 11-18"
-NEXT_START = "2014 AMC 12B Problem 19"
+TARGET_NUMBERS = {20,22,23}
+SKIPPED = [
+    "2014 AMC 12B Problem 19: diagram-dependent truncated cone/sphere geometry; skipped",
+    "2014 AMC 12B Problem 21: diagram-dependent square/rectangle geometry; skipped",
+    "2014 AMC 12B Problem 24: cyclic pentagon diagonal sum high risk; skipped",
+    "2014 AMC 12B Problem 25: trigonometric equation with OCR ambiguity; skipped",
+]
+BATCH_LABEL = "2014 AMC 12B Problems 20, 22, 23"
+NEXT_START = "2015 AMC 12A Problem 1"
 
-ANS={11:("E","35"),12:("B","9"),13:("C",r"\frac{3+\sqrt5}{2}"),14:("D",r"20\sqrt2"),15:("C",r"2^{16}"),16:("E","14k"),17:("E","80"),18:("B","2")}
+ANS={20:("B","18"),22:("C",r"\frac{63}{146}"),23:("C","1024")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2829,6 +2834,24 @@ SOL.update({
 16:[("Write a general cubic",r"Let \[P(x)=ax^3+bx^2+cx+d.\] Since $P(0)=k$, we have $d=k$."),("Use P(1)",r"\[P(1)=a+b+c+k=2k,\] so \[a+b+c=k.\]"),("Use P(-1)",r"\[P(-1)=-a+b-c+k=3k,\] so \[-a+b-c=2k.\]"),("Find b",r"Add the two equations: \[(a+b+c)+(-a+b-c)=k+2k,\] so \[2b=3k,\qquad b=\frac{3k}{2}.\]"),("Use symmetry in P(2)+P(-2)",r"The odd-power terms cancel: \[P(2)+P(-2)=8b+2k.\] Substituting $b=\frac{3k}{2}$ gives \[8\cdot\frac{3k}{2}+2k=14k.\]"),("Conclude",r"The answer is $\boxed{14k}$.")],
 17:[("Write the line through Q",r"A line through $Q=(20,14)$ with slope $m$ has equation \[y-14=m(x-20).\]"),("Intersect with the parabola",r"Set $y=x^2$: \[x^2=m(x-20)+14.\] Rearranging gives \[x^2-mx+(20m-14)=0.\]"),("Use the discriminant",r"The line does not intersect the parabola exactly when this quadratic has no real solution, so its discriminant is negative: \[m^2-4(20m-14)<0.\]"),("Find the interval endpoints",r"The boundary roots satisfy \[m^2-80m+56=0.\] If the roots are $r$ and $s$, then by Vieta's formula \[r+s=80.\]"),("Conclude",r"The answer is $\boxed{80}$.")],
 18:[("Reduce by symmetry",r"Up to rotation and reflection, there are only \[\frac{5!}{2\cdot5}=12\] circular arrangements to check."),("Use consecutive sums",r"For any arrangement, the possible sums come from arcs of lengths $1,2,3,4,$ and $5$ around the circle. The total sum is $15$, so missing a sum $t$ is equivalent to missing the complementary sum $15-t$."),("Check the twelve cases systematically",r"A short enumeration of the $12$ symmetry classes shows that exactly two classes fail the condition. Representatives are \[(1,2,5,3,4)\quad\text{and}\quad(1,3,2,4,5).\]"),("Identify what is missing",r"For $(1,2,5,3,4)$, the missing sums are $6$ and $9$. For $(1,3,2,4,5)$, the missing sums are $7$ and $8$."),("Conclude",r"There are exactly $\boxed{2}$ bad arrangements.")],
+})
+
+OV.update({
+20:(r"For how many positive integers $x$ is \[\log_{10}(x-40)+\log_{10}(60-x)<2?\]",[("A","10"),("B","18"),("C","19"),("D","20"),("E","infinitely many")]),
+22:(r"In a small pond there are eleven lily pads in a row labeled $0$ through $10$. A frog is sitting on pad $1$. When the frog is on pad $N$, $0<N<10$, it will jump to pad $N-1$ with probability $\frac{N}{10}$ and to pad $N+1$ with probability $1-\frac{N}{10}$. Each jump is independent. If the frog reaches pad $0$ it will be eaten by a snake. If the frog reaches pad $10$ it will exit the pond. What is the probability that the frog will escape being eaten?",[("A",r"$\frac{32}{79}$"),("B",r"$\frac{161}{384}$"),("C",r"$\frac{63}{146}$"),("D",r"$\frac{7}{16}$"),("E",r"$\frac12$")]),
+23:(r"The number $2017$ is prime. Let \[S=\sum_{k=0}^{62}\binom{2014}{k}.\] What is the remainder when $S$ is divided by $2017$?",[("A","32"),("B","684"),("C","1024"),("D","1576"),("E","2016")]),
+})
+
+KEY_OVERRIDES.update({
+20:"Use logarithm rules and the integer domain restrictions.",
+22:"Solve the absorbing random walk with a recurrence for escape probabilities.",
+23:"Use binomial coefficients modulo the prime 2017.",
+})
+
+SOL.update({
+20:[("Find the domain first",r"The logarithms require \[x-40>0\quad\text{and}\quad60-x>0.\] So \[40<x<60.\] For positive integers, this means $x=41,42,\ldots,59$."),("Combine the logarithms",r"Using \[\log_{10}A+\log_{10}B=\log_{10}(AB),\] the inequality becomes \[\log_{10}((x-40)(60-x))<2.\]"),("Remove the logarithm",r"Since base $10$ is greater than $1$, this is equivalent to \[(x-40)(60-x)<100.\]"),("Substitute a centered variable",r"Let $y=x-40$. Then $y=1,2,\ldots,19$, and \[(x-40)(60-x)=y(20-y).\]"),("Count the failures",r"The product is at least $100$ only when $y=10$, because \[10(10)=100\] and nearby values give less than $100$ or, for $y=9,11$, give $99$."),("Conclude",r"There are $19$ possible integers and one is excluded, so the answer is \[\boxed{18}.\]")],
+22:[("Define escape probabilities",r"Let $p_i$ be the probability that the frog escapes if it starts on pad $i$. Then \[p_0=0,\qquad p_{10}=1.\] We want $p_1$."),("Write the recurrence",r"For $1\le i\le9$, \[p_i=\frac{i}{10}p_{i-1}+\frac{10-i}{10}p_{i+1}.\]"),("Use successive differences",r"Let \[d_i=p_i-p_{i-1}.\] Rearranging the recurrence gives \[(10-i)(p_{i+1}-p_i)=i(p_i-p_{i-1}),\] so \[d_{i+1}=\frac{i}{10-i}d_i.\]"),("Express all differences from d1",r"Starting with $d_1=p_1$, the differences are \[d_1,\frac19d_1,\frac1{36}d_1,\ldots,\frac1{126}d_1,\frac1{126}d_1,\ldots,d_1.\] Their sum from $d_1$ through $d_{10}$ must be \[p_{10}-p_0=1.\]"),("Compute the sum",r"The coefficient sum is \[\frac{146}{63}.\] Therefore \[d_1=\frac{1}{146/63}=\frac{63}{146}.\]"),("Conclude",r"Since $p_1=d_1$, the escape probability is \[\boxed{\frac{63}{146}}.\]")],
+23:[("Reduce the top number modulo 2017",r"Since $2017$ is prime and \[2014\equiv -3\pmod{2017},\] we can work with binomial coefficients modulo $2017$."),("Use the negative binomial identity",r"For $0\le k<2017$, \[\binom{2014}{k}\equiv \binom{-3}{k}\pmod{2017}.\] Also \[\binom{-3}{k}=(-1)^k\binom{k+2}{2}.\]"),("Rewrite the sum",r"Thus \[S\equiv \sum_{k=0}^{62}(-1)^k\binom{k+2}{2}\pmod{2017}.\]"),("Pair terms",r"Pair $k=2j$ and $k=2j+1$. The pair contribution is \[\binom{2j+2}{2}-\binom{2j+3}{2}=-(2j+2).\] There are $31$ such pairs from $k=0$ to $61$."),("Add the last term",r"The paired sum is \[-\sum_{j=0}^{30}(2j+2)=-2(1+2+\cdots+31)=-992.\] The last term for $k=62$ is \[\binom{64}{2}=2016.\] So \[S\equiv -992+2016=1024.\]"),("Conclude",r"The remainder is $\boxed{1024}$.")],
 })
 
 def esc(x, quote=True):

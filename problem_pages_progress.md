@@ -3548,3 +3548,19 @@
 - Pushed: pending
 - Next batch should start from: 2014 AMC 12B Problem 19
 - Review notes: none.
+
+## Batch 219: 2014 AMC 12B Problems 20, 22, 23
+
+- Start time: 2026-07-01T23:55:23-07:00
+- End time: 2026-07-01T23:55:23-07:00
+- Processed contest: AMC12
+- Processed range: 2014 AMC 12B Problems 20, 22, 23
+- Generated count: 3
+- Updated existing count: 0
+- Skipped count: 4
+- Skipped reasons: 2014 AMC 12B Problem 19: diagram-dependent truncated cone/sphere geometry; skipped; 2014 AMC 12B Problem 21: diagram-dependent square/rectangle geometry; skipped; 2014 AMC 12B Problem 24: cyclic pentagon diagonal sum high risk; skipped; 2014 AMC 12B Problem 25: trigonometric equation with OCR ambiguity; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2015 AMC 12A Problem 1
+- Review notes: none.
