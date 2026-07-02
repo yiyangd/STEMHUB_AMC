@@ -3,18 +3,20 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 226
+BATCH_NUMBER = 227
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2016_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,10}
+TARGET_NUMBERS = {11,12,16,18,19,20}
 SKIPPED = [
-    "2016 AMC 12A Problem 8: shaded-region diagram missing; skipped",
-    "2016 AMC 12A Problem 9: diagram-dependent square configuration; skipped",
+    "2016 AMC 12A Problem 13: OCR text is unreliable for the probability threshold; skipped",
+    "2016 AMC 12A Problem 14: cube-labeling proof risk is high for unattended generation; skipped",
+    "2016 AMC 12A Problem 15: tangent-circle geometry choices/OCR are unclear; skipped",
+    "2016 AMC 12A Problem 17: exterior equilateral-triangle diagram geometry skipped for reliability",
 ]
-BATCH_LABEL = "2016 AMC 12A Problems 1-7, 10"
-NEXT_START = "2016 AMC 12A Problem 11"
+BATCH_LABEL = "2016 AMC 12A Problems 11,12,16,18,19,20"
+NEXT_START = "2016 AMC 12A Problem 21"
 
-ANS={1:("B","100"),2:("C","3"),3:("B",r"-\frac1{40}"),4:("D","90"),5:("E","an even integer greater than 2 that cannot be written as the sum of two prime numbers"),6:("D","9"),7:("D","three lines that do not all pass through a common point"),10:("B","2")}
+ANS={11:("E","64"),12:("C",r"2:1"),16:("D","5"),18:("D","325"),19:("B","151"),20:("A","109")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3060,6 +3062,75 @@ SOL.update({
 6:[("Use the triangular number formula",r"The total number of coins is \[1+2+\cdots+N=\frac{N(N+1)}2.\]"),("Set equal to 2016",r"\[\frac{N(N+1)}2=2016,\] so \[N(N+1)=4032.\]"),("Factor near the square root",r"Since \[63\cdot64=4032,\] we get \[N=63.\]"),("Find the digit sum",r"The sum of the digits of $63$ is \[6+3=9.\]"),("Conclude",r"The answer is $\boxed{9}$.")],
 7:[("Move everything to one side by factoring",r"The equation is \[x^2(x+y+1)=y^2(x+y+1).\] Bring the right side over: \[(x^2-y^2)(x+y+1)=0.\]"),("Factor the difference of squares",r"\[x^2-y^2=(x-y)(x+y).\]"),("List the lines",r"The graph is the union of the three lines \[x-y=0,\quad x+y=0,\quad x+y+1=0.\]"),("Describe their intersections",r"The lines $x+y=0$ and $x+y+1=0$ are parallel, so the three lines cannot all pass through one common point."),("Conclude",r"The graph is $\boxed{\text{three lines that do not all pass through a common point}}$.")],
 10:[("Use the end-seat clue",r"When Ada returns, the only empty seat is an end seat. Since Bea moves two seats right and Ceci moves one seat left, we can track possible original positions."),("Constrain Bea and Ceci",r"Bea could not have started in seats $4$ or $5$, and Ceci could not have started in seat $1$. Also, their new seats must not collide with Dee and Edie's switched seats."),("Test the forced arrangement",r"The consistent arrangements have Bea originally in seat $1$, Ada in seat $2$, and Ceci in seat $3$. Dee and Edie occupy seats $4$ and $5$ in either order."),("Check what happens after Ada leaves",r"Bea moves from $1$ to $3$, Ceci moves from $3$ to $2$, and Dee and Edie switch seats $4$ and $5$. This leaves seat $1$, an end seat, for Ada."),("Conclude",r"Ada had been sitting in seat $\boxed{2}$.")],
+})
+
+OV.update({
+11:(r"Each of the $100$ students in a certain summer camp can either sing, dance, or act. Some students have more than one talent, but no student has all three talents. There are $42$ students who cannot sing, $65$ students who cannot dance, and $29$ students who cannot act. How many students have two of these talents?",[("A","16"),("B","25"),("C","36"),("D","49"),("E","64")]),
+12:(r"In $\triangle ABC$, $AB=6$, $BC=7$, and $CA=8$. Point $D$ lies on $\overline{BC}$, and $\overline{AD}$ bisects $\angle BAC$. Point $E$ lies on $\overline{AC}$, and $\overline{BE}$ bisects $\angle ABC$. The bisectors intersect at $F$. What is the ratio $AF:FD$?",[("A",r"$3:2$"),("B",r"$5:3$"),("C",r"$2:1$"),("D",r"$7:3$"),("E",r"$5:2$")]),
+16:(r"The graphs of $y=\log_3 x$, $y=\log_x 3$, $y=\log_{1/3}x$, and $y=\log_x(1/3)$ are plotted on the same set of axes. How many points in the plane with positive $x$-coordinates lie on two or more of the graphs?",[("A","2"),("B","3"),("C","4"),("D","5"),("E","6")]),
+18:(r"For some positive integer $n$, the number $110n^3$ has $110$ positive integer divisors, including $1$ and the number $110n^3$. How many positive integer divisors does the number $81n^4$ have?",[("A","110"),("B","191"),("C","261"),("D","325"),("E","425")]),
+19:(r"Jerry starts at $0$ on the real number line. He tosses a fair coin $8$ times. When he gets heads, he moves $1$ unit in the positive direction; when he gets tails, he moves $1$ unit in the negative direction. The probability that he reaches $4$ at some time during this process is $\frac ab$, where $a$ and $b$ are relatively prime positive integers. What is $a+b$?",[("A","69"),("B","151"),("C","257"),("D","293"),("E","313")]),
+20:(r"A binary operation $\diamond$ has the properties that $a\diamond(b\diamond c)=(a\diamond b)\cdot c$ and that $a\diamond a=1$ for all nonzero real numbers $a$, $b$, and $c$. The solution to the equation $2016\diamond(6\diamond x)=100$ can be written as $\frac pq$, where $p$ and $q$ are relatively prime positive integers. What is $p+q$?",[("A","109"),("B","201"),("C","301"),("D","3049"),("E","33601")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Count talent memberships in two ways to find the number of students with exactly two talents.",
+12:"Use the angle-bisector theorem, the angle-bisector length, and the inradius along the same line.",
+16:"Convert all logarithms to expressions in one variable t equals log base 3 of x.",
+18:"Use divisor-count factors to determine the possible prime exponents in n.",
+19:"Count random-walk paths by the first time the walk reaches 4.",
+20:"Recognize that the operation behaves like division, then solve the resulting equation.",
+})
+
+SOL.update({
+11:[
+("Translate the negative statements",r"If $42$ students cannot sing, then $100-42=58$ students can sing. Similarly, $35$ students can dance and $71$ students can act."),
+("Count total talent memberships",r"Adding these gives the total number of reported talents: \[58+35+71=164.\] This is not the number of students, because a student with two talents is counted twice."),
+("Introduce exactly-one and exactly-two groups",r"Let $x$ be the number of students with exactly two talents, and let $y$ be the number with exactly one talent. Since no student has all three talents, these are the only two possibilities, so \[x+y=100.\]"),
+("Count memberships a second way",r"The students with one talent contribute $1$ membership each, and the students with two talents contribute $2$ memberships each. Hence \[2x+y=164.\]"),
+("Subtract the equations",r"Subtracting $x+y=100$ from $2x+y=164$ gives \[x=64.\]"),
+("Conclude",r"Therefore $\boxed{64}$ students have two talents."),
+],
+12:[
+("Use the angle-bisector theorem",r"Since $\overline{AD}$ bisects $\angle A$, the angle-bisector theorem gives \[BD:DC=AB:AC=6:8=3:4.\] Because $BC=7$, we get $BD=3$ and $DC=4$."),
+("Find the length of the angle bisector",r"The angle-bisector length formula gives \[AD^2=bc\left(1-\frac{a^2}{(b+c)^2}\right),\] where $a=BC=7$, $b=CA=8$, and $c=AB=6$. Thus \[AD^2=48\left(1-\frac{49}{196}\right)=36,\] so $AD=6$."),
+("Compute the inradius",r"By Heron's formula, the area of the $6$-$7$-$8$ triangle is \[\sqrt{\frac{21}{2}\cdot\frac{9}{2}\cdot\frac{7}{2}\cdot\frac{5}{2}}=\frac{21\sqrt{15}}4.\] The semiperimeter is $\frac{21}{2}$, so the inradius is \[r=\frac{K}{s}=\frac{\sqrt{15}}2.\]"),
+("Relate AF to the inradius",r"The incenter $F$ lies on the angle bisector $\overline{AD}$. If $AF=t$, then the perpendicular distance from $F$ to side $AB$ is $t\sin(\angle BAD)$. From triangle $ABD$ with sides $AB=AD=6$ and $BD=3$, we have \[\sin(\angle BAD)=\frac{\sqrt{15}}8.\]"),
+("Solve for AF and FD",r"Since that perpendicular distance is the inradius, \[t\cdot\frac{\sqrt{15}}8=\frac{\sqrt{15}}2,\] so $t=4$. Therefore $AF=4$ and $FD=AD-AF=2."),
+("Conclude",r"The ratio is \[AF:FD=4:2=\boxed{2:1}.\]"),
+],
+16:[
+("Use one variable for all four graphs",r"Let \[t=\log_3 x.\] Since $x>0$, every positive $x$ gives one real value of $t$, and $x=1$ corresponds to $t=0$."),
+("Rewrite the four y-values",r"The four functions become \[t,\quad \frac1t,\quad -t,\quad -\frac1t,\] except that the two expressions with base $x$ are undefined when $t=0$."),
+("Find when two y-values can agree",r"We need two of these values to be equal. The equations $t=\frac1t$ and $-t=-\frac1t$ give $t=\pm1$. The equation $t=-t$ gives $t=0$. The equations involving $t=-\frac1t$ or $\frac1t=-t$ have no real solutions."),
+("Count the points for t equals 1 and -1",r"When $t=1$, so $x=3$, the points $(3,1)$ and $(3,-1)$ each lie on two graphs. When $t=-1$, so $x=\frac13$, the points $\left(\frac13,1\right)$ and $\left(\frac13,-1\right)$ each lie on two graphs."),
+("Include x equals 1",r"When $t=0$, the graphs $y=\log_3 x$ and $y=\log_{1/3}x$ both pass through $(1,0)$. The other two graphs are not defined there, but this still gives one valid point lying on two graphs."),
+("Conclude",r"There are \[2+2+1=\boxed{5}\] such points."),
+],
+18:[
+("Translate divisor count into exponents",r"If a number has prime factorization \(\prod p_i^{e_i}\), then its number of divisors is \(\prod(e_i+1)\). Here \[110=2\cdot5\cdot11.\]"),
+("Look at primes already in 110",r"For the primes $2$, $5$, and $11$, if the exponent of that prime in $n$ is $k$, then its exponent in $110n^3$ is $1+3k$. The corresponding divisor-count factor is \[1+3k+1=3k+2.\]"),
+("Use the allowed factors of 110",r"The only factors available in $110=2\cdot5\cdot11$ that are congruent to $2$ modulo $3$ are $2$, $5$, and $11$. Therefore the exponents $k$ in $n$ for the primes $2,5,11$ must be $0$, $1$, and $3$ in some order."),
+("Exclude extra primes",r"Any other prime in $n$ with exponent $k>0$ would contribute a factor $3k+1$ to the divisor count of $110n^3$. No such factor can fit into $110$, so there are no other primes in $n$."),
+("Count divisors of the new number",r"In $81n^4=3^4n^4$, the new prime $3$ contributes a divisor-count factor of $4+1=5$. The exponents from $n^4$ are $4\cdot0$, $4\cdot1$, and $4\cdot3$, contributing factors \[1,\quad5,\quad13.\]"),
+("Conclude",r"The number of divisors is \[5\cdot1\cdot5\cdot13=\boxed{325}.\]"),
+],
+19:[
+("Count all possible walks",r"There are $2^8=256$ equally likely sequences of heads and tails. We need to count how many first reach position $4$ at some time."),
+("First reach 4 on toss 4",r"To be at $4$ after $4$ tosses, the first four tosses must all be heads. The remaining four tosses can be anything, giving \[2^4=16\] successful sequences."),
+("First reach 4 on toss 6",r"To first reach $4$ on toss $6$, the first five tosses must end at position $3$ without having already hit $4$, and toss $6$ must be heads. Among the first five tosses there must be exactly one tail, and it cannot be the fifth toss after four initial heads. That gives $4$ prefixes, then $2^2$ choices for the last two tosses, for \[4\cdot4=16\] sequences."),
+("First reach 4 on toss 8",r"To first reach $4$ on toss $8$, the first seven tosses must end at position $3$ without an earlier hit. There are \(\binom72=21\) ways to have five heads and two tails in seven tosses, but $3$ have already hit at toss $4$ and $4$ have first hit at toss $6$. Thus \[21-3-4=14\] sequences first hit at toss $8$."),
+("Find the probability",r"The total number of successful sequences is \[16+16+14=46.\] Therefore the probability is \[\frac{46}{256}=\frac{23}{128}.\]"),
+("Conclude",r"Thus $a=23$ and $b=128$, so \[a+b=\boxed{151}.\]"),
+],
+20:[
+("Guess the operation from a diamond a",r"The condition $a\diamond a=1$ strongly suggests that $a\diamond b$ may behave like a quotient, because $a/a=1$."),
+("Verify the quotient operation",r"If \(a\diamond b=\frac ab\), then \[a\diamond(b\diamond c)=a\diamond\left(\frac bc\right)=\frac{a}{b/c}=\frac{ac}{b},\] while \[(a\diamond b)\cdot c=\frac ab\cdot c=\frac{ac}{b}.\] So division satisfies both given properties."),
+("Use the operation in the equation",r"Now compute the inside expression: \[6\diamond x=\frac6x.\] Then \[2016\diamond(6\diamond x)=2016\diamond\frac6x=\frac{2016}{6/x}=336x.\]"),
+("Solve for x",r"The equation becomes \[336x=100,\] so \[x=\frac{100}{336}=\frac{25}{84}.\]"),
+("Add numerator and denominator",r"The fraction is already in lowest terms, so \(p=25\) and \(q=84\). Therefore \[p+q=25+84=109.\]"),
+("Conclude",r"The answer is $\boxed{109}$."),
+],
 })
 
 def esc(x, quote=True):
