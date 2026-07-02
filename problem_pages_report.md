@@ -1,20 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 1797
-- Latest batch: 246 (2019 AMC 12A Problem 24)
-- Latest new generated count: 1
+- Total manifest entries: 1806
+- Latest batch: 247 (2019 AMC 12B Problems 1-9)
+- Latest new generated count: 9
 - Latest updated existing count: 0
-- Latest skipped count: 4
+- Latest skipped count: 1
 - MathJax validation: passed
-- Answer verification source: AoPS 2019 AMC 12A Answer Key
+- Answer verification source: https://artofproblemsolving.com/wiki/index.php/2019_AMC_12B_Answer_Key
 
 ## Latest Batch Pages
 
-- `2019 AMC 12A Problem 24` -> `amc12/problems/2019-amc-12a-problem-24/`
+- `2019 AMC 12B Problem 1` -> `amc12/problems/2019-amc-12b-problem-1/`
+- `2019 AMC 12B Problem 2` -> `amc12/problems/2019-amc-12b-problem-2/`
+- `2019 AMC 12B Problem 3` -> `amc12/problems/2019-amc-12b-problem-3/`
+- `2019 AMC 12B Problem 4` -> `amc12/problems/2019-amc-12b-problem-4/`
+- `2019 AMC 12B Problem 5` -> `amc12/problems/2019-amc-12b-problem-5/`
+- `2019 AMC 12B Problem 6` -> `amc12/problems/2019-amc-12b-problem-6/`
+- `2019 AMC 12B Problem 7` -> `amc12/problems/2019-amc-12b-problem-7/`
+- `2019 AMC 12B Problem 8` -> `amc12/problems/2019-amc-12b-problem-8/`
+- `2019 AMC 12B Problem 9` -> `amc12/problems/2019-amc-12b-problem-9/`
 
 ## Skipped in latest batch
 
-- 2019 AMC 12A Problem 21: source text is severely OCR-truncated; skipped
-- 2019 AMC 12A Problem 22: circle/triangle geometry statement is OCR-damaged and diagram-sensitive; skipped
-- 2019 AMC 12A Problem 23: operation definitions are OCR-ambiguous; skipped
-- 2019 AMC 12A Problem 25: iterative altitude geometry requires high-risk derivation; skipped
+- 2019 AMC 12B Problem 10: route-counting map problem depends on the missing graph; skipped

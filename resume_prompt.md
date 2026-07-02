@@ -1,11 +1,8 @@
 请继续 STEMHUB AMC problem teaching pages 批量生成任务。
 
-当前状态：Batch 246 已生成/更新并通过本地脚本验证；最新范围为 2019 AMC 12A Problem 24。
+当前状态：Batch 247 已生成/更新并通过本地脚本验证；最新范围为 2019 AMC 12B Problems 1-9。
 本批跳过题：
-- 2019 AMC 12A Problem 21: source text is severely OCR-truncated; skipped
-- 2019 AMC 12A Problem 22: circle/triangle geometry statement is OCR-damaged and diagram-sensitive; skipped
-- 2019 AMC 12A Problem 23: operation definitions are OCR-ambiguous; skipped
-- 2019 AMC 12A Problem 25: iterative altitude geometry requires high-risk derivation; skipped
-下一批从 2019 AMC 12B Problem 1 开始。
+- 2019 AMC 12B Problem 10: route-counting map problem depends on the missing graph; skipped
+下一批从 2019 AMC 12B Problem 11 开始。
 
 继续策略：每批生成 5-10 道可靠题；遇到图形缺失或 OCR 不可靠就记录并跳过；验证 MathJax、详情链接和 teaching steps 后 commit/push。

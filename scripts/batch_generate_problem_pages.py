@@ -3,20 +3,18 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 246
+BATCH_NUMBER = 247
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2019_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {24}
+FORM = "B"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2019_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9}
 SKIPPED = [
-    "2019 AMC 12A Problem 21: source text is severely OCR-truncated; skipped",
-    "2019 AMC 12A Problem 22: circle/triangle geometry statement is OCR-damaged and diagram-sensitive; skipped",
-    "2019 AMC 12A Problem 23: operation definitions are OCR-ambiguous; skipped",
-    "2019 AMC 12A Problem 25: iterative altitude geometry requires high-risk derivation; skipped",
+    "2019 AMC 12B Problem 10: route-counting map problem depends on the missing graph; skipped",
 ]
-BATCH_LABEL = "2019 AMC 12A Problem 24"
-NEXT_START = "2019 AMC 12B Problem 1"
+BATCH_LABEL = "2019 AMC 12B Problems 1-9"
+NEXT_START = "2019 AMC 12B Problem 11"
 
-ANS={24:("D","34")}
+ANS={1:("D",r"\frac9{10}"),2:("E","27"),3:("E","180-degree rotation about the origin"),4:("C","10"),5:("B","21"),6:("A","0"),7:("A","-5"),8:("A","0"),9:("B","59")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4402,6 +4400,42 @@ SOL.update({
 ],
 })
 
+OV.update({
+1:(r"Alicia had two containers. The first was $\frac56$ full of water and the second was empty. She poured all the water from the first container into the second container, at which point the second container was $\frac34$ full of water. What is the ratio of the volume of the first container to the volume of the second container?",[("A",r"$\frac58$"),("B",r"$\frac45$"),("C",r"$\frac78$"),("D",r"$\frac9{10}$"),("E",r"$\frac{11}{12}$")]),
+2:(r"Consider the statement, \"If $n$ is not prime, then $n-2$ is prime.\" Which of the following values of $n$ is a counterexample to this statement?",[("A","11"),("B","15"),("C","19"),("D","21"),("E","27")]),
+3:(r"Which one of the following rigid transformations maps the line segment $AB$ onto the line segment $A'B'$ so that the image of $A(-2,1)$ is $A'(2,-1)$ and the image of $B(-1,4)$ is $B'(1,-4)$?",[("A","reflection in the $y$-axis"),("B",r"counterclockwise rotation around the origin by $90^\circ$"),("C","translation by $3$ units to the right and $5$ units down"),("D","reflection in the $x$-axis"),("E",r"clockwise rotation about the origin by $180^\circ$")]),
+4:(r"A positive integer $n$ satisfies the equation \[(n+1)!+(n+2)!=n!\cdot440.\] What is the sum of the digits of $n$?",[("A","2"),("B","5"),("C","10"),("D","12"),("E","15")]),
+5:(r"Each piece of candy in a store costs a whole number of cents. Casper has exactly enough money to buy either $12$ pieces of red candy, $14$ pieces of green candy, $15$ pieces of blue candy, or $n$ pieces of purple candy. A piece of purple candy costs $20$ cents. What is the smallest possible value of $n$?",[("A","18"),("B","21"),("C","24"),("D","25"),("E","28")]),
+6:(r"In a given plane, points $A$ and $B$ are $10$ units apart. How many points $C$ are there in the plane such that the perimeter of $\triangle ABC$ is $50$ units and the area of $\triangle ABC$ is $100$ square units?",[("A","0"),("B","2"),("C","4"),("D","8"),("E","infinitely many")]),
+7:(r"What is the sum of all real numbers $x$ for which the median of the numbers $4,6,8,17,$ and $x$ is equal to the mean of those five numbers?",[("A","-5"),("B","0"),("C","5"),("D","15"),("E","35")]),
+8:(r"Let $f(x)=x^2(1-x)^2$. What is the value of the sum \[f\left(\frac1{2019}\right)-f\left(\frac2{2019}\right)+f\left(\frac3{2019}\right)-f\left(\frac4{2019}\right)+\cdots+f\left(\frac{2017}{2019}\right)-f\left(\frac{2018}{2019}\right)?\]",[("A","0"),("B","1"),("C",r"$\frac{2018^2}{2019^4}$"),("D",r"$\frac{2020^2}{2019^4}$"),("E",r"$\frac1{2019^4}$")]),
+9:(r"For how many integral values of $x$ can a triangle of positive area be formed having side lengths $\log_2 x$, $\log_4 x$, and $3$?",[("A","57"),("B","59"),("C","61"),("D","62"),("E","63")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Represent the transferred water in terms of each container's volume.",
+2:"A counterexample must make the hypothesis true and the conclusion false.",
+3:"Match both coordinates under each rigid transformation.",
+4:"Factor out n factorial and solve the resulting quadratic equation.",
+5:"Use least common multiples to find the smallest possible total amount of money.",
+6:"Use the area to find the required height, then compare with the perimeter constraint.",
+7:"Break the median condition into cases based on where x fits in the ordered list.",
+8:"Pair symmetric inputs using f(x)=f(1-x).",
+9:"Convert the logarithms to one variable and apply the triangle inequality.",
+})
+
+SOL.update({
+1:[("Name the container volumes",r"Let the volume of the first container be $V_1$ and the volume of the second container be $V_2$. The actual amount of water does not change when Alicia pours it from one container to the other."),("Write the water amount two ways",r"The first container was $\frac56$ full, so the water amount was $\frac56V_1$. After pouring, that same amount made the second container $\frac34$ full, so it was also $\frac34V_2$."),("Set the expressions equal",r"We have \[\frac56V_1=\frac34V_2.\] The ratio can now be found without knowing either actual volume."),("Solve for the requested ratio",r"Divide both sides by $V_2$ and multiply by $\frac65$: \[\frac{V_1}{V_2}=\frac34\cdot\frac65=\frac9{10}.\]"),("Conclude",r"The ratio of the first container's volume to the second container's volume is $\boxed{\frac9{10}}$."),],
+2:[("Recall what a counterexample means",r"A counterexample to an if-then statement must make the hypothesis true but the conclusion false. Here that means $n$ should not be prime, while $n-2$ should also not be prime."),("Test the answer choices for the hypothesis",r"The values $11$ and $19$ are prime, so they do not even satisfy the hypothesis. The composite choices are $15$, $21$, and $27$."),("Check the conclusion for the composite choices",r"For $n=15$, $n-2=13$, which is prime. For $n=21$, $n-2=19$, which is prime. For $n=27$, $n-2=25$, which is not prime."),("Identify the counterexample",r"The statement predicts that $25$ should be prime, but it is not. That is exactly the failure we need."),("Conclude",r"The counterexample is $\boxed{27}$."),],
+3:[("Look for the coordinate rule",r"The point $A(-2,1)$ goes to $(2,-1)$. Both coordinates changed sign. The same happens for $B(-1,4)$, which goes to $(1,-4)$."),("Recognize the transformation",r"The rule \[(x,y)\mapsto(-x,-y)\] is a rotation by $180^\circ$ about the origin. It is not a reflection in one axis, because both coordinates change sign."),("Check both endpoints",r"Applying the rule to $A$ gives \[(-2,1)\mapsto(2,-1),\] and applying it to $B$ gives \[(-1,4)\mapsto(1,-4).\] Both match the required images."),("Use rigidity",r"A rigid transformation is determined by how it moves the endpoints of the segment here, so this transformation maps the whole segment correctly."),("Conclude",r"The answer is $\boxed{\text{E}}$, a $180^\circ$ rotation about the origin."),],
+4:[("Factor out the common factorial",r"The terms $(n+1)!$ and $(n+2)!$ both contain a factor of $n!$. Writing them in terms of $n!$ gives \[(n+1)!=(n+1)n!,\quad (n+2)!=(n+2)(n+1)n!.\]"),("Cancel n factorial",r"The equation becomes \[n!\big((n+1)+(n+2)(n+1)\big)=440n!.\] Since $n!$ is nonzero, divide it out."),("Simplify the equation",r"The remaining equation is \[(n+1)(1+n+2)=440,\] so \[(n+1)(n+3)=440.\]"),("Find n",r"We need two positive factors of $440$ that differ by $2$. The pair is $20$ and $22$, so $n+1=20$ and $n=19$."),("Answer the actual question",r"The sum of the digits of $19$ is \[1+9=10.\] The answer is $\boxed{10}$."),],
+5:[("Think about the total amount of money",r"Let Casper's total amount of money be $M$ cents. Since each candy price is a whole number of cents, $M$ must be divisible by $12$, by $14$, and by $15$."),("Find the smallest possible shared total",r"The least common multiple is \[\operatorname{lcm}(12,14,15)=2^2\cdot3\cdot5\cdot7=420.\] So the smallest possible total that works for red, green, and blue candy is $420$ cents."),("Include the purple candy condition",r"Purple candy costs $20$ cents each, so $M=20n$. We need the smallest multiple of $420$ that is also a multiple of $20$."),("Compute n",r"The value $420$ itself is divisible by $20$? It gives \[420\div20=21,\] which is an integer. Therefore $n=21$ is possible."),("Conclude",r"The smallest possible value of $n$ is $\boxed{21}$."),],
+6:[("Use the area first",r"The base $AB$ has length $10$, and the area is $100$. If $h$ is the perpendicular distance from $C$ to line $AB$, then \[\frac12\cdot10\cdot h=100,\] so $h=20$."),("Translate the perimeter condition",r"The perimeter is $50$, and $AB=10$, so the other two sides must satisfy \[AC+BC=40.\]"),("Find the smallest possible AC plus BC at height 20",r"Among points at distance $20$ from line $AB$, the sum $AC+BC$ is minimized when $C$ lies above the midpoint of $AB$. Then each of $AC$ and $BC$ has length \[\sqrt{20^2+5^2}=\sqrt{425}.\]"),("Compare with the required sum",r"The minimum possible sum is \[2\sqrt{425}=10\sqrt{17},\] which is greater than $40$ because $\sqrt{17}>4$."),("Conclude",r"The sides $AC$ and $BC$ cannot have sum $40$, so there are $\boxed{0}$ possible points $C$."),],
+7:[("Write the mean",r"The mean of the five numbers is \[\frac{4+6+8+17+x}{5}=\frac{35+x}{5}.\] The median depends on where $x$ falls in the ordered list."),("Case 1: x is at most 6",r"If $x\le6$, the middle number is $6$. Setting mean equal to median gives \[\frac{35+x}{5}=6,\] so $x=-5$, which fits this case."),("Case 2: x is between 6 and 8",r"If $6\le x\le8$, then $x$ is the median. The equation becomes \[\frac{35+x}{5}=x,\] so $35=4x$ and $x=\frac{35}{4}$, which is not in the interval."),("Case 3: x is at least 8",r"If $x\ge8$, the median is $8$. Then \[\frac{35+x}{5}=8,\] so $x=5$, which does not fit $x\ge8$."),("Add the valid values",r"The only valid value is $x=-5$, so the requested sum is $\boxed{-5}$."),],
+8:[("Notice the symmetry of f",r"The function satisfies \[f(1-x)=(1-x)^2x^2=f(x).\] So inputs that add to $1$ give equal function values."),("Pair terms in the sum",r"The terms use fractions \[\frac1{2019},\frac2{2019},\ldots,\frac{2018}{2019}.\] The fraction $\frac{k}{2019}$ pairs with \[\frac{2019-k}{2019}=1-\frac{k}{2019}.\]"),("Check the signs",r"Because $2019$ is odd, the paired indices $k$ and $2019-k$ have opposite parity. Therefore their signs in the alternating sum are opposite."),("Cancel each pair",r"For each pair, the two function values are equal but have opposite signs, so they cancel."),("Conclude",r"All terms cancel in pairs, and the sum is $\boxed{0}$."),],
+9:[("Use one logarithm variable",r"Let \[a=\log_2 x.\] Then \[\log_4 x=\frac{\log_2 x}{\log_2 4}=\frac a2.\] The side lengths are $a$, $\frac a2$, and $3$."),("Apply the triangle inequalities",r"For a triangle of positive area, the sum of any two side lengths must be greater than the third. The two important inequalities are \[\frac a2+3>a\quad\text{and}\quad a+\frac a2>3.\]"),("Solve the inequalities",r"The first inequality gives $a<6$. The second gives \[\frac{3a}{2}>3,\] so $a>2$."),("Return to x",r"Thus \[2<\log_2 x<6.\] This means \[2^2<x<2^6,\] or \[4<x<64.\]"),("Count integral x",r"The integer values are $5,6,\ldots,63$, which gives \[63-5+1=59\] values. The answer is $\boxed{59}$."),],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -4508,7 +4542,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2019" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2019" and r["form"] == FORM and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -4597,7 +4631,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2019 AMC 12A Answer Key\n\n"
+        + f"- Answer verification source: {ANSWER_KEY_URL}\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
