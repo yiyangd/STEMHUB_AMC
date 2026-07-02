@@ -3,19 +3,19 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 239
+BATCH_NUMBER = 240
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2018_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {12,13,14,15,16,18,19}
+TARGET_NUMBERS = {21,24}
 SKIPPED = [
-    "2018 AMC 12A Problem 11: folded triangle crease length requires original diagram; skipped",
-    "2018 AMC 12A Problem 17: OCR ambiguity in square-to-hypotenuse distance; skipped",
-    "2018 AMC 12A Problem 20: cyclic quadrilateral in isosceles right triangle is geometry high risk; skipped",
+    "2018 AMC 12A Problem 22: complex square-root parallelogram area high risk; skipped",
+    "2018 AMC 12A Problem 23: angle geometry requires a dedicated derivation; skipped",
+    "2018 AMC 12A Problem 25: repeated-digit equation requires long number-theory proof; skipped",
 ]
-BATCH_LABEL = "2018 AMC 12A Problems 12-16, 18-19"
-NEXT_START = "2018 AMC 12A Problem 21"
+BATCH_LABEL = "2018 AMC 12A Problems 21, 24"
+NEXT_START = "2018 AMC 12B Problem 1"
 
-ANS={12:("C","4"),13:("D","3281"),14:("D",r"\frac4{27}"),15:("B","1022"),16:("E",r"a>\frac12"),18:("D","75"),19:("C","19")}
+ANS={21:("B",r"x^{17}+2018x^{11}+1"),24:("B",r"\frac{13}{24}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3992,6 +3992,35 @@ SOL.update({
 ("Evaluate the geometric series",r"These sums are \[2,\quad \frac32,\quad \frac54.\]"),
 ("Multiply",r"The total is \[2\cdot\frac32\cdot\frac54=\frac{15}{4}.\]"),
 ("Conclude",r"Thus \(m+n=15+4=\boxed{19}\)."),
+],
+})
+
+OV.update({
+21:(r"Which of the following polynomials has the greatest real root?",[("A",r"$x^{19}+2018x^{11}+1$"),("B",r"$x^{17}+2018x^{11}+1$"),("C",r"$x^{19}+2018x^{13}+1$"),("D",r"$x^{17}+2018x^{13}+1$"),("E",r"$2019x+2018$")]),
+24:(r"Alice, Bob, and Carol play a game in which each chooses a real number. The winner is the one whose number is between the other two. Alice chooses uniformly at random from \([0,1]\), and Bob chooses uniformly at random from \(\left[\frac12,\frac23\right]\). What number should Carol choose to maximize her chance of winning?",[("A",r"$\frac12$"),("B",r"$\frac{13}{24}$"),("C",r"$\frac{7}{12}$"),("D",r"$\frac58$"),("E",r"$\frac23$")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Compare the negative roots by substituting x equals negative t.",
+24:"Write Carol's win probability as a function of her chosen number and maximize it.",
+})
+
+SOL.update({
+21:[
+("Notice roots must be negative",r"For the first four polynomials, every term is positive when \(x>0\), so there are no positive real roots. Since the degrees are odd and the leading terms dominate negatively as \(x\to-\infty\), each has one negative real root."),
+("Substitute x equals negative t",r"Let \(x=-t\) with \(t>0\). For choice B, for example, the root condition becomes \[t^{17}+2018t^{11}=1,\] or \[t^{11}(t^6+2018)=1.\] The greatest real root corresponds to the smallest positive \(t\)."),
+("Compare A and B",r"For \(0<t<1\), we have \(t^6>t^8\). Therefore \[t^{11}(2018+t^6)>t^{11}(2018+t^8),\] so choice B reaches \(1\) at a smaller \(t\) than choice A."),
+("Compare B with C and D",r"Choices C and D have a factor \(t^{13}\) instead of \(t^{11}\). For \(0<t<1\), this makes the expression smaller. More directly, \[t^{11}(2018+t^6)>t^{13}(2018+t^4),\] so B also reaches \(1\) at a smaller \(t\) than D, and hence than C."),
+("Compare with the linear option",r"Choice E has root \(-\frac{2018}{2019}\), which is close to \(-1\). The root from choice B has \(t^{11}\approx\frac1{2018}\), so \(t\) is much less than $1$; its root is closer to \(0\)."),
+("Conclude",r"The polynomial with the greatest real root is \(\boxed{x^{17}+2018x^{11}+1}\)."),
+],
+24:[
+("Let Carol choose c",r"Carol's number \(c\) should lie in Bob's interval \(\left[\frac12,\frac23\right]\); outside that interval the winning probability is only linear and is not optimal."),
+("Write the two ways Carol can win",r"Carol wins if Alice chooses below \(c\) and Bob chooses above \(c\), or if Bob chooses below \(c\) and Alice chooses above \(c\)."),
+("Compute probabilities in the middle interval",r"For \(\frac12\le c\le\frac23\), Alice is below \(c\) with probability \(c\), and above \(c\) with probability \(1-c\). Bob's interval length is \(\frac16\), so Bob is above \(c\) with probability \(6\left(\frac23-c\right)\), and below \(c\) with probability \(6\left(c-\frac12\right)\)."),
+("Build the win probability",r"Thus \[P(c)=6c\left(\frac23-c\right)+6\left(c-\frac12\right)(1-c).\] Simplifying, \[P(c)=-12c^2+13c-3.\]"),
+("Maximize the quadratic",r"This downward-opening quadratic is maximized at \[c=\frac{-13}{2(-12)}=\frac{13}{24}.\] This value lies between \(\frac12\) and \(\frac23\)."),
+("Conclude",r"Carol should choose \(\boxed{\frac{13}{24}}\)."),
 ],
 })
 
