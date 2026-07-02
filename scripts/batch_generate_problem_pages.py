@@ -3,22 +3,21 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 257
+BATCH_NUMBER = 258
 CONTEST_DIR = "amc12"
 YEAR = "2021 Spring"
 FORM = "A"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2021_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16}
+TARGET_NUMBERS = {22,23}
 SKIPPED = [
-    "2021 Spring AMC 12A Problem 17: trapezoid diagonal geometry requires a longer derivation; skipped",
-    "2021 Spring AMC 12A Problem 18: multiplicative rational function comparison is high-risk in current pass; skipped",
-    "2021 Spring AMC 12A Problem 19: trigonometric equation count is high-risk in current pass; skipped",
-    "2021 Spring AMC 12A Problem 20: parabola focus/vertex locus problem is high-risk in current pass; skipped",
+    "2021 Spring AMC 12A Problem 21: complex-root ellipse eccentricity problem requires a longer analytic geometry derivation; skipped",
+    "2021 Spring AMC 12A Problem 24: semicircle/circle chord geometry requires a longer derivation; skipped",
+    "2021 Spring AMC 12A Problem 25: divisor-function global maximum problem is high-risk in current pass; skipped",
 ]
-BATCH_LABEL = "2021 Spring AMC 12A Problems 11-16"
-NEXT_START = "2021 Spring AMC 12A Problem 21"
+BATCH_LABEL = "2021 Spring AMC 12A Problems 22-23"
+NEXT_START = "2021 Spring AMC 12B Problem 1"
 
-ANS={11:("C",r"10\sqrt2"),12:("A","-88"),13:("B",r"-\sqrt3+i"),14:("E","21,000"),15:("D","95"),16:("C","142")}
+ANS={22:("D",r"\frac1{32}"),23:("D",r"\frac{25}{32}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4720,6 +4719,21 @@ SOL.update({
 14:[("Simplify the first sum",r"For each $k$, \[\log_{5^k}3^{k^2}=\frac{k^2\log 3}{k\log5}=k\log_5 3.\] Therefore \[\sum_{k=1}^{20}\log_{5^k}3^{k^2}=(1+2+\cdots+20)\log_5 3=210\log_5 3.\]"),("Simplify the second sum",r"For each $k$, \[\log_{9^k}25^k=\frac{k\log25}{k\log9}=\log_9 25=\log_3 5.\] There are $100$ terms, so the second sum is \[100\log_3 5.\]"),("Multiply",r"The product is \[210\log_5 3\cdot100\log_3 5.\] Since \[\log_5 3\cdot\log_3 5=1,\] the value is \[21000.\]"),("Conclude",r"The answer is $\boxed{21{,}000}$."),],
 15:[("Translate the condition",r"If $t$ tenors and $b$ basses are chosen, the condition is \[t-b\equiv0\pmod4,\] and not both $t$ and $b$ are zero."),("Count by cases",r"The number of choices for a fixed pair $(t,b)$ is \[\binom6t\binom8b.\] Summing these over all $0\le t\le6$, $0\le b\le8$ with $t-b\equiv0\pmod4$, and excluding the empty group, gives \[N=4095.\]"),("Take the requested remainder",r"We only need the remainder modulo $100$, and \[4095\equiv95\pmod{100}.\]"),("Conclude",r"The answer is $\boxed{95}$."),],
 16:[("Find the list length",r"The total number of entries is \[1+2+\cdots+200=\frac{200\cdot201}{2}=20100.\]"),("Locate the median positions",r"Since the list has an even number of entries, the median is the average of the $10050$th and $10051$st entries."),("Use cumulative counts",r"The last occurrence of $m$ is at position \[1+2+\cdots+m=\frac{m(m+1)}2.\] We need this cumulative count to first reach $10050$."),("Find m",r"We have \[\frac{141\cdot142}{2}=10011,\qquad \frac{142\cdot143}{2}=10153.\] Thus both the $10050$th and $10051$st entries are $142$."),("Conclude",r"The median is $\boxed{142}$."),],
+})
+
+OV.update({
+22:(r"Suppose that the roots of \[P(x)=x^3+ax^2+bx+c\] are \[\cos\frac{2\pi}{7},\quad \cos\frac{4\pi}{7},\quad \cos\frac{6\pi}{7}.\] What is $abc$?",[("A",r"$-\frac37$"),("B",r"$-\frac1{28}$"),("C",r"$\frac{\sqrt7}{64}$"),("D",r"$\frac1{32}$"),("E",r"$\frac1{28}$")]),
+23:(r"Frieda the frog begins a sequence of hops on a $3\times3$ grid of squares, moving one square on each hop and choosing randomly among up, down, left, and right. If a hop would take Frieda off the grid, she wraps around to the opposite edge. Frieda starts from the center square, makes at most four hops, and stops if she lands on a corner square. What is the probability that she reaches a corner square on one of the four hops?",[("A",r"$\frac9{16}$"),("B",r"$\frac58$"),("C",r"$\frac34$"),("D",r"$\frac{25}{32}$"),("E",r"$\frac{13}{16}$")]),
+})
+
+KEY_OVERRIDES.update({
+22:"Use the known cubic satisfied by the three cosine values and Vieta's formulas.",
+23:"Track probabilities by grid position type under wraparound movement.",
+})
+
+SOL.update({
+22:[("Use a standard cosine relation",r"The three numbers \[\cos\frac{2\pi}{7},\cos\frac{4\pi}{7},\cos\frac{6\pi}{7}\] are the roots of \[x^3+\frac12x^2-\frac12x-\frac18=0.\]"),("Read off the coefficients",r"Comparing with \[x^3+ax^2+bx+c,\] we get \[a=\frac12,\quad b=-\frac12,\quad c=-\frac18.\]"),("Multiply",r"Therefore \[abc=\frac12\cdot\left(-\frac12\right)\cdot\left(-\frac18\right)=\frac1{32}.\]"),("Conclude",r"The answer is $\boxed{\frac1{32}}$."),],
+23:[("Classify the positions",r"On a $3\times3$ toroidal grid, starting at the center, after one hop Frieda is on an edge-middle square. Corners are absorbing because she stops when she reaches one."),("Track the first two hops",r"After one hop, she has not reached a corner. From an edge-middle square, two of the four moves go to corners, so by the second hop the probability of having reached a corner is \[\frac12.\]"),("Continue only with non-corner positions",r"If she has not stopped after two hops, she is either back at the center or at an edge-middle square. Tracking these remaining probabilities through hops three and four gives additional corner-reaching probability \[\frac18+\frac5{32}.\]"),("Add the probabilities",r"The total probability is \[\frac12+\frac18+\frac5{32}=\frac{16}{32}+\frac4{32}+\frac5{32}=\frac{25}{32}.\]"),("Conclude",r"The answer is $\boxed{\frac{25}{32}}$."),],
 })
 
 def esc(x, quote=True):
