@@ -3,19 +3,19 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 236
+BATCH_NUMBER = 237
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2017_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {11,12,14,15,16,19,20}
+TARGET_NUMBERS = {21,23}
 SKIPPED = [
-    "2017 AMC 12B Problem 13: disk-coloring figure is required; skipped",
-    "2017 AMC 12B Problem 17: local CSV statement is truncated; skipped",
-    "2017 AMC 12B Problem 18: circle geometry setup is diagram-sensitive; skipped",
+    "2017 AMC 12B Problem 22: four-player coin-transfer probability is high-risk for unattended derivation; skipped",
+    "2017 AMC 12B Problem 24: similar-triangle quadrilateral geometry is diagram-sensitive; skipped",
+    "2017 AMC 12B Problem 25: tournament subset-average combinatorics requires a long proof; skipped",
 ]
-BATCH_LABEL = "2017 AMC 12B Problems 11,12,14,15,16,19,20"
-NEXT_START = "2017 AMC 12B Problem 21"
+BATCH_LABEL = "2017 AMC 12B Problems 21, 23"
+NEXT_START = "2018 AMC 12A Problem 1"
 
-ANS={11:("B","1524"),12:("D",r"2\sqrt2+\sqrt6"),14:("E",r"\frac{44\pi}{3}"),15:("E","37:1"),16:("B",r"\frac1{19}"),19:("C","9"),20:("D",r"\frac13")}
+ANS={21:("E","100"),23:("D",r"\frac{24}{5}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3800,6 +3800,36 @@ SOL.update({
 ("Use independence",r"The probability that both \(x\) and \(y\) land in the same interval for a fixed \(k\) is \[(2^{-k})^2=4^{-k}.\]"),
 ("Sum over k",r"The desired probability is \[\sum_{k=1}^{\infty}4^{-k}=\frac{1/4}{1-1/4}=\frac13.\]"),
 ("Conclude",r"The answer is \[\boxed{\frac13}.\]"),
+],
+})
+
+OV.update({
+21:(r"Last year Isabella took $7$ math tests and received $7$ different scores, each an integer between $91$ and $100$, inclusive. After each test she noticed that the average of her test scores was an integer. Her score on the seventh test was $95$. What was her score on the sixth test?",[("A","92"),("B","94"),("C","96"),("D","98"),("E","100")]),
+23:(r"The graph of \(y=f(x)\), where \(f(x)\) is a polynomial of degree $3$, contains points \(A(2,4)\), \(B(3,9)\), and \(C(4,16)\). Lines \(AB\), \(AC\), and \(BC\) intersect the graph again at points \(D\), \(E\), and \(F\), respectively, and the sum of the \(x\)-coordinates of \(D\), \(E\), and \(F\) is \(24\). What is \(f(0)\)?",[("A","-2"),("B","0"),("C","2"),("D",r"$\frac{24}{5}$"),("E","8")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Use divisibility of running sums after the sixth and seventh tests.",
+23:"Compare the cubic to x squared, since the three given points lie on y equals x squared.",
+})
+
+SOL.update({
+21:[
+("Use running sums",r"Let \(S_k\) be the sum of Isabella's first \(k\) scores. The condition says \(S_k\) is divisible by \(k\) for each \(k=1,2,\ldots,7\)."),
+("Use the seventh score",r"Her seventh score was $95$, so \[S_6=S_7-95.\] Also \(S_7\) is divisible by $7$, and \(S_6\) is divisible by $6$."),
+("Find the possible total",r"The sum of seven distinct scores between $91$ and $100$ is between \[91+92+\cdots+97=658\] and \[94+95+\cdots+100=679.\] The multiples of $7$ in this range are \(665,672,679\)."),
+("Use divisibility by 6",r"Since \(S_6=S_7-95\) must be divisible by $6$, we need \[S_7\equiv95\equiv5\pmod6.\] Among \(665,672,679\), only \(665\) is congruent to \(5\pmod6\). Thus \(S_7=665\) and \(S_6=570\)."),
+("Use the fifth average",r"The fifth running sum \(S_5\) is divisible by $5$. If the sixth score is \(t\), then \[S_5=570-t.\] Therefore \(t\equiv570\equiv0\pmod5.\]"),
+("Choose the available score",r"The sixth score is an integer between $91$ and $100$, distinct from the seventh score $95$. The only possible multiple of $5$ is therefore \(100\)."),
+("Conclude",r"Her sixth test score was $\boxed{100}$."),
+],
+23:[
+("Notice the three given points",r"The points \((2,4)\), \((3,9)\), and \((4,16)\) all lie on the parabola \(y=x^2\). This suggests writing the cubic as \[f(x)=x^2+k(x-2)(x-3)(x-4).\]"),
+("Find the third intersection with AB",r"Line \(AB\) is the same as the secant line to \(y=x^2\) through \(x=2\) and \(x=3\). Thus \(f(x)-\text{line }AB\) has factors \((x-2)(x-3)\). The third root is determined by \[1+k(x-4)=0,\] so its \(x\)-coordinate is \[4-\frac1k.\]"),
+("Do the same for the other secants",r"Similarly, the third intersection for line \(AC\) has \(x\)-coordinate \[3-\frac1k,\] and the third intersection for line \(BC\) has \(x\)-coordinate \[2-\frac1k.\]"),
+("Use the given sum",r"The sum of the three \(x\)-coordinates is \[\left(4-\frac1k\right)+\left(3-\frac1k\right)+\left(2-\frac1k\right)=9-\frac3k.\] This equals $24$, so \[-\frac3k=15,\quad k=-\frac15.\]"),
+("Evaluate f at 0",r"Now \[f(0)=0^2-\frac15(0-2)(0-3)(0-4).\] The product is \((-2)(-3)(-4)=-24\), so \[f(0)=\frac{24}{5}.\]"),
+("Conclude",r"The answer is \[\boxed{\frac{24}{5}}.\]"),
 ],
 })
 

@@ -3836,3 +3836,19 @@
 - Pushed: pending
 - Next batch should start from: 2017 AMC 12B Problem 21
 - Review notes: none.
+
+## Batch 237: 2017 AMC 12B Problems 21, 23
+
+- Start time: 2026-07-02T00:41:01-07:00
+- End time: 2026-07-02T00:41:02-07:00
+- Processed contest: AMC12
+- Processed range: 2017 AMC 12B Problems 21, 23
+- Generated count: 2
+- Updated existing count: 0
+- Skipped count: 3
+- Skipped reasons: 2017 AMC 12B Problem 22: four-player coin-transfer probability is high-risk for unattended derivation; skipped; 2017 AMC 12B Problem 24: similar-triangle quadrilateral geometry is diagram-sensitive; skipped; 2017 AMC 12B Problem 25: tournament subset-average combinatorics requires a long proof; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2018 AMC 12A Problem 1
+- Review notes: none.
