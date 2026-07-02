@@ -3788,3 +3788,19 @@
 - Pushed: pending
 - Next batch should start from: 2017 AMC 12A Problem 21
 - Review notes: none.
+
+## Batch 234: 2017 AMC 12A Problems 21, 23
+
+- Start time: 2026-07-02T00:34:26-07:00
+- End time: 2026-07-02T00:34:27-07:00
+- Processed contest: AMC12
+- Processed range: 2017 AMC 12A Problems 21, 23
+- Generated count: 2
+- Updated existing count: 0
+- Skipped count: 3
+- Skipped reasons: 2017 AMC 12A Problem 22: random-walk hitting probability needs a dedicated Markov derivation; skipped; 2017 AMC 12A Problem 24: cyclic quadrilateral construction is diagram/OCR high risk; skipped; 2017 AMC 12A Problem 25: complex-product probability statement is OCR-damaged; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2017 AMC 12B Problem 1
+- Review notes: none.

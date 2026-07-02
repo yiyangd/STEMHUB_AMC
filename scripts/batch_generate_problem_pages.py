@@ -3,17 +3,19 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 233
+BATCH_NUMBER = 234
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2017_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,17,18,19,20}
+TARGET_NUMBERS = {21,23}
 SKIPPED = [
-    "2017 AMC 12A Problem 16: tangent semicircle diagram required; skipped",
+    "2017 AMC 12A Problem 22: random-walk hitting probability needs a dedicated Markov derivation; skipped",
+    "2017 AMC 12A Problem 24: cyclic quadrilateral construction is diagram/OCR high risk; skipped",
+    "2017 AMC 12A Problem 25: complex-product probability statement is OCR-damaged; skipped",
 ]
-BATCH_LABEL = "2017 AMC 12A Problems 11-15, 17-20"
-NEXT_START = "2017 AMC 12A Problem 21"
+BATCH_LABEL = "2017 AMC 12A Problems 21, 23"
+NEXT_START = "2017 AMC 12B Problem 1"
 
-ANS={11:("D","143"),12:("B","3"),13:("B","135"),14:("C","28"),15:("D","(3,4)"),17:("D","12"),18:("D","1239"),19:("D",r"\frac{37}{35}"),20:("E","597")}
+ANS={21:("D","9"),23:("C","-7007")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3600,6 +3602,37 @@ SOL.update({
 ("Convert back to a",r"For each allowed integer base \(b\), each real value of \(x\) gives exactly one positive value \(a=b^x\)."),
 ("Count bases",r"The integer \(b\) can be any value from $2$ through $200$, inclusive, giving \(199\) choices. With $3$ choices of \(x\) for each base, the total is \[3\cdot199=597.\]"),
 ("Conclude",r"The answer is $\boxed{597}$."),
+],
+})
+
+OV.update({
+21:(r"A set $S$ is constructed as follows. To begin, $S=\{0,10\}$. Repeatedly, as long as possible, if $x$ is an integer root of some polynomial \[a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\] for some $n\ge1$, all of whose coefficients $a_i$ are elements of $S$, then $x$ is put into $S$. When no more elements can be added to $S$, how many elements does $S$ have?",[("A","4"),("B","5"),("C","7"),("D","9"),("E","11")]),
+23:(r"For certain real numbers $a$, $b$, and $c$, the polynomial \[g(x)=x^3+ax^2+x+10\] has three distinct roots, and each root of $g(x)$ is also a root of \[f(x)=x^4+x^3+bx^2+100x+c.\] What is $f(1)$?",[("A","-9009"),("B","-8008"),("C","-7007"),("D","-6006"),("E","-5005")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Use the rational root theorem and construct the closure step by step.",
+23:"Since the cubic has three distinct roots shared by the quartic, divide the quartic by the cubic.",
+})
+
+SOL.update({
+21:[
+("Start with a guaranteed new root",r"Using coefficients from \(S=\{0,10\}\), the polynomial \(10x+10\) is allowed. Its integer root is \(-1\), so \(-1\) must be added to \(S\)."),
+("Use the rational root theorem",r"Any nonzero integer root of a polynomial with integer coefficients must divide the constant term. Since all constant terms must come from the current set \(S\), possible new roots are restricted to divisors of elements already in \(S\)."),
+("Generate more roots",r"With \(-1\) available, the polynomial \[-x^4-x^3-x^2-x+10\] has root \(-2\), and \[-x^3-x+10\] has root \(2\). Thus \(-2\) and \(2\) enter the set."),
+("Generate divisors of 10",r"Now coefficients \(-2\) and \(2\) are available. The polynomials \(2x+10\), \(2x-2\), and \(-2x+10\) give roots \(-5\), \(1\), and \(5\), respectively."),
+("Add the last possible divisor",r"With \(1\) available, the polynomial \(x+10\) gives root \(-10\). At this point the set contains \[\{-10,-5,-2,-1,0,1,2,5,10\}.\]"),
+("Show the process stops",r"The nonzero elements now all divide \(10\). Any future integer root must divide one of these possible constant terms, so it must already be in the displayed set."),
+("Conclude",r"The final set has \(\boxed{9}\) elements."),
+],
+23:[
+("Use the shared roots",r"The cubic \(g(x)\) has three distinct roots, and all of them are also roots of the quartic \(f(x)\). Therefore \(g(x)\) must divide \(f(x)\)."),
+("Write the quotient",r"Since \(f\) is monic of degree $4$ and \(g\) is monic of degree $3$, the quotient must be linear. Write \[f(x)=(x+k)g(x).\]"),
+("Expand enough coefficients",r"We have \[(x+k)(x^3+ax^2+x+10)=x^4+(a+k)x^3+(1+ak)x^2+(10+k)x+10k.\]"),
+("Compare coefficients",r"In \(f(x)=x^4+x^3+bx^2+100x+c\), the coefficient of \(x\) is $100$, so \[10+k=100,\] giving \(k=90\). The coefficient of \(x^3\) is $1$, so \[a+k=1,\] giving \(a=-89\)."),
+("Find b and c",r"Now \[b=1+ak=1+(-89)(90)=-8009,\] and \[c=10k=900.\]"),
+("Evaluate f(1)",r"Thus \[f(1)=1+1+b+100+c=2-8009+100+900=-7007.\]"),
+("Conclude",r"The answer is $\boxed{-7007}$."),
 ],
 })
 
