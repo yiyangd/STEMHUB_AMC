@@ -4300,3 +4300,19 @@
 - Pushed: pending
 - Next batch should start from: 2021 Fall AMC 12B Problem 11
 - Review notes: none.
+
+## Batch 266: 2021 Fall AMC 12B Problems 12, 16, 20
+
+- Start time: 2026-07-02T08:00:37-07:00
+- End time: 2026-07-02T08:00:38-07:00
+- Processed contest: AMC12
+- Processed range: 2021 Fall AMC 12B Problems 12, 16, 20
+- Generated count: 3
+- Updated existing count: 0
+- Skipped count: 7
+- Skipped reasons: 2021 Fall AMC 12B Problem 11: triangle/trapezoid geometry requires a longer coordinate derivation; skipped; 2021 Fall AMC 12B Problem 13: trigonometric equation count is high-risk in current pass; skipped; 2021 Fall AMC 12B Problem 14: 3D rectangle pyramid volume problem requires a longer derivation; skipped; 2021 Fall AMC 12B Problem 15: pentagon area problem depends on the missing diagram; skipped; 2021 Fall AMC 12B Problem 17: trapezoid area-ratio problem depends on the missing diagram; skipped; 2021 Fall AMC 12B Problem 18: complex-number constraint requires a longer derivation; skipped; 2021 Fall AMC 12B Problem 19: custom dice probability system is high-risk in current pass; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2021 Fall AMC 12B Problem 21
+- Review notes: none.
