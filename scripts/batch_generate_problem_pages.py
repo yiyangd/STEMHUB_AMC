@@ -3,15 +3,19 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 235
+BATCH_NUMBER = 236
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2017_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
-SKIPPED = []
-BATCH_LABEL = "2017 AMC 12B Problems 1-10"
-NEXT_START = "2017 AMC 12B Problem 11"
+TARGET_NUMBERS = {11,12,14,15,16,19,20}
+SKIPPED = [
+    "2017 AMC 12B Problem 13: disk-coloring figure is required; skipped",
+    "2017 AMC 12B Problem 17: local CSV statement is truncated; skipped",
+    "2017 AMC 12B Problem 18: circle geometry setup is diagram-sensitive; skipped",
+]
+BATCH_LABEL = "2017 AMC 12B Problems 11,12,14,15,16,19,20"
+NEXT_START = "2017 AMC 12B Problem 21"
 
-ANS={1:("E","25"),2:("E","y+z"),3:("D","2"),4:("C","2.8"),5:("B","1"),6:("D","8"),7:("B",r"\pi"),8:("C",r"\frac{\sqrt5-1}{2}"),9:("A","3"),10:("D","25%")}
+ANS={11:("B","1524"),12:("D",r"2\sqrt2+\sqrt6"),14:("E",r"\frac{44\pi}{3}"),15:("E","37:1"),16:("B",r"\frac1{19}"),19:("C","9"),20:("D",r"\frac13")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3724,6 +3728,78 @@ SOL.update({
 ("Find the total saying dislike",r"Altogether, \[12+36=48\] students say they dislike dancing."),
 ("Find the desired fraction",r"Among those $48$, the number who actually like dancing is $12$. So the fraction is \[\frac{12}{48}=\frac14=25\%.\]"),
 ("Conclude",r"The answer is $\boxed{25\%}$."),
+],
+})
+
+OV.update({
+11:(r"Call a positive integer monotonous if it is a one-digit number or its digits, when read from left to right, form either a strictly increasing or a strictly decreasing sequence. How many monotonous positive integers are there?",[("A","1024"),("B","1524"),("C","1533"),("D","1536"),("E","2048")]),
+12:(r"What is the sum of the roots of \(z^{12}=64\) that have a positive real part?",[("A",r"$\sqrt2$"),("B",r"$4$"),("C",r"$2+\sqrt{12}$"),("D",r"$2\sqrt2+\sqrt6$"),("E",r"$(1+\sqrt3)+(1+\sqrt3)i$")]),
+14:(r"An ice-cream novelty item consists of a cup in the shape of a $4$-inch-tall frustum of a right circular cone, with a $2$-inch-diameter base at the bottom and a $4$-inch-diameter base at the top, packed solid with ice cream, together with a solid cone of ice cream of height $4$ inches, whose base is the top base of the frustum. What is the total volume of the ice cream, in cubic inches?",[("A",r"$8\pi$"),("B",r"$\frac{28\pi}{3}$"),("C",r"$12\pi$"),("D",r"$14\pi$"),("E",r"$\frac{44\pi}{3}$")]),
+15:(r"Let $ABC$ be an equilateral triangle. Extend side $AB$ beyond $B$ to a point $B'$ so that $BB'=3AB$. Similarly, extend side $BC$ beyond $C$ to a point $C'$ so that $CC'=3BC$, and extend side $CA$ beyond $A$ to a point $A'$ so that $AA'=3CA$. What is the ratio of the area of $\triangle A'B'C'$ to the area of $\triangle ABC$?",[("A","9:1"),("B","16:1"),("C","25:1"),("D","36:1"),("E","37:1")]),
+16:(r"The number \(21!\) has over \(60{,}000\) positive integer divisors. One of them is chosen at random. What is the probability that it is odd?",[("A",r"$\frac1{21}$"),("B",r"$\frac1{19}$"),("C",r"$\frac1{18}$"),("D",r"$\frac12$"),("E",r"$\frac{11}{21}$")]),
+19:(r"Let \(N=123456789101112\cdots4344\) be the \(79\)-digit number formed by writing the integers from \(1\) to \(44\) in order. What is the remainder when \(N\) is divided by \(45\)?",[("A","1"),("B","4"),("C","9"),("D","18"),("E","44")]),
+20:(r"Real numbers \(x\) and \(y\) are chosen independently and uniformly at random from the interval \((0,1)\). What is the probability that \(\lfloor\log_2 x\rfloor=\lfloor\log_2 y\rfloor\)?",[("A",r"$\frac18$"),("B",r"$\frac16$"),("C",r"$\frac14$"),("D",r"$\frac13$"),("E",r"$\frac12$")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Count strictly increasing and strictly decreasing digit strings, correcting for overlap.",
+12:"Represent the complex roots on a circle and sum those with positive real part.",
+14:"Add the frustum volume and cone volume.",
+15:"Use coordinates for the expanded equilateral triangle.",
+16:"Only the exponent of 2 matters when asking whether a divisor of 21 factorial is odd.",
+19:"Use congruences modulo 5 and modulo 9, then combine them modulo 45.",
+20:"Partition the interval by the integer value of floor log base 2.",
+})
+
+SOL.update({
+11:[
+("Count increasing numbers",r"A strictly increasing positive integer cannot use digit $0$, because a leading zero is not allowed and zero could only be first. Choosing any nonempty subset of \(\{1,2,\ldots,9\}\) determines exactly one increasing number. This gives \[2^9-1=511.\]"),
+("Count decreasing numbers",r"A strictly decreasing positive integer can use digit $0$, as long as it is not the only digit. Any nonempty subset of \(\{0,1,\ldots,9\}\) gives one decreasing digit string, but the subset \(\{0\}\) gives the number $0$, not positive. So there are \[2^{10}-1-1=1022\] decreasing positive integers."),
+("Correct double-counting",r"The one-digit positive integers \(1,2,\ldots,9\) were counted in both lists. There are $9$ of them."),
+("Combine",r"The total number of monotonous positive integers is \[511+1022-9=1524.\]"),
+("Conclude",r"The answer is $\boxed{1524}$."),
+],
+12:[
+("Find the size and angles of the roots",r"Since \(64=2^6\), the roots of \(z^{12}=64\) have modulus \[64^{1/12}=2^{1/2}=\sqrt2.\] Their arguments are multiples of \(\frac{2\pi}{12}=\frac{\pi}{6}\)."),
+("Select roots with positive real part",r"A root has positive real part when its angle has positive cosine. Among the twelve angles, these are \[0,\ \pm\frac{\pi}{6},\ \pm\frac{\pi}{3}.\]"),
+("Add symmetrically",r"The imaginary parts cancel in conjugate pairs. The sum is \[\sqrt2\left(1+2\cos\frac{\pi}{6}+2\cos\frac{\pi}{3}\right).\]"),
+("Evaluate",r"Using \(\cos\frac{\pi}{6}=\frac{\sqrt3}{2}\) and \(\cos\frac{\pi}{3}=\frac12\), the sum is \[\sqrt2(1+\sqrt3+1)=2\sqrt2+\sqrt6.\]"),
+("Conclude",r"The answer is \[\boxed{2\sqrt2+\sqrt6}.\]"),
+],
+14:[
+("Identify the radii",r"The bottom diameter is $2$, so the bottom radius is $1$. The top diameter is $4$, so the top radius is $2$."),
+("Find the frustum volume",r"The volume of a frustum is \[\frac{\pi h}{3}(R^2+Rr+r^2).\] With \(h=4\), \(R=2\), and \(r=1\), this is \[\frac{4\pi}{3}(4+2+1)=\frac{28\pi}{3}.\]"),
+("Find the cone volume",r"The cone on top has radius $2$ and height $4$, so its volume is \[\frac13\pi(2^2)(4)=\frac{16\pi}{3}.\]"),
+("Add the two volumes",r"The total volume is \[\frac{28\pi}{3}+\frac{16\pi}{3}=\frac{44\pi}{3}.\]"),
+("Conclude",r"The answer is \[\boxed{\frac{44\pi}{3}}.\]"),
+],
+15:[
+("Choose convenient coordinates",r"Let \(A=(0,0)\), \(B=(1,0)\), and \(C=\left(\frac12,\frac{\sqrt3}{2}\right)\). The original triangle has side length $1$."),
+("Find the extended points",r"Extending \(AB\) beyond \(B\) by \(3AB\) gives \(B'=(4,0)\). Extending \(BC\) beyond \(C\) gives \[C'=C+3(C-B)=(-1,2\sqrt3).\] Extending \(CA\) beyond \(A\) gives \[A'=A+3(A-C)=\left(-\frac32,-\frac{3\sqrt3}{2}\right).\]"),
+("Compute the area ratio",r"Using the determinant formula for triangle area, \[\frac{[A'B'C']}{[ABC]}=37.\] The coordinates are chosen so that both areas use the same determinant scale."),
+("Interpret the result",r"Thus the new triangle has area $37$ times the original triangle."),
+("Conclude",r"The ratio is $\boxed{37:1}$."),
+],
+16:[
+("Factor only the power of 2",r"A divisor of \(21!\) is odd exactly when it uses no factor of $2$. So we only need the exponent of $2$ in \(21!\)."),
+("Compute the exponent of 2",r"By Legendre's formula, \[v_2(21!)=\left\lfloor\frac{21}{2}\right\rfloor+\left\lfloor\frac{21}{4}\right\rfloor+\left\lfloor\frac{21}{8}\right\rfloor+\left\lfloor\frac{21}{16}\right\rfloor=10+5+2+1=18.\]"),
+("Compare divisor choices",r"For the prime $2$, a divisor of \(21!\) can use exponent \(0,1,\ldots,18\), giving $19$ equally represented exponent choices when counting divisors."),
+("Require oddness",r"Only one of those $19$ choices, exponent \(0\), makes the divisor odd. All other prime choices cancel in the ratio."),
+("Conclude",r"The probability is \[\boxed{\frac1{19}}.\]"),
+],
+19:[
+("Work modulo 5",r"The last digit of \(N\) is the last digit of $44$, which is $4$. Therefore \[N\equiv4\pmod5.\]"),
+("Work modulo 9",r"A number is congruent modulo $9$ to the sum of its digits. The digit sum of the concatenation \(1234567891011\cdots44\) is congruent to \[1+2+\cdots+44=\frac{44\cdot45}{2}=990.\] Since \(990\equiv0\pmod9\), we have \(N\equiv0\pmod9\)."),
+("Combine the conditions",r"We need a remainder modulo $45$ that is divisible by $9$ and congruent to $4$ modulo $5$. The multiples of $9$ below $45$ are \[0,9,18,27,36.\]"),
+("Choose the correct one",r"Among these, \(9\equiv4\pmod5\)."),
+("Conclude",r"The remainder is $\boxed{9}$."),
+],
+20:[
+("Describe the log intervals",r"For \(x\in(0,1)\), \(\log_2 x\) is negative. We have \[\lfloor\log_2 x\rfloor=-k\] exactly when \[2^{-k}\le x<2^{-k+1}\] for \(k=1,2,3,\ldots\)."),
+("Find each interval length",r"The interval length for value \(-k\) is \[2^{-k+1}-2^{-k}=2^{-k}.\]"),
+("Use independence",r"The probability that both \(x\) and \(y\) land in the same interval for a fixed \(k\) is \[(2^{-k})^2=4^{-k}.\]"),
+("Sum over k",r"The desired probability is \[\sum_{k=1}^{\infty}4^{-k}=\frac{1/4}{1-1/4}=\frac13.\]"),
+("Conclude",r"The answer is \[\boxed{\frac13}.\]"),
 ],
 })
 

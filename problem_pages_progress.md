@@ -3820,3 +3820,19 @@
 - Pushed: pending
 - Next batch should start from: 2017 AMC 12B Problem 11
 - Review notes: none.
+
+## Batch 236: 2017 AMC 12B Problems 11,12,14,15,16,19,20
+
+- Start time: 2026-07-02T00:39:09-07:00
+- End time: 2026-07-02T00:39:10-07:00
+- Processed contest: AMC12
+- Processed range: 2017 AMC 12B Problems 11,12,14,15,16,19,20
+- Generated count: 7
+- Updated existing count: 0
+- Skipped count: 3
+- Skipped reasons: 2017 AMC 12B Problem 13: disk-coloring figure is required; skipped; 2017 AMC 12B Problem 17: local CSV statement is truncated; skipped; 2017 AMC 12B Problem 18: circle geometry setup is diagram-sensitive; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2017 AMC 12B Problem 21
+- Review notes: none.
