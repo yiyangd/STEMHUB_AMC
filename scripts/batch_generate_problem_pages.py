@@ -3,17 +3,19 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 282
+BATCH_NUMBER = 283
 CONTEST_DIR = "amc12"
 YEAR = "2024"
 FORM = "B"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2024_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-SKIPPED = []
-BATCH_LABEL = "2024 AMC 12B Problems 1-10"
-NEXT_START = "2024 AMC 12B Problem 11"
+TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 18, 20}
+SKIPPED = [
+    "2024 AMC 12B Problem 19: rotated equilateral-triangle hexagon depends strongly on the missing figure; skipped",
+]
+BATCH_LABEL = "2024 AMC 12B Problems 11-18,20"
+NEXT_START = "2024 AMC 12B Problem 21"
 
-ANS={1:("B","2022"),2:("B","0"),3:("E","21"),4:("D","D"),5:("B","15"),6:("B","20"),7:("C","15"),8:("C","36"),9:("B","71"),10:("C","3")}
+ANS={11:("E",r"$\frac{91}{180}$"),12:("D",r"$\frac32$"),13:("C","-34"),14:("B","2"),15:("B",r"$\log_2\frac{3}{\sqrt7}$"),16:("A","5"),17:("C",r"$\frac1{105}$"),18:("B","319"),20:("C","911")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -5453,6 +5455,90 @@ SOL.update({
 ("Count the endpoint cases","If $x=0$ and $z\\le7$, the only possibility is\n\n\\[(x,y,z)=(0,5,6.2).\\]\n\nIf $z=8$ and $x\\ge1$, the only possibility is\n\n\\[(x,y,z)=(6,6.2,8).\\]\n\nBoth have integer mean and integer median."),
 ("Count the split-beyond-both-ends case","If $x<1$ and $z=x+7>7$, then the median can be an integer only when $y=4$ or $y=5$. The mean condition leaves the valid triple\n\n\\[(x,y,z)=(0.1,4,7.1).\\]\n\nThe other candidate would not keep the true range equal to $7$."),
 ("Finish the count","There are exactly three ordered triples:\n\n\\[(0,5,6.2),\\quad (6,6.2,8),\\quad (0.1,4,7.1).\\]\n\nTherefore the answer is $3$."),
+],
+})
+
+OV.update({
+11:("Let $x_n=\\sin^2(n^\\circ)$. What is the mean of $x_1,x_2,x_3,\\ldots,x_{90}$?",[("A",r"$\frac{11}{45}$"),("B",r"$\frac{22}{45}$"),("C",r"$\frac{89}{180}$"),("D",r"$\frac12$"),("E",r"$\frac{91}{180}$")]),
+12:("Suppose $z$ is a complex number with positive imaginary part, real part greater than $1$, and $|z|=2$. In the complex plane, the four points $0,z,z^2,z^3$ are the vertices of a quadrilateral with area $15$. What is the imaginary part of $z$?",[("A",r"$\frac34$"),("B","1"),("C",r"$\frac43$"),("D",r"$\frac32$"),("E",r"$\frac53$")]),
+13:("There are real numbers $x,y,h$, and $k$ that satisfy $x^2+y^2-6x-8y=h$ and $x^2+y^2-10x+4y=k$. What is the minimum possible value of $h+k$?",[("A","-54"),("B","-46"),("C","-34"),("D","-16"),("E","16")]),
+14:("How many different remainders can result when the $100$th power of an integer is divided by $125$?",[("A","1"),("B","2"),("C","5"),("D","25"),("E","125")]),
+15:("A triangle in the coordinate plane has vertices $A(\\log_2 1,\\log_2 2)$, $B(\\log_2 3,\\log_2 4)$, and $C(\\log_2 7,\\log_2 8)$. What is its area?",[("A",r"$\log_2\frac37$"),("B",r"$\log_2\frac{3}{\sqrt7}$"),("C",r"$\log_2\sqrt{\frac37}$"),("D",r"$\log_2\sqrt7-1$"),("E",r"$\log_2\sqrt3-1$")]),
+16:("A group of $16$ people will be partitioned into $4$ indistinguishable $4$-person committees. Each committee will have one chairperson and one secretary. The number of different ways to make these assignments can be written as $3^rM$, where $r$ and $M$ are positive integers and $M$ is not divisible by $3$. What is $r$?",[("A","5"),("B","6"),("C","7"),("D","8"),("E","9")]),
+17:("Integers $a$ and $b$ are randomly chosen without replacement from the set of integers with absolute value not exceeding $10$. What is the probability that the polynomial $x^3+ax^2+bx+6$ has $3$ distinct integer roots?",[("A",r"$\frac1{240}$"),("B",r"$\frac1{221}$"),("C",r"$\frac1{105}$"),("D",r"$\frac1{84}$"),("E",r"$\frac1{63}$")]),
+18:("The Fibonacci numbers are defined by $F_1=1$, $F_2=1$, and $F_n=F_{n-1}+F_{n-2}$ for $n\\ge3$. What is $\\frac{F_2}{F_1}+\\frac{F_4}{F_2}+\\frac{F_6}{F_3}+\\cdots+\\frac{F_{20}}{F_{10}}$?",[("A","318"),("B","319"),("C","320"),("D","321"),("E","322")]),
+20:("Suppose $A,B,C$ are points in the plane with $AB=40$ and $AC=42$, and let $x$ be the length of the segment from $A$ to the midpoint of $BC$. Define $f(x)$ to be the area of $\\triangle ABC$. The domain of $f$ is an open interval $(p,q)$, and the maximum value $r$ of $f(x)$ occurs at $x=s$. What is $p+q+r+s$?",[("A","909"),("B","910"),("C","911"),("D","912"),("E","913")]),
+})
+KEY_OVERRIDES.update({
+11:"Pair complementary angles so that each pair of sine-squared values sums to 1.",
+12:"Represent z in polar form and compute the quadrilateral area using complex cross products.",
+13:"Add the two expressions and complete the square.",
+14:"Separate integers divisible by 5 from units modulo 125 and use Euler's theorem.",
+15:"Convert the logarithmic coordinates and use a determinant for triangle area.",
+16:"Write the committee assignment count and extract the power of 3.",
+17:"Enumerate distinct integer root triples whose product is -6, then translate them into coefficient pairs.",
+18:"Use the identity F_{2n}=F_n L_n to convert the sum into Lucas numbers.",
+20:"Use the median formula and optimize the triangle area as a function of the median length.",
+})
+SOL.update({
+11:[
+("Pair angles that add to 90 degrees","The key identity is\n\n\\[\\sin^2\\theta+\\sin^2(90^\\circ-\\theta)=\\sin^2\\theta+\\cos^2\\theta=1.\\]\n\nSo the terms $x_1$ and $x_{89}$ pair to $1$, $x_2$ and $x_{88}$ pair to $1$, and so on."),
+("Count the paired terms","The angles $1^\\circ$ through $89^\\circ$ form $44$ such pairs, plus the unpaired angle $45^\\circ$. The value at $45^\\circ$ is\n\n\\[\\sin^2 45^\\circ=\\frac12.\\]"),
+("Include the final term","The list also includes $x_{90}=\\sin^2 90^\\circ=1$. Therefore the total sum is\n\n\\[44+\\frac12+1=\\frac{91}{2}.\\]"),
+("Divide by the number of terms","There are $90$ values in the list. The mean is\n\n\\[\\frac{91/2}{90}=\\frac{91}{180}.\\]\n\nSo the answer is $\\frac{91}{180}$."),
+],
+12:[
+("Write the complex number in polar form","Since $|z|=2$ and $z$ has positive imaginary part, write\n\n\\[z=2(\\cos\\theta+i\\sin\\theta).\\]\n\nThe real part is greater than $1$, so $2\\cos\\theta>1$, but the main unknown we need is $2\\sin\\theta$, the imaginary part."),
+("Use a polygon area formula for complex points","For complex vertices $w_1,w_2,\\ldots,w_n$, the signed area can be found from the imaginary parts of $\\overline{w_i}w_{i+1}$. Here the vertices are $0,z,z^2,z^3$.\n\nOnly the products involving consecutive nonzero points contribute."),
+("Compute the two nonzero contributions","We have\n\n\\[\\overline{z}z^2=8e^{i\\theta}\\]\n\nand\n\n\\[\\overline{z^2}z^3=32e^{i\\theta}.\\]\n\nTheir imaginary parts are $8\\sin\\theta$ and $32\\sin\\theta$."),
+("Set the area equal to 15","The quadrilateral area is half the sum of those imaginary parts:\n\n\\[\\frac12(8\\sin\\theta+32\\sin\\theta)=20\\sin\\theta.\\]\n\nThe area is $15$, so\n\n\\[20\\sin\\theta=15,\\qquad \\sin\\theta=\\frac34.\\]"),
+("Find the imaginary part of z","The imaginary part of $z=2(\cos\\theta+i\\sin\\theta)$ is $2\\sin\\theta$. Therefore it is\n\n\\[2\\cdot\\frac34=\\frac32.\\]"),
+],
+13:[
+("Add the two expressions","The variables $h$ and $k$ are defined by the two equations, so\n\n\\[h+k=(x^2+y^2-6x-8y)+(x^2+y^2-10x+4y).\\]\n\nThis simplifies to\n\n\\[h+k=2x^2+2y^2-16x-4y.\\]"),
+("Complete the square in x","For the $x$ terms,\n\n\\[2x^2-16x=2(x^2-8x)=2((x-4)^2-16).\\]\n\nSo this contributes\n\n\\[2(x-4)^2-32.\\]"),
+("Complete the square in y","For the $y$ terms,\n\n\\[2y^2-4y=2(y^2-2y)=2((y-1)^2-1).\\]\n\nSo this contributes\n\n\\[2(y-1)^2-2.\\]"),
+("Read off the minimum","Therefore\n\n\\[h+k=2(x-4)^2+2(y-1)^2-34.\\]\n\nThe squared terms are always nonnegative, so the minimum occurs at $x=4$ and $y=1$. The minimum value is $-34$."),
+],
+14:[
+("Separate integers by divisibility by 5","We are interested in $n^{100}\\pmod{125}$. If $5\\mid n$, then $n^{100}$ contains a very large power of $5$, so\n\n\\[n^{100}\\equiv0\\pmod{125}.\\]\n\nThis gives one possible remainder."),
+("Handle integers relatively prime to 5","If $5\\nmid n$, then $n$ is a unit modulo $125$. Euler's theorem applies because\n\n\\[\\varphi(125)=125-25=100.\\]\n\nThus\n\n\\[n^{100}\\equiv1\\pmod{125}.\\]"),
+("Check that no other cases exist","Every integer is either divisible by $5$ or relatively prime to $5$. So the only possible remainders are $0$ and $1$."),
+("Count the remainders","There are exactly $2$ different remainders. Therefore the answer is $2$."),
+],
+15:[
+("Simplify the coordinates","The points are\n\n\\[A=(0,1),\\quad B=(\\log_2 3,2),\\quad C=(\\log_2 7,3).\\]\n\nUsing $A$ as the base point makes the area determinant simple."),
+("Form two side vectors","The vectors from $A$ are\n\n\\[\\overrightarrow{AB}=(\\log_2 3,1),\\qquad \\overrightarrow{AC}=(\\log_2 7,2).\\]\n\nThe triangle area is half the absolute value of their determinant."),
+("Compute the determinant","The determinant is\n\n\\[2\\log_2 3-\log_2 7.\\]\n\nUsing logarithm rules, this becomes\n\n\\[\\log_2 9-\log_2 7=\\log_2\\frac97.\\]"),
+("Take half for the triangle area","The area is\n\n\\[\\frac12\\log_2\\frac97=\\log_2\\sqrt{\\frac97}=\\log_2\\frac3{\\sqrt7}.\\]\n\nSo the answer is $\\log_2\\frac3{\\sqrt7}$."),
+],
+16:[
+("Write the total number of assignments","First partition $16$ people into four indistinguishable committees of size $4$:\n\n\\[\\frac{16!}{(4!)^4\\,4!}.\\]\n\nFor each committee, choose a chairperson and secretary in $4\\cdot3=12$ ways, so multiply by $12^4$."),
+("Focus only on powers of 3","We only need the exponent of $3$ in\n\n\\[\\frac{16!}{(4!)^4\\,4!}\\cdot12^4.\\]\n\nLet $v_3(N)$ denote the exponent of $3$ in $N$."),
+("Compute the exponent from the factorials","We have\n\n\\[v_3(16!)=\\left\\lfloor\\frac{16}{3}\\right\\rfloor+\\left\\lfloor\\frac{16}{9}\\right\\rfloor=5+1=6.\\]\n\nAlso $v_3(4!)=1$, so the denominator contributes $5$ powers of $3$."),
+("Include the chair-secretary choices","Since $12=3\\cdot4$, the factor $12^4$ contributes $4$ more powers of $3$.\n\nThus the total exponent is\n\n\\[6-5+4=5.\\]"),
+("Conclude the value of r","The assignment count is $3^rM$ with $M$ not divisible by $3$, so $r=5$."),
+],
+17:[
+("Translate integer roots into coefficients","If the roots are distinct integers $r,s,t$, then\n\n\\[x^3+ax^2+bx+6=(x-r)(x-s)(x-t).\\]\n\nThe constant term gives\n\n\\[-rst=6,\\]\n\nso $rst=-6$."),
+("List the possible distinct root sets","The unordered distinct integer triples with product $-6$ are\n\n\\[\\{-1,1,6\\},\\quad \\{-1,2,3\\},\\quad \\{1,-2,3\\},\\quad \\{1,2,-3\\}.\\]\n\nThese are the only distinct ways to use integer factors of $6$."),
+("Convert each root set to an ordered pair (a,b)","For roots $r,s,t$, we have\n\n\\[a=-(r+s+t),\\qquad b=rs+rt+st.\\]\n\nThe four root sets produce four valid pairs $(a,b)$ in the allowed range from $-10$ to $10$, and in each pair $a\\ne b$."),
+("Count all possible choices of a and b","The set of possible integers has $21$ elements, from $-10$ to $10$. Since $a$ and $b$ are chosen without replacement and in order, there are\n\n\\[21\\cdot20=420\\]\n\npossible outcomes."),
+("Compute the probability","There are $4$ favorable outcomes, so the probability is\n\n\\[\\frac4{420}=\\frac1{105}.\\]\n\nThus the answer is $\\frac1{105}$."),
+],
+18:[
+("Recognize a useful Fibonacci identity","The sum is\n\n\\[\\frac{F_2}{F_1}+\\frac{F_4}{F_2}+\\frac{F_6}{F_3}+\\cdots+\\frac{F_{20}}{F_{10}}.\\]\n\nA standard identity is\n\n\\[F_{2n}=F_nL_n,\\]\n\nwhere $L_n$ is the $n$th Lucas number."),
+("Convert each term","Using that identity,\n\n\\[\\frac{F_{2n}}{F_n}=L_n.\\]\n\nSo the desired sum is\n\n\\[L_1+L_2+\\cdots+L_{10}.\\]"),
+("List the Lucas numbers needed","The Lucas sequence begins\n\n\\[1,3,4,7,11,18,29,47,76,123.\\]\n\nThese follow the same recurrence as Fibonacci numbers, with each term equal to the sum of the previous two."),
+("Add them carefully","Now add:\n\n\\[1+3+4+7+11+18+29+47+76+123=319.\\]\n\nTherefore the answer is $319$."),
+],
+20:[
+("Use the median formula","Let $a=BC$, while $AB=40$ and $AC=42$. The median from $A$ to $BC$ has length $x$, so Apollonius's theorem gives\n\n\\[x^2=\\frac{2(40)^2+2(42)^2-a^2}{4}.\\]\n\nThus\n\n\\[a^2=6728-4x^2.\\]"),
+("Find the domain of x","The third side must satisfy the triangle inequality:\n\n\\[|42-40|<a<42+40,\\]\n\nso\n\n\\[2<a<82.\\]\n\nUsing $a^2=6728-4x^2$, this becomes\n\n\\[1<x<41.\\]\n\nTherefore $p=1$ and $q=41$."),
+("Write the area in terms of x","Place the midpoint of $BC$ at distance $x$ from $A$. If the half-vector from the midpoint to one endpoint is $v$, then the difference of squared side lengths gives a fixed component of $v$ along the median.\n\nThis leads to\n\n\\[f(x)^2=1682x^2-x^4-1681.\\]\n\nSo maximizing area is the same as maximizing this quadratic expression in $x^2$."),
+("Optimize the expression","Let $u=x^2$. Then\n\n\\[f(x)^2=-u^2+1682u-1681.\\]\n\nThis parabola is maximized at\n\n\\[u=\\frac{1682}{2}=841.\\]\n\nThus $x=29$, so $s=29$."),
+("Find the maximum area","At $u=841$,\n\n\\[f(x)^2=841^2-1681=705600.\\]\n\nTherefore\n\n\\[f(x)=840,\\]\n\nso $r=840$."),
+("Add the requested quantities","Finally,\n\n\\[p+q+r+s=1+41+840+29=911.\\]\n\nThe answer is $911$."),
 ],
 })
 
