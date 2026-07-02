@@ -3740,3 +3740,19 @@
 - Pushed: pending
 - Next batch should start from: 2016 AMC 12B Problem 21
 - Review notes: none.
+
+## Batch 231: 2016 AMC 12B Problems 23-24
+
+- Start time: 2026-07-02T00:27:19-07:00
+- End time: 2026-07-02T00:27:19-07:00
+- Processed contest: AMC12
+- Processed range: 2016 AMC 12B Problems 23-24
+- Generated count: 2
+- Updated existing count: 0
+- Skipped count: 3
+- Skipped reasons: 2016 AMC 12B Problem 21: recursive geometry statement is OCR-damaged; skipped; 2016 AMC 12B Problem 22: repeating-decimal period conditions need careful number-theory verification; skipped; 2016 AMC 12B Problem 25: recurrence formula is OCR-damaged; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2017 AMC 12A Problem 1
+- Review notes: none.

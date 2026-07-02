@@ -3,17 +3,19 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 230
+BATCH_NUMBER = 231
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2016_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,16,18,19,20}
+TARGET_NUMBERS = {23,24}
 SKIPPED = [
-    "2016 AMC 12B Problem 17: angle-bisector/altitude geometry depends on the original diagram; skipped",
+    "2016 AMC 12B Problem 21: recursive geometry statement is OCR-damaged; skipped",
+    "2016 AMC 12B Problem 22: repeating-decimal period conditions need careful number-theory verification; skipped",
+    "2016 AMC 12B Problem 25: recurrence formula is OCR-damaged; skipped",
 ]
-BATCH_LABEL = "2016 AMC 12B Problems 11-16, 18-20"
-NEXT_START = "2016 AMC 12B Problem 21"
+BATCH_LABEL = "2016 AMC 12B Problems 23-24"
+NEXT_START = "2017 AMC 12A Problem 1"
 
-ANS={11:("D","50"),12:("C","7"),13:("E","5.5"),14:("E","4"),15:("D","729"),16:("E","7"),18:("B",r"\pi+2"),19:("B",r"\frac17"),20:("A","385")}
+ANS={23:("A",r"\frac16"),24:("D","27720")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3373,6 +3375,36 @@ SOL.update({
 ("Avoid overcounting",r"Every transitive triple has exactly one top team, so the number of transitive triples is \[21\binom{10}{2}=21\cdot45=945.\]"),
 ("Subtract from all triples",r"The cyclic triples are therefore \[1330-945=385.\]"),
 ("Conclude",r"The number of desired triples is $\boxed{385}$."),
+],
+})
+
+OV.update({
+23:(r"What is the volume of the region in three-dimensional space defined by the inequalities \[|x|+|y|+|z|\le1\qquad\text{and}\qquad |x|+|y|+|z-1|\le1?\]",[("A",r"$\frac16$"),("B",r"$\frac13$"),("C",r"$\frac12$"),("D",r"$\frac23$"),("E","1")]),
+24:(r"There are exactly $77{,}000$ ordered quadruples $(a,b,c,d)$ such that \[\gcd(a,b,c,d)=77\qquad\text{and}\qquad \operatorname{lcm}(a,b,c,d)=n.\] What is the smallest possible value of $n$?",[("A","13860"),("B","20790"),("C","21560"),("D","27720"),("E","41580")]),
+})
+
+KEY_OVERRIDES.update({
+23:"Slice the intersection of two octahedra by the value of |x| plus |y|.",
+24:"Divide out the gcd and count exponent quadruples prime by prime.",
+})
+
+SOL.update({
+23:[
+("Separate the xy part",r"Let \[r=|x|+|y|.\] The two inequalities become \[r+|z|\le1\quad\text{and}\quad r+|z-1|\le1.\]"),
+("Find the allowed z interval",r"For a fixed value of \(r\), the first inequality gives \[-(1-r)\le z\le1-r,\] and the second gives \[r\le z\le2-r.\] Their intersection has length \[1-2r,\] provided \(0\le r\le\frac12\)."),
+("Measure the xy slices",r"In the $xy$-plane, the region \(|x|+|y|\le r\) is a diamond with area \(2r^2\). Therefore the thin layer where \(|x|+|y|\) is between \(r\) and \(r+dr\) has area approximately \(4r\,dr\)."),
+("Integrate the slice volumes",r"The total volume is \[\int_0^{1/2}(1-2r)(4r)\,dr.\]"),
+("Evaluate",r"We get \[\int_0^{1/2}(4r-8r^2)\,dr=\left[2r^2-\frac83r^3\right]_0^{1/2}=\frac12-\frac13=\frac16.\]"),
+("Conclude",r"The volume is \[\boxed{\frac16}.\]"),
+],
+24:[
+("Divide out the gcd",r"Write \[a=77a',\quad b=77b',\quad c=77c',\quad d=77d'.\] Then \(\gcd(a',b',c',d')=1\), and if \(m=\frac n{77}\), then \(\operatorname{lcm}(a',b',c',d')=m\)."),
+("Count one prime at a time",r"Suppose a prime has exponent \(e\) in \(m\). Across the four numbers \(a',b',c',d'\), its four exponents must all lie between \(0\) and \(e\), with minimum \(0\) and maximum \(e\)."),
+("Compute the exponent-pattern count",r"The number of exponent quadruples is \[(e+1)^4-2e^4+(e-1)^4.\] This subtracts the cases with no exponent $0$ or no exponent $e$, then adds back the overlap."),
+("Match the factor 77000",r"For \(e=1,2,3\), these counts are \[14,\quad50,\quad110.\] Their product is \[14\cdot50\cdot110=77000.\]"),
+("Minimize m",r"So \(m\) should have three prime factors with exponents \(1,2,3\). To minimize \(m\), put the largest exponent on the smallest prime: \[m=2^3\cdot3^2\cdot5=360.\]"),
+("Find n",r"Therefore \[n=77m=77\cdot360=27720.\]"),
+("Conclude",r"The smallest possible value is $\boxed{27720}$."),
 ],
 })
 
