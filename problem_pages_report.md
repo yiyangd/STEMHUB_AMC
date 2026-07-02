@@ -1,20 +1,22 @@
 # Problem Pages Report
 
-- Total manifest entries: 1837
-- Latest batch: 252 (2020 AMC 12A Problems 21-23)
-- Latest new generated count: 3
+- Total manifest entries: 1847
+- Latest batch: 253 (2020 AMC 12B Problems 1-10)
+- Latest new generated count: 10
 - Latest updated existing count: 0
-- Latest skipped count: 2
+- Latest skipped count: 0
 - MathJax validation: passed
-- Answer verification source: https://artofproblemsolving.com/wiki/index.php/2020_AMC_12A_Answer_Key
+- Answer verification source: https://artofproblemsolving.com/wiki/index.php/2020_AMC_12B_Answer_Key
 
 ## Latest Batch Pages
 
-- `2020 AMC 12A Problem 21` -> `amc12/problems/2020-amc-12a-problem-21/`
-- `2020 AMC 12A Problem 22` -> `amc12/problems/2020-amc-12a-problem-22/`
-- `2020 AMC 12A Problem 23` -> `amc12/problems/2020-amc-12a-problem-23/`
-
-## Skipped in latest batch
-
-- 2020 AMC 12A Problem 24: equilateral-triangle distance condition requires a longer geometry derivation; skipped
-- 2020 AMC 12A Problem 25: floor/fractional-part parameter problem is high-risk in current pass; skipped
+- `2020 AMC 12B Problem 1` -> `amc12/problems/2020-amc-12b-problem-1/`
+- `2020 AMC 12B Problem 2` -> `amc12/problems/2020-amc-12b-problem-2/`
+- `2020 AMC 12B Problem 3` -> `amc12/problems/2020-amc-12b-problem-3/`
+- `2020 AMC 12B Problem 4` -> `amc12/problems/2020-amc-12b-problem-4/`
+- `2020 AMC 12B Problem 5` -> `amc12/problems/2020-amc-12b-problem-5/`
+- `2020 AMC 12B Problem 6` -> `amc12/problems/2020-amc-12b-problem-6/`
+- `2020 AMC 12B Problem 7` -> `amc12/problems/2020-amc-12b-problem-7/`
+- `2020 AMC 12B Problem 8` -> `amc12/problems/2020-amc-12b-problem-8/`
+- `2020 AMC 12B Problem 9` -> `amc12/problems/2020-amc-12b-problem-9/`
+- `2020 AMC 12B Problem 10` -> `amc12/problems/2020-amc-12b-problem-10/`

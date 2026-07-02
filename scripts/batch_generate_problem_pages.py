@@ -3,20 +3,17 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 252
+BATCH_NUMBER = 253
 CONTEST_DIR = "amc12"
 YEAR = "2020"
-FORM = "A"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2020_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {21,22,23}
-SKIPPED = [
-    "2020 AMC 12A Problem 24: equilateral-triangle distance condition requires a longer geometry derivation; skipped",
-    "2020 AMC 12A Problem 25: floor/fractional-part parameter problem is high-risk in current pass; skipped",
-]
-BATCH_LABEL = "2020 AMC 12A Problems 21-23"
-NEXT_START = "2020 AMC 12B Problem 1"
+FORM = "B"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2020_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2020 AMC 12B Problems 1-10"
+NEXT_START = "2020 AMC 12B Problem 11"
 
-ANS={21:("D","48"),22:("B",r"\frac7{16}"),23:("A",r"\frac7{36}")}
+ANS={1:("C","10"),2:("A","1"),3:("E",r"16:3"),4:("D","7"),5:("C","42"),6:("D","a perfect square"),7:("D",r"\frac32"),8:("D","4"),9:("C",r"3\pi\sqrt7"),10:("B",r"\frac{\sqrt5}{10}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4574,6 +4571,45 @@ SOL.update({
 21:[("Factor the fixed factorials",r"We have \[5!=2^3\cdot3\cdot5,\qquad 10!=2^8\cdot3^4\cdot5^2\cdot7.\] Since $n$ is a multiple of $5$, write \[n=2^a3^b5^c7^d\] with $c\ge1$. No other prime can appear, because it would appear in the LCM but not in the GCD."),("Compare powers of 2",r"For prime $2$, the LCM exponent is $\max(3,a)$, and the GCD exponent is $\min(8,a)$. The equation requires \[\max(3,a)=\min(8,a),\] so \[a=3,4,5,6,7,8,\] giving $6$ choices."),("Compare powers of 3",r"For prime $3$, we need \[\max(1,b)=\min(4,b),\] so \[b=1,2,3,4,\] giving $4$ choices."),("Compare powers of 5 and 7",r"The extra factor of $5$ on the right means the $5$-exponent condition is \[\max(1,c)=1+\min(2,c).\] With $c\ge1$, this forces $c=3$. For prime $7$, we need \[d=\min(1,d),\] so $d=0$ or $1$."),("Multiply the choices",r"The total number of possible $n$ is \[6\cdot4\cdot1\cdot2=48.\]"),("Conclude",r"The answer is $\boxed{48}$."),],
 22:[("Relate a_n b_n to a complex square",r"If \[(2+i)^n=a_n+b_ni,\] then \[(a_n+b_ni)^2=a_n^2-b_n^2+2a_nb_ni.\] So \[a_nb_n=\frac12\operatorname{Im}\left((2+i)^{2n}\right).\]"),("Simplify the base",r"We have \[(2+i)^2=3+4i.\] Therefore \[\frac{a_nb_n}{7^n}=\frac12\operatorname{Im}\left(\left(\frac{3+4i}{7}\right)^n\right).\]"),("Use a geometric series",r"Because \[\left|\frac{3+4i}{7}\right|=\frac57<1,\] the infinite series converges, and \[\sum_{n=0}^{\infty}\left(\frac{3+4i}{7}\right)^n=\frac1{1-\frac{3+4i}{7}}=\frac{7}{4-4i}.\]"),("Find the imaginary part",r"Rationalize: \[\frac{7}{4-4i}=\frac{7(4+4i)}{32}=\frac78+\frac78i.\] Its imaginary part is $\frac78$."),("Conclude",r"The desired sum is half of that imaginary part: \[\frac12\cdot\frac78=\frac7{16}.\] The answer is $\boxed{\frac7{16}}$."),],
 23:[("Compare possible reroll sizes",r"If Jason keeps two dice and rerolls one die, the best possible success probability is $\frac16$, because one die must hit one exact value. If he rerolls all three dice, the probability of sum $7$ is $\frac{15}{216}$."),("Analyze rerolling exactly two dice",r"If Jason keeps a die showing $m$, then the two rerolled dice must sum to $7-m$. The number of successful ordered pairs is \[5,4,3,2,1,0\] for $m=1,2,3,4,5,6$, respectively."),("When can rerolling two be best?",r"Rerolling two dice beats rerolling all three only when the kept die is $1$, $2$, or $3$. It also must beat rerolling one die, so no pair of the original dice may have sum at most $6$; otherwise keeping that pair gives probability $\frac16$."),("Count the rolls",r"Thus the smallest die must be $1$, $2$, or $3$, and the sum of the two smallest dice must be greater than $6$. Counting ordered rolls gives \[3+15+24=42\] favorable initial rolls."),("Convert to probability",r"There are $6^3=216$ equally likely initial rolls, so the probability is \[\frac{42}{216}=\frac7{36}.\]"),("Conclude",r"The answer is $\boxed{\frac7{36}}$."),],
+})
+
+OV.update({
+1:(r"What is the value in simplest form of \[\sqrt1+\sqrt{1+3}+\sqrt{1+3+5}+\sqrt{1+3+5+7}?\]",[("A","5"),("B",r"$4+\sqrt7+\sqrt{10}$"),("C","10"),("D","15"),("E",r"$4+3\sqrt3+2\sqrt5+\sqrt7$")]),
+2:(r"What is the value of \[\frac{100^2-7^2}{(70-11)(70+11)}\cdot\frac{70^2-11^2}{(100-7)(100+7)}?\]",[("A","1"),("B",r"$\frac{9951}{9950}$"),("C",r"$\frac{4780}{4779}$"),("D",r"$\frac{108}{107}$"),("E",r"$\frac{81}{80}$")]),
+3:(r"The ratio of $w$ to $x$ is $4:3$, the ratio of $y$ to $z$ is $3:2$, and the ratio of $z$ to $x$ is $1:6$. What is the ratio of $w$ to $y$?",[("A",r"$4:3$"),("B",r"$3:2$"),("C",r"$8:3$"),("D",r"$4:1$"),("E",r"$16:3$")]),
+4:(r"The acute angles of a right triangle are $a^\circ$ and $b^\circ$, where $a>b$ and both $a$ and $b$ are prime numbers. What is the least possible value of $b$?",[("A","2"),("B","3"),("C","5"),("D","7"),("E","11")]),
+5:(r"Teams A and B are playing in a basketball league where each game results in a win for one team and a loss for the other team. Team A has won $\frac23$ of its games, and team B has won $\frac58$ of its games. Also, team B has won $7$ more games and lost $7$ more games than team A. How many games has team A played?",[("A","21"),("B","27"),("C","42"),("D","48"),("E","63")]),
+6:(r"For all integers $n\ge9$, the value of \[\frac{(n+2)!-(n+1)!}{n!}\] is always which of the following?",[("A","a multiple of 4"),("B","a multiple of 10"),("C","a prime number"),("D","a perfect square"),("E","a perfect cube")]),
+7:(r"Two nonhorizontal, nonvertical lines in the $xy$-coordinate plane intersect to form a $45^\circ$ angle. One line has slope equal to $6$ times the slope of the other line. What is the greatest possible value of the product of the slopes of the two lines?",[("A",r"$\frac16$"),("B",r"$\frac23$"),("C","1"),("D",r"$\frac32$"),("E","6")]),
+8:(r"How many ordered pairs of integers $(x,y)$ satisfy the equation \[x^{2020}+y^2=2y?\]",[("A","1"),("B","2"),("C","3"),("D","4"),("E","infinitely many")]),
+9:(r"A three-quarter sector of a circle of radius $4$ inches, together with its interior, can be rolled up to form the lateral surface area of a right circular cone by taping together along the two radii. What is the volume of the cone in cubic inches?",[("A",r"$3\pi\sqrt5$"),("B",r"$4\pi\sqrt3$"),("C",r"$3\pi\sqrt7$"),("D",r"$6\pi\sqrt3$"),("E",r"$6\pi\sqrt7$")]),
+10:(r"In unit square $ABCD$, the inscribed circle $\omega$ intersects $\overline{CD}$ at $M$, and $\overline{AM}$ intersects $\omega$ at a point $P$ different from $M$. What is $AP$?",[("A",r"$\frac{\sqrt5}{12}$"),("B",r"$\frac{\sqrt5}{10}$"),("C",r"$\frac{\sqrt5}{9}$"),("D",r"$\frac{\sqrt5}{8}$"),("E",r"$\frac{2\sqrt5}{15}$")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Recognize sums of consecutive odd numbers as perfect squares.",
+2:"Use difference of squares to cancel the expression.",
+3:"Chain ratios through a common variable.",
+4:"Use that the acute angles of a right triangle sum to 90 degrees.",
+5:"Translate win fractions and the seven-game differences into one equation.",
+6:"Factor factorials before dividing by n factorial.",
+7:"Use the tangent formula for the angle between two lines.",
+8:"Complete the square in y and use nonnegative integer powers.",
+9:"Convert sector arc length into cone base circumference.",
+10:"Place the square and circle in coordinates and parametrize AM.",
+})
+
+SOL.update({
+1:[("Recognize the pattern",r"The sum of the first $k$ positive odd numbers is $k^2$. The four radicands are \[1,\quad 1+3,\quad 1+3+5,\quad 1+3+5+7.\]"),("Evaluate each square root",r"These radicands are \[1^2,\quad2^2,\quad3^2,\quad4^2.\] So the square roots are $1,2,3,4$."),("Add",r"The expression equals \[1+2+3+4=10.\]"),("Conclude",r"The answer is $\boxed{10}$."),],
+2:[("Use difference of squares",r"Recall that \[a^2-b^2=(a-b)(a+b).\] This means \[100^2-7^2=(100-7)(100+7)\] and \[70^2-11^2=(70-11)(70+11).\]"),("Substitute into the expression",r"The expression becomes \[\frac{(100-7)(100+7)}{(70-11)(70+11)}\cdot\frac{(70-11)(70+11)}{(100-7)(100+7)}.\]"),("Cancel matching factors",r"Every factor in the numerator appears once in the denominator."),("Conclude",r"The value is $\boxed{1}$."),],
+3:[("Choose a convenient value",r"Since $z:x=1:6$, let $z=1$ and $x=6$. Ratios allow this because only relative sizes matter."),("Find w",r"The ratio $w:x=4:3$ gives \[\frac w6=\frac43,\] so $w=8$."),("Find y",r"The ratio $y:z=3:2$ gives \[\frac y1=\frac32,\] so $y=\frac32$."),("Compute w to y",r"Thus \[w:y=8:\frac32=16:3.\]"),("Conclude",r"The answer is $\boxed{16:3}$."),],
+4:[("Use the angle sum",r"The two acute angles of a right triangle sum to $90^\circ$, so \[a+b=90.\] We need both $a$ and $b$ prime, with $a>b$."),("Test the smallest primes for b",r"If $b=2$, then $a=88$, not prime. If $b=3$, then $a=87$, not prime. If $b=5$, then $a=85$, not prime."),("Find the first working value",r"If $b=7$, then $a=83$, which is prime."),("Conclude",r"The least possible value of $b$ is $\boxed{7}$."),],
+5:[("Let Team A's games be N",r"If Team A played $N$ games, then it won $\frac23N$ and lost $\frac13N$."),("Write Team B's record",r"Team B has $7$ more wins and $7$ more losses, so it has won \[\frac23N+7\] and lost \[\frac13N+7.\] Therefore Team B has played $N+14$ games."),("Use Team B's win fraction",r"Team B won $\frac58$ of its games, so \[\frac{\frac23N+7}{N+14}=\frac58.\]"),("Solve",r"Multiplying gives \[8\left(\frac23N+7\right)=5(N+14),\] so \[\frac{16}{3}N+56=5N+70.\] Hence $\frac13N=14$, and $N=42$."),("Conclude",r"Team A played $\boxed{42}$ games."),],
+6:[("Factor the numerator",r"Start with \[(n+2)!-(n+1)!=(n+1)!\big((n+2)-1\big)=(n+1)!(n+1).\]"),("Divide by n factorial",r"Since \[(n+1)!=(n+1)n!,\] the whole expression becomes \[\frac{(n+1)!(n+1)}{n!}=(n+1)^2.\]"),("Interpret the result",r"For every integer $n\ge9$, $(n+1)^2$ is a perfect square."),("Conclude",r"The expression is always $\boxed{\text{a perfect square}}$."),],
+7:[("Use the angle formula for slopes",r"If two lines have slopes $m_1$ and $m_2$, then the tangent of the angle between them is \[\left|\frac{m_2-m_1}{1+m_1m_2}\right|.\] Here the angle is $45^\circ$, so this value is $1$."),("Set the slopes",r"Let the slopes be $m$ and $6m$. Then \[\left|\frac{6m-m}{1+6m^2}\right|=1.\] Since $1+6m^2>0$, this becomes \[5|m|=1+6m^2.\]"),("Solve for |m|",r"Let $t=|m|$. Then \[6t^2-5t+1=0,\] so \[(3t-1)(2t-1)=0.\] Thus $t=\frac13$ or $t=\frac12$."),("Maximize the product",r"The product of the slopes is \[6m^2=6t^2.\] The larger value occurs at $t=\frac12$, giving \[6\cdot\frac14=\frac32.\]"),("Conclude",r"The greatest possible product is $\boxed{\frac32}$."),],
+8:[("Complete the square in y",r"The equation \[x^{2020}+y^2=2y\] can be rewritten as \[x^{2020}+(y-1)^2=1.\]"),("Use nonnegativity",r"Both terms on the left are nonnegative integers. Therefore the possibilities are \[x^{2020}=0,\ (y-1)^2=1\] or \[x^{2020}=1,\ (y-1)^2=0.\]"),("Count each case",r"If $x=0$, then $y-1=\pm1$, so $y=0$ or $2$. If $x^{2020}=1$, then $x=\pm1$ and $y=1$."),("Add the solutions",r"This gives \[(0,0),(0,2),(1,1),(-1,1),\] a total of $4$ ordered pairs."),("Conclude",r"The answer is $\boxed{4}$."),],
+9:[("Relate the sector to the cone",r"The radius of the sector becomes the slant height of the cone, so the slant height is $4$."),("Find the cone base radius",r"The arc length of a three-quarter circle of radius $4$ is \[\frac34\cdot2\pi\cdot4=6\pi.\] This becomes the circumference of the cone base, so \[2\pi r=6\pi,\] and $r=3$."),("Find the cone height",r"Use the right triangle formed by radius, height, and slant height: \[h^2+3^2=4^2.\] Thus \[h=\sqrt7.\]"),("Compute the volume",r"The cone volume is \[\frac13\pi r^2h=\frac13\pi\cdot9\cdot\sqrt7=3\pi\sqrt7.\]"),("Conclude",r"The answer is $\boxed{3\pi\sqrt7}$."),],
+10:[("Place the square in coordinates",r"Let $A=(0,0)$, $B=(1,0)$, $C=(1,1)$, and $D=(0,1)$. The inscribed circle has center \[\left(\frac12,\frac12\right)\] and radius $\frac12$. The point $M$ is the midpoint of $\overline{CD}$, so \[M=\left(\frac12,1\right).\]"),("Parametrize line AM",r"Points on $\overline{AM}$ have the form \[\left(\frac t2,t\right),\quad 0\le t\le1.\] The point $M$ corresponds to $t=1$."),("Find the other circle intersection",r"Substitute into the circle equation: \[\left(\frac t2-\frac12\right)^2+\left(t-\frac12\right)^2=\frac14.\] Solving gives \[t=\frac15\quad\text{or}\quad t=1.\] The point $P$ corresponds to $t=\frac15$."),("Compute AP",r"The length $AM$ is \[\sqrt{\left(\frac12\right)^2+1^2}=\frac{\sqrt5}{2}.\] Therefore \[AP=\frac15 AM=\frac{\sqrt5}{10}.\]"),("Conclude",r"The answer is $\boxed{\frac{\sqrt5}{10}}$."),],
 })
 
 def esc(x, quote=True):
