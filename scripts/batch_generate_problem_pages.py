@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 223
+BATCH_NUMBER = 224
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2015_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+TARGET_NUMBERS = {11,12,13,14,15,16,17,18}
 SKIPPED = []
-BATCH_LABEL = "2015 AMC 12B Problems 1-10"
-NEXT_START = "2015 AMC 12B Problem 11"
+BATCH_LABEL = "2015 AMC 12B Problems 11-18"
+NEXT_START = "2015 AMC 12B Problem 19"
 
-ANS={1:("C",r"\frac74"),2:("B","3:30 PM"),3:("A","8"),4:("B","Hikmet"),5:("B","37"),6:("A","0.21"),7:("D","39"),8:("D","2015"),9:("C",r"\frac23"),10:("C","5")}
+ANS={11:("E",r"\frac{281}{13}"),12:("D","16.5"),13:("B","6"),14:("D",r"4(\pi-\sqrt3)"),15:("D",r"\frac{11}{24}"),16:("C",r"36\sqrt{21}"),17:("D","11"),18:("D","the set of integers greater than 3")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2973,6 +2973,39 @@ SOL.update({
 8:[("Rewrite 625",r"Since \[625=5^4,\] the expression is \[\left((5^4)^{\log_5 2015}\right)^{1/4}.\]"),("Use exponent rules",r"Inside the parentheses, \[(5^4)^{\log_5 2015}=5^{4\log_5 2015}.\]"),("Apply the one-fourth power",r"Taking the fourth root gives \[\left(5^{4\log_5 2015}\right)^{1/4}=5^{\log_5 2015}.\]"),("Simplify",r"\[5^{\log_5 2015}=2015.\]"),("Conclude",r"The answer is $\boxed{2015}$.")],
 9:[("Let P be Larry's winning probability",r"Larry can win immediately on his first throw with probability $\frac12$."),("Consider what happens if both miss",r"If Larry misses and then Julius misses, which has probability \[\frac12\cdot\frac12=\frac14,\] the game returns to the same situation with Larry to throw."),("Set up the recurrence",r"Therefore \[P=\frac12+\frac14P.\]"),("Solve",r"\[\frac34P=\frac12,\] so \[P=\frac23.\]"),("Conclude",r"The answer is \[\boxed{\frac23}.\]")],
 10:[("List possible triangles carefully",r"We need integer-sided triangles with perimeter less than $15$, but not equilateral, not isosceles, and not right. So we only list scalene triples $a<b<c$ with $a+b>c$ and $a+b+c<15$."),("Enumerate by small sides",r"The valid triples are \[(2,3,4),\ (2,4,5),\ (2,5,6),\ (3,4,6),\ (3,5,6).\]"),("Check exclusions",r"Each listed triangle is scalene. None satisfies the Pythagorean theorem, so none is right."),("Count",r"There are $5$ such triangles."),("Conclude",r"The answer is $\boxed{5}$.")],
+})
+
+OV.update({
+11:(r"The line $12x+5y=60$ forms a triangle with the coordinate axes. What is the sum of the lengths of the altitudes of this triangle?",[("A","20"),("B",r"$\frac{360}{17}$"),("C",r"$\frac{107}{5}$"),("D",r"$\frac{43}{2}$"),("E",r"$\frac{281}{13}$")]),
+12:(r"Let $a,b,$ and $c$ be three distinct one-digit numbers. What is the maximum value of the sum of the roots of the equation \[(x-a)(x-b)+(x-b)(x-c)=0?\]",[("A","15"),("B","15.5"),("C","16"),("D","16.5"),("E","17")]),
+13:(r"Quadrilateral $ABCD$ is inscribed inside a circle with $\angle BAC=70^\circ$, $\angle ADB=40^\circ$, $AD=4$, and $BC=6$. What is $AC$?",[("A",r"$3+\sqrt5$"),("B","6"),("C",r"$9\sqrt2$"),("D",r"$8-\sqrt2$"),("E",r"$7\sqrt2$")]),
+14:(r"A circle of radius $2$ is centered at $A$. An equilateral triangle with side $4$ has a vertex at $A$. What is the difference between the area of the region that lies inside the circle but outside the triangle and the area of the region that lies inside the triangle but outside the circle?",[("A",r"$8-\pi$"),("B",r"$\pi+2\sqrt3$"),("C",r"$2\pi-2\sqrt3$"),("D",r"$4(\pi-\sqrt3)$"),("E",r"$2\pi+3\sqrt3$")]),
+15:(r"At Rachelle's school an A counts $4$ points, a B counts $3$ points, a C counts $2$ points, and a D counts $1$ point. Her GPA on the four classes she is taking is the total sum of points divided by $4$. She is certain that she will get As in both Mathematics and Science, and at least a C in each of English and History. She has a $\frac16$ chance of getting an A in English and a $\frac14$ chance of getting a B. In History, she has a $\frac14$ chance of getting an A and a $\frac13$ chance of getting a B, independently of what she gets in English. What is the probability that Rachelle will get a GPA of at least $3.5$?",[("A",r"$\frac{11}{72}$"),("B",r"$\frac16$"),("C",r"$\frac{3}{16}$"),("D",r"$\frac{11}{24}$"),("E",r"$\frac12$")]),
+16:(r"A regular hexagon with sides of length $6$ has an isosceles triangle attached to each side. Each of these triangles has two sides of length $8$. The isosceles triangles are folded to make a pyramid with the hexagon as the base of the pyramid. What is the volume of the pyramid?",[("A","18"),("B","162"),("C",r"$36\sqrt{21}$"),("D",r"$18\sqrt{138}$"),("E",r"$54\sqrt{21}$")]),
+17:(r"An unfair coin lands on heads with a probability of $\frac14$. When tossed $n$ times, the probability of exactly two heads is the same as the probability of exactly three heads. What is the value of $n$?",[("A","5"),("B","8"),("C","10"),("D","11"),("E","13")]),
+18:(r"For every composite positive integer $n$, define $r(n)$ to be the sum of the factors in the prime factorization of $n$. For example, $r(50)=12$ because the prime factorization of $50$ is $2\cdot5^2$, and $2+5+5=12$. What is the range of the function $r$, where $n$ runs over composite positive integers?",[("A","the set of positive integers"),("B","the set of composite positive integers"),("C","the set of even positive integers"),("D","the set of integers greater than 3"),("E","the set of integers greater than 4")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Use the 5-12-13 right triangle formed by the intercepts.",
+12:"Factor the quadratic expression and maximize the root sum.",
+13:"Use inscribed-angle relationships to identify an isosceles triangle.",
+14:"The requested area difference equals circle area minus triangle area.",
+15:"Enumerate English and History grade combinations that give total points at least 14.",
+16:"Folded side triangles give equal lateral edges from the apex to the base vertices.",
+17:"Equate binomial probabilities for exactly two and exactly three heads.",
+18:"Represent every integer at least 4 as a sum of at least two primes, using 2s and 3s.",
+})
+
+SOL.update({
+11:[("Find the intercepts",r"The line $12x+5y=60$ meets the $x$-axis at $x=5$ and the $y$-axis at $y=12$."),("Recognize the triangle",r"The coordinate axes and the line form a right triangle with legs $5$ and $12$. Its hypotenuse is \[\sqrt{5^2+12^2}=13.\]"),("Find two altitudes immediately",r"In a right triangle, the altitudes to the legs are the other legs. So two of the altitudes have lengths $5$ and $12$."),("Find the altitude to the hypotenuse",r"The area is \[\frac12\cdot5\cdot12=30.\] If $h$ is the altitude to the hypotenuse, then \[\frac12\cdot13\cdot h=30,\] so \[h=\frac{60}{13}.\]"),("Add",r"The sum is \[5+12+\frac{60}{13}=17+\frac{60}{13}=\frac{281}{13}.\]"),("Conclude",r"The answer is \[\boxed{\frac{281}{13}}.\]")],
+12:[("Factor the equation",r"The expression factors as \[(x-a)(x-b)+(x-b)(x-c)=(x-b)\big((x-a)+(x-c)\big).\]"),("Find the roots",r"Thus the roots are \[x=b\quad\text{and}\quad x=\frac{a+c}{2}.\]"),("Write the root sum",r"The sum of the roots is \[b+\frac{a+c}{2}.\]"),("Maximize with distinct one-digit numbers",r"To maximize this expression, choose $b$ as large as possible, so $b=9$. Then choose $a$ and $c$ as the next two largest distinct digits, $8$ and $7$."),("Compute",r"The maximum root sum is \[9+\frac{8+7}{2}=9+\frac{15}{2}=16.5.\]"),("Conclude",r"The answer is $\boxed{16.5}$.")],
+13:[("Use the inscribed angle theorem",r"The angle $\angle ADB=40^\circ$ intercepts arc $AB$, so the minor arc $AB$ has measure $80^\circ$."),("Transfer the arc to another angle",r"The angle $\angle ACB$ intercepts the same arc $AB$, so \[\angle ACB=40^\circ.\]"),("Find the angles in triangle ABC",r"In $\triangle ABC$, we are given \[\angle BAC=70^\circ,\] and we found \[\angle ACB=40^\circ.\] Therefore \[\angle ABC=70^\circ.\]"),("Use equal angles",r"Since \[\angle A=\angle B=70^\circ,\] the opposite sides are equal: \[BC=AC.\]"),("Use the given length",r"Because $BC=6$, we get \[AC=6.\]"),("Conclude",r"The answer is $\boxed{6}$.")],
+14:[("Name the two regions",r"The requested difference is \[(\text{inside circle outside triangle})-(\text{inside triangle outside circle}).\] The overlap cancels out."),("Use cancellation",r"After cancellation, the difference is simply \[(\text{area of circle})-(\text{area of triangle}).\]"),("Compute circle area",r"The circle has radius $2$, so its area is \[\pi(2)^2=4\pi.\]"),("Compute triangle area",r"An equilateral triangle of side $4$ has area \[\frac{\sqrt3}{4}\cdot4^2=4\sqrt3.\]"),("Subtract",r"The difference is \[4\pi-4\sqrt3=4(\pi-\sqrt3).\]"),("Conclude",r"The answer is \[\boxed{4(\pi-\sqrt3)}.\]")],
+15:[("Translate the GPA requirement",r"Math and Science are both As, contributing $8$ points. A GPA of at least $3.5$ over four classes means total points at least \[4\cdot3.5=14.\] So English plus History must contribute at least $6$ points."),("List successful grade combinations",r"For English and History, points are A=$4$, B=$3$, C=$2$. A total of at least $6$ occurs for \[(A,A),(A,B),(B,A),(B,B),(A,C),(C,A).\]"),("Use a complement or direct count",r"Equivalently, failure occurs only when English and History are \[(B,C),(C,B),(C,C).\] Direct calculation of success is quick."),("Compute by English grade",r"If English is A, success is automatic: probability $\frac16$. If English is B, History must be A or B: probability \[\frac14\left(\frac14+\frac13\right)=\frac7{48}.\] If English is C, History must be A: probability \[\frac7{12}\cdot\frac14=\frac7{48}.\]"),("Add",r"The total probability is \[\frac16+\frac7{48}+\frac7{48}=\frac{8+7+7}{48}=\frac{22}{48}=\frac{11}{24}.\]"),("Conclude",r"The answer is \[\boxed{\frac{11}{24}}.\]")],
+16:[("Understand the folded shape",r"When the triangles fold up, their outer vertices meet at the pyramid apex. Each lateral edge from the apex to a base vertex has length $8$."),("Use the base geometry",r"A regular hexagon of side $6$ has circumradius $6$, so the distance from the base center to any vertex is $6$."),("Find the height",r"The apex, the base center, and a base vertex form a right triangle with hypotenuse $8$ and one leg $6$. The pyramid height is \[\sqrt{8^2-6^2}=\sqrt{28}=2\sqrt7.\]"),("Find the base area",r"A regular hexagon of side $6$ consists of $6$ equilateral triangles of side $6$, so its area is \[6\cdot\frac{\sqrt3}{4}\cdot6^2=54\sqrt3.\]"),("Compute volume",r"The volume is \[\frac13(54\sqrt3)(2\sqrt7)=36\sqrt{21}.\]"),("Conclude",r"The answer is \[\boxed{36\sqrt{21}}.\]")],
+17:[("Write the two probabilities",r"The probability of exactly two heads is \[\binom n2\left(\frac14\right)^2\left(\frac34\right)^{n-2}.\] The probability of exactly three heads is \[\binom n3\left(\frac14\right)^3\left(\frac34\right)^{n-3}.\]"),("Set them equal",r"Equating and dividing by common factors gives \[1=\frac{\binom n3}{\binom n2}\cdot\frac{1/4}{3/4}.\]"),("Simplify the binomial ratio",r"\[\frac{\binom n3}{\binom n2}=\frac{n-2}{3}.\] Also \[\frac{1/4}{3/4}=\frac13.\]"),("Solve",r"Thus \[1=\frac{n-2}{9},\] so \[n=11.\]"),("Conclude",r"The answer is $\boxed{11}$.")],
+18:[("Find the smallest possible value",r"A composite number has at least two prime factors counted with multiplicity. The smallest possible sum is \[2+2=4,\] from $n=4$."),("Show every integer at least 4 is possible",r"Every integer $m\ge4$ can be written as a sum of $2$'s and $3$'s with at least two terms: \[4=2+2,\quad5=2+3,\] and larger values follow by adding more $2$'s."),("Convert sums to composite numbers",r"If \[m=p_1+p_2+\cdots+p_k\] is such a sum of primes with $k\ge2$, take \[n=p_1p_2\cdots p_k.\] Then $n$ is composite and \[r(n)=m.\]"),("Exclude small values",r"No composite number can have $r(n)=1,2,$ or $3$, because at least two prime factors are needed."),("Conclude",r"The range is exactly the set of integers greater than $3$, so the answer is $\boxed{\text{D}}$.")],
 })
 
 def esc(x, quote=True):
