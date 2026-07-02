@@ -3,19 +3,18 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 248
+BATCH_NUMBER = 249
 CONTEST_DIR = "amc12"
 FORM = "B"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2019_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {11,13,14,16,17,18,19,20}
+TARGET_NUMBERS = {21,22,23,24}
 SKIPPED = [
-    "2019 AMC 12B Problem 12: triangle construction depends on the missing diagram; skipped",
-    "2019 AMC 12B Problem 15: shaded circle/semicircle area problem depends on the missing diagram; skipped",
+    "2019 AMC 12B Problem 25: centroid/equilateral quadrilateral maximum problem is high-risk without a longer geometry derivation; skipped",
 ]
-BATCH_LABEL = "2019 AMC 12B Problems 11, 13, 14, 16, 17, 18, 19, 20"
-NEXT_START = "2019 AMC 12B Problem 21"
+BATCH_LABEL = "2019 AMC 12B Problems 21-24"
+NEXT_START = "2020 AMC 12A Problem 1"
 
-ANS={11:("D","42"),13:("C",r"\frac13"),14:("C","117"),16:("A",r"\frac{15}{256}"),17:("D","4"),18:("C",r"2\sqrt2"),19:("B",r"\frac14"),20:("C",r"\frac{85\pi}{8}")}
+ANS={21:("B","4"),22:("C",r"[81,242]"),23:("C","65"),24:("C",r"\frac{3\sqrt3}{2}")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4468,6 +4467,27 @@ SOL.update({
 18:[("Choose coordinates",r"Place \[A=(0,0,0),\quad B=(3,0,0),\quad C=(3,3,0),\quad D=(0,3,0),\quad E=(0,0,6).\] This matches the square base and the altitude $AE=6$."),("Find P, Q, and R",r"Point $P$ is one third of the way from $B$ to $E$, so \[P=(2,0,2).\] Point $Q$ is one third of the way from $D$ to $E$, so \[Q=(0,2,2).\] Point $R$ is two thirds of the way from $C$ to $E$, so \[R=(1,1,4).\]"),("Build two side vectors",r"Use \[\overrightarrow{PQ}=Q-P=(-2,2,0),\quad \overrightarrow{PR}=R-P=(-1,1,2).\] The area of the triangle is half the magnitude of their cross product."),("Compute the cross product",r"We get \[\overrightarrow{PQ}\times\overrightarrow{PR}=(4,4,0),\] whose length is \[\sqrt{4^2+4^2}=4\sqrt2.\]"),("Conclude",r"The area of $\triangle PQR$ is \[\frac12\cdot4\sqrt2=2\sqrt2.\] The answer is $\boxed{2\sqrt2}$."),],
 19:[("Reduce the possible states",r"Only the distribution of the three dollars matters. Up to naming the players, the important states are balanced $(1,1,1)$ and unbalanced $(2,1,0)$. A state like $(3,0,0)$ immediately moves to an unbalanced state, but it will not arise from the starting balanced state in a way that changes the calculation below."),("Find the chance to be balanced after one balanced round",r"Starting from $(1,1,1)$, all three players give a dollar. There are $2^3=8$ equally likely choices. The money remains balanced only when the gifts form one of the two directed cycles, so \[P((1,1,1)\to(1,1,1))=\frac28=\frac14.\]"),("Find the chance from an unbalanced state",r"From a state like $(2,1,0)$, the two players with money each choose a recipient, giving $2^2=4$ equally likely outcomes. Exactly one of these returns the holdings to $(1,1,1)$, so the chance is again $\frac14$."),("See why the number of rounds no longer matters",r"After any round, whether the current state is balanced or unbalanced, the probability that the next state is balanced is $\frac14$. Therefore after the first bell, and after every later bell, the probability of being balanced is $\frac14$."),("Conclude",r"After $2019$ rings, the probability that each player has $\$1$ is $\boxed{\frac14}$."),],
 20:[("Name the unknown center and tangent intersection",r"Let the circle's center be $O=(h,k)$, and let the two tangents meet at $T=(t,0)$ on the $x$-axis. A radius to a tangent point is perpendicular to the tangent line."),("Write perpendicularity equations",r"For $A=(6,13)$, perpendicularity gives \[(T-A)\cdot(O-A)=0.\] For $B=(12,11)$, it gives \[(T-B)\cdot(O-B)=0.\]"),("Use equal radii",r"Because both $A$ and $B$ lie on the circle, \[OA^2=OB^2.\] Solving these three equations gives \[O=\left(\frac{37}{4},\frac{51}{4}\right),\quad T=(5,0).\]"),("Find the radius squared",r"Now compute \[r^2=\left(\frac{37}{4}-6\right)^2+\left(\frac{51}{4}-13\right)^2=\left(\frac{13}{4}\right)^2+\left(-\frac14\right)^2=\frac{170}{16}=\frac{85}{8}.\]"),("Conclude",r"The area of the circle is \[\pi r^2=\frac{85\pi}{8}.\] The answer is $\boxed{\frac{85\pi}{8}}$."),],
+})
+
+OV.update({
+21:(r"How many quadratic polynomials with real coefficients are there such that the set of roots equals the set of coefficients? For clarification, if the polynomial is $ax^2+bx+c$, $a\ne0$, and the roots are $r$ and $s$, then the requirement is that $\{a,b,c\}=\{r,s\}$.",[("A","3"),("B","4"),("C","5"),("D","6"),("E","infinitely many")]),
+22:(r"Define a sequence recursively by $x_0=5$ and \[x_{n+1}=\frac{x_n^2+5x_n+4}{x_n+6}\] for all nonnegative integers $n$. Let $m$ be the least positive integer such that \[x_m\le4+\frac1{2^{20}}.\] In which of the following intervals does $m$ lie?",[("A",r"$[9,26]$"),("B",r"$[27,80]$"),("C",r"$[81,242]$"),("D",r"$[243,728]$"),("E",r"$[729,\infty)$")]),
+23:(r"How many sequences of $0$s and $1$s of length $19$ are there that begin with a $0$, end with a $0$, contain no two consecutive $0$s, and contain no three consecutive $1$s?",[("A","55"),("B","60"),("C","65"),("D","70"),("E","75")]),
+24:(r"Let \[\omega=-\frac12+\frac{\sqrt3}{2}i.\] Let $S$ denote all points in the complex plane of the form \[a+b\omega+c\omega^2,\] where $0\le a\le1$, $0\le b\le1$, and $0\le c\le1$. What is the area of $S$?",[("A",r"$\frac{\sqrt3}{4}$"),("B",r"$\frac{\sqrt3}{2}$"),("C",r"$\frac{3\sqrt3}{2}$"),("D",r"$\frac{\pi}{3}$"),("E",r"$\frac{\pi}{2}$")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Use Vieta's formulas and split by how the two root values appear among the three coefficients.",
+22:"Study the distance from the fixed point 4 and bound the contraction ratio.",
+23:"Convert the sequence into blocks of one or two 1s between zeros.",
+24:"View the set as a zonotope generated by three unit complex directions.",
+})
+
+SOL.update({
+21:[("Understand the set condition",r"The roots form a set with at most two elements, so the coefficient set $\{a,b,c\}$ must also have at most two distinct values. Since $a\ne0$, Vieta's formulas give \[r+s=-\frac ba,\qquad rs=\frac ca.\]"),("Rule out the one-value case",r"If all coefficients were the same nonzero value $t$, the polynomial would be $t(x^2+x+1)$. Its roots are not real, so this case contributes no polynomial."),("Use coefficient patterns",r"In the two-value case, the coefficients must be chosen from the two roots $r$ and $s$, and both values must appear. Up to interchanging the names $r$ and $s$, the patterns to check are \[(a,b,c)=(r,r,s),\quad(r,s,s),\quad(r,s,r).\]"),("Count the first two pattern types",r"For $(r,r,s)$, Vieta's formulas give two real polynomials: \[-x^2-x\quad\text{and}\quad x^2+x-2.\] For $(r,s,s)$, they give one more real polynomial: \[x^2-\frac12x-\frac12.\] Interchanging $r$ and $s$ does not create new polynomials beyond these."),("Handle the middle pattern",r"For $(a,b,c)=(r,s,r)$, the product condition gives $rs=1$, so $s=\frac1r$. The sum condition becomes \[r+\frac1r=-\frac1{r^2},\] or \[r^3+r+1=0.\] The function $r^3+r+1$ is strictly increasing because its derivative is $3r^2+1>0$, so it has exactly one real root. This gives exactly one additional polynomial."),("Conclude",r"The total number of polynomials is \[2+1+1=4.\] The answer is $\boxed{4}$."),],
+22:[("Shift the sequence toward the fixed point",r"The expression suggests that the sequence is approaching $4$. Let \[y_n=x_n-4.\] Then $y_0=1$ and a direct substitution gives \[y_{n+1}=y_n\cdot\frac{y_n+9}{y_n+10}.\]"),("Bound the shrink factor",r"Since $y_n$ stays positive and starts at $1$, the factor \[\frac{y_n+9}{y_n+10}\] is always between $\frac9{10}$ and $\frac{10}{11}$. Therefore \[\left(\frac9{10}\right)^n<y_n\le\left(\frac{10}{11}\right)^n.\]"),("Show m is greater than 80",r"Using the lower bound, \[y_{80}>\left(\frac9{10}\right)^{80}.\] This is greater than $2^{-20}$, so $x_{80}>4+\frac1{2^{20}}$. Hence $m>80$."),("Show m is at most 242",r"Using the upper bound, \[y_{242}\le\left(\frac{10}{11}\right)^{242}.\] This is less than $2^{-20}$, so $x_{242}\le4+\frac1{2^{20}}$. Hence $m\le242$."),("Choose the interval",r"We have shown \[81\le m\le242.\]"),("Conclude",r"The correct interval is $\boxed{[81,242]}$."),],
+23:[("Describe the structure between zeros",r"The sequence begins and ends with $0$, and no two zeros can be consecutive. Therefore between any two consecutive zeros there must be a block of $1$s."),("Limit the block lengths",r"No three consecutive $1$s are allowed, so each block of $1$s has length either $1$ or $2$."),("Set up the counting equation",r"Suppose there are $k$ blocks of $1$s. Then there are $k+1$ zeros. If $t$ of the $k$ blocks have length $2$, then the total length is \[(k+1)+(k+t)=2k+t+1.\] This must equal $19$."),("Solve for possible k",r"The equation gives \[t=18-2k.\] Since $0\le t\le k$, the possible values are \[k=6,7,8,9.\]"),("Count the choices",r"For each $k$, choose which $t$ blocks have length $2$: \[\binom66+\binom74+\binom82+\binom90=1+35+28+1=65.\]"),("Conclude",r"There are $\boxed{65}$ sequences."),],
+24:[("Interpret the complex numbers as vectors",r"The three variable terms are independent segments in the directions $1$, $\omega$, and $\omega^2$. These are unit vectors separated by $120^\circ$ in the complex plane."),("Recognize the shape",r"The set $S$ is the Minkowski sum of three unit segments. In the plane, such a sum is a centrally symmetric hexagon, also called a zonotope."),("Use the area formula for generated segments",r"For a zonotope generated by vectors $v_1,v_2,v_3$, its area is \[|\det(v_1,v_2)|+|\det(v_1,v_3)|+|\det(v_2,v_3)|.\] Each determinant is the area of a parallelogram from a pair of generating segments."),("Compute each parallelogram area",r"Each pair of the three directions makes an angle of $120^\circ$ or $60^\circ$, so the absolute determinant is \[\sin 60^\circ=\frac{\sqrt3}{2}.\]"),("Add the three contributions",r"There are three pairs of generating directions, so \[\text{Area}(S)=3\cdot\frac{\sqrt3}{2}=\frac{3\sqrt3}{2}.\]"),("Conclude",r"The answer is $\boxed{\frac{3\sqrt3}{2}}$."),],
 })
 
 def esc(x, quote=True):
