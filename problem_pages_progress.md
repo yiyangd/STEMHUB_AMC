@@ -3388,3 +3388,19 @@
 - Pushed: pending
 - Next batch should start from: 2012 AMC 12A Problem 21
 - Review notes: none.
+
+## Batch 209: 2012 AMC 12B Problems 1-10
+
+- Start time: 2026-07-01T19:52:01-07:00
+- End time: 2026-07-01T19:52:02-07:00
+- Processed contest: AMC12
+- Processed range: 2012 AMC 12B Problems 1-10
+- Generated count: 10
+- Updated existing count: 0
+- Skipped count: 5
+- Skipped reasons: 2012 AMC 12A Problem 21: skipped because the system of equations is OCR-damaged.; 2012 AMC 12A Problem 22: skipped because the cube-plane intersection problem needs a dedicated spatial derivation.; 2012 AMC 12A Problem 23: skipped because the translated-square lattice probability problem is high-risk without a full derivation.; 2012 AMC 12A Problem 24: skipped because the recursively defined decimal sequence is OCR-damaged.; 2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2012 AMC 12B Problem 11
+- Review notes: none.

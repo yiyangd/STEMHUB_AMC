@@ -1,25 +1,30 @@
 # Problem Pages Report
 
-- Total manifest entries: 1540
-- Latest batch: 208 (2012 AMC 12A Problems 11-13, 15, 17-19)
-- Latest new generated count: 7
+- Total manifest entries: 1550
+- Latest batch: 209 (2012 AMC 12B Problems 1-10)
+- Latest new generated count: 10
 - Latest updated existing count: 0
-- Latest skipped count: 3
+- Latest skipped count: 5
 - MathJax validation: passed
-- Answer verification source: AoPS 2012 AMC 12A Answer Key
+- Answer verification source: AoPS 2012 AMC 12B Answer Key
 
 ## Latest Batch Pages
 
-- `2012 AMC 12A Problem 11` -> `amc12/problems/2012-amc-12a-problem-11/`
-- `2012 AMC 12A Problem 12` -> `amc12/problems/2012-amc-12a-problem-12/`
-- `2012 AMC 12A Problem 13` -> `amc12/problems/2012-amc-12a-problem-13/`
-- `2012 AMC 12A Problem 15` -> `amc12/problems/2012-amc-12a-problem-15/`
-- `2012 AMC 12A Problem 17` -> `amc12/problems/2012-amc-12a-problem-17/`
-- `2012 AMC 12A Problem 18` -> `amc12/problems/2012-amc-12a-problem-18/`
-- `2012 AMC 12A Problem 19` -> `amc12/problems/2012-amc-12a-problem-19/`
+- `2012 AMC 12B Problem 1` -> `amc12/problems/2012-amc-12b-problem-1/`
+- `2012 AMC 12B Problem 2` -> `amc12/problems/2012-amc-12b-problem-2/`
+- `2012 AMC 12B Problem 3` -> `amc12/problems/2012-amc-12b-problem-3/`
+- `2012 AMC 12B Problem 4` -> `amc12/problems/2012-amc-12b-problem-4/`
+- `2012 AMC 12B Problem 5` -> `amc12/problems/2012-amc-12b-problem-5/`
+- `2012 AMC 12B Problem 6` -> `amc12/problems/2012-amc-12b-problem-6/`
+- `2012 AMC 12B Problem 7` -> `amc12/problems/2012-amc-12b-problem-7/`
+- `2012 AMC 12B Problem 8` -> `amc12/problems/2012-amc-12b-problem-8/`
+- `2012 AMC 12B Problem 9` -> `amc12/problems/2012-amc-12b-problem-9/`
+- `2012 AMC 12B Problem 10` -> `amc12/problems/2012-amc-12b-problem-10/`
 
 ## Skipped in latest batch
 
-- 2012 AMC 12A Problem 14: skipped because the curve area problem depends on the original diagram.
-- 2012 AMC 12A Problem 16: skipped because the two-circle geometry needs a dedicated diagram-sensitive derivation.
-- 2012 AMC 12A Problem 20: skipped because the polynomial statement is truncated in the local CSV.
+- 2012 AMC 12A Problem 21: skipped because the system of equations is OCR-damaged.
+- 2012 AMC 12A Problem 22: skipped because the cube-plane intersection problem needs a dedicated spatial derivation.
+- 2012 AMC 12A Problem 23: skipped because the translated-square lattice probability problem is high-risk without a full derivation.
+- 2012 AMC 12A Problem 24: skipped because the recursively defined decimal sequence is OCR-damaged.
+- 2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged.

@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 208
+BATCH_NUMBER = 209
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2012_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,15,17,18,19}
-SKIPPED = ["2012 AMC 12A Problem 14: skipped because the curve area problem depends on the original diagram.", "2012 AMC 12A Problem 16: skipped because the two-circle geometry needs a dedicated diagram-sensitive derivation.", "2012 AMC 12A Problem 20: skipped because the polynomial statement is truncated in the local CSV."]
-BATCH_LABEL = "2012 AMC 12A Problems 11-13, 15, 17-19"
-NEXT_START = "2012 AMC 12A Problem 21"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2012_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = ["2012 AMC 12A Problem 21: skipped because the system of equations is OCR-damaged.", "2012 AMC 12A Problem 22: skipped because the cube-plane intersection problem needs a dedicated spatial derivation.", "2012 AMC 12A Problem 23: skipped because the translated-square lattice probability problem is high-risk without a full derivation.", "2012 AMC 12A Problem 24: skipped because the recursively defined decimal sequence is OCR-damaged.", "2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged."]
+BATCH_LABEL = "2012 AMC 12B Problems 1-10"
+NEXT_START = "2012 AMC 12B Problem 11"
 
-ANS={11:("B",r"\frac5{36}"),12:("D",r"\frac{2\sqrt{19}-4}{5}"),13:("D","48"),15:("A",r"\frac{49}{512}"),17:("B","13"),18:("A","15"),19:("B","170")}
+ANS={1:("C","64"),2:("E","200"),3:("D","48"),4:("B","4"),5:("A","1"),6:("A","Her estimate is larger than x-y"),7:("E","22.5"),8:("A","729"),9:("B","40"),10:("B","27")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2515,6 +2515,55 @@ SOL.update({
 ],
 })
 
+OV.update({
+1:(r"Each third-grade classroom at Pearl Creek Elementary has $18$ students and $2$ pet rabbits. How many more students than rabbits are there in all $4$ of the third-grade classrooms?",[("A","48"),("B","56"),("C","64"),("D","72"),("E","80")]),
+2:(r"A circle of radius $5$ is inscribed in a rectangle. The ratio of the length of the rectangle to its width is $2:1$. What is the area of the rectangle?",[("A","50"),("B","100"),("C","125"),("D","150"),("E","200")]),
+3:(r"For a science project, Sammy observed a chipmunk and a squirrel stashing acorns in holes. The chipmunk hid $3$ acorns in each of the holes it dug. The squirrel hid $4$ acorns in each of the holes it dug. They each hid the same number of acorns, although the squirrel needed $4$ fewer holes. How many acorns did the chipmunk hide?",[("A","30"),("B","36"),("C","42"),("D","48"),("E","54")]),
+4:(r"Suppose that the euro is worth $1.30$ dollars. If Diana has $500$ dollars and Etienne has $400$ euros, by what percent is the value of Etienne's money greater than the value of Diana's money?",[("A","2"),("B","4"),("C","6.5"),("D","8"),("E","13")]),
+5:(r"Two integers have a sum of $26$. When two more integers are added to the first two integers the sum is $41$. Finally when two more integers are added to the sum of the previous four integers the sum is $57$. What is the minimum number of even integers among the $6$ integers?",[("A","1"),("B","2"),("C","3"),("D","4"),("E","5")]),
+6:(r"In order to estimate the value of $x-y$, where $x$ and $y$ are real numbers with $x>y>0$, Xiaoli rounded $x$ up by a small amount, rounded $y$ down by the same amount, and then subtracted her values. Which statement is necessarily correct?",[("A","Her estimate is larger than $x-y$"),("B","Her estimate is smaller than $x-y$"),("C","Her estimate equals $x-y$"),("D","Her estimate equals $y-x$"),("E","Her estimate is $0$")]),
+7:(r"Small lights are hung on a string $6$ inches apart in the order red, red, green, green, green, red, red, green, green, green, and so on continuing this pattern of $2$ red lights followed by $3$ green lights. How many feet separate the third red light and the $21$st red light? Note: $1$ foot is equal to $12$ inches.",[("A","18"),("B","18.5"),("C","20"),("D","20.5"),("E","22.5")]),
+8:(r"A dessert chef prepares the dessert for every day of a week starting with Sunday. The dessert each day is either cake, pie, ice cream, or pudding. The same dessert may not be served two days in a row. There must be cake on Friday because of a birthday. How many different dessert menus for the week are possible?",[("A","729"),("B","972"),("C","1024"),("D","2187"),("E","2304")]),
+9:(r"It takes Clea $60$ seconds to walk down an escalator when it is not operating and only $24$ seconds to walk down the escalator when it is operating. How many seconds does it take Clea to ride down the operating escalator when she just stands on it?",[("A","36"),("B","40"),("C","42"),("D","48"),("E","52")]),
+10:(r"What is the area of the polygon whose vertices are the points of intersection of the curves \[x^2+y^2=25\] and \[(x-4)^2+9y^2=81?\]",[("A","24"),("B","27"),("C","36"),("D","37.5"),("E","42")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Multiply classroom counts and subtract rabbits from students.",
+2:"Use the circle diameter as the rectangle width.",
+3:"Set equal acorn totals with different holes per animal.",
+4:"Convert euros to dollars and compare the excess to Diana's amount.",
+5:"Use parity of the three pair sums.",
+6:"Track the effect of rounding x up and y down by the same amount.",
+7:"Locate red lights in a repeating block of five lights.",
+8:"Count menus with a fixed Friday dessert and no adjacent repeats.",
+9:"Use rates for walking and escalator motion.",
+10:"Solve the curve intersections and compute the triangle area.",
+})
+
+SOL.update({
+1:[("Count students",r"There are $4$ classrooms, each with $18$ students, so there are \[4\cdot18=72\] students."),("Count rabbits",r"There are $4$ classrooms, each with $2$ rabbits, so there are \[4\cdot2=8\] rabbits."),("Subtract",r"The difference is \[72-8=64.\]"),("Conclude",r"There are $\boxed{64}$ more students than rabbits."),
+],
+2:[("Use the inscribed circle",r"A circle of radius $5$ has diameter $10$. Since it is inscribed in the rectangle, the rectangle's width is $10$."),("Use the ratio",r"The length-to-width ratio is $2:1$, so the length is \[2\cdot10=20.\]"),("Compute area",r"The area is \[10\cdot20=200.\]"),("Conclude",r"The answer is $\boxed{200}$."),
+],
+3:[("Set up hole counts",r"Let the chipmunk dig $h$ holes. Then the squirrel digs $h-4$ holes."),("Use equal acorn totals",r"The chipmunk hides $3h$ acorns, and the squirrel hides $4(h-4)$ acorns. These are equal, so \[3h=4(h-4).\]"),("Solve",r"This gives \[3h=4h-16,\] so $h=16$."),("Find the acorns",r"The chipmunk hid \[3\cdot16=48\] acorns."),("Conclude",r"The answer is $\boxed{48}$."),
+],
+4:[("Convert euros to dollars",r"Etienne has $400$ euros, and each euro is worth $\$1.30$. So his money is worth \[400\cdot1.30=\$520.\]"),("Find the excess",r"Diana has $\$500$, so Etienne has \[\$520-\$500=\$20\] more."),("Compute percent greater",r"Relative to Diana's $\$500$, the percent greater is \[\frac{20}{500}\cdot100\%=4\%.\]"),("Conclude",r"The answer is $\boxed{4}$."),
+],
+5:[("Translate the three added pairs",r"The first two integers have sum $26$. The next two add \[41-26=15.\] The final two add \[57-41=16.\]"),("Use parity",r"A sum of $26$ can be made with two odd integers, so the first pair can have $0$ even integers. A sum of $15$ is odd, so the second pair must have exactly one even and one odd integer."),("Minimize the last pair",r"A sum of $16$ can be made with two odd integers, so the last pair can have $0$ even integers."),("Add the minimum",r"The minimum possible number of even integers is therefore \[0+1+0=1.\]"),("Conclude",r"The answer is $\boxed{1}$."),
+],
+6:[("Represent the rounding amount",r"Suppose Xiaoli rounds $x$ up by $d$ and rounds $y$ down by the same positive amount $d$."),("Write her estimate",r"Her estimate is \[(x+d)-(y-d)=x-y+2d.\]"),("Compare with the true value",r"Since $d>0$, we have \[x-y+2d>x-y.\]"),("Conclude",r"Her estimate is necessarily larger than $x-y$, so the answer is $\boxed{\text{A}}$."),
+],
+7:[("Find red positions in the pattern",r"The pattern has blocks of $5$ lights: red, red, green, green, green. In block $g$, the red lights are in positions \[5(g-1)+1\quad\text{and}\quad5(g-1)+2.\]"),("Locate the third red light",r"The first two red lights are positions $1$ and $2$, so the third red light is position $6$."),("Locate the 21st red light",r"Since red lights come two per block, the $21$st red light is the first red light of block $11$, at position \[5(10)+1=51.\]"),("Compute distance",r"From position $6$ to position $51$ there are \[51-6=45\] gaps, each $6$ inches long. That is \[45\cdot6=270\] inches."),("Convert to feet",r"\[270\div12=22.5.\] The answer is $\boxed{22.5}$."),
+],
+8:[("Split around Friday",r"Friday is fixed as cake. The dessert on Thursday cannot be cake, and the dessert on Saturday cannot be cake."),("Count Sunday through Thursday",r"Without the Thursday restriction, Sunday through Thursday would have \[4\cdot3^4=324\] possibilities. By symmetry, exactly one fourth of these end with cake on Thursday, so \[324-\frac{324}{4}=243\] end with something other than cake."),("Count Saturday",r"Saturday can be any dessert except cake, giving $3$ choices."),("Multiply",r"The total number of menus is \[243\cdot3=729.\]"),("Conclude",r"The answer is $\boxed{729}$."),
+],
+9:[("Use rates",r"Let one escalator length be $1$. Clea's walking rate on a stopped escalator is \[\frac1{60}\] escalator per second."),("Use the combined rate",r"When the escalator operates and she walks, her combined rate is \[\frac1{24}.\]"),("Find the escalator's rate",r"The escalator's own rate is \[\frac1{24}-\frac1{60}=\frac{5-2}{120}=\frac1{40}.\]"),("Convert rate to time",r"If she just stands, she moves at the escalator's rate, so it takes $40$ seconds."),("Conclude",r"The answer is $\boxed{40}$."),
+],
+10:[("Solve the intersections",r"The curves are \[x^2+y^2=25\] and \[(x-4)^2+9y^2=81.\] Solving the system gives the three intersection points \[(-5,0),\quad(4,3),\quad(4,-3).\]"),("Recognize the polygon",r"These three points form a triangle. The vertical side from $(4,-3)$ to $(4,3)$ has length $6$."),("Find the height",r"The horizontal distance from $(-5,0)$ to the line $x=4$ is $9$."),("Compute area",r"The triangle's area is \[\frac12\cdot6\cdot9=27.\]"),("Conclude",r"The answer is $\boxed{27}$."),
+],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -2621,7 +2670,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2012" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2012" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -2710,7 +2759,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2012 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2012 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
