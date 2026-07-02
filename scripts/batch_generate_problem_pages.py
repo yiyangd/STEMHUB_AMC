@@ -3,21 +3,17 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 258
+BATCH_NUMBER = 259
 CONTEST_DIR = "amc12"
 YEAR = "2021 Spring"
-FORM = "A"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2021_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {22,23}
-SKIPPED = [
-    "2021 Spring AMC 12A Problem 21: complex-root ellipse eccentricity problem requires a longer analytic geometry derivation; skipped",
-    "2021 Spring AMC 12A Problem 24: semicircle/circle chord geometry requires a longer derivation; skipped",
-    "2021 Spring AMC 12A Problem 25: divisor-function global maximum problem is high-risk in current pass; skipped",
-]
-BATCH_LABEL = "2021 Spring AMC 12A Problems 22-23"
-NEXT_START = "2021 Spring AMC 12B Problem 1"
+FORM = "B"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2021_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = []
+BATCH_LABEL = "2021 Spring AMC 12B Problems 1-10"
+NEXT_START = "2021 Spring AMC 12B Problem 11"
 
-ANS={22:("D",r"\frac1{32}"),23:("D",r"\frac{25}{32}")}
+ANS={1:("D","19"),2:("B","32"),3:("A",r"\frac34"),4:("C","76"),5:("D","7"),6:("A","1.5"),7:("C",r"1:14"),8:("B","6"),9:("D","2"),10:("E","10")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4734,6 +4730,45 @@ KEY_OVERRIDES.update({
 SOL.update({
 22:[("Use a standard cosine relation",r"The three numbers \[\cos\frac{2\pi}{7},\cos\frac{4\pi}{7},\cos\frac{6\pi}{7}\] are the roots of \[x^3+\frac12x^2-\frac12x-\frac18=0.\]"),("Read off the coefficients",r"Comparing with \[x^3+ax^2+bx+c,\] we get \[a=\frac12,\quad b=-\frac12,\quad c=-\frac18.\]"),("Multiply",r"Therefore \[abc=\frac12\cdot\left(-\frac12\right)\cdot\left(-\frac18\right)=\frac1{32}.\]"),("Conclude",r"The answer is $\boxed{\frac1{32}}$."),],
 23:[("Classify the positions",r"On a $3\times3$ toroidal grid, starting at the center, after one hop Frieda is on an edge-middle square. Corners are absorbing because she stops when she reaches one."),("Track the first two hops",r"After one hop, she has not reached a corner. From an edge-middle square, two of the four moves go to corners, so by the second hop the probability of having reached a corner is \[\frac12.\]"),("Continue only with non-corner positions",r"If she has not stopped after two hops, she is either back at the center or at an edge-middle square. Tracking these remaining probabilities through hops three and four gives additional corner-reaching probability \[\frac18+\frac5{32}.\]"),("Add the probabilities",r"The total probability is \[\frac12+\frac18+\frac5{32}=\frac{16}{32}+\frac4{32}+\frac5{32}=\frac{25}{32}.\]"),("Conclude",r"The answer is $\boxed{\frac{25}{32}}$."),],
+})
+
+OV.update({
+1:(r"How many integer values satisfy \[|x|<3\pi?\]",[("A","9"),("B","10"),("C","18"),("D","19"),("E","20")]),
+2:(r"At a math contest, $57$ students are wearing blue shirts, and another $75$ students are wearing yellow shirts. The $132$ students are assigned into $66$ pairs. In exactly $23$ of these pairs, both students are wearing blue shirts. In how many pairs are both students wearing yellow shirts?",[("A","23"),("B","32"),("C","37"),("D","41"),("E","64")]),
+3:(r"Suppose \[2+\frac{1}{1+\frac{1}{2+\frac{2}{3+x}}}=\frac{144}{53}.\] What is the value of $x$?",[("A",r"$\frac34$"),("B",r"$\frac78$"),("C",r"$\frac{14}{15}$"),("D",r"$\frac{37}{38}$"),("E",r"$\frac{52}{53}$")]),
+4:(r"Ms. Blackwell gives an exam to two classes. The mean score in the morning class is $84$, and the afternoon class mean is $70$. The ratio of the number of students in the morning class to the number in the afternoon class is $3:4$. What is the mean score of all the students?",[("A","74"),("B","75"),("C","76"),("D","77"),("E","78")]),
+5:(r"The point $P(a,b)$ is first rotated counterclockwise by $90^\circ$ around $(1,5)$ and then reflected about the line $y=-x$. The final image is $(-6,3)$. What is $b-a$?",[("A","1"),("B","3"),("C","5"),("D","7"),("E","9")]),
+6:(r"An inverted cone with base radius $12$ cm and height $18$ cm is full of water. The water is poured into a tall cylinder whose horizontal base has radius $24$ cm. What is the height, in centimeters, of the water in the cylinder?",[("A","1.5"),("B","3"),("C","4"),("D","4.5"),("E","6")]),
+7:(r"Let \[N=3^4\cdot3^4\cdot6^3\cdot27^0.\] What is the ratio of the sum of the odd divisors of $N$ to the sum of the even divisors of $N$?",[("A",r"$1:16$"),("B",r"$1:15$"),("C",r"$1:14$"),("D",r"$1:8$"),("E",r"$1:3$")]),
+8:(r"Three equally spaced parallel lines intersect a circle, creating three chords of lengths $38$, $38$, and $34$. What is the distance between two adjacent parallel lines?",[("A",r"$5\frac12$"),("B","6"),("C",r"$6\frac12$"),("D","7"),("E",r"$7\frac12$")]),
+9:(r"What is the value of \[\frac{\log_2 80}{\log_{40}2}-\frac{\log_2 160}{\log_{20}2}?\]",[("A","0"),("B","1"),("C",r"$\frac54$"),("D","2"),("E",r"$\log_2 5$")]),
+10:(r"Two distinct numbers are selected from the set $\{1,2,3,\ldots,37\}$ so that the sum of the remaining $35$ numbers is the product of these two numbers. What is the difference of these two numbers?",[("A","5"),("B","7"),("C","8"),("D","9"),("E","10")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Estimate the bounds from pi and count integers in a symmetric interval.",
+2:"Track how many blue students are used in blue-blue and mixed pairs.",
+3:"Work backward through the nested fraction.",
+4:"Use a weighted average based on class sizes.",
+5:"Apply inverse coordinate transformations carefully.",
+6:"Set cone volume equal to cylinder volume.",
+7:"Only the power of 2 matters when comparing odd and even divisor sums.",
+8:"Use equal chord lengths to locate the circle center relative to the parallel lines.",
+9:"Use reciprocal log identities and simplify with log base 2.",
+10:"Turn the removed-number condition into a factorization.",
+})
+
+SOL.update({
+1:[("Estimate the interval",r"Since $\pi$ is a little more than $3$, we have \[3\pi\approx9.42.\] So the inequality is approximately \[|x|<9.42.\]"),("List the integer range",r"The integers satisfying this are \[-9,-8,\ldots,0,\ldots,8,9.\]"),("Count symmetrically",r"There are $9$ negative integers, $9$ positive integers, and $0$."),("Conclude",r"The total number is \[9+1+9=19,\] so the answer is $\boxed{19}$."),],
+2:[("Use the blue-blue pairs first",r"There are $23$ pairs with two blue shirts, so these pairs use \[2\cdot23=46\] blue-shirt students."),("Find the mixed pairs",r"There are $57$ blue-shirt students total, so \[57-46=11\] blue-shirt students remain. Each of these must be paired with a yellow-shirt student, creating $11$ mixed pairs."),("Count yellow students left for yellow-yellow pairs",r"The mixed pairs use $11$ yellow-shirt students. Thus \[75-11=64\] yellow-shirt students remain."),("Pair the remaining yellow students",r"These $64$ students form \[\frac{64}{2}=32\] yellow-yellow pairs."),("Conclude",r"The answer is $\boxed{32}$."),],
+3:[("Work backward from the outside",r"Subtract $2$ from both sides: \[\frac{1}{1+\frac{1}{2+\frac{2}{3+x}}}=\frac{144}{53}-2=\frac{38}{53}.\]"),("Invert once",r"This gives \[1+\frac{1}{2+\frac{2}{3+x}}=\frac{53}{38},\] so \[\frac{1}{2+\frac{2}{3+x}}=\frac{15}{38}.\]"),("Invert again",r"Now \[2+\frac{2}{3+x}=\frac{38}{15},\] so \[\frac{2}{3+x}=\frac{8}{15}.\]"),("Solve for x",r"We get \[3+x=\frac{15}{4},\] hence \[x=\frac{15}{4}-3=\frac34.\]"),("Conclude",r"The answer is $\boxed{\frac34}$."),],
+4:[("Use class sizes as weights",r"The ratio of morning to afternoon students is $3:4$, so we can imagine $3$ equal-size groups in the morning and $4$ in the afternoon."),("Compute the weighted average",r"The combined mean is \[\frac{3\cdot84+4\cdot70}{3+4}.\]"),("Simplify",r"The numerator is \[252+280=532,\] and \[\frac{532}{7}=76.\]"),("Conclude",r"The overall mean is $\boxed{76}$."),],
+5:[("Undo the final reflection",r"Reflection across $y=-x$ sends $(u,v)$ to $(-v,-u)$. Since the final point is $(-6,3)$, the point before reflection was \[(-3,6).\]"),("Undo the rotation",r"Rotating $P(a,b)$ counterclockwise by $90^\circ$ around $(1,5)$ sends the vector \[(a-1,b-5)\] to \[-(b-5),a-1\]. Thus the rotated point is \[(6-b,a+4).\]"),("Match coordinates",r"We need \[(6-b,a+4)=(-3,6).\] Therefore $b=9$ and $a=2$."),("Compute b-a",r"Thus \[b-a=9-2=7.\]"),("Conclude",r"The answer is $\boxed{7}$."),],
+6:[("Compute the cone volume",r"The cone volume is \[\frac13\pi r^2h=\frac13\pi(12)^2(18)=864\pi.\]"),("Set up the cylinder volume",r"The cylinder has radius $24$, so if the water height is $H$, its volume is \[\pi(24)^2H=576\pi H.\]"),("Equate volumes",r"All the water is transferred, so \[576\pi H=864\pi.\]"),("Solve",r"This gives \[H=\frac{864}{576}=1.5.\]"),("Conclude",r"The water height is $\boxed{1.5}$ cm."),],
+7:[("Focus on powers of 2",r"Odd and even divisors differ only by powers of $2$. The odd part of $N$ contributes the same divisor-sum factor to both sums."),("Find the power of 2 in N",r"The factors $3^4$, $3^4$, and $27^0$ are odd. The only factor contributing powers of $2$ is \[6^3=2^3\cdot3^3.\] Thus the greatest power of $2$ dividing $N$ is $2^3$."),("Compare divisor sums",r"If the sum of the odd divisors is $S$, then the even divisors are obtained from odd divisors by multiplying by $2$, $4$, or $8$. So the sum of the even divisors is \[(2+4+8)S=14S.\]"),("Conclude",r"The requested ratio is \[S:14S=1:14.\] The answer is $\boxed{1:14}$."),],
+8:[("Represent chord lengths by distances from the center",r"If a chord is distance $h$ from the center of a circle with radius $R$, then its half-length satisfies \[\left(\frac L2\right)^2=R^2-h^2.\]"),("Use the equal chords",r"The two chords of length $38$ are equally far from the center. Since the three lines are equally spaced, those two equal chords must be adjacent lines with the center halfway between them."),("Place the distances",r"If the spacing between adjacent lines is $d$, then the two $38$-chords are at distance $\frac d2$ from the center, while the $34$-chord is at distance $\frac{3d}{2}$."),("Subtract the equations",r"For chord lengths $38$ and $34$, the half-lengths are $19$ and $17$. Thus \[R^2-\left(\frac d2\right)^2=19^2,\] and \[R^2-\left(\frac{3d}{2}\right)^2=17^2.\] Subtracting gives \[2d^2=19^2-17^2=72.\]"),("Conclude",r"Therefore $d^2=36$, so $d=6$. The answer is $\boxed{6}$."),],
+9:[("Use reciprocal log identities",r"Because \[\frac{1}{\log_{40}2}=\log_2 40,\] the first term is \[\log_2 80\cdot\log_2 40.\] Similarly, the second term is \[\log_2 160\cdot\log_2 20.\]"),("Let a be log base 2 of 5",r"Let $a=\log_2 5$. Then \[\log_2 80=a+4,\quad \log_2 40=a+3,\] and \[\log_2 160=a+5,\quad \log_2 20=a+2.\]"),("Subtract",r"The expression is \[(a+4)(a+3)-(a+5)(a+2).\]"),("Simplify",r"This equals \[(a^2+7a+12)-(a^2+7a+10)=2.\]"),("Conclude",r"The answer is $\boxed{2}$."),],
+10:[("Find the total sum",r"The sum of the integers from $1$ to $37$ is \[\frac{37\cdot38}{2}=703.\]"),("Set up the removed numbers",r"Let the two selected numbers be $a$ and $b$. The sum of the remaining numbers is \[703-a-b,\] and this equals $ab$."),("Factor",r"So \[ab+a+b=703.\] Adding $1$ gives \[(a+1)(b+1)=704.\]"),("Find the factor pair",r"Since the numbers are between $1$ and $37$, $a+1$ and $b+1$ are between $2$ and $38$. The factor pair of $704$ in this range is \[22\cdot32.\]"),("Conclude",r"Thus the selected numbers are $21$ and $31$, whose difference is \[\boxed{10}.\]"),],
 })
 
 def esc(x, quote=True):
