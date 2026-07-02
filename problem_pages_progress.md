@@ -4124,3 +4124,19 @@
 - Pushed: pending
 - Next batch should start from: 2020 AMC 12B Problem 21
 - Review notes: none.
+
+## Batch 255: 2020 AMC 12B Problem 24
+
+- Start time: 2026-07-02T07:34:59-07:00
+- End time: 2026-07-02T07:34:59-07:00
+- Processed contest: AMC12
+- Processed range: 2020 AMC 12B Problem 24
+- Generated count: 1
+- Updated existing count: 0
+- Skipped count: 4
+- Skipped reasons: 2020 AMC 12B Problem 21: floor/square-root equation is OCR-damaged; skipped; 2020 AMC 12B Problem 22: exponential expression is OCR-damaged; skipped; 2020 AMC 12B Problem 23: unit-circle zero-sum characterization is high-risk in current pass; skipped; 2020 AMC 12B Problem 25: trigonometric probability maximization is high-risk in current pass; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2021 Spring AMC 12A Problem 1
+- Review notes: none.

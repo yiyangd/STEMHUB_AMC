@@ -3,21 +3,22 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 254
+BATCH_NUMBER = 255
 CONTEST_DIR = "amc12"
 YEAR = "2020"
 FORM = "B"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2020_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {12,13,15,16,17,19,20}
+TARGET_NUMBERS = {24}
 SKIPPED = [
-    "2020 AMC 12B Problem 11: shaded semicircle/hexagon area problem depends on the missing diagram; skipped",
-    "2020 AMC 12B Problem 14: continuous interval game strategy is high-risk in current pass; skipped",
-    "2020 AMC 12B Problem 18: area partition problem depends on the missing diagram; skipped",
+    "2020 AMC 12B Problem 21: floor/square-root equation is OCR-damaged; skipped",
+    "2020 AMC 12B Problem 22: exponential expression is OCR-damaged; skipped",
+    "2020 AMC 12B Problem 23: unit-circle zero-sum characterization is high-risk in current pass; skipped",
+    "2020 AMC 12B Problem 25: trigonometric probability maximization is high-risk in current pass; skipped",
 ]
-BATCH_LABEL = "2020 AMC 12B Problems 12, 13, 15, 16, 17, 19, 20"
-NEXT_START = "2020 AMC 12B Problem 21"
+BATCH_LABEL = "2020 AMC 12B Problem 24"
+NEXT_START = "2021 Spring AMC 12A Problem 1"
 
-ANS={12:("E","100"),13:("E",r"\sqrt{\log_2 6\cdot\log_3 6}"),15:("C","13"),16:("B",r"\frac15"),17:("A","0"),19:("C",r"2^{38}"),20:("D",r"\frac{147}{1024}")}
+ANS={24:("A","112")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4644,6 +4645,18 @@ SOL.update({
 17:[("Understand the multiplier",r"The complex number \[-\frac12+\frac{\sqrt3}{2}i\] is a primitive cube root of unity, call it $\omega$. Multiplying by $\omega$ cycles nonzero complex numbers through \[r,\omega r,\omega^2r.\]"),("Use the root condition",r"The constant term is $2020$, so $0$ is not a root. Therefore every root must belong to a full orbit of length $3$ under multiplication by $\omega$."),("Compare with the degree",r"A polynomial satisfying the condition would have its roots grouped into triples, counting multiplicity. But the degree is $5$, which is not divisible by $3$."),("Conclude",r"No such polynomial exists, so the answer is $\boxed{0}$."),],
 19:[("View transformations as group elements",r"The four transformations are symmetries of the square. We want length-$20$ words in $L,R,H,V$ whose product is the identity transformation."),("Track counts by symmetry type",r"After each step, the number of ways to reach each group element follows the same transition rule. Because the four allowed moves are balanced among rotations and reflections, the count at the identity after an even number of steps follows a simple doubling recurrence."),("Apply the recurrence",r"Computing this recurrence gives \[N_{2k}=2^{2k-2}\] times $4^{k-1}$ in simplified form; at $20$ steps the identity count is \[2^{38}.\]"),("Check against total size",r"There are $4^{20}=2^{40}$ total sequences, so $2^{38}$ means one fourth of all sequences return to identity, which is consistent with the four reachable symmetry states at even length."),("Conclude",r"The number of sequences is $\boxed{2^{38}}$."),],
 20:[("Think in rotation classes",r"Each painted cube is one of $2^6=64$ face colorings. Two cubes match after rotation exactly when their colorings lie in the same rotation orbit."),("List orbit sizes",r"Under the $24$ rotations of a cube, the $64$ colorings split into orbits of sizes \[1,1,3,3,6,6,8,12,12,12.\]"),("Convert orbit sizes to probability",r"If an orbit has size $s$, the probability that both random cubes land in that orbit is \[\left(\frac{s}{64}\right)^2.\] Therefore the desired probability is \[\frac{1^2+1^2+3^2+3^2+6^2+6^2+8^2+12^2+12^2+12^2}{64^2}.\]"),("Simplify",r"The numerator is \[588,\] so the probability is \[\frac{588}{4096}=\frac{147}{1024}.\]"),("Conclude",r"The answer is $\boxed{\frac{147}{1024}}$."),],
+})
+
+OV.update({
+24:(r"Let $D(n)$ denote the number of ways of writing the positive integer $n$ as a product \[n=f_1\cdot f_2\cdots f_k,\] where $k\ge1$, the $f_i$ are integers strictly greater than $1$, and the order in which the factors are listed matters. For example, $D(6)=3$ because $6=6=2\cdot3=3\cdot2$. What is $D(96)$?",[("A","112"),("B","128"),("C","144"),("D","172"),("E","184")]),
+})
+
+KEY_OVERRIDES.update({
+24:"Use a recurrence for ordered factorizations by choosing the first factor.",
+})
+
+SOL.update({
+24:[("Use a first-factor recurrence",r"For $n>1$, every ordered factorization either consists of the single factor $n$, or starts with a proper divisor $d>1$ followed by an ordered factorization of $\frac nd$. Thus \[D(n)=1+\sum_{\substack{d\mid n\\1<d<n}}D\left(\frac nd\right).\]"),("Specialize to divisors of 96",r"Since \[96=2^5\cdot3,\] every divisor has the form $2^a3^b$ with $0\le a\le5$ and $0\le b\le1$."),("Compute values for powers of 2",r"For a pure power $2^a$, ordered factorizations correspond to ordered sums of $a$, so \[D(2^a)=2^{a-1}.\] In particular, \[D(2),D(4),D(8),D(16),D(32) = 1,2,4,8,16.\]"),("Build the mixed values",r"Using the same recurrence for $3\cdot2^a$ gives the table \[D(3),D(6),D(12),D(24),D(48),D(96)=1,3,8,20,48,112.\] Each entry uses only earlier entries because every proper divisor leaves a smaller quotient."),("Conclude",r"The number of ordered factorizations is $\boxed{112}$."),],
 })
 
 def esc(x, quote=True):
