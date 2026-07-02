@@ -3,25 +3,22 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 260
+BATCH_NUMBER = 261
 CONTEST_DIR = "amc12"
 YEAR = "2021 Spring"
 FORM = "B"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2021_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {12,16,20}
+TARGET_NUMBERS = {23}
 SKIPPED = [
-    "2021 Spring AMC 12B Problem 11: triangle/trapezoid geometry requires a longer coordinate derivation; skipped",
-    "2021 Spring AMC 12B Problem 13: trigonometric equation count is high-risk in current pass; skipped",
-    "2021 Spring AMC 12B Problem 14: 3D rectangle pyramid volume problem requires a longer derivation; skipped",
-    "2021 Spring AMC 12B Problem 15: pentagon area problem depends on the missing diagram; skipped",
-    "2021 Spring AMC 12B Problem 17: trapezoid area-ratio problem depends on the missing diagram; skipped",
-    "2021 Spring AMC 12B Problem 18: complex-number constraint requires a longer derivation; skipped",
-    "2021 Spring AMC 12B Problem 19: custom dice probability system is high-risk in current pass; skipped",
+    "2021 Spring AMC 12B Problem 21: exponential equation with irrational exponents is high-risk in current pass; skipped",
+    "2021 Spring AMC 12B Problem 22: impartial brick game requires Sprague-Grundy style analysis; skipped",
+    "2021 Spring AMC 12B Problem 24: parallelogram projection problem depends on the missing diagram; skipped",
+    "2021 Spring AMC 12B Problem 25: lattice-point line-count interval problem is high-risk in current pass; skipped",
 ]
-BATCH_LABEL = "2021 Spring AMC 12B Problems 12, 16, 20"
-NEXT_START = "2021 Spring AMC 12B Problem 21"
+BATCH_LABEL = "2021 Spring AMC 12B Problem 23"
+NEXT_START = "2021 Fall AMC 12A Problem 1"
 
-ANS={12:("D","36.8"),16:("A",r"\frac{1+a+b+c}{c}"),20:("A",r"-z")}
+ANS={23:("A","55")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4795,6 +4792,18 @@ SOL.update({
 12:[("Name the quantities",r"Let the original set have $n$ integers, total sum $T$, least element $L$, and greatest element $G$. We are given \[G=L+72.\]"),("Translate each average statement",r"Removing the greatest gives \[T-G=32(n-1).\] Removing the least as well gives \[T-G-L=35(n-2).\] Returning the greatest while the least remains removed gives \[T-L=40(n-1).\]"),("Solve the system",r"Solving these four linear equations gives \[n=10,\quad T=368,\quad L=8,\quad G=80.\]"),("Compute the original average",r"The average of the original set is \[\frac{T}{n}=\frac{368}{10}=36.8.\]"),("Conclude",r"The answer is $\boxed{36.8}$."),],
 16:[("Let the roots of f be r1, r2, r3",r"Write the roots of $f$ as $r_1,r_2,r_3$. Since $f$ is monic, \[f(x)=(x-r_1)(x-r_2)(x-r_3).\]"),("Build g from reciprocal roots",r"The roots of $g$ are \[\frac1{r_1},\frac1{r_2},\frac1{r_3},\] so \[g(1)=\prod_{i=1}^3\left(1-\frac1{r_i}\right)=\frac{\prod_{i=1}^3(r_i-1)}{r_1r_2r_3}.\]"),("Relate to f(1)",r"We have \[f(1)=\prod_{i=1}^3(1-r_i).\] Because there are three factors, \[\prod(r_i-1)=-f(1).\] Also, for $x^3+ax^2+bx+c$, \[r_1r_2r_3=-c.\]"),("Simplify",r"Therefore \[g(1)=\frac{-f(1)}{-c}=\frac{f(1)}{c}.\] Since \[f(1)=1+a+b+c,\]"),("Conclude",r"We get \[g(1)=\boxed{\frac{1+a+b+c}{c}}.\]"),],
 20:[("Use the divisor relation",r"The polynomial $z^2+z+1$ has the useful congruence \[z^2+z+1\equiv0,\] so \[z^2\equiv -z-1.\] Multiplying by $z$ gives \[z^3\equiv1.\]"),("Reduce the exponent",r"Since powers repeat modulo $3$, and \[2021\equiv2\pmod3,\] we have \[z^{2021}\equiv z^2.\]"),("Reduce z squared",r"Thus \[z^{2021}+1\equiv z^2+1.\] Using \[z^2\equiv-z-1,\] this becomes \[-z-1+1=-z.\]"),("Use the degree condition",r"The remainder must have degree less than $2$, and $-z$ already has degree $1$."),("Conclude",r"Therefore \[R(z)=\boxed{-z}.\]"),],
+})
+
+OV.update({
+23:(r"Three balls are randomly and independently tossed into bins numbered with the positive integers so that for each ball, the probability it is tossed into bin $i$ is $2^{-i}$ for $i=1,2,3,\ldots$. More than one ball is allowed in each bin. The probability that the balls end up evenly spaced in distinct bins is $\frac pq$, where $p$ and $q$ are relatively prime positive integers. What is $p+q$?",[("A","55"),("B","56"),("C","57"),("D","58"),("E","59")]),
+})
+
+KEY_OVERRIDES.update({
+23:"Sum the probabilities of all three-bin arithmetic progressions.",
+})
+
+SOL.update({
+23:[("Describe evenly spaced distinct bins",r"Three distinct positive integers are evenly spaced exactly when they have the form \[a,\ a+d,\ a+2d\] for integers $a\ge1$ and $d\ge1$."),("Compute one unordered set's probability",r"For a fixed set $\{a,a+d,a+2d\}$, the three labeled balls can land in these three bins in $3!=6$ orders. The probability for one order is \[2^{-a}\cdot2^{-(a+d)}\cdot2^{-(a+2d)}=2^{-3a-3d}.\]"),("Sum over all starts and gaps",r"Therefore the total probability is \[\sum_{a=1}^{\infty}\sum_{d=1}^{\infty}6\cdot2^{-3a-3d}.\] This factors as \[6\left(\sum_{a=1}^{\infty}2^{-3a}\right)\left(\sum_{d=1}^{\infty}2^{-3d}\right).\]"),("Evaluate the geometric series",r"Since \[\sum_{a=1}^{\infty}2^{-3a}=\frac{1/8}{1-1/8}=\frac17,\] the probability is \[6\cdot\frac17\cdot\frac17=\frac6{49}.\]"),("Conclude",r"Thus $p+q=6+49=\boxed{55}$."),],
 })
 
 def esc(x, quote=True):
