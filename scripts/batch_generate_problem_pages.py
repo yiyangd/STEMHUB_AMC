@@ -3,17 +3,25 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 259
+BATCH_NUMBER = 260
 CONTEST_DIR = "amc12"
 YEAR = "2021 Spring"
 FORM = "B"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2021_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
-SKIPPED = []
-BATCH_LABEL = "2021 Spring AMC 12B Problems 1-10"
-NEXT_START = "2021 Spring AMC 12B Problem 11"
+TARGET_NUMBERS = {12,16,20}
+SKIPPED = [
+    "2021 Spring AMC 12B Problem 11: triangle/trapezoid geometry requires a longer coordinate derivation; skipped",
+    "2021 Spring AMC 12B Problem 13: trigonometric equation count is high-risk in current pass; skipped",
+    "2021 Spring AMC 12B Problem 14: 3D rectangle pyramid volume problem requires a longer derivation; skipped",
+    "2021 Spring AMC 12B Problem 15: pentagon area problem depends on the missing diagram; skipped",
+    "2021 Spring AMC 12B Problem 17: trapezoid area-ratio problem depends on the missing diagram; skipped",
+    "2021 Spring AMC 12B Problem 18: complex-number constraint requires a longer derivation; skipped",
+    "2021 Spring AMC 12B Problem 19: custom dice probability system is high-risk in current pass; skipped",
+]
+BATCH_LABEL = "2021 Spring AMC 12B Problems 12, 16, 20"
+NEXT_START = "2021 Spring AMC 12B Problem 21"
 
-ANS={1:("D","19"),2:("B","32"),3:("A",r"\frac34"),4:("C","76"),5:("D","7"),6:("A","1.5"),7:("C",r"1:14"),8:("B","6"),9:("D","2"),10:("E","10")}
+ANS={12:("D","36.8"),16:("A",r"\frac{1+a+b+c}{c}"),20:("A",r"-z")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4769,6 +4777,24 @@ SOL.update({
 8:[("Represent chord lengths by distances from the center",r"If a chord is distance $h$ from the center of a circle with radius $R$, then its half-length satisfies \[\left(\frac L2\right)^2=R^2-h^2.\]"),("Use the equal chords",r"The two chords of length $38$ are equally far from the center. Since the three lines are equally spaced, those two equal chords must be adjacent lines with the center halfway between them."),("Place the distances",r"If the spacing between adjacent lines is $d$, then the two $38$-chords are at distance $\frac d2$ from the center, while the $34$-chord is at distance $\frac{3d}{2}$."),("Subtract the equations",r"For chord lengths $38$ and $34$, the half-lengths are $19$ and $17$. Thus \[R^2-\left(\frac d2\right)^2=19^2,\] and \[R^2-\left(\frac{3d}{2}\right)^2=17^2.\] Subtracting gives \[2d^2=19^2-17^2=72.\]"),("Conclude",r"Therefore $d^2=36$, so $d=6$. The answer is $\boxed{6}$."),],
 9:[("Use reciprocal log identities",r"Because \[\frac{1}{\log_{40}2}=\log_2 40,\] the first term is \[\log_2 80\cdot\log_2 40.\] Similarly, the second term is \[\log_2 160\cdot\log_2 20.\]"),("Let a be log base 2 of 5",r"Let $a=\log_2 5$. Then \[\log_2 80=a+4,\quad \log_2 40=a+3,\] and \[\log_2 160=a+5,\quad \log_2 20=a+2.\]"),("Subtract",r"The expression is \[(a+4)(a+3)-(a+5)(a+2).\]"),("Simplify",r"This equals \[(a^2+7a+12)-(a^2+7a+10)=2.\]"),("Conclude",r"The answer is $\boxed{2}$."),],
 10:[("Find the total sum",r"The sum of the integers from $1$ to $37$ is \[\frac{37\cdot38}{2}=703.\]"),("Set up the removed numbers",r"Let the two selected numbers be $a$ and $b$. The sum of the remaining numbers is \[703-a-b,\] and this equals $ab$."),("Factor",r"So \[ab+a+b=703.\] Adding $1$ gives \[(a+1)(b+1)=704.\]"),("Find the factor pair",r"Since the numbers are between $1$ and $37$, $a+1$ and $b+1$ are between $2$ and $38$. The factor pair of $704$ in this range is \[22\cdot32.\]"),("Conclude",r"Thus the selected numbers are $21$ and $31$, whose difference is \[\boxed{10}.\]"),],
+})
+
+OV.update({
+12:(r"Suppose that $S$ is a finite set of positive integers. If the greatest integer in $S$ is removed, the average of the remaining integers is $32$. If the least integer is also removed, the average of the remaining integers is $35$. If the greatest integer is then returned to the set, the average rises to $40$. The greatest integer in the original set is $72$ greater than the least integer. What is the average of all the integers in $S$?",[("A","36.2"),("B","36.4"),("C","36.6"),("D","36.8"),("E","37")]),
+16:(r"Let $g(x)$ be a monic polynomial whose three roots are the reciprocals of the three roots of \[f(x)=x^3+ax^2+bx+c,\] where $1<a<b<c$. What is $g(1)$ in terms of $a,b,$ and $c$?",[("A",r"$\frac{1+a+b+c}{c}$"),("B",r"$1+a+b+c$"),("C",r"$\frac{1+a+b+c}{c^2}$"),("D",r"$\frac{a+b+c}{c^2}$"),("E",r"$\frac{1+a+b+c}{a+b+c}$")]),
+20:(r"Let $Q(z)$ and $R(z)$ be the unique polynomials such that \[z^{2021}+1=(z^2+z+1)Q(z)+R(z),\] and the degree of $R$ is less than $2$. What is $R(z)$?",[("A",r"$-z$"),("B",r"$-1$"),("C","2021"),("D",r"$z+1$"),("E",r"$2z+1$")]),
+})
+
+KEY_OVERRIDES.update({
+12:"Translate changing averages into equations for total, size, least, and greatest elements.",
+16:"Use roots and reciprocal roots to evaluate the monic transformed polynomial at 1.",
+20:"Reduce powers modulo z squared plus z plus 1.",
+})
+
+SOL.update({
+12:[("Name the quantities",r"Let the original set have $n$ integers, total sum $T$, least element $L$, and greatest element $G$. We are given \[G=L+72.\]"),("Translate each average statement",r"Removing the greatest gives \[T-G=32(n-1).\] Removing the least as well gives \[T-G-L=35(n-2).\] Returning the greatest while the least remains removed gives \[T-L=40(n-1).\]"),("Solve the system",r"Solving these four linear equations gives \[n=10,\quad T=368,\quad L=8,\quad G=80.\]"),("Compute the original average",r"The average of the original set is \[\frac{T}{n}=\frac{368}{10}=36.8.\]"),("Conclude",r"The answer is $\boxed{36.8}$."),],
+16:[("Let the roots of f be r1, r2, r3",r"Write the roots of $f$ as $r_1,r_2,r_3$. Since $f$ is monic, \[f(x)=(x-r_1)(x-r_2)(x-r_3).\]"),("Build g from reciprocal roots",r"The roots of $g$ are \[\frac1{r_1},\frac1{r_2},\frac1{r_3},\] so \[g(1)=\prod_{i=1}^3\left(1-\frac1{r_i}\right)=\frac{\prod_{i=1}^3(r_i-1)}{r_1r_2r_3}.\]"),("Relate to f(1)",r"We have \[f(1)=\prod_{i=1}^3(1-r_i).\] Because there are three factors, \[\prod(r_i-1)=-f(1).\] Also, for $x^3+ax^2+bx+c$, \[r_1r_2r_3=-c.\]"),("Simplify",r"Therefore \[g(1)=\frac{-f(1)}{-c}=\frac{f(1)}{c}.\] Since \[f(1)=1+a+b+c,\]"),("Conclude",r"We get \[g(1)=\boxed{\frac{1+a+b+c}{c}}.\]"),],
+20:[("Use the divisor relation",r"The polynomial $z^2+z+1$ has the useful congruence \[z^2+z+1\equiv0,\] so \[z^2\equiv -z-1.\] Multiplying by $z$ gives \[z^3\equiv1.\]"),("Reduce the exponent",r"Since powers repeat modulo $3$, and \[2021\equiv2\pmod3,\] we have \[z^{2021}\equiv z^2.\]"),("Reduce z squared",r"Thus \[z^{2021}+1\equiv z^2+1.\] Using \[z^2\equiv-z-1,\] this becomes \[-z-1+1=-z.\]"),("Use the degree condition",r"The remainder must have degree less than $2$, and $-z$ already has degree $1$."),("Conclude",r"Therefore \[R(z)=\boxed{-z}.\]"),],
 })
 
 def esc(x, quote=True):
