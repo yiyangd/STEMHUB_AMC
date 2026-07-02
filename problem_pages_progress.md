@@ -3852,3 +3852,19 @@
 - Pushed: pending
 - Next batch should start from: 2018 AMC 12A Problem 1
 - Review notes: none.
+
+## Batch 238: 2018 AMC 12A Problems 1-7, 9-10
+
+- Start time: 2026-07-02T00:43:32-07:00
+- End time: 2026-07-02T00:43:33-07:00
+- Processed contest: AMC12
+- Processed range: 2018 AMC 12A Problems 1-7, 9-10
+- Generated count: 9
+- Updated existing count: 0
+- Skipped count: 1
+- Skipped reasons: 2018 AMC 12A Problem 8: diagram-dependent similar-triangle area problem; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2018 AMC 12A Problem 11
+- Review notes: none.

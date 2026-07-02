@@ -3,19 +3,17 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 237
+BATCH_NUMBER = 238
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2017_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {21,23}
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2018_AMC_12A_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,9,10}
 SKIPPED = [
-    "2017 AMC 12B Problem 22: four-player coin-transfer probability is high-risk for unattended derivation; skipped",
-    "2017 AMC 12B Problem 24: similar-triangle quadrilateral geometry is diagram-sensitive; skipped",
-    "2017 AMC 12B Problem 25: tournament subset-average combinatorics requires a long proof; skipped",
+    "2018 AMC 12A Problem 8: diagram-dependent similar-triangle area problem; skipped",
 ]
-BATCH_LABEL = "2017 AMC 12B Problems 21, 23"
-NEXT_START = "2018 AMC 12A Problem 1"
+BATCH_LABEL = "2018 AMC 12A Problems 1-7, 9-10"
+NEXT_START = "2018 AMC 12A Problem 11"
 
-ANS={21:("E","100"),23:("D",r"\frac{24}{5}")}
+ANS={1:("D","50"),2:("C","50"),3:("E","24"),4:("D","(5,6)"),5:("E","10"),6:("B","21"),7:("E","9"),9:("E",r"0\le y\le\pi"),10:("C","3")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -3833,6 +3831,96 @@ SOL.update({
 ],
 })
 
+OV.update({
+1:(r"A large urn contains $100$ balls, of which $36\%$ are red and the rest are blue. How many of the blue balls must be removed so that the percentage of red balls in the urn will be $72\%$? No red balls are to be removed.",[("A","28"),("B","32"),("C","36"),("D","50"),("E","64")]),
+2:(r"While exploring a cave, Carl comes across a collection of $5$-pound rocks worth $\$14$ each, $4$-pound rocks worth $\$11$ each, and $1$-pound rocks worth $\$2$ each. There are at least $20$ of each size. He can carry at most $18$ pounds. What is the maximum value, in dollars, of the rocks he can carry out of the cave?",[("A","48"),("B","49"),("C","50"),("D","51"),("E","52")]),
+3:(r"How many ways can a student schedule $3$ mathematics courses -- algebra, geometry, and number theory -- in a $6$-period day if no two mathematics courses can be taken in consecutive periods?",[("A","3"),("B","6"),("C","12"),("D","18"),("E","24")]),
+4:(r"Alice, Bob, and Charlie were on a hike and were wondering how far away the nearest town was. Alice said, \"We are at least $6$ miles away.\" Bob replied, \"We are at most $5$ miles away.\" Charlie remarked, \"Actually the nearest town is at most $4$ miles away.\" It turned out that none of the three statements were true. Let $d$ be the distance in miles to the nearest town. Which interval is the set of all possible values of $d$?",[("A","(0,4)"),("B","(4,5)"),("C","(4,6)"),("D","(5,6)"),("E",r"$(5,\infty)$")]),
+5:(r"What is the sum of all possible values of $k$ for which the polynomials \(x^2-3x+2\) and \(x^2-5x+k\) have a root in common?",[("A","3"),("B","4"),("C","5"),("D","6"),("E","10")]),
+6:(r"For positive integers $m$ and $n$ such that \(m+10<n+1\), both the mean and the median of the set \[\{m,m+4,m+10,n+1,n+2,2n\}\] are equal to \(n\). What is \(m+n\)?",[("A","20"),("B","21"),("C","22"),("D","23"),("E","24")]),
+7:(r"For how many integer values of \(n\), not necessarily positive, is \(4000\left(\frac25\right)^n\) an integer?",[("A","3"),("B","4"),("C","6"),("D","8"),("E","9")]),
+9:(r"Which of the following describes the largest subset of values of \(y\) within the closed interval \([0,\pi]\) for which \[\sin(x+y)\le \sin x+\sin y\] for every \(x\) between \(0\) and \(\pi\), inclusive?",[("A",r"$y=0$"),("B",r"$0\le y\le\frac{\pi}{4}$"),("C",r"$0\le y\le\frac{\pi}{2}$"),("D",r"$0\le y\le\frac{3\pi}{4}$"),("E",r"$0\le y\le\pi$")]),
+10:(r"How many ordered pairs of real numbers \((x,y)\) satisfy the system \[x+3y=3,\qquad \left||x|-|y|\right|=1?\]",[("A","1"),("B","2"),("C","3"),("D","4"),("E","8")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Keep the red count fixed and solve for the new total.",
+2:"Compare high-value rock combinations under the weight limit.",
+3:"Choose nonconsecutive time periods, then permute the three courses.",
+4:"Negate each distance statement and intersect the resulting conditions.",
+5:"Test the roots of the first polynomial in the second polynomial.",
+6:"Use the ordered set to write median and mean equations.",
+7:"Use prime exponents in 4000 times (2/5)^n.",
+9:"Expand sin(x+y) and use nonnegativity on the interval from 0 to pi.",
+10:"Solve the line together with absolute-value cases.",
+})
+
+SOL.update({
+1:[
+("Keep the number of red balls fixed",r"There are \(36\) red balls at the start. No red balls are removed, so there will still be \(36\) red balls at the end."),
+("Find the final total",r"If \(36\) red balls are \(72\%\) of the final urn, then \[36=0.72T.\] Thus \[T=50.\]"),
+("Compare with the original total",r"The urn started with \(100\) balls and must end with \(50\) balls. Since only blue balls are removed, the number removed is \[100-50=50.\]"),
+("Conclude",r"The answer is $\boxed{50}$."),
+],
+2:[
+("Compare useful combinations",r"The $5$-pound rocks have value \(14\), and the $4$-pound rocks have value \(11\). The $1$-pound rocks are useful mainly for filling leftover capacity."),
+("Try combinations near 18 pounds",r"Two $5$-pound rocks and two $4$-pound rocks weigh \[2\cdot5+2\cdot4=18\] pounds and have value \[2\cdot14+2\cdot11=50.\]"),
+("Check nearby alternatives",r"Three $5$-pound rocks weigh $15$ pounds and leave $3$ pounds for one-pound rocks, giving value \(42+6=48\). One $5$-pound rock and three $4$-pound rocks plus one $1$-pound rock gives \(14+33+2=49\)."),
+("Choose the maximum",r"The best value is therefore \(50\)."),
+("Conclude",r"The answer is $\boxed{50}$."),
+],
+3:[
+("Choose the periods first",r"First ignore which math course goes where. We need to choose $3$ nonconsecutive periods from $6$."),
+("Use the gap method",r"The number of ways to choose \(3\) nonconsecutive positions from \(6\) is \[\binom{6-3+1}{3}=\binom43=4.\]"),
+("Assign the courses",r"Once the periods are chosen, algebra, geometry, and number theory can be assigned to them in \[3!=6\] ways."),
+("Multiply",r"The total number of schedules is \[4\cdot6=24.\]"),
+("Conclude",r"The answer is $\boxed{24}$."),
+],
+4:[
+("Negate Alice's statement",r"Alice said \(d\ge6\). Since this was false, we have \[d<6.\]"),
+("Negate Bob's statement",r"Bob said \(d\le5\). Since this was false, we have \[d>5.\]"),
+("Negate Charlie's statement",r"Charlie said \(d\le4\). Since this was false, we have \[d>4.\] This is weaker than \(d>5\)."),
+("Intersect the conditions",r"Together, the conditions are \[5<d<6.\]"),
+("Conclude",r"The possible distances form \(\boxed{(5,6)}\)."),
+],
+5:[
+("Factor the first polynomial",r"We have \[x^2-3x+2=(x-1)(x-2).\] So a common root must be \(1\) or \(2\)."),
+("Use root 1",r"If \(x=1\) is also a root of \(x^2-5x+k\), then \[1-5+k=0,\] so \(k=4\)."),
+("Use root 2",r"If \(x=2\) is also a root, then \[4-10+k=0,\] so \(k=6\)."),
+("Add possible k values",r"The sum of all possible values of \(k\) is \[4+6=10.\]"),
+("Conclude",r"The answer is $\boxed{10}$."),
+],
+6:[
+("Use the given ordering",r"The condition \(m+10<n+1\) tells us the set is already ordered as \[m,\ m+4,\ m+10,\ n+1,\ n+2,\ 2n.\]"),
+("Use the median",r"For six numbers, the median is the average of the third and fourth terms. Thus \[\frac{(m+10)+(n+1)}2=n,\] so \[m+11=n.\]"),
+("Use the mean",r"The sum of the six numbers is \[3m+4n+17.\] Since the mean is \(n\), \[\frac{3m+4n+17}{6}=n,\] so \[3m+17=2n.\]"),
+("Solve",r"Substitute \(n=m+11\) into \(3m+17=2n\): \[3m+17=2m+22,\] so \(m=5\) and \(n=16\)."),
+("Conclude",r"Therefore \[m+n=21,\] so the answer is $\boxed{21}$."),
+],
+7:[
+("Prime-factor the expression",r"We have \[4000=2^5\cdot5^3.\] Therefore \[4000\left(\frac25\right)^n=2^{5+n}5^{3-n}.\]"),
+("Require nonnegative exponents",r"For this to be an integer, both prime exponents must be nonnegative: \[5+n\ge0\quad\text{and}\quad3-n\ge0.\]"),
+("Find the range for n",r"Thus \[-5\le n\le3.\]"),
+("Count integer values",r"The integers from \(-5\) through \(3\), inclusive, are \(9\) values."),
+("Conclude",r"The answer is $\boxed{9}$."),
+],
+9:[
+("Expand the left side",r"Using the angle addition formula, \[\sin(x+y)=\sin x\cos y+\cos x\sin y.\]"),
+("Move everything to the right side",r"We want \[\sin x+\sin y-\sin(x+y)\ge0.\] This equals \[\sin x(1-\cos y)+\sin y(1-\cos x).\]"),
+("Use the interval",r"For \(x,y\in[0,\pi]\), we have \(\sin x\ge0\), \(\sin y\ge0\), \(1-\cos x\ge0\), and \(1-\cos y\ge0\). Therefore both terms are nonnegative."),
+("Conclude the largest set",r"The inequality holds for every \(x\in[0,\pi]\) and every \(y\in[0,\pi]\)."),
+("Choose the interval",r"The largest subset is \(\boxed{0\le y\le\pi}\)."),
+],
+10:[
+("Use the line",r"From \(x+3y=3\), we can write \(x=3-3y\). The absolute-value equation can be handled by sign cases."),
+("Case with x and y both nonnegative",r"If \(x\ge0\) and \(y\ge0\), then \(\left||x|-|y|\right|=|x-y|=1\). Solving with the line gives \((x,y)=(0,1)\) and \((x,y)=\left(\frac32,\frac12\right)\)."),
+("Case with x negative and y positive",r"If \(x<0\) and \(y>0\), then \(|x|=-x\) and \(|y|=y\). Solving gives \((x,y)=(-3,2)\)."),
+("Other sign cases do not work",r"If \(y<0\), then the line forces \(x>3\), and the absolute-value equation has no additional valid solution. Checking the remaining sign case similarly gives none."),
+("Count the solutions",r"The valid ordered pairs are \[(0,1),\quad\left(\frac32,\frac12\right),\quad(-3,2).\]"),
+("Conclude",r"There are \(\boxed{3}\) ordered pairs."),
+],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -3939,7 +4027,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2017" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2018" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -4028,7 +4116,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2017 AMC 12B Answer Key\n\n"
+        + "- Answer verification source: AoPS 2018 AMC 12A Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),
