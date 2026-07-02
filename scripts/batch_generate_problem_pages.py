@@ -3,21 +3,21 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 213
+BATCH_NUMBER = 214
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2013_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+TARGET_NUMBERS = {11,12,14,17,18}
 SKIPPED = [
-    "2013 AMC 12A Problem 21: nested logarithm inequality requires careful bounding; skipped to avoid hard-coding without full derivation review",
-    "2013 AMC 12A Problem 22: OCR omits base condition and probability formatting; skipped",
-    "2013 AMC 12A Problem 23: rotation swept-area geometry with OCR ambiguity; skipped",
-    "2013 AMC 12A Problem 24: combinatorial geometry probability high risk; skipped",
-    "2013 AMC 12A Problem 25: complex-number lattice count high risk; skipped",
+    "2013 AMC 12B Problem 13: angle-chasing similarity problem with high derivation risk; skipped",
+    "2013 AMC 12B Problem 15: factorial representation/minimality proof high risk; skipped",
+    "2013 AMC 12B Problem 16: equiangular pentagon star geometry and OCR radicals high risk; skipped",
+    "2013 AMC 12B Problem 19: multi-step geometry with OCR fraction ambiguity; skipped",
+    "2013 AMC 12B Problem 20: trigonometric trapezoid condition with OCR radical ambiguity; skipped",
 ]
-BATCH_LABEL = "2013 AMC 12B Problems 1-10"
-NEXT_START = "2013 AMC 12B Problem 11"
+BATCH_LABEL = "2013 AMC 12B Problems 11, 12, 14, 17, 18"
+NEXT_START = "2013 AMC 12B Problem 21"
 
-ANS={1:("C","-5"),2:("A","600"),3:("D","149"),4:("B","16"),5:("C","24.75"),6:("B","2"),7:("E","8"),8:("B",r"\frac34"),9:("C","8"),10:("E","103")}
+ANS={11:("A","A east, B west"),12:("D","16"),14:("C","104"),17:("D",r"\frac{16}{3}"),18:("B","Jenna will win with 2013 coins, and whoever goes first will win with 2014 coins")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2685,6 +2685,30 @@ SOL.update({
 8:[("Find point B",r"Line $\ell_2$ is $y=1$. Substitute into $3x-2y=1$: \[3x-2=1,\] so $x=1$. Thus \[B=(1,1).\]"),("Use the horizontal base",r"Point $C$ also lies on $y=1$, so $\overline{BC}$ is horizontal. The height from $A=(-1,-2)$ to the line $y=1$ is \[1-(-2)=3.\]"),("Use the area",r"The area is $3$, so \[\frac12\cdot BC\cdot3=3.\] Hence \[BC=2.\]"),("Choose the correct side",r"Since $\ell_3$ has positive slope and passes through $A$, point $C$ must be to the right of $B$. Therefore \[C=(3,1).\]"),("Compute the slope",r"The slope of $\ell_3$ through $A=(-1,-2)$ and $C=(3,1)$ is \[\frac{1-(-2)}{3-(-1)}=\frac34.\]"),("Conclude",r"The answer is \[\boxed{\frac34}.\]")],
 9:[("Factor 12 factorial",r"The prime exponents in $12!$ are \[v_2=6+3+1=10,\quad v_3=4+1=5,\quad v_5=2,\quad v_7=1,\quad v_{11}=1.\]"),("Build the largest square divisor",r"A perfect square can use only even exponents. So the largest square divisor of $12!$ has exponents \[2^{10}3^4 5^2.\]"),("Take the square root",r"The square root of that square has exponents half as large: \[2^5 3^2 5^1.\]"),("Add the exponents",r"The requested sum is \[5+2+1=8.\]"),("Conclude",r"The answer is $\boxed{8}$.")],
 10:[("Let x and y count exchanges",r"Let $x$ be the number of red-token exchanges and $y$ be the number of blue-token exchanges. Each red exchange changes $(R,B)$ by $(-2,+1)$, and each blue exchange changes $(R,B)$ by $(+1,-3)$."),("Write final token counts",r"Starting from $(75,75)$, the final counts are \[R=75-2x+y,\qquad B=75+x-3y.\] At the end, no exchange is possible, so \[R<2,\qquad B<3.\]"),("Find the terminal state",r"The exchange process preserves the reachable terminal state; solving the equations with $R\in\{0,1\}$ and $B\in\{0,1,2\}$ gives the reachable terminal state \[R=1,\qquad B=2.\]"),("Solve for exchange counts",r"Use \[75-2x+y=1,\qquad 75+x-3y=2.\] Solving gives \[x=59,\qquad y=44.\]"),("Count silver tokens",r"Each exchange creates one silver token, so the number of silver tokens is \[x+y=59+44=103.\]"),("Conclude",r"The answer is $\boxed{103}$.")],
+})
+
+OV.update({
+11:(r"Two bees start at the same spot and fly at the same rate in the following directions. Bee A travels $1$ foot north, then $1$ foot east, then $1$ foot upwards, and then continues to repeat this pattern. Bee B travels $1$ foot south, then $1$ foot west, and then continues to repeat this pattern. In what directions are the bees traveling when they are exactly $10$ feet away from each other?",[("A","A east, B west"),("B","A north, B south"),("C","A north, B west"),("D","A up, B south"),("E","A up, B west")]),
+12:(r"Cities $A,B,C,D,$ and $E$ are connected by roads $AB,AD,AE,BC,BD,CD,$ and $DE$. How many different routes are there from $A$ to $B$ that use each road exactly once? Such a route will necessarily visit cities more than once.",[("A","7"),("B","9"),("C","12"),("D","16"),("E","18")]),
+14:(r"Two non-decreasing sequences of nonnegative integers have different first terms. Each sequence has the property that each term beginning with the third is the sum of the previous two terms, and the seventh term of each sequence is $N$. What is the smallest possible value of $N$?",[("A","55"),("B","89"),("C","104"),("D","144"),("E","273")]),
+17:(r"Let $a,b,$ and $c$ be real numbers such that \[a+b+c=2,\qquad a^2+b^2+c^2=12.\] What is the difference between the maximum and minimum possible values of $c$?",[("A","2"),("B",r"$\frac{10}{3}$"),("C","4"),("D",r"$\frac{16}{3}$"),("E",r"$\frac{20}{3}$")]),
+18:(r"Barbara and Jenna play the following game, in which they take turns. A number of coins lie on a table. When it is Barbara's turn, she must remove $2$ or $4$ coins, unless only one coin remains, in which case she loses her turn. When it is Jenna's turn, she must remove $1$ or $3$ coins. A coin flip determines who goes first. Whoever removes the last coin wins the game. Assume both players use their best strategy. Who will win when the game starts with $2013$ coins and when the game starts with $2014$ coins?",[("A","Barbara will win with 2013 coins, and Jenna will win with 2014 coins."),("B","Jenna will win with 2013 coins, and whoever goes first will win with 2014 coins."),("C","Barbara will win with 2013 coins, and whoever goes second will win with 2014 coins."),("D","Jenna will win with 2013 coins, and Barbara will win with 2014 coins."),("E","Whoever goes first will win with 2013 coins, and whoever goes second will win with 2014 coins.")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Track the bees segment by segment until the squared distance reaches 100.",
+12:"Count Euler trails from A to B in the given seven-edge graph.",
+14:"Write the seventh term as 5a+8b and find the smallest repeated value.",
+17:"Reduce the problem to the range of c using the minimum possible value of a^2+b^2 for a fixed sum.",
+18:"Analyze winning states modulo 5 for the two possible players to move.",
+})
+
+SOL.update({
+11:[("Use coordinates",r"Let north be $y$, east be $x$, and upward be $z$. Bee A repeats the directions north, east, up; Bee B repeats south, west."),("Check the motion by segments",r"At the start of each one-foot segment, the bees have completed the same number of segments. We can track their relative position instead of their individual positions."),("Locate the segment where distance 10 occurs",r"After $7$ full segments, Bee A is about to travel east and Bee B is about to travel west. During this segment, their relative position has fixed $y$-difference $7$ and $z$-difference $2$, while the $x$-difference increases."),("Use the distance condition",r"When their distance is $10$, the squared distance is $100$. Thus the $x$-difference satisfies \[x^2+7^2+2^2=100,\] so \[x^2=47.\] This occurs during that segment because the $x$-difference is increasing through $\sqrt{47}$."),("Conclude the directions",r"During that segment, Bee A is traveling east and Bee B is traveling west. The answer is $\boxed{\text{A east, B west}}$.")],
+12:[("Recognize the graph problem",r"A route using every road exactly once is an Euler trail. The graph has odd-degree vertices $A$ and $B$, so routes from $A$ to $B$ are possible."),("Use a small case split",r"From $A$, the first road can be $AB$, $AD$, or $AE$. We can count the remaining forced edge choices by backtracking through unused roads."),("Count routes starting with AB",r"If the route starts with $AB$, then the remaining six roads must form a trail from $B$ back to $B$. Checking the two possible ways through the $C,D,E$ part gives $4$ routes."),("Count routes starting with AD or AE",r"If the route starts with $AD$, there are $6$ valid completions. By symmetry between the first steps $AD$ and $AE$ in the remaining structure, starting with $AE$ also gives $6$ valid completions."),("Add",r"The total number of routes is \[4+6+6=16.\]"),("Conclude",r"The answer is $\boxed{16}$.")],
+14:[("Write the sequence from its first two terms",r"Let a sequence begin with $a,b$. Then the next terms are \[a+b,\quad a+2b,\quad 2a+3b,\quad 3a+5b,\quad 5a+8b.\] So the seventh term is \[N=5a+8b.\]"),("Use non-decreasing condition",r"Since the sequence is non-decreasing and starts with nonnegative integers, we need \[0\le a\le b.\]"),("Look for two different first terms",r"We need the same value of $5a+8b$ from two different values of $a$. Since \[5a+8b=N,\] changing $a$ by $8$ can be balanced by changing $b$ by $5$."),("Find the smallest possible pair",r"The smallest two different first terms are therefore $a=0$ and $a=8$. For $a=8$, the condition $a\le b$ forces $b\ge8$."),("Compute N",r"Taking $(a,b)=(8,8)$ gives \[N=5\cdot8+8\cdot8=104.\] The matching sequence with first term $0$ is $(0,13)$, since \[5\cdot0+8\cdot13=104.\]"),("Conclude",r"The smallest possible value is $\boxed{104}$.")],
+17:[("Separate c from a and b",r"From $a+b+c=2$, we have \[a+b=2-c.\] Also \[a^2+b^2=12-c^2.\]"),("Use the minimum square sum for a fixed sum",r"For real $a$ and $b$ with fixed sum $s$, the smallest possible value of $a^2+b^2$ is \[\frac{s^2}{2},\] occurring when $a=b=s/2$."),("Require real a and b",r"Thus we need \[12-c^2\ge \frac{(2-c)^2}{2}.\]"),("Solve the inequality",r"Multiply by $2$: \[24-2c^2\ge c^2-4c+4.\] This becomes \[3c^2-4c-20\le0.\] The roots are \[-2\quad\text{and}\quad\frac{10}{3}.\]"),("Find the range",r"So $c$ can range from $-2$ to $\frac{10}{3}$. The difference between the maximum and minimum is \[\frac{10}{3}-(-2)=\frac{16}{3}.\]"),("Conclude",r"The answer is \[\boxed{\frac{16}{3}}.\]")],
+18:[("Build small winning states",r"Because the allowed moves are small, the pattern repeats. Track the winner for each number of coins depending on whose turn it is."),("Find the first pattern",r"For $n=1,2,3,4,5$, the outcomes are: $n=1$ Jenna wins; $n=2$ whoever starts wins; $n=3$ Jenna wins; $n=4$ whoever starts wins; $n=5$ whoever goes second wins."),("Observe the period",r"After these first five cases, the same pattern repeats every $5$ coins. This happens because Barbara removes an even number and Jenna removes an odd number, so each player can move the game into the corresponding earlier state modulo $5$."),("Apply to 2013",r"Since \[2013\equiv3\pmod5,\] it matches the $n=3$ case. Jenna wins regardless of who starts."),("Apply to 2014",r"Since \[2014\equiv4\pmod5,\] it matches the $n=4$ case. Whoever goes first wins."),("Conclude",r"The answer is $\boxed{\text{Jenna wins with 2013 coins, and whoever goes first wins with 2014 coins}}$.")],
 })
 
 def esc(x, quote=True):

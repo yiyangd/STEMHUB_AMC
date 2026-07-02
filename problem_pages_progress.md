@@ -3468,3 +3468,19 @@
 - Pushed: pending
 - Next batch should start from: 2013 AMC 12B Problem 11
 - Review notes: none.
+
+## Batch 214: 2013 AMC 12B Problems 11, 12, 14, 17, 18
+
+- Start time: 2026-07-01T20:10:52-07:00
+- End time: 2026-07-01T20:10:53-07:00
+- Processed contest: AMC12
+- Processed range: 2013 AMC 12B Problems 11, 12, 14, 17, 18
+- Generated count: 5
+- Updated existing count: 0
+- Skipped count: 5
+- Skipped reasons: 2013 AMC 12B Problem 13: angle-chasing similarity problem with high derivation risk; skipped; 2013 AMC 12B Problem 15: factorial representation/minimality proof high risk; skipped; 2013 AMC 12B Problem 16: equiangular pentagon star geometry and OCR radicals high risk; skipped; 2013 AMC 12B Problem 19: multi-step geometry with OCR fraction ambiguity; skipped; 2013 AMC 12B Problem 20: trigonometric trapezoid condition with OCR radical ambiguity; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2013 AMC 12B Problem 21
+- Review notes: none.
