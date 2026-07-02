@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 205
+BATCH_NUMBER = 206
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {11,13,14,15,19}
-SKIPPED = ["2011 AMC 12B Problem 12: skipped because the octagon dart-board probability depends on the original diagram.", "2011 AMC 12B Problem 16: skipped because the Voronoi region inside the rhombus needs a careful geometry derivation.", "2011 AMC 12B Problem 17: skipped because the iterated logarithm/function statement is OCR-damaged.", "2011 AMC 12B Problem 18: skipped because the cube-in-pyramid spatial geometry needs a diagram-sensitive derivation.", "2011 AMC 12B Problem 20: skipped because the circumcircle intersection geometry is high-risk without a dedicated derivation."]
-BATCH_LABEL = "2011 AMC 12B Problems 11, 13-15, 19"
-NEXT_START = "2011 AMC 12B Problem 21"
+TARGET_NUMBERS = {21,22,23}
+SKIPPED = ["2011 AMC 12B Problem 24: skipped because the complex-plane polygon minimum perimeter problem needs a dedicated derivation.", "2011 AMC 12B Problem 25: skipped because the nearest-integer probability statement is OCR-damaged."]
+BATCH_LABEL = "2011 AMC 12B Problems 21-23"
+NEXT_START = "2012 AMC 12A Problem 1"
 
-ANS={11:("B","3"),13:("B","31"),14:("D",r"-\frac35"),15:("D","12"),19:("B",r"\frac{50}{99}")}
+ANS={21:("D","66"),22:("D",r"\frac{1509}{128}"),23:("C","195")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2405,6 +2405,27 @@ SOL.update({
 15:[("Factor the number",r"Use repeated difference of squares: \[2^{24}-1=(2^{12}-1)(2^{12}+1).\] Continuing gives the prime factorization \[2^{24}-1=3^2\cdot5\cdot7\cdot13\cdot17\cdot241.\]"),("Ignore factors too large for two-digit divisors",r"The prime $241$ cannot appear in a two-digit divisor. So two-digit divisors must come from \[3^2\cdot5\cdot7\cdot13\cdot17.\]"),("List the two-digit divisors systematically",r"The positive two-digit divisors are \[13,15,17,21,35,39,45,51,63,65,85,91.\]"),("Count them",r"There are $12$ numbers in the list."),("Conclude",r"The answer is $\boxed{12}$."),
 ],
 19:[("Translate lattice points into rational slopes",r"The line is \[y=mx+2.\] Since $2$ is already an integer, the point with integer $x$ has integer $y$ exactly when $mx$ is an integer."),("Understand the forbidden slopes",r"For some integer $x$ with $1\le x\le100$, this happens when \[m=\frac{k}{x}\] for an integer $k$. So we need the interval \((\frac12,a)\) to contain no fraction with denominator at most $100$."),("Find the first such fraction above one half",r"For each denominator $x$, the smallest numerator greater than $\frac{x}{2}$ gives the first fraction above $\frac12$. The closest one occurs when $x$ is as large as possible and odd: \[x=99,\quad k=50.\] This gives \[\frac{50}{99}.\]"),("Check nearby denominators",r"For $x=100$, the next fraction above $\frac12$ is $\frac{51}{100}$, which is larger. Any smaller denominator gives an even larger gap above $\frac12$."),("Conclude",r"The largest possible value of $a$ is \[\boxed{\frac{50}{99}}.\]"),
+],
+})
+
+OV.update({
+21:(r"The arithmetic mean of two distinct positive integers $x$ and $y$ is a two-digit integer. The geometric mean of $x$ and $y$ is obtained by reversing the digits of the arithmetic mean. What is $|x-y|$?",[("A","24"),("B","48"),("C","54"),("D","66"),("E","70")]),
+22:(r"Let $T_1$ be a triangle with sides $2011,2012,$ and $2013$. For $n\ge1$, if $T_n=\triangle ABC$ and $D,E,$ and $F$ are the points of tangency of the incircle of $\triangle ABC$ to the sides $\overline{AB},\overline{BC},$ and $\overline{AC}$, respectively, then $T_{n+1}$ is a triangle with side lengths $AD,BE,$ and $CF$, if it exists. What is the perimeter of the last triangle in the sequence $(T_n)$?",[("A",r"$\frac{1509}{8}$"),("B",r"$\frac{1509}{32}$"),("C",r"$\frac{1509}{64}$"),("D",r"$\frac{1509}{128}$"),("E",r"$\frac{1509}{256}$")]),
+23:(r"A bug travels in the coordinate plane, moving only along the lines that are parallel to the $x$-axis or $y$-axis. Let $A=(-3,2)$ and $B=(3,-2)$. Consider all possible paths of the bug from $A$ to $B$ of length at most $20$. How many points with integer coordinates lie on at least one of these paths?",[("A","161"),("B","185"),("C","195"),("D","227"),("E","255")]),
+})
+
+KEY_OVERRIDES.update({
+21:"Use the arithmetic and geometric means to recover the sum, product, and difference.",
+22:"Iterate the incircle tangency-length transformation.",
+23:"A point lies on some allowed path exactly when its Manhattan distances to A and B sum to at most 20.",
+})
+
+SOL.update({
+21:[("Name the arithmetic mean",r"Let the arithmetic mean be the two-digit number \[m=10a+b.\] Then \[x+y=2m.\]"),("Write the geometric mean",r"The geometric mean is obtained by reversing the digits, so it is \[g=10b+a.\] Since the geometric mean is $\sqrt{xy}$, we have \[xy=g^2.\]"),("Use the difference formula",r"The desired difference satisfies \[(x-y)^2=(x+y)^2-4xy=(2m)^2-4g^2=4(m^2-g^2).\] So \[|x-y|=2\sqrt{m^2-g^2}.\]"),("Search the digit condition",r"We need $m$ to be two-digit and $m^2-g^2$ to be a positive square. Checking the digit pairs gives the valid case \[m=65,\qquad g=56.\]"),("Compute the integers and the difference",r"Then \[x+y=130,\qquad xy=56^2=3136.\] The two integers are $98$ and $32$, and their difference is \[98-32=66.\]"),("Conclude",r"The answer is $\boxed{66}$."),
+],
+22:[("Find the tangency lengths",r"In a triangle with side lengths $a,b,c$ and semiperimeter $s$, the tangent lengths from the vertices are \[s-a,\quad s-b,\quad s-c.\] So the next triangle has side lengths obtained by subtracting the old side lengths from the semiperimeter."),("Apply this to consecutive sides",r"If the current triangle has side lengths \[t,\ t+1,\ t+2,\] then its semiperimeter is \[\frac{3t+3}{2}.\] The next side lengths are \[\frac{t-1}{2},\quad \frac{t+1}{2},\quad \frac{t+3}{2}.\]"),("Track the smallest side",r"Thus the smallest side follows the recurrence \[t_{n+1}=\frac{t_n-1}{2},\] starting from $t_1=2011$."),("Know when the process stops",r"A triangle with side lengths $t,t+1,t+2$ exists exactly when \[t+(t+1)>t+2,\] or $t>1$. So the last triangle is the last one with $t>1$."),("Iterate efficiently",r"Repeatedly applying \[t\mapsto\frac{t-1}{2}\] gives the last valid smallest side \[\frac{375}{128}.\] The corresponding sides are \[\frac{375}{128},\frac{503}{128},\frac{631}{128}.\]"),("Compute the perimeter",r"The perimeter is \[\frac{375+503+631}{128}=\frac{1509}{128}.\] The answer is \[\boxed{\frac{1509}{128}}.\]"),
+],
+23:[("Translate path length into Manhattan distance",r"Because the bug moves only horizontally and vertically, the shortest path length from one point to another is Manhattan distance. A lattice point $P=(x,y)$ lies on some path from $A$ to $B$ of length at most $20$ exactly when \[d(A,P)+d(P,B)\le20.\]"),("Write the inequality",r"With $A=(-3,2)$ and $B=(3,-2)$, this becomes \[|x+3|+|y-2|+|x-3|+|y+2|\le20.\]"),("Separate x and y",r"The $x$-part is \[|x+3|+|x-3|,\] and the $y$-part is \[|y-2|+|y+2|.\] Each part is constant inside the interval between its two centers and grows linearly outside."),("Count by possible x-values",r"For each integer $x$, compute the remaining allowance for the $y$ expression. Summing over the possible integer $x$ values gives the row counts \[1,5,9,13,17,21,21,21,21,21,17,13,9,5,1.\]"),("Add the row counts",r"The total number of lattice points is \[1+5+9+13+17+5\cdot21+17+13+9+5+1=195.\]"),("Conclude",r"The answer is $\boxed{195}$."),
 ],
 })
 

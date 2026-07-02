@@ -3340,3 +3340,19 @@
 - Pushed: pending
 - Next batch should start from: 2011 AMC 12B Problem 21
 - Review notes: none.
+
+## Batch 206: 2011 AMC 12B Problems 21-23
+
+- Start time: 2026-07-01T19:44:28-07:00
+- End time: 2026-07-01T19:44:28-07:00
+- Processed contest: AMC12
+- Processed range: 2011 AMC 12B Problems 21-23
+- Generated count: 3
+- Updated existing count: 0
+- Skipped count: 2
+- Skipped reasons: 2011 AMC 12B Problem 24: skipped because the complex-plane polygon minimum perimeter problem needs a dedicated derivation.; 2011 AMC 12B Problem 25: skipped because the nearest-integer probability statement is OCR-damaged.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2012 AMC 12A Problem 1
+- Review notes: none.
