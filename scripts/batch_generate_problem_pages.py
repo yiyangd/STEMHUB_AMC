@@ -3,20 +3,18 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 270
+BATCH_NUMBER = 271
 CONTEST_DIR = "amc12"
 YEAR = "2022"
-FORM = "A"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2022_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {21, 23, 24}
+FORM = "B"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2022_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 SKIPPED = [
-    "2022 AMC 12A Problem 22: complex-plane quadrilateral area maximization is high-risk in current pass; skipped",
-    "2022 AMC 12A Problem 25: tangent segment integer-radius configuration is high-risk in current pass; skipped",
 ]
-BATCH_LABEL = "2022 AMC 12A Problems 21,23,24"
-NEXT_START = "2022 AMC 12B Problem 1"
+BATCH_LABEL = "2022 AMC 12B Problems 1-10"
+NEXT_START = "2022 AMC 12B Problem 11"
 
-ANS={21:("E",r"$x^6+x^3+1$"),23:("D","8"),24:("E","1296")}
+ANS={1:("A","-2"),2:("D","20"),3:("A","0"),4:("B","8"),5:("B",r"$(0,5)$"),6:("B","42"),7:("D","11"),8:("D","a circle and a hyperbola"),9:("B","12"),10:("D",r"$4\sqrt7$")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4964,6 +4962,45 @@ SOL.update({
 21:[("Look for a substitution",r"The exponents $2022$ and $1011$ suggest setting \[y=x^{1011}.\] Then \[P(x)=y^2+y+1.\]"),("Connect to a candidate factor",r"The polynomial $x^6+x^3+1$ has the same shape if we set $u=x^3$: \[x^6+x^3+1=u^2+u+1.\]"),("Use the roots of the candidate factor",r"If $x^6+x^3+1=0$, then with $u=x^3$ we have \[u^2+u+1=0.\] This means $u^3=1$ and $u\ne1$."),("Reduce the large exponent",r"Since $x^{1011}=(x^3)^{337}=u^{337}$, and $337\equiv1\pmod3$, we get \[x^{1011}=u.\]"),("Evaluate P at those roots",r"Then \[P(x)=x^{2022}+x^{1011}+1=u^2+u+1=0.\] So every root of $x^6+x^3+1$ is a root of $P(x)$."),("Conclude",r"Therefore $x^6+x^3+1$ is a factor. The answer is $\boxed{x^6+x^3+1}$."),],
 23:[("Understand what must be checked",r"The denominator $k_n$ is the denominator after the harmonic sum is reduced. The denominator $L_n$ is a natural common denominator before reducing. Thus $k_n<L_n$ exactly when cancellation occurs after writing the sum over denominator $L_n$."),("Use a running computation",r"Because $n\le22$, a systematic table is safe and short. At each step, update \[H_n=H_{n-1}+\frac1n\] and reduce the fraction, while also updating \[L_n=\operatorname{lcm}(1,2,\ldots,n).\]"),("Record the first cancellation interval",r"For $n=1,2,3,4,5$, the reduced denominator equals $L_n$. For \[n=6,7,8,\] cancellation occurs, giving \[k_6=20<60,\quad k_7=140<420,\quad k_8=280<840.\]"),("Record the middle interval",r"From $n=9$ through $n=17$, the reduced denominator again equals $L_n$. This contributes no additional values."),("Record the final interval",r"From $n=18$ through $n=22$, cancellation occurs again: \[k_{18}<L_{18},\ k_{19}<L_{19},\ k_{20}<L_{20},\ k_{21}<L_{21},\ k_{22}<L_{22}.\]"),("Count",r"The successful values are \[6,7,8,18,19,20,21,22,\] for a total of $8$."),("Conclude",r"The answer is $\boxed{8}$."),],
 24:[("Sort the digits",r"For a given string, sort its digits as \[b_1\le b_2\le b_3\le b_4\le b_5.\] The condition that at least $j$ digits are less than $j$ is equivalent to \[b_j<j\] for $j=1,2,3,4$. The fifth condition is automatic because all digits are at most $4$."),("Recognize the structure",r"This is exactly the parking-function condition for $5$ cars, with preferences labeled $0,1,2,3,4$. The order of the original string matters, so we count labeled parking functions, not just sorted digit multisets."),("Use the circular parking argument",r"For $n$ cars, the number of parking functions is $(n+1)^{n-1}$. One way to see this is to place $n+1$ parking spots on a circle. Among the $(n+1)^n$ circular preference lists, rotations group them into sets of $n+1$, and exactly one rotation leaves the extra spot empty."),("Apply n equals 5",r"Here $n=5$, so the number of valid strings is \[(5+1)^{5-1}=6^4.\]"),("Compute",r"We have \[6^4=1296.\]"),("Conclude",r"The answer is $\boxed{1296}$."),],
+})
+
+OV.update({
+1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
+2:(r"In rhombus $ABCD$, point $P$ lies on segment $\overline{AD}$ such that $\overline{BP}\perp\overline{AD}$, $AP=3$, and $PD=2$. What is the area of $ABCD$?",[("A",r"$3\sqrt5$"),("B","10"),("C",r"$6\sqrt5$"),("D","20"),("E","25")]),
+3:(r"How many of the first ten numbers of the sequence $121,11211,1112111,\ldots$ are prime numbers?",[("A","0"),("B","1"),("C","2"),("D","3"),("E","4")]),
+4:(r"For how many values of the constant $k$ will the polynomial $x^2+kx+36$ have two distinct integer roots?",[("A","6"),("B","8"),("C","9"),("D","14"),("E","16")]),
+5:(r"The point $(-1,-2)$ is rotated $270^\circ$ counterclockwise about the point $(3,1)$. What are the coordinates of its new position?",[("A",r"$(-3,-4)$"),("B",r"$(0,5)$"),("C",r"$(2,-1)$"),("D",r"$(4,3)$"),("E",r"$(6,-3)$")]),
+6:(r"Consider the following $100$ sets of $10$ elements each: $\{1,2,\ldots,10\}, \{11,12,\ldots,20\}, \{21,22,\ldots,30\},\ldots,\{991,992,\ldots,1000\}$. How many of these sets contain exactly two multiples of $7$?",[("A","40"),("B","42"),("C","43"),("D","49"),("E","50")]),
+7:(r"Camila writes down five positive integers. The unique mode of these integers is $2$ greater than their median, and the median is $2$ greater than their arithmetic mean. What is the least possible value for the mode?",[("A","5"),("B","7"),("C","9"),("D","11"),("E","13")]),
+8:(r"What is the graph of $y^4+1=x^4+2y^2$ in the coordinate plane?",[("A","two intersecting parabolas"),("B","two nonintersecting parabolas"),("C","two intersecting circles"),("D","a circle and a hyperbola"),("E","a circle and two parabolas")]),
+9:(r"The sequence $a_0,a_1,a_2,\ldots$ is a strictly increasing arithmetic sequence of positive integers such that \[2^{a_7}=2^{27}\cdot a_7.\] What is the minimum possible value of $a_2$?",[("A","8"),("B","12"),("C","16"),("D","17"),("E","22")]),
+10:(r"Regular hexagon $ABCDEF$ has side length $2$. Let $G$ be the midpoint of $\overline{AB}$, and let $H$ be the midpoint of $\overline{DE}$. What is the perimeter of $GCHF$?",[("A",r"$4\sqrt3$"),("B","8"),("C",r"$4\sqrt5$"),("D",r"$4\sqrt7$"),("E","12")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Evaluate the custom absolute-value operation in the correct order.",
+2:"Use the rhombus side length and a right triangle to find the height.",
+3:"Factor the digit-pattern number for every term.",
+4:"Count distinct integer root pairs whose product is 36.",
+5:"Rotate the vector relative to the center, then translate back.",
+6:"Use residues modulo 7 across blocks of length 10.",
+7:"Use median, mode, and mean constraints on a sorted five-number list.",
+8:"Factor the equation as a union of familiar conic graphs.",
+9:"Solve the exponential condition first, then minimize the arithmetic sequence term.",
+10:"Place the regular hexagon on coordinates and compute the four equal side lengths.",
+})
+
+SOL.update({
+1:[("Evaluate the inner operations first",r"The symbol $\diamond$ means absolute difference. First, \[2\diamond3=|2-3|=1,\] so \[1\diamond(2\diamond3)=1\diamond1=|1-1|=0.\]"),("Evaluate the other grouped part",r"Also, \[1\diamond2=|1-2|=1,\] so \[(1\diamond2)\diamond3=1\diamond3=|1-3|=2.\]"),("Subtract the two results",r"The expression becomes \[0-2=-2.\]"),("Conclude",r"The answer is $\boxed{-2}$."),],
+2:[("Find the side length of the rhombus",r"Since $P$ lies on $\overline{AD}$ with $AP=3$ and $PD=2$, the side $AD$ has length \[AD=3+2=5.\] In a rhombus, all sides are equal, so $AB=5$."),("Use the right triangle",r"Because $\overline{BP}\perp\overline{AD}$, triangle $ABP$ is right with hypotenuse $AB=5$ and leg $AP=3$."),("Find the height",r"By the Pythagorean theorem, \[BP=\sqrt{5^2-3^2}=\sqrt{16}=4.\] This is the height of the rhombus relative to base $AD$."),("Compute the area",r"The area is base times height: \[AD\cdot BP=5\cdot4=20.\]"),("Conclude",r"The answer is $\boxed{20}$."),],
+3:[("Identify the pattern",r"The $m$th term has $m$ ones, then a $2$, then $m$ ones. For example, $m=2$ gives $11211$."),("Look for a factorization",r"The pattern factors as \[(10^m+1)(111\ldots111),\] where the second factor has $m+1$ ones. For example, \[11211=101\cdot111.\]"),("Check why this works generally",r"Multiplying by $10^m+1$ places one copy of the repunit at the left and one copy at the right. The overlap in the middle creates the digit $2$."),("Apply to the first ten terms",r"For $m=1,2,\ldots,10$, both factors are integers greater than $1$. So each of the first ten terms is composite."),("Conclude",r"None of the first ten terms is prime, so the answer is $\boxed{0}$."),],
+4:[("Relate roots to factors of 36",r"If the roots are integers $r$ and $s$, then \[rs=36\] and \[r+s=-k.\] The roots must be distinct."),("List positive factor pairs",r"The positive distinct factor pairs of $36$ are \[(1,36),(2,18),(3,12),(4,9).\] The pair $(6,6)$ is not allowed because the roots would not be distinct."),("Use signs",r"Because the product is positive, the two roots are either both positive or both negative. The four positive pairs give four values of $k$, and the four corresponding negative pairs give four more values."),("Check for repeats",r"The sums $37,20,15,13$ are distinct, so the resulting $k$ values are also distinct."),("Conclude",r"There are \[4+4=8\] possible values of $k$. The answer is $\boxed{8}$."),],
+5:[("Move to coordinates relative to the center",r"The center of rotation is $(3,1)$. The vector from the center to $(-1,-2)$ is \[(-1-3,\,-2-1)=(-4,-3).\]"),("Apply the rotation",r"A $270^\circ$ counterclockwise rotation is the same as a $90^\circ$ clockwise rotation. This sends a vector $(u,v)$ to $(v,-u)$, so \[(-4,-3)\mapsto(-3,4).\]"),("Translate back",r"Add the center $(3,1)$ back to the rotated vector: \[(3,1)+(-3,4)=(0,5).\]"),("Conclude",r"The new position is $\boxed{(0,5)}$."),],
+6:[("Look at residues in each block",r"Each set contains $10$ consecutive integers. Since $10=7+3$, each block contains at least one multiple of $7$, and it contains two multiples exactly when the repeated residues include $0$."),("Track the first residue",r"The first number of the $m$th block is $10m+1$, for $m=0,1,\ldots,99$. Modulo $7$, this is \[10m+1\equiv3m+1\pmod7.\]"),("Decide when two multiples occur",r"In a run of $10$ consecutive residues, the first three residues appear twice. Thus there are two multiples of $7$ exactly when the starting residue is $0$, $5$, or $6$."),("Count the useful m values",r"The condition \[3m+1\equiv0,5,6\pmod7\] corresponds to \[m\equiv2,6,4\pmod7.\] Among $m=0,1,\ldots,99$, each of these three residue classes occurs $14$ times."),("Conclude",r"The number of sets is \[3\cdot14=42.\] The answer is $\boxed{42}$."),],
+7:[("Sort the five integers",r"Let the median be $m$. Then the unique mode is $m+2$, and the arithmetic mean is $m-2$."),("Use the sum from the mean",r"Because there are five numbers, their total sum is \[5(m-2)=5m-10.\]"),("Place the mode",r"To make $m+2$ the unique mode while keeping the value as small as possible, it should appear exactly twice at the high end. So the list can be thought of as \[a,b,m,m+2,m+2.\]"),("Use the sum",r"Then \[a+b+m+2(m+2)=5m-10,\] so \[a+b=2m-14.\]"),("Minimize the median",r"The numbers $a$ and $b$ must be positive and cannot be equal, or they would create another mode. The smallest possible distinct positive sum is $1+2=3$, so \[2m-14\ge3,\] which forces $m\ge9$."),("Check and conclude",r"With $m=9$, the list \[1,3,9,11,11\] works. Therefore the least possible mode is $\boxed{11}$."),],
+8:[("Move all terms to a recognizable form",r"Rewrite the equation as \[y^4-2y^2+1=x^4.\] The left side is a perfect square: \[(y^2-1)^2=x^4.\]"),("Take the square-root alternatives",r"Since both sides are squares, this gives two equations: \[y^2-1=x^2\] or \[y^2-1=-x^2.\]"),("Identify the first graph",r"The equation \[y^2-x^2=1\] is a hyperbola."),("Identify the second graph",r"The equation \[x^2+y^2=1\] is a circle."),("Conclude",r"The graph is the union of a circle and a hyperbola. The answer is $\boxed{\text{a circle and a hyperbola}}$."),],
+9:[("Solve for a7 first",r"The equation is \[2^{a_7}=2^{27}\cdot a_7,\] so \[2^{a_7-27}=a_7.\] This means $a_7$ itself must be a power of $2$."),("Find the possible value",r"Testing powers near $27$ gives \[a_7=32,\] because \[2^{32-27}=2^5=32.\]"),("Write the arithmetic sequence",r"Let the common difference be $d$, a positive integer. Then \[a_7=a_0+7d=32,\] so \[a_2=a_0+2d=32-5d.\]"),("Minimize a2",r"To make $a_2$ as small as possible, make $d$ as large as possible while keeping $a_0=32-7d$ positive. The largest possible $d$ is $4$."),("Compute",r"Then \[a_2=32-5\cdot4=12.\]"),("Conclude",r"The minimum possible value is $\boxed{12}$."),],
+10:[("Place the hexagon on coordinates",r"Use a regular hexagon centered at the origin with side length $2$: \[A=(2,0),\ B=(1,\sqrt3),\ C=(-1,\sqrt3),\ D=(-2,0),\ E=(-1,-\sqrt3),\ F=(1,-\sqrt3).\]"),("Find the midpoints",r"The midpoint of $\overline{AB}$ is \[G=\left(\frac32,\frac{\sqrt3}{2}\right),\] and the midpoint of $\overline{DE}$ is \[H=\left(-\frac32,-\frac{\sqrt3}{2}\right).\]"),("Compute one side length",r"For example, \[GC^2=\left(\frac32-(-1)\right)^2+\left(\frac{\sqrt3}{2}-\sqrt3\right)^2=\left(\frac52\right)^2+\left(-\frac{\sqrt3}{2}\right)^2=7.\] So $GC=\sqrt7$."),("Use symmetry for the other sides",r"The same calculation, or symmetry of the regular hexagon, gives \[CH=HF=FG=\sqrt7.\]"),("Compute the perimeter",r"Therefore the perimeter of $GCHF$ is \[4\sqrt7.\]"),("Conclude",r"The answer is $\boxed{4\sqrt7}$."),],
 })
 
 def esc(x, quote=True):
