@@ -1,22 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 1772
-- Latest batch: 241 (2018 AMC 12B Problems 1-10)
-- Latest new generated count: 10
+- Total manifest entries: 1778
+- Latest batch: 242 (2018 AMC 12B Problems 12,13,15,17,18,19)
+- Latest new generated count: 6
 - Latest updated existing count: 0
-- Latest skipped count: 0
+- Latest skipped count: 4
 - MathJax validation: passed
 - Answer verification source: AoPS 2018 AMC 12B Answer Key
 
 ## Latest Batch Pages
 
-- `2018 AMC 12B Problem 1` -> `amc12/problems/2018-amc-12b-problem-1/`
-- `2018 AMC 12B Problem 2` -> `amc12/problems/2018-amc-12b-problem-2/`
-- `2018 AMC 12B Problem 3` -> `amc12/problems/2018-amc-12b-problem-3/`
-- `2018 AMC 12B Problem 4` -> `amc12/problems/2018-amc-12b-problem-4/`
-- `2018 AMC 12B Problem 5` -> `amc12/problems/2018-amc-12b-problem-5/`
-- `2018 AMC 12B Problem 6` -> `amc12/problems/2018-amc-12b-problem-6/`
-- `2018 AMC 12B Problem 7` -> `amc12/problems/2018-amc-12b-problem-7/`
-- `2018 AMC 12B Problem 8` -> `amc12/problems/2018-amc-12b-problem-8/`
-- `2018 AMC 12B Problem 9` -> `amc12/problems/2018-amc-12b-problem-9/`
-- `2018 AMC 12B Problem 10` -> `amc12/problems/2018-amc-12b-problem-10/`
+- `2018 AMC 12B Problem 12` -> `amc12/problems/2018-amc-12b-problem-12/`
+- `2018 AMC 12B Problem 13` -> `amc12/problems/2018-amc-12b-problem-13/`
+- `2018 AMC 12B Problem 15` -> `amc12/problems/2018-amc-12b-problem-15/`
+- `2018 AMC 12B Problem 17` -> `amc12/problems/2018-amc-12b-problem-17/`
+- `2018 AMC 12B Problem 18` -> `amc12/problems/2018-amc-12b-problem-18/`
+- `2018 AMC 12B Problem 19` -> `amc12/problems/2018-amc-12b-problem-19/`
+
+## Skipped in latest batch
+
+- 2018 AMC 12B Problem 11: wrapping-paper geometry depends on original diagram; skipped
+- 2018 AMC 12B Problem 14: age wording/OCR leaves implicit assumptions; skipped
+- 2018 AMC 12B Problem 16: regular-octagon minimum area requires careful radical matching; skipped
+- 2018 AMC 12B Problem 20: hexagon intersection region is diagram-dependent; skipped

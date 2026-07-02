@@ -3,15 +3,20 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 241
+BATCH_NUMBER = 242
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2018_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
-SKIPPED = []
-BATCH_LABEL = "2018 AMC 12B Problems 1-10"
-NEXT_START = "2018 AMC 12B Problem 11"
+TARGET_NUMBERS = {12,13,15,17,18,19}
+SKIPPED = [
+    "2018 AMC 12B Problem 11: wrapping-paper geometry depends on original diagram; skipped",
+    "2018 AMC 12B Problem 14: age wording/OCR leaves implicit assumptions; skipped",
+    "2018 AMC 12B Problem 16: regular-octagon minimum area requires careful radical matching; skipped",
+    "2018 AMC 12B Problem 20: hexagon intersection region is diagram-dependent; skipped",
+]
+BATCH_LABEL = "2018 AMC 12B Problems 12,13,15,17,18,19"
+NEXT_START = "2018 AMC 12B Problem 21"
 
-ANS={1:("A","90"),2:("D","67"),3:("B","10"),4:("B",r"50\pi"),5:("D","240"),6:("B",r"\frac{4DS}{Q}"),7:("C","6"),8:("C","50"),9:("E","1010000"),10:("D","225")}
+ANS={12:("C","18"),13:("C","200"),15:("A","96"),17:("A","7"),18:("B","2017"),19:("C","340")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4111,6 +4116,70 @@ SOL.update({
 ("Minimize distinct values",r"To use as few other values as possible, each other value should appear \(9\) times, except possibly one leftover group. We need \[\left\lceil\frac{2008}{9}\right\rceil=224\] other distinct values."),
 ("Add the mode value",r"Including the mode itself, the least number of distinct values is \[224+1=225.\]"),
 ("Conclude",r"The answer is $\boxed{225}$."),
+],
+})
+
+OV.update({
+12:(r"Side \(AB\) of \(\triangle ABC\) has length \(10\). The bisector of angle \(A\) meets \(BC\) at \(D\), and \(CD=3\). The set of all possible values of \(AC\) is an open interval \((m,n)\). What is \(m+n\)?",[("A","16"),("B","17"),("C","18"),("D","19"),("E","20")]),
+13:(r"Square \(ABCD\) has side length \(30\). Point \(P\) lies inside the square so that \(AP=12\) and \(BP=26\). The centroids of \(\triangle ABP\), \(\triangle BCP\), \(\triangle CDP\), and \(\triangle DAP\) are the vertices of a convex quadrilateral. What is the area of that quadrilateral?",[("A",r"$100\sqrt2$"),("B",r"$100\sqrt3$"),("C","200"),("D",r"$200\sqrt2$"),("E",r"$200\sqrt3$")]),
+15:(r"How many odd positive \(3\)-digit integers are divisible by \(3\) but do not contain the digit \(3\)?",[("A","96"),("B","97"),("C","98"),("D","102"),("E","120")]),
+17:(r"Let \(p\) and \(q\) be positive integers such that \[\frac59<\frac pq<\frac47\] and \(q\) is as small as possible. What is \(q-p\)?",[("A","7"),("B","11"),("C","13"),("D","17"),("E","19")]),
+18:(r"A function \(f\) is defined recursively by \(f(1)=f(2)=1\) and \(f(n)=f(n-1)-f(n-2)+n\) for all integers \(n\ge3\). What is \(f(2018)\)?",[("A","2016"),("B","2017"),("C","2018"),("D","2019"),("E","2020")]),
+19:(r"Mary chose an even \(4\)-digit number \(n\). She wrote down all the divisors of \(n\) in increasing order. At some moment Mary wrote \(323\) as a divisor of \(n\). What is the smallest possible value of the next divisor written to the right of \(323\)?",[("A","324"),("B","330"),("C","340"),("D","361"),("E","646")]),
+})
+
+KEY_OVERRIDES.update({
+12:"Use the angle-bisector theorem and triangle inequalities for the third side.",
+13:"Centroids form an affine image independent of the point P.",
+15:"Count allowed digit triples by residues modulo 3.",
+17:"Search for the first denominator that places an integer numerator in the interval.",
+18:"Find the period in f(n)-n.",
+19:"Use prime factorization and least common multiples with 323.",
+})
+
+SOL.update({
+12:[
+("Let AC be b",r"Let \(AC=b\). By the angle-bisector theorem, \[\frac{BD}{DC}=\frac{AB}{AC}=\frac{10}{b}.\] Since \(DC=3\), we get \[BD=\frac{30}{b}.\]"),
+("Write BC",r"Thus \[BC=BD+DC=\frac{30}{b}+3.\]"),
+("Apply triangle inequalities",r"The three side lengths are \(10\), \(b\), and \(3+\frac{30}{b}\). The condition \[3+\frac{30}{b}<10+b\] simplifies to \(b>3\)."),
+("Use the other side",r"The other nontrivial inequality is \(|10-b|<3+\frac{30}{b}\). For \(b\le10\) it is automatically true; for \(b>10\), it becomes \(b<15\)."),
+("Find the interval",r"So the possible values are \[3<b<15.\] Thus \((m,n)=(3,15)\)."),
+("Conclude",r"Therefore \(m+n=\boxed{18}\)."),
+],
+13:[
+("Use centroid coordinates",r"The centroid of a triangle is the average of its three vertices. Let the square vertices be \(A,B,C,D\), and let the point be \(P\)."),
+("Compare adjacent centroids",r"The centroid of \(\triangle ABP\) is \(\frac{A+B+P}{3}\), and the centroid of \(\triangle BCP\) is \(\frac{B+C+P}{3}\). Their difference is \[\frac{C-A}{3}.\]"),
+("Use the square side length",r"Similarly, the next side vector is \(\frac{D-B}{3}\). In a square of side \(30\), the diagonals \(AC\) and \(BD\) are perpendicular and have length \(30\sqrt2\)."),
+("Find the quadrilateral area",r"The centroid quadrilateral is a square-like parallelogram with adjacent side vectors \(\frac{AC}{3}\) and \(\frac{BD}{3}\), perpendicular in direction. Its area is \[\frac{30\sqrt2}{3}\cdot\frac{30\sqrt2}{3}=10\sqrt2\cdot10\sqrt2=200.\]"),
+("Conclude",r"The area is \(\boxed{200}\)."),
+],
+15:[
+("List allowed digits",r"The hundreds digit can be \(1,2,4,5,6,7,8,9\), excluding \(0\) and \(3\). The tens digit can be any digit except \(3\). The units digit must be odd and not \(3\), so it is one of \(1,5,7,9\)."),
+("Use residues modulo 3",r"Divisibility by \(3\) depends on the digit sum modulo \(3\). Count allowed choices by residue classes."),
+("Count residues",r"For the hundreds digit, residues \(0,1,2\) occur \(3,2,3\) times. For the tens digit among all digits except \(3\), residues occur \(3,3,3\) times. For the units choices \(1,5,7,9\), residues \(0,1,2\) occur \(1,2,1\) times."),
+("Combine",r"Because the tens residues are balanced, exactly one third of all allowed digit choices are divisible by \(3\). The total allowed choices are \[8\cdot9\cdot4=288,\] so the count is \[288/3=96.\]"),
+("Conclude",r"The answer is \(\boxed{96}\)."),
+],
+17:[
+("Translate the inequality",r"We need an integer \(p\) satisfying \[\frac{5q}{9}<p<\frac{4q}{7}.\]"),
+("Test denominators efficiently",r"The interval length is \[\frac{4q}{7}-\frac{5q}{9}=\frac{q}{63}.\] So for very small \(q\), there may be no integer inside."),
+("Find the first success",r"Checking denominators in order, \(q=16\) first works: \[\frac{5}{9}<\frac{9}{16}<\frac47,\] since \(\frac{5}{9}\approx0.5556\), \(\frac{9}{16}=0.5625\), and \(\frac47\approx0.5714\)."),
+("Compute q minus p",r"Thus \(p=9\) and \(q=16\), so \[q-p=16-9=7.\]"),
+("Conclude",r"The answer is \(\boxed{7}\)."),
+],
+18:[
+("Compute a few values",r"Starting from \(f(1)=f(2)=1\), the next values are \[f(3)=3,\quad f(4)=6,\quad f(5)=8,\quad f(6)=8.\]"),
+("Look at f(n)-n",r"The sequence \(f(n)-n\) begins \[0,-1,0,2,3,2,\] and then repeats with period \(6\). This follows directly by applying the same recurrence to the difference sequence."),
+("Use 2018 modulo 6",r"Since \(2018\equiv2\pmod6\), the corresponding difference is \(-1\)."),
+("Compute",r"Therefore \[f(2018)=2018-1=2017.\]"),
+("Conclude",r"The answer is \(\boxed{2017}\)."),
+],
+19:[
+("Factor 323",r"We have \[323=17\cdot19.\] Since \(n\) is even and has \(323\) as a divisor, \(n\) must be a multiple of \(2\cdot17\cdot19=646\)."),
+("Test possible next divisors",r"The next divisor after \(323\) must be greater than \(323\). The choices \(324\) and \(330\) would force \(n\) to be a multiple of \(\operatorname{lcm}(323,324)\) or \(\operatorname{lcm}(323,330)\), both larger than a four-digit number."),
+("Show 340 is possible",r"For \(340=2^2\cdot5\cdot17\), \[\operatorname{lcm}(323,340)=2^2\cdot5\cdot17\cdot19=6460,\] which is an even four-digit number."),
+("Check no smaller listed value works",r"The smaller listed candidates cannot occur for a four-digit \(n\), while \(340\) can occur. Thus the smallest possible next divisor is \(340\)."),
+("Conclude",r"The answer is \(\boxed{340}\)."),
 ],
 })
 
