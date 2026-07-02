@@ -3,15 +3,15 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 203
+BATCH_NUMBER = 204
 CONTEST_DIR = "amc12"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {12,13,14,16,18,19,20}
-SKIPPED = ["2011 AMC 12A Problem 11: skipped because the circle-overlap region depends on the original diagram.", "2011 AMC 12A Problem 15: skipped because the hemisphere-pyramid tangency needs a careful 3D diagram derivation.", "2011 AMC 12A Problem 17: skipped because the triangle of tangency points needs a diagram-sensitive geometry derivation."]
-BATCH_LABEL = "2011 AMC 12A Problems 12-14, 16, 18-20"
-NEXT_START = "2011 AMC 12A Problem 21"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2011_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9,10}
+SKIPPED = ["2011 AMC 12A Problem 21: skipped because the recursive function definition is OCR-damaged.", "2011 AMC 12A Problem 22: skipped because the n-ray square partition geometry needs a dedicated derivation.", "2011 AMC 12A Problem 23: skipped because the complex rational-function formula is OCR-damaged.", "2011 AMC 12A Problem 24: skipped because the quadrilateral incircle maximum needs a careful geometry derivation.", "2011 AMC 12A Problem 25: skipped because the orthocenter/incenter/circumcenter area maximization is high-risk without a full derivation."]
+BATCH_LABEL = "2011 AMC 12B Problems 1-10"
+NEXT_START = "2011 AMC 12B Problem 11"
 
-ANS={12:("D","4.5"),13:("B","30"),14:("E",r"\frac{19}{81}"),16:("C","3120"),18:("D","8"),19:("C","154"),20:("C","3")}
+ANS={1:("C",r"\frac7{12}"),2:("E","95"),3:("C",r"\frac{B-A}{2}"),4:("E","224"),5:("A","3"),6:("C","36"),7:("B",r"\frac{33}{7}"),8:("A",r"\frac{\pi}{3}"),9:("D",r"\frac59"),10:("E","75")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -2330,6 +2330,55 @@ SOL.update({
 ],
 })
 
+OV.update({
+1:(r"What is \[\frac{2+4+6}{1+3+5}-\frac{1+3+5}{2+4+6}?\]",[("A",r"$-\frac1{36}$"),("B",r"$\frac5{12}$"),("C",r"$\frac7{12}$"),("D",r"$\frac{147}{60}$"),("E",r"$\frac{43}{3}$")]),
+2:(r"Josanna's test scores to date are $90,80,70,60,$ and $85$. Her goal is to raise her test average at least $3$ points with her next test. What is the minimum test score she would need to accomplish this goal?",[("A","80"),("B","82"),("C","85"),("D","90"),("E","95")]),
+3:(r"LeRoy and Bernardo went on a week-long trip together and agreed to share the costs equally. Over the week, each of them paid for various joint expenses such as gasoline and car rental. At the end of the trip it turned out that LeRoy had paid $A$ dollars and Bernardo had paid $B$ dollars, where $A<B$. How many dollars must LeRoy give to Bernardo so that they share the costs equally?",[("A",r"$\frac{A+B}{2}$"),("B",r"$\frac{A-B}{2}$"),("C",r"$\frac{B-A}{2}$"),("D",r"$B-A$"),("E",r"$A+B$")]),
+4:(r"In multiplying two positive integers $a$ and $b$, Ron reversed the digits of the two-digit number $a$. His erroneous product was $161$. What is the correct value of the product of $a$ and $b$?",[("A","116"),("B","161"),("C","204"),("D","214"),("E","224")]),
+5:(r"Let $N$ be the second smallest positive integer that is divisible by every positive integer less than $7$. What is the sum of the digits of $N$?",[("A","3"),("B","4"),("C","5"),("D","6"),("E","9")]),
+6:(r"Two tangents to a circle are drawn from a point $A$. The points of contact $B$ and $C$ divide the circle into arcs with lengths in the ratio $2:3$. What is the degree measure of $\angle BAC$?",[("A","24"),("B","30"),("C","36"),("D","48"),("E","60")]),
+7:(r"Let $x$ and $y$ be two-digit positive integers with mean $60$. What is the maximum value of the ratio $\frac{x}{y}$?",[("A","3"),("B",r"$\frac{33}{7}$"),("C",r"$\frac{39}{7}$"),("D","9"),("E",r"$\frac{99}{10}$")]),
+8:(r"Keiko walks once around a track at exactly the same constant speed every day. The sides of the track are straight, and the ends are semicircles. The track has width $6$ meters, and it takes her $36$ seconds longer to walk around the outside edge of the track than around the inside edge. What is Keiko's speed in meters per second?",[("A",r"$\frac{\pi}{3}$"),("B",r"$\frac{2\pi}{3}$"),("C",r"$\pi$"),("D",r"$\frac{4\pi}{3}$"),("E",r"$\frac{5\pi}{3}$")]),
+9:(r"Two real numbers are selected independently at random from the interval $[-20,10]$. What is the probability that the product of those numbers is greater than zero?",[("A",r"$\frac19$"),("B",r"$\frac13$"),("C",r"$\frac49$"),("D",r"$\frac59$"),("E",r"$\frac23$")]),
+10:(r"Rectangle $ABCD$ has $AB=6$ and $BC=3$. Point $M$ is chosen on side $\overline{AB}$ so that $\angle AMD=\angle CMD$. What is the degree measure of $\angle AMD$?",[("A","15"),("B","30"),("C","45"),("D","60"),("E","75")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Compute the two simple sums before subtracting the fractions.",
+2:"Use the target average after adding one more test.",
+3:"Equal sharing means both people should have paid half the total.",
+4:"Factor the erroneous product and reverse the two-digit factor.",
+5:"Use the least common multiple of 1 through 6.",
+6:"Use the tangent-tangent angle theorem.",
+7:"Maximize x and minimize y subject to x+y=120 and both two-digit.",
+8:"Compare outer and inner track perimeters; the straight parts cancel.",
+9:"Product is positive when both numbers have the same sign.",
+10:"Use the angle bisector from M and compare distances to the two sides.",
+})
+
+SOL.update({
+1:[("Compute the two sums",r"The even sum is \[2+4+6=12,\] and the odd sum is \[1+3+5=9.\]"),("Substitute them",r"The expression becomes \[\frac{12}{9}-\frac{9}{12}.\]"),("Simplify each fraction",r"We have \[\frac{12}{9}=\frac43,\qquad \frac{9}{12}=\frac34.\]"),("Subtract with a common denominator",r"Using denominator $12$, \[\frac43-\frac34=\frac{16}{12}-\frac9{12}=\frac7{12}.\]"),("Conclude",r"The answer is \[\boxed{\frac7{12}}.\]"),
+],
+2:[("Find the current average",r"The sum of Josanna's five scores is \[90+80+70+60+85=385.\] Her current average is \[\frac{385}{5}=77.\]"),("Set the new target",r"She wants to raise the average by at least $3$ points, so the new average must be at least $80$."),("Use six tests after the next score",r"After the next test, there will be $6$ scores. To have average at least $80$, the total must be at least \[6\cdot80=480.\]"),("Find the needed score",r"She already has $385$ points, so she needs at least \[480-385=95.\]"),("Conclude",r"The minimum score is $\boxed{95}$."),
+],
+3:[("Find the total and each person's share",r"The total cost of the trip is $A+B$. Since they agreed to share equally, each person should ultimately pay \[\frac{A+B}{2}.\]"),("Compare LeRoy's current payment",r"LeRoy has already paid $A$, which is less than half because $A<B$."),("Compute what LeRoy still owes",r"He must pay \[\frac{A+B}{2}-A=\frac{B-A}{2}\] more."),("Interpret the transfer",r"That amount should be given to Bernardo, because Bernardo paid more than his fair share."),("Conclude",r"LeRoy must give Bernardo \[\boxed{\frac{B-A}{2}}\] dollars."),
+],
+4:[("Factor the erroneous product",r"Ron reversed the digits of $a$ and then multiplied by $b$, getting $161$. Since \[161=7\cdot23,\] the reversed two-digit number must be $23$ or $70$-something impossible; the natural two-digit factor is $23$."),("Recover the original a",r"If the reversed version of $a$ is $23$, then the original number $a$ is $32$."),("Find b",r"The other factor is $b=7$."),("Compute the correct product",r"The correct product is \[32\cdot7=224.\]"),("Conclude",r"The answer is $\boxed{224}$."),
+],
+5:[("Find the smallest such integer",r"An integer divisible by every positive integer less than $7$ must be divisible by $1,2,3,4,5,$ and $6$. The least common multiple is \[\operatorname{lcm}(1,2,3,4,5,6)=60.\]"),("Find the second smallest",r"All positive integers with this divisibility property are multiples of $60$. The second smallest is therefore \[2\cdot60=120.\]"),("Add the digits",r"The sum of the digits of $120$ is \[1+2+0=3.\]"),("Conclude",r"The answer is $\boxed{3}$."),
+],
+6:[("Convert arc ratio to arc measures",r"The two arcs between $B$ and $C$ are in the ratio $2:3$, and together they make $360^\circ$. Thus the smaller arc has measure \[\frac{2}{5}\cdot360^\circ=144^\circ.\]"),("Use the tangent angle theorem",r"The angle formed by two tangents from an external point equals \[180^\circ-\text{measure of the smaller intercepted arc}.\]"),("Compute the angle",r"Therefore \[\angle BAC=180^\circ-144^\circ=36^\circ.\]"),("Conclude",r"The answer is $\boxed{36}$."),
+],
+7:[("Use the mean condition",r"The mean of $x$ and $y$ is $60$, so \[\frac{x+y}{2}=60.\] Therefore \[x+y=120.\]"),("Make the ratio as large as possible",r"To maximize $\frac{x}{y}$ with a fixed sum, make $x$ as large as possible and $y$ as small as possible."),("Use the two-digit restriction",r"The largest possible two-digit value of $x$ is $99$. Then \[y=120-99=21,\] which is also two-digit."),("Compute the ratio",r"The maximum ratio is \[\frac{99}{21}=\frac{33}{7}.\]"),("Conclude",r"The answer is \[\boxed{\frac{33}{7}}.\]"),
+],
+8:[("Compare the two track lengths",r"The straight portions of the inside and outside edges have the same total length. The difference comes only from the two semicircular ends."),("Find the perimeter difference",r"Together, the two semicircles make one full circle. The outside path has radius $6$ meters larger than the inside path, so the difference in circumference is \[2\pi\cdot6=12\pi\] meters."),("Use time difference equals distance over speed",r"It takes Keiko $36$ seconds longer to walk the outside edge. If her speed is $v$, then \[\frac{12\pi}{v}=36.\]"),("Solve for speed",r"This gives \[v=\frac{12\pi}{36}=\frac{\pi}{3}.\]"),("Conclude",r"Keiko's speed is \[\boxed{\frac{\pi}{3}}\] meters per second."),
+],
+9:[("Identify when the product is positive",r"The product of two real numbers is greater than zero when both numbers are positive or both are negative."),("Find the interval lengths",r"The interval $[-20,10]$ has length $30$. The negative part has length $20$, and the positive part has length $10$."),("Compute both-negative probability",r"The probability both numbers are negative is \[\left(\frac{20}{30}\right)^2=\frac49.\]"),("Compute both-positive probability",r"The probability both numbers are positive is \[\left(\frac{10}{30}\right)^2=\frac19.\]"),("Add the cases",r"The total probability is \[\frac49+\frac19=\frac59.\]"),("Conclude",r"The answer is \[\boxed{\frac59}.\]"),
+],
+10:[("Place the rectangle on coordinates",r"Let $A=(0,0)$, $B=(6,0)$, $C=(6,3)$, and $D=(0,3)$. Let $M=(m,0)$ on side $\overline{AB}$."),("Name the desired angle",r"Let \[\theta=\angle AMD.\] Since $MA$ points left horizontally and $D$ is $3$ units above $M$, we have \[\tan\theta=\frac3m.\]"),("Express the other small angle",r"The ray $MC$ rises $3$ units while moving $6-m$ units to the right. Let \[\beta=\arctan\frac{3}{6-m}.\] The direction of $MD$ lies in quadrant II, so the angle from $MC$ to $MD$ is \[180^\circ-\theta-\beta.\]"),("Use the given angle equality",r"The condition $\angle AMD=\angle CMD$ becomes \[\theta=180^\circ-\theta-\beta,\] so \[2\theta+\beta=180^\circ.\]"),("Match an AMC-friendly angle",r"The answer choices suggest special angles. If $\theta=75^\circ$, then $\beta=30^\circ$. This gives \[m=\frac3{\tan75^\circ}=6-3\sqrt3,\] and then \[6-m=3\sqrt3,\quad \tan\beta=\frac3{3\sqrt3}=\frac1{\sqrt3},\] so indeed $\beta=30^\circ$."),("Conclude",r"The condition is satisfied for \[\theta=75^\circ,\] so the answer is $\boxed{75}$."),
+],
+})
+
 def esc(x, quote=True):
     return html.escape(str(x), quote=quote)
 
@@ -2436,7 +2485,7 @@ def main():
     rows = [
         r
         for r in all_rows
-        if r["year"] == "2011" and r["form"] == "A" and int(r["problem_no"]) in TARGET_NUMBERS
+        if r["year"] == "2011" and r["form"] == "B" and int(r["problem_no"]) in TARGET_NUMBERS
     ]
     rows.sort(key=lambda r: int(r["problem_no"]))
     if len(rows) != len(TARGET_NUMBERS):
@@ -2525,7 +2574,7 @@ def main():
         + f"- Latest updated existing count: {updated_count}\n"
         + f"- Latest skipped count: {len(SKIPPED)}\n"
         + "- MathJax validation: passed\n"
-        + "- Answer verification source: AoPS 2011 AMC 12A Answer Key\n\n"
+        + "- Answer verification source: AoPS 2011 AMC 12B Answer Key\n\n"
         + "## Latest Batch Pages\n\n"
         + latest
         + ("\n\n## Skipped in latest batch\n\n" + "\n".join(f"- {s}" for s in SKIPPED) + "\n" if SKIPPED else ""),

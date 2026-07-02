@@ -3308,3 +3308,19 @@
 - Pushed: pending
 - Next batch should start from: 2011 AMC 12A Problem 21
 - Review notes: none.
+
+## Batch 204: 2011 AMC 12B Problems 1-10
+
+- Start time: 2026-07-01T19:39:47-07:00
+- End time: 2026-07-01T19:39:48-07:00
+- Processed contest: AMC12
+- Processed range: 2011 AMC 12B Problems 1-10
+- Generated count: 10
+- Updated existing count: 0
+- Skipped count: 5
+- Skipped reasons: 2011 AMC 12A Problem 21: skipped because the recursive function definition is OCR-damaged.; 2011 AMC 12A Problem 22: skipped because the n-ray square partition geometry needs a dedicated derivation.; 2011 AMC 12A Problem 23: skipped because the complex rational-function formula is OCR-damaged.; 2011 AMC 12A Problem 24: skipped because the quadrilateral incircle maximum needs a careful geometry derivation.; 2011 AMC 12A Problem 25: skipped because the orthocenter/incenter/circumcenter area maximization is high-risk without a full derivation.
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2011 AMC 12B Problem 11
+- Review notes: none.
