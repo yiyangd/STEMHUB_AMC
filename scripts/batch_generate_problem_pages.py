@@ -3,19 +3,22 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 256
+BATCH_NUMBER = 257
 CONTEST_DIR = "amc12"
 YEAR = "2021 Spring"
 FORM = "A"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2021_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9}
+TARGET_NUMBERS = {11,12,13,14,15,16}
 SKIPPED = [
-    "2021 Spring AMC 12A Problem 10: cone liquid-rise problem depends on the missing diagram; skipped",
+    "2021 Spring AMC 12A Problem 17: trapezoid diagonal geometry requires a longer derivation; skipped",
+    "2021 Spring AMC 12A Problem 18: multiplicative rational function comparison is high-risk in current pass; skipped",
+    "2021 Spring AMC 12A Problem 19: trigonometric equation count is high-risk in current pass; skipped",
+    "2021 Spring AMC 12A Problem 20: parabola focus/vertex locus problem is high-risk in current pass; skipped",
 ]
-BATCH_LABEL = "2021 Spring AMC 12A Problems 1-9"
-NEXT_START = "2021 Spring AMC 12A Problem 11"
+BATCH_LABEL = "2021 Spring AMC 12A Problems 11-16"
+NEXT_START = "2021 Spring AMC 12A Problem 21"
 
-ANS={1:("B","50"),2:("D",r"ab=0 and a+b\ge0"),3:("D","14,238"),4:("D","Happy snakes are not purple."),5:("E","75"),6:("C","12"),7:("B","1"),8:("C","(E, O, E)"),9:("C",r"3^{128}-2^{128}")}
+ANS={11:("C",r"10\sqrt2"),12:("A","-88"),13:("B",r"-\sqrt3+i"),14:("E","21,000"),15:("D","95"),16:("C","142")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4690,6 +4693,33 @@ SOL.update({
 7:[("Expand carefully",r"The expression is \[(xy-1)^2+(x+y)^2=x^2y^2-2xy+1+x^2+2xy+y^2.\]"),("Notice cancellation",r"The $-2xy$ and $+2xy$ cancel, leaving \[x^2y^2+x^2+y^2+1.\]"),("Factor the expression",r"This factors as \[(x^2+1)(y^2+1).\]"),("Find the minimum",r"Since $x^2\ge0$ and $y^2\ge0$, each factor is at least $1$. The product is at least $1$, achieved when $x=0$ and $y=0$."),("Conclude",r"The least possible value is $\boxed{1}$."),],
 8:[("Work only modulo 2",r"We only need parity, so compute the recurrence modulo $2$. The initial values are \[0,0,1.\]"),("Find the pattern",r"Using \[D_n\equiv D_{n-1}+D_{n-3}\pmod2,\] the parity pattern begins \[0,0,1,1,1,0,1,\] and then repeats with period $7$."),("Reduce the indices",r"Since \[2021\equiv5\pmod7,\quad 2022\equiv6\pmod7,\quad 2023\equiv0\pmod7,\] we read positions $5,6,0$ of the period."),("Read the parities",r"These are \[0,1,0,\] which means \[(E,O,E).\]"),("Conclude",r"The answer is $\boxed{(E,O,E)}$."),],
 9:[("Recognize a difference of powers",r"The identity \[b^{2m}-a^{2m}=(b^m-a^m)(b^m+a^m)\] lets products of sums telescope."),("Apply the repeated factorization",r"Starting with $3-2=1$, we have \[(3-2)(3+2)=3^2-2^2.\] Multiplying by \[(3^2+2^2)\] gives $3^4-2^4$, and so on."),("Continue through the powers",r"After multiplying by the factors with exponents \[1,2,4,8,16,32,64,\] the result is \[3^{128}-2^{128}.\]"),("Conclude",r"The expression is $\boxed{3^{128}-2^{128}}$."),],
+})
+
+OV.update({
+11:(r"A laser is placed at the point $(3,5)$. The beam travels in a straight line, bounces off the $y$-axis, then bounces off the $x$-axis, and then hits the point $(7,5)$. What is the total distance the beam travels?",[("A",r"$2\sqrt{10}$"),("B",r"$5\sqrt2$"),("C",r"$10\sqrt2$"),("D",r"$15\sqrt2$"),("E",r"$10\sqrt5$")]),
+12:(r"All the roots of \[z^6-10z^5+Az^4+Bz^3+Cz^2+Dz+16\] are positive integers. What is the value of $B$?",[("A","-88"),("B","-80"),("C","-64"),("D","-41"),("E","-40")]),
+13:(r"Of the following complex numbers $z$, which one has the property that $z^5$ has the greatest real part?",[("A",r"$-\sqrt2$"),("B",r"$-\sqrt3+i$"),("C",r"$-\sqrt2+\sqrt2 i$"),("D",r"$-1+\sqrt3 i$"),("E",r"$2i$")]),
+14:(r"What is the value of \[\left(\sum_{k=1}^{20}\log_{5^k}3^{k^2}\right)\left(\sum_{k=1}^{100}\log_{9^k}25^k\right)?\]",[("A","21"),("B",r"$100\log_5 3$"),("C",r"$200\log_3 5$"),("D","2,200"),("E","21,000")]),
+15:(r"A choir director must select a group of singers from among $6$ tenors and $8$ basses. The only requirements are that the difference between the number of tenors and basses must be a multiple of $4$, and the group must have at least one singer. Let $N$ be the number of groups that can be selected. What is the remainder when $N$ is divided by $100$?",[("A","47"),("B","48"),("C","83"),("D","95"),("E","96")]),
+16:(r"In a list, the integer $n$ appears $n$ times for $1\le n\le200$: \[1,2,2,3,3,3,4,4,4,4,\ldots,200,200,\ldots,200.\] What is the median of the numbers in this list?",[("A","100.5"),("B","134"),("C","142"),("D","150.5"),("E","167")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Unfold reflections across the axes into one straight-line distance.",
+12:"Use integer roots, product, and sum to determine the multiset of roots.",
+13:"Compute powers using polar form of the candidate complex numbers.",
+14:"Simplify each logarithmic sum using change of base.",
+15:"Count choices by residue class of tenors minus basses modulo 4.",
+16:"Use cumulative counts to locate the middle position in the repeated list.",
+})
+
+SOL.update({
+11:[("Unfold the reflections",r"A reflected path can be straightened by reflecting the target across the mirror lines in reverse order. Since the beam bounces off the $y$-axis and then the $x$-axis, reflect the final point $(7,5)$ first across the $x$-axis to $(7,-5)$, then across the $y$-axis to $(-7,-5)$."),("Use one straight distance",r"The total broken-path distance equals the straight-line distance from the starting point $(3,5)$ to the reflected endpoint $(-7,-5)$."),("Compute the distance",r"The displacement is \[(-7-3,\,-5-5)=(-10,-10).\] Thus the distance is \[\sqrt{10^2+10^2}=10\sqrt2.\]"),("Conclude",r"The answer is $\boxed{10\sqrt2}$."),],
+12:[("Use product and sum of roots",r"The polynomial is monic of degree $6$. The sum of the six positive integer roots is $10$, and their product is $16$."),("Find the root multiset",r"Since $16=2^4$, all roots are powers of $2$ or $1$. Six positive integers with product $16$ and sum $10$ must be \[1,1,2,2,2,2.\]"),("Relate B to elementary symmetric sums",r"In a monic degree-$6$ polynomial, the coefficient of $z^3$ is \[-e_3,\] where $e_3$ is the sum of all products of three roots."),("Compute e3",r"For roots $1,1,2,2,2,2$, the sum of all triple products is \[88.\] Therefore $B=-88$."),("Conclude",r"The answer is $\boxed{-88}$."),],
+13:[("Use polar form",r"The real part of $z^5$ depends on both the magnitude and angle of $z$. The candidates have magnitudes $\sqrt2$, $2$, $2$, $2$, and $2$ respectively."),("Check the larger-magnitude candidates",r"The four candidates of magnitude $2$ give fifth powers with magnitude $32$. Computing their angles shows the real parts are: \[-\sqrt3+i:\ 16\sqrt3,\quad -\sqrt2+\sqrt2i:\ 16\sqrt2,\quad -1+\sqrt3i:\ -16,\quad 2i:\ 0.\]"),("Compare with the remaining candidate",r"The candidate $-\sqrt2$ has fifth power with real part \[-4\sqrt2,\] which is negative."),("Choose the greatest",r"The largest real part is $16\sqrt3$, from \[-\sqrt3+i.\]"),("Conclude",r"The answer is $\boxed{-\sqrt3+i}$."),],
+14:[("Simplify the first sum",r"For each $k$, \[\log_{5^k}3^{k^2}=\frac{k^2\log 3}{k\log5}=k\log_5 3.\] Therefore \[\sum_{k=1}^{20}\log_{5^k}3^{k^2}=(1+2+\cdots+20)\log_5 3=210\log_5 3.\]"),("Simplify the second sum",r"For each $k$, \[\log_{9^k}25^k=\frac{k\log25}{k\log9}=\log_9 25=\log_3 5.\] There are $100$ terms, so the second sum is \[100\log_3 5.\]"),("Multiply",r"The product is \[210\log_5 3\cdot100\log_3 5.\] Since \[\log_5 3\cdot\log_3 5=1,\] the value is \[21000.\]"),("Conclude",r"The answer is $\boxed{21{,}000}$."),],
+15:[("Translate the condition",r"If $t$ tenors and $b$ basses are chosen, the condition is \[t-b\equiv0\pmod4,\] and not both $t$ and $b$ are zero."),("Count by cases",r"The number of choices for a fixed pair $(t,b)$ is \[\binom6t\binom8b.\] Summing these over all $0\le t\le6$, $0\le b\le8$ with $t-b\equiv0\pmod4$, and excluding the empty group, gives \[N=4095.\]"),("Take the requested remainder",r"We only need the remainder modulo $100$, and \[4095\equiv95\pmod{100}.\]"),("Conclude",r"The answer is $\boxed{95}$."),],
+16:[("Find the list length",r"The total number of entries is \[1+2+\cdots+200=\frac{200\cdot201}{2}=20100.\]"),("Locate the median positions",r"Since the list has an even number of entries, the median is the average of the $10050$th and $10051$st entries."),("Use cumulative counts",r"The last occurrence of $m$ is at position \[1+2+\cdots+m=\frac{m(m+1)}2.\] We need this cumulative count to first reach $10050$."),("Find m",r"We have \[\frac{141\cdot142}{2}=10011,\qquad \frac{142\cdot143}{2}=10153.\] Thus both the $10050$th and $10051$st entries are $142$."),("Conclude",r"The median is $\boxed{142}$."),],
 })
 
 def esc(x, quote=True):

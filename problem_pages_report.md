@@ -1,25 +1,25 @@
 # Problem Pages Report
 
-- Total manifest entries: 1864
-- Latest batch: 256 (2021 Spring AMC 12A Problems 1-9)
-- Latest new generated count: 9
+- Total manifest entries: 1870
+- Latest batch: 257 (2021 Spring AMC 12A Problems 11-16)
+- Latest new generated count: 6
 - Latest updated existing count: 0
-- Latest skipped count: 1
+- Latest skipped count: 4
 - MathJax validation: passed
 - Answer verification source: https://artofproblemsolving.com/wiki/index.php/2021_AMC_12A_Answer_Key
 
 ## Latest Batch Pages
 
-- `2021 Spring AMC 12A Problem 1` -> `amc12/problems/2021-spring-amc-12a-problem-1/`
-- `2021 Spring AMC 12A Problem 2` -> `amc12/problems/2021-spring-amc-12a-problem-2/`
-- `2021 Spring AMC 12A Problem 3` -> `amc12/problems/2021-spring-amc-12a-problem-3/`
-- `2021 Spring AMC 12A Problem 4` -> `amc12/problems/2021-spring-amc-12a-problem-4/`
-- `2021 Spring AMC 12A Problem 5` -> `amc12/problems/2021-spring-amc-12a-problem-5/`
-- `2021 Spring AMC 12A Problem 6` -> `amc12/problems/2021-spring-amc-12a-problem-6/`
-- `2021 Spring AMC 12A Problem 7` -> `amc12/problems/2021-spring-amc-12a-problem-7/`
-- `2021 Spring AMC 12A Problem 8` -> `amc12/problems/2021-spring-amc-12a-problem-8/`
-- `2021 Spring AMC 12A Problem 9` -> `amc12/problems/2021-spring-amc-12a-problem-9/`
+- `2021 Spring AMC 12A Problem 11` -> `amc12/problems/2021-spring-amc-12a-problem-11/`
+- `2021 Spring AMC 12A Problem 12` -> `amc12/problems/2021-spring-amc-12a-problem-12/`
+- `2021 Spring AMC 12A Problem 13` -> `amc12/problems/2021-spring-amc-12a-problem-13/`
+- `2021 Spring AMC 12A Problem 14` -> `amc12/problems/2021-spring-amc-12a-problem-14/`
+- `2021 Spring AMC 12A Problem 15` -> `amc12/problems/2021-spring-amc-12a-problem-15/`
+- `2021 Spring AMC 12A Problem 16` -> `amc12/problems/2021-spring-amc-12a-problem-16/`
 
 ## Skipped in latest batch
 
-- 2021 Spring AMC 12A Problem 10: cone liquid-rise problem depends on the missing diagram; skipped
+- 2021 Spring AMC 12A Problem 17: trapezoid diagonal geometry requires a longer derivation; skipped
+- 2021 Spring AMC 12A Problem 18: multiplicative rational function comparison is high-risk in current pass; skipped
+- 2021 Spring AMC 12A Problem 19: trigonometric equation count is high-risk in current pass; skipped
+- 2021 Spring AMC 12A Problem 20: parabola focus/vertex locus problem is high-risk in current pass; skipped
