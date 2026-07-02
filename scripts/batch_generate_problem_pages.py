@@ -3,19 +3,22 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 262
+BATCH_NUMBER = 263
 CONTEST_DIR = "amc12"
 YEAR = "2021 Fall"
 FORM = "A"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2021_Fall_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1,2,3,4,5,6,7,8,9}
+TARGET_NUMBERS = {11,12,13,14,15,16}
 SKIPPED = [
-    "2021 Fall AMC 12A Problem 10: cone liquid-rise problem depends on the missing diagram; skipped",
+    "2021 Fall AMC 12A Problem 17: trapezoid diagonal geometry requires a longer derivation; skipped",
+    "2021 Fall AMC 12A Problem 18: multiplicative rational function comparison is high-risk in current pass; skipped",
+    "2021 Fall AMC 12A Problem 19: trigonometric equation count is high-risk in current pass; skipped",
+    "2021 Fall AMC 12A Problem 20: parabola focus/vertex locus problem is high-risk in current pass; skipped",
 ]
-BATCH_LABEL = "2021 Fall AMC 12A Problems 1-9"
-NEXT_START = "2021 Fall AMC 12A Problem 11"
+BATCH_LABEL = "2021 Fall AMC 12A Problems 11-16"
+NEXT_START = "2021 Fall AMC 12A Problem 21"
 
-ANS={1:("B","50"),2:("D",r"ab=0 and a+b\ge0"),3:("D","14,238"),4:("D","Happy snakes are not purple."),5:("E","75"),6:("C","12"),7:("B","1"),8:("C","(E, O, E)"),9:("C",r"3^{128}-2^{128}")}
+ANS={11:("C",r"10\sqrt2"),12:("A","-88"),13:("B",r"-\sqrt3+i"),14:("E","21,000"),15:("D","95"),16:("C","142")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),

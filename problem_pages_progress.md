@@ -4252,3 +4252,19 @@
 - Pushed: pending
 - Next batch should start from: 2021 Fall AMC 12A Problem 11
 - Review notes: none.
+
+## Batch 263: 2021 Fall AMC 12A Problems 11-16
+
+- Start time: 2026-07-02T07:55:45-07:00
+- End time: 2026-07-02T07:55:46-07:00
+- Processed contest: AMC12
+- Processed range: 2021 Fall AMC 12A Problems 11-16
+- Generated count: 6
+- Updated existing count: 0
+- Skipped count: 4
+- Skipped reasons: 2021 Fall AMC 12A Problem 17: trapezoid diagonal geometry requires a longer derivation; skipped; 2021 Fall AMC 12A Problem 18: multiplicative rational function comparison is high-risk in current pass; skipped; 2021 Fall AMC 12A Problem 19: trigonometric equation count is high-risk in current pass; skipped; 2021 Fall AMC 12A Problem 20: parabola focus/vertex locus problem is high-risk in current pass; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2021 Fall AMC 12A Problem 21
+- Review notes: none.
