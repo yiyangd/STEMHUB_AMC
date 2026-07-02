@@ -4396,3 +4396,19 @@
 - Pushed: pending
 - Next batch should start from: 2022 AMC 12B Problem 11
 - Review notes: none.
+
+## Batch 272: 2022 AMC 12B Problems 11,12,14,15,16,17,20
+
+- Start time: 2026-07-02T08:18:42-07:00
+- End time: 2026-07-02T08:18:43-07:00
+- Processed contest: AMC12
+- Processed range: 2022 AMC 12B Problems 11,12,14,15,16,17,20
+- Generated count: 7
+- Updated existing count: 0
+- Skipped count: 3
+- Skipped reasons: 2022 AMC 12B Problem 13: rectangle-square overlap depends on the missing diagram; skipped; 2022 AMC 12B Problem 18: cellular-grid transformation depends on diagrams and exhaustive state analysis; skipped; 2022 AMC 12B Problem 19: OCR explicitly lacks original wording and the geometry diagram; skipped
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2022 AMC 12B Problem 21
+- Review notes: none.

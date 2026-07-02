@@ -3,18 +3,21 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 271
+BATCH_NUMBER = 272
 CONTEST_DIR = "amc12"
 YEAR = "2022"
 FORM = "B"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2022_AMC_12B_Answer_Key"
-TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+TARGET_NUMBERS = {11, 12, 14, 15, 16, 17, 20}
 SKIPPED = [
+    "2022 AMC 12B Problem 13: rectangle-square overlap depends on the missing diagram; skipped",
+    "2022 AMC 12B Problem 18: cellular-grid transformation depends on diagrams and exhaustive state analysis; skipped",
+    "2022 AMC 12B Problem 19: OCR explicitly lacks original wording and the geometry diagram; skipped",
 ]
-BATCH_LABEL = "2022 AMC 12B Problems 1-10"
-NEXT_START = "2022 AMC 12B Problem 11"
+BATCH_LABEL = "2022 AMC 12B Problems 11,12,14,15,16,17,20"
+NEXT_START = "2022 AMC 12B Problem 21"
 
-ANS={1:("A","-2"),2:("D","20"),3:("A","0"),4:("B","8"),5:("B",r"$(0,5)$"),6:("B","42"),7:("D","11"),8:("D","a circle and a hyperbola"),9:("B","12"),10:("D",r"$4\sqrt7$")}
+ANS={11:("E","2"),12:("D",r"$\frac{61}{81}$"),14:("E",r"$\frac47$"),15:("C",r"$2^{607}-1$"),16:("C",r"$3+\sqrt2$"),17:("D","576"),20:("E","23")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -5001,6 +5004,36 @@ SOL.update({
 8:[("Move all terms to a recognizable form",r"Rewrite the equation as \[y^4-2y^2+1=x^4.\] The left side is a perfect square: \[(y^2-1)^2=x^4.\]"),("Take the square-root alternatives",r"Since both sides are squares, this gives two equations: \[y^2-1=x^2\] or \[y^2-1=-x^2.\]"),("Identify the first graph",r"The equation \[y^2-x^2=1\] is a hyperbola."),("Identify the second graph",r"The equation \[x^2+y^2=1\] is a circle."),("Conclude",r"The graph is the union of a circle and a hyperbola. The answer is $\boxed{\text{a circle and a hyperbola}}$."),],
 9:[("Solve for a7 first",r"The equation is \[2^{a_7}=2^{27}\cdot a_7,\] so \[2^{a_7-27}=a_7.\] This means $a_7$ itself must be a power of $2$."),("Find the possible value",r"Testing powers near $27$ gives \[a_7=32,\] because \[2^{32-27}=2^5=32.\]"),("Write the arithmetic sequence",r"Let the common difference be $d$, a positive integer. Then \[a_7=a_0+7d=32,\] so \[a_2=a_0+2d=32-5d.\]"),("Minimize a2",r"To make $a_2$ as small as possible, make $d$ as large as possible while keeping $a_0=32-7d$ positive. The largest possible $d$ is $4$."),("Compute",r"Then \[a_2=32-5\cdot4=12.\]"),("Conclude",r"The minimum possible value is $\boxed{12}$."),],
 10:[("Place the hexagon on coordinates",r"Use a regular hexagon centered at the origin with side length $2$: \[A=(2,0),\ B=(1,\sqrt3),\ C=(-1,\sqrt3),\ D=(-2,0),\ E=(-1,-\sqrt3),\ F=(1,-\sqrt3).\]"),("Find the midpoints",r"The midpoint of $\overline{AB}$ is \[G=\left(\frac32,\frac{\sqrt3}{2}\right),\] and the midpoint of $\overline{DE}$ is \[H=\left(-\frac32,-\frac{\sqrt3}{2}\right).\]"),("Compute one side length",r"For example, \[GC^2=\left(\frac32-(-1)\right)^2+\left(\frac{\sqrt3}{2}-\sqrt3\right)^2=\left(\frac52\right)^2+\left(-\frac{\sqrt3}{2}\right)^2=7.\] So $GC=\sqrt7$."),("Use symmetry for the other sides",r"The same calculation, or symmetry of the regular hexagon, gives \[CH=HF=FG=\sqrt7.\]"),("Compute the perimeter",r"Therefore the perimeter of $GCHF$ is \[4\sqrt7.\]"),("Conclude",r"The answer is $\boxed{4\sqrt7}$."),],
+})
+
+OV.update({
+11:(r"Let \[f(n)=\left(\frac{-1+i\sqrt3}{2}\right)^n+\left(\frac{-1-i\sqrt3}{2}\right)^n,\] where $i=\sqrt{-1}$. What is $f(2022)$?",[("A","-2"),("B","-1"),("C","0"),("D",r"$\sqrt3$"),("E","2")]),
+12:(r"Kayla rolls four fair $6$-sided dice. What is the probability that at least one of the numbers Kayla rolls is greater than $4$ and at least two of the numbers she rolls are greater than $2$?",[("A",r"$\frac23$"),("B",r"$\frac{19}{27}$"),("C",r"$\frac{59}{81}$"),("D",r"$\frac{61}{81}$"),("E",r"$\frac79$")]),
+14:(r"The graph of $y=x^2+2x-15$ intersects the $x$-axis at points $A$ and $C$ and the $y$-axis at point $B$. What is $\tan(\angle ABC)$?",[("A",r"$\frac17$"),("B",r"$\frac14$"),("C",r"$\frac37$"),("D",r"$\frac12$"),("E",r"$\frac47$")]),
+15:(r"One of the following numbers is not divisible by any prime number less than $10$. Which is it?",[("A",r"$2^{606}-1$"),("B",r"$2^{606}+1$"),("C",r"$2^{607}-1$"),("D",r"$2^{607}+1$"),("E",r"$2^{607}+3^{607}$")]),
+16:(r"Suppose $x$ and $y$ are positive real numbers such that \[x^y=2^{64}\quad\text{and}\quad(\log_2 x)^{\log_2 y}=2^7.\] What is the greatest possible value of $\log_2 y$?",[("A","3"),("B","4"),("C",r"$3+\sqrt2$"),("D",r"$4+\sqrt3$"),("E","7")]),
+17:(r"How many $4\times4$ arrays whose entries are $0$s and $1$s are there such that the row sums are $1,2,3,$ and $4$ in some order, and the column sums are also $1,2,3,$ and $4$ in some order?",[("A","144"),("B","240"),("C","336"),("D","576"),("E","624")]),
+20:(r"Let $P(x)$ be a polynomial with rational coefficients such that when $P(x)$ is divided by $x^2+x+1$, the remainder is $x+2$, and when $P(x)$ is divided by $x^2+1$, the remainder is $2x+1$. There is a unique polynomial of least degree with these two properties. What is the sum of the squares of the coefficients of that polynomial?",[("A","10"),("B","13"),("C","19"),("D","20"),("E","23")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Recognize the two complex numbers as conjugate cube roots of unity.",
+12:"Count the complement using three die-value categories.",
+14:"Use the slopes from the y-intercept to the two x-intercepts.",
+15:"Check divisibility by primes less than 10 using modular arithmetic.",
+16:"Take logarithms twice and solve a symmetric two-variable system.",
+17:"Sort rows and columns by their sums to reduce to one canonical matrix.",
+20:"Use remainders modulo two relatively prime quadratics to solve for the least-degree polynomial.",
+})
+
+SOL.update({
+11:[("Recognize the complex numbers",r"The two numbers \[\frac{-1+i\sqrt3}{2}\quad\text{and}\quad\frac{-1-i\sqrt3}{2}\] are the two nonreal cube roots of unity. They equal \[e^{2\pi i/3}\quad\text{and}\quad e^{-2\pi i/3}.\]"),("Use the period",r"Each has period $3$ when raised to integer powers, because cubing either one gives $1$."),("Reduce the exponent",r"Since \[2022=3\cdot674,\] both complex numbers raised to the $2022$nd power become $1$."),("Add",r"Therefore \[f(2022)=1+1=2.\]"),("Conclude",r"The answer is $\boxed{2}$."),],
+12:[("Create useful categories",r"For each die, there are three equally likely categories: greater than $4$ (namely $5,6$), greater than $2$ but not greater than $4$ (namely $3,4$), and not greater than $2$ (namely $1,2$). Each category has probability $\frac13$."),("Count category patterns",r"With four dice, there are \[3^4=81\] equally likely category patterns."),("Count bad patterns",r"The desired event fails if there is no die greater than $4$, or if there is a die greater than $4$ but fewer than two dice greater than $2$."),("Compute the complement",r"No die greater than $4$ gives \[2^4=16\] category patterns. The only additional bad patterns have exactly one die greater than $4$ and the other three dice at most $2$, giving $4$ more patterns."),("Subtract from total",r"The number of good patterns is \[81-16-4=61.\]"),("Conclude",r"The probability is $\boxed{\frac{61}{81}}$."),],
+14:[("Find the intercepts",r"The quadratic factors as \[x^2+2x-15=(x+5)(x-3).\] Thus the $x$-intercepts are $(-5,0)$ and $(3,0)$. The $y$-intercept is \[(0,-15).\]"),("Find the two slopes from B",r"From $B=(0,-15)$ to $(3,0)$, the slope is \[\frac{15}{3}=5.\] From $B$ to $(-5,0)$, the slope is \[\frac{15}{-5}=-3.\]"),("Use the angle-between-lines formula",r"If two lines have slopes $m_1$ and $m_2$, then the tangent of the angle between them is \[\left|\frac{m_1-m_2}{1+m_1m_2}\right|.\]"),("Substitute",r"Using $m_1=5$ and $m_2=-3$, we get \[\left|\frac{5-(-3)}{1+5(-3)}\right|=\left|\frac8{-14}\right|=\frac47.\]"),("Conclude",r"The answer is $\boxed{\frac47}$."),],
+15:[("Remember the primes to test",r"The prime numbers less than $10$ are $2,3,5,$ and $7$. All answer choices are odd, so none is divisible by $2$."),("Eliminate choices using 3 and 5",r"Since $2\equiv-1\pmod3$, $2^{606}-1\equiv1-1=0\pmod3$, and $2^{607}+1\equiv-1+1=0\pmod3$. Also, $2^{606}+1$ ends in $5$, so it is divisible by $5$."),("Check the mixed expression",r"Modulo $5$, we have $2^{607}\equiv3$ and $3^{607}\equiv2$, so \[2^{607}+3^{607}\equiv0\pmod5.\] Thus choice E is divisible by $5$."),("Test the remaining candidate",r"For $2^{607}-1$, it is not divisible by $3$ or $5$. Also, since $2^3\equiv1\pmod7$ and $607\equiv1\pmod3$, \[2^{607}-1\equiv2-1=1\pmod7.\]"),("Conclude",r"The only listed number not divisible by any prime less than $10$ is $\boxed{2^{607}-1}$."),],
+16:[("Take logarithms of the first equation",r"Let \[r=\log_2 y\quad\text{and}\quad s=\log_2\log_2 x.\] From $x^y=2^{64}$, taking $\log_2$ gives \[y\log_2 x=64.\] Taking $\log_2$ again gives \[r+s=6.\]"),("Take logarithms of the second equation",r"The second equation is \[(\log_2 x)^{\log_2 y}=2^7.\] Taking $\log_2$ gives \[(\log_2 y)(\log_2\log_2 x)=7,\] so \[rs=7.\]"),("Solve the quadratic system",r"The two numbers $r$ and $s$ have sum $6$ and product $7$. Therefore they are roots of \[t^2-6t+7=0.\]"),("Find the possible values",r"The roots are \[t=\frac{6\pm\sqrt{36-28}}2=3\pm\sqrt2.\]"),("Maximize log base 2 of y",r"Since $r=\log_2 y$, the greatest possible value is the larger root, \[3+\sqrt2.\]"),("Conclude",r"The answer is $\boxed{3+\sqrt2}$."),],
+17:[("Use the distinct sums",r"The row sums are $1,2,3,4$ in some order, and these four sums are distinct. So after choosing the order of the rows, we can sort them by sum. The same idea applies to the columns."),("Count row and column orders",r"There are $4!$ possible orders for the row sums and $4!$ possible orders for the column sums."),("Find the canonical matrix",r"Now suppose the row sums are exactly $1,2,3,4$ from top to bottom, and the column sums are exactly $1,2,3,4$ from left to right. The row with sum $4$ must be \[1\ 1\ 1\ 1.\] To make the first column sum only $1$, all entries above it are $0$. Then the remaining rows are forced step by step."),("Write the forced form",r"The unique canonical matrix is \[\begin{pmatrix}0&0&0&1\\0&0&1&1\\0&1&1&1\\1&1&1&1\end{pmatrix}.\] It has row sums and column sums $1,2,3,4$."),("Multiply by orders",r"Because the row sums and column sums are distinct, different row or column orders give different arrays. Thus the total number is \[4!\cdot4!=24\cdot24=576.\]"),("Conclude",r"The answer is $\boxed{576}$."),],
+20:[("Use the least possible degree",r"The two divisors are relatively prime quadratics, so the least-degree polynomial can be taken to have degree less than $4$. Write \[P(x)=ax^3+bx^2+cx+d.\]"),("Reduce modulo x squared plus x plus 1",r"Modulo $x^2+x+1$, we have $x^2=-x-1$ and $x^3=1$. Thus the remainder is \[(c-b)x+(a-b+d).\] This must equal $x+2$."),("Reduce modulo x squared plus 1",r"Modulo $x^2+1$, we have $x^2=-1$ and $x^3=-x$. Thus the remainder is \[(-a+c)x+(-b+d).\] This must equal $2x+1$."),("Solve the coefficient equations",r"The equations are \[c-b=1,\quad a-b+d=2,\quad -a+c=2,\quad -b+d=1.\] From these, $c=b+1$, $a=b-1$, and $d=b+1$. Substituting into $a-b+d=2$ gives $b=2$."),("Find the polynomial",r"Therefore \[a=1,\quad b=2,\quad c=3,\quad d=3,\] so \[P(x)=x^3+2x^2+3x+3.\]"),("Conclude",r"The sum of the squares of the coefficients is \[1^2+2^2+3^2+3^2=23.\] The answer is $\boxed{23}$."),],
 })
 
 def esc(x, quote=True):
