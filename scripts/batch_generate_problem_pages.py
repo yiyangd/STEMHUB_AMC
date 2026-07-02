@@ -3,18 +3,18 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 274
+BATCH_NUMBER = 275
 CONTEST_DIR = "amc12"
 YEAR = "2023"
 FORM = "A"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2023_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+TARGET_NUMBERS = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
 SKIPPED = [
 ]
-BATCH_LABEL = "2023 AMC 12A Problems 1-10"
-NEXT_START = "2023 AMC 12A Problem 11"
+BATCH_LABEL = "2023 AMC 12A Problems 11-20"
+NEXT_START = "2023 AMC 12A Problem 21"
 
-ANS={1:("E","27"),2:("A",r"$1\frac45$"),3:("A","8"),4:("E","18"),5:("B",r"$\frac{49}{216}$"),6:("D",r"$4\sqrt5$"),7:("E","9"),8:("D","7"),9:("C",r"$2-\sqrt3$"),10:("D","36")}
+ANS={11:("C",r"$45^\circ$"),12:("D","3159"),13:("B","36"),14:("E","7"),15:("A",r"$\arccos\frac56$"),16:("B","21"),17:("E",r"$\frac12$"),18:("D",r"$\frac3{28}$"),19:("C","1"),20:("C","5")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -5091,6 +5091,45 @@ SOL.update({
 8:[("Name the current mean",r"Let Maureen currently have $n$ quiz scores with mean $m$. Her current total is $nm$."),("Use the next-quiz condition",r"If she scores $11$ on the next quiz, \[\frac{nm+11}{n+1}=m+1.\] Simplifying gives \[n+m=10.\]"),("Use the next-three-quizzes condition",r"If she scores $11$ on each of the next three quizzes, \[\frac{nm+33}{n+3}=m+2.\] Simplifying gives \[2n+3m=27.\]"),("Solve",r"From $n+m=10$, we have $n=10-m$. Substitute into the second equation: \[2(10-m)+3m=27,\] so $m=7$."),("Conclude",r"Her current mean is $\boxed{7}$."),],
 9:[("Translate areas into side lengths",r"The outer square has side length $\sqrt3$, and the inner square has side length $\sqrt2$."),("Name the triangle legs",r"Each corner triangle has legs $a$ and $b$ along the sides of the outer square. Because the triangles fill one side of the outer square, \[a+b=\sqrt3.\] The hypotenuse is a side of the inner square, so \[a^2+b^2=2.\]"),("Find the product",r"Using \[(a+b)^2=a^2+b^2+2ab,\] we get \[3=2+2ab,\] so \[ab=\frac12.\]"),("Solve for the ratio",r"Let $r=\frac{a}{b}$ be the ratio of the shorter leg to the longer leg. Then \[\frac{(a+b)^2}{ab}=r+2+\frac1r.\] The left side is \[\frac{3}{1/2}=6,\] so \[r+\frac1r=4.\]"),("Choose the smaller ratio",r"The solutions are \[r=2\pm\sqrt3.\] Since the ratio is less than $1$, we use \[r=2-\sqrt3.\]"),("Conclude",r"The answer is $\boxed{2-\sqrt3}$."),],
 10:[("Parametrize the first equation",r"Because $y^3=x^2$ and $x,y$ are positive, write \[x=t^3,\quad y=t^2\] for some positive $t$."),("Use the second equation",r"The equation \[(y-x)^2=4y^2\] means \[|y-x|=2y.\] Since $x,y>0$, the only possible case is $x-y=2y$, so \[x=3y.\]"),("Substitute the parametrization",r"Using $x=t^3$ and $y=t^2$, the equation $x=3y$ becomes \[t^3=3t^2.\] Since $t>0$, we get $t=3$."),("Find x and y",r"Then \[x=3^3=27,\quad y=3^2=9.\]"),("Conclude",r"Thus \[x+y=27+9=36.\] The answer is $\boxed{36}$."),],
+})
+
+OV.update({
+11:(r"What is the degree measure of the acute angle formed by lines with slopes $2$ and $\frac13$?",[("A","30"),("B","37.5"),("C","45"),("D","52.5"),("E","60")]),
+12:(r"What is the value of \[2^3-1^3+4^3-3^3+6^3-5^3+\cdots+18^3-17^3?\]",[("A","2023"),("B","2679"),("C","2941"),("D","3159"),("E","3235")]),
+13:(r"In a table tennis tournament every participant played every other participant exactly once. Although there were twice as many right-handed players as left-handed players, the number of games won by left-handed players was $40\%$ more than the number of games won by right-handed players. There were no ties and no ambidextrous players. What is the total number of games played?",[("A","15"),("B","36"),("C","45"),("D","48"),("E","66")]),
+14:(r"How many complex numbers satisfy the equation $z^5=\overline z$, where $\overline z$ is the conjugate of the complex number $z$?",[("A","2"),("B","3"),("C","5"),("D","6"),("E","7")]),
+15:(r"Usain is walking across a $100$-meter by $30$-meter rectangular field by zigzagging. The path makes the same angle $\theta$ with the horizontal direction on each segment. What angle $\theta$ will produce a total walking length of $120$ meters?",[("A",r"$\arccos\frac56$"),("B",r"$\arccos\frac45$"),("C",r"$\arccos\frac3{10}$"),("D",r"$\arcsin\frac45$"),("E",r"$\arcsin\frac56$")]),
+16:(r"Consider the set of complex numbers $z$ satisfying \[|1+z+z^2|=4.\] The maximum value of the imaginary part of $z$ can be written in the form $\frac{\sqrt m}{n}$, where $m$ and $n$ are relatively prime positive integers. What is $m+n$?",[("A","20"),("B","21"),("C","22"),("D","23"),("E","24")]),
+17:(r"Flora the frog starts at $0$ on the number line and makes a sequence of jumps to the right. In any one jump, independent of previous jumps, Flora leaps a positive integer distance $m$ with probability $\frac1{2^m}$. What is the probability that Flora will eventually land at $10$?",[("A",r"$\frac5{512}$"),("B",r"$\frac{45}{1024}$"),("C",r"$\frac{127}{1024}$"),("D",r"$\frac{511}{1024}$"),("E",r"$\frac12$")]),
+18:(r"Circles $C_1$ and $C_2$ each have radius $1$, and the distance between their centers is $\frac12$. Circle $C_3$ is the largest circle internally tangent to both $C_1$ and $C_2$. Circle $C_4$ is internally tangent to both $C_1$ and $C_2$ and externally tangent to $C_3$. What is the radius of $C_4$?",[("A",r"$\frac1{14}$"),("B",r"$\frac1{12}$"),("C",r"$\frac1{10}$"),("D",r"$\frac3{28}$"),("E",r"$\frac19$")]),
+19:(r"What is the product of all the solutions to \[\log_{7x}2023\cdot\log_{289x}2023=\log_{2023x}2023?\]",[("A",r"$(\log_{2023}7\cdot\log_{2023}289)^2$"),("B",r"$\log_{2023}7\cdot\log_{2023}289$"),("C","1"),("D",r"$\log_7 2023\cdot\log_{289}2023$"),("E",r"$(\log_7 2023\cdot\log_{289}2023)^2$")]),
+20:(r"Rows $1,2,3,4,$ and $5$ of a triangular array of integers are shown by the pattern \[1;\quad 1,1;\quad 1,3,1;\quad 1,5,5,1;\quad 1,7,11,7,1.\] Each row after the first row is formed by placing a $1$ at each end of the row, and each interior entry is $1$ greater than the sum of the two numbers diagonally above it in the previous row. What is the units digit of the sum of the $2023$ numbers in the $2023$rd row?",[("A","1"),("B","3"),("C","5"),("D","7"),("E","9")]),
+})
+
+KEY_OVERRIDES.update({
+11:"Use the tangent formula for the angle between two lines.",
+12:"Pair consecutive cubes and sum a quadratic expression.",
+13:"Count wins by handedness and use the 40 percent condition.",
+14:"Use polar form and include the zero solution.",
+15:"Use the horizontal component of the total zigzag path.",
+16:"Shift the quadratic expression and maximize the imaginary coordinate.",
+17:"Interpret paths to 10 as compositions of 10.",
+18:"Use symmetry and tangency distances between circle centers.",
+19:"Convert logarithms to a quadratic in ln x and use the sum of roots.",
+20:"Derive a recurrence for the row sum and compute it modulo 10.",
+})
+
+SOL.update({
+11:[("Use the angle formula",r"For lines with slopes $m_1$ and $m_2$, the tangent of the angle between them is \[\left|\frac{m_1-m_2}{1+m_1m_2}\right|.\]"),("Substitute the slopes",r"With $m_1=2$ and $m_2=\frac13$, this becomes \[\left|\frac{2-\frac13}{1+2\cdot\frac13}\right|=\frac{5/3}{5/3}=1.\]"),("Convert tangent to angle",r"The acute angle whose tangent is $1$ is $45^\circ$."),("Conclude",r"The answer is $\boxed{45^\circ}$."),],
+12:[("Pair the cubes",r"Each pair has the form \[(2k)^3-(2k-1)^3,\] for $k=1,2,\ldots,9$."),("Simplify one pair",r"Using $n^3-(n-1)^3=3n^2-3n+1$, with $n=2k$, the pair becomes \[12k^2-6k+1.\]"),("Sum over k",r"The total is \[\sum_{k=1}^{9}(12k^2-6k+1)=12\sum k^2-6\sum k+9.\]"),("Compute",r"Using \[\sum_{k=1}^9 k=45,\quad \sum_{k=1}^9 k^2=285,\] the value is \[12(285)-6(45)+9=3420-270+9=3159.\]"),("Conclude",r"The answer is $\boxed{3159}$."),],
+13:[("Name the groups",r"Let there be $L$ left-handed players and $2L$ right-handed players, so there are $3L$ total players."),("Count game types",r"There are \[\binom L2\] left-left games, \[\binom{2L}{2}\] right-right games, and $2L^2$ mixed games."),("Let mixed wins vary",r"Let $x$ be the number of mixed games won by left-handed players. Then left-handed wins are \[\binom L2+x,\] while right-handed wins are \[\binom{2L}{2}+2L^2-x.\]"),("Use the 40 percent condition",r"Left-handed wins are $40\%$ more than right-handed wins, so \[\binom L2+x=\frac75\left(\binom{2L}{2}+2L^2-x\right).\]"),("Test possible totals",r"The answer choices that can equal $\binom{3L}{2}$ are $15,36,66$, corresponding to $L=2,3,4$. Only $L=3$ gives an integer possible value of $x$."),("Conclude",r"Then there are $9$ players and \[\binom92=36\] total games. The answer is $\boxed{36}$."),],
+14:[("Check zero separately",r"If $z=0$, then $z^5=\overline z=0$, so $z=0$ is one solution."),("Use polar form for nonzero z",r"For $z\ne0$, write \[z=re^{i\theta}.\] Then \[z^5=r^5e^{i5\theta},\quad \overline z=re^{-i\theta}.\]"),("Compare magnitudes",r"The magnitudes give \[r^5=r,\] so since $r>0$, \[r=1.\]"),("Compare angles",r"The angles must satisfy \[5\theta\equiv-\theta\pmod{2\pi},\] so \[6\theta\equiv0\pmod{2\pi}.\] This gives $6$ unit-circle solutions."),("Add the zero solution",r"There are $6$ nonzero solutions plus $1$ zero solution."),("Conclude",r"The total number of solutions is $\boxed{7}$."),],
+15:[("Focus on horizontal progress",r"No matter how many zigzag segments Usain uses, he starts on the left side and ends on segment $BC$, which is on the right side of the rectangle. So his total horizontal displacement is $100$ meters."),("Relate path length to horizontal component",r"Each segment makes angle $\theta$ with the horizontal, so its horizontal component is its length times $\cos\theta$. Adding over the whole path gives \[(\text{total length})\cos\theta=100.\]"),("Use the desired total length",r"The total length should be $120$, so \[120\cos\theta=100.\]"),("Solve for theta",r"Thus \[\cos\theta=\frac{100}{120}=\frac56.\]"),("Conclude",r"The required angle is $\boxed{\arccos\frac56}$."),],
+16:[("Shift the variable",r"Complete the square in the expression: \[1+z+z^2=\left(z+\frac12\right)^2+\frac34.\] Let \[w=z+\frac12=u+iv.\] The imaginary part of $z$ is still $v$."),("Write the condition",r"We need \[|w^2+\frac34|=4.\] Since \[w^2=(u^2-v^2)+2uiv,\] the squared modulus is \[\left(u^2-v^2+\frac34\right)^2+4u^2v^2.\]"),("Maximize v",r"For fixed $v$, this expression is minimized when $u=0$. Therefore the largest possible $v$ occurs when \[\left|\,\frac34-v^2\,\right|=4.\]"),("Solve for v",r"The positive maximum satisfies \[v^2-\frac34=4,\] so \[v^2=\frac{19}{4}\quad\text{and}\quad v=\frac{\sqrt{19}}2.\]"),("Extract m and n",r"Thus $m=19$ and $n=2$."),("Conclude",r"The requested sum is \[19+2=21.\] The answer is $\boxed{21}$."),],
+17:[("Understand a successful path",r"Flora lands at $10$ exactly when her sequence of jump lengths is a composition of $10$: a list of positive integers whose sum is $10$."),("Find the probability of one composition",r"If a particular composition has parts $m_1,m_2,\ldots,m_k$, its probability is \[\frac1{2^{m_1}}\cdot\frac1{2^{m_2}}\cdots\frac1{2^{m_k}}=\frac1{2^{10}}.\]"),("Count compositions",r"The number of compositions of $10$ is $2^{9}$, because there are $9$ gaps between $10$ unit steps and each gap is either cut or not cut."),("Multiply",r"The total probability is \[2^9\cdot\frac1{2^{10}}=\frac12.\]"),("Conclude",r"The answer is $\boxed{\frac12}$."),],
+18:[("Use symmetry",r"Place the two unit-circle centers at \[\left(-\frac14,0\right)\quad\text{and}\quad\left(\frac14,0\right).\] By symmetry, the centers of $C_3$ and $C_4$ lie on the $y$-axis."),("Find C3",r"The largest circle internally tangent to both unit circles is centered halfway between them. Its radius is \[1-\frac14=\frac34.\]"),("Set up C4",r"Let $r$ be the radius of $C_4$, and let its center be $(0,y)$. Internal tangency to a unit circle gives \[\sqrt{y^2+\left(\frac14\right)^2}=1-r.\]"),("Use tangency to C3",r"External tangency to $C_3$ gives \[y=\frac34+r.\]"),("Solve",r"Substitute into the distance equation: \[\left(\frac34+r\right)^2+\left(\frac14\right)^2=(1-r)^2.\] This simplifies to \[\frac58+\frac72r=1,\] so \[r=\frac3{28}.\]"),("Conclude",r"The answer is $\boxed{\frac3{28}}$."),],
+19:[("Convert to natural logs",r"Let \[a=\ln2023,\quad b=\ln7,\quad c=\ln289,\quad t=\ln x.\] The equation becomes \[\frac{a}{b+t}\cdot\frac{a}{c+t}=\frac{a}{a+t}.\]"),("Clear denominators",r"After dividing by $a$ and clearing denominators, \[a(a+t)=(b+t)(c+t).\] This is a quadratic equation in $t$."),("Use the sum of roots",r"Expanding gives \[t^2+(b+c-a)t+(bc-a^2)=0.\] Therefore the sum of all $t$-solutions is \[a-b-c.\]"),("Convert back to x",r"The product of all $x$-solutions is \[\exp(a-b-c)=\frac{2023}{7\cdot289}.\]"),("Use 2023 equals 7 times 289",r"Since \[2023=7\cdot289,\] the product is $1$."),("Conclude",r"The answer is $\boxed{1}$."),],
+20:[("Let S_n be the row sum",r"Let $S_n$ be the sum of the entries in row $n$. We only need the units digit, so a recurrence modulo $10$ is enough."),("Derive the recurrence",r"Row $n$ has endpoints $1$ and $1$. The interior entries come from adjacent pairs in row $n-1$, each plus $1$. The adjacent-pair sums contribute \[2S_{n-1}-2,\] and there are $n-2$ interior plus-ones."),("Simplify",r"Therefore \[S_n=2+(2S_{n-1}-2)+(n-2)=2S_{n-1}+n-2.\]"),("Compute modulo 10",r"Start with $S_1=1$ and iterate \[S_n\equiv2S_{n-1}+n-2\pmod{10}.\] This recurrence has a short repeating pattern modulo $10$."),("Evaluate the needed row",r"Carrying the recurrence to $n=2023$ modulo $10$ gives \[S_{2023}\equiv5\pmod{10}.\]"),("Conclude",r"The units digit is $\boxed{5}$."),],
 })
 
 def esc(x, quote=True):

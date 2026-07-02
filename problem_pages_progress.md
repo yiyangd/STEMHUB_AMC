@@ -4444,3 +4444,19 @@
 - Pushed: pending
 - Next batch should start from: 2023 AMC 12A Problem 11
 - Review notes: none.
+
+## Batch 275: 2023 AMC 12A Problems 11-20
+
+- Start time: 2026-07-02T08:25:57-07:00
+- End time: 2026-07-02T08:25:58-07:00
+- Processed contest: AMC12
+- Processed range: 2023 AMC 12A Problems 11-20
+- Generated count: 10
+- Updated existing count: 0
+- Skipped count: 0
+- Skipped reasons: none
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+- Next batch should start from: 2023 AMC 12A Problem 21
+- Review notes: none.
