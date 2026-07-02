@@ -3,19 +3,19 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 276
+BATCH_NUMBER = 277
 CONTEST_DIR = "amc12"
 YEAR = "2023"
-FORM = "A"
-ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2023_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {21, 22, 23, 24}
+FORM = "B"
+ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2023_AMC_12B_Answer_Key"
+TARGET_NUMBERS = {1, 3, 4, 5, 6, 7, 8, 9, 10}
 SKIPPED = [
-    "2023 AMC 12A Problem 25: high-risk tangent-polynomial coefficient identity; skipped",
+    "2023 AMC 12B Problem 2: OCR statement is truncated and missing the actual question; skipped",
 ]
-BATCH_LABEL = "2023 AMC 12A Problems 21-24"
-NEXT_START = "2023 AMC 12B Problem 1"
+BATCH_LABEL = "2023 AMC 12B Problems 1,3-10"
+NEXT_START = "2023 AMC 12B Problem 11"
 
-ANS={21:("A",r"$\frac7{22}$"),22:("B","96"),23:("B","1"),24:("C","5")}
+ANS={1:("C",r"$\frac16$"),3:("D",r"$\frac{25}{169}$"),4:("C","1625"),5:("C","4"),6:("C","5"),7:("E","901"),8:("D","144"),9:("B","8"),10:("E",r"$\frac25$")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -5152,6 +5152,42 @@ SOL.update({
 22:[("Interpret the divisor sum",r"The equation says that the function $f$ is the Dirichlet-convolution inverse of the function $g(n)=n$ against the constant function $1$."),("Find f on prime powers",r"For a prime $p$, the condition for $p^a$ is \[\sum_{i=0}^{a}p^i f(p^{a-i})=1.\] For $a=1$, this gives \[f(p)+p=1,\] so \[f(p)=1-p.\] The same recurrence gives \[f(p^a)=1-p\] for all $a\ge1$."),("Use multiplicativity",r"The convolution equation with multiplicative functions implies that $f$ is multiplicative. Thus we can evaluate $f$ from the prime factorization of $2023$."),("Factor 2023",r"We have \[2023=7\cdot17^2.\] Therefore \[f(2023)=f(7)f(17^2).\]"),("Compute",r"Using $f(p^a)=1-p$, \[f(7)=1-7=-6,\quad f(17^2)=1-17=-16.\] Hence \[f(2023)=(-6)(-16)=96.\]"),("Conclude",r"The answer is $\boxed{96}$."),],
 23:[("Make the expression dimensionless",r"Let \[x=\frac1{2a},\quad y=\frac1b.\] Since $a,b>0$, we have $x,y>0$."),("Rewrite the equation",r"Dividing the original equation by $32ab$ and substituting gives \[(1+x)(1+y)\left(\frac1x+\frac1y\right)=8.\] Equivalently, \[(1+x)(1+y)(x+y)=8xy.\]"),("Use symmetric variables",r"Let \[s=x+y,\quad p=xy.\] Then the equation becomes \[s(1+s+p)=8p,\] so \[p=\frac{s(1+s)}{8-s}.\]"),("Apply the product bound",r"For positive $x$ and $y$ with sum $s$, we must have \[p\le\frac{s^2}{4}.\] Substituting the expression for $p$ gives equality only when \[s=2.\]"),("Find x and y",r"Equality in $p\le\frac{s^2}{4}$ occurs only when $x=y$. Thus \[x=y=1.\] This gives \[a=\frac12,\quad b=1.\]"),("Conclude",r"There is exactly one ordered pair. The answer is $\boxed{1}$."),],
 24:[("Fix the sequence length",r"For a fixed length $n$, each element of $\{1,2,\ldots,10\}$ can enter the increasing chain at exactly one of the stages $1,2,\ldots,n$, or it can never appear."),("Count choices for one element",r"Thus each element has $n+1$ independent choices: first appear in $A_1$, first appear in $A_2$, ..., first appear in $A_n$, or never appear."),("Count chains of length n",r"For fixed $n$, the number of valid chains is therefore \[(n+1)^{10}.\]"),("Sum over possible n",r"Since $1\le n\le10$, \[K=\sum_{n=1}^{10}(n+1)^{10}=\sum_{m=2}^{11}m^{10}.\]"),("Compute modulo 10",r"Modulo $10$, the terms for $m=2,3,\ldots,11$ are \[4,9,6,5,6,9,4,1,0,1.\] Their sum is congruent to $5$ modulo $10$."),("Conclude",r"The remainder is $\boxed{5}$."),],
+})
+
+OV.update({
+1:(r"Mrs. Jones is pouring orange juice for her $4$ kids into $4$ identical glasses. She fills the first $3$ completely, but the fourth glass is only $\frac13$ full. What fraction of a glass must she pour from each of the first three glasses into the fourth glass so that all four glasses have the same amount?",[("A",r"$\frac1{12}$"),("B",r"$\frac14$"),("C",r"$\frac16$"),("D",r"$\frac18$"),("E",r"$\frac29$")]),
+3:(r"A $3$-$4$-$5$ right triangle is inscribed in circle $A$, and a $5$-$12$-$13$ right triangle is inscribed in circle $B$. What is the ratio of the area of circle $A$ to the area of circle $B$?",[("A",r"$\frac9{25}$"),("B",r"$\frac19$"),("C",r"$\frac15$"),("D",r"$\frac{25}{169}$"),("E",r"$\frac4{25}$")]),
+4:(r"Jackson's paintbrush makes a narrow strip that is $6.5$ mm wide. Jackson has enough paint to make a strip of $25$ meters. How much area can he paint, in square centimeters?",[("A","162500"),("B","162.5"),("C","1625"),("D","1625000"),("E","16250")]),
+5:(r"A $2\times1$ rectangle covers two adjacent squares of a $3\times3$ grid, but you are not told which two adjacent squares are covered. Your goal is to find at least one covered square. A turn consists of guessing a square and being told whether it is covered. What is the minimum number of turns needed to ensure that at least one guessed square is covered?",[("A","3"),("B","5"),("C","4"),("D","8"),("E","6")]),
+6:(r"When the roots of the polynomial \[P(x)=\prod_{i=1}^{10}(x-i)\] are removed from the real number line, what remains is the union of $11$ disjoint open intervals. On how many of those intervals is $P(x)$ positive?",[("A","3"),("B","4"),("C","5"),("D","6"),("E","7")]),
+7:(r"For how many integers $n$ does the expression \[\sqrt{\frac{\log(n^2)-(\log n)^2}{\log n-3}}\] represent a real number, where $\log$ denotes the base-$10$ logarithm?",[("A","900"),("B","2"),("C","902"),("D","902"),("E","901")]),
+8:(r"How many nonempty subsets $B$ of $\{0,1,2,\ldots,12\}$ have the property that the number of elements in $B$ is equal to the least element of $B$?",[("A","256"),("B","136"),("C","108"),("D","144"),("E","156")]),
+9:(r"What is the area of the region in the coordinate plane defined by \[\left||x|-1\right|+\left||y|-1\right|\le1?\]",[("A","4"),("B","8"),("C","10"),("D","12"),("E","15")]),
+10:(r"In the $xy$-plane, a circle of radius $4$ with center on the positive $x$-axis is tangent to the $y$-axis at the origin, and a circle with radius $10$ with center on the positive $y$-axis is tangent to the $x$-axis at the origin. What is the slope of the line passing through the two points at which these circles intersect?",[("A",r"$\frac27$"),("B",r"$\frac37$"),("C",r"$\frac2{\sqrt{29}}$"),("D",r"$\frac1{\sqrt{29}}$"),("E",r"$\frac25$")]),
+})
+
+KEY_OVERRIDES.update({
+1:"Average the total amount of juice and find how much each full glass gives.",
+3:"Use the hypotenuse as the diameter of the circumcircle of a right triangle.",
+4:"Convert units carefully before multiplying width by length.",
+5:"Model the hidden domino placements as edges in a 3 by 3 grid graph.",
+6:"Use alternating signs across ten simple real roots.",
+7:"Analyze the sign of a rational expression in t equals log n.",
+8:"Choose the remaining elements after fixing the least element.",
+9:"Use symmetry and transform to first-quadrant coordinates.",
+10:"Use the radical axis of the two circles.",
+})
+
+SOL.update({
+1:[("Find the total amount",r"The first three glasses are full and the fourth is $\frac13$ full, so the total amount is \[3+\frac13=\frac{10}{3}\] glasses."),("Find the equal amount",r"After redistribution, each of the four glasses should contain \[\frac{10/3}{4}=\frac56\] of a glass."),("Find how much the fourth glass needs",r"The fourth glass starts with $\frac13$ and needs to reach $\frac56$, so it needs \[\frac56-\frac13=\frac12\] of a glass."),("Split the transfer evenly",r"This $\frac12$ glass comes equally from the first three glasses, so each full glass contributes \[\frac{1/2}{3}=\frac16.\]"),("Conclude",r"The answer is $\boxed{\frac16}$."),],
+3:[("Use the right-triangle circle fact",r"A right triangle inscribed in a circle has its hypotenuse as the diameter of the circle."),("Find the two radii",r"For the $3$-$4$-$5$ triangle, the radius is $\frac52$. For the $5$-$12$-$13$ triangle, the radius is $\frac{13}{2}$."),("Compare areas",r"Circle areas are proportional to the squares of their radii, so the ratio is \[\frac{(5/2)^2}{(13/2)^2}=\frac{25}{169}.\]"),("Conclude",r"The answer is $\boxed{\frac{25}{169}}$."),],
+4:[("Convert the width",r"The strip is $6.5$ mm wide. Since $10$ mm equals $1$ cm, this is \[0.65\text{ cm}.\]"),("Convert the length",r"The length is $25$ meters, which is \[2500\text{ cm}.\]"),("Compute area",r"The painted area is width times length: \[0.65\cdot2500=1625.\]"),("Conclude",r"He can paint $\boxed{1625}$ square centimeters."),],
+5:[("Model the problem as hitting every domino",r"Each possible hidden rectangle is an edge between two adjacent squares of the $3\times3$ grid. We need to choose squares so that every such edge touches at least one chosen square."),("Give a strategy with four guesses",r"Color the grid like a checkerboard. The four corner-color squares of one color cover every adjacent pair, because every domino covers one square of each color. Guessing those four squares guarantees a hit."),("Show three guesses cannot suffice",r"The $3\times3$ grid has a matching of four disjoint adjacent pairs. If only three squares are guessed, at least one of those four disjoint pairs has neither square guessed."),("Conclude the minimum",r"So three guesses cannot guarantee success, while four guesses can."),("Conclude",r"The minimum number of turns is $\boxed{4}$."),],
+6:[("Use sign changes across roots",r"The polynomial has simple roots at $1,2,\ldots,10$. For $x>10$, all factors are positive, so $P(x)>0$."),("Move left interval by interval",r"Each time we cross one simple root, exactly one factor changes sign, so the sign of $P(x)$ alternates."),("Count positive intervals",r"There are $11$ intervals total. Starting with positive on $(10,\infty)$ and alternating as we move left gives positive signs on every other interval."),("Compute",r"Among $11$ alternating intervals, $5$ of them are positive when the far-left interval is negative and the far-right interval is positive."),("Conclude",r"The answer is $\boxed{5}$."),],
+7:[("Set t equal to log n",r"Let \[t=\log n.\] Since $n$ is a positive integer, $t\ge0$."),("Simplify the radicand",r"The expression under the square root becomes \[\frac{2t-t^2}{t-3}=\frac{t(2-t)}{t-3}.\] We need this to be nonnegative, and $t\ne3$."),("Analyze signs",r"The critical values are $t=0$, $t=2$, and $t=3$. The radicand is nonnegative at $t=0$, at $t=2$, and for \[2<t<3.\]"),("Translate back to n",r"The value $t=0$ gives $n=1$. The interval $2\le t<3$ gives \[100\le n<1000.\]"),("Count integers",r"There are $900$ integers from $100$ through $999$, plus $n=1$."),("Conclude",r"The total is $\boxed{901}$."),],
+8:[("Fix the least element",r"Let the least element of $B$ be $k$. Then $B$ must have exactly $k$ elements."),("Choose the rest of the set",r"The element $k$ is already included, and the other $k-1$ elements must be chosen from \[\{k+1,k+2,\ldots,12\},\] which has $12-k$ elements."),("Write the sum",r"For each $k$, the number of choices is \[\binom{12-k}{k-1}.\] We sum over values for which this makes sense."),("Compute",r"The total is \[\binom{11}{0}+\binom{10}{1}+\binom9{2}+\binom8{3}+\binom7{4}+\binom6{5}=1+10+36+56+35+6=144.\]"),("Conclude",r"The answer is $\boxed{144}$."),],
+9:[("Use symmetry",r"The expression depends only on $|x|$ and $|y|$, so the region is symmetric across both axes."),("Work in the first quadrant",r"In the first quadrant, set $u=x$ and $v=y$. The inequality becomes \[|u-1|+|v-1|\le1.\]"),("Find the first-quadrant area",r"This is a diamond centered at $(1,1)$ with diagonal lengths $2$ and $2$, so its area is \[\frac{2\cdot2}{2}=2.\]"),("Multiply by symmetry",r"The diamond lies in the first quadrant and only touches the axes, so four symmetric copies give total area \[4\cdot2=8.\]"),("Conclude",r"The answer is $\boxed{8}$."),],
+10:[("Write the circle equations",r"The first circle has center $(4,0)$ and radius $4$, so \[(x-4)^2+y^2=16.\] The second has center $(0,10)$ and radius $10$, so \[x^2+(y-10)^2=100.\]"),("Simplify both equations",r"The equations become \[x^2+y^2-8x=0\] and \[x^2+y^2-20y=0.\]"),("Subtract to find the common chord line",r"At the intersection points, both equations hold, so \[-8x=-20y.\] Therefore \[y=\frac25x.\]"),("Interpret the line",r"The line through the two intersection points is the radical axis, so its slope is $\frac25$."),("Conclude",r"The answer is $\boxed{\frac25}$."),],
 })
 
 def esc(x, quote=True):
