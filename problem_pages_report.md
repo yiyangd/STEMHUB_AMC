@@ -1,25 +1,20 @@
 # Problem Pages Report
 
-- Total manifest entries: 1796
-- Latest batch: 245 (2019 AMC 12A Problems 11-15, 17, 20)
-- Latest new generated count: 7
+- Total manifest entries: 1797
+- Latest batch: 246 (2019 AMC 12A Problem 24)
+- Latest new generated count: 1
 - Latest updated existing count: 0
-- Latest skipped count: 3
+- Latest skipped count: 4
 - MathJax validation: passed
 - Answer verification source: AoPS 2019 AMC 12A Answer Key
 
 ## Latest Batch Pages
 
-- `2019 AMC 12A Problem 11` -> `amc12/problems/2019-amc-12a-problem-11/`
-- `2019 AMC 12A Problem 12` -> `amc12/problems/2019-amc-12a-problem-12/`
-- `2019 AMC 12A Problem 13` -> `amc12/problems/2019-amc-12a-problem-13/`
-- `2019 AMC 12A Problem 14` -> `amc12/problems/2019-amc-12a-problem-14/`
-- `2019 AMC 12A Problem 15` -> `amc12/problems/2019-amc-12a-problem-15/`
-- `2019 AMC 12A Problem 17` -> `amc12/problems/2019-amc-12a-problem-17/`
-- `2019 AMC 12A Problem 20` -> `amc12/problems/2019-amc-12a-problem-20/`
+- `2019 AMC 12A Problem 24` -> `amc12/problems/2019-amc-12a-problem-24/`
 
 ## Skipped in latest batch
 
-- 2019 AMC 12A Problem 16: 3-by-3 grid parity probability is diagram/grid-structure heavy; skipped
-- 2019 AMC 12A Problem 18: sphere tangent-to-triangle spatial geometry needs a dedicated derivation; skipped
-- 2019 AMC 12A Problem 19: integer triangle with three cosine constraints is high-risk without extended derivation; skipped
+- 2019 AMC 12A Problem 21: source text is severely OCR-truncated; skipped
+- 2019 AMC 12A Problem 22: circle/triangle geometry statement is OCR-damaged and diagram-sensitive; skipped
+- 2019 AMC 12A Problem 23: operation definitions are OCR-ambiguous; skipped
+- 2019 AMC 12A Problem 25: iterative altitude geometry requires high-risk derivation; skipped

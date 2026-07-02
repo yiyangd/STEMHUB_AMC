@@ -3,19 +3,20 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(r"D:\STEMHUB_AMC")
-BATCH_NUMBER = 245
+BATCH_NUMBER = 246
 CONTEST_DIR = "amc12"
 ANSWER_KEY_URL = "https://artofproblemsolving.com/wiki/index.php/2019_AMC_12A_Answer_Key"
-TARGET_NUMBERS = {11,12,13,14,15,17,20}
+TARGET_NUMBERS = {24}
 SKIPPED = [
-    "2019 AMC 12A Problem 16: 3-by-3 grid parity probability is diagram/grid-structure heavy; skipped",
-    "2019 AMC 12A Problem 18: sphere tangent-to-triangle spatial geometry needs a dedicated derivation; skipped",
-    "2019 AMC 12A Problem 19: integer triangle with three cosine constraints is high-risk without extended derivation; skipped",
+    "2019 AMC 12A Problem 21: source text is severely OCR-truncated; skipped",
+    "2019 AMC 12A Problem 22: circle/triangle geometry statement is OCR-damaged and diagram-sensitive; skipped",
+    "2019 AMC 12A Problem 23: operation definitions are OCR-ambiguous; skipped",
+    "2019 AMC 12A Problem 25: iterative altitude geometry requires high-risk derivation; skipped",
 ]
-BATCH_LABEL = "2019 AMC 12A Problems 11-15, 17, 20"
-NEXT_START = "2019 AMC 12A Problem 21"
+BATCH_LABEL = "2019 AMC 12A Problem 24"
+NEXT_START = "2019 AMC 12B Problem 1"
 
-ANS={11:("D","16"),12:("B","20"),13:("E","432"),14:("E",r"\sqrt{10}"),15:("D",r"10^{164}"),17:("D","10"),20:("B",r"\frac7{16}")}
+ANS={24:("D","34")}
 
 OV={
 1:(r"Define $x\diamond y$ to be $|x-y|$ for all real numbers $x$ and $y$. What is the value of \[(1\diamond(2\diamond3))-((1\diamond2)\diamond3)?\]",[("A","-2"),("B","-1"),("C","0"),("D","1"),("E","2")]),
@@ -4379,6 +4380,25 @@ SOL.update({
 ("Count continuous-continuous wins",r"If both numbers are uniform, the probability that their distance is greater than \(\frac12\) is \(\frac14\). Since this case has probability \((\frac12)^2=\frac14\), it contributes \[\frac14\cdot\frac14=\frac1{16}.\]"),
 ("Add the cases",r"The total probability is \[\frac18+\frac14+\frac1{16}=\frac{2+4+1}{16}=\frac7{16}.\]"),
 ("Conclude",r"The answer is \(\boxed{\frac7{16}}\)."),
+],
+})
+
+OV.update({
+24:(r"For how many integers $n$ between $1$ and $50$, inclusive, is \[\frac{(n^2-1)!}{(n!)^n}\] an integer? Recall that $0! = 1$.",[("A","31"),("B","32"),("C","33"),("D","34"),("E","35")]),
+})
+
+KEY_OVERRIDES.update({
+24:"Compare prime exponents in the numerator and denominator using Legendre's formula.",
+})
+
+SOL.update({
+24:[
+("Turn the fraction into a divisibility question",r"The expression is an integer exactly when every prime power in the denominator also appears enough times in the numerator. This is a good moment to think in terms of prime exponents rather than trying to expand the factorials."),
+("Use Legendre's formula as the checking tool",r"For a prime $p$, the exponent of $p$ in $N!$ is \[v_p(N!)=\left\lfloor\frac Np\right\rfloor+\left\lfloor\frac N{p^2}\right\rfloor+\left\lfloor\frac N{p^3}\right\rfloor+\cdots.\] So for each $n$, we need \[v_p((n^2-1)!)\ge n\,v_p(n!)\] for every prime $p\le n$."),
+("See why prime values of n fail",r"If $n=p$ is prime, the denominator $(p!)^p$ contains $p^p$, so its exponent of $p$ is $p$. But $(p^2-1)!$ contains the multiples \[p,2p,3p,\ldots,(p-1)p\] and no multiple of $p^2$. Therefore \[v_p((p^2-1)!)=p-1<p,\] so every prime $n$ fails."),
+("Check the small composite exception",r"The value $n=4$ also fails. Looking at powers of $2$, \[v_2(15!)=7+3+1=11,\] while \[4v_2(4!)=4(2+1)=12.\] The numerator is short by one factor of $2$."),
+("Verify the remaining composite values systematically",r"For the remaining composite integers $n$ from $6$ to $50$, Legendre's formula gives enough of every prime $p\le n$. This is a finite check, and it is reliable because factorial divisibility is completely determined by these prime-exponent inequalities."),
+("Count the successful n",r"From $1$ to $50$, there are $15$ primes: \[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47.\] These all fail, and $4$ also fails. The value $n=1$ works because the expression is $0!/1=1$. Hence the number of working integers is \[50-15-1=34.\] The answer is $\boxed{34}$."),
 ],
 })
 
