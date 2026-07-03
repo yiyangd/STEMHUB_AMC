@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-02T19:45:49-07:00
-- Missing total: 269
+- Generated at: 2026-07-02T19:56:05-07:00
+- Missing total: 262
 - AMC10 missing total: 91
-- AMC12 missing total: 178
+- AMC12 missing total: 171
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 52 |
+| `solution_high_risk` | 45 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 51 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 44 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -115,10 +115,8 @@
 - `2012 AMC 12A Problem 20` [ocr_or_statement_risk]: 2012 AMC 12A Problem 20: skipped because the polynomial statement is truncated in the local CSV.
 - `2012 AMC 12A Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2012 AMC 12A Problem 21: skipped because the system of equations is OCR-damaged.
 - `2012 AMC 12A Problem 22` [solution_high_risk]: 2012 AMC 12A Problem 22: skipped because the cube-plane intersection problem needs a dedicated spatial derivation.
-- `2012 AMC 12A Problem 23` [solution_high_risk]: 2012 AMC 12A Problem 23: skipped because the translated-square lattice probability problem is high-risk without a full derivation.
 - `2012 AMC 12A Problem 24` [ocr_or_statement_risk]: 2012 AMC 12A Problem 24: skipped because the recursively defined decimal sequence is OCR-damaged.
 - `2012 AMC 12A Problem 25` [ocr_or_statement_risk]: 2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged.
-- `2012 AMC 12B Problem 17` [solution_high_risk]: Skipped reasons: 2012 AMC 12B Problem 17: skipped because the coordinate-square line incidence geometry needs a careful derivation.
 - `2012 AMC 12B Problem 20` [solution_high_risk]: 2012 AMC 12B Problem 20: skipped because the trapezoid area sum has a complex multi-case geometry derivation.
 - `2012 AMC 12B Problem 21` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
 - `2012 AMC 12B Problem 24` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
@@ -136,9 +134,7 @@
 - `2013 AMC 12B Problem 23` [ocr_or_statement_risk]: 2013 AMC 12B Problem 23: base representation digit-counting high risk
 - `2013 AMC 12B Problem 24` [ocr_or_statement_risk]: 2013 AMC 12B Problem 24: complex triangle geometry with OCR radical ambiguity
 - `2013 AMC 12B Problem 25` [ocr_or_statement_risk]: 2013 AMC 12B Problem 25: polynomial with Gaussian-integer roots high risk
-- `2014 AMC 12A Problem 17` [solution_high_risk]: Skipped reasons: 2014 AMC 12A Problem 17: 3D sphere-packing geometry high risk
 - `2014 AMC 12A Problem 18` [ocr_or_statement_risk]: 2014 AMC 12A Problem 18: nested logarithm domain with OCR base ambiguity
-- `2014 AMC 12A Problem 20` [solution_high_risk]: 2014 AMC 12A Problem 20: geometry minimization/path reflection high risk
 - `2014 AMC 12B Problem 6` [ocr_or_statement_risk]: 2014 AMC 12B Problem 6: OCR statement is truncated
 - `2014 AMC 12B Problem 24` [solution_high_risk]: 2014 AMC 12B Problem 24: cyclic pentagon diagonal sum high risk
 - `2014 AMC 12B Problem 25` [ocr_or_statement_risk]: 2014 AMC 12B Problem 25: trigonometric equation with OCR ambiguity
@@ -171,7 +167,11 @@
 - `2020 AMC 12B Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2020 AMC 12B Problem 21: floor/square-root equation is OCR-damaged
 - `2020 AMC 12B Problem 22` [ocr_or_statement_risk]: 2020 AMC 12B Problem 22: exponential expression is OCR-damaged
 - `2021 Spring AMC 12A Problem 17` [solution_high_risk]: Skipped reasons: 2021 Spring AMC 12A Problem 17: trapezoid diagonal geometry requires a longer derivation
-- `2021 Spring AMC 12A Problem 21` [solution_high_risk]: Skipped reasons: 2021 Spring AMC 12A Problem 21: complex-root ellipse eccentricity problem requires a longer analytic geometry derivation
+- `2021 Spring AMC 12A Problem 24` [solution_high_risk]: 2021 Spring AMC 12A Problem 24: semicircle/circle chord geometry requires a longer derivation
+- `2021 Fall AMC 12A Problem 17` [solution_high_risk]: Skipped reasons: 2021 Fall AMC 12A Problem 17: trapezoid diagonal geometry requires a longer derivation
+- `2021 Fall AMC 12A Problem 18` [solution_high_risk]: 2021 Fall AMC 12A Problem 18: multiplicative rational function comparison is high-risk in current pass | Skipped reasons: 2021 Fall AMC 12A Problem 18: local CSV statement does not match the AoPS Fall problem statement
+- `2021 Fall AMC 12A Problem 19` [solution_high_risk]: 2021 Fall AMC 12A Problem 19: trigonometric equation count is high-risk in current pass | 2021 Fall AMC 12A Problem 19: local CSV statement does not match the AoPS Fall problem statement
+- `2021 Fall AMC 12A Problem 20` [solution_high_risk]: 2021 Fall AMC 12A Problem 20: parabola focus/vertex locus problem is high-risk in current pass
 
 ## Suggested Next Step
 
