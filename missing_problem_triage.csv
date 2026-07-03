@@ -123,7 +123,6 @@ AMC 12,2011,A,23,2011 AMC 12A Problem 23,代数,复数,复数;平面,,2011 AMC 1
 AMC 12,2011,A,24,2011 AMC 12A Problem 24,几何,圆与曲线,圆;曲线,,2011 AMC 12A Problem 24: skipped because the quadrilateral incircle maximum needs a careful geometry derivation.,solution_high_risk
 AMC 12,2011,A,25,2011 AMC 12A Problem 25,几何,面积与相似,面积;比例,,2011 AMC 12A Problem 25: skipped because the orthocenter/incenter/circumcenter area maximization is high-risk without a full derivation.,solution_high_risk
 AMC 12,2011,B,12,2011 AMC 12B Problem 12,概率与统计,几何概率,几何概率;面积,题面包含图形,Skipped reasons: 2011 AMC 12B Problem 12: skipped because the octagon dart-board probability depends on the original diagram.,needs_diagram
-AMC 12,2011,B,16,2011 AMC 12B Problem 16,几何,面积与相似,面积;比例,,2011 AMC 12B Problem 16: skipped because the Voronoi region inside the rhombus needs a careful geometry derivation.,solution_high_risk
 AMC 12,2011,B,17,2011 AMC 12B Problem 17,数论,进制与数字,数字;进制,,2011 AMC 12B Problem 17: skipped because the iterated logarithm/function statement is OCR-damaged.,ocr_or_statement_risk
 AMC 12,2011,B,18,2011 AMC 12B Problem 18,几何,空间几何,空间几何;体积,,2011 AMC 12B Problem 18: skipped because the cube-in-pyramid spatial geometry needs a diagram-sensitive derivation.,needs_diagram
 AMC 12,2011,B,20,2011 AMC 12B Problem 20,几何,圆与曲线,圆;曲线,,2011 AMC 12B Problem 20: skipped because the circumcircle intersection geometry is high-risk without a dedicated derivation.,solution_high_risk
@@ -138,7 +137,6 @@ AMC 12,2012,A,23,2012 AMC 12A Problem 23,概率与统计,几何概率,几何概�
 AMC 12,2012,A,24,2012 AMC 12A Problem 24,数论,进制与数字,数字;进制,,2012 AMC 12A Problem 24: skipped because the recursively defined decimal sequence is OCR-damaged.,ocr_or_statement_risk
 AMC 12,2012,A,25,2012 AMC 12A Problem 25,数论,整数构造,整数;构造,,2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged.,ocr_or_statement_risk
 AMC 12,2012,B,17,2012 AMC 12B Problem 17,几何,坐标几何,坐标;几何,,Skipped reasons: 2012 AMC 12B Problem 17: skipped because the coordinate-square line incidence geometry needs a careful derivation.,solution_high_risk
-AMC 12,2012,B,19,2012 AMC 12B Problem 19,几何,空间几何,空间几何;体积,,2012 AMC 12B Problem 19: skipped because the regular octahedron in a cube is spatial-geometry high risk.,solution_high_risk
 AMC 12,2012,B,20,2012 AMC 12B Problem 20,几何,面积与相似,面积;比例,,2012 AMC 12B Problem 20: skipped because the trapezoid area sum has a complex multi-case geometry derivation.,solution_high_risk
 AMC 12,2012,B,21,2012 AMC 12B Problem 21,几何,三角形,三角形;角度,,late/problem-specific derivation risk; should be reviewed before unattended generation,solution_high_risk
 AMC 12,2012,B,22,2012 AMC 12B Problem 22,组合数学,图形计数,网格;计数,题面包含图形,statement/notes indicate diagram dependence,needs_diagram
@@ -146,7 +144,6 @@ AMC 12,2012,B,24,2012 AMC 12B Problem 24,数论,质因数与整除,质因数;整
 AMC 12,2012,B,25,2012 AMC 12B Problem 25,几何,三角形,三角形;角度,,late/problem-specific derivation risk; should be reviewed before unattended generation,solution_high_risk
 AMC 12,2013,A,22,2013 AMC 12A Problem 22,概率与统计,组合概率,概率;计数,,2013 AMC 12A Problem 22: OCR omits base condition and probability formatting,ocr_or_statement_risk
 AMC 12,2013,A,23,2013 AMC 12A Problem 23,几何,几何变换,变换;对称,,2013 AMC 12A Problem 23: rotation swept-area geometry with OCR ambiguity,ocr_or_statement_risk
-AMC 12,2013,A,24,2013 AMC 12A Problem 24,概率与统计,几何概率,几何概率;面积,,2013 AMC 12A Problem 24: combinatorial geometry probability high risk,solution_high_risk
 AMC 12,2013,A,25,2013 AMC 12A Problem 25,数论,整数构造,整数;构造,,2013 AMC 12A Problem 25: complex-number lattice count high risk,ocr_or_statement_risk
 AMC 12,2013,B,13,2013 AMC 12B Problem 13,几何,面积与相似,面积;比例,,Skipped reasons: 2013 AMC 12B Problem 13: angle-chasing similarity problem with high derivation risk,ocr_or_statement_risk
 AMC 12,2013,B,15,2013 AMC 12B Problem 15,数论,整数构造,整数;构造,,2013 AMC 12B Problem 15: factorial representation/minimality proof high risk,ocr_or_statement_risk
@@ -199,7 +196,6 @@ AMC 12,2018,A,22,2018 AMC 12A Problem 22,几何,面积与相似,面积;比例,,S
 AMC 12,2018,A,23,2018 AMC 12A Problem 23,几何,三角形,三角形;角度,,2018 AMC 12A Problem 23: angle geometry requires a dedicated derivation,solution_high_risk
 AMC 12,2018,B,11,2018 AMC 12B Problem 11,几何,面积与相似,面积;比例,题面包含图形,Skipped reasons: 2018 AMC 12B Problem 11: wrapping-paper geometry depends on original diagram,needs_diagram
 AMC 12,2018,B,14,2018 AMC 12B Problem 14,数论,进制与数字,数字;进制,,2018 AMC 12B Problem 14: age wording/OCR leaves implicit assumptions,ocr_or_statement_risk
-AMC 12,2018,B,16,2018 AMC 12B Problem 16,几何,面积与相似,面积;比例,,2018 AMC 12B Problem 16: regular-octagon minimum area requires careful radical matching,solution_high_risk
 AMC 12,2018,B,20,2018 AMC 12B Problem 20,几何,面积与相似,面积;比例,,2018 AMC 12B Problem 20: hexagon intersection region is diagram-dependent,needs_diagram
 AMC 12,2018,B,21,2018 AMC 12B Problem 21,几何,圆与曲线,圆;曲线,,Skipped reasons: 2018 AMC 12B Problem 21: incircle/circumcircle tangent configuration is diagram-sensitive,needs_diagram
 AMC 12,2018,B,25,2018 AMC 12B Problem 25,几何,圆与曲线,圆;曲线,题面包含图形,2018 AMC 12B Problem 25: three-circle tangent construction depends on the original diagram,needs_diagram
@@ -226,11 +222,9 @@ AMC 12,2020,B,21,2020 AMC 12B Problem 21,数论,整数构造,整数;构造,,Skip
 AMC 12,2020,B,22,2020 AMC 12B Problem 22,代数,运算与化简,代数;化简,自动分类依据较弱，按代数主线暂归类,2020 AMC 12B Problem 22: exponential expression is OCR-damaged,ocr_or_statement_risk
 AMC 12,2021 Spring,A,10,2021 Spring AMC 12A Problem 10,几何,空间几何,空间几何;体积,题面包含图形,Skipped reasons: 2021 Spring AMC 12A Problem 10: cone liquid-rise problem depends on the missing diagram,needs_diagram
 AMC 12,2021 Spring,A,17,2021 Spring AMC 12A Problem 17,几何,三角形,三角形;角度,,Skipped reasons: 2021 Spring AMC 12A Problem 17: trapezoid diagonal geometry requires a longer derivation,solution_high_risk
-AMC 12,2021 Spring,A,20,2021 Spring AMC 12A Problem 20,几何,三角形,三角形;角度,,2021 Spring AMC 12A Problem 20: parabola focus/vertex locus problem is high-risk in current pass,solution_high_risk
 AMC 12,2021 Spring,A,21,2021 Spring AMC 12A Problem 21,几何,坐标几何,坐标;几何,,Skipped reasons: 2021 Spring AMC 12A Problem 21: complex-root ellipse eccentricity problem requires a longer analytic geometry derivation,solution_high_risk
 AMC 12,2021 Spring,A,24,2021 Spring AMC 12A Problem 24,几何,圆与曲线,圆;曲线,,2021 Spring AMC 12A Problem 24: semicircle/circle chord geometry requires a longer derivation,solution_high_risk
 AMC 12,2021 Spring,B,11,2021 Spring AMC 12B Problem 11,几何,三角形,三角形;角度,,Skipped reasons: 2021 Spring AMC 12B Problem 11: triangle/trapezoid geometry requires a longer coordinate derivation,solution_high_risk
-AMC 12,2021 Spring,B,14,2021 Spring AMC 12B Problem 14,几何,空间几何,空间几何;体积,,2021 Spring AMC 12B Problem 14: 3D rectangle pyramid volume problem requires a longer derivation,solution_high_risk
 AMC 12,2021 Spring,B,15,2021 Spring AMC 12B Problem 15,几何,面积与相似,面积;比例,题面包含图形,2021 Spring AMC 12B Problem 15: pentagon area problem depends on the missing diagram,needs_diagram
 AMC 12,2021 Spring,B,17,2021 Spring AMC 12B Problem 17,几何,面积与相似,面积;比例,题面包含图形,2021 Spring AMC 12B Problem 17: trapezoid area-ratio problem depends on the missing diagram,needs_diagram
 AMC 12,2021 Spring,B,24,2021 Spring AMC 12B Problem 24,几何,面积与相似,面积;比例,题面包含图形,2021 Spring AMC 12B Problem 24: parallelogram projection problem depends on the missing diagram,needs_diagram
@@ -264,7 +258,6 @@ AMC 12,2022,B,18,2022 AMC 12B Problem 18,组合数学,图形计数,网格;计数
 AMC 12,2022,B,19,2022 AMC 12B Problem 19,概率与统计,平均数与数据集,平均数;数据,,2022 AMC 12B Problem 19: OCR explicitly lacks original wording and the geometry diagram,needs_diagram
 AMC 12,2022,B,25,2022 AMC 12B Problem 25,几何,面积与相似,面积;比例,题面包含图形,Skipped reasons: 2022 AMC 12B Problem 25: nonconvex polygon area depends on the missing figure,needs_diagram
 AMC 12,2023,B,2,2023 AMC 12B Problem 2,代数,运算与化简,代数;化简,自动分类依据较弱，按代数主线暂归类,Skipped reasons: 2023 AMC 12B Problem 2: OCR statement is truncated and missing the actual question,ocr_or_statement_risk
-AMC 12,2023,B,21,2023 AMC 12B Problem 21,几何,空间几何,空间几何;体积,,Skipped reasons: 2023 AMC 12B Problem 21: frustum surface shortest path geometry is high-risk in current pass,solution_high_risk
 AMC 12,2023,B,25,2023 AMC 12B Problem 25,几何,面积与相似,面积;比例,,2023 AMC 12B Problem 25: folded regular pentagon area depends on a delicate geometric construction,solution_high_risk
 AMC 12,2024,A,18,2024 AMC 12A Problem 18,几何,几何变换,旋转;矩形;角度;周期,题面包含卡片叠放图。,Skipped reasons: 2024 AMC 12A Problem 18: rectangular-card rotation problem depends on the missing figure,needs_diagram
 AMC 12,2024,A,19,2024 AMC 12A Problem 19,几何,圆与四边形,圆内接四边形;余弦定理;对角线,,2024 AMC 12A Problem 19: cyclic quadrilateral diagonal geometry is high-risk in current pass,ocr_or_statement_risk

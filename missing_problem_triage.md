@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-02T19:23:27-07:00
-- Missing total: 276
+- Generated at: 2026-07-02T19:45:49-07:00
+- Missing total: 269
 - AMC10 missing total: 91
-- AMC12 missing total: 185
+- AMC12 missing total: 178
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 59 |
+| `solution_high_risk` | 52 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 58 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 51 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -108,7 +108,6 @@
 - `2011 AMC 12A Problem 23` [ocr_or_statement_risk]: 2011 AMC 12A Problem 23: skipped because the complex rational-function formula is OCR-damaged.
 - `2011 AMC 12A Problem 24` [solution_high_risk]: 2011 AMC 12A Problem 24: skipped because the quadrilateral incircle maximum needs a careful geometry derivation.
 - `2011 AMC 12A Problem 25` [solution_high_risk]: 2011 AMC 12A Problem 25: skipped because the orthocenter/incenter/circumcenter area maximization is high-risk without a full derivation.
-- `2011 AMC 12B Problem 16` [solution_high_risk]: 2011 AMC 12B Problem 16: skipped because the Voronoi region inside the rhombus needs a careful geometry derivation.
 - `2011 AMC 12B Problem 17` [ocr_or_statement_risk]: 2011 AMC 12B Problem 17: skipped because the iterated logarithm/function statement is OCR-damaged.
 - `2011 AMC 12B Problem 20` [solution_high_risk]: 2011 AMC 12B Problem 20: skipped because the circumcircle intersection geometry is high-risk without a dedicated derivation.
 - `2011 AMC 12B Problem 24` [solution_high_risk]: Skipped reasons: 2011 AMC 12B Problem 24: skipped because the complex-plane polygon minimum perimeter problem needs a dedicated derivation.
@@ -120,14 +119,12 @@
 - `2012 AMC 12A Problem 24` [ocr_or_statement_risk]: 2012 AMC 12A Problem 24: skipped because the recursively defined decimal sequence is OCR-damaged.
 - `2012 AMC 12A Problem 25` [ocr_or_statement_risk]: 2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged.
 - `2012 AMC 12B Problem 17` [solution_high_risk]: Skipped reasons: 2012 AMC 12B Problem 17: skipped because the coordinate-square line incidence geometry needs a careful derivation.
-- `2012 AMC 12B Problem 19` [solution_high_risk]: 2012 AMC 12B Problem 19: skipped because the regular octahedron in a cube is spatial-geometry high risk.
 - `2012 AMC 12B Problem 20` [solution_high_risk]: 2012 AMC 12B Problem 20: skipped because the trapezoid area sum has a complex multi-case geometry derivation.
 - `2012 AMC 12B Problem 21` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
 - `2012 AMC 12B Problem 24` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
 - `2012 AMC 12B Problem 25` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
 - `2013 AMC 12A Problem 22` [ocr_or_statement_risk]: 2013 AMC 12A Problem 22: OCR omits base condition and probability formatting
 - `2013 AMC 12A Problem 23` [ocr_or_statement_risk]: 2013 AMC 12A Problem 23: rotation swept-area geometry with OCR ambiguity
-- `2013 AMC 12A Problem 24` [solution_high_risk]: 2013 AMC 12A Problem 24: combinatorial geometry probability high risk
 - `2013 AMC 12A Problem 25` [ocr_or_statement_risk]: 2013 AMC 12A Problem 25: complex-number lattice count high risk
 - `2013 AMC 12B Problem 13` [ocr_or_statement_risk]: Skipped reasons: 2013 AMC 12B Problem 13: angle-chasing similarity problem with high derivation risk
 - `2013 AMC 12B Problem 15` [ocr_or_statement_risk]: 2013 AMC 12B Problem 15: factorial representation/minimality proof high risk
@@ -163,7 +160,6 @@
 - `2018 AMC 12A Problem 22` [solution_high_risk]: Skipped reasons: 2018 AMC 12A Problem 22: complex square-root parallelogram area high risk
 - `2018 AMC 12A Problem 23` [solution_high_risk]: 2018 AMC 12A Problem 23: angle geometry requires a dedicated derivation
 - `2018 AMC 12B Problem 14` [ocr_or_statement_risk]: 2018 AMC 12B Problem 14: age wording/OCR leaves implicit assumptions
-- `2018 AMC 12B Problem 16` [solution_high_risk]: 2018 AMC 12B Problem 16: regular-octagon minimum area requires careful radical matching
 - `2019 AMC 12A Problem 18` [solution_high_risk]: 2019 AMC 12A Problem 18: sphere tangent-to-triangle spatial geometry needs a dedicated derivation
 - `2019 AMC 12A Problem 19` [solution_high_risk]: 2019 AMC 12A Problem 19: integer triangle with three cosine constraints is high-risk without extended derivation
 - `2019 AMC 12A Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2019 AMC 12A Problem 21: source text is severely OCR-truncated
@@ -172,6 +168,10 @@
 - `2019 AMC 12B Problem 25` [solution_high_risk]: Skipped reasons: 2019 AMC 12B Problem 25: centroid/equilateral quadrilateral maximum problem is high-risk without a longer geometry derivation
 - `2020 AMC 12A Problem 13` [ocr_or_statement_risk]: Skipped reasons: 2020 AMC 12A Problem 13: nested radical/root expression is OCR-damaged
 - `2020 AMC 12A Problem 24` [solution_high_risk]: Skipped reasons: 2020 AMC 12A Problem 24: equilateral-triangle distance condition requires a longer geometry derivation
+- `2020 AMC 12B Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2020 AMC 12B Problem 21: floor/square-root equation is OCR-damaged
+- `2020 AMC 12B Problem 22` [ocr_or_statement_risk]: 2020 AMC 12B Problem 22: exponential expression is OCR-damaged
+- `2021 Spring AMC 12A Problem 17` [solution_high_risk]: Skipped reasons: 2021 Spring AMC 12A Problem 17: trapezoid diagonal geometry requires a longer derivation
+- `2021 Spring AMC 12A Problem 21` [solution_high_risk]: Skipped reasons: 2021 Spring AMC 12A Problem 21: complex-root ellipse eccentricity problem requires a longer analytic geometry derivation
 
 ## Suggested Next Step
 
