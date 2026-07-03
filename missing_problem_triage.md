@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-02T18:40:47-07:00
-- Missing total: 292
+- Generated at: 2026-07-02T18:54:42-07:00
+- Missing total: 282
 - AMC10 missing total: 91
-- AMC12 missing total: 201
+- AMC12 missing total: 191
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 75 |
+| `solution_high_risk` | 65 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 74 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 64 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -120,11 +120,9 @@
 - `2012 AMC 12A Problem 24` [ocr_or_statement_risk]: 2012 AMC 12A Problem 24: skipped because the recursively defined decimal sequence is OCR-damaged.
 - `2012 AMC 12A Problem 25` [ocr_or_statement_risk]: 2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged.
 - `2012 AMC 12B Problem 17` [solution_high_risk]: Skipped reasons: 2012 AMC 12B Problem 17: skipped because the coordinate-square line incidence geometry needs a careful derivation.
-- `2012 AMC 12B Problem 18` [solution_high_risk]: 2012 AMC 12B Problem 18: skipped because the constrained list-counting problem needs a dedicated combinatorial proof.
 - `2012 AMC 12B Problem 19` [solution_high_risk]: 2012 AMC 12B Problem 19: skipped because the regular octahedron in a cube is spatial-geometry high risk.
 - `2012 AMC 12B Problem 20` [solution_high_risk]: 2012 AMC 12B Problem 20: skipped because the trapezoid area sum has a complex multi-case geometry derivation.
 - `2012 AMC 12B Problem 21` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
-- `2012 AMC 12B Problem 23` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
 - `2012 AMC 12B Problem 24` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
 - `2012 AMC 12B Problem 25` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
 - `2013 AMC 12A Problem 22` [ocr_or_statement_risk]: 2013 AMC 12A Problem 22: OCR omits base condition and probability formatting
@@ -144,7 +142,6 @@
 - `2014 AMC 12A Problem 17` [solution_high_risk]: Skipped reasons: 2014 AMC 12A Problem 17: 3D sphere-packing geometry high risk
 - `2014 AMC 12A Problem 18` [ocr_or_statement_risk]: 2014 AMC 12A Problem 18: nested logarithm domain with OCR base ambiguity
 - `2014 AMC 12A Problem 20` [solution_high_risk]: 2014 AMC 12A Problem 20: geometry minimization/path reflection high risk
-- `2014 AMC 12A Problem 25` [solution_high_risk]: 2014 AMC 12A Problem 25: parabola with integer-coordinate count high risk
 - `2014 AMC 12B Problem 6` [ocr_or_statement_risk]: 2014 AMC 12B Problem 6: OCR statement is truncated
 - `2014 AMC 12B Problem 24` [solution_high_risk]: 2014 AMC 12B Problem 24: cyclic pentagon diagonal sum high risk
 - `2014 AMC 12B Problem 25` [ocr_or_statement_risk]: 2014 AMC 12B Problem 25: trigonometric equation with OCR ambiguity
@@ -159,7 +156,6 @@
 - `2016 AMC 12A Problem 25` [ocr_or_statement_risk]: Skipped reasons: 2016 AMC 12A Problem 25: long blackboard-square process has high derivation/OCR risk
 - `2016 AMC 12B Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2016 AMC 12B Problem 21: recursive geometry statement is OCR-damaged
 - `2016 AMC 12B Problem 25` [ocr_or_statement_risk]: 2016 AMC 12B Problem 25: recurrence formula is OCR-damaged
-- `2017 AMC 12A Problem 22` [solution_high_risk]: Skipped reasons: 2017 AMC 12A Problem 22: random-walk hitting probability needs a dedicated Markov derivation
 - `2017 AMC 12A Problem 25` [ocr_or_statement_risk]: 2017 AMC 12A Problem 25: complex-product probability statement is OCR-damaged
 - `2017 AMC 12B Problem 17` [ocr_or_statement_risk]: 2017 AMC 12B Problem 17: local CSV statement is truncated
 - `2017 AMC 12B Problem 25` [solution_high_risk]: 2017 AMC 12B Problem 25: tournament subset-average combinatorics requires a long proof
@@ -167,11 +163,15 @@
 - `2018 AMC 12A Problem 20` [solution_high_risk]: 2018 AMC 12A Problem 20: cyclic quadrilateral in isosceles right triangle is geometry high risk
 - `2018 AMC 12A Problem 22` [solution_high_risk]: Skipped reasons: 2018 AMC 12A Problem 22: complex square-root parallelogram area high risk
 - `2018 AMC 12A Problem 23` [solution_high_risk]: 2018 AMC 12A Problem 23: angle geometry requires a dedicated derivation
-- `2018 AMC 12A Problem 25` [solution_high_risk]: 2018 AMC 12A Problem 25: repeated-digit equation requires long number-theory proof
 - `2018 AMC 12B Problem 14` [ocr_or_statement_risk]: 2018 AMC 12B Problem 14: age wording/OCR leaves implicit assumptions
 - `2018 AMC 12B Problem 16` [solution_high_risk]: 2018 AMC 12B Problem 16: regular-octagon minimum area requires careful radical matching
 - `2019 AMC 12A Problem 18` [solution_high_risk]: 2019 AMC 12A Problem 18: sphere tangent-to-triangle spatial geometry needs a dedicated derivation
 - `2019 AMC 12A Problem 19` [solution_high_risk]: 2019 AMC 12A Problem 19: integer triangle with three cosine constraints is high-risk without extended derivation
+- `2019 AMC 12A Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2019 AMC 12A Problem 21: source text is severely OCR-truncated
+- `2019 AMC 12A Problem 23` [ocr_or_statement_risk]: 2019 AMC 12A Problem 23: operation definitions are OCR-ambiguous
+- `2019 AMC 12A Problem 25` [solution_high_risk]: 2019 AMC 12A Problem 25: iterative altitude geometry requires high-risk derivation
+- `2019 AMC 12B Problem 25` [solution_high_risk]: Skipped reasons: 2019 AMC 12B Problem 25: centroid/equilateral quadrilateral maximum problem is high-risk without a longer geometry derivation
+- `2020 AMC 12A Problem 13` [ocr_or_statement_risk]: Skipped reasons: 2020 AMC 12A Problem 13: nested radical/root expression is OCR-damaged
 
 ## Suggested Next Step
 

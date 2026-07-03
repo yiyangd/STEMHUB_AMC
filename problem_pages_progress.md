@@ -4649,12 +4649,23 @@
 - Commit hash: pending
 - Pushed: pending
 
+
+## High-risk reviewed problem pages batch 5
+
+- Time: 2026-07-02T18:54:38-07:00
+- Generated count: 10
+- Skipped count: 0
+- Skipped reasons: none
+- Validation result: passed
+- Commit hash: pending
+- Pushed: pending
+
 ## Missing/Skipped Problem Triage
 
-- Time: 2026-07-02T18:40:47-07:00
-- Missing total: 292
+- Time: 2026-07-02T18:54:42-07:00
+- Missing total: 282
 - AMC10 missing total: 91
-- AMC12 missing total: 201
-- Status counts: ready_to_generate=0, needs_diagram=161, ocr_or_statement_risk=56, solution_high_risk=75, needs_answer_verification=0, manual_review=0
+- AMC12 missing total: 191
+- Status counts: ready_to_generate=0, needs_diagram=161, ocr_or_statement_risk=56, solution_high_risk=65, needs_answer_verification=0, manual_review=0
 - Output files: `missing_problem_triage.csv`, `missing_problem_triage.md`
 - Validation result: pending commit
