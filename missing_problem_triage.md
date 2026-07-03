@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-02T20:11:37-07:00
-- Missing total: 255
+- Generated at: 2026-07-02T20:28:41-07:00
+- Missing total: 250
 - AMC10 missing total: 91
-- AMC12 missing total: 164
+- AMC12 missing total: 159
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 38 |
+| `solution_high_risk` | 33 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 37 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 32 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -109,7 +109,6 @@
 - `2011 AMC 12A Problem 24` [solution_high_risk]: 2011 AMC 12A Problem 24: skipped because the quadrilateral incircle maximum needs a careful geometry derivation.
 - `2011 AMC 12A Problem 25` [solution_high_risk]: 2011 AMC 12A Problem 25: skipped because the orthocenter/incenter/circumcenter area maximization is high-risk without a full derivation.
 - `2011 AMC 12B Problem 17` [ocr_or_statement_risk]: 2011 AMC 12B Problem 17: skipped because the iterated logarithm/function statement is OCR-damaged.
-- `2011 AMC 12B Problem 20` [solution_high_risk]: 2011 AMC 12B Problem 20: skipped because the circumcircle intersection geometry is high-risk without a dedicated derivation.
 - `2011 AMC 12B Problem 25` [ocr_or_statement_risk]: 2011 AMC 12B Problem 25: skipped because the nearest-integer probability statement is OCR-damaged.
 - `2012 AMC 12A Problem 20` [ocr_or_statement_risk]: 2012 AMC 12A Problem 20: skipped because the polynomial statement is truncated in the local CSV.
 - `2012 AMC 12A Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2012 AMC 12A Problem 21: skipped because the system of equations is OCR-damaged.
@@ -118,7 +117,6 @@
 - `2012 AMC 12A Problem 25` [ocr_or_statement_risk]: 2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged.
 - `2012 AMC 12B Problem 20` [solution_high_risk]: 2012 AMC 12B Problem 20: skipped because the trapezoid area sum has a complex multi-case geometry derivation.
 - `2012 AMC 12B Problem 21` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
-- `2012 AMC 12B Problem 24` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
 - `2012 AMC 12B Problem 25` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
 - `2013 AMC 12A Problem 22` [ocr_or_statement_risk]: 2013 AMC 12A Problem 22: OCR omits base condition and probability formatting
 - `2013 AMC 12A Problem 23` [ocr_or_statement_risk]: 2013 AMC 12A Problem 23: rotation swept-area geometry with OCR ambiguity
@@ -137,11 +135,9 @@
 - `2014 AMC 12B Problem 6` [ocr_or_statement_risk]: 2014 AMC 12B Problem 6: OCR statement is truncated
 - `2014 AMC 12B Problem 24` [solution_high_risk]: 2014 AMC 12B Problem 24: cyclic pentagon diagonal sum high risk
 - `2014 AMC 12B Problem 25` [ocr_or_statement_risk]: 2014 AMC 12B Problem 25: trigonometric equation with OCR ambiguity
-- `2015 AMC 12A Problem 21` [solution_high_risk]: Skipped reasons: 2015 AMC 12A Problem 21: ellipse/foci circle-intersection interval high risk
 - `2015 AMC 12A Problem 24` [ocr_or_statement_risk]: 2015 AMC 12A Problem 24: rational-number probability with OCR fraction ambiguity
 - `2015 AMC 12A Problem 25` [solution_high_risk]: 2015 AMC 12A Problem 25: layered tangent-circle construction high risk
-- `2015 AMC 12B Problem 19` [solution_high_risk]: Skipped reasons: 2015 AMC 12B Problem 19: circle condition on constructed squares high-risk geometry
-- `2015 AMC 12B Problem 24` [solution_high_risk]: 2015 AMC 12B Problem 24: four-circle radical-axis geometry high risk
+- `2015 AMC 12B Problem 19` [solution_high_risk]: Skipped reasons: 2015 AMC 12B Problem 19: circle condition on constructed squares high-risk geometry | Skipped reasons: 2015 AMC 12B Problem 19: skipped because the local CSV statement does not match the AoPS statement. | 2015 AMC 12B Problem 19: skipped because the local CSV statement does not match the AoPS statement.
 - `2016 AMC 12A Problem 13` [ocr_or_statement_risk]: Skipped reasons: 2016 AMC 12A Problem 13: OCR text is unreliable for the probability threshold
 - `2016 AMC 12A Problem 15` [ocr_or_statement_risk]: 2016 AMC 12A Problem 15: tangent-circle geometry choices/OCR are unclear
 - `2016 AMC 12A Problem 25` [ocr_or_statement_risk]: Skipped reasons: 2016 AMC 12A Problem 25: long blackboard-square process has high derivation/OCR risk
@@ -158,7 +154,6 @@
 - `2019 AMC 12A Problem 25` [solution_high_risk]: 2019 AMC 12A Problem 25: iterative altitude geometry requires high-risk derivation
 - `2019 AMC 12B Problem 25` [solution_high_risk]: Skipped reasons: 2019 AMC 12B Problem 25: centroid/equilateral quadrilateral maximum problem is high-risk without a longer geometry derivation
 - `2020 AMC 12A Problem 13` [ocr_or_statement_risk]: Skipped reasons: 2020 AMC 12A Problem 13: nested radical/root expression is OCR-damaged
-- `2020 AMC 12A Problem 24` [solution_high_risk]: Skipped reasons: 2020 AMC 12A Problem 24: equilateral-triangle distance condition requires a longer geometry derivation
 - `2020 AMC 12B Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2020 AMC 12B Problem 21: floor/square-root equation is OCR-damaged
 - `2020 AMC 12B Problem 22` [ocr_or_statement_risk]: 2020 AMC 12B Problem 22: exponential expression is OCR-damaged
 - `2021 Spring AMC 12A Problem 24` [solution_high_risk]: 2021 Spring AMC 12A Problem 24: semicircle/circle chord geometry requires a longer derivation
@@ -172,6 +167,11 @@
 - `2021 Fall AMC 12B Problem 11` [solution_high_risk]: Skipped reasons: 2021 Fall AMC 12B Problem 11: triangle/trapezoid geometry requires a longer coordinate derivation
 - `2021 Fall AMC 12B Problem 13` [solution_high_risk]: 2021 Fall AMC 12B Problem 13: trigonometric equation count is high-risk in current pass
 - `2021 Fall AMC 12B Problem 14` [solution_high_risk]: 2021 Fall AMC 12B Problem 14: 3D rectangle pyramid volume problem requires a longer derivation
+- `2021 Fall AMC 12B Problem 18` [solution_high_risk]: 2021 Fall AMC 12B Problem 18: complex-number constraint requires a longer derivation
+- `2021 Fall AMC 12B Problem 19` [solution_high_risk]: 2021 Fall AMC 12B Problem 19: custom dice probability system is high-risk in current pass
+- `2021 Fall AMC 12B Problem 21` [solution_high_risk]: Skipped reasons: 2021 Fall AMC 12B Problem 21: exponential equation with irrational exponents is high-risk in current pass
+- `2021 Fall AMC 12B Problem 22` [solution_high_risk]: 2021 Fall AMC 12B Problem 22: impartial brick game requires Sprague-Grundy style analysis
+- `2022 AMC 12A Problem 25` [solution_high_risk]: 2022 AMC 12A Problem 25: tangent segment integer-radius configuration is high-risk in current pass
 
 ## Suggested Next Step
 
