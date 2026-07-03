@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-02T20:36:29-07:00
-- Missing total: 245
+- Generated at: 2026-07-02T20:45:09-07:00
+- Missing total: 242
 - AMC10 missing total: 91
-- AMC12 missing total: 154
+- AMC12 missing total: 151
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 28 |
+| `solution_high_risk` | 25 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 27 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 24 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -103,7 +103,6 @@
 - `2009 AMC 12A Problem 24` [ocr_or_statement_risk]: Skipped reasons: 2009 AMC 12A Problem 24: skipped for separate review because the tower/log notation is OCR-fragile.
 - `2009 AMC 12A Problem 25` [ocr_or_statement_risk]: 2009 AMC 12A Problem 25: skipped for separate review because the tangent-recursion notation is OCR-fragile.
 - `2011 AMC 12A Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2011 AMC 12A Problem 21: skipped because the recursive function definition is OCR-damaged.
-- `2011 AMC 12A Problem 22` [solution_high_risk]: 2011 AMC 12A Problem 22: skipped because the n-ray square partition geometry needs a dedicated derivation.
 - `2011 AMC 12A Problem 23` [ocr_or_statement_risk]: 2011 AMC 12A Problem 23: skipped because the complex rational-function formula is OCR-damaged.
 - `2011 AMC 12A Problem 24` [solution_high_risk]: 2011 AMC 12A Problem 24: skipped because the quadrilateral incircle maximum needs a careful geometry derivation.
 - `2011 AMC 12A Problem 25` [solution_high_risk]: 2011 AMC 12A Problem 25: skipped because the orthocenter/incenter/circumcenter area maximization is high-risk without a full derivation.
@@ -131,7 +130,6 @@
 - `2013 AMC 12B Problem 25` [ocr_or_statement_risk]: 2013 AMC 12B Problem 25: polynomial with Gaussian-integer roots high risk
 - `2014 AMC 12A Problem 18` [ocr_or_statement_risk]: 2014 AMC 12A Problem 18: nested logarithm domain with OCR base ambiguity
 - `2014 AMC 12B Problem 6` [ocr_or_statement_risk]: 2014 AMC 12B Problem 6: OCR statement is truncated
-- `2014 AMC 12B Problem 24` [solution_high_risk]: 2014 AMC 12B Problem 24: cyclic pentagon diagonal sum high risk
 - `2014 AMC 12B Problem 25` [ocr_or_statement_risk]: 2014 AMC 12B Problem 25: trigonometric equation with OCR ambiguity
 - `2015 AMC 12A Problem 24` [ocr_or_statement_risk]: 2015 AMC 12A Problem 24: rational-number probability with OCR fraction ambiguity
 - `2015 AMC 12A Problem 25` [solution_high_risk]: 2015 AMC 12A Problem 25: layered tangent-circle construction high risk
@@ -168,10 +166,12 @@
 - `2021 Fall AMC 12B Problem 22` [solution_high_risk]: 2021 Fall AMC 12B Problem 22: impartial brick game requires Sprague-Grundy style analysis
 - `2022 AMC 12A Problem 25` [solution_high_risk]: 2022 AMC 12A Problem 25: tangent segment integer-radius configuration is high-risk in current pass
 - `2023 AMC 12B Problem 2` [ocr_or_statement_risk]: Skipped reasons: 2023 AMC 12B Problem 2: OCR statement is truncated and missing the actual question
-- `2023 AMC 12B Problem 25` [solution_high_risk]: 2023 AMC 12B Problem 25: folded regular pentagon area depends on a delicate geometric construction
 - `2024 AMC 12A Problem 19` [ocr_or_statement_risk]: 2024 AMC 12A Problem 19: cyclic quadrilateral diagonal geometry is high-risk in current pass
 - `2024 AMC 12A Problem 21` [ocr_or_statement_risk]: statement appears incomplete, lacks choices, or has OCR-risk markers
 - `2024 AMC 12A Problem 22` [ocr_or_statement_risk]: statement appears incomplete, lacks choices, or has OCR-risk markers
+- `2024 AMC 12A Problem 23` [ocr_or_statement_risk]: statement appears incomplete, lacks choices, or has OCR-risk markers
+- `2024 AMC 12A Problem 24` [ocr_or_statement_risk]: statement appears incomplete, lacks choices, or has OCR-risk markers
+- `2024 AMC 12A Problem 25` [ocr_or_statement_risk]: statement appears incomplete, lacks choices, or has OCR-risk markers
 
 ## Suggested Next Step
 
