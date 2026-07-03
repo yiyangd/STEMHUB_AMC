@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-02T18:54:42-07:00
-- Missing total: 282
+- Generated at: 2026-07-02T19:23:27-07:00
+- Missing total: 276
 - AMC10 missing total: 91
-- AMC12 missing total: 191
+- AMC12 missing total: 185
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 65 |
+| `solution_high_risk` | 59 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 64 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 58 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -158,7 +158,6 @@
 - `2016 AMC 12B Problem 25` [ocr_or_statement_risk]: 2016 AMC 12B Problem 25: recurrence formula is OCR-damaged
 - `2017 AMC 12A Problem 25` [ocr_or_statement_risk]: 2017 AMC 12A Problem 25: complex-product probability statement is OCR-damaged
 - `2017 AMC 12B Problem 17` [ocr_or_statement_risk]: 2017 AMC 12B Problem 17: local CSV statement is truncated
-- `2017 AMC 12B Problem 25` [solution_high_risk]: 2017 AMC 12B Problem 25: tournament subset-average combinatorics requires a long proof
 - `2018 AMC 12A Problem 17` [ocr_or_statement_risk]: 2018 AMC 12A Problem 17: OCR ambiguity in square-to-hypotenuse distance
 - `2018 AMC 12A Problem 20` [solution_high_risk]: 2018 AMC 12A Problem 20: cyclic quadrilateral in isosceles right triangle is geometry high risk
 - `2018 AMC 12A Problem 22` [solution_high_risk]: Skipped reasons: 2018 AMC 12A Problem 22: complex square-root parallelogram area high risk
@@ -172,6 +171,7 @@
 - `2019 AMC 12A Problem 25` [solution_high_risk]: 2019 AMC 12A Problem 25: iterative altitude geometry requires high-risk derivation
 - `2019 AMC 12B Problem 25` [solution_high_risk]: Skipped reasons: 2019 AMC 12B Problem 25: centroid/equilateral quadrilateral maximum problem is high-risk without a longer geometry derivation
 - `2020 AMC 12A Problem 13` [ocr_or_statement_risk]: Skipped reasons: 2020 AMC 12A Problem 13: nested radical/root expression is OCR-damaged
+- `2020 AMC 12A Problem 24` [solution_high_risk]: Skipped reasons: 2020 AMC 12A Problem 24: equilateral-triangle distance condition requires a longer geometry derivation
 
 ## Suggested Next Step
 
