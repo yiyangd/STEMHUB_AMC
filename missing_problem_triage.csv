@@ -113,7 +113,6 @@ AMC 12,2009,B,15,2009 AMC 12B Problem 15,代数,方程与不等式,方程;不等
 AMC 12,2010,A,3,2010 AMC 12A Problem 3,几何,面积与相似,面积;比例,题面包含图形,Skipped reasons: 2010 AMC 12A Problem 3: skipped because the problem depends on the original diagram for the rectangle-square overlap.,needs_diagram
 AMC 12,2010,B,2,2010 AMC 12B Problem 2,几何,面积与相似,面积;比例,题面包含图形,Skipped reasons: 2010 AMC 12B Problem 2: skipped because the L-shaped region depends on the original diagram.,needs_diagram
 AMC 12,2010,B,22,2010 AMC 12B Problem 22,几何,三角形,三角形;角度,,Skipped reasons: 2010 AMC 12B Problem 22: skipped because the cyclic quadrilateral maximum diagonal problem needs a longer geometry derivation to avoid overconfident reasoning.,solution_high_risk
-AMC 12,2010,B,25,2010 AMC 12B Problem 25,数论,质因数与整除,质因数;整除,,2010 AMC 12B Problem 25: skipped because the product of pow(n) requires high-risk prime-exponent bookkeeping.,solution_high_risk
 AMC 12,2011,A,2,2011 AMC 12A Problem 2,概率与统计,组合概率,概率;计数,题面包含图形,Skipped reasons: 2011 AMC 12A Problem 2: skipped because the coin stacking order depends on the original diagram.,needs_diagram
 AMC 12,2011,A,11,2011 AMC 12A Problem 11,几何,圆与曲线,圆;曲线,,Skipped reasons: 2011 AMC 12A Problem 11: skipped because the circle-overlap region depends on the original diagram.,needs_diagram
 AMC 12,2011,A,15,2011 AMC 12A Problem 15,几何,空间几何,空间几何;体积,,2011 AMC 12A Problem 15: skipped because the hemisphere-pyramid tangency needs a careful 3D diagram derivation.,needs_diagram
@@ -147,7 +146,6 @@ AMC 12,2012,B,22,2012 AMC 12B Problem 22,组合数学,图形计数,网格;计数
 AMC 12,2012,B,23,2012 AMC 12B Problem 23,数论,整数构造,整数;构造,,late/problem-specific derivation risk; should be reviewed before unattended generation,solution_high_risk
 AMC 12,2012,B,24,2012 AMC 12B Problem 24,数论,质因数与整除,质因数;整除,,late/problem-specific derivation risk; should be reviewed before unattended generation,solution_high_risk
 AMC 12,2012,B,25,2012 AMC 12B Problem 25,几何,三角形,三角形;角度,,late/problem-specific derivation risk; should be reviewed before unattended generation,solution_high_risk
-AMC 12,2013,A,21,2013 AMC 12A Problem 21,代数,对数与指数,对数;指数,,Skipped reasons: 2013 AMC 12A Problem 21: nested logarithm inequality requires careful bounding,solution_high_risk
 AMC 12,2013,A,22,2013 AMC 12A Problem 22,概率与统计,组合概率,概率;计数,,2013 AMC 12A Problem 22: OCR omits base condition and probability formatting,ocr_or_statement_risk
 AMC 12,2013,A,23,2013 AMC 12A Problem 23,几何,几何变换,变换;对称,,2013 AMC 12A Problem 23: rotation swept-area geometry with OCR ambiguity,ocr_or_statement_risk
 AMC 12,2013,A,24,2013 AMC 12A Problem 24,概率与统计,几何概率,几何概率;面积,,2013 AMC 12A Problem 24: combinatorial geometry probability high risk,solution_high_risk
@@ -164,7 +162,6 @@ AMC 12,2013,B,24,2013 AMC 12B Problem 24,概率与统计,平均数与数据集,�
 AMC 12,2013,B,25,2013 AMC 12B Problem 25,数论,整数构造,整数;构造,,2013 AMC 12B Problem 25: polynomial with Gaussian-integer roots high risk,ocr_or_statement_risk
 AMC 12,2014,A,17,2014 AMC 12A Problem 17,几何,空间几何,空间几何;体积,,Skipped reasons: 2014 AMC 12A Problem 17: 3D sphere-packing geometry high risk,solution_high_risk
 AMC 12,2014,A,18,2014 AMC 12A Problem 18,数论,质因数与整除,质因数;整除,,2014 AMC 12A Problem 18: nested logarithm domain with OCR base ambiguity,ocr_or_statement_risk
-AMC 12,2014,A,19,2014 AMC 12A Problem 19,数论,整数构造,整数;构造,,2014 AMC 12A Problem 19: rational-parameter quadratic integer-root count high risk,solution_high_risk
 AMC 12,2014,A,20,2014 AMC 12A Problem 20,代数,运算与化简,代数;化简,自动分类依据较弱，按代数主线暂归类,2014 AMC 12A Problem 20: geometry minimization/path reflection high risk,solution_high_risk
 AMC 12,2014,A,25,2014 AMC 12A Problem 25,几何,三角形,三角形;角度,,2014 AMC 12A Problem 25: parabola with integer-coordinate count high risk,solution_high_risk
 AMC 12,2014,B,5,2014 AMC 12B Problem 5,几何,三角形,三角形;角度,题面包含图形,2014 AMC 12B Problem 5: diagram-dependent pane layout,needs_diagram
@@ -176,7 +173,6 @@ AMC 12,2014,B,21,2014 AMC 12B Problem 21,几何,三角形,三角形;角度,题�
 AMC 12,2014,B,24,2014 AMC 12B Problem 24,几何,圆与曲线,圆;曲线,,2014 AMC 12B Problem 24: cyclic pentagon diagonal sum high risk,solution_high_risk
 AMC 12,2014,B,25,2014 AMC 12B Problem 25,代数,三角恒等式,三角函数;恒等式,,2014 AMC 12B Problem 25: trigonometric equation with OCR ambiguity,ocr_or_statement_risk
 AMC 12,2015,A,21,2015 AMC 12A Problem 21,几何,圆与曲线,圆;曲线,,Skipped reasons: 2015 AMC 12A Problem 21: ellipse/foci circle-intersection interval high risk,solution_high_risk
-AMC 12,2015,A,23,2015 AMC 12A Problem 23,概率与统计,几何概率,几何概率;面积,,2015 AMC 12A Problem 23: square boundary geometric probability high risk,solution_high_risk
 AMC 12,2015,A,24,2015 AMC 12A Problem 24,概率与统计,组合概率,概率;计数,,2015 AMC 12A Problem 24: rational-number probability with OCR fraction ambiguity,ocr_or_statement_risk
 AMC 12,2015,A,25,2015 AMC 12A Problem 25,几何,坐标几何,坐标;几何,,2015 AMC 12A Problem 25: layered tangent-circle construction high risk,solution_high_risk
 AMC 12,2015,B,19,2015 AMC 12B Problem 19,几何,圆与曲线,圆;曲线,,Skipped reasons: 2015 AMC 12B Problem 19: circle condition on constructed squares high-risk geometry,solution_high_risk
@@ -198,7 +194,6 @@ AMC 12,2017,A,25,2017 AMC 12A Problem 25,概率与统计,独立性,独立事件;
 AMC 12,2017,B,13,2017 AMC 12B Problem 13,代数,运算与化简,代数;化简,题面包含图形；自动分类依据较弱，按代数主线暂归类,Skipped reasons: 2017 AMC 12B Problem 13: disk-coloring figure is required,needs_diagram
 AMC 12,2017,B,17,2017 AMC 12B Problem 17,概率与统计,独立性,独立事件;概率,,2017 AMC 12B Problem 17: local CSV statement is truncated,ocr_or_statement_risk
 AMC 12,2017,B,18,2017 AMC 12B Problem 18,几何,圆与曲线,圆;曲线,,2017 AMC 12B Problem 18: circle geometry setup is diagram-sensitive,needs_diagram
-AMC 12,2017,B,22,2017 AMC 12B Problem 22,概率与统计,组合概率,概率;计数,,Skipped reasons: 2017 AMC 12B Problem 22: four-player coin-transfer probability is high-risk for unattended derivation,solution_high_risk
 AMC 12,2017,B,24,2017 AMC 12B Problem 24,几何,面积与相似,面积;比例,,2017 AMC 12B Problem 24: similar-triangle quadrilateral geometry is diagram-sensitive,needs_diagram
 AMC 12,2017,B,25,2017 AMC 12B Problem 25,概率与统计,平均数与数据集,平均数;数据,,2017 AMC 12B Problem 25: tournament subset-average combinatorics requires a long proof,solution_high_risk
 AMC 12,2018,A,8,2018 AMC 12A Problem 8,几何,面积与相似,面积;比例,题面包含图形,Skipped reasons: 2018 AMC 12A Problem 8: diagram-dependent similar-triangle area problem,needs_diagram

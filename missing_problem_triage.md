@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-02T16:31:57-07:00
-- Missing total: 297
+- Generated at: 2026-07-02T18:40:47-07:00
+- Missing total: 292
 - AMC10 missing total: 91
-- AMC12 missing total: 206
+- AMC12 missing total: 201
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 80 |
+| `solution_high_risk` | 75 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 79 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 74 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -103,7 +103,6 @@
 - `2009 AMC 12A Problem 24` [ocr_or_statement_risk]: Skipped reasons: 2009 AMC 12A Problem 24: skipped for separate review because the tower/log notation is OCR-fragile.
 - `2009 AMC 12A Problem 25` [ocr_or_statement_risk]: 2009 AMC 12A Problem 25: skipped for separate review because the tangent-recursion notation is OCR-fragile.
 - `2010 AMC 12B Problem 22` [solution_high_risk]: Skipped reasons: 2010 AMC 12B Problem 22: skipped because the cyclic quadrilateral maximum diagonal problem needs a longer geometry derivation to avoid overconfident reasoning.
-- `2010 AMC 12B Problem 25` [solution_high_risk]: 2010 AMC 12B Problem 25: skipped because the product of pow(n) requires high-risk prime-exponent bookkeeping.
 - `2011 AMC 12A Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2011 AMC 12A Problem 21: skipped because the recursive function definition is OCR-damaged.
 - `2011 AMC 12A Problem 22` [solution_high_risk]: 2011 AMC 12A Problem 22: skipped because the n-ray square partition geometry needs a dedicated derivation.
 - `2011 AMC 12A Problem 23` [ocr_or_statement_risk]: 2011 AMC 12A Problem 23: skipped because the complex rational-function formula is OCR-damaged.
@@ -128,7 +127,6 @@
 - `2012 AMC 12B Problem 23` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
 - `2012 AMC 12B Problem 24` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
 - `2012 AMC 12B Problem 25` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
-- `2013 AMC 12A Problem 21` [solution_high_risk]: Skipped reasons: 2013 AMC 12A Problem 21: nested logarithm inequality requires careful bounding
 - `2013 AMC 12A Problem 22` [ocr_or_statement_risk]: 2013 AMC 12A Problem 22: OCR omits base condition and probability formatting
 - `2013 AMC 12A Problem 23` [ocr_or_statement_risk]: 2013 AMC 12A Problem 23: rotation swept-area geometry with OCR ambiguity
 - `2013 AMC 12A Problem 24` [solution_high_risk]: 2013 AMC 12A Problem 24: combinatorial geometry probability high risk
@@ -145,14 +143,12 @@
 - `2013 AMC 12B Problem 25` [ocr_or_statement_risk]: 2013 AMC 12B Problem 25: polynomial with Gaussian-integer roots high risk
 - `2014 AMC 12A Problem 17` [solution_high_risk]: Skipped reasons: 2014 AMC 12A Problem 17: 3D sphere-packing geometry high risk
 - `2014 AMC 12A Problem 18` [ocr_or_statement_risk]: 2014 AMC 12A Problem 18: nested logarithm domain with OCR base ambiguity
-- `2014 AMC 12A Problem 19` [solution_high_risk]: 2014 AMC 12A Problem 19: rational-parameter quadratic integer-root count high risk
 - `2014 AMC 12A Problem 20` [solution_high_risk]: 2014 AMC 12A Problem 20: geometry minimization/path reflection high risk
 - `2014 AMC 12A Problem 25` [solution_high_risk]: 2014 AMC 12A Problem 25: parabola with integer-coordinate count high risk
 - `2014 AMC 12B Problem 6` [ocr_or_statement_risk]: 2014 AMC 12B Problem 6: OCR statement is truncated
 - `2014 AMC 12B Problem 24` [solution_high_risk]: 2014 AMC 12B Problem 24: cyclic pentagon diagonal sum high risk
 - `2014 AMC 12B Problem 25` [ocr_or_statement_risk]: 2014 AMC 12B Problem 25: trigonometric equation with OCR ambiguity
 - `2015 AMC 12A Problem 21` [solution_high_risk]: Skipped reasons: 2015 AMC 12A Problem 21: ellipse/foci circle-intersection interval high risk
-- `2015 AMC 12A Problem 23` [solution_high_risk]: 2015 AMC 12A Problem 23: square boundary geometric probability high risk
 - `2015 AMC 12A Problem 24` [ocr_or_statement_risk]: 2015 AMC 12A Problem 24: rational-number probability with OCR fraction ambiguity
 - `2015 AMC 12A Problem 25` [solution_high_risk]: 2015 AMC 12A Problem 25: layered tangent-circle construction high risk
 - `2015 AMC 12B Problem 19` [solution_high_risk]: Skipped reasons: 2015 AMC 12B Problem 19: circle condition on constructed squares high-risk geometry
@@ -166,12 +162,16 @@
 - `2017 AMC 12A Problem 22` [solution_high_risk]: Skipped reasons: 2017 AMC 12A Problem 22: random-walk hitting probability needs a dedicated Markov derivation
 - `2017 AMC 12A Problem 25` [ocr_or_statement_risk]: 2017 AMC 12A Problem 25: complex-product probability statement is OCR-damaged
 - `2017 AMC 12B Problem 17` [ocr_or_statement_risk]: 2017 AMC 12B Problem 17: local CSV statement is truncated
-- `2017 AMC 12B Problem 22` [solution_high_risk]: Skipped reasons: 2017 AMC 12B Problem 22: four-player coin-transfer probability is high-risk for unattended derivation
 - `2017 AMC 12B Problem 25` [solution_high_risk]: 2017 AMC 12B Problem 25: tournament subset-average combinatorics requires a long proof
 - `2018 AMC 12A Problem 17` [ocr_or_statement_risk]: 2018 AMC 12A Problem 17: OCR ambiguity in square-to-hypotenuse distance
 - `2018 AMC 12A Problem 20` [solution_high_risk]: 2018 AMC 12A Problem 20: cyclic quadrilateral in isosceles right triangle is geometry high risk
 - `2018 AMC 12A Problem 22` [solution_high_risk]: Skipped reasons: 2018 AMC 12A Problem 22: complex square-root parallelogram area high risk
 - `2018 AMC 12A Problem 23` [solution_high_risk]: 2018 AMC 12A Problem 23: angle geometry requires a dedicated derivation
+- `2018 AMC 12A Problem 25` [solution_high_risk]: 2018 AMC 12A Problem 25: repeated-digit equation requires long number-theory proof
+- `2018 AMC 12B Problem 14` [ocr_or_statement_risk]: 2018 AMC 12B Problem 14: age wording/OCR leaves implicit assumptions
+- `2018 AMC 12B Problem 16` [solution_high_risk]: 2018 AMC 12B Problem 16: regular-octagon minimum area requires careful radical matching
+- `2019 AMC 12A Problem 18` [solution_high_risk]: 2019 AMC 12A Problem 18: sphere tangent-to-triangle spatial geometry needs a dedicated derivation
+- `2019 AMC 12A Problem 19` [solution_high_risk]: 2019 AMC 12A Problem 19: integer triangle with three cosine constraints is high-risk without extended derivation
 
 ## Suggested Next Step
 
