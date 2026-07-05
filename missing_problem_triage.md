@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-05T13:11:15-07:00
-- Missing total: 238
+- Generated at: 2026-07-05T16:31:37-07:00
+- Missing total: 237
 - AMC10 missing total: 91
-- AMC12 missing total: 147
+- AMC12 missing total: 146
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 21 |
+| `solution_high_risk` | 20 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 20 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 19 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -160,7 +160,6 @@
 - `2021 Fall AMC 12B Problem 19` [solution_high_risk]: 2021 Fall AMC 12B Problem 19: custom dice probability system is high-risk in current pass
 - `2021 Fall AMC 12B Problem 21` [solution_high_risk]: Skipped reasons: 2021 Fall AMC 12B Problem 21: exponential equation with irrational exponents is high-risk in current pass
 - `2021 Fall AMC 12B Problem 22` [solution_high_risk]: 2021 Fall AMC 12B Problem 22: impartial brick game requires Sprague-Grundy style analysis
-- `2022 AMC 12A Problem 25` [solution_high_risk]: 2022 AMC 12A Problem 25: tangent segment integer-radius configuration is high-risk in current pass
 - `2023 AMC 12B Problem 2` [ocr_or_statement_risk]: Skipped reasons: 2023 AMC 12B Problem 2: OCR statement is truncated and missing the actual question
 - `2024 AMC 12A Problem 19` [ocr_or_statement_risk]: 2024 AMC 12A Problem 19: cyclic quadrilateral diagonal geometry is high-risk in current pass
 - `2024 AMC 12A Problem 21` [ocr_or_statement_risk]: statement appears incomplete, lacks choices, or has OCR-risk markers
