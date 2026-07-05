@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-05T12:59:55-07:00
-- Missing total: 240
+- Generated at: 2026-07-05T13:11:15-07:00
+- Missing total: 238
 - AMC10 missing total: 91
-- AMC12 missing total: 149
+- AMC12 missing total: 147
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 23 |
+| `solution_high_risk` | 21 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 22 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 20 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -104,7 +104,6 @@
 - `2009 AMC 12A Problem 25` [ocr_or_statement_risk]: 2009 AMC 12A Problem 25: skipped for separate review because the tangent-recursion notation is OCR-fragile.
 - `2011 AMC 12A Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2011 AMC 12A Problem 21: skipped because the recursive function definition is OCR-damaged.
 - `2011 AMC 12A Problem 23` [ocr_or_statement_risk]: 2011 AMC 12A Problem 23: skipped because the complex rational-function formula is OCR-damaged.
-- `2011 AMC 12A Problem 25` [solution_high_risk]: 2011 AMC 12A Problem 25: skipped because the orthocenter/incenter/circumcenter area maximization is high-risk without a full derivation.
 - `2011 AMC 12B Problem 17` [ocr_or_statement_risk]: 2011 AMC 12B Problem 17: skipped because the iterated logarithm/function statement is OCR-damaged.
 - `2011 AMC 12B Problem 25` [ocr_or_statement_risk]: 2011 AMC 12B Problem 25: skipped because the nearest-integer probability statement is OCR-damaged.
 - `2012 AMC 12A Problem 20` [ocr_or_statement_risk]: 2012 AMC 12A Problem 20: skipped because the polynomial statement is truncated in the local CSV.
@@ -144,7 +143,6 @@
 - `2019 AMC 12A Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2019 AMC 12A Problem 21: source text is severely OCR-truncated
 - `2019 AMC 12A Problem 23` [ocr_or_statement_risk]: 2019 AMC 12A Problem 23: operation definitions are OCR-ambiguous
 - `2019 AMC 12A Problem 25` [solution_high_risk]: 2019 AMC 12A Problem 25: iterative altitude geometry requires high-risk derivation
-- `2019 AMC 12B Problem 25` [solution_high_risk]: Skipped reasons: 2019 AMC 12B Problem 25: centroid/equilateral quadrilateral maximum problem is high-risk without a longer geometry derivation
 - `2020 AMC 12A Problem 13` [ocr_or_statement_risk]: Skipped reasons: 2020 AMC 12A Problem 13: nested radical/root expression is OCR-damaged
 - `2020 AMC 12B Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2020 AMC 12B Problem 21: floor/square-root equation is OCR-damaged
 - `2020 AMC 12B Problem 22` [ocr_or_statement_risk]: 2020 AMC 12B Problem 22: exponential expression is OCR-damaged
