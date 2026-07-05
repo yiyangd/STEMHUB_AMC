@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-02T20:45:09-07:00
-- Missing total: 242
+- Generated at: 2026-07-05T12:59:55-07:00
+- Missing total: 240
 - AMC10 missing total: 91
-- AMC12 missing total: 151
+- AMC12 missing total: 149
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 25 |
+| `solution_high_risk` | 23 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 24 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 22 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -104,7 +104,6 @@
 - `2009 AMC 12A Problem 25` [ocr_or_statement_risk]: 2009 AMC 12A Problem 25: skipped for separate review because the tangent-recursion notation is OCR-fragile.
 - `2011 AMC 12A Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2011 AMC 12A Problem 21: skipped because the recursive function definition is OCR-damaged.
 - `2011 AMC 12A Problem 23` [ocr_or_statement_risk]: 2011 AMC 12A Problem 23: skipped because the complex rational-function formula is OCR-damaged.
-- `2011 AMC 12A Problem 24` [solution_high_risk]: 2011 AMC 12A Problem 24: skipped because the quadrilateral incircle maximum needs a careful geometry derivation.
 - `2011 AMC 12A Problem 25` [solution_high_risk]: 2011 AMC 12A Problem 25: skipped because the orthocenter/incenter/circumcenter area maximization is high-risk without a full derivation.
 - `2011 AMC 12B Problem 17` [ocr_or_statement_risk]: 2011 AMC 12B Problem 17: skipped because the iterated logarithm/function statement is OCR-damaged.
 - `2011 AMC 12B Problem 25` [ocr_or_statement_risk]: 2011 AMC 12B Problem 25: skipped because the nearest-integer probability statement is OCR-damaged.
@@ -132,7 +131,6 @@
 - `2014 AMC 12B Problem 6` [ocr_or_statement_risk]: 2014 AMC 12B Problem 6: OCR statement is truncated
 - `2014 AMC 12B Problem 25` [ocr_or_statement_risk]: 2014 AMC 12B Problem 25: trigonometric equation with OCR ambiguity
 - `2015 AMC 12A Problem 24` [ocr_or_statement_risk]: 2015 AMC 12A Problem 24: rational-number probability with OCR fraction ambiguity
-- `2015 AMC 12A Problem 25` [solution_high_risk]: 2015 AMC 12A Problem 25: layered tangent-circle construction high risk
 - `2015 AMC 12B Problem 19` [solution_high_risk]: Skipped reasons: 2015 AMC 12B Problem 19: circle condition on constructed squares high-risk geometry | Skipped reasons: 2015 AMC 12B Problem 19: skipped because the local CSV statement does not match the AoPS statement.
 - `2016 AMC 12A Problem 13` [ocr_or_statement_risk]: Skipped reasons: 2016 AMC 12A Problem 13: OCR text is unreliable for the probability threshold
 - `2016 AMC 12A Problem 15` [ocr_or_statement_risk]: 2016 AMC 12A Problem 15: tangent-circle geometry choices/OCR are unclear
@@ -172,6 +170,7 @@
 - `2024 AMC 12A Problem 23` [ocr_or_statement_risk]: statement appears incomplete, lacks choices, or has OCR-risk markers
 - `2024 AMC 12A Problem 24` [ocr_or_statement_risk]: statement appears incomplete, lacks choices, or has OCR-risk markers
 - `2024 AMC 12A Problem 25` [ocr_or_statement_risk]: statement appears incomplete, lacks choices, or has OCR-risk markers
+- `2024 AMC 12B Problem 24` [ocr_or_statement_risk]: Skipped reasons: 2024 AMC 12B Problem 24: altitude/inradius finite enumeration is high-risk in this pass
 
 ## Suggested Next Step
 
