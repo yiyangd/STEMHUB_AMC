@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-05T17:10:47-07:00
-- Missing total: 235
+- Generated at: 2026-07-05T17:17:47-07:00
+- Missing total: 234
 - AMC10 missing total: 91
-- AMC12 missing total: 144
+- AMC12 missing total: 143
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 18 |
+| `solution_high_risk` | 17 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 17 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 16 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -140,7 +140,6 @@
 - `2018 AMC 12B Problem 14` [ocr_or_statement_risk]: 2018 AMC 12B Problem 14: age wording/OCR leaves implicit assumptions
 - `2019 AMC 12A Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2019 AMC 12A Problem 21: source text is severely OCR-truncated
 - `2019 AMC 12A Problem 23` [ocr_or_statement_risk]: 2019 AMC 12A Problem 23: operation definitions are OCR-ambiguous
-- `2019 AMC 12A Problem 25` [solution_high_risk]: 2019 AMC 12A Problem 25: iterative altitude geometry requires high-risk derivation
 - `2020 AMC 12A Problem 13` [ocr_or_statement_risk]: Skipped reasons: 2020 AMC 12A Problem 13: nested radical/root expression is OCR-damaged
 - `2020 AMC 12B Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2020 AMC 12B Problem 21: floor/square-root equation is OCR-damaged
 - `2020 AMC 12B Problem 22` [ocr_or_statement_risk]: 2020 AMC 12B Problem 22: exponential expression is OCR-damaged

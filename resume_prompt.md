@@ -1,8 +1,8 @@
 请继续 STEMHUB AMC problem teaching pages 补完阶段。
 
 当前状态：missing/skipped problem triage 已生成并通过本地验证。
-- Missing total: 235
-- Status counts: ready_to_generate=0, needs_diagram=161, ocr_or_statement_risk=56, solution_high_risk=18, needs_answer_verification=0, manual_review=0
+- Missing total: 234
+- Status counts: ready_to_generate=0, needs_diagram=161, ocr_or_statement_risk=56, solution_high_risk=17, needs_answer_verification=0, manual_review=0
 
 下一步建议：优先从 `missing_problem_triage.md` 的 ready_to_generate 列表中挑 5-10 道题生成详情页；diagram/OCR/high-risk 题先不要硬编。
 

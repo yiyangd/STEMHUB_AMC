@@ -183,7 +183,6 @@ AMC 12,2019,A,16,2019 AMC 12A Problem 16,概率与统计,几何概率,几何概�
 AMC 12,2019,A,21,2019 AMC 12A Problem 21,代数,运算与化简,代数;化简,自动分类依据较弱，按代数主线暂归类,Skipped reasons: 2019 AMC 12A Problem 21: source text is severely OCR-truncated,ocr_or_statement_risk
 AMC 12,2019,A,22,2019 AMC 12A Problem 22,几何,圆与曲线,圆;曲线,,2019 AMC 12A Problem 22: circle/triangle geometry statement is OCR-damaged and diagram-sensitive,needs_diagram
 AMC 12,2019,A,23,2019 AMC 12A Problem 23,数论,整数构造,整数;构造,,2019 AMC 12A Problem 23: operation definitions are OCR-ambiguous,ocr_or_statement_risk
-AMC 12,2019,A,25,2019 AMC 12A Problem 25,几何,三角形,三角形;角度,,2019 AMC 12A Problem 25: iterative altitude geometry requires high-risk derivation,solution_high_risk
 AMC 12,2019,B,10,2019 AMC 12B Problem 10,代数,运算与化简,代数;化简,题面包含图形；自动分类依据较弱，按代数主线暂归类,Skipped reasons: 2019 AMC 12B Problem 10: route-counting map problem depends on the missing graph,needs_diagram
 AMC 12,2019,B,12,2019 AMC 12B Problem 12,几何,面积与相似,面积;比例,题面包含图形,Skipped reasons: 2019 AMC 12B Problem 12: triangle construction depends on the missing diagram,needs_diagram
 AMC 12,2019,B,15,2019 AMC 12B Problem 15,几何,圆与曲线,圆;曲线,题面包含图形,2019 AMC 12B Problem 15: shaded circle/semicircle area problem depends on the missing diagram,needs_diagram
