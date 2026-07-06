@@ -126,7 +126,6 @@ AMC 12,2012,A,14,2012 AMC 12A Problem 14,几何,圆与曲线,圆;曲线,题面�
 AMC 12,2012,A,16,2012 AMC 12A Problem 16,几何,圆与曲线,圆;曲线,,2012 AMC 12A Problem 16: skipped because the two-circle geometry needs a dedicated diagram-sensitive derivation.,needs_diagram
 AMC 12,2012,A,20,2012 AMC 12A Problem 20,代数,多项式与根,多项式;根,,2012 AMC 12A Problem 20: skipped because the polynomial statement is truncated in the local CSV.,ocr_or_statement_risk
 AMC 12,2012,A,21,2012 AMC 12A Problem 21,数论,整数构造,整数;构造,,Skipped reasons: 2012 AMC 12A Problem 21: skipped because the system of equations is OCR-damaged.,ocr_or_statement_risk
-AMC 12,2012,A,22,2012 AMC 12A Problem 22,几何,空间几何,空间几何;体积,,2012 AMC 12A Problem 22: skipped because the cube-plane intersection problem needs a dedicated spatial derivation.,solution_high_risk
 AMC 12,2012,A,24,2012 AMC 12A Problem 24,数论,进制与数字,数字;进制,,2012 AMC 12A Problem 24: skipped because the recursively defined decimal sequence is OCR-damaged.,ocr_or_statement_risk
 AMC 12,2012,A,25,2012 AMC 12A Problem 25,数论,整数构造,整数;构造,,2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged.,ocr_or_statement_risk
 AMC 12,2012,B,21,2012 AMC 12B Problem 21,几何,三角形,三角形;角度,,late/problem-specific derivation risk; should be reviewed before unattended generation,solution_high_risk

@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-05T17:00:22-07:00
-- Missing total: 236
+- Generated at: 2026-07-05T17:10:47-07:00
+- Missing total: 235
 - AMC10 missing total: 91
-- AMC12 missing total: 145
+- AMC12 missing total: 144
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 19 |
+| `solution_high_risk` | 18 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 18 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 17 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -108,7 +108,6 @@
 - `2011 AMC 12B Problem 25` [ocr_or_statement_risk]: 2011 AMC 12B Problem 25: skipped because the nearest-integer probability statement is OCR-damaged.
 - `2012 AMC 12A Problem 20` [ocr_or_statement_risk]: 2012 AMC 12A Problem 20: skipped because the polynomial statement is truncated in the local CSV.
 - `2012 AMC 12A Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2012 AMC 12A Problem 21: skipped because the system of equations is OCR-damaged.
-- `2012 AMC 12A Problem 22` [solution_high_risk]: 2012 AMC 12A Problem 22: skipped because the cube-plane intersection problem needs a dedicated spatial derivation.
 - `2012 AMC 12A Problem 24` [ocr_or_statement_risk]: 2012 AMC 12A Problem 24: skipped because the recursively defined decimal sequence is OCR-damaged.
 - `2012 AMC 12A Problem 25` [ocr_or_statement_risk]: 2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged.
 - `2012 AMC 12B Problem 21` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
