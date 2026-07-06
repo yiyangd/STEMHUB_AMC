@@ -131,7 +131,6 @@ AMC 12,2012,A,24,2012 AMC 12A Problem 24,数论,进制与数字,数字;进制,,2
 AMC 12,2012,A,25,2012 AMC 12A Problem 25,数论,整数构造,整数;构造,,2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged.,ocr_or_statement_risk
 AMC 12,2012,B,21,2012 AMC 12B Problem 21,几何,三角形,三角形;角度,,late/problem-specific derivation risk; should be reviewed before unattended generation,solution_high_risk
 AMC 12,2012,B,22,2012 AMC 12B Problem 22,组合数学,图形计数,网格;计数,题面包含图形,statement/notes indicate diagram dependence,needs_diagram
-AMC 12,2012,B,25,2012 AMC 12B Problem 25,几何,三角形,三角形;角度,,late/problem-specific derivation risk; should be reviewed before unattended generation,solution_high_risk
 AMC 12,2013,A,22,2013 AMC 12A Problem 22,概率与统计,组合概率,概率;计数,,2013 AMC 12A Problem 22: OCR omits base condition and probability formatting,ocr_or_statement_risk
 AMC 12,2013,A,23,2013 AMC 12A Problem 23,几何,几何变换,变换;对称,,2013 AMC 12A Problem 23: rotation swept-area geometry with OCR ambiguity,ocr_or_statement_risk
 AMC 12,2013,A,25,2013 AMC 12A Problem 25,数论,整数构造,整数;构造,,2013 AMC 12A Problem 25: complex-number lattice count high risk,ocr_or_statement_risk

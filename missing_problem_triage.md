@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-05T16:31:37-07:00
-- Missing total: 237
+- Generated at: 2026-07-05T17:00:22-07:00
+- Missing total: 236
 - AMC10 missing total: 91
-- AMC12 missing total: 146
+- AMC12 missing total: 145
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 20 |
+| `solution_high_risk` | 19 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 19 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 18 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -112,7 +112,6 @@
 - `2012 AMC 12A Problem 24` [ocr_or_statement_risk]: 2012 AMC 12A Problem 24: skipped because the recursively defined decimal sequence is OCR-damaged.
 - `2012 AMC 12A Problem 25` [ocr_or_statement_risk]: 2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged.
 - `2012 AMC 12B Problem 21` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
-- `2012 AMC 12B Problem 25` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
 - `2013 AMC 12A Problem 22` [ocr_or_statement_risk]: 2013 AMC 12A Problem 22: OCR omits base condition and probability formatting
 - `2013 AMC 12A Problem 23` [ocr_or_statement_risk]: 2013 AMC 12A Problem 23: rotation swept-area geometry with OCR ambiguity
 - `2013 AMC 12A Problem 25` [ocr_or_statement_risk]: 2013 AMC 12A Problem 25: complex-number lattice count high risk
