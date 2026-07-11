@@ -128,7 +128,6 @@ AMC 12,2012,A,20,2012 AMC 12A Problem 20,代数,多项式与根,多项式;根,,2
 AMC 12,2012,A,21,2012 AMC 12A Problem 21,数论,整数构造,整数;构造,,Skipped reasons: 2012 AMC 12A Problem 21: skipped because the system of equations is OCR-damaged.,ocr_or_statement_risk
 AMC 12,2012,A,24,2012 AMC 12A Problem 24,数论,进制与数字,数字;进制,,2012 AMC 12A Problem 24: skipped because the recursively defined decimal sequence is OCR-damaged.,ocr_or_statement_risk
 AMC 12,2012,A,25,2012 AMC 12A Problem 25,数论,整数构造,整数;构造,,2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged.,ocr_or_statement_risk
-AMC 12,2012,B,21,2012 AMC 12B Problem 21,几何,三角形,三角形;角度,,late/problem-specific derivation risk; should be reviewed before unattended generation,solution_high_risk
 AMC 12,2012,B,22,2012 AMC 12B Problem 22,组合数学,图形计数,网格;计数,题面包含图形,statement/notes indicate diagram dependence,needs_diagram
 AMC 12,2013,A,22,2013 AMC 12A Problem 22,概率与统计,组合概率,概率;计数,,2013 AMC 12A Problem 22: OCR omits base condition and probability formatting,ocr_or_statement_risk
 AMC 12,2013,A,23,2013 AMC 12A Problem 23,几何,几何变换,变换;对称,,2013 AMC 12A Problem 23: rotation swept-area geometry with OCR ambiguity,ocr_or_statement_risk
@@ -152,7 +151,7 @@ AMC 12,2014,B,19,2014 AMC 12B Problem 19,几何,空间几何,空间几何;体积
 AMC 12,2014,B,21,2014 AMC 12B Problem 21,几何,三角形,三角形;角度,题面包含图形,2014 AMC 12B Problem 21: diagram-dependent square/rectangle geometry,needs_diagram
 AMC 12,2014,B,25,2014 AMC 12B Problem 25,代数,三角恒等式,三角函数;恒等式,,2014 AMC 12B Problem 25: trigonometric equation with OCR ambiguity,ocr_or_statement_risk
 AMC 12,2015,A,24,2015 AMC 12A Problem 24,概率与统计,组合概率,概率;计数,,2015 AMC 12A Problem 24: rational-number probability with OCR fraction ambiguity,ocr_or_statement_risk
-AMC 12,2015,B,19,2015 AMC 12B Problem 19,几何,圆与曲线,圆;曲线,,Skipped reasons: 2015 AMC 12B Problem 19: circle condition on constructed squares high-risk geometry | Skipped reasons: 2015 AMC 12B Problem 19: skipped because the local CSV statement does not match the AoPS statement.,solution_high_risk
+AMC 12,2015,B,19,2015 AMC 12B Problem 19,几何,圆与曲线,圆;曲线,,Skipped reasons: 2015 AMC 12B Problem 19: circle condition on constructed squares high-risk geometry | Skipped reasons: 2015 AMC 12B Problem 19: skipped because the local CSV statement does not match the AoPS statement. | Skipped reasons: 2015 AMC 12B Problem 19: skipped because the local CSV statement still does not match the AoPS statement. | 2015 AMC 12B Problem 19: skipped because the local CSV statement still does not match the AoPS statement.,solution_high_risk
 AMC 12,2016,A,8,2016 AMC 12A Problem 8,几何,面积与相似,面积;比例,,Skipped reasons: 2016 AMC 12A Problem 8: shaded-region diagram missing,needs_diagram
 AMC 12,2016,A,9,2016 AMC 12A Problem 9,概率与统计,几何概率,几何概率;面积,题面包含图形,2016 AMC 12A Problem 9: diagram-dependent square configuration,needs_diagram
 AMC 12,2016,A,13,2016 AMC 12A Problem 13,概率与统计,平均数与数据集,平均数;数据,,Skipped reasons: 2016 AMC 12A Problem 13: OCR text is unreliable for the probability threshold,ocr_or_statement_risk

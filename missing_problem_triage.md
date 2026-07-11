@@ -1,9 +1,9 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-05T17:17:47-07:00
-- Missing total: 234
+- Generated at: 2026-07-11T01:20:44-07:00
+- Missing total: 233
 - AMC10 missing total: 91
-- AMC12 missing total: 143
+- AMC12 missing total: 142
 
 ## Status Counts
 
@@ -12,7 +12,7 @@
 | `ready_to_generate` | 0 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 17 |
+| `solution_high_risk` | 16 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,7 +21,7 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 16 | 0 | 0 |
+| AMC 12 | 0 | 78 | 49 | 15 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
@@ -110,7 +110,6 @@
 - `2012 AMC 12A Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2012 AMC 12A Problem 21: skipped because the system of equations is OCR-damaged.
 - `2012 AMC 12A Problem 24` [ocr_or_statement_risk]: 2012 AMC 12A Problem 24: skipped because the recursively defined decimal sequence is OCR-damaged.
 - `2012 AMC 12A Problem 25` [ocr_or_statement_risk]: 2012 AMC 12A Problem 25: skipped because the fractional-part functional equation is OCR-damaged.
-- `2012 AMC 12B Problem 21` [solution_high_risk]: late/problem-specific derivation risk; should be reviewed before unattended generation
 - `2013 AMC 12A Problem 22` [ocr_or_statement_risk]: 2013 AMC 12A Problem 22: OCR omits base condition and probability formatting
 - `2013 AMC 12A Problem 23` [ocr_or_statement_risk]: 2013 AMC 12A Problem 23: rotation swept-area geometry with OCR ambiguity
 - `2013 AMC 12A Problem 25` [ocr_or_statement_risk]: 2013 AMC 12A Problem 25: complex-number lattice count high risk
@@ -128,7 +127,7 @@
 - `2014 AMC 12B Problem 6` [ocr_or_statement_risk]: 2014 AMC 12B Problem 6: OCR statement is truncated
 - `2014 AMC 12B Problem 25` [ocr_or_statement_risk]: 2014 AMC 12B Problem 25: trigonometric equation with OCR ambiguity
 - `2015 AMC 12A Problem 24` [ocr_or_statement_risk]: 2015 AMC 12A Problem 24: rational-number probability with OCR fraction ambiguity
-- `2015 AMC 12B Problem 19` [solution_high_risk]: Skipped reasons: 2015 AMC 12B Problem 19: circle condition on constructed squares high-risk geometry | Skipped reasons: 2015 AMC 12B Problem 19: skipped because the local CSV statement does not match the AoPS statement.
+- `2015 AMC 12B Problem 19` [solution_high_risk]: Skipped reasons: 2015 AMC 12B Problem 19: circle condition on constructed squares high-risk geometry | Skipped reasons: 2015 AMC 12B Problem 19: skipped because the local CSV statement does not match the AoPS statement. | Skipped reasons: 2015 AMC 12B Problem 19: skipped because the local CSV statement still does not match the AoPS statement. | 2015 AMC 12B Problem 19: skipped because the local CSV statement still does not match the AoPS statement.
 - `2016 AMC 12A Problem 13` [ocr_or_statement_risk]: Skipped reasons: 2016 AMC 12A Problem 13: OCR text is unreliable for the probability threshold
 - `2016 AMC 12A Problem 15` [ocr_or_statement_risk]: 2016 AMC 12A Problem 15: tangent-circle geometry choices/OCR are unclear
 - `2016 AMC 12A Problem 25` [ocr_or_statement_risk]: Skipped reasons: 2016 AMC 12A Problem 25: long blackboard-square process has high derivation/OCR risk
