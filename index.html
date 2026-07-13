@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>STEMHUB AMC 题库</title>
+  <title data-i18n-title="home.title">STEMHUB AMC 题库</title>
   <style>
     :root { color-scheme: light; --ink:#152235; --muted:#607086; --line:#dce3ea; --panel:#ffffff; --bg:#f5f2ed; --navy:#173650; --blue:#226aa5; --green:#527d4d; }
     * { box-sizing:border-box; }
@@ -43,50 +43,55 @@
     footer { color:var(--muted); font-size:14px; margin-top:28px; }
     @media (max-width:760px) { .site-nav { align-items:flex-start; flex-direction:column; } .site-links { width:100%; } .site-links a { flex:1 1 auto; justify-content:center; } .overview,.grid,.feature-list { grid-template-columns:1fr; } .card { min-height:190px; } }
   </style>
+  <!-- STEMHUB I18N ASSETS -->
+  <link rel="stylesheet" href="assets/language-switcher.css" data-stemhub-i18n-assets>
+  <script defer src="assets/i18n-dictionary.js" data-stemhub-i18n-assets></script>
+  <script defer src="assets/language-switcher.js" data-stemhub-i18n-assets></script>
+  <!-- /STEMHUB I18N ASSETS -->
 </head>
 <body>
-  <nav class="site-nav" aria-label="全站导航">
+  <nav class="site-nav" aria-label="全站导航" data-i18n-aria-label="nav.site">
     <a class="site-brand active" href="./" aria-current="page">STEMHUB AMC</a>
     <div class="site-links">
-      <a class="active" href="./" aria-current="page">首页</a>
+      <a class="active" href="./" aria-current="page" data-i18n="nav.home">首页</a>
       <a href="amc10/">AMC 10</a>
       <a href="amc12/">AMC 12</a>
-      <a href="#downloads">数据下载</a>
+      <a href="#downloads" data-i18n="nav.downloads">数据下载</a>
     </div>
   </nav>
   <header>
-    <h1>STEMHUB AMC 题库</h1>
-    <p class="subtitle">AMC 10 / AMC 12 分类检索、A/B 对比、二级题型下钻与题号分段分析。面向竞赛教学、讲义编写和题型研究。</p>
+    <h1 data-i18n="home.title">STEMHUB AMC 题库</h1>
+    <p class="subtitle" data-i18n="home.subtitle">AMC 10 / AMC 12 分类检索、A/B 对比、二级题型下钻与题号分段分析。面向竞赛教学、讲义编写和题型研究。</p>
     <div class="hero-actions">
-      <a class="primary" href="amc10/">开始检索 AMC 10</a>
-      <a class="primary" href="amc12/">开始检索 AMC 12</a>
-      <a href="#downloads">下载结构化数据</a>
+      <a class="primary" href="amc10/" data-i18n="home.searchAmc10">开始检索 AMC 10</a>
+      <a class="primary" href="amc12/" data-i18n="home.searchAmc12">开始检索 AMC 12</a>
+      <a href="#downloads" data-i18n="home.downloadData">下载结构化数据</a>
     </div>
   </header>
   <main>
     <section class="overview" aria-label="站点概览">
-      <div class="metric"><strong>47</strong><span>年份标签</span></div>
-      <div class="metric"><strong>2350</strong><span>总题量</span></div>
-      <div class="metric"><strong>2002-2024</strong><span>覆盖年份</span></div>
-      <div class="metric"><strong>A/B</strong><span>双卷对比</span></div>
+      <div class="metric"><strong>47</strong><span data-i18n="home.yearLabels">年份标签</span></div>
+      <div class="metric"><strong>2350</strong><span data-i18n="home.totalProblems">总题量</span></div>
+      <div class="metric"><strong>2002-2024</strong><span data-i18n="home.coverage">覆盖年份</span></div>
+      <div class="metric"><strong>A/B</strong><span data-i18n="home.formComparison">双卷对比</span></div>
     </section>
     <section class="grid" aria-label="AMC contest entry points">
-      <a class="card" href="amc10/"><div><h2>AMC 10</h2><p>进入 AMC 10 多年份题目总览，支持年份、A/B卷、一级/二级分类和关键词筛选。</p></div><div class="stats"><div class="stat"><strong>23</strong><span>年份标签</span></div><div class="stat"><strong>1150</strong><span>题目</span></div></div></a>
-      <a class="card" href="amc12/"><div><h2>AMC 12</h2><p>进入 AMC 12 多年份题目总览，包含教材分类目录、CSV 数据和部分 LaTeX 教材稿。</p></div><div class="stats"><div class="stat"><strong>24</strong><span>年份标签</span></div><div class="stat"><strong>1200</strong><span>题目</span></div></div></a>
+      <a class="card" href="amc10/"><div><h2>AMC 10</h2><p data-i18n="home.amc10Description">进入 AMC 10 多年份题目总览，支持年份、A/B卷、一级/二级分类和关键词筛选。</p></div><div class="stats"><div class="stat"><strong>23</strong><span data-i18n="home.yearLabels">年份标签</span></div><div class="stat"><strong>1150</strong><span data-i18n="home.totalProblems">题目</span></div></div></a>
+      <a class="card" href="amc12/"><div><h2>AMC 12</h2><p data-i18n="home.amc12Description">进入 AMC 12 多年份题目总览，包含教材分类目录、CSV 数据和部分 LaTeX 教材稿。</p></div><div class="stats"><div class="stat"><strong>24</strong><span data-i18n="home.yearLabels">年份标签</span></div><div class="stat"><strong>1200</strong><span data-i18n="home.totalProblems">题目</span></div></div></a>
     </section>
     <section class="feature-list" aria-label="功能亮点">
-      <div class="feature"><strong>分类检索</strong><span>按年份、A/B卷、一级分类、二级分类和关键词快速定位题目。</span></div>
-      <div class="feature"><strong>题型统计</strong><span>查看 A/B 卷题型分布、二级题型下钻和 Part 1/2/3 题号分段。</span></div>
-      <div class="feature"><strong>教材编写</strong><span>提供 CSV、Markdown、LaTeX 等结构化材料，方便二次整理。</span></div>
+      <div class="feature"><strong data-i18n="home.featureSearch">分类检索</strong><span data-i18n="home.featureSearchText">按年份、A/B卷、一级分类、二级分类和关键词快速定位题目。</span></div>
+      <div class="feature"><strong data-i18n="home.featureStatistics">题型统计</strong><span data-i18n="home.featureStatisticsText">查看 A/B 卷题型分布、二级题型下钻和 Part 1/2/3 题号分段。</span></div>
+      <div class="feature"><strong data-i18n="home.featureMaterials">教材编写</strong><span data-i18n="home.featureMaterialsText">提供 CSV、Markdown、LaTeX 等结构化材料，方便二次整理。</span></div>
     </section>
     <nav id="downloads" class="links" aria-label="Data downloads">
       <a href="amc10/all_problems.csv">AMC 10 CSV</a>
       <a href="amc12/all_problems.csv">AMC 12 CSV</a>
-      <a href="amc10/taxonomy.md">AMC 10 分类体系</a>
-      <a href="amc12/taxonomy.md">AMC 12 分类体系</a>
+      <a href="amc10/taxonomy.md">AMC 10 <span data-i18n="overview.taxonomy">分类体系</span></a>
+      <a href="amc12/taxonomy.md">AMC 12 <span data-i18n="overview.taxonomy">分类体系</span></a>
       <a href="amc12/latex/AMC12_2014_2020_classified.tex">AMC 12 LaTeX</a>
     </nav>
-    <footer>部署于 GitHub Pages。当前站点为静态页面，可直接分享和检索。</footer>
+    <footer data-i18n="home.footer">部署于 GitHub Pages。当前站点为静态页面，可直接分享和检索。</footer>
   </main>
 </body>
 </html>

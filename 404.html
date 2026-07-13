@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>页面未找到 - STEMHUB AMC</title>
+  <title data-i18n-title="404.documentTitle">页面未找到 - STEMHUB AMC</title>
   <style>
     :root { --ink:#152235; --muted:#607086; --line:#dce3ea; --bg:#f5f2ed; --navy:#173650; }
     * { box-sizing:border-box; }
@@ -21,12 +21,17 @@
     .actions a.primary { background:var(--navy); color:#fff; border-color:var(--navy); }
     @media (max-width:760px) { .site-nav { align-items:flex-start; flex-direction:column; } .site-links { width:100%; } .site-links a { flex:1 1 auto; text-align:center; } }
   </style>
+  <!-- STEMHUB I18N ASSETS -->
+  <link rel="stylesheet" href="assets/language-switcher.css" data-stemhub-i18n-assets>
+  <script defer src="assets/i18n-dictionary.js" data-stemhub-i18n-assets></script>
+  <script defer src="assets/language-switcher.js" data-stemhub-i18n-assets></script>
+  <!-- /STEMHUB I18N ASSETS -->
 </head>
 <body>
-  <nav class="site-nav" aria-label="全站导航">
+  <nav class="site-nav" aria-label="全站导航" data-i18n-aria-label="nav.site">
     <a class="site-brand" href="/STEMHUB_AMC/">STEMHUB AMC</a>
-    <div class="site-links"><a href="/STEMHUB_AMC/">首页</a><a href="/STEMHUB_AMC/amc10/">AMC 10</a><a href="/STEMHUB_AMC/amc12/">AMC 12</a></div>
+    <div class="site-links"><a href="/STEMHUB_AMC/" data-i18n="nav.home">首页</a><a href="/STEMHUB_AMC/amc10/">AMC 10</a><a href="/STEMHUB_AMC/amc12/">AMC 12</a></div>
   </nav>
-  <main><section class="panel"><h1>页面未找到</h1><p>这个路径不存在，可能是链接拼写错误，或页面已经移动。可以回到首页，或者直接进入 AMC 10 / AMC 12 总览。</p><div class="actions"><a class="primary" href="/STEMHUB_AMC/">返回首页</a><a href="/STEMHUB_AMC/amc10/">AMC 10</a><a href="/STEMHUB_AMC/amc12/">AMC 12</a></div></section></main>
+  <main><section class="panel"><h1 data-i18n="404.title">页面未找到</h1><p data-i18n="404.message">这个路径不存在，可能是链接拼写错误，或页面已经移动。可以回到首页，或者直接进入 AMC 10 / AMC 12 总览。</p><div class="actions"><a class="primary" href="/STEMHUB_AMC/" data-i18n="404.backHome">返回首页</a><a href="/STEMHUB_AMC/amc10/">AMC 10</a><a href="/STEMHUB_AMC/amc12/">AMC 12</a></div></section></main>
 </body>
 </html>

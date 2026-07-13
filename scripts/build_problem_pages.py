@@ -382,6 +382,11 @@ def render_detail_page(row: dict[str, str]) -> str:
     .references a {{ color:var(--blue); font-weight:700; }}
     @media (max-width:700px) {{ .site-nav {{ align-items:flex-start; flex-direction:column; }} .site-links {{ width:100%; }} .site-links a {{ flex:1 1 auto; justify-content:center; }} main {{ width:min(100% - 28px, 980px); padding-top:18px; }} .statement {{ font-size:16px; }} }}
   </style>
+  <!-- STEMHUB I18N ASSETS -->
+  <link rel="stylesheet" href="../../../assets/language-switcher.css" data-stemhub-i18n-assets>
+  <script defer src="../../../assets/i18n-dictionary.js" data-stemhub-i18n-assets></script>
+  <script defer src="../../../assets/language-switcher.js" data-stemhub-i18n-assets></script>
+  <!-- /STEMHUB I18N ASSETS -->
   <script>
     window.MathJax = {{ tex: {{ inlineMath: [['$', '$'], ['\\\\(', '\\\\)']], displayMath: [['\\\\[', '\\\\]']] }} }};
   </script>
