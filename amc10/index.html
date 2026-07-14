@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AMC 10 多年份题目总览</title>
+  <title data-i18n-title="overview.amc10Title">AMC 10 多年份题目总览</title>
   <style>
     :root {
       --bg:#f7f4ee; --panel:#fff; --ink:#1e2832; --muted:#66727f;
@@ -74,9 +74,9 @@
     @media (max-width:980px) { main { padding:18px; } header { padding:24px 18px 18px; } .site-nav,.download-strip,.filter-header { align-items:flex-start; flex-direction:column; } .site-nav { padding:10px 18px; position:static; } .site-links { width:100%; } .site-links a { flex:1 1 auto; justify-content:center; } .stats,.grid,.controls,.compare-head,.bar-row { grid-template-columns:1fr; } .compare-head { display:none; } }
   </style>
   <!-- STEMHUB I18N ASSETS -->
-  <link rel="stylesheet" href="../assets/language-switcher.css" data-stemhub-i18n-assets>
-  <script defer src="../assets/i18n-dictionary.js" data-stemhub-i18n-assets></script>
-  <script defer src="../assets/language-switcher.js" data-stemhub-i18n-assets></script>
+  <link rel="stylesheet" href="../assets/language-switcher.css?v=20260714-3" data-stemhub-i18n-assets>
+  <script defer src="../assets/i18n-dictionary.js?v=20260714-3" data-stemhub-i18n-assets></script>
+  <script defer src="../assets/language-switcher.js?v=20260714-3" data-stemhub-i18n-assets></script>
   <!-- /STEMHUB I18N ASSETS -->
 </head>
 <body>
@@ -301,6 +301,8 @@
       syncButtons();
       if (!shown.length) {
         cards.innerHTML = '<div class="empty">没有匹配的题目</div>';
+        window.STEMHUB_LANGUAGE?.refreshOverview?.();
+        document.dispatchEvent(new CustomEvent("stemhub:overviewrender"));
         return;
       }
       cards.innerHTML = shown.map(p => {
@@ -321,6 +323,8 @@
           ? `<a class="card problem-link" href="${esc(href)}" aria-label="View details for ${esc(p.source)}">${cardBody}<div class="detail-cta">View details</div></a>`
           : `<article class="card">${cardBody}</article>`;
       }).join("");
+      window.STEMHUB_LANGUAGE?.refreshOverview?.();
+      document.dispatchEvent(new CustomEvent("stemhub:overviewrender"));
     }
     Object.values(filters).forEach(el => el.addEventListener("input", render));
     document.addEventListener("click", e => {

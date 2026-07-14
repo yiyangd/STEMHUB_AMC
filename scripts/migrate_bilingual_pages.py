@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "bilingual_migration_report.md"
 MARKER_START = "<!-- STEMHUB I18N ASSETS -->"
 MARKER_END = "<!-- /STEMHUB I18N ASSETS -->"
+ASSET_VERSION = "20260714"
 BLOCK_RE = re.compile(re.escape(MARKER_START) + r".*?" + re.escape(MARKER_END) + r"\s*", re.DOTALL)
 BADGE_RE = re.compile(r'(<span\b(?=[^>]*\bclass="[^"]*\bbadge\b[^"]*")[^>]*)(>)([^<]*)(</span>)', re.IGNORECASE)
 
@@ -26,9 +27,9 @@ def asset_block(page: Path) -> str:
     relative_assets = os.path.relpath(ROOT / "assets", page.parent).replace("\\", "/")
     return (
         f"  {MARKER_START}\n"
-        f'  <link rel="stylesheet" href="{relative_assets}/language-switcher.css" data-stemhub-i18n-assets>\n'
-        f'  <script defer src="{relative_assets}/i18n-dictionary.js" data-stemhub-i18n-assets></script>\n'
-        f'  <script defer src="{relative_assets}/language-switcher.js" data-stemhub-i18n-assets></script>\n'
+        f'  <link rel="stylesheet" href="{relative_assets}/language-switcher.css?v={ASSET_VERSION}" data-stemhub-i18n-assets>\n'
+        f'  <script defer src="{relative_assets}/i18n-dictionary.js?v={ASSET_VERSION}" data-stemhub-i18n-assets></script>\n'
+        f'  <script defer src="{relative_assets}/language-switcher.js?v={ASSET_VERSION}" data-stemhub-i18n-assets></script>\n'
         f"  {MARKER_END}\n"
     )
 
@@ -65,7 +66,7 @@ def add_badge_aliases(text: str) -> tuple[str, int]:
 def migrate_page(page: Path, check_only: bool) -> tuple[bool, str | None, int]:
     text = page.read_text(encoding="utf-8")
     block = asset_block(page)
-    expected_path = re.search(r'href="([^"]+language-switcher\.css)"', block).group(1)
+    expected_path = re.search(r'href="([^"]+language-switcher\.css(?:\?[^\"]*)?)"', block).group(1)
     existing = BLOCK_RE.search(text)
     changed = False
     if existing:

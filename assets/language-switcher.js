@@ -95,6 +95,32 @@
     return raw;
   }
 
+  function isInternalHtmlLink(raw) {
+    if (!raw || raw.startsWith("#")) return false;
+    const destination = new URL(raw, window.location.href);
+    if (destination.origin !== window.location.origin) return false;
+    const path = destination.pathname.toLowerCase();
+    return path.endsWith("/") || path.endsWith(".html");
+  }
+
+  function syncInternalLanguageLinks() {
+    document.querySelectorAll("a[href]").forEach((link) => {
+      const original = link.dataset.i18nOriginalHref || link.getAttribute("href") || "";
+      if (!isInternalHtmlLink(original)) return;
+      link.dataset.i18nOriginalHref = original;
+      const destination = new URL(original, window.location.href);
+      destination.searchParams.set("lang", currentLanguage());
+      link.setAttribute("href", `${destination.pathname}${destination.search}${destination.hash}`);
+    });
+  }
+
+  function setLanguageNote(element, key) {
+    if (!element) return;
+    const raw = rememberRaw(element);
+    if (currentLanguage() === "en" && isChinese(raw)) element.dataset.languageNote = translate(key);
+    else delete element.dataset.languageNote;
+  }
+
   function localizeOverviewPage() {
     const isOverview = document.querySelector("#yearFilter") && document.querySelector("#cards");
     if (!isOverview) return;
@@ -229,9 +255,7 @@
 
     document.querySelectorAll("#cards .badge").forEach(localizeBadge);
     document.querySelectorAll("#cards .idea").forEach((idea) => {
-      const raw = rememberRaw(idea);
-      if (currentLanguage() === "en" && isChinese(raw)) idea.dataset.languageNote = translate("content.chineseNote");
-      else delete idea.dataset.languageNote;
+      setLanguageNote(idea, "content.chineseKeyIdea");
       const note = idea.querySelector("strong");
       if (note) setText(note, translate("overview.notes"));
     });
@@ -240,6 +264,7 @@
       const source = link.querySelector(".source")?.textContent || "";
       link.setAttribute("aria-label", currentLanguage() === "zh" ? `查看 ${source} 的详情` : `View details for ${source}`);
     });
+    syncInternalLanguageLinks();
   }
 
   function localizeDetailPage() {
@@ -286,6 +311,14 @@
     const metadata = document.querySelector(".meta");
     if (metadata) metadata.setAttribute("aria-label", translate("detail.metadata"));
 
+    document.querySelectorAll(".section").forEach((section) => {
+      const heading = section.querySelector("h2");
+      const rawHeading = heading ? rememberRaw(heading) : "";
+      const content = section.querySelector("p");
+      if (rawHeading === "Key Idea" || rawHeading === "核心思路") setLanguageNote(content, "content.chineseKeyIdea");
+      if (rawHeading === "Notes" || rawHeading === "备注") setLanguageNote(content, "content.chineseNote");
+    });
+
     document.querySelectorAll(".references p").forEach((paragraph) => {
       const links = paragraph.querySelectorAll("a");
       if (links.length < 2) return;
@@ -313,14 +346,15 @@
     localizeCounts();
     localizeDetailPage();
     localizeOverviewPage();
+    syncInternalLanguageLinks();
   }
 
   function ensureSwitcher() {
     const nav = document.querySelector(".site-nav");
     if (!nav) return;
-    const links = nav.querySelector(":scope > .site-links");
-    if (!links) return;
     let actions = nav.querySelector(":scope > .site-nav-actions");
+    const links = actions?.querySelector(".site-links") || nav.querySelector(":scope > .site-links");
+    if (!links) return;
     if (!actions) {
       actions = document.createElement("div");
       actions.className = "site-nav-actions";
@@ -358,6 +392,15 @@
     document.dispatchEvent(new CustomEvent("stemhub:languagechange", { detail: { language } }));
   }
 
+  function refreshLanguageFromLocation() {
+    const requested = queryLanguage();
+    if (requested) localStorage.setItem(storeKey, requested);
+    ensureSwitcher();
+    localizeStaticText();
+    ensureSwitcher();
+    document.dispatchEvent(new CustomEvent("stemhub:languagechange", { detail: { language: currentLanguage() } }));
+  }
+
   function start() {
     const requested = queryLanguage();
     if (requested) localStorage.setItem(storeKey, requested);
@@ -377,12 +420,20 @@
         });
       }).observe(overviewRoot, { childList: true, subtree: true });
     }
+    document.addEventListener("stemhub:overviewrender", () => {
+      window.requestAnimationFrame(localizeOverviewPage);
+    });
+    window.addEventListener("popstate", refreshLanguageFromLocation);
+    window.addEventListener("storage", (event) => {
+      if (event.key === storeKey && !queryLanguage()) refreshLanguageFromLocation();
+    });
     document.dispatchEvent(new CustomEvent("stemhub:languagechange", { detail: { language: currentLanguage() } }));
   }
 
   window.STEMHUB_LANGUAGE = {
     get: currentLanguage,
     set: setLanguage,
+    refreshOverview: localizeOverviewPage,
     t: translate,
     major: (value) => taxonomyLabel("major", value),
     minor: (value) => taxonomyLabel("minor", value),
