@@ -219,7 +219,7 @@
       "三角形": "Triangles", "三角恒等式": "Trigonometric Identities", "代数概率": "Algebraic Probability",
       "几何变换": "Geometric Transformations", "几何概率": "Geometric Probability", "函数与图像": "Functions and Graphs",
       "勾股数组": "Pythagorean Triples", "向量几何": "Vector Geometry", "周期与递推计数": "Periodic and Recursive Counting",
-      "图形计数": "Geometric Counting", "圆与四边形": "Circles and Quadrilaterals", "圆与曲线": "Circles and Curves",
+      "图形计数": "Geometric Counting", "图论与网络": "Graph Theory and Networks", "圆与四边形": "Circles and Quadrilaterals", "圆与曲线": "Circles and Curves",
       "坐标几何": "Coordinate Geometry", "复数": "Complex Numbers", "多项式与根": "Polynomials and Roots",
       "对数与指数": "Logarithms and Exponents", "平均数与数据集": "Averages and Data Sets", "平方数": "Perfect Squares",
       "排列组合": "Permutations and Combinations", "数列与递推": "Sequences and Recurrences", "整数构造": "Integer Construction",

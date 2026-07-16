@@ -6,7 +6,7 @@
 ## 1. 代数
 
 ### 1.1 三角恒等式
-- 题量：60
+- 题量：59
 - 示例：2002 AMC 12A Problem 3、2002 AMC 12B Problem 9、2003 AMC 12A Problem 2、2003 AMC 12B Problem 2、2003 AMC 12B Problem 4
 
 ### 1.2 函数与图像
@@ -18,7 +18,7 @@
 - 示例：2009 AMC 12A Problem 21、2011 AMC 12A Problem 23、2017 AMC 12A Problem 17、2021 Spring AMC 12A Problem 13、2021 Spring AMC 12B Problem 18
 
 ### 1.4 多项式与根
-- 题量：27
+- 题量：28
 - 示例：2002 AMC 12A Problem 1、2003 AMC 12A Problem 21、2004 AMC 12A Problem 23、2005 AMC 12A Problem 24、2005 AMC 12B Problem 12
 
 ### 1.5 对数与指数
@@ -30,25 +30,25 @@
 - 示例：2003 AMC 12B Problem 6、2004 AMC 12A Problem 14、2004 AMC 12B Problem 12、2005 AMC 12B Problem 22、2007 AMC 12A Problem 7
 
 ### 1.7 方程与不等式
-- 题量：13
+- 题量：15
 - 示例：2002 AMC 12B Problem 6、2005 AMC 12A Problem 2、2005 AMC 12A Problem 9、2008 AMC 12A Problem 10、2009 AMC 12B Problem 15
 
 ### 1.8 线性模型
-- 题量：2
-- 示例：2024 AMC 12A Problem 2、2024 AMC 12A Problem 14
+- 题量：4
+- 示例：2021 Fall AMC 12A Problem 3、2021 Fall AMC 12B Problem 3、2024 AMC 12A Problem 2、2024 AMC 12A Problem 14
 
 ### 1.9 运算与化简
-- 题量：218
+- 题量：209
 - 示例：2002 AMC 12A Problem 2、2002 AMC 12A Problem 9、2002 AMC 12A Problem 10、2002 AMC 12A Problem 13、2002 AMC 12A Problem 24
 
 ## 2. 几何
 
 ### 2.1 三角形
-- 题量：78
+- 题量：77
 - 示例：2002 AMC 12A Problem 4、2002 AMC 12B Problem 5、2002 AMC 12B Problem 7、2002 AMC 12B Problem 12、2002 AMC 12B Problem 13
 
 ### 2.2 几何变换
-- 题量：7
+- 题量：8
 - 示例：2010 AMC 12A Problem 25、2013 AMC 12A Problem 23、2015 AMC 12B Problem 7、2019 AMC 12A Problem 6、2020 AMC 12A Problem 6
 
 ### 2.3 向量几何
@@ -60,7 +60,7 @@
 - 示例：2024 AMC 12A Problem 19
 
 ### 2.5 圆与曲线
-- 题量：80
+- 题量：82
 - 示例：2002 AMC 12A Problem 5、2002 AMC 12A Problem 7、2002 AMC 12A Problem 18、2002 AMC 12B Problem 14、2003 AMC 12A Problem 11
 
 ### 2.6 坐标几何
@@ -68,7 +68,7 @@
 - 示例：2002 AMC 12B Problem 25、2003 AMC 12A Problem 19、2004 AMC 12A Problem 13、2005 AMC 12A Problem 16、2005 AMC 12A Problem 25
 
 ### 2.7 空间几何
-- 题量：49
+- 题量：46
 - 示例：2003 AMC 12A Problem 3、2003 AMC 12A Problem 13、2003 AMC 12B Problem 13、2004 AMC 12A Problem 22、2004 AMC 12B Problem 19
 
 ### 2.8 面积与相似
@@ -86,15 +86,15 @@
 - 示例：2024 AMC 12A Problem 9
 
 ### 3.3 整数构造
-- 题量：94
+- 题量：93
 - 示例：2002 AMC 12A Problem 6、2002 AMC 12A Problem 14、2002 AMC 12B Problem 4、2002 AMC 12B Problem 10、2002 AMC 12B Problem 22
 
 ### 3.4 整除与同余
-- 题量：12
+- 题量：13
 - 示例：2003 AMC 12A Problem 18、2006 AMC 12A Problem 5、2014 AMC 12B Problem 23、2015 AMC 12B Problem 20、2016 AMC 12A Problem 3
 
 ### 3.5 质因数与整除
-- 题量：30
+- 题量：35
 - 示例：2002 AMC 12A Problem 12、2002 AMC 12B Problem 3、2002 AMC 12B Problem 11、2002 AMC 12B Problem 21、2003 AMC 12B Problem 18
 
 ### 3.6 质因数分解
@@ -106,7 +106,7 @@
 - 示例：2024 AMC 12A Problem 11、2024 AMC 12B Problem 6
 
 ### 3.8 进制与数字
-- 题量：72
+- 题量：71
 - 示例：2002 AMC 12A Problem 17、2002 AMC 12A Problem 20、2002 AMC 12A Problem 21、2002 AMC 12B Problem 15、2003 AMC 12A Problem 5
 
 ## 4. 组合数学
@@ -116,18 +116,22 @@
 - 示例：2024 AMC 12B Problem 4
 
 ### 4.2 图形计数
-- 题量：8
+- 题量：9
 - 示例：2010 AMC 12A Problem 18、2011 AMC 12B Problem 23、2012 AMC 12B Problem 22、2018 AMC 12A Problem 15、2020 AMC 12A Problem 2
 
-### 4.3 排列组合
+### 4.3 图论与网络
+- 题量：1
+- 示例：2021 Fall AMC 12A Problem 16
+
+### 4.4 排列组合
 - 题量：26
 - 示例：2006 AMC 12A Problem 24、2006 AMC 12A Problem 25、2006 AMC 12B Problem 7、2007 AMC 12A Problem 25、2008 AMC 12A Problem 21
 
-### 4.4 染色与构造
-- 题量：7
+### 4.5 染色与构造
+- 题量：8
 - 示例：2007 AMC 12B Problem 16、2011 AMC 12A Problem 16、2014 AMC 12A Problem 3、2014 AMC 12A Problem 13、2019 AMC 12A Problem 3
 
-### 4.5 递推与序列计数
+### 4.6 递推与序列计数
 - 题量：13
 - 示例：2003 AMC 12A Problem 20、2005 AMC 12A Problem 13、2010 AMC 12A Problem 20、2012 AMC 12B Problem 12、2013 AMC 12B Problem 14
 
@@ -138,17 +142,17 @@
 - 示例：2024 AMC 12B Problem 17
 
 ### 5.2 几何概率
-- 题量：25
+- 题量：24
 - 示例：2002 AMC 12A Problem 22、2003 AMC 12A Problem 16、2003 AMC 12A Problem 22、2003 AMC 12B Problem 25、2006 AMC 12A Problem 22
 
 ### 5.3 平均数与数据集
-- 题量：67
+- 题量：65
 - 示例：2002 AMC 12A Problem 11、2002 AMC 12A Problem 15、2002 AMC 12A Problem 25、2002 AMC 12B Problem 1、2002 AMC 12B Problem 23
 
 ### 5.4 独立性
-- 题量：27
+- 题量：26
 - 示例：2004 AMC 12A Problem 20、2004 AMC 12B Problem 20、2005 AMC 12B Problem 25、2006 AMC 12A Problem 20、2009 AMC 12B Problem 17
 
 ### 5.5 组合概率
-- 题量：54
+- 题量：57
 - 示例：2002 AMC 12A Problem 16、2002 AMC 12B Problem 16、2002 AMC 12B Problem 18、2003 AMC 12A Problem 8、2003 AMC 12A Problem 12

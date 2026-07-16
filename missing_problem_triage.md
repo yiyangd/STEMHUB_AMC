@@ -1,18 +1,18 @@
 # Missing Problem Triage
 
-- Generated at: 2026-07-11T01:20:44-07:00
-- Missing total: 233
+- Generated at: 2026-07-16T12:45:00-07:00
+- Missing total: 264
 - AMC10 missing total: 91
-- AMC12 missing total: 142
+- AMC12 missing total: 173
 
 ## Status Counts
 
 | triage_status | count |
 |---|---:|
-| `ready_to_generate` | 0 |
+| `ready_to_generate` | 29 |
 | `needs_diagram` | 161 |
 | `ocr_or_statement_risk` | 56 |
-| `solution_high_risk` | 16 |
+| `solution_high_risk` | 18 |
 | `needs_answer_verification` | 0 |
 | `manual_review` | 0 |
 
@@ -21,11 +21,30 @@
 | contest | ready | diagram | OCR/statement | solution high-risk | answer verification | manual review |
 |---|---:|---:|---:|---:|---:|---:|
 | AMC 10 | 0 | 83 | 7 | 1 | 0 | 0 |
-| AMC 12 | 0 | 78 | 49 | 15 | 0 | 0 |
+| AMC 12 | 29 | 78 | 49 | 17 | 0 | 0 |
 
 ## Recommended Next 20 Ready-To-Generate Problems
 
-- None. The remaining missing set should be reviewed before automatic generation.
+- `2021 Fall AMC 12A Problem 1` (代数 / 运算与化简): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12A Problem 2` (代数 / 运算与化简): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12A Problem 3` (代数 / 线性模型): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12A Problem 4` (数论 / 进制与数字): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12A Problem 5` (数论 / 质因数与整除): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12A Problem 7` (概率与统计 / 平均数与数据集): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12A Problem 8` (数论 / 质因数与整除): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12A Problem 9` (代数 / 对数与指数): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12A Problem 10` (数论 / 进制与数字): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12A Problem 11` (几何 / 圆与曲线): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12A Problem 12` (代数 / 多项式与根): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12A Problem 13` (几何 / 坐标几何): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12A Problem 15` (代数 / 复数): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12A Problem 16` (组合数学 / 图论与网络): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12A Problem 17` (代数 / 方程与不等式): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12A Problem 19` (代数 / 三角恒等式): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12B Problem 1` (代数 / 运算与化简): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12B Problem 3` (代数 / 线性模型): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12B Problem 4` (代数 / 对数与指数): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
+- `2021 Fall AMC 12B Problem 5` (数论 / 整数构造): 2021 Fall source data repaired; stale teaching page intentionally invalidated. complete non-diagram statement with moderate-risk topic
 
 ## Most Need Manual Diagram Support
 
@@ -142,20 +161,22 @@
 - `2020 AMC 12A Problem 13` [ocr_or_statement_risk]: Skipped reasons: 2020 AMC 12A Problem 13: nested radical/root expression is OCR-damaged
 - `2020 AMC 12B Problem 21` [ocr_or_statement_risk]: Skipped reasons: 2020 AMC 12B Problem 21: floor/square-root equation is OCR-damaged
 - `2020 AMC 12B Problem 22` [ocr_or_statement_risk]: 2020 AMC 12B Problem 22: exponential expression is OCR-damaged
-- `2021 Fall AMC 12A Problem 17` [solution_high_risk]: Skipped reasons: 2021 Fall AMC 12A Problem 17: trapezoid diagonal geometry requires a longer derivation
-- `2021 Fall AMC 12A Problem 18` [solution_high_risk]: 2021 Fall AMC 12A Problem 18: multiplicative rational function comparison is high-risk in current pass | Skipped reasons: 2021 Fall AMC 12A Problem 18: local CSV statement does not match the AoPS Fall problem statement
-- `2021 Fall AMC 12A Problem 19` [solution_high_risk]: 2021 Fall AMC 12A Problem 19: trigonometric equation count is high-risk in current pass | 2021 Fall AMC 12A Problem 19: local CSV statement does not match the AoPS Fall problem statement
-- `2021 Fall AMC 12A Problem 20` [solution_high_risk]: 2021 Fall AMC 12A Problem 20: parabola focus/vertex locus problem is high-risk in current pass
-- `2021 Fall AMC 12A Problem 21` [solution_high_risk]: Skipped reasons: 2021 Fall AMC 12A Problem 21: complex-root ellipse eccentricity problem requires a longer analytic geometry derivation
-- `2021 Fall AMC 12A Problem 24` [solution_high_risk]: 2021 Fall AMC 12A Problem 24: semicircle/circle chord geometry requires a longer derivation
-- `2021 Fall AMC 12A Problem 25` [solution_high_risk]: 2021 Fall AMC 12A Problem 25: divisor-function global maximum problem is high-risk in current pass
-- `2021 Fall AMC 12B Problem 11` [solution_high_risk]: Skipped reasons: 2021 Fall AMC 12B Problem 11: triangle/trapezoid geometry requires a longer coordinate derivation
-- `2021 Fall AMC 12B Problem 13` [solution_high_risk]: 2021 Fall AMC 12B Problem 13: trigonometric equation count is high-risk in current pass
-- `2021 Fall AMC 12B Problem 14` [solution_high_risk]: 2021 Fall AMC 12B Problem 14: 3D rectangle pyramid volume problem requires a longer derivation
-- `2021 Fall AMC 12B Problem 18` [solution_high_risk]: 2021 Fall AMC 12B Problem 18: complex-number constraint requires a longer derivation
-- `2021 Fall AMC 12B Problem 19` [solution_high_risk]: 2021 Fall AMC 12B Problem 19: custom dice probability system is high-risk in current pass
-- `2021 Fall AMC 12B Problem 21` [solution_high_risk]: Skipped reasons: 2021 Fall AMC 12B Problem 21: exponential equation with irrational exponents is high-risk in current pass
-- `2021 Fall AMC 12B Problem 22` [solution_high_risk]: 2021 Fall AMC 12B Problem 22: impartial brick game requires Sprague-Grundy style analysis
+- `2021 Fall AMC 12A Problem 18` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
+- `2021 Fall AMC 12A Problem 20` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
+- `2021 Fall AMC 12A Problem 22` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
+- `2021 Fall AMC 12A Problem 23` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
+- `2021 Fall AMC 12A Problem 24` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
+- `2021 Fall AMC 12A Problem 25` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
+- `2021 Fall AMC 12B Problem 16` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
+- `2021 Fall AMC 12B Problem 17` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
+- `2021 Fall AMC 12B Problem 18` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
+- `2021 Fall AMC 12B Problem 19` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
+- `2021 Fall AMC 12B Problem 20` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
+- `2021 Fall AMC 12B Problem 21` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
+- `2021 Fall AMC 12B Problem 22` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
+- `2021 Fall AMC 12B Problem 23` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
+- `2021 Fall AMC 12B Problem 24` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
+- `2021 Fall AMC 12B Problem 25` [solution_high_risk]: 2021 Fall source data repaired; stale teaching page intentionally invalidated. late/problem-specific derivation risk; should be reviewed before unattended generation
 - `2023 AMC 12B Problem 2` [ocr_or_statement_risk]: Skipped reasons: 2023 AMC 12B Problem 2: OCR statement is truncated and missing the actual question
 - `2024 AMC 12A Problem 19` [ocr_or_statement_risk]: 2024 AMC 12A Problem 19: cyclic quadrilateral diagonal geometry is high-risk in current pass
 - `2024 AMC 12A Problem 21` [ocr_or_statement_risk]: statement appears incomplete, lacks choices, or has OCR-risk markers

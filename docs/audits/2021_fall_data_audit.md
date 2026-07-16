@@ -212,3 +212,28 @@ The one-off high-risk batch scripts and historical progress records must not be 
 ## Audit boundary
 
 This audit did not modify any source PDF, extracted text, CSV data, HTML page, manifest, generation script, or deployed site. Only the audit artifacts and `docs/PROJECT_STATE.md` are in scope for this commit.
+
+## Remediation result (2026-07-16)
+
+The audited defect has been repaired in the upstream and publication data paths.
+
+- Correct Fall A source: 9 pages, SHA-256 `ABC5E98F5638C3CC66E61F58715CE71381A38AD6B67E3D5C9B4FEC86543252CC`.
+- Correct Fall B source: 9 pages, SHA-256 `DCCE4DBF6DD331971564464B70FAA451E40BFA7A4DD2EB70C55790E291BA82CD`.
+- The former combined Fall PDF was quarantined; it remains identical to Spring and is blocked by the pipeline.
+- Corrected Fall rows: 50 total, with A=25 and B=25.
+- Corrected Spring/Fall normalized statement duplicates: 0.
+- Verified answers: 50/50.
+- Complete A-E choices: 50/50.
+- Reviewed classifications: 50/50.
+- Stale detail pages removed: 31/31.
+- Stale Fall manifest records removed: 31/31.
+- Corrected Fall rows returned to triage: 50/50.
+- AMC12 aggregate remains 1,200 rows; combined AMC10/AMC12 remains 2,350 rows.
+
+The 31 deleted teaching pages were not rewritten in this remediation round. Their old Spring-derived statements, answers, and solutions must not be restored. The next phase will regenerate teaching pages in reviewed batches from the corrected Fall CSV.
+
+Remediation evidence:
+
+- [`2021_fall_source_manifest.json`](2021_fall_source_manifest.json)
+- [`2021_fall_sync_result.json`](2021_fall_sync_result.json)
+- [`2021_fall_repair_validation.md`](2021_fall_repair_validation.md)

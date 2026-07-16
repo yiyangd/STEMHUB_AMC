@@ -4827,10 +4827,24 @@
 
 ## Missing/Skipped Problem Triage
 
-- Time: 2026-07-11T01:20:44-07:00
-- Missing total: 233
+- Time: 2026-07-16T12:45:00-07:00
+- Missing total: 264
 - AMC10 missing total: 91
-- AMC12 missing total: 142
-- Status counts: ready_to_generate=0, needs_diagram=161, ocr_or_statement_risk=56, solution_high_risk=16, needs_answer_verification=0, manual_review=0
+- AMC12 missing total: 173
+- Status counts: ready_to_generate=29, needs_diagram=161, ocr_or_statement_risk=56, solution_high_risk=18, needs_answer_verification=0, manual_review=0
 - Output files: `missing_problem_triage.csv`, `missing_problem_triage.md`
 - Validation result: pending commit
+
+## 2021 Fall AMC 12 Source Remediation
+
+- Time: 2026-07-16 (America/Vancouver)
+- Corrected source rows: 50 (A=25, B=25)
+- Spring/Fall normalized statement duplicates: 0
+- Verified answer letters: 50/50
+- Invalidated stale teaching pages: 31
+- Removed stale manifest entries: 31
+- Current manifest entries: 2,086
+- All corrected Fall rows returned to triage: 50
+- Fall triage: ready_to_generate=29, needs_diagram=5, solution_high_risk=16
+- Validation: PASS (`docs/audits/2021_fall_repair_validation.md`)
+- Next action: regenerate only reviewed `ready_to_generate` Fall teaching pages in small batches.

@@ -1,8 +1,8 @@
 {
   "project": "AMC 12 multi-year classification",
   "start_time": "2026-06-20T01:55:25-07:00",
-  "last_updated": "2026-06-30T01:55:29-07:00",
-  "elapsed": "10 days, 0:00:04",
+  "last_updated": "2026-07-16T12:49:33-07:00",
+  "elapsed": "26 days, 10:54:08",
   "input_dir": "D:\\AMC12_Codex\\input",
   "completed_years": [
     "2002",
@@ -51,7 +51,8 @@
     "2018AMC.pdf",
     "2019AMC.pdf",
     "2020AMC.pdf",
-    "2021AMC_FALL.pdf",
+    "2021AMC_FALL_A.pdf",
+    "2021AMC_FALL_B.pdf",
     "2021AMC_Spring.pdf",
     "2022AMC.pdf",
     "2023AMC.pdf",
@@ -85,16 +86,16 @@
     "2024": 50
   },
   "problem_count_by_major_category": {
-    "代数": 388,
-    "几何": 370,
-    "数论": 213,
-    "组合数学": 55,
-    "概率与统计": 174
+    "代数": 383,
+    "几何": 369,
+    "数论": 217,
+    "组合数学": 58,
+    "概率与统计": 173
   },
   "year_timings": {
     "2002": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:23-07:00",
+      "year_end_time": "2026-07-16T12:49:23-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -128,8 +129,8 @@
       "output_slug": "2002"
     },
     "2003": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:23-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -139,8 +140,8 @@
       "output_slug": "2003"
     },
     "2004": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -151,8 +152,8 @@
       "output_slug": "2004"
     },
     "2005": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -162,8 +163,8 @@
       "output_slug": "2005"
     },
     "2006": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -173,8 +174,8 @@
       "output_slug": "2006"
     },
     "2007": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -182,8 +183,8 @@
       "output_slug": "2007"
     },
     "2008": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -191,8 +192,8 @@
       "output_slug": "2008"
     },
     "2009": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -203,8 +204,8 @@
       "output_slug": "2009"
     },
     "2010": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -212,8 +213,8 @@
       "output_slug": "2010"
     },
     "2011": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -221,8 +222,8 @@
       "output_slug": "2011"
     },
     "2012": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -232,8 +233,8 @@
       "output_slug": "2012"
     },
     "2013": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -241,8 +242,8 @@
       "output_slug": "2013"
     },
     "2014": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -252,8 +253,8 @@
       "output_slug": "2014"
     },
     "2015": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -261,8 +262,8 @@
       "output_slug": "2015"
     },
     "2016": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -270,8 +271,8 @@
       "output_slug": "2016"
     },
     "2017": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -281,8 +282,8 @@
       "output_slug": "2017"
     },
     "2018": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -295,8 +296,8 @@
       "output_slug": "2018"
     },
     "2019": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -307,8 +308,8 @@
       "output_slug": "2019"
     },
     "2020": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -316,8 +317,8 @@
       "output_slug": "2020"
     },
     "2021 Spring": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:24-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -327,19 +328,17 @@
       "output_slug": "2021_spring"
     },
     "2021 Fall": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
-      "elapsed_time": "0:00:00",
-      "mode": "parsed_and_generated_from_pdf_text",
+      "year_start_time": "2026-07-16T12:49:24-07:00",
+      "year_end_time": "2026-07-16T12:49:26-07:00",
+      "elapsed_time": "0:00:01",
+      "mode": "verified_split_fall_sources",
       "problem_count": 50,
-      "issues": [
-        "2021 Fall B Problem 4: ignored duplicate parser hit"
-      ],
+      "issues": [],
       "output_slug": "2021_fall"
     },
     "2022": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:26-07:00",
+      "year_end_time": "2026-07-16T12:49:26-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -349,8 +348,8 @@
       "output_slug": "2022"
     },
     "2023": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:26-07:00",
+      "year_end_time": "2026-07-16T12:49:26-07:00",
       "elapsed_time": "0:00:00",
       "mode": "parsed_and_generated_from_pdf_text",
       "problem_count": 50,
@@ -361,12 +360,71 @@
       "output_slug": "2023"
     },
     "2024": {
-      "year_start_time": "2026-06-21T22:19:53-07:00",
-      "year_end_time": "2026-06-21T22:19:53-07:00",
+      "year_start_time": "2026-07-16T12:49:26-07:00",
+      "year_end_time": "2026-07-16T12:49:26-07:00",
       "elapsed_time": "0:00:00",
       "mode": "reused_existing_curated_output",
       "problem_count": 50,
       "output_slug": "2024"
+    }
+  },
+  "verified_2021_fall_sources": {
+    "schema_version": 1,
+    "retrieved_at": "2026-07-16T12:29:43-07:00",
+    "canonical_pdfs": {
+      "A": {
+        "path": "input/2021AMC_FALL_A.pdf",
+        "url": "https://cda.sof.ws/ep/AMC/2021_AMC12A_Fall.pdf",
+        "document_title": "MAA American Mathematics Competitions 73rd Annual AMC 12 A FALL",
+        "exam_date": "2021-11-10",
+        "page_count": 9,
+        "sha256": "ABC5E98F5638C3CC66E61F58715CE71381A38AD6B67E3D5C9B4FEC86543252CC",
+        "required_text": [
+          "Fall 2021 AMC 12 A Problems",
+          "November 10, 2021"
+        ]
+      },
+      "B": {
+        "path": "input/2021AMC_FALL_B.pdf",
+        "url": "https://fangmath.xyz/files/AMC%2012/2021-amc-12b-fall-contest-problems.pdf",
+        "document_title": "2021 AMC 12B (Fall Contest) Problems",
+        "exam_date": "2021-11-16",
+        "page_count": 9,
+        "sha256": "DCCE4DBF6DD331971564464B70FAA451E40BFA7A4DD2EB70C55790E291BA82CD",
+        "required_text": [
+          "2021 AMC 12B (Fall Contest) Problems"
+        ],
+        "exam_date_evidence_url": "https://ivyleaguecenter.org/2021/11/09/2021-amc-10b-12b-fall-contest-problems-and-answers/"
+      }
+    },
+    "problem_text_cross_checks": {
+      "A": "https://artofproblemsolving.com/wiki/index.php/2021_Fall_AMC_12A_Problems",
+      "B": "https://artofproblemsolving.com/wiki/index.php/2021_Fall_AMC_12B_Problems",
+      "snapshot_path": "sources/2021_fall/2021_fall_verified_problem_snapshot.json",
+      "snapshot_sha256": "C5BBA9A75C0C2A89AF886686868A2D23BFC26329C51483D38F8056B359FB7D4A"
+    },
+    "answer_key_cross_checks": {
+      "A": {
+        "url": "https://artofproblemsolving.com/wiki/index.php/2021_Fall_AMC_12A_Answer_Key",
+        "letters": "CEBEBDBDEDECAEDBBEBDCDAEE"
+      },
+      "B": {
+        "url": "https://artofproblemsolving.com/wiki/index.php/2021_Fall_AMC_12B_Answer_Key",
+        "letters": "EBCECCDDBECBEBEBAAEAACACC"
+      }
+    },
+    "secondary_reference": {
+      "path": "sources/2021_fall/fall_2021_amc_12_b_solutions_reference.pdf",
+      "url": "https://shsmathteam.com/wp-content/uploads/2021/11/fall_2021_amc_12_b_solutions.pdf",
+      "document_title": "Fall 2021 AMC 12B Solutions",
+      "publication_date": "2021-11",
+      "page_count": 33,
+      "sha256": "57C132606E60544B26B8DCEED29FC143A21CAB44F496BA32E1A90B4F4BF423E9"
+    },
+    "quarantined_source": {
+      "path": "input/quarantine/2021AMC_FALL_is_Spring.pdf",
+      "sha256": "E4F215D277EE20EB7B3A5C7208D2AF4E83529956CBCD4A4CAE8E479F562ED38C",
+      "reason": "Byte-for-byte identical to input/2021AMC_Spring.pdf; not a Fall source."
     }
   },
   "outputs": {
@@ -381,6 +439,7 @@
     "scripts/run_pipeline.py",
     "scripts/extract_input_pdfs.py",
     "scripts/build_years_from_extracted_text.py",
+    "scripts/build_2021_fall_data.py",
     "scripts/build_all_years_summary.py",
     "scripts/validate_outputs.py",
     "scripts/build_2024_artifacts.py"

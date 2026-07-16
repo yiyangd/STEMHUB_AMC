@@ -79,7 +79,7 @@ def collect_previous_reasons():
 
 
 def has_choices(statement):
-    return all(f"({letter})" in statement for letter in "ABCDE")
+    return all(f"({letter})" in statement or f"\\textbf{{{letter}}}" in statement for letter in "ABCDE")
 
 
 def looks_ocr_risky(statement, previous_reason):
@@ -351,7 +351,13 @@ def main():
             source = normalize_source(row["source"])
             if source in manifest_sources:
                 continue
-            status, reason = classify(row, previous_reasons.get(source, []))
+            repaired_fall = row.get("contest") == "AMC 12" and row.get("year") == "2021 Fall"
+            status, reason = classify(row, [] if repaired_fall else previous_reasons.get(source, []))
+            if repaired_fall:
+                reason = (
+                    "2021 Fall source data repaired; stale teaching page intentionally invalidated. "
+                    + reason
+                )
             missing.append(
                 {
                     "contest": row["contest"],

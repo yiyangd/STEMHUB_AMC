@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-07-16T12:29:43-07:00",
+  "canonical_pdfs": {
+    "A": {
+      "path": "input/2021AMC_FALL_A.pdf",
+      "url": "https://cda.sof.ws/ep/AMC/2021_AMC12A_Fall.pdf",
+      "document_title": "MAA American Mathematics Competitions 73rd Annual AMC 12 A FALL",
+      "exam_date": "2021-11-10",
+      "page_count": 9,
+      "sha256": "ABC5E98F5638C3CC66E61F58715CE71381A38AD6B67E3D5C9B4FEC86543252CC",
+      "required_text": [
+        "Fall 2021 AMC 12 A Problems",
+        "November 10, 2021"
+      ]
+    },
+    "B": {
+      "path": "input/2021AMC_FALL_B.pdf",
+      "url": "https://fangmath.xyz/files/AMC%2012/2021-amc-12b-fall-contest-problems.pdf",
+      "document_title": "2021 AMC 12B (Fall Contest) Problems",
+      "exam_date": "2021-11-16",
+      "page_count": 9,
+      "sha256": "DCCE4DBF6DD331971564464B70FAA451E40BFA7A4DD2EB70C55790E291BA82CD",
+      "required_text": [
+        "2021 AMC 12B (Fall Contest) Problems"
+      ],
+      "exam_date_evidence_url": "https://ivyleaguecenter.org/2021/11/09/2021-amc-10b-12b-fall-contest-problems-and-answers/"
+    }
+  },
+  "problem_text_cross_checks": {
+    "A": "https://artofproblemsolving.com/wiki/index.php/2021_Fall_AMC_12A_Problems",
+    "B": "https://artofproblemsolving.com/wiki/index.php/2021_Fall_AMC_12B_Problems",
+    "snapshot_path": "sources/2021_fall/2021_fall_verified_problem_snapshot.json",
+    "snapshot_sha256": "C5BBA9A75C0C2A89AF886686868A2D23BFC26329C51483D38F8056B359FB7D4A"
+  },
+  "answer_key_cross_checks": {
+    "A": {
+      "url": "https://artofproblemsolving.com/wiki/index.php/2021_Fall_AMC_12A_Answer_Key",
+      "letters": "CEBEBDBDEDECAEDBBEBDCDAEE"
+    },
+    "B": {
+      "url": "https://artofproblemsolving.com/wiki/index.php/2021_Fall_AMC_12B_Answer_Key",
+      "letters": "EBCECCDDBECBEBEBAAEAACACC"
+    }
+  },
+  "secondary_reference": {
+    "path": "sources/2021_fall/fall_2021_amc_12_b_solutions_reference.pdf",
+    "url": "https://shsmathteam.com/wp-content/uploads/2021/11/fall_2021_amc_12_b_solutions.pdf",
+    "document_title": "Fall 2021 AMC 12B Solutions",
+    "publication_date": "2021-11",
+    "page_count": 33,
+    "sha256": "57C132606E60544B26B8DCEED29FC143A21CAB44F496BA32E1A90B4F4BF423E9"
+  },
+  "quarantined_source": {
+    "path": "input/quarantine/2021AMC_FALL_is_Spring.pdf",
+    "sha256": "E4F215D277EE20EB7B3A5C7208D2AF4E83529956CBCD4A4CAE8E479F562ED38C",
+    "reason": "Byte-for-byte identical to input/2021AMC_Spring.pdf; not a Fall source."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "updated_at": "2026-07-16T12:44:22-07:00",
+  "embedded_amc12_rows": 1200,
+  "removed_fall_manifest_entries": 31,
+  "removed_fall_detail_directories": 31,
+  "remaining_manifest_entries": 2086,
+  "amc12_detail_links": 1027,
+  "next_action": "Re-triage all 50 corrected 2021 Fall rows; do not restore stale teaching pages."
+}
