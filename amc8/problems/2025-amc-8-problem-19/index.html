@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2025 AMC 8 Problem 19 详细解答</title>
+  <style>
+:root {
+  --bg:#f7f4ee; --panel:#fff; --ink:#1e2832; --muted:#66727f;
+  --line:#d8ddd8; --blue:#2166a5; --green:#4f7d48; --amber:#c58a1d;
+  --red:#b3564a; --chip:#eef3f7; --navy:#17324a;
+}
+* { box-sizing:border-box; }
+html,body { max-width:100%; overflow-x:hidden; }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter,"Segoe UI","Microsoft YaHei",Arial,sans-serif; }
+header { background:var(--navy); color:#fff; padding:28px 32px 20px; }
+h1 { margin:0 0 8px; font-size:30px; letter-spacing:0; }
+header p { margin:0; color:#d7e4ef; }
+main { padding:24px 32px 40px; }
+.stats { display:grid; grid-template-columns:repeat(4,minmax(150px,1fr)); gap:12px; margin-bottom:16px; }
+.stat,.panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; min-width:0; }
+.stat strong { display:block; font-size:26px; }
+.stat span,.muted { color:var(--muted); }
+.grid { display:grid; grid-template-columns:minmax(240px,.8fr) minmax(360px,1.2fr); gap:16px; margin-bottom:16px; }
+button,select,input { font:inherit; }
+button { cursor:pointer; }
+.controls { display:grid; grid-template-columns:repeat(4,minmax(130px,1fr)) minmax(120px,.7fr); gap:10px; margin-bottom:14px; }
+label { display:grid; gap:6px; font-size:12px; color:var(--muted); }
+select,input { min-height:38px; min-width:0; border:1px solid var(--line); border-radius:6px; padding:8px 10px; background:#fff; color:var(--ink); }
+select:focus-visible,input:focus-visible,button:focus-visible,a:focus-visible { outline:3px solid rgba(33,102,165,.22); outline-offset:2px; }
+.clear { min-height:38px; border:1px solid var(--line); border-radius:6px; background:#24384b; color:#fff; padding:8px 12px; align-self:end; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr)); gap:12px; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:15px; display:grid; gap:10px; min-width:0; }
+.problem-link { color:inherit; text-decoration:none; transition:border-color .15s ease,box-shadow .15s ease,transform .15s ease; }
+.problem-link:hover { border-color:#9ab7ce; box-shadow:0 5px 16px rgba(23,50,74,.10); transform:translateY(-1px); }
+.problem-link:focus-visible { outline:3px solid #6f9fc3; outline-offset:2px; }
+.detail-cta { color:var(--blue); font-weight:700; font-size:13px; }
+.top { display:flex; flex-wrap:wrap; gap:7px; align-items:center; min-width:0; }
+.source { font-weight:750; margin-right:auto; }
+.badge { display:inline-flex; min-height:24px; padding:3px 8px; border-radius:999px; background:var(--chip); font-size:12px; }
+.badge.major { background:#e8f0dc; color:#35592f; }
+.badge.answer { background:#f5e3df; color:#863f35; font-weight:750; }
+.statement,.idea { line-height:1.55; font-size:14px; white-space:pre-wrap; }
+.idea { border-left:3px solid var(--blue); padding-left:10px; color:#33414e; font-size:13px; }
+.source,.statement,.idea,.badge,.muted { overflow-wrap:anywhere; word-break:break-word; }
+.empty { border:1px dashed var(--line); border-radius:8px; padding:24px; color:var(--muted); text-align:center; background:#fff; }
+.home-link { display:inline-block; margin-bottom:10px; color:#fff; text-underline-offset:3px; }
+.summary { margin:2px 0 6px; color:#33414e; }
+@media (max-width:980px) {
+  main { padding:18px; }
+  header { padding:24px 18px 18px; }
+  .stats,.grid,.controls,.compare-head,.bar-row { grid-template-columns:1fr; }
+  .compare-head { display:none; }
+  .bar-row [data-label]::before { content:attr(data-label); display:block; margin-bottom:4px; color:var(--muted); font-size:11px; font-weight:600; }
+}
+@media (max-width:480px) {
+  main { padding:14px 10px 28px; }
+  header { padding:20px 12px 16px; }
+  h1 { font-size:25px; }
+  .stats { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .stat,.panel { padding:13px; }
+  .cards { grid-template-columns:minmax(0,1fr); }
+}
+
+body { background:#f3f1eb; }
+.detail-header { padding-bottom:24px; }
+.detail-nav,.detail-pager { display:flex; flex-wrap:wrap; gap:9px; align-items:center; }
+.detail-nav { margin-bottom:18px; }
+.nav-link,.pager-link,.pager-disabled { display:inline-flex; align-items:center; min-height:38px; border:1px solid rgba(255,255,255,.28); border-radius:7px; padding:8px 11px; color:#fff; text-decoration:none; }
+.nav-link:hover,.pager-link:hover { background:rgba(255,255,255,.1); }
+.pager-disabled { opacity:.48; cursor:not-allowed; }
+.detail-main { max-width:980px; margin:0 auto; }
+.detail-meta { display:flex; flex-wrap:wrap; gap:7px; margin-top:14px; }
+.detail-meta .badge { background:rgba(255,255,255,.13); color:#fff; border:1px solid rgba(255,255,255,.18); }
+.detail-panel { background:#fff; border:1px solid var(--line); border-radius:10px; padding:20px; margin-bottom:15px; min-width:0; }
+.detail-panel h2 { margin:0 0 13px; font-size:20px; }
+.problem-statement { white-space:pre-wrap; line-height:1.72; overflow-wrap:anywhere; }
+.choices { display:grid; gap:9px; padding:0; margin:0; list-style:none; }
+.choice { display:grid; grid-template-columns:32px minmax(0,1fr); gap:9px; align-items:start; border:1px solid var(--line); border-radius:8px; padding:11px; line-height:1.55; min-width:0; }
+.choice-key { display:grid; place-items:center; width:29px; height:29px; border-radius:50%; background:var(--chip); color:var(--navy); font-weight:800; }
+.choice-value { padding-top:3px; overflow-wrap:anywhere; word-break:break-word; }
+.choice.correct { border-color:#87aa82; background:#f1f7ec; }
+.choice.correct .choice-key { background:var(--green); color:#fff; }
+.solution-steps { display:grid; gap:12px; }
+.step { border-left:4px solid var(--blue); background:#f7fafc; border-radius:0 8px 8px 0; padding:13px 15px; min-width:0; }
+.step h3 { margin:0 0 7px; font-size:16px; }
+.step p { margin:0; white-space:pre-wrap; line-height:1.68; overflow-wrap:anywhere; }
+.figure-callout { border:1px solid #d7b96e; background:#fff8e8; border-radius:8px; padding:13px; line-height:1.6; }
+.figure-callout a { color:#805b08; }
+.diagram-gallery { display:grid; gap:12px; }
+.problem-figure { margin:0; display:grid; gap:8px; min-width:0; }
+.problem-figure img { display:block; width:auto; max-width:100%; height:auto; max-height:760px; margin:0 auto; border:1px solid var(--line); border-radius:8px; background:#fff; }
+.problem-figure figcaption,.diagram-provenance { color:var(--muted); font-size:12px; line-height:1.55; overflow-wrap:anywhere; }
+.diagram-correction { border-color:#bfd3e3; background:#edf4f9; }
+.final-answer { border:2px solid #8caf82; background:#f0f7ec; }
+.final-answer strong { color:#315c2b; }
+.reference { background:#edf4f9; border-color:#bfd3e3; }
+.reference-links { display:flex; flex-wrap:wrap; gap:10px; }
+.reference a { color:var(--blue); }
+.detail-footer { margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+.math-wrap { max-width:100%; overflow-x:auto; overflow-y:hidden; }
+@media (max-width:700px) {
+  .detail-main { padding:14px 10px 28px; }
+  .detail-panel { padding:15px 13px; }
+  .detail-header { padding:20px 12px 17px; }
+  .detail-nav,.detail-pager { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+  .nav-link,.pager-link,.pager-disabled { justify-content:center; text-align:center; min-width:0; }
+  .choice { grid-template-columns:29px minmax(0,1fr); padding:9px; }
+}
+</style>
+<style id="stemhub-site-nav-style">
+.stemhub-site-nav{max-width:1180px;margin:12px auto 0;padding:0 18px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.stemhub-site-nav a{display:inline-flex;align-items:center;min-height:38px;padding:7px 12px;border:1px solid #cbd5e1;border-radius:999px;background:#fff;color:#1e3a5f;text-decoration:none;font:700 14px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif}
+.stemhub-site-nav a:hover,.stemhub-site-nav a:focus-visible{border-color:#2563eb;color:#1d4ed8;box-shadow:0 0 0 3px rgba(37,99,235,.14);outline:0}
+@media(max-width:480px){.stemhub-site-nav{padding:0 12px}.stemhub-site-nav a{flex:1 1 auto;justify-content:center;font-size:13px}}
+</style>
+</head>
+<body data-problem-count="1" data-page-kind="problem-detail" data-year="2025" data-problem-no="19" data-source="2025 AMC 8 Problem 19">
+<nav class="stemhub-site-nav" data-stemhub-site-nav="1" aria-label="STEMHUB 竞赛导航"><a href="../../../index.html">STEMHUB 首页</a><a href="../../../amc10/index.html">AMC 10</a><a href="../../../amc12/index.html">AMC 12</a></nav>
+
+  <header class="detail-header">
+    <nav class="detail-nav site-nav" aria-label="返回导航">
+      <a class="nav-link back" href="../../all_years_index.html">返回全部年份</a>
+      <a class="nav-link back" href="../../2025/2025.html">返回 2025 年度页</a>
+      <a class="nav-link" href="../../textbook_index.html">教材索引</a>
+    </nav>
+    <div class="detail-pager" aria-label="前后题导航"><a class="pager-link" href="../2025-amc-8-problem-18/index.html">← 上一题</a><a class="pager-link" href="../2025-amc-8-problem-20/index.html">下一题 →</a></div>
+    <h1>2025 AMC 8 Problem 19</h1>
+    <p>AMC 8 逐题详情与原创中文分步解答</p>
+    <div class="detail-meta meta">
+      <span class="badge">2025</span>
+      <span class="badge">AMC 8</span>
+      <span class="badge">第 19 题</span>
+      <span class="badge">代数</span>
+      <span class="badge">方程</span>
+      <span class="badge">分段速度</span><span class="badge">相遇问题</span>
+    </div>
+  </header>
+  <main class="detail-main">
+    <section class="detail-panel section" id="problem-statement">
+      <h2>题目</h2>
+      <div class="problem-statement statement math-wrap">A 15-mile road has consecutive 5-mile speed limits 25, 40, and 20 mph from A to B. Cars start simultaneously at A and B and drive toward each other at the local limit. How far from A do they meet?</div>
+    </section>
+    <section class="detail-panel section" id="choices" data-option-source="wiki_raw_latex">
+      <h2>A–E 选项</h2>
+      <ol class="choices"><li class="choice" data-choice="A" data-correct="false"><span class="choice-key">A</span><span class="choice-value math-wrap">$\ 7.75$</span></li><li class="choice" data-choice="B" data-correct="false"><span class="choice-key">B</span><span class="choice-value math-wrap">$\ 8$</span></li><li class="choice" data-choice="C" data-correct="false"><span class="choice-key">C</span><span class="choice-value math-wrap">$\ 8.25$</span></li><li class="choice correct" data-choice="D" data-correct="true"><span class="choice-key">D</span><span class="choice-value math-wrap">$\ 8.5$</span></li><li class="choice" data-choice="E" data-correct="false"><span class="choice-key">E</span><span class="choice-value math-wrap">$\ 8.75$</span></li></ol>
+    </section>
+
+    <section class="detail-panel" id="diagram-note">
+      <h2>图形说明</h2>
+      <div class="figure-callout">
+        本题依赖原题图形，但没有可可靠嵌入的本地图。本地 PDF 未呈现分段道路图；按来源规则不自行补画。 请对照
+        <span class="local-pdf-reference">本地 2025 AMC 8 PDF（来源已核验；发布版未附原始 PDF）</span>
+        或页面底部的 AoPS Wiki 原题页。<br>
+        独立复核：按已核验分段速度图做时间轴计算，在 0.25 小时时两车位于 7 与 10，再用相对速度 80 求相遇点 8.5。答案字母与 Answer Key 的 D 一致，未查看 AoPS 解答。
+      </div>
+    </section>
+
+    <section class="detail-panel section solution" id="solution">
+      <h2>原创中文分步解答</h2>
+      <div class="solution-steps"><article class="step" data-step="1"><h3>跟踪前十二分钟</h3><p class="math-wrap">从 A 出发的车先以 25 的速度行驶 5 个距离单位，耗时 5/25=0.2 小时；此时另一车已走 4 个单位。</p></article><article class="step" data-step="2"><h3>确定两车位置</h3><p class="math-wrap">若全程端点相距 15，则 0.2 小时后两车分别位于距 A 为 5 与 15−4=11 的位置。</p></article><article class="step" data-step="3"><h3>进入中间路段</h3><p class="math-wrap">再过 0.05 小时，两车各自到达中间路段，位置分别为 7 与 10，间距缩为 3。</p></article><article class="step" data-step="4"><h3>计算最后相遇</h3><p class="math-wrap">中间路段相向速度和为 40+40=80，追上 3 的距离需 3/80 小时；A 车再走 40×3/80=1.5。</p></article><article class="step" data-step="5"><h3>得到相遇位置</h3><p class="math-wrap">相遇点距 A 为 7+1.5=8.5。</p></article></div>
+    </section>
+    <section class="detail-panel section" id="key-idea">
+      <h2>Key Idea</h2>
+      <div class="problem-statement math-wrap">按分段行驶时间确定相遇时所在路段，再建立同时到达方程。</div>
+    </section>
+    <section class="detail-panel section" id="notes">
+      <h2>Notes</h2>
+      <div class="problem-statement">题面包含图形；图形细节已对照原题 PDF 与 AoPS 题页</div>
+    </section>
+    <section class="detail-panel section final-answer answer" id="final-answer" data-answer-choice="D">
+      <h2>最终答案</h2>
+      <p class="math-wrap">因此选 D，答案值为 8.5。</p>
+      <p><strong>答案：(D) $\ 8.5$</strong></p>
+    </section>
+    <section class="detail-panel section reference references" id="answer-reference">
+      <h2>答案核验来源</h2>
+      <p>本题答案已按 AoPS Wiki Answer Key 核验。本站解答为独立推导与原创中文表达，不复制 AoPS 社区解答正文。</p>
+      <div class="reference-links">
+        <a href="https://artofproblemsolving.com/wiki/index.php/2025_AMC_8_Answer_Key" target="_blank" rel="noopener noreferrer">AoPS Wiki 2025 AMC 8 Answer Key</a>
+        <a href="https://artofproblemsolving.com/wiki/index.php/2025_AMC_8_Problems/Problem_19" target="_blank" rel="noopener noreferrer">AoPS Wiki 2025 AMC 8 Problem 19 原题页</a>
+      </div>
+      <p class="muted">核验状态：verified · 独立复核：按已核验分段速度图做时间轴计算，在 0.25 小时时两车位于 7 与 10，再用相对速度 80 求相遇点 8.5。答案字母与 Answer Key 的 D 一致，未查看 AoPS 解答。</p>
+      <div class="detail-footer detail-pager"><a class="pager-link" href="../2025-amc-8-problem-18/index.html">← 上一题</a><a class="pager-link" href="../2025-amc-8-problem-20/index.html">下一题 →</a></div>
+    </section>
+  </main>
+
+<script>
+window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]]},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]}};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>

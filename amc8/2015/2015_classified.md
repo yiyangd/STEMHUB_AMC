@@ -1,0 +1,267 @@
+# 2015 AMC 8 题目分类
+
+- 题量：25
+- 比赛：AMC 8
+- form：空字符串（AMC 8 无 A/B 卷）
+- 答案：逐题按 AoPS Wiki Answer Key 核验
+
+## 一级分类统计
+
+| 一级分类 | 题量 |
+| --- | ---: |
+| 几何与测量 | 8 |
+| 代数 | 5 |
+| 概率与统计 | 4 |
+| 组合数学 | 4 |
+| 数论 | 2 |
+| 算术与数感 | 2 |
+
+## 二级分类统计
+
+| 一级分类 | 二级分类 | 题量 |
+| --- | --- | ---: |
+| 代数 | 数列 | 2 |
+| 代数 | 方程 | 3 |
+| 几何与测量 | 三角形 | 2 |
+| 几何与测量 | 周长与长度 | 1 |
+| 几何与测量 | 坐标 | 1 |
+| 几何与测量 | 空间几何 | 1 |
+| 几何与测量 | 面积 | 3 |
+| 数论 | 因数与倍数 | 1 |
+| 数论 | 整除 | 1 |
+| 概率与统计 | 图表与数据 | 1 |
+| 概率与统计 | 平均数 | 1 |
+| 概率与统计 | 概率 | 2 |
+| 算术与数感 | 应用题 | 1 |
+| 算术与数感 | 比例 | 1 |
+| 组合数学 | 容斥 | 1 |
+| 组合数学 | 排列组合 | 1 |
+| 组合数学 | 构造 | 1 |
+| 组合数学 | 计数 | 1 |
+
+## 逐题分类
+
+### Problem 1 · 几何与测量 / 面积
+
+How many square yards of carpet are required to cover a rectangular floor that is 12 feet long and 9 feet wide? (There are 3 feet in a yard.) (A) 12 (B) 36 (C) 108 (D) 324 (E) 972
+
+- 答案：A
+- 标签：面积;正方形
+- 核心思路：分割、补形或作差，将目标区域化为基本图形面积。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 2 · 几何与测量 / 面积
+
+Point O is the center of the regular octagon ABCDEFGH, and X is the midpoint of the side AB. What fraction of the area of the octagon is shaded? [图形] (A) (11)/(32) (B) (3)/(8) (C) (13)/(32) (D) (7)/(16) (E) (15)/(32)
+
+- 答案：D
+- 标签：面积;AMC 8
+- 核心思路：分割、补形或作差，将目标区域化为基本图形面积。
+- 备注：题面包含图形；纯文本以 [图形] 标记图形位置；图形细节已对照原题 PDF 与 AoPS 题页；题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 3 · 算术与数感 / 应用题
+
+Jack and Jill are going swimming at a pool that is one mile from their house. They leave home simultaneously. Jill rides her bicycle to the pool at a constant speed of 10 miles per hour. Jack walks to the pool at a constant speed of 4 miles per hour. How many minutes before Jack arrives does Jill arrive? (A) 5 (B) 6 (C) 8 (D) 9 (E) 10
+
+- 答案：D
+- 标签：应用题;速度
+- 核心思路：提取数量、速度、时间或费用关系并分步计算。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 4 · 组合数学 / 排列组合
+
+The Centerville Middle School chess team consists of two boys and three girls. A photographer wants to take a picture of the team to appear in the local newspaper. She decides to have them sit in a row with a boy at each end and the three girls in the middle. How many such arrangements are possible? (A) 2 (B) 4 (C) 5 (D) 6 (E) 12
+
+- 答案：E
+- 标签：排列组合;图表;排列
+- 核心思路：按位置或对象分组，处理相邻、捆绑等排列限制。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 5 · 概率与统计 / 图表与数据
+
+Billy's basketball team scored the following points over the course of the first 11 games of the season: 42, 47, 53, 53, 58, 58, 58, 61, 64, 65, 73 If his team scores 40 in the 12th game, which of the following statistics will show an increase? (A) range (B) median (C) mean (D) mode (E) mid-range
+
+- 答案：A
+- 标签：图表与数据;AMC 8
+- 核心思路：准确读取图表或数据结构，再计算所求统计量。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 6 · 几何与测量 / 三角形
+
+In triangle ABC, AB=BC=29, and AC=42. What is the area of triangle ABC? (A) 100 (B) 420 (C) 500 (D) 609 (E) 701
+
+- 答案：B
+- 标签：三角形;面积
+- 核心思路：利用三角形的边、角、相似或面积关系求解。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 7 · 概率与统计 / 概率
+
+Each of two boxes contains three chips numbered 1, 2, 3. A chip is drawn randomly from each box and the numbers on the two chips are multiplied. What is the probability that their product is even? (A) (1)/(9) (B) (2)/(9) (C) (4)/(9) (D) (1)/(2) (E) (5)/(9)
+
+- 答案：E
+- 标签：概率;AMC 8
+- 核心思路：确定等可能样本空间，计数有利结果并求比值。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 8 · 几何与测量 / 周长与长度
+
+What is the smallest whole number larger than the perimeter of any triangle with a side of length 5 and a side of length 19 ？ (A) 24 (B) 29 (C) 43 (D) 48 (E) 57
+
+- 答案：D
+- 标签：周长与长度;三角形
+- 核心思路：利用边长关系、三角不等式或周长守恒求长度。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 9 · 代数 / 数列
+
+On her first day of work, Janabel sold one widget. On day two, she sold three widgets. On day three, she sold five widgets, and on each succeeding day, she sold two more widgets than she had sold on the previous day. How many widgets in total had Janabel sold after working 20 days? (A) 39 (B) 40 (C) 210 (D) 400 (E) 401
+
+- 答案：D
+- 标签：数列;AMC 8
+- 核心思路：识别相邻项或项号之间的规律，再求指定项或总和。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 10 · 组合数学 / 计数
+
+How many integers between 1000 and 9999 have four distinct digits? (A) 3024 (B) 4536 (C) 5040 (D) 6480 (E) 6561
+
+- 答案：B
+- 标签：计数;数字
+- 核心思路：建立不重不漏的分类或递推计数。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 11 · 概率与统计 / 概率
+
+In the small country of Mathland, all automobile license plates have four symbols. The first symbol must be a vowel ( A, E, I, O, or U ), the second and third symbols must be two different letters among the 21 non-vowels in the alphabet, and the fourth symbol must be a digit ( 0 through 9 ). If the symbols are chosen at random subject to these conditions, what is the probability (In fractions) that the plate will read " AMC8 "? (A) (1)/(22,050) (B) (1)/(21,000) (C) (1)/(10,500) (D) (1)/(2,100) (E) (1)/(1,050)
+
+- 答案：B
+- 标签：概率;数字
+- 核心思路：确定等可能样本空间，计数有利结果并求比值。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 12 · 几何与测量 / 空间几何
+
+How many pairs of parallel edges, such as AB, and GH, or EH, and FG, does a cube have? Repeating parallel edges do not count toward the final answer. [图形] (A) 6 (B) 12 (C) 18 (D) 24 (E) 36
+
+- 答案：C
+- 标签：空间几何;立方体
+- 核心思路：根据立体的面、棱、截面或展开图分析空间关系。
+- 备注：题面包含图形；纯文本以 [图形] 标记图形位置；图形细节已对照原题 PDF 与 AoPS 题页；题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 13 · 概率与统计 / 平均数
+
+How many subsets of two elements can be removed from the set 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 so that the mean (average) of the remaining numbers is 6? (A) 1 (B) 2 (C) 3 (D) 5 (E) 6
+
+- 答案：D
+- 标签：平均数;AMC 8
+- 核心思路：利用总和等于平均数乘数据个数建立关系。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 14 · 数论 / 整除
+
+Which of the following integers cannot be written as the sum of four consecutive odd integers? (A) 16 (B) 40 (C) 72 (D) 100 (E) 200
+
+- 答案：D
+- 标签：整除;AMC 8
+- 核心思路：把条件写成整除关系并利用倍数结构筛选。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 15 · 组合数学 / 容斥
+
+At Euler Middle School, 198 students voted on two issues in a school referendum with the following results: 149 voted in favor of the first issue and 119 voted in favor of the second issue. If there were exactly 29 students who voted against both issues, how many students voted in favor of both issues? (A) 49 (B) 70 (C) 79 (D) 99 (E) 149
+
+- 答案：D
+- 标签：容斥;AMC 8
+- 核心思路：用总数减重复或用集合交并关系计算。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 16 · 算术与数感 / 比例
+
+In a middle-school mentoring program, a number of the sixth graders are paired with a ninth-grade student as a buddy. No ninth grader is assigned more than one sixth-grade buddy. If (1)/(3) of all the ninth graders are paired with (2)/(5) of all the sixth graders, what fraction of the total number of sixth and ninth graders have a buddy? (A) (2)/(15) (B) (4)/(11) (C) (11)/(30) (D) (3)/(8) (E) (11)/(15)
+
+- 答案：B
+- 标签：比例;AMC 8
+- 核心思路：设共同份数或比例参数，将各数量写成同一参数的倍数。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 17 · 代数 / 方程
+
+Jeremy's father drives his son to school in rush hour traffic in 20 minutes. One day, there is no traffic, so his father can drive him 18 miles per hour faster and gets him to school in 12 minutes. How far in miles is it to school? (A) 4 (B) 6 (C) 8 (D) 9 (E) 12
+
+- 答案：D
+- 标签：方程;AMC 8
+- 核心思路：设未知数，把题目条件翻译成方程并筛选符合条件的解。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 18 · 代数 / 数列
+
+An arithmetic sequence is a sequence in which each term after the first is obtained by adding a constant to the previous term. For example, 2,5,8,11,14 is an arithmetic sequence with five terms, in which the first term is 2 and the constant added is 3. Each row and each column in this 5×5 array is an arithmetic sequence with five terms. The square in the center is labelled X as shown. What is the value of X? [图形] (A) 21 (B) 31 (C) 36 (D) 40 (E) 42
+
+- 答案：B
+- 标签：数列;正方形
+- 核心思路：识别相邻项或项号之间的规律，再求指定项或总和。
+- 备注：题面包含图形；纯文本以 [图形] 标记图形位置；图形细节已对照原题 PDF 与 AoPS 题页；题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 19 · 几何与测量 / 坐标
+
+A triangle with vertices as A=(1,3), B=(5,1), and C=(4,4) is plotted on a 6×5 grid. What fraction of the grid is covered by the triangle? [图形] (A) (1)/(6) (B) (1)/(5) (C) (1)/(4) (D) (1)/(3) (E) (1)/(2)
+
+- 答案：A
+- 标签：坐标;三角形;网格
+- 核心思路：把图形条件转成坐标差、斜率、距离或面积。
+- 备注：题面包含图形；纯文本以 [图形] 标记图形位置；图形细节已对照原题 PDF 与 AoPS 题页；题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 20 · 代数 / 方程
+
+Ralph went to the store and bought 12 pairs of socks for a total of 24. Some of the socks he bought cost 1 a pair, some of the socks he bought cost 3 a pair, and some of the socks he bought cost 4 a pair. If he bought at least one pair of each type, how many pairs of 1 socks did Ralph buy? (A) 4 (B) 5 (C) 6 (D) 7 (E) 8
+
+- 答案：D
+- 标签：方程;AMC 8
+- 核心思路：设未知数，把题目条件翻译成方程并筛选符合条件的解。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 21 · 几何与测量 / 三角形
+
+In the given figure hexagon ABCDEF is equiangular, ABJI and FEHG are squares with areas 18 and 32 respectively, triangle JBK is equilateral and FE=BC. What is the area of triangle KBC? [图形] (A) 6sqrt(2) (B) 9 (C) 12 (D) 9sqrt(2) (E) 32
+
+- 答案：C
+- 标签：三角形;正方形;面积
+- 核心思路：利用三角形的边、角、相似或面积关系求解。
+- 备注：题面包含图形；纯文本以 [图形] 标记图形位置；图形细节已对照原题 PDF 与 AoPS 题页；题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 22 · 数论 / 因数与倍数
+
+On June 1, a group of students are standing in rows, with 15 students in each row. On June 2, the same group is standing with all of the students in one long row. On June 3, the same group is standing with just one student in each row. On June 4, the same group is standing with 6 students in each row. This process continues through June 12 with a different number of students per row each day. However, on June 13, they cannot find a new way of organizing the students. What is the smallest possible number of students in the group? (A) 21 (B) 30 (C) 60 (D) 90 (E) 1080
+
+- 答案：C
+- 标签：因数与倍数;AMC 8
+- 核心思路：进行质因数分解，利用因数、倍数或最小公倍数结构。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 23 · 组合数学 / 构造
+
+Tom has twelve slips of paper which he wants to put into five cups labeled A, B, C, D, E. He wants the sum of the numbers on the slips in each cup to be an integer. Furthermore, he wants the five integers to be consecutive and increasing from A to E. The numbers on the papers are 2, 2, 2, 2.5, 2.5, 3, 3, 3, 3, 3.5, 4, and 4.5. If a slip with 2 goes into cup E and a slip with 3 goes into cup B, then the slip with 3.5 must go into what cup? (A) A (B) B (C) C (D) D (E) E
+
+- 答案：D
+- 标签：构造;AMC 8
+- 核心思路：先找必要限制，再构造达到限制的可行方案。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 24 · 代数 / 方程
+
+A baseball league consists of two four-team divisions. Each team plays every other team in its division N games. Each team plays every team in the other division M games with N>2M and M>4. Each team plays a 76 -game schedule. How many games does a team play within its own division? (A) 36 (B) 48 (C) 54 (D) 60 (E) 72
+
+- 答案：B
+- 标签：方程;AMC 8
+- 核心思路：设未知数，把题目条件翻译成方程并筛选符合条件的解。
+- 备注：题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验
+
+### Problem 25 · 几何与测量 / 面积
+
+One-inch squares are cut from the corners of this 5 inch square. What is the area in square inches of the largest square that can fit into the remaining space? [图形] (A) 9 (B) 12(1)/(2) (C) 15 (D) 15(1)/(2) (E) 17
+
+- 答案：C
+- 标签：面积;正方形
+- 核心思路：分割、补形或作差，将目标区域化为基本图形面积。
+- 备注：题面包含图形；纯文本以 [图形] 标记图形位置；图形细节已对照原题 PDF 与 AoPS 题页；题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验

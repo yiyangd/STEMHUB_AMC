@@ -1,0 +1,12 @@
+# AMC 8 site manifests hash exact published bytes; keep generated text on LF
+# across Windows and GitHub Pages checkouts.
+amc8/**/*.html text eol=lf
+# CSV/Markdown are byte-identical protected source artifacts (currently CRLF),
+# so store their bytes verbatim instead of applying checkout normalization.
+amc8/**/*.md -text
+amc8/**/*.csv -text
+amc8/**/*.json text eol=lf
+amc8/**/*.png binary
+scripts/sync_amc8_site.py text eol=lf
+scripts/validate_amc8_site.py text eol=lf
+docs/audits/amc8_site_validation.md text eol=lf

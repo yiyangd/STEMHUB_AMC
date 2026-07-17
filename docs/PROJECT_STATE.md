@@ -1,6 +1,6 @@
 # STEMHUB AMC Project State
 
-- Updated: 2026-07-16 (America/Vancouver)
+- Updated: 2026-07-17 (America/Vancouver)
 - Repository: `D:\STEMHUB_AMC`
 - Branch: `main`
 - Audit commit before remediation: `fb80b504` (`Audit 2021 Fall AMC 12 data integrity`)
@@ -8,14 +8,39 @@
 
 ## Current baseline
 
+- AMC8 source rows: 250 across the ten real years 2015-2020 and 2022-2025
 - AMC10 source rows: 1,150
 - AMC12 source rows: 1,200
-- Total source rows: 2,350
-- Generated detail-page manifest entries: 2,086
-- Missing/triage rows: 264
-- Bilingual Chinese/English interface remains enabled for shared UI.
+- Total source rows: 2,600
+- Generated detail pages: 250 for AMC8 plus 2,086 AMC10/12 manifest entries (2,336 total)
+- Missing/triage rows: 0 for AMC8; 264 in the existing AMC10/12 queue
+- Bilingual Chinese/English interface remains enabled for the shared home, AMC10, and AMC12 UI. AMC8 keeps its validated self-contained interface and does not inherit the A/B-only localization path.
+
+AMC8 is a single-form contest. Its retained `form` data is empty, and the published pages contain no A/B controls or generated 2021 dataset.
 
 The historical root-level manifest, progress, report, and resume files remain useful evidence. This document is the current high-level state entry point.
+
+## AMC 8 site integration
+
+The validated AMC8 release is mirrored from `D:\AMC8_Codex\output` through a strict public-file allowlist into `amc8/`. The published payload includes:
+
+- the 10-year, 250-problem overview and annual pages;
+- 250 problem detail pages with independently written step-by-step solutions;
+- 76 local diagram assets required by those pages;
+- the textbook, method, common-error, and prerequisite indexes;
+- the 12-column public CSV and AMC8 taxonomy;
+- an independent AMC8 site manifest and validation report.
+
+Run these commands from the repository root before any future AMC8 release:
+
+```powershell
+python scripts\sync_amc8_site.py
+python scripts\validate_amc8_site.py
+```
+
+Current release validation: **33/33 PASS**. The sync verifies all 363 allowlisted upstream files against the AMC8 source manifest before publishing. Two consecutive full syncs produced the same `amc8/site_manifest.json` SHA-256: `853E200720DCFAA0F4966282EBF82773C72A8B133D8C55BE499EC0F1B8EAD3AC`.
+
+Evidence: [`docs/audits/amc8_site_validation.md`](audits/amc8_site_validation.md)
 
 ## 2021 Fall remediation status
 
@@ -39,7 +64,7 @@ Evidence:
 - [`docs/audits/2021_fall_sync_result.json`](audits/2021_fall_sync_result.json)
 - [`docs/audits/2021_fall_repair_validation.md`](audits/2021_fall_repair_validation.md)
 
-## Immediate next entry point
+## AMC 10/12 immediate next entry point
 
 Regenerate 2021 Fall teaching pages from the corrected CSV only:
 

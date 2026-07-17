@@ -1,0 +1,1849 @@
+{
+  "schema_version": 1,
+  "site": "STEMHUB AMC 8",
+  "publication_root": "amc8/",
+  "source_project": "AMC8_Codex/output",
+  "source_manifest_sha256": "427494E049FB6DC676BC81A087F7D0630BA188250F417797D204D734B5041DF3",
+  "years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "problem_count": 250,
+  "detail_page_count": 250,
+  "diagram_image_count": 76,
+  "html_page_count": 263,
+  "navigation_injected_page_count": 263,
+  "local_pdf_links_replaced": 96,
+  "upstream_artifacts_verified": 363,
+  "managed_file_count_excluding_manifest": 364,
+  "files": [
+    {
+      "path": "2015/2015.html",
+      "bytes": 34843,
+      "sha256": "6A93741772DEC326C5A2B0573A4EACEE0AFF202E3D76E5B84D282203F7C2F409"
+    },
+    {
+      "path": "2015/2015_classified.md",
+      "bytes": 15995,
+      "sha256": "E2865F80907E5C765427F369562C4ED1633C9EF2C753C692D1E5BAC0D24DBD33"
+    },
+    {
+      "path": "2015/2015_problems.csv",
+      "bytes": 13947,
+      "sha256": "CA51CB9DC8AF7040DCC4215E9E8380865244938EDF604D10254D64700D0AFBCC"
+    },
+    {
+      "path": "2016/2016.html",
+      "bytes": 32367,
+      "sha256": "D04F839C58B838D5CC5BB6BB39B41166A01519AE0BA285FBEFB5683A18AAF024"
+    },
+    {
+      "path": "2016/2016_classified.md",
+      "bytes": 13665,
+      "sha256": "72D2293F7B1A42F51BEECE028E9C986F15FF4D4F7E2068B603895DDC8E776F2D"
+    },
+    {
+      "path": "2016/2016_problems.csv",
+      "bytes": 11661,
+      "sha256": "2FC65B1D0EFA46005C10FB6BA258ED09093FC3C245A8F2329EAB43A830E80057"
+    },
+    {
+      "path": "2017/2017.html",
+      "bytes": 33834,
+      "sha256": "617CC6D418FB3A286A869E91F5DAC6E928A813F9CA08C4A74F0AFDB4A70EEB51"
+    },
+    {
+      "path": "2017/2017_classified.md",
+      "bytes": 14983,
+      "sha256": "D255B53DE9731079C74A32AFC8F8453AFBEC73688DABA67007C04BDADB7D9F12"
+    },
+    {
+      "path": "2017/2017_problems.csv",
+      "bytes": 12942,
+      "sha256": "3CCD5BE52770A1495B8DD35B2DCE3474CFA782296814E511F67A7A9BFAE20B23"
+    },
+    {
+      "path": "2018/2018.html",
+      "bytes": 34521,
+      "sha256": "A29F96DE18A989434028905879E1B64DCDCD8CEEE74DADF1B3F3F819B8037341"
+    },
+    {
+      "path": "2018/2018_classified.md",
+      "bytes": 15657,
+      "sha256": "FC62FA677D89D7BD582798D7ED6683C166A927334DD0C9D3FA2E2055E00C24ED"
+    },
+    {
+      "path": "2018/2018_problems.csv",
+      "bytes": 13605,
+      "sha256": "5DDA83E26E27AEE279061CE272D0245DC0A8F3AD755E551E08AB90656B347166"
+    },
+    {
+      "path": "2019/2019.html",
+      "bytes": 35825,
+      "sha256": "B9BE9CFE862B3990891A5E70904F673F864C26993D517524934537CA892A92B5"
+    },
+    {
+      "path": "2019/2019_classified.md",
+      "bytes": 16838,
+      "sha256": "E607C6A04F94F3A222574B3F6DDD3C72A190C70C67700B0AFC1C08A55A1D4D0B"
+    },
+    {
+      "path": "2019/2019_problems.csv",
+      "bytes": 14752,
+      "sha256": "66EF9B861D0C438D7EFC2E2198EB2EDAE0F996A5AB7FD48921C7FF6D021B12CE"
+    },
+    {
+      "path": "2020/2020.html",
+      "bytes": 34643,
+      "sha256": "3D5E780022238609D3B8253FE4B05D0AA22577B459538FEA75932EA5A575AAF7"
+    },
+    {
+      "path": "2020/2020_classified.md",
+      "bytes": 16196,
+      "sha256": "8FC9DB60EF495CAC919D032873B628B92C3AD94FDC930A7528DCBEB917C03EBE"
+    },
+    {
+      "path": "2020/2020_problems.csv",
+      "bytes": 14247,
+      "sha256": "07CE0F042C4C592C6B17F16FD8477B76A9730DF38ECBC3C5CC3F93612A8E65F9"
+    },
+    {
+      "path": "2022/2022.html",
+      "bytes": 35823,
+      "sha256": "125DF8F11314BC49265BFAEEDCB51EBC4CC71E962A2B8288D715E770B83255FD"
+    },
+    {
+      "path": "2022/2022_classified.md",
+      "bytes": 16965,
+      "sha256": "FE286152174B65DEBB81D0534C8B6988A2A65B14BF893398B9A69A2FDC75C70B"
+    },
+    {
+      "path": "2022/2022_problems.csv",
+      "bytes": 14907,
+      "sha256": "4F21E0D0FF8774830A96B27E12C3168B1068D1CDC010027882C9319421ABD8D5"
+    },
+    {
+      "path": "2023/2023.html",
+      "bytes": 37110,
+      "sha256": "B9B5CFA4B103AD48721A16F1E7D47639F2769189A3075C42E9E6F651A91C701C"
+    },
+    {
+      "path": "2023/2023_classified.md",
+      "bytes": 17844,
+      "sha256": "DE71CFE880EEBE8FA6019634F1FF86DA092B0EB56BA1B97127B18379CDF3FCB4"
+    },
+    {
+      "path": "2023/2023_problems.csv",
+      "bytes": 15682,
+      "sha256": "772C0D68B9A9906CF7BF25C40451F406C34F94E5995C352DBB0171AF0D3469E8"
+    },
+    {
+      "path": "2024/2024.html",
+      "bytes": 30392,
+      "sha256": "13914C17FA08E07D9F708C4C3AB41433ECBF635011BEDBF6DF2C85EBC440F32D"
+    },
+    {
+      "path": "2024/2024_classified.md",
+      "bytes": 11588,
+      "sha256": "C22ABB8C0EDDE305BA3DD7A0F82C25DDDD1926AF8CBF912D8D0D60BA032985F0"
+    },
+    {
+      "path": "2024/2024_problems.csv",
+      "bytes": 9512,
+      "sha256": "77E62935B9154BB414230AEB297134700BD1915497AA8B2C25B5E1CD579DE701"
+    },
+    {
+      "path": "2025/2025.html",
+      "bytes": 31840,
+      "sha256": "D0708BCCB41480974AEDCBF2BA78FDEC7A8B7CBF31A79506F4C21A6A7DFF9EC3"
+    },
+    {
+      "path": "2025/2025_classified.md",
+      "bytes": 12908,
+      "sha256": "13B21CEB0034F0C9B05011FFB181E43715DB39AAA64A68A87A9EE6746B0A2B2F"
+    },
+    {
+      "path": "2025/2025_problems.csv",
+      "bytes": 10836,
+      "sha256": "DB41FDFA2195F917D8263E5FA2DE56EA381F49ED3045E04344163C5068C4773A"
+    },
+    {
+      "path": "all_problems.csv",
+      "bytes": 131155,
+      "sha256": "3A4A73D04304C89A96E4AD88F6DD7889DC40CE68EB4585CC1B75C52FB71990E1"
+    },
+    {
+      "path": "all_years_index.html",
+      "bytes": 198425,
+      "sha256": "CA48F80B685A7A971276A5AF4023423E7D9ECC97FFF76FE236C28C490830CF0C"
+    },
+    {
+      "path": "assets/problems/2015-amc-8-problem-12/diagram-1.png",
+      "bytes": 11501,
+      "sha256": "B93BB0B6C51D552579EA3CA450166880B0119770DC10008B48FC09A659CE8286"
+    },
+    {
+      "path": "assets/problems/2015-amc-8-problem-18/diagram-1.png",
+      "bytes": 10641,
+      "sha256": "0F7AE641DA6AD25010BDD6CE39292871607A712608FBED3EE09A6241577555D8"
+    },
+    {
+      "path": "assets/problems/2015-amc-8-problem-19/diagram-1.png",
+      "bytes": 25959,
+      "sha256": "AD3A3BDF916A6D61033FD38424EBE7D860D0FF84565E50148D815B73D507E27C"
+    },
+    {
+      "path": "assets/problems/2015-amc-8-problem-2/diagram-1.png",
+      "bytes": 56683,
+      "sha256": "D3A19C3B422249D3068B6DB0A7988E82D68F217ABD6569C0CF2C2AFE7098DE70"
+    },
+    {
+      "path": "assets/problems/2015-amc-8-problem-21/diagram-1.png",
+      "bytes": 18611,
+      "sha256": "AC67D70A68F3028B26A52CE9A447AAAAB672CCE70BF056D8281E0F33CE8448AA"
+    },
+    {
+      "path": "assets/problems/2015-amc-8-problem-25/diagram-1.png",
+      "bytes": 1826,
+      "sha256": "2FDCC9659EBB3C4D5729DA23C424D8C738E99ED5F8CA5707C2E970CC81528FC1"
+    },
+    {
+      "path": "assets/problems/2016-amc-8-problem-22/diagram-1.png",
+      "bytes": 19319,
+      "sha256": "2945E752340983C06AC331980CF3AE5699CFF9CDC1CE150A446FDE421D0A9371"
+    },
+    {
+      "path": "assets/problems/2016-amc-8-problem-25/diagram-1.png",
+      "bytes": 13247,
+      "sha256": "CC9506D3846B478F29CA6785DAA4A5318A717FD393490CE0C7106530CBB52E1B"
+    },
+    {
+      "path": "assets/problems/2016-amc-8-problem-6/diagram-1.png",
+      "bytes": 12259,
+      "sha256": "A93F705E2B797BB5A2063372713B968250EEABD80D35267018A19948B58BB476"
+    },
+    {
+      "path": "assets/problems/2017-amc-8-problem-15/diagram-1.png",
+      "bytes": 26595,
+      "sha256": "A6B1508C383765579875531A6617C3B4EE4D48F3FBF5FBF62B185B3CFA89D8A2"
+    },
+    {
+      "path": "assets/problems/2017-amc-8-problem-16/diagram-1.png",
+      "bytes": 18055,
+      "sha256": "9742F0B14F8DB7C5F4D606EEB9EE99280820DF05ABB0EF1AFE1771B97A505CE0"
+    },
+    {
+      "path": "assets/problems/2017-amc-8-problem-18/diagram-1.png",
+      "bytes": 7191,
+      "sha256": "87FD0935089F365E646C3FCAF5C5D5B013697888A491B040A289611549FDF03C"
+    },
+    {
+      "path": "assets/problems/2017-amc-8-problem-2/diagram-1.png",
+      "bytes": 27520,
+      "sha256": "2931E2297FE67C48184D5CE5B5CC2A18B0034BF9EB1AE3538DF185AFB9D5337C"
+    },
+    {
+      "path": "assets/problems/2017-amc-8-problem-22/diagram-1.png",
+      "bytes": 32169,
+      "sha256": "079F202B605CAF7E065188644902B29D57D194E0BB07B0DA052CF40C6E068C08"
+    },
+    {
+      "path": "assets/problems/2017-amc-8-problem-25/diagram-1.png",
+      "bytes": 38554,
+      "sha256": "2D367E7D03B2B7039E3196C84B9F2AE2327B166A7D6F80C9AC9C36EBCE898506"
+    },
+    {
+      "path": "assets/problems/2018-amc-8-problem-11/diagram-1.png",
+      "bytes": 27354,
+      "sha256": "9E25FAAED9749EA96078B235CC1DE63A93129903CC2C4FE99B8AA038C044F40B"
+    },
+    {
+      "path": "assets/problems/2018-amc-8-problem-15/diagram-1.png",
+      "bytes": 21013,
+      "sha256": "7538B0DE54DEC2ED3B6B8A9FC1794C236032EFA21025D061595685197CE12F4F"
+    },
+    {
+      "path": "assets/problems/2018-amc-8-problem-19/diagram-1.png",
+      "bytes": 16950,
+      "sha256": "429EBA9143FB6BD0B698A097A25A6CAC18A72A811EE186BDFAE749C641493D52"
+    },
+    {
+      "path": "assets/problems/2018-amc-8-problem-20/diagram-1.png",
+      "bytes": 38526,
+      "sha256": "48AF49B9766AD9E620FE438D563BE0386209C32888BD36476FCA11D326ECEB76"
+    },
+    {
+      "path": "assets/problems/2018-amc-8-problem-22/diagram-1.png",
+      "bytes": 32285,
+      "sha256": "40477CBA180CE29C942536B060CEE2BBD6A915F6FE936F45B8B688E7058FC904"
+    },
+    {
+      "path": "assets/problems/2018-amc-8-problem-23/diagram-1.png",
+      "bytes": 2788,
+      "sha256": "6E464E05BD8895C005EC5AF8E42065B464DBD5F160D526937EB2EA5BA87A49E1"
+    },
+    {
+      "path": "assets/problems/2018-amc-8-problem-24/diagram-1.png",
+      "bytes": 48907,
+      "sha256": "596D6D9296CFA3720FCF4A187B8D660ECFD34CA19AE547663EB5BC2C6F4A1200"
+    },
+    {
+      "path": "assets/problems/2018-amc-8-problem-4/diagram-1.png",
+      "bytes": 4080,
+      "sha256": "582C941BD7700FA01FB22B063C546F6E2307935895FD2E023F1582776146C3C3"
+    },
+    {
+      "path": "assets/problems/2018-amc-8-problem-8/diagram-1.png",
+      "bytes": 25428,
+      "sha256": "AE0177A1D03E11B2775199C9F854812077CF9C673FB2752DC9FAD9C1F475054A"
+    },
+    {
+      "path": "assets/problems/2019-amc-8-problem-10/diagram-1.png",
+      "bytes": 26513,
+      "sha256": "2B83C08052EE338C630695307E42BF201A14B28FDB234836AD01B16CAF32371E"
+    },
+    {
+      "path": "assets/problems/2019-amc-8-problem-12/diagram-1.png",
+      "bytes": 16591,
+      "sha256": "CBB4AD930443DAEADE1DFE9181CE01F428C456E727CD4570B99C331BBFBEA668"
+    },
+    {
+      "path": "assets/problems/2019-amc-8-problem-2/diagram-1.png",
+      "bytes": 5057,
+      "sha256": "4B00CE21372424E62D7B5CAD07357DBFB5A345D0837C3F65871EDAB744C88475"
+    },
+    {
+      "path": "assets/problems/2019-amc-8-problem-24/diagram-1.png",
+      "bytes": 12582,
+      "sha256": "290659AE10E0EF9ACD2DDAB3D65424A5239DC8D35E9044FE06C69F50E19B146D"
+    },
+    {
+      "path": "assets/problems/2019-amc-8-problem-4/diagram-1.png",
+      "bytes": 5012,
+      "sha256": "B1FF63DF0BB362B4DADF5DFD570C1EC98E9184ABEDC2823E2DBA46A1DB5B50F6"
+    },
+    {
+      "path": "assets/problems/2019-amc-8-problem-5/diagram-1.png",
+      "bytes": 49052,
+      "sha256": "7E00BFF3BBC566DFB5BDE7A393D1798EC90A91BF8CE271AE329E514C3C95311B"
+    },
+    {
+      "path": "assets/problems/2019-amc-8-problem-6/diagram-1.png",
+      "bytes": 21033,
+      "sha256": "BEEFED52A336C4507F56D34CB4484C8737B00B140C10CFC6A09F6D2BB74A8457"
+    },
+    {
+      "path": "assets/problems/2020-amc-8-problem-11/diagram-1.png",
+      "bytes": 55611,
+      "sha256": "EA32A30A8A1A36174FCFB929011FADEFA0B2ED5FC86F2C399BC5DB4A50DE50B6"
+    },
+    {
+      "path": "assets/problems/2020-amc-8-problem-14/diagram-1.png",
+      "bytes": 22289,
+      "sha256": "DE660297E3293828F982A67ECB9A64310215134D63D4BCED88094B818BFF43D5"
+    },
+    {
+      "path": "assets/problems/2020-amc-8-problem-16/diagram-1.png",
+      "bytes": 18495,
+      "sha256": "51BDE52A5C1B01A3EAD7E9008E57262F752F60442E096E1627D2E60D957135F2"
+    },
+    {
+      "path": "assets/problems/2020-amc-8-problem-18/diagram-1.png",
+      "bytes": 29988,
+      "sha256": "1FFE18ADC166627515E5BFEE610A205158D69AA7C665B693EECFCA5A7501F50F"
+    },
+    {
+      "path": "assets/problems/2020-amc-8-problem-20/diagram-1.png",
+      "bytes": 32910,
+      "sha256": "2DD6E08E21A09D9CCD3A8AF1E8469F6826220ECDE0F8127EE361059090F97B5E"
+    },
+    {
+      "path": "assets/problems/2020-amc-8-problem-21/diagram-1.png",
+      "bytes": 17671,
+      "sha256": "D80AE18E224C9E40AE2186A5E697DEC88395A5FD0925E3EBB3F34A3BD75DE975"
+    },
+    {
+      "path": "assets/problems/2020-amc-8-problem-22/diagram-1.png",
+      "bytes": 42272,
+      "sha256": "E75345C020F59995DEF6CB30D047DA5D726B777D86FDD2AE4C5B503FB9BDF5BF"
+    },
+    {
+      "path": "assets/problems/2020-amc-8-problem-24/diagram-1.png",
+      "bytes": 55308,
+      "sha256": "06A77BE5706246837ECC78A89EC0F4C832245F3FA28D0FC51ADF68A65B997FC7"
+    },
+    {
+      "path": "assets/problems/2020-amc-8-problem-25/diagram-1.png",
+      "bytes": 7777,
+      "sha256": "8D8233AB43AED1DB460F3C661922336FCD0D112EF910D5E0912B049D70C9546B"
+    },
+    {
+      "path": "assets/problems/2020-amc-8-problem-4/diagram-1.png",
+      "bytes": 25747,
+      "sha256": "A349A5ABEF6AE2D96961218194771EAC6C817B2A7330C454191F5A6C020B9225"
+    },
+    {
+      "path": "assets/problems/2020-amc-8-problem-9/diagram-1.png",
+      "bytes": 12066,
+      "sha256": "6BCB6AAFE986CA1EFDDB2CE4BC3100E3DE6661E5BD9AF5A8F633C9EA3CFE49AA"
+    },
+    {
+      "path": "assets/problems/2022-amc-8-problem-1/diagram-1.png",
+      "bytes": 8899,
+      "sha256": "4C143024DC072B323D45E8EB41ACFA1A76E93D0700C56E7650DA82C4AD1CAA75"
+    },
+    {
+      "path": "assets/problems/2022-amc-8-problem-10/diagram-1.png",
+      "bytes": 90392,
+      "sha256": "B8FDE02734AE12C2C1BC3B4DEAC97C2FBCC974D2C54C0D034F62B3545B4A35B7"
+    },
+    {
+      "path": "assets/problems/2022-amc-8-problem-12/diagram-1.png",
+      "bytes": 17784,
+      "sha256": "50B0BAE8D81CFAECB2AE28E18F28402AA713AEFDEC459ED56964455822AC327E"
+    },
+    {
+      "path": "assets/problems/2022-amc-8-problem-15/diagram-1.png",
+      "bytes": 40776,
+      "sha256": "52E3573A77C5804E129AC7D80FFFF156DE81DA74426A736BC30AB80E5CE4263F"
+    },
+    {
+      "path": "assets/problems/2022-amc-8-problem-19/diagram-1.png",
+      "bytes": 10034,
+      "sha256": "24EF384049D259C2DA6456C737673E4C2D07E6744BCCCE409F63AF67F7DE85C2"
+    },
+    {
+      "path": "assets/problems/2022-amc-8-problem-20/diagram-1.png",
+      "bytes": 4761,
+      "sha256": "B2B2B4CBA604420A52BFEFF277EA151AA851498ED447D68EBC41B9C746A1D39B"
+    },
+    {
+      "path": "assets/problems/2022-amc-8-problem-21/diagram-1.png",
+      "bytes": 19979,
+      "sha256": "0FC1C179AF44690B574ED16F2AF5D16885CE3EC675ACCEA182CCE4688D5E4DC2"
+    },
+    {
+      "path": "assets/problems/2022-amc-8-problem-23/diagram-1.png",
+      "bytes": 9045,
+      "sha256": "540553D8F8045AE4DE45D60FB2741E75A3F1640F8C27628C065040B518AFC4AA"
+    },
+    {
+      "path": "assets/problems/2022-amc-8-problem-24/diagram-1.png",
+      "bytes": 24616,
+      "sha256": "01746E2E671D4E53D3A7A11C53ADC510EF36ADA74D63A71B83A7CAF254AE9ADD"
+    },
+    {
+      "path": "assets/problems/2022-amc-8-problem-4/diagram-1.png",
+      "bytes": 17561,
+      "sha256": "136435781633E6A5B0D02E1D81A17C038DFC87E2C3DE47F23BDECA8BDBE6C7D6"
+    },
+    {
+      "path": "assets/problems/2023-amc-8-problem-12/diagram-1.png",
+      "bytes": 47039,
+      "sha256": "28B12E7EF1DAE61490557C6E61D1168DBBE1073DB3DAFB08F7D88D5AA431F5B6"
+    },
+    {
+      "path": "assets/problems/2023-amc-8-problem-13/diagram-1.png",
+      "bytes": 13565,
+      "sha256": "6595D40EEA6A7BF9E47C89118E5E042D0322E1090DA2E08F7738C3BCD8ABDE05"
+    },
+    {
+      "path": "assets/problems/2023-amc-8-problem-16/diagram-1.png",
+      "bytes": 16391,
+      "sha256": "B14A5F035B584A9510B904A0F4BAEB22BBF545AD316CC42B5B34CEA549F74673"
+    },
+    {
+      "path": "assets/problems/2023-amc-8-problem-17/diagram-1.png",
+      "bytes": 34712,
+      "sha256": "EC79DBED4BBE3A917E24251F4F820F8316ACFC5000D1445E045CD702AF6D1C40"
+    },
+    {
+      "path": "assets/problems/2023-amc-8-problem-19/diagram-1.png",
+      "bytes": 40380,
+      "sha256": "6B2C769390813D9AC42BD8B14BA94580957B0FA2D0D6A77A1ADFCD160AEB2413"
+    },
+    {
+      "path": "assets/problems/2023-amc-8-problem-2/diagram-1.png",
+      "bytes": 26536,
+      "sha256": "0ED36C3C4A126C95EE8AC7976C2431B8B2771F03E77316F3201ECCB16C6C41FE"
+    },
+    {
+      "path": "assets/problems/2023-amc-8-problem-23/diagram-1.png",
+      "bytes": 39142,
+      "sha256": "3F93AF991D8619C05C10A870A3A5C7B591D6EF6C3360F188731EC8F323B2CCD1"
+    },
+    {
+      "path": "assets/problems/2023-amc-8-problem-24/diagram-1.png",
+      "bytes": 55294,
+      "sha256": "0B936B1184329AAE352B666B7908D343CEBFDA2D23DA282A2778C980F471436A"
+    },
+    {
+      "path": "assets/problems/2023-amc-8-problem-4/diagram-1.png",
+      "bytes": 6319,
+      "sha256": "AE43D0C70DC23D7380A674B3BAAF0103F5F8B2A7EB64231C42A853CD4AD956B6"
+    },
+    {
+      "path": "assets/problems/2023-amc-8-problem-6/diagram-1.png",
+      "bytes": 2908,
+      "sha256": "3FF6E19454C1253FC45B8540413D0AAF7688D25E175210A2A15D7155D27FC1D1"
+    },
+    {
+      "path": "assets/problems/2023-amc-8-problem-7/diagram-1.png",
+      "bytes": 16128,
+      "sha256": "BE6D9F46F030CB2F1C32FE7CA2202D2872C9D1D90AA908DC63F720FD65364FE0"
+    },
+    {
+      "path": "assets/problems/2023-amc-8-problem-9/diagram-1.png",
+      "bytes": 28972,
+      "sha256": "2E5A7AE05FB2EDA86264FD4C9D238E7431C57924BE13E38F5D96774C535A8AC9"
+    },
+    {
+      "path": "assets/problems/2024-amc-8-problem-11/diagram-1.png",
+      "bytes": 10279,
+      "sha256": "D8A1ABABBCD64CFCB52C5C3A55DEC77B2E254FB24D157699108CBCD34C7A4377"
+    },
+    {
+      "path": "assets/problems/2024-amc-8-problem-14/diagram-1.png",
+      "bytes": 28769,
+      "sha256": "2269741FDD039CC88FB53988C48C5CA23BF3B2FE52D724350AD03CEAE7CCB2A4"
+    },
+    {
+      "path": "assets/problems/2024-amc-8-problem-17/diagram-1.png",
+      "bytes": 5482,
+      "sha256": "C8BB85B5C76C0174EC07D73D7E01C8E6C2ADBDD63A6E6C46EE290A81444DA790"
+    },
+    {
+      "path": "assets/problems/2024-amc-8-problem-18/diagram-1.png",
+      "bytes": 17966,
+      "sha256": "DB4EED470413BC570D325F7567879140221871D92ACB8390E502B75344BE4913"
+    },
+    {
+      "path": "assets/problems/2024-amc-8-problem-20/diagram-1.png",
+      "bytes": 10259,
+      "sha256": "2A1C6A21D2C272B20B51926A7C577A5EF912B627FAC62648B9764A4317306F0D"
+    },
+    {
+      "path": "assets/problems/2024-amc-8-problem-22/diagram-1.png",
+      "bytes": 13998,
+      "sha256": "E0649C98B7FA9AE362FEDF5FA25FA6C55827524D5334C1EE05AFBBCF869C848B"
+    },
+    {
+      "path": "assets/problems/2024-amc-8-problem-23/diagram-1.png",
+      "bytes": 8900,
+      "sha256": "83E562D42E519242661D1B2772E8637AE8D9D0791898852B47630FE636374F97"
+    },
+    {
+      "path": "assets/problems/2024-amc-8-problem-24/diagram-1.png",
+      "bytes": 15659,
+      "sha256": "8BA92E1C438A527A418A9444796CE16A286E352B9A62EA22736777C8399EF765"
+    },
+    {
+      "path": "assets/problems/2024-amc-8-problem-3/diagram-1.png",
+      "bytes": 5636,
+      "sha256": "6C26390E0253A18E742DB69808EB2AB9106CDA0811A7844FA1F9B889EE3B1FB0"
+    },
+    {
+      "path": "assets/problems/2025-amc-8-problem-12/diagram-1.png",
+      "bytes": 2095,
+      "sha256": "276FEF584E55BD33F78792B92605FF9179846E1634D0B2680F39F594D75F34AB"
+    },
+    {
+      "path": "assets/problems/2025-amc-8-problem-25/diagram-1.png",
+      "bytes": 12681,
+      "sha256": "3A7338A6C8C03ECFAC6928B09568408289CC2EF9A819B482D3A9AEE092CF9878"
+    },
+    {
+      "path": "assets/problems/2025-amc-8-problem-9/diagram-1.png",
+      "bytes": 25844,
+      "sha256": "4F9423E5956E2021B62F55F34D36A267741B9F4531A798204F049B973CD2B2E1"
+    },
+    {
+      "path": "common_errors.md",
+      "bytes": 11428,
+      "sha256": "FE9FE8B55EB360ADBB970E5155E38E6BC582E20F8CA95BDD3DF8F76F6913E22E"
+    },
+    {
+      "path": "index.html",
+      "bytes": 198425,
+      "sha256": "CA48F80B685A7A971276A5AF4023423E7D9ECC97FFF76FE236C28C490830CF0C"
+    },
+    {
+      "path": "method_index.md",
+      "bytes": 23071,
+      "sha256": "F11ECB018D59B6F290E9AA8EAA2AB9A37D683456B1CC942D046BA24BBCDA9403"
+    },
+    {
+      "path": "prerequisite_map.md",
+      "bytes": 6446,
+      "sha256": "1409E56CC15EDCCCE6628A23B63C8B12C45E7402D4572F6C8BF63BE44F101AA2"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-1/index.html",
+      "bytes": 13813,
+      "sha256": "2DCF3FEE9F9C17F6CCFA86DDE07D809D32A354285D74B490E7912385381D3B43"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-10/index.html",
+      "bytes": 13778,
+      "sha256": "6CA28544C7F32F034EB079F4BFD68A3E2F4C871073275CBA0C53454DDD99688B"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-11/index.html",
+      "bytes": 14455,
+      "sha256": "68A1E29B9FE531C3F0B51574B353853B32CF6CDFD8958FEF2EFA93EDFDF74B2A"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-12/index.html",
+      "bytes": 14785,
+      "sha256": "CF722ED1211279CD5833068B50CA94BA36662CF982F831C629DB9F58F4F35062"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-13/index.html",
+      "bytes": 14103,
+      "sha256": "58E53FD3744BC6B197F54C0671A6E6E873E15212F05DEA0E0CE6FFB549B3B830"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-14/index.html",
+      "bytes": 13908,
+      "sha256": "8A55785E1C66705ED29DEFDCD025E4F2055571F12E4E7A00A911B5EDF60017E0"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-15/index.html",
+      "bytes": 13992,
+      "sha256": "D05F14DB65016897361A0F5ACACC5B75829177931548E3F73FDC1A6132FDA48C"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-16/index.html",
+      "bytes": 14336,
+      "sha256": "0E891548BC04EAE413C3314C38D0EB0175E914B68E49519E718939647ECD7B58"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-17/index.html",
+      "bytes": 14040,
+      "sha256": "4224AFBED36176A68EFB90BAE54EC5052EA915D1BE3691D9234DC093E0B8CC10"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-18/index.html",
+      "bytes": 15047,
+      "sha256": "0375308E0620D2CEDB3CB29F1A0A47806DB6DCC94FE18AC52B1C473A643808F5"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-19/index.html",
+      "bytes": 14801,
+      "sha256": "E05C2EA667C37AB1E0FC289A678E018A94B4110A44B01AF651D252D0B8BF60E0"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-2/index.html",
+      "bytes": 14935,
+      "sha256": "292310F6B72C34BA5866D46D224D4DC6A6F69F2C09F76433A8793FFF0DDDBEB8"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-20/index.html",
+      "bytes": 14141,
+      "sha256": "EBE32E75EAA72BD80D39224B024F40E54F04275401B20094CA41B4366DA01894"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-21/index.html",
+      "bytes": 15195,
+      "sha256": "FE613AD63C5E26AD1C55DE571BE842483093D2F25025529092E0A0F18FB16AB4"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-22/index.html",
+      "bytes": 14607,
+      "sha256": "2BB5D001E828AC7E7900E9FA5427D0822C7BDD58F07AC5991A9BC8314710843F"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-23/index.html",
+      "bytes": 14539,
+      "sha256": "C3D1353829C573A8899BF93C05114B09469535CE1256A2886BB1B931133B4C24"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-24/index.html",
+      "bytes": 14279,
+      "sha256": "1A8A4FC34E9E4A55DD035A9028E0F22FEA3392F8AD908971E2B459A8B60F953F"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-25/index.html",
+      "bytes": 15253,
+      "sha256": "E83825D7B7B19D4F4CD95B16162F70BE2A7676600D4F0EEDE13D9210BE76E52E"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-3/index.html",
+      "bytes": 14007,
+      "sha256": "AA5E3D0E95E919B10A2DA350565517147951E7FD661C9C4C3CD8607F2C2C220E"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-4/index.html",
+      "bytes": 14023,
+      "sha256": "C9D45AFCAC88C9C37A310B5D7AEEB8B3079F09032BDF38F66BCFCB5B83349094"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-5/index.html",
+      "bytes": 14332,
+      "sha256": "B2D1209EE44B33836DEC2267330F8A934BFF1FE33EA01050F466F4ED21C7D013"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-6/index.html",
+      "bytes": 13754,
+      "sha256": "693702AB78074D4529C06B75BE446E45EC510822C37A53EA560AED4F91C617F7"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-7/index.html",
+      "bytes": 13957,
+      "sha256": "04D7E39EBB2E446AAD9EE595D9F92E8A1F8B893EDAD389E4539C0A562575EF60"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-8/index.html",
+      "bytes": 13910,
+      "sha256": "E6E94017899B1EE7BDF6495A9E2083D69555EA7B41A9DF787E385F14259CDD2D"
+    },
+    {
+      "path": "problems/2015-amc-8-problem-9/index.html",
+      "bytes": 13944,
+      "sha256": "B630F0389537F56AB2BBDEB3DE73F658936526CB4688D630F98D73E4424197AF"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-1/index.html",
+      "bytes": 13691,
+      "sha256": "EDDC93306E0F0222403FCAF6ED6E3502640E0DBE52DD4DB7C58E33ECCD237513"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-10/index.html",
+      "bytes": 13702,
+      "sha256": "5B1700514568C352BC4B5AA866BA72BE1645DD34BB0AA06C04086B1A41FA1408"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-11/index.html",
+      "bytes": 13846,
+      "sha256": "7A85246922F9665D7A8639BC0BBC45DDE92716896D3AB7A41507836E9D8B4F90"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-12/index.html",
+      "bytes": 13964,
+      "sha256": "4A476CD8ED2E36A66A16F98DDEAA89DFE7D60B124D5A569165ADDA6484BD1A5A"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-13/index.html",
+      "bytes": 13941,
+      "sha256": "4A8F120591770D9E2B09D63E03525A9928BD461504C8B1B47F3B88E5B1EA8967"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-14/index.html",
+      "bytes": 14100,
+      "sha256": "4F8EF6248ABE095CF8A90ABFE74D3239D8FE1297281A4738B96FAC49BD51C3C2"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-15/index.html",
+      "bytes": 13819,
+      "sha256": "BF890EAFBB7AE441B531E67DF60AE97ABEA0E06C96EBD370EDC21F36D279AC6F"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-16/index.html",
+      "bytes": 14021,
+      "sha256": "DF01D5CB57DA73E21374BB6AC3D530560A4FF4B161D75315CD1B7AE1BEE3D440"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-17/index.html",
+      "bytes": 13969,
+      "sha256": "BFE2C94EF2688ECA459548D606AD9248D08B5DC9084DC274053FF73308A6B3E3"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-18/index.html",
+      "bytes": 14054,
+      "sha256": "0307E78ABA0AF846624B79DAD6D94CF4AE0C018EF03C2A6CD08BF9D0E337C4A4"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-19/index.html",
+      "bytes": 13832,
+      "sha256": "050CA5F33BFDB67AF9240C40DF4828D49F1BC975524F8945E19319B4B5BDF4B4"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-2/index.html",
+      "bytes": 14553,
+      "sha256": "F1393EB70D586D740BAE2E30E275A8557DA8EFBD7F2CC8F89BB2D92F258C9BE4"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-20/index.html",
+      "bytes": 13939,
+      "sha256": "A5E5815C8FE001A9463BEA6E0A3B8B344D0F097895A2C83A9C85B4F4FC82F579"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-21/index.html",
+      "bytes": 14193,
+      "sha256": "59F55AD41CBCB5BB20117EFD0ACCDB0E4746C18B5A6F17B11BDC6DE572C912BC"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-22/index.html",
+      "bytes": 14823,
+      "sha256": "399869A114393A74BB135399B0FEB7556FE447407C018462F849043F46D7086B"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-23/index.html",
+      "bytes": 14071,
+      "sha256": "45BA13EF7E8912BA669AE8A5088A29A2130A3617B8A17122D388A18F59035C1E"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-24/index.html",
+      "bytes": 14197,
+      "sha256": "D9CEEB29F62B4F49EE751F29CC3E5DF0864168FDDCCA9BDF0CE77C0E4C581AAB"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-25/index.html",
+      "bytes": 15137,
+      "sha256": "1335F947963DFA9D42D7C7AD3DAE9EC19499D1296EE526A190EAA1D50D10285B"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-3/index.html",
+      "bytes": 13775,
+      "sha256": "C67BB021CAC75DE76D46B0D572483273D793AB5072092E0A381F7B7608225109"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-4/index.html",
+      "bytes": 13907,
+      "sha256": "C27C8AC47FCD0E47FF0BDAABD3959CB8EFF2B0830AF86C63FB9F93B80EE7CA64"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-5/index.html",
+      "bytes": 13814,
+      "sha256": "29515C4D507CB77B939F0237695E83A6A129CFF0F68B15D5439093DD707AFF38"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-6/index.html",
+      "bytes": 14750,
+      "sha256": "9B0E650FD2B8577317916758ED4E47542666BDC6841A1B8244F8DAF63E235B0B"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-7/index.html",
+      "bytes": 13843,
+      "sha256": "5F30FE451444975F0D4CF948B3F42AA968539DE1441A835E459AF26BCAC739CA"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-8/index.html",
+      "bytes": 13725,
+      "sha256": "54A8D3C62A90AC743A46915797922A72E7AD4DDE26F7E6D578104D3425C2290D"
+    },
+    {
+      "path": "problems/2016-amc-8-problem-9/index.html",
+      "bytes": 13647,
+      "sha256": "CA02CACFE6B6ED57C3F29945786ACA258CFE31FD4096CA7CF7788188A547FF20"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-1/index.html",
+      "bytes": 13743,
+      "sha256": "DDD93BA427184D44564F35141D23B7CD33FBC2D86A1F8E6413E7C5E41493670D"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-10/index.html",
+      "bytes": 13955,
+      "sha256": "5E349120BE29AF7941885C29A0961F3011BFE6955D1D02562E414072CEF3C32B"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-11/index.html",
+      "bytes": 13916,
+      "sha256": "94034C86C6D6DE3F8526A7784392717ACD2AE12D609EF7D94852E7F3B4704831"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-12/index.html",
+      "bytes": 13900,
+      "sha256": "25D6B3E71449897522F90625C0EFBACDA0C6A1BA5B26D9B8E40AA6FE2A536748"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-13/index.html",
+      "bytes": 13894,
+      "sha256": "694A3A17833C0B5ED320EAB5D07C486DEEFCA24B97DCD926B1AFACC70A9280B9"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-14/index.html",
+      "bytes": 14197,
+      "sha256": "081AFD1B800CC6EBA7DC75003E89997D1578BFC2012476E31DA034734743F820"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-15/index.html",
+      "bytes": 14985,
+      "sha256": "3A9EF212730AD1A172419B752CAAE29C65B3AC0C9FB84769ED5B3CF049219AF1"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-16/index.html",
+      "bytes": 14961,
+      "sha256": "B4B89511C17C8830F559A765D50F1A24C8CEA008BB342D4CFB261BA79C9F7282"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-17/index.html",
+      "bytes": 13946,
+      "sha256": "0B62CBD547DCCD0DE2BE546DA83979E51DB321E517579E60FA72C8F4B3DFE766"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-18/index.html",
+      "bytes": 14824,
+      "sha256": "E8098C9F271284BE84D330A1C96C9030E0B3B5B30DE64E0E2B487B336C546E67"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-19/index.html",
+      "bytes": 13840,
+      "sha256": "4A55A33C39DB7A57CC58CB79EF31582A7DE2FC02B23F696226D4725DD805688A"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-2/index.html",
+      "bytes": 14781,
+      "sha256": "99B6118DEF8C9683EE1AAE6410C56CB0D4CB196C1A5CC1EE17C04B92EF468973"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-20/index.html",
+      "bytes": 13959,
+      "sha256": "88E9FCD6092DDADA03FB22C616801CD652AE6B204DAB0A235FA6298B1EC39B79"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-21/index.html",
+      "bytes": 13954,
+      "sha256": "EBE58454978F1130C07879CDA46851778CD8C5869013B1F98173D3114506A138"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-22/index.html",
+      "bytes": 14877,
+      "sha256": "90F512E457217F442C63A84E471579BB69E13B48F3868767C8F2963F6DDC11CE"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-23/index.html",
+      "bytes": 14395,
+      "sha256": "BA7982FF23BD90DA88F7DE590AFF0163AC5CEE6EAA5E10A82C27BAB46EAAC375"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-24/index.html",
+      "bytes": 14272,
+      "sha256": "EE60470106B7244BD61140C466E7889206A94E26FB02F51FE75B3654D980939F"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-25/index.html",
+      "bytes": 15307,
+      "sha256": "C3D56854DE2C9E88C6F93D6A521A3622964903FBAA0C7D81E7CAA972B74921D3"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-3/index.html",
+      "bytes": 13701,
+      "sha256": "961AA72BA44C823BB2959E401E414F7C81ABBA667B79C1C52C2071E01590E923"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-4/index.html",
+      "bytes": 13725,
+      "sha256": "48032F94A03D8E65926BC624CAA305B3C0C850DC7E40C24EB0F66A80F5A4D1B1"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-5/index.html",
+      "bytes": 13694,
+      "sha256": "BB69BEC49B50E73A0D8932193F19B07A2175E1BCE4501A0CE78958CA284B9F83"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-6/index.html",
+      "bytes": 13761,
+      "sha256": "0BAEF67B2648228CB6879244AB7A28F252180FB9BAE5E8C8772D27A9511D40EF"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-7/index.html",
+      "bytes": 13928,
+      "sha256": "DA9102A4148ABC02AE60A12F4E0BC7D16352187BB5243579BCF064684E33E033"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-8/index.html",
+      "bytes": 14393,
+      "sha256": "21105640B965776145FCCA2E4D16A0BD4D2E7CFA5110384ECB25358A5E90AAE2"
+    },
+    {
+      "path": "problems/2017-amc-8-problem-9/index.html",
+      "bytes": 13930,
+      "sha256": "0CB7D7F94DB3D9D59DD14377747508F3F838DF67C94493403826888519A9022E"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-1/index.html",
+      "bytes": 13944,
+      "sha256": "ED33C2F77A798CDB3EA173BACBC0DEF62D7E3B1244A4D4015A88934F0E97E9BB"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-10/index.html",
+      "bytes": 13812,
+      "sha256": "33E807E1681795B2C550AB587B68ABD39A8CD4C20179B09F7527119C9840F273"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-11/index.html",
+      "bytes": 14941,
+      "sha256": "8FC81899AC1B80C60F52736E93A28FFD38848EF430678F5ABEAD5BD69FF14D96"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-12/index.html",
+      "bytes": 14162,
+      "sha256": "11E22282157D2BD2E5C43B1FA806280B5988B008290BCF024C67C2AFA620E49D"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-13/index.html",
+      "bytes": 14117,
+      "sha256": "776D029ECD5B75D71CE44EA70C0C8F2C3671B74758018750EE23E3C60A5D72B3"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-14/index.html",
+      "bytes": 13864,
+      "sha256": "0E9C868EA356A469B110028602D22699C2F7C05DF9E44C72F45BE1514B11FE25"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-15/index.html",
+      "bytes": 14974,
+      "sha256": "71DCEF97F12A4186D9E9B35F29A487CCB3605842A2D43FA7A68851CA92C06276"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-16/index.html",
+      "bytes": 14041,
+      "sha256": "A29463DD4449EEBE11F8415B85896D250973E18E6EFABB0B4A5DB796D881BF56"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-17/index.html",
+      "bytes": 14106,
+      "sha256": "F12FFC4A6345581CA161003A356A30549F6D76403A4F48EBABE17E131A16B3AF"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-18/index.html",
+      "bytes": 13760,
+      "sha256": "BD18A155843A92916873F707715A04D546F92407517B3D2CD765D883B165ACFD"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-19/index.html",
+      "bytes": 15045,
+      "sha256": "8A5B48F5F5B5F909081B04DC54F755BEB9424C8AC42DE04703144D557BF15D6D"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-2/index.html",
+      "bytes": 13773,
+      "sha256": "BFB085A04F20BE5D8631EBD881AEEEE7DF89F12F3E07A0BE6DEB1474B9183D44"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-20/index.html",
+      "bytes": 14949,
+      "sha256": "14A29079A5F872A0E7444750E79BCF7577B10D47268217AAC783D13EF75E4056"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-21/index.html",
+      "bytes": 13874,
+      "sha256": "E87808AB86C86B81B4FA9271124B2C3F1577934A19A7CB847B3E1C2F4862D9D0"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-22/index.html",
+      "bytes": 14814,
+      "sha256": "EFEE0EFDA38A69B8335A15F4B9C9AC30836894820A1EFE60C49E3E5A53EF4EE5"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-23/index.html",
+      "bytes": 15069,
+      "sha256": "10C5921C4936F79BAEC458681CA5EBBFE6539ED7E53AD54D586AA19C5A136955"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-24/index.html",
+      "bytes": 15127,
+      "sha256": "5CEC7EB2652B6C2D6F15ED1F7185B0682FCC85B7AA8D4AB636927FA0C5DB9F38"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-25/index.html",
+      "bytes": 13816,
+      "sha256": "E994126DB70FB703330A3C05983F5EA66EA153ECDF3BDCDAEAC6AFEE2A5F4432"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-3/index.html",
+      "bytes": 14197,
+      "sha256": "335C4E86FB71C7179B2BFB6EDE4259FAED542BD2FF252BC6409CF25B9B23360F"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-4/index.html",
+      "bytes": 14773,
+      "sha256": "D3F97623B144FEF5A7A9B0CD2FBB4E9FE09DB10B48CF32F8A052F3C92139E9FD"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-5/index.html",
+      "bytes": 13795,
+      "sha256": "BB858BE7A3389619DBBABAEF9E2329EC3EB8ABBAD2D1AAB7047AC6496F9A6436"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-6/index.html",
+      "bytes": 14042,
+      "sha256": "89C6ACED6E95B06B2204D7C0C7C3180F7BAE837242B67E7D7101428A5824634D"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-7/index.html",
+      "bytes": 13757,
+      "sha256": "C5E54BCCA2356DF0737B4CDAB11ACA8567BD76AAB5EEAAC6C587C419A671068F"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-8/index.html",
+      "bytes": 14952,
+      "sha256": "694C0AD6926C34C20D014FD521BCA795CBDBECF8D321ED7D1C3F6B1FE84E3CFC"
+    },
+    {
+      "path": "problems/2018-amc-8-problem-9/index.html",
+      "bytes": 14047,
+      "sha256": "2B932436D86EA4E8AB4C9298FD66E96389380A710378C87EBBEAD3EB5D18D13E"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-1/index.html",
+      "bytes": 13982,
+      "sha256": "D553C2B77D3B9652EBD928E2B21EAB9EE042F45DB69241E78AE4EC6BD7DF63F5"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-10/index.html",
+      "bytes": 15425,
+      "sha256": "26B96E4BB544186F1E06BAE1179762E6E183A79B95A4C293E719CC972FA6171E"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-11/index.html",
+      "bytes": 13997,
+      "sha256": "95BAFB23EEB80F3478E23CA687332BAC8BCEF133E0FB1AA88BDBE79190E1FFD3"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-12/index.html",
+      "bytes": 15001,
+      "sha256": "97AF40DF0E4428D39E13EC1F31500C597143939F33275772F13039B172DCA440"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-13/index.html",
+      "bytes": 14073,
+      "sha256": "C5956915BEE0BC13EDA59607DCF588D65EE398682C28F3CF18CEAF90AADC78B4"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-14/index.html",
+      "bytes": 14304,
+      "sha256": "B15CF5E43C2CC3112D0BAB9DF57DF39AACBA0167885E9EA0FCCA9E1D963A5FE7"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-15/index.html",
+      "bytes": 14163,
+      "sha256": "A6CEB972635C8ADAB659C10AA0B092F2A4CA3C7762C9C584E6639F04B875DB92"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-16/index.html",
+      "bytes": 13954,
+      "sha256": "960EA4EDD713F39A3FCDE606D0F809B497BC078A9323A6EA6A101D6A9AB66D20"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-17/index.html",
+      "bytes": 13994,
+      "sha256": "F3BDC3323A72E2571CDC32BF16FF21F4AF7472E9782D716B4AC11BCCDF490F36"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-18/index.html",
+      "bytes": 13951,
+      "sha256": "1F32C172F096755EB257B39175B5F1B3747FD65C8EC09DCE0D9604B40867925E"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-19/index.html",
+      "bytes": 14509,
+      "sha256": "3DC9FCFA322933243C57E792D92443E43C69A09004281DAD773A92C2CFA645F2"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-2/index.html",
+      "bytes": 14916,
+      "sha256": "128BEC9D007C09181D2B269CEE3C1A1F19FF91AA7D5877D23B4DFC7805E0670A"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-20/index.html",
+      "bytes": 13738,
+      "sha256": "61F6F140B43A02ED4A1816A8E06C4A276105552B117127F7DF2E8DDD49129DF9"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-21/index.html",
+      "bytes": 13778,
+      "sha256": "DB0659B38BE3588F812AA68B6F5269F760ADE463D826FF6E2D41A4B94A0A91D9"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-22/index.html",
+      "bytes": 13921,
+      "sha256": "BC7EC6E02C4B26C4E04F894F153FFC5EA8486A256A4A1573C486D22DE873658E"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-23/index.html",
+      "bytes": 14308,
+      "sha256": "9373CAF3A7128DFC98A0838FC183AC15E807B16048517BB26653E0C65D597C97"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-24/index.html",
+      "bytes": 15072,
+      "sha256": "B833863B291D460D98AC492EE646C3A6AE317C08A0E4A56D386F154A03368CAB"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-25/index.html",
+      "bytes": 13894,
+      "sha256": "DED285728023C5A564238C96B8F8602815C15B10A143C1333330FE93A8993BA8"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-3/index.html",
+      "bytes": 14147,
+      "sha256": "CE8DEEB989B518685A5BC4B3556B45FD527A8F635E16CCDACECC55539BECFE92"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-4/index.html",
+      "bytes": 14819,
+      "sha256": "6BCCA670589CE7885DE25813DFD12EC2A9AD7D41E1080144673D58A9EC9CEAA0"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-5/index.html",
+      "bytes": 15807,
+      "sha256": "9936E0F6573E5E6CA7042FCD0942DA65571FA23D238BC5D0C1F82FDA99696F80"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-6/index.html",
+      "bytes": 15073,
+      "sha256": "7BD582E24454F84D5D065EA02656DB00BAA806F41C3F370AC00E1E3CF5F1FF13"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-7/index.html",
+      "bytes": 13965,
+      "sha256": "73B1D525F91D4631B081557E558FB936FD0BA40F7ED6ACAC0E0FA2A83C68920A"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-8/index.html",
+      "bytes": 13997,
+      "sha256": "458BF4D0F4A67AFD07FB8AE43DF64CD61A2EF320AA8D81E17C5922CBBFC226DA"
+    },
+    {
+      "path": "problems/2019-amc-8-problem-9/index.html",
+      "bytes": 13934,
+      "sha256": "E9F44E8DF26CEEED6DF0A25C5A5C96C7C4503521AA229F5A0B89EDB386D8996C"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-1/index.html",
+      "bytes": 13859,
+      "sha256": "B1B75DF7DCDEBA8E11034696A20E66265E3DD71774D7126E46EA61A7222EACA4"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-10/index.html",
+      "bytes": 13934,
+      "sha256": "CF16D83A47FF50387FCD62264B05EFA7E81B40872DE5D0EFF78B74D70A137607"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-11/index.html",
+      "bytes": 14994,
+      "sha256": "B19C1C904436903A39C90DA045321588DFB2BCFAF4A26D8011D4787D4C419912"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-12/index.html",
+      "bytes": 13846,
+      "sha256": "CCA082C5F170C839BE3CEEA28C8964740A232077AB5062F19AC0CB250F0A22F1"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-13/index.html",
+      "bytes": 13912,
+      "sha256": "40710404C74C79EC03F33613077E0D29204CA3EFF15520D806034AC707C4D781"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-14/index.html",
+      "bytes": 14894,
+      "sha256": "87A11488B06349DB87DAD2201548B85510D2077F7B123E357A827FB7B309EDCB"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-15/index.html",
+      "bytes": 13612,
+      "sha256": "F24670ADDA17F7136667284AD5F3B3D16585F328236D15A3744BF660C85F4830"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-16/index.html",
+      "bytes": 14928,
+      "sha256": "4071AA9067C9A244961D71CBA0B6E00B7D0C050797F284429E489B8164126458"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-17/index.html",
+      "bytes": 13911,
+      "sha256": "B929F72AF6FA4F82D11CF1F2A27B202AC20E417593A52789FFC9558A5AD459EE"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-18/index.html",
+      "bytes": 14788,
+      "sha256": "EECF33B2C2B02B1A80CB4670D34FF2F35B1A89D473B5DBDC28390CFCD85E16EE"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-19/index.html",
+      "bytes": 13932,
+      "sha256": "ED295ABA881D1946BC9AFB1EC1261D64E8228ED7A65FC0E606F4EDEA645E3D2F"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-2/index.html",
+      "bytes": 13915,
+      "sha256": "B786D4CD1DB9D9B2C9E9676136F718D6B4D343AC30064DF1609D17EFD8B14593"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-20/index.html",
+      "bytes": 15056,
+      "sha256": "5BDCE5F3C420D7C53815686D52DC4E1451AB25EF9590D419E5D87EC97D060DCF"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-21/index.html",
+      "bytes": 15164,
+      "sha256": "9B6501E0A2E37FCD3EB4CB244E7CB9F3428796D130A0CB8291E3E8012408836F"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-22/index.html",
+      "bytes": 15094,
+      "sha256": "467F447037E4AECE3E8BBB102AC4E6FEC3AD7111B22447DA4F15A0A5F9D449EE"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-23/index.html",
+      "bytes": 13925,
+      "sha256": "E8968FF868E14F7B37EA15C8909AD5B0CFCAAE3220DD49DBBC7B22F15B466D16"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-24/index.html",
+      "bytes": 15300,
+      "sha256": "35FF92057AAF8832C293A6BB83DEF9A0F1F1EDC3368F18E15B3CE2CFC987754D"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-25/index.html",
+      "bytes": 15015,
+      "sha256": "5CB18973262321A28FF62403F259F8AE7283F27A4DF6A781641BE793357489AD"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-3/index.html",
+      "bytes": 13935,
+      "sha256": "BC33DCA79729E770075D76CC19F131E0BE4AC5C5FC02B41CE96BDCC120B00FB8"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-4/index.html",
+      "bytes": 14770,
+      "sha256": "3D47CF4031DE85D7ABB47D527ADDBD4510560533743ECDB53FF4042EC6970052"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-5/index.html",
+      "bytes": 13841,
+      "sha256": "6E2CAD90B02A7EAF307845D8E778323585A88BA9548B529CC6CE1588C3B172C9"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-6/index.html",
+      "bytes": 14368,
+      "sha256": "888F5A36E9C3C4F205F656A139CDFF1630ACF7B5C1A7A231E42FA7A55EAC8EAC"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-7/index.html",
+      "bytes": 13924,
+      "sha256": "EB574894FBE9988926B34E3470CFB832DBA804CEE639F19406804745ECD38FE0"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-8/index.html",
+      "bytes": 14016,
+      "sha256": "B02F0247071E17A50C5226E77CC516B726213C156C9C78CB6535527B9C646426"
+    },
+    {
+      "path": "problems/2020-amc-8-problem-9/index.html",
+      "bytes": 15023,
+      "sha256": "22F25ED2B104824ED9A8C91F4224138702E24D83D7DBCE29D930DE7DB17D32DC"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-1/index.html",
+      "bytes": 14870,
+      "sha256": "F717B2F46464BB35CD2998AA506D9ED1AB15B54E2F95BA2580A6509FFB6AB0C9"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-10/index.html",
+      "bytes": 15650,
+      "sha256": "064922A292F31605903ABEA03E2BCE7EC95DEF8C073D442C1D6460879D7B9C89"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-11/index.html",
+      "bytes": 14024,
+      "sha256": "F75D2B21C89CB1F913B8E7FD4EA354C540FFA25472C0861F2D25CA9D293B732B"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-12/index.html",
+      "bytes": 14963,
+      "sha256": "089BD9BC6DC2727EB953ECE4E038AD89B5804CB432EC128E1520959534360509"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-13/index.html",
+      "bytes": 13924,
+      "sha256": "87DD9F0ACC52D46538F1F99803F4E8625C4DE911DB601815B0211F1F9D982808"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-14/index.html",
+      "bytes": 13892,
+      "sha256": "E1FA1E9C362D9AC6B597EDF9178C4EACA066BFDC640B826907067A58DA15BCA7"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-15/index.html",
+      "bytes": 15295,
+      "sha256": "C4C46B6BCA4B09F0D9F96DABA014AB49DE9102A073DBBE0B34F0578942B52BCF"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-16/index.html",
+      "bytes": 13880,
+      "sha256": "15C02F52BD40CDDAD1B44BDC479A0472A5D3B3694668DFD01F420126DDD424C2"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-17/index.html",
+      "bytes": 14182,
+      "sha256": "C962A13EBF27DF83EC3F9063491BFE258AD47B71C864BEE1169B7CCF0B3E1D57"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-18/index.html",
+      "bytes": 13939,
+      "sha256": "409D07DAD3804ABB4EB80232637C4140D67AB5B4F53C818A2194C4CDDB19763C"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-19/index.html",
+      "bytes": 15642,
+      "sha256": "4651E5D0EFDDC6F51C0D9AC6450AE082812379CCE908037DC8E87501FE7E0359"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-2/index.html",
+      "bytes": 13703,
+      "sha256": "BA177ADE548F51856124DA869AA7A8E83322E3F5A8A8047C11BF1CD1A086B777"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-20/index.html",
+      "bytes": 15168,
+      "sha256": "17D9642FD02E3F9BFED12F7C2141D6035FE5C0F96EB9D489C1D6B52095C7083B"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-21/index.html",
+      "bytes": 15320,
+      "sha256": "EB5A2E0C4C01A5DDDCCC7E667144BB6685A9762B22DC02F407D2CD2820793B28"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-22/index.html",
+      "bytes": 15060,
+      "sha256": "1425BB346588818DD4638EB9CA73AB888D4FBEA6A5F816F3825E6BC59BAA8263"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-23/index.html",
+      "bytes": 15332,
+      "sha256": "D1F307E27419AAB3621BE86FAEFB034669B572823CDE12CC7B8D3B3ADA21F476"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-24/index.html",
+      "bytes": 15188,
+      "sha256": "48E8D9ADD7384151D88A3C1B0CFD159C7CD36ACAA9B7F745414A851681B46D84"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-25/index.html",
+      "bytes": 14580,
+      "sha256": "185FEF6264CD18D5995F85EE5789E2C88BE9B6B349DEC58286237D673D6F090A"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-3/index.html",
+      "bytes": 13940,
+      "sha256": "D52BBB5F58AA8360154F4C4E056CA4599970B909E6E49F17E31F8A9ECF12B212"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-4/index.html",
+      "bytes": 15386,
+      "sha256": "9CF553D198609445B7B3D7C9C91DAE05EEE05DC3DBDA1CF76881A50E3AE629C0"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-5/index.html",
+      "bytes": 13903,
+      "sha256": "B00EE83BBD173551F9250B14487197E90FB0F64BEC982639962680B0A68D6782"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-6/index.html",
+      "bytes": 13848,
+      "sha256": "06AA6A0768FB6C5AFE23E3BF9D3047F01E16BF327B4C50C41333BD145CD2FEBE"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-7/index.html",
+      "bytes": 14006,
+      "sha256": "ED872774F0A6E187608F53C43962C1098D6B7284B833179A1059126988FFB830"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-8/index.html",
+      "bytes": 13801,
+      "sha256": "51EDC8FD8AEBF3CD7C0E34B7FD3F151A77A97D0EDE90C4FCE0E000AAF25BA7D6"
+    },
+    {
+      "path": "problems/2022-amc-8-problem-9/index.html",
+      "bytes": 13930,
+      "sha256": "141720ABE5E6CB48161AC66BEAFD31085FF75F68AD8A822D2D36420FB1AFBE78"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-1/index.html",
+      "bytes": 13620,
+      "sha256": "1DF81054425975E2C35E9CC0F001AC877915906B5DAAEE4D51AD1CCB0FC21863"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-10/index.html",
+      "bytes": 14073,
+      "sha256": "CCF0B89493F3EEB31E3D5B3D9163164C491A397DAD6ECEC9205C2DA91EE90557"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-11/index.html",
+      "bytes": 14011,
+      "sha256": "5FA434243C1F8F24347A0FEC934D5E0CFE76BC4B80637E3B7271A80BC9D749AE"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-12/index.html",
+      "bytes": 14894,
+      "sha256": "333D7399F888C27F7F082AEF8B31F5ABA3DC938231C269BF7323B71CC1C5983B"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-13/index.html",
+      "bytes": 15028,
+      "sha256": "CD7C02F1F83F89722319D0EC95BDBDE12B539EA57D580E5A364B2D20DCADEFD8"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-14/index.html",
+      "bytes": 14366,
+      "sha256": "FF582E04D0C49D264EFA15A62F22B81F1888287046FC00049A2982B175769574"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-15/index.html",
+      "bytes": 15020,
+      "sha256": "FFC0AA2EF12F308DA727CC423F4ED5DF3B541CE621E64E7DAAE31D7798DF88FE"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-16/index.html",
+      "bytes": 15212,
+      "sha256": "04CEFD1CD434D7A234CD94382C999BCFB6ACD379DCCEFCA6FB474DECC63F63D3"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-17/index.html",
+      "bytes": 15117,
+      "sha256": "7DBE2A0C13E115F4F17E2DC172B3704C7D34FF0F697E9EAB7E7469A572BCA388"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-18/index.html",
+      "bytes": 14055,
+      "sha256": "8B907F7CDEC69104CE9B100C1D3133D9591B27309E50849D454DFB67B3991BCB"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-19/index.html",
+      "bytes": 15058,
+      "sha256": "403DB01F9BCA365048236B935D69C9105C605C715C91ADEC132CADD428F077F7"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-2/index.html",
+      "bytes": 15143,
+      "sha256": "8EA3A508F0EFECA6202FBDBEACA2B4B209181BA168DDFAD66159DE761E220F57"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-20/index.html",
+      "bytes": 14188,
+      "sha256": "0C8120FD1FA09ABFE1ED781404762B38B5F7C39B2D53930D9420C559DD0DC602"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-21/index.html",
+      "bytes": 13995,
+      "sha256": "9D8BF0C6DD21C212E3146D5A5654184B86EE4A6110F816B7E885C9EE1931DE91"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-22/index.html",
+      "bytes": 13873,
+      "sha256": "FDE9ED52F882C8F58A7E3008C30BB9A986A7589215903715FB7571755C0FEA65"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-23/index.html",
+      "bytes": 15196,
+      "sha256": "F5F151DA2C4627703DC6424CB090E9DF348A52A5046C292444135EE4CAE19CCF"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-24/index.html",
+      "bytes": 15060,
+      "sha256": "9A7229EC925668410D4E6AD94B65CCC9BDD0910EE33654D511D2CA9B6682B74A"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-25/index.html",
+      "bytes": 13965,
+      "sha256": "82A042AD14C08684272E168D73B761A429752532169F2336DBE9FD86787D5C6B"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-3/index.html",
+      "bytes": 14051,
+      "sha256": "CDCEBEF54987B294733C6DA0A9EA95543F8ECC38E71ACE2F146EF70E2F4BE82B"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-4/index.html",
+      "bytes": 14954,
+      "sha256": "F9DC330C39261292974D2B8889CAD2C9BD6CF7D61415DAA0783DA9457BE94D23"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-5/index.html",
+      "bytes": 13986,
+      "sha256": "8608DD619F175BC8A0F1C8E50F9D8127355667807333AA5E6980361D521CE8C6"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-6/index.html",
+      "bytes": 14810,
+      "sha256": "BDE3018BEFE4558ACD923D18A63C334349F73946DB811EF675D3DD84BB1DC15D"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-7/index.html",
+      "bytes": 14978,
+      "sha256": "A6555AA422786D5C84D65FE5827D4A7881DC7B346F198CD995AE4ECB3C603910"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-8/index.html",
+      "bytes": 14298,
+      "sha256": "815E5971F867508E9A60D5E5A82E80C15745EC4F723D5FCAC735D6C30AF45522"
+    },
+    {
+      "path": "problems/2023-amc-8-problem-9/index.html",
+      "bytes": 14845,
+      "sha256": "C6970882D1968B769BB79D96AC4B4EB1ABC029E4D32F76234BA6602B4BD4F91D"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-1/index.html",
+      "bytes": 13656,
+      "sha256": "05C540FF5E012BC8BB4585057147E8AE182CE5E9BCFCFF62D0D265EDA60B0EF1"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-10/index.html",
+      "bytes": 13759,
+      "sha256": "D0EA2FB77D79491B5582D64BD82BCC92E86E7B2C241996ECB580EB0AF7AE89C1"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-11/index.html",
+      "bytes": 14559,
+      "sha256": "4670F674EDB9BC6362BDD17B00AEEB436B63D35457675505EC77F02A9328094F"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-12/index.html",
+      "bytes": 13821,
+      "sha256": "33C5FCC6DD4292C0A1AD3C244A296371C952FD84EA1B2B12DAA4A329C80CFF0B"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-13/index.html",
+      "bytes": 14855,
+      "sha256": "63990D1ED6861DB27AD09CD78DFE1E6157459E74C37ADE60FF787EB46160A07D"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-14/index.html",
+      "bytes": 14943,
+      "sha256": "0BD07D93372F86F7023258E385D136E3006027C8CE42B62CDCBE436AAEC117D3"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-15/index.html",
+      "bytes": 14070,
+      "sha256": "762D29784FC10CCB8DA892A6DD57069EE8FC560F568E77D79120357B29A5BE37"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-16/index.html",
+      "bytes": 14222,
+      "sha256": "D1CFE498AEC0C9123BFD74F538F403F95CFF3A615E9B03A9D8471BF3CBA69C97"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-17/index.html",
+      "bytes": 15003,
+      "sha256": "70598E5A0F86B5982961824AA4E7032FBDEDA13DBF6126EFD0F786F2347175EB"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-18/index.html",
+      "bytes": 14963,
+      "sha256": "140D3C53D99A6C2D81A85D4C20FFDF94F646F7BBC10A476E769F0ED60B044DCF"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-19/index.html",
+      "bytes": 14900,
+      "sha256": "A5EDCAC786AA8E4AD338BF142D2636AC5FC44F1C2B196167F50328C028AB77D9"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-2/index.html",
+      "bytes": 13607,
+      "sha256": "BCC1DF53C94E3A5F64CF2235E72E1821D2FB160BEA3EF38D95C86D0DD5DBDBD1"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-20/index.html",
+      "bytes": 15006,
+      "sha256": "1ECE8DF6FEADA0D641D4A52F16CE9475D47FF6862900D99DE5DB66FB61F6B339"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-21/index.html",
+      "bytes": 14171,
+      "sha256": "AD3DC654D6EDBBC0D3634BBD6D20A7394DD6D7BA72399A4C07F65C7A5BCFE01A"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-22/index.html",
+      "bytes": 14916,
+      "sha256": "4E9673B97A09EE1487356836532E3B60726DED0318B9C0D654436358EEE7C6E5"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-23/index.html",
+      "bytes": 15017,
+      "sha256": "E1D9168A38023ECDF1CE4EFDB66E7CAE56835C1A3526710274D75BEB9C7F3260"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-24/index.html",
+      "bytes": 14999,
+      "sha256": "1DA3CC772CDC276BB85E173D0CBF009385E622C968A3135CE734BE31FE73D1A6"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-25/index.html",
+      "bytes": 15095,
+      "sha256": "CE55C06391AD000B0EA3660F9878FEB01EDF8786EFE22394238D8B668ACF550F"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-3/index.html",
+      "bytes": 14747,
+      "sha256": "D145F80EA38443ABF5AE7FDB08ADB3FE7416434FDD34BFDA960791BD2CA5949F"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-4/index.html",
+      "bytes": 13710,
+      "sha256": "E06EC810A4F6A327ACE4978CEDA043EAD7927EB3CE1C295B6F27B03DA17BA0AE"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-5/index.html",
+      "bytes": 13877,
+      "sha256": "5E7F0E94DC33BC6B5F10B7DABF394752D21EBCDABC4FD40DB387ABB19378291D"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-6/index.html",
+      "bytes": 14933,
+      "sha256": "5B96B609D755D16DE9D1FAEA485EB828E0A25D8A5B48A4C2507D81C8F1A06A9B"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-7/index.html",
+      "bytes": 14973,
+      "sha256": "6EAA63CA27072DC2106A8574C13F3F0D1348FC2C58C066E7CA4F0D5674237497"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-8/index.html",
+      "bytes": 13786,
+      "sha256": "AE0BA7C0779474BA8EDCF4ECD175E0122E3AF19D7CF7D8B4A4B9DBDB60F3D4A3"
+    },
+    {
+      "path": "problems/2024-amc-8-problem-9/index.html",
+      "bytes": 13788,
+      "sha256": "CA1F8CB53781C8297AD030E9F7D810A4403E8FAD48D3A218EDC827DAF8B303C5"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-1/index.html",
+      "bytes": 14703,
+      "sha256": "2BFD7B1714E547CF2CB047AEE686AF457B845B9CA147C4FFF114149C14F75A62"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-10/index.html",
+      "bytes": 14912,
+      "sha256": "5899B7C8A66111D3FE7EF480C08811D8015BF1189571D9899BA4E3AE8D1E0C75"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-11/index.html",
+      "bytes": 14931,
+      "sha256": "11E6CD96ACCB6B11F38C0F7BF1044E3BED683F9D23C70D1B5185C56FE7C4AE05"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-12/index.html",
+      "bytes": 14753,
+      "sha256": "B3218B0380EA995484BB74EA8082AE246E96C5FF783C580791EA5240846B11AA"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-13/index.html",
+      "bytes": 14826,
+      "sha256": "DB901ECAA0D9AED530475BBCE0CC228A10E9C683E6B48FE6EFA57DDC24CE52EB"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-14/index.html",
+      "bytes": 13930,
+      "sha256": "1FA7C2CFE50CB9E2A0A64A1C33E6375CBE9ECB7532365EFE7C104054469CD380"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-15/index.html",
+      "bytes": 14800,
+      "sha256": "1591EB9FC19424720F3CBD802F08DF81B951F3AAB7866ACF3DC173D773E1812B"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-16/index.html",
+      "bytes": 13922,
+      "sha256": "29D718982ABC7F068EF39A7EE24EB2E990EBC5D37E0A7899096F20BCC76BD55D"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-17/index.html",
+      "bytes": 14919,
+      "sha256": "E307DCC7D35B4529032455CBCC3A9DF3BC41741CD951F6ACF02AAEA7B6AD165F"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-18/index.html",
+      "bytes": 14973,
+      "sha256": "7E9C090651424D3DD9051A8D739D71289A19D79879EA688A9A1C68955C809A89"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-19/index.html",
+      "bytes": 14917,
+      "sha256": "F18DD62150713D1F9105E21E7BB665D80D160D092F37590B294F5792AC560E06"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-2/index.html",
+      "bytes": 15069,
+      "sha256": "80739640B035605B19518C98663D14AA0757A43F04EA6862E6277502C060D9DA"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-20/index.html",
+      "bytes": 13839,
+      "sha256": "8CC3ABB5C9FBB2B41FEF5E0E148882EF926873E65E4A81BD5C91536ADD3CB89C"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-21/index.html",
+      "bytes": 15195,
+      "sha256": "AE1B0EAA6875707AA16E5AE6B75834FB375E6CC0895208106972DFDB2FC9B724"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-22/index.html",
+      "bytes": 14448,
+      "sha256": "2E088B362DB7E2EA6F97C336F26776D20AB459311365BC423EFD48CF53D67E49"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-23/index.html",
+      "bytes": 14330,
+      "sha256": "94C38AEC658B1A29FDA5C1577E84EFDED9D31505AD87721DF535D0846B36CF8C"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-24/index.html",
+      "bytes": 15141,
+      "sha256": "E4335BA307C583057BEC18BA47D6B05694461DB1D750D00370DBE1B2C8A44D52"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-25/index.html",
+      "bytes": 15197,
+      "sha256": "C24B2B20FA590CC0EF8E44308C5BF3D151F50510FE7F5B7F7949650588B562BA"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-3/index.html",
+      "bytes": 13691,
+      "sha256": "B801DD5505134BF5701D9ADC994DB4D67F8287797EFDA9C109E0CCB8A6F164F3"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-4/index.html",
+      "bytes": 13546,
+      "sha256": "D22517BC2AD5BADD01158BBCFA421D384DB3AF0A8007E4315511372A653F530C"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-5/index.html",
+      "bytes": 14697,
+      "sha256": "5CC2F4D2CE88893AAAAC8080CF6561E9BF9DA1B2F10D4924A19EB041C7EF39C9"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-6/index.html",
+      "bytes": 13835,
+      "sha256": "A3BB94DA20AF3B9F781649BFB43F7661B2C279E84C335B8318ADEAC001385F3C"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-7/index.html",
+      "bytes": 13761,
+      "sha256": "35E9838D7F703B5CAEA929DCA77D706079FFC0DE85BBD35BB5A3BABA0766C97D"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-8/index.html",
+      "bytes": 14684,
+      "sha256": "F891EA4C10744CBF9AD3E2154BD4B8C11DE54A8C7085EF342E54192D58B132B9"
+    },
+    {
+      "path": "problems/2025-amc-8-problem-9/index.html",
+      "bytes": 14679,
+      "sha256": "A3F432DB5A69EB26CBDAE9299F1E95F009D1CAAB3E47F9A948A051227B2429EC"
+    },
+    {
+      "path": "taxonomy.md",
+      "bytes": 6233,
+      "sha256": "98DE18F5ADAD83B7E9E9329931CC1207C29479A9D2FC9ED3379F32546C6F4CD5"
+    },
+    {
+      "path": "textbook_index.html",
+      "bytes": 283610,
+      "sha256": "F5EE9E5B5EC8E0C8AD00D715CC991FAD5E79C3C3324C4AFDB2BA6A9501658E2F"
+    }
+  ]
+}

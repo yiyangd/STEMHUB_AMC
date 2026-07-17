@@ -1,0 +1,44 @@
+# AMC 8 常见错误
+
+以下错误清单用于做题后的自检，不是题目分级。每条均链接到已有逐题详情页。
+
+| 学习顺序 | 一级 / 二级分类 | 常见错误与纠正动作 | 例题 |
+| ---: | --- | --- | --- |
+| 1 | 算术与数感 / 四则运算 | 漏掉运算顺序或括号；每一步只做一种运算并回看数量级。 | [2016 AMC 8 Problem 8](problems/2016-amc-8-problem-8/index.html)、[2017 AMC 8 Problem 3](problems/2017-amc-8-problem-3/index.html)、[2017 AMC 8 Problem 5](problems/2017-amc-8-problem-5/index.html) |
+| 2 | 算术与数感 / 分数与小数 | 没有统一表示就直接比较；先约分或化成同一种形式。 | [2017 AMC 8 Problem 1](problems/2017-amc-8-problem-1/index.html)、[2017 AMC 8 Problem 9](problems/2017-amc-8-problem-9/index.html)、[2018 AMC 8 Problem 2](problems/2018-amc-8-problem-2/index.html) |
+| 3 | 算术与数感 / 百分比 | 把百分数变化与百分点变化混淆；先明确基准量。 | [2016 AMC 8 Problem 16](problems/2016-amc-8-problem-16/index.html)、[2017 AMC 8 Problem 14](problems/2017-amc-8-problem-14/index.html)、[2019 AMC 8 Problem 8](problems/2019-amc-8-problem-8/index.html) |
+| 4 | 算术与数感 / 比例 | 对应量配错位置；先写清同类量的对应关系。 | [2015 AMC 8 Problem 16](problems/2015-amc-8-problem-16/index.html)、[2016 AMC 8 Problem 12](problems/2016-amc-8-problem-12/index.html)、[2018 AMC 8 Problem 1](problems/2018-amc-8-problem-1/index.html) |
+| 5 | 算术与数感 / 应用题 | 只抄数字而没有定义数量关系；先标出单位和未知量。 | [2015 AMC 8 Problem 3](problems/2015-amc-8-problem-3/index.html)、[2016 AMC 8 Problem 4](problems/2016-amc-8-problem-4/index.html)、[2016 AMC 8 Problem 14](problems/2016-amc-8-problem-14/index.html) |
+| 6 | 算术与数感 / 估算与取整 | 中间步骤过早取整；保留精确值到最后一步。 | [2017 AMC 8 Problem 4](problems/2017-amc-8-problem-4/index.html)、[2023 AMC 8 Problem 11](problems/2023-amc-8-problem-11/index.html) |
+| 7 | 算术与数感 / 单位换算 | 只换数字不换单位；在等号旁完整写出换算因子。 | [2016 AMC 8 Problem 1](problems/2016-amc-8-problem-1/index.html)、[2022 AMC 8 Problem 7](problems/2022-amc-8-problem-7/index.html) |
+| 8 | 代数 / 方程 | 列式正确但遗漏取值条件；解出后代回题意筛选。 | [2015 AMC 8 Problem 17](problems/2015-amc-8-problem-17/index.html)、[2015 AMC 8 Problem 20](problems/2015-amc-8-problem-20/index.html)、[2015 AMC 8 Problem 24](problems/2015-amc-8-problem-24/index.html) |
+| 9 | 代数 / 表达式 | 合并了不同类项；先标记每一项的次数和系数。 | [2017 AMC 8 Problem 21](problems/2017-amc-8-problem-21/index.html)、[2022 AMC 8 Problem 2](problems/2022-amc-8-problem-2/index.html)、[2023 AMC 8 Problem 6](problems/2023-amc-8-problem-6/index.html) |
+| 10 | 代数 / 数列 | 把项号与项值混为一谈；先列出前几项及对应项号。 | [2015 AMC 8 Problem 9](problems/2015-amc-8-problem-9/index.html)、[2015 AMC 8 Problem 18](problems/2015-amc-8-problem-18/index.html)、[2017 AMC 8 Problem 23](problems/2017-amc-8-problem-23/index.html) |
+| 11 | 代数 / 函数初步 | 把输入输出方向反过来；用箭头写清每一步规则。 | [2020 AMC 8 Problem 22](problems/2020-amc-8-problem-22/index.html)、[2024 AMC 8 Problem 10](problems/2024-amc-8-problem-10/index.html) |
+| 12 | 代数 / 模式规律 | 只凭前两项猜规律；用更多项验证周期或递推。 | [2018 AMC 8 Problem 3](problems/2018-amc-8-problem-3/index.html)、[2020 AMC 8 Problem 4](problems/2020-amc-8-problem-4/index.html)、[2023 AMC 8 Problem 16](problems/2023-amc-8-problem-16/index.html) |
+| 13 | 几何与测量 / 角度 | 把图形看起来相等当作已知；只使用题目给定或可证明关系。 | [2016 AMC 8 Problem 23](problems/2016-amc-8-problem-23/index.html)、[2017 AMC 8 Problem 6](problems/2017-amc-8-problem-6/index.html) |
+| 14 | 几何与测量 / 三角形 | 忽略三角不等式、相似对应边或同高条件。 | [2015 AMC 8 Problem 6](problems/2015-amc-8-problem-6/index.html)、[2015 AMC 8 Problem 21](problems/2015-amc-8-problem-21/index.html)、[2017 AMC 8 Problem 16](problems/2017-amc-8-problem-16/index.html) |
+| 15 | 几何与测量 / 四边形 | 把一般四边形误当成矩形或平行四边形；先列已知性质。 | [2017 AMC 8 Problem 18](problems/2017-amc-8-problem-18/index.html)、[2019 AMC 8 Problem 4](problems/2019-amc-8-problem-4/index.html)、[2025 AMC 8 Problem 24](problems/2025-amc-8-problem-24/index.html) |
+| 16 | 几何与测量 / 圆 | 混淆半径、直径、弧长和面积比例；先写所用公式。 | [2016 AMC 8 Problem 25](problems/2016-amc-8-problem-25/index.html)、[2017 AMC 8 Problem 22](problems/2017-amc-8-problem-22/index.html)、[2017 AMC 8 Problem 25](problems/2017-amc-8-problem-25/index.html) |
+| 17 | 几何与测量 / 面积 | 重复计算重叠区域或漏掉空白；用分割、补形、作差逐块标记。 | [2015 AMC 8 Problem 1](problems/2015-amc-8-problem-1/index.html)、[2015 AMC 8 Problem 2](problems/2015-amc-8-problem-2/index.html)、[2015 AMC 8 Problem 25](problems/2015-amc-8-problem-25/index.html) |
+| 18 | 几何与测量 / 体积 | 把表面积条件直接当棱长；先由面积反求尺度。 | [2019 AMC 8 Problem 9](problems/2019-amc-8-problem-9/index.html)、[2022 AMC 8 Problem 24](problems/2022-amc-8-problem-24/index.html)、[2025 AMC 8 Problem 8](problems/2025-amc-8-problem-8/index.html) |
+| 19 | 几何与测量 / 坐标 | 横纵坐标、斜率或有向差号写反；先画轴并标点。 | [2015 AMC 8 Problem 19](problems/2015-amc-8-problem-19/index.html)、[2019 AMC 8 Problem 21](problems/2019-amc-8-problem-21/index.html)、[2022 AMC 8 Problem 18](problems/2022-amc-8-problem-18/index.html) |
+| 20 | 几何与测量 / 空间几何 | 只看一幅视图下结论；同步核对面、棱和展开图对应。 | [2015 AMC 8 Problem 12](problems/2015-amc-8-problem-12/index.html)、[2018 AMC 8 Problem 24](problems/2018-amc-8-problem-24/index.html)、[2019 AMC 8 Problem 12](problems/2019-amc-8-problem-12/index.html) |
+| 21 | 几何与测量 / 路径与距离 | 把位移当路程；逐段累加实际经过的长度。 | [2023 AMC 8 Problem 13](problems/2023-amc-8-problem-13/index.html)、[2025 AMC 8 Problem 5](problems/2025-amc-8-problem-5/index.html) |
+| 22 | 几何与测量 / 周长与长度 | 漏算公共边或重复算内部边；沿边界走一圈核对。 | [2015 AMC 8 Problem 8](problems/2015-amc-8-problem-8/index.html)、[2024 AMC 8 Problem 6](problems/2024-amc-8-problem-6/index.html) |
+| 23 | 几何与测量 / 图形变换 | 反射、旋转方向弄反；固定一个特征点逐步追踪。 | [2022 AMC 8 Problem 4](problems/2022-amc-8-problem-4/index.html)、[2023 AMC 8 Problem 2](problems/2023-amc-8-problem-2/index.html) |
+| 24 | 数论 / 整除 | 把必要条件误当充分条件；对筛出的候选逐一回代。 | [2015 AMC 8 Problem 14](problems/2015-amc-8-problem-14/index.html)、[2019 AMC 8 Problem 23](problems/2019-amc-8-problem-23/index.html)、[2024 AMC 8 Problem 5](problems/2024-amc-8-problem-5/index.html) |
+| 25 | 数论 / 因数与倍数 | 漏掉成对因数或重复计数；按从小到大配对列出。 | [2015 AMC 8 Problem 22](problems/2015-amc-8-problem-22/index.html)、[2016 AMC 8 Problem 7](problems/2016-amc-8-problem-7/index.html)、[2016 AMC 8 Problem 15](problems/2016-amc-8-problem-15/index.html) |
+| 26 | 数论 / 质数 | 只试很少的因数；检查到平方根并说明覆盖完整。 | [2016 AMC 8 Problem 9](problems/2016-amc-8-problem-9/index.html)、[2023 AMC 8 Problem 4](problems/2023-amc-8-problem-4/index.html)、[2025 AMC 8 Problem 23](problems/2025-amc-8-problem-23/index.html) |
+| 27 | 数论 / 余数 | 负余数或周期起点错位；列出一个完整周期再定位。 | [2016 AMC 8 Problem 5](problems/2016-amc-8-problem-5/index.html)、[2017 AMC 8 Problem 12](problems/2017-amc-8-problem-12/index.html)、[2018 AMC 8 Problem 7](problems/2018-amc-8-problem-7/index.html) |
+| 28 | 数论 / 数字问题 | 忽略位值或前导零限制；把整数展开成各位数字的式子。 | [2016 AMC 8 Problem 11](problems/2016-amc-8-problem-11/index.html)、[2016 AMC 8 Problem 24](problems/2016-amc-8-problem-24/index.html)、[2018 AMC 8 Problem 14](problems/2018-amc-8-problem-14/index.html) |
+| 29 | 组合数学 / 计数 | 分类有重叠或遗漏；先定义互斥情形并核对总数。 | [2015 AMC 8 Problem 10](problems/2015-amc-8-problem-10/index.html)、[2016 AMC 8 Problem 17](problems/2016-amc-8-problem-17/index.html)、[2016 AMC 8 Problem 18](problems/2016-amc-8-problem-18/index.html) |
+| 30 | 组合数学 / 排列组合 | 对象可区分性判断错误；先说明位置和对象是否有标号。 | [2015 AMC 8 Problem 4](problems/2015-amc-8-problem-4/index.html)、[2018 AMC 8 Problem 16](problems/2018-amc-8-problem-16/index.html)、[2020 AMC 8 Problem 6](problems/2020-amc-8-problem-6/index.html) |
+| 31 | 组合数学 / 分类讨论 | 分支不互斥或未覆盖；用条件树检查每种情况只出现一次。 | [2017 AMC 8 Problem 8](problems/2017-amc-8-problem-8/index.html)、[2019 AMC 8 Problem 19](problems/2019-amc-8-problem-19/index.html)、[2024 AMC 8 Problem 14](problems/2024-amc-8-problem-14/index.html) |
+| 32 | 组合数学 / 容斥 | 只相加不减交集；画集合关系并标出重复部分。 | [2015 AMC 8 Problem 15](problems/2015-amc-8-problem-15/index.html)、[2017 AMC 8 Problem 24](problems/2017-amc-8-problem-24/index.html)、[2019 AMC 8 Problem 11](problems/2019-amc-8-problem-11/index.html) |
+| 33 | 组合数学 / 构造 | 只给下界却没展示可达；必要性证明后必须给出具体方案。 | [2015 AMC 8 Problem 23](problems/2015-amc-8-problem-23/index.html)、[2023 AMC 8 Problem 14](problems/2023-amc-8-problem-14/index.html)、[2024 AMC 8 Problem 7](problems/2024-amc-8-problem-7/index.html) |
+| 34 | 概率与统计 / 概率 | 样本点并非等可能却直接相除；先说明随机机制。 | [2015 AMC 8 Problem 7](problems/2015-amc-8-problem-7/index.html)、[2015 AMC 8 Problem 11](problems/2015-amc-8-problem-11/index.html)、[2016 AMC 8 Problem 13](problems/2016-amc-8-problem-13/index.html) |
+| 35 | 概率与统计 / 平均数 | 把平均数直接相加；先还原总和与数据个数。 | [2015 AMC 8 Problem 13](problems/2015-amc-8-problem-13/index.html)、[2016 AMC 8 Problem 3](problems/2016-amc-8-problem-3/index.html)、[2018 AMC 8 Problem 10](problems/2018-amc-8-problem-10/index.html) |
+| 36 | 概率与统计 / 中位数 | 没有排序或数据个数判断错；先定位中间位置。 | [2016 AMC 8 Problem 6](problems/2016-amc-8-problem-6/index.html)、[2023 AMC 8 Problem 20](problems/2023-amc-8-problem-20/index.html)、[2025 AMC 8 Problem 14](problems/2025-amc-8-problem-14/index.html) |
+| 37 | 概率与统计 / 图表与数据 | 坐标轴、单位、图例或缺失格读取错误；先逐项抄成表。 | [2015 AMC 8 Problem 5](problems/2015-amc-8-problem-5/index.html)、[2017 AMC 8 Problem 2](problems/2017-amc-8-problem-2/index.html)、[2018 AMC 8 Problem 8](problems/2018-amc-8-problem-8/index.html) |
+| 38 | 综合题 / 多领域综合 | 多条条件分别处理却没有汇合；明确主线并逐步连接各领域结果。 | 当前题库暂无实例 |
