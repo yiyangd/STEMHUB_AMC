@@ -39,7 +39,7 @@ python scripts\sync_amc8_site.py
 python scripts\validate_amc8_site.py
 ```
 
-Current release validation: **35/35 PASS**. The sync verifies all 363 allowlisted upstream files against the AMC8 source manifest before publishing. Two consecutive full syncs produced the same `amc8/site_manifest.json` SHA-256: `F69371F9702D34B25F889F7749BC6080FC08B974E961240816EC4427C3AB9572`.
+Current release validation: **35/35 PASS**. The sync verifies all 363 allowlisted upstream files against the AMC8 source manifest before publishing. Two consecutive full syncs produced the same `amc8/site_manifest.json` SHA-256: `F6EB9CC536831449232618D21A3E414D165C893D67BFC526AF410DF009B500DF`.
 
 Evidence: [`docs/audits/amc8_site_validation.md`](audits/amc8_site_validation.md)
 
