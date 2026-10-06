@@ -26,6 +26,8 @@ Run `python scripts/sync_amc8_site.py` to copy the public, allowlisted release f
 
 AMC 8 contains the ten real contest years 2015-2020 and 2022-2025 (250 problems). There is no generated 2021 AMC 8 dataset. AMC 8 uses a single form; A/B controls remain specific to AMC 10 and AMC 12.
 
+The AMC 8 overview, annual pages, textbook index, and all 250 problem pages are bilingual. English is the default; the English/中文 switch is shared through `stemhub-amc-language`, and valid `?lang=en` or `?lang=zh` query parameters override and persist the preference.
+
 ## Not included
 
 Raw PDF files, extracted temporary text, cache folders, browser-test screenshots, internal audit artifacts, and local runtime files stay outside this repository.

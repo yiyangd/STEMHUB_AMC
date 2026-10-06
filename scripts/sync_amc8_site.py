@@ -40,7 +40,9 @@ PUBLIC_ROOT_FILES = (
 YEAR_FILE_TEMPLATES = ("{year}.html", "{year}_classified.md", "{year}_problems.csv")
 EXPECTED_PROBLEMS = len(YEARS) * 25
 EXPECTED_IMAGES = 76
-EXPECTED_PDF_REFERENCES = 96
+# Every one of the 96 diagram-dependent pages carries an English and a Chinese
+# source link, so the bilingual release replaces 192 local-PDF anchors.
+EXPECTED_PDF_REFERENCES = 192
 
 SITE_NAV_STYLE = """\
 <style id="stemhub-site-nav-style">
@@ -183,8 +185,8 @@ def ensure_source_is_publishable(source: Path) -> list[dict[str, str]]:
 def navigation_html(relative_root: str) -> str:
     return (
         '<nav class="stemhub-site-nav" data-stemhub-site-nav="1" '
-        'aria-label="STEMHUB 竞赛导航">'
-        f'<a href="{relative_root}index.html">STEMHUB 首页</a>'
+        'aria-label="STEMHUB contest navigation">'
+        f'<a href="{relative_root}index.html"><span data-lang="en">STEMHUB Home</span><span data-lang="zh">STEMHUB 首页</span></a>'
         f'<a href="{relative_root}amc10/index.html">AMC 10</a>'
         f'<a href="{relative_root}amc12/index.html">AMC 12</a>'
         "</nav>"
@@ -220,7 +222,8 @@ def make_public_html(text: str, relative_root: str, strip_pdf_links: bool = Fals
             lambda match: (
                 '<span class="local-pdf-reference">'
                 + match.group(1)
-                + "（来源已核验；发布版未附原始 PDF）</span>"
+                + '<span data-lang="en"> (source verified; original PDF not included in the public release)</span>'
+                + '<span data-lang="zh">（来源已核验；发布版未附原始 PDF）</span></span>'
             ),
             text,
         )

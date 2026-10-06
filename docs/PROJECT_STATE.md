@@ -26,6 +26,7 @@ The validated AMC8 release is mirrored from `D:\AMC8_Codex\output` through a str
 
 - the 10-year, 250-problem overview and annual pages;
 - 250 problem detail pages with independently written step-by-step solutions;
+- English and Chinese content on the overview, annual, textbook, and detail pages, with English as the default;
 - 76 local diagram assets required by those pages;
 - the textbook, method, common-error, and prerequisite indexes;
 - the 12-column public CSV and AMC8 taxonomy;
@@ -38,7 +39,7 @@ python scripts\sync_amc8_site.py
 python scripts\validate_amc8_site.py
 ```
 
-Current release validation: **33/33 PASS**. The sync verifies all 363 allowlisted upstream files against the AMC8 source manifest before publishing. Two consecutive full syncs produced the same `amc8/site_manifest.json` SHA-256: `853E200720DCFAA0F4966282EBF82773C72A8B133D8C55BE499EC0F1B8EAD3AC`.
+Current release validation: **35/35 PASS**. The sync verifies all 363 allowlisted upstream files against the AMC8 source manifest before publishing. Two consecutive full syncs produced the same `amc8/site_manifest.json` SHA-256: `F69371F9702D34B25F889F7749BC6080FC08B974E961240816EC4427C3AB9572`.
 
 Evidence: [`docs/audits/amc8_site_validation.md`](audits/amc8_site_validation.md)
 

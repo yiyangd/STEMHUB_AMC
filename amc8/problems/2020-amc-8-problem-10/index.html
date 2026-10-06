@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,6 +46,12 @@ select:focus-visible,input:focus-visible,button:focus-visible,a:focus-visible { 
 .empty { border:1px dashed var(--line); border-radius:8px; padding:24px; color:var(--muted); text-align:center; background:#fff; }
 .home-link { display:inline-block; margin-bottom:10px; color:#fff; text-underline-offset:3px; }
 .summary { margin:2px 0 6px; color:#33414e; }
+.site-nav-actions { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:14px; }
+.site-nav-actions nav { margin:0; }
+.language-switcher { display:inline-flex; gap:4px; padding:4px; border:1px solid rgba(255,255,255,.3); border-radius:9px; background:rgba(255,255,255,.08); }
+.language-switcher button { min-height:32px; border:0; border-radius:6px; padding:5px 10px; background:transparent; color:#fff; }
+.language-switcher button.active { background:#fff; color:var(--navy); font-weight:750; }
+body[data-language="en"] [data-lang="zh"],body[data-language="zh"] [data-lang="en"] { display:none !important; }
 @media (max-width:980px) {
   main { padding:18px; }
   header { padding:24px 18px 18px; }
@@ -115,68 +121,145 @@ body { background:#f3f1eb; }
 @media(max-width:480px){.stemhub-site-nav{padding:0 12px}.stemhub-site-nav a{flex:1 1 auto;justify-content:center;font-size:13px}}
 </style>
 </head>
-<body data-problem-count="1" data-page-kind="problem-detail" data-year="2020" data-problem-no="10" data-source="2020 AMC 8 Problem 10">
-<nav class="stemhub-site-nav" data-stemhub-site-nav="1" aria-label="STEMHUB 竞赛导航"><a href="../../../index.html">STEMHUB 首页</a><a href="../../../amc10/index.html">AMC 10</a><a href="../../../amc12/index.html">AMC 12</a></nav>
+<body data-language="en" data-problem-count="1" data-page-kind="problem-detail" data-year="2020" data-problem-no="10" data-source="2020 AMC 8 Problem 10">
+<nav class="stemhub-site-nav" data-stemhub-site-nav="1" aria-label="STEMHUB contest navigation"><a href="../../../index.html"><span data-lang="en">STEMHUB Home</span><span data-lang="zh">STEMHUB 首页</span></a><a href="../../../amc10/index.html">AMC 10</a><a href="../../../amc12/index.html">AMC 12</a></nav>
 
   <header class="detail-header">
-    <nav class="detail-nav site-nav" aria-label="返回导航">
-      <a class="nav-link back" href="../../all_years_index.html">返回全部年份</a>
-      <a class="nav-link back" href="../../2020/2020.html">返回 2020 年度页</a>
-      <a class="nav-link" href="../../textbook_index.html">教材索引</a>
-    </nav>
-    <div class="detail-pager" aria-label="前后题导航"><a class="pager-link" href="../2020-amc-8-problem-9/index.html">← 上一题</a><a class="pager-link" href="../2020-amc-8-problem-11/index.html">下一题 →</a></div>
+    <div class="site-nav-actions">
+      <nav class="detail-nav site-nav" aria-label="Navigation">
+        <a class="nav-link back" href="../../all_years_index.html" data-i18n="backOverview">Back to All Years</a>
+        <a class="nav-link back" href="../../2020/2020.html"><span data-i18n="backYear">Back to Year Page</span> · 2020</a>
+        <a class="nav-link" href="../../textbook_index.html" data-i18n="textbook">Textbook Index</a>
+      </nav>
+      <div class="language-switcher" role="group" aria-label="Language"><button type="button" data-language="en" aria-pressed="true">English</button><button type="button" data-language="zh" aria-pressed="false">中文</button></div>
+    </div>
+    <div class="detail-pager" aria-label="Problem navigation"><a class="pager-link" href="../2020-amc-8-problem-9/index.html">← <span data-i18n="previous">Previous Problem</span></a><a class="pager-link" href="../2020-amc-8-problem-11/index.html"><span data-i18n="next">Next Problem</span> →</a></div>
     <h1>2020 AMC 8 Problem 10</h1>
-    <p>AMC 8 逐题详情与原创中文分步解答</p>
     <div class="detail-meta meta">
       <span class="badge">2020</span>
       <span class="badge">AMC 8</span>
-      <span class="badge">第 10 题</span>
-      <span class="badge">组合数学</span>
-      <span class="badge">排列组合</span>
-      <span class="badge">排列组合</span><span class="badge">AMC 8</span>
+      <span class="badge"><span data-lang="en">Problem 10</span><span data-lang="zh">第 10 题</span></span>
+      <span class="badge"><span data-lang="en">Combinatorics</span><span data-lang="zh">组合数学</span></span>
+      <span class="badge"><span data-lang="en">Permutations and Combinations</span><span data-lang="zh">排列组合</span></span>
+      <span class="badge"><span data-lang="en">Permutations and Combinations</span><span data-lang="zh">排列组合</span></span><span class="badge"><span data-lang="en">AMC 8</span><span data-lang="zh">AMC 8</span></span>
     </div>
   </header>
   <main class="detail-main">
     <section class="detail-panel section" id="problem-statement">
-      <h2>题目</h2>
+      <h2 data-i18n="problem">Problem</h2>
       <div class="problem-statement statement math-wrap">Zara has a collection of 4 marbles: an Aggie, a Bumblebee, a Steelie, and a Tiger. She wants to display them in a row on a shelf, but does not want to put the Steelie and the Tiger next to one another. In how many ways can she do this?</div>
     </section>
     <section class="detail-panel section" id="choices" data-option-source="wiki_raw_latex">
-      <h2>A–E 选项</h2>
+      <h2 data-i18n="choices">Choices</h2>
       <ol class="choices"><li class="choice" data-choice="A" data-correct="false"><span class="choice-key">A</span><span class="choice-value math-wrap">$6$</span></li><li class="choice" data-choice="B" data-correct="false"><span class="choice-key">B</span><span class="choice-value math-wrap">$8$</span></li><li class="choice correct" data-choice="C" data-correct="true"><span class="choice-key">C</span><span class="choice-value math-wrap">$12$</span></li><li class="choice" data-choice="D" data-correct="false"><span class="choice-key">D</span><span class="choice-value math-wrap">$18$</span></li><li class="choice" data-choice="E" data-correct="false"><span class="choice-key">E</span><span class="choice-value math-wrap">$24$</span></li></ol>
     </section>
 
     <section class="detail-panel section solution" id="solution">
-      <h2>原创中文分步解答</h2>
-      <div class="solution-steps"><article class="step" data-step="1"><h3>计算全部排列</h3><p class="math-wrap">四颗不同弹珠排成一列共有 4!=24 种排列。</p></article><article class="step" data-step="2"><h3>捆绑相邻弹珠</h3><p class="math-wrap">若 Steelie 与 Tiger 相邻，把它们看成一个整体；连同另外两颗共有 3! 种次序。</p></article><article class="step" data-step="3"><h3>考虑内部顺序</h3><p class="math-wrap">Steelie 与 Tiger 在整体内部有 2 种先后，因此相邻排列共有 2×3!=12 种。</p></article><article class="step" data-step="4"><h3>使用补集</h3><p class="math-wrap">不相邻的排列数为 24−12=12。</p></article></div>
+      <h2 data-i18n="stepSolution">Step-by-step Solution</h2>
+      <div class="solution-steps" data-lang="en"><article class="step" data-step="1"><h3>Calculate all permutations</h3><p class="math-wrap">There are 4! or 24 ways to arrange four different beads in a row.</p></article><article class="step" data-step="2"><h3>Bundle adjacent beads</h3><p class="math-wrap">If Steelie and Tiger are adjacent, consider them as a single entity; together with the other two, there are 3! possible arrangements.</p></article><article class="step" data-step="3"><h3>Consider the internal order</h3><p class="math-wrap">Steelie and Tiger can appear in 2 internal orders, so the number of adjacent arrangements is 2×3!=12.</p></article><article class="step" data-step="4"><h3>Use the complement set</h3><p class="math-wrap">The number of non-adjacent arrangements is 24−12=12.</p></article></div>
+      <div class="solution-steps" data-lang="zh"><article class="step" data-step="1"><h3>计算全部排列</h3><p class="math-wrap">四颗不同弹珠排成一列共有 4!=24 种排列。</p></article><article class="step" data-step="2"><h3>捆绑相邻弹珠</h3><p class="math-wrap">若 Steelie 与 Tiger 相邻，把它们看成一个整体；连同另外两颗共有 3! 种次序。</p></article><article class="step" data-step="3"><h3>考虑内部顺序</h3><p class="math-wrap">Steelie 与 Tiger 在整体内部有 2 种先后，因此相邻排列共有 2×3!=12 种。</p></article><article class="step" data-step="4"><h3>使用补集</h3><p class="math-wrap">不相邻的排列数为 24−12=12。</p></article></div>
     </section>
     <section class="detail-panel section" id="key-idea">
-      <h2>Key Idea</h2>
-      <div class="problem-statement math-wrap">按位置或对象分组，处理相邻、捆绑等排列限制。</div>
+      <h2 data-i18n="keyIdea">Key Idea</h2>
+      <div class="problem-statement math-wrap" data-lang="en">Group by position or object, handle adjacent and bundled arrangements.</div><div class="problem-statement math-wrap" data-lang="zh">按位置或对象分组，处理相邻、捆绑等排列限制。</div>
     </section>
     <section class="detail-panel section" id="notes">
-      <h2>Notes</h2>
-      <div class="problem-statement">题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验</div>
+      <h2 data-i18n="notes">Notes</h2>
+      <div class="problem-statement" data-lang="en">The problem statement and options were verified against the AoPS Wiki&#x27;s &quot;Problems&quot; page. The answers were verified against the corresponding Answer Key.</div><div class="problem-statement" data-lang="zh">题面与选项按 AoPS Wiki 同年 Problems 页面核验；答案按对应 Answer Key 核验</div>
     </section>
     <section class="detail-panel section final-answer answer" id="final-answer" data-answer-choice="C">
-      <h2>最终答案</h2>
-      <p class="math-wrap">因此选 C，答案值为 12。</p>
-      <p><strong>答案：(C) $12$</strong></p>
+      <h2 data-i18n="finalAnswer">Final Answer</h2>
+      <p class="math-wrap" data-lang="en">Therefore, the answer is (C) $12$.</p><p class="math-wrap" data-lang="zh">因此选 C，答案值为 12。</p>
+      <p><strong><span data-i18n="answer">Answer</span>: (C) $12$</strong></p>
     </section>
     <section class="detail-panel section reference references" id="answer-reference">
-      <h2>答案核验来源</h2>
-      <p>本题答案已按 AoPS Wiki Answer Key 核验。本站解答为独立推导与原创中文表达，不复制 AoPS 社区解答正文。</p>
+      <h2 data-i18n="references">References</h2>
+      <p data-i18n="answerChecked">The answer was checked against the AoPS Wiki Answer Key.</p>
       <div class="reference-links">
         <a href="https://artofproblemsolving.com/wiki/index.php/2020_AMC_8_Answer_Key" target="_blank" rel="noopener noreferrer">AoPS Wiki 2020 AMC 8 Answer Key</a>
-        <a href="https://artofproblemsolving.com/wiki/index.php/2020_AMC_8_Problems/Problem_10" target="_blank" rel="noopener noreferrer">AoPS Wiki 2020 AMC 8 Problem 10 原题页</a>
+        <a href="https://artofproblemsolving.com/wiki/index.php/2020_AMC_8_Problems/Problem_10" target="_blank" rel="noopener noreferrer">AoPS Wiki 2020 AMC 8 Problem 10 · <span data-lang="en">Problem Page</span><span data-lang="zh">原题页</span></a>
       </div>
-      <p class="muted">核验状态：verified · 独立复核：由全部 24 个排列扣除把指定两颗捆绑得到的 12 个相邻排列，结果为 12；答案字母与 Answer Key 的 C 一致，未查看 AoPS 解答。</p>
-      <div class="detail-footer detail-pager"><a class="pager-link" href="../2020-amc-8-problem-9/index.html">← 上一题</a><a class="pager-link" href="../2020-amc-8-problem-11/index.html">下一题 →</a></div>
+      <p class="muted"><span data-i18n="verificationStatus">Verification status</span>: verified · <span data-lang="en">Independent review: The 12 adjacent permutations obtained by deducting the specified two bundled permutations from all 24 permutations result in 12. The answer letter matches C in the Answer Key.</span><span data-lang="zh">独立复核：由全部 24 个排列扣除把指定两颗捆绑得到的 12 个相邻排列，结果为 12；答案字母与 Answer Key 的 C 一致，未查看 AoPS 解答。</span></p>
+      <div class="detail-footer detail-pager"><a class="pager-link" href="../2020-amc-8-problem-9/index.html">← <span data-i18n="previous">Previous Problem</span></a><a class="pager-link" href="../2020-amc-8-problem-11/index.html"><span data-i18n="next">Next Problem</span> →</a></div>
     </section>
   </main>
 
 <script>
+(() => {
+  const config = {"messages":{"language":{"en":"Language","zh":"语言"},"overview":{"en":"Problem Overview","zh":"题目总览"},"textbook":{"en":"Textbook Index","zh":"教材索引"},"allYears":{"en":"All Years","zh":"全部年份"},"yearPage":{"en":"Year Page","zh":"年度页"},"years":{"en":"Years","zh":"年份"},"year":{"en":"Year","zh":"年份"},"currentProblems":{"en":"Problems Shown","zh":"当前题量"},"currentYears":{"en":"Years Shown","zh":"当前年份数"},"currentMajors":{"en":"Major Categories","zh":"当前一级分类数"},"currentMinors":{"en":"Minor Categories","zh":"当前二级分类数"},"majorCategory":{"en":"Major Category","zh":"一级分类"},"minorCategory":{"en":"Minor Category","zh":"二级分类"},"majorDistribution":{"en":"Major Categories and Part Distribution","zh":"一级分类与 Part 分布"},"minorDistribution":{"en":"Minor Categories and Part Distribution","zh":"二级分类与 Part 分布"},"minorQuick":{"en":"Minor Category Shortcuts","zh":"二级分类快速入口"},"filterProblems":{"en":"Filter Problems","zh":"筛选题目"},"all":{"en":"All","zh":"全部"},"search":{"en":"Search","zh":"搜索"},"searchPlaceholder":{"en":"Problem number, tag, or keyword","zh":"题号、标签、关键词"},"clearFilters":{"en":"Clear Filters","zh":"清除筛选"},"currentFilter":{"en":"Current filters","zh":"当前筛选"},"allCategories":{"en":"All categories","zh":"全部分类"},"shown":{"en":"Showing","zh":"当前显示"},"problems":{"en":"problems","zh":"题"},"answer":{"en":"Answer","zh":"答案"},"keyIdea":{"en":"Key Idea","zh":"核心思路"},"notes":{"en":"Notes","zh":"备注"},"viewSolution":{"en":"View Solution","zh":"查看解答"},"noMatches":{"en":"No matching problems","zh":"没有匹配的题目"},"problem":{"en":"Problem","zh":"题目"},"choices":{"en":"Choices","zh":"选项"},"stepSolution":{"en":"Step-by-step Solution","zh":"分步解答"},"finalAnswer":{"en":"Final Answer","zh":"最终答案"},"references":{"en":"References","zh":"参考链接"},"answerChecked":{"en":"The answer was checked against the AoPS Wiki Answer Key.","zh":"答案已按 AoPS Wiki Answer Key 核验。"},"verificationStatus":{"en":"Verification status","zh":"核验状态"},"previous":{"en":"Previous Problem","zh":"上一题"},"next":{"en":"Next Problem","zh":"下一题"},"backOverview":{"en":"Back to All Years","zh":"返回全部年份"},"backYear":{"en":"Back to Year Page","zh":"返回年度页"},"originalDiagram":{"en":"Original Diagram","zh":"原题图形"},"diagramNote":{"en":"Diagram Note","zh":"图形说明"},"diagramAudit":{"en":"Diagram Audit","zh":"图形标记审计"},"localPdf":{"en":"local PDF","zh":"本地 PDF"},"currentTotal":{"en":"Total Problems","zh":"总题量"},"problemCountShare":{"en":"Problem Share","zh":"题量占比"},"problemParts":{"en":"Problem Parts","zh":"题号分段"},"textbookTitle":{"en":"AMC 8 Textbook Index","zh":"AMC 8 教材索引"},"textbookSubtitle":{"en":"Major category → minor category → key method → problem detail","zh":"一级分类 → 二级分类 → 核心方法 → 逐题详情"},"findTextbook":{"en":"Find Textbook Content","zh":"查找教材内容"},"keywords":{"en":"Keywords","zh":"关键词"},"textbookSearchPlaceholder":{"en":"Problem, method, tag, or statement","zh":"题号、方法、标签或题面关键词"},"learningOrder":{"en":"Suggested Learning Order","zh":"建议学习顺序"},"currentMethods":{"en":"Key Methods","zh":"当前核心方法"},"prerequisites":{"en":"Prerequisites","zh":"先修"},"commonErrors":{"en":"Common Errors","zh":"常见错误"},"keyMethod":{"en":"Key Method","zh":"核心方法"},"noExamples":{"en":"No examples in the current data set.","zh":"当前题库暂无实例。"},"diagramSource":{"en":"Cropped from the locally verified AMC 8 PDF; provenance and SHA-256 are recorded, with no external image hotlinking.","zh":"图形裁切自已核验的本地 AMC 8 PDF；来源和 SHA-256 均有记录，未使用外部图片热链接。"}},"major":{"算术与数感":"Arithmetic and Number Sense","代数":"Algebra","几何与测量":"Geometry and Measurement","数论":"Number Theory","组合数学":"Combinatorics","概率与统计":"Probability and Statistics","综合题":"Integrated Problems"},"minor":{"四则运算":"Arithmetic Operations","分数与小数":"Fractions and Decimals","百分比":"Percentages","比例":"Ratios","应用题":"Word Problems","估算与取整":"Estimation and Rounding","单位换算":"Unit Conversion","方程":"Equations","表达式":"Expressions","数列":"Sequences","函数初步":"Introductory Functions","模式规律":"Patterns","角度":"Angles","三角形":"Triangles","四边形":"Quadrilaterals","圆":"Circles","面积":"Area","体积":"Volume","坐标":"Coordinates","空间几何":"Solid Geometry","路径与距离":"Paths and Distance","周长与长度":"Perimeter and Length","图形变换":"Geometric Transformations","整除":"Divisibility","因数与倍数":"Factors and Multiples","质数":"Primes","余数":"Remainders","数字问题":"Digit Problems","计数":"Counting","排列组合":"Permutations and Combinations","分类讨论":"Case Analysis","容斥":"Inclusion–Exclusion","构造":"Construction","概率":"Probability","平均数":"Mean","中位数":"Median","图表与数据":"Charts and Data","多领域综合":"Multi-topic Synthesis"},"tags":{"AMC 8":"AMC 8","一元方程":"Linear Equations","三角形":"Triangles","三角形面积":"Triangle Area","上下步":"Up-and-down Steps","不变量":"Invariants","个位数":"Units Digit","中位数":"Median","估算":"Estimation","估算与取整":"Estimation and Rounding","位值":"Place Value","体积":"Volume","体积守恒":"Volume Conservation","余数":"Remainders","倍数":"Multiples","内切圆":"Inscribed Circles","函数初步":"Introductory Functions","分数":"Fractions","分数与小数":"Fractions and Decimals","分段速度":"Piecewise Speed","分类":"Casework","分类讨论":"Case Analysis","化简":"Simplification","区间人数":"Interval Counts","半径":"Radius","半素数":"Semiprimes","单位换算":"Unit Conversion","古埃及数字":"Ancient Egyptian Numerals","周期":"Periodicity","周长与长度":"Perimeter and Length","四则运算":"Arithmetic Operations","四边形":"Quadrilaterals","四连方":"Tetrominoes","因数":"Factors","因数与倍数":"Factors and Multiples","图形变换":"Geometric Transformations","图标号":"Diagram Labeling","图表":"Charts","图表与数据":"Charts and Data","圆":"Circles","圆环":"Annuli","坐标":"Coordinates","奇偶性":"Parity","容斥":"Inclusion–Exclusion","对称":"Symmetry","对称配对":"Symmetric Pairing","小数":"Decimals","平均分配":"Equal Distribution","平均数":"Mean","平方数":"Perfect Squares","并集":"Union","应用题":"Word Problems","弧长":"Arc Length","扇形":"Sectors","排列":"Permutations","排列组合":"Permutations and Combinations","数列":"Sequences","数字":"Digits","数字条件":"Digit Constraints","数字问题":"Digit Problems","整数和":"Integer Sums","整数约束":"Integer Constraints","整数边":"Integer Side Lengths","整除":"Divisibility","方程":"Equations","旋转":"Rotation","无限和":"Infinite Sums","曼哈顿距离":"Manhattan Distance","最小值":"Minimum","最短路":"Shortest Paths","有向图":"Directed Graphs","极值":"Extremal Values","构造":"Construction","枚举":"Enumeration","格点线段":"Lattice Segments","格路径":"Lattice Paths","棋盘":"Boards","概率":"Probability","模 7":"Modulo 7","模式规律":"Patterns","正方形":"Squares","比例":"Ratios","比例变化":"Ratio Change","比较":"Comparison","流量":"Flow Rate","状态枚举":"State Enumeration","百分比":"Percentages","直方图":"Histograms","相似":"Similarity","相遇问题":"Meeting Problems","矩形":"Rectangles","空间几何":"Solid Geometry","空间距离":"Spatial Distance","立方体":"Cubes","等差数列":"Arithmetic Sequences","等比数列":"Geometric Sequences","等腰梯形":"Isosceles Trapezoids","等腰直角三角形":"Isosceles Right Triangles","等间隔":"Equal Spacing","累计频数":"Cumulative Frequency","约束满足":"Constraint Satisfaction","线性增长":"Linear Growth","网格":"Grids","网格计数":"Grid Counting","网格距离":"Grid Distance","补集":"Complements","补集计数":"Complement Counting","表达式":"Expressions","表面积":"Surface Area","覆盖":"Covering","角度":"Angles","计数":"Counting","质数":"Primes","路径":"Paths","路径与距离":"Paths and Distance","路径计数":"Path Counting","近似":"Approximation","速度":"Speed","配对":"Pairing","重叠面积":"Overlapping Area","重复值":"Repeated Values","重复数字":"Repeated Digits","铺砖":"Tiling","随机座位":"Random Seating","集合交集":"Intersection","面积":"Area","面积总和":"Sum of Areas","面积缩放":"Area Scaling","骰子":"Dice"}};
+  const storeKey = "stemhub-amc-language";
+  const valid = value => value === "en" || value === "zh";
+  const params = new URLSearchParams(window.location.search);
+  const hasQuery = params.has("lang");
+  const query = params.get("lang");
+  let language;
+  if (hasQuery) {
+    language = valid(query) ? query : "en";
+    try { localStorage.setItem(storeKey, language); } catch (_) {}
+  } else {
+    let saved = null;
+    try { saved = localStorage.getItem(storeKey); } catch (_) {}
+    language = valid(saved) ? saved : "en";
+  }
+  const text = key => config.messages[key]?.[language] ?? config.messages[key]?.en ?? key;
+  const label = (kind, value) => language === "en" ? (config[kind]?.[value] ?? value) : value;
+  const internalHref = href => {
+    if (!href || href.startsWith("#") || /^(?:mailto:|tel:|javascript:)/i.test(href)) return href;
+    let url;
+    try { url = new URL(href, window.location.href); } catch (_) { return href; }
+    const sameSite = url.protocol === "file:" || url.origin === window.location.origin;
+    if (!sameSite || /artofproblemsolving\.com$/i.test(url.hostname)) return href;
+    url.searchParams.set("lang", language);
+    return url.href;
+  };
+  const applyStatic = () => {
+    document.documentElement.lang = language === "en" ? "en" : "zh-CN";
+    document.body.dataset.language = language;
+    document.querySelectorAll("[data-i18n]").forEach(node => { node.textContent = text(node.dataset.i18n); });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(node => { node.placeholder = text(node.dataset.i18nPlaceholder); });
+    document.querySelectorAll("[data-i18n-aria]").forEach(node => { node.setAttribute("aria-label", text(node.dataset.i18nAria)); });
+    document.querySelectorAll("[data-alt-en][data-alt-zh]").forEach(node => { node.alt = language === "en" ? node.dataset.altEn : node.dataset.altZh; });
+    document.querySelectorAll("[data-language]").forEach(button => {
+      const active = button.dataset.language === language;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+    document.querySelectorAll('a[href]:not([target="_blank"])').forEach(link => {
+      const raw = link.getAttribute("href");
+      const localized = internalHref(raw);
+      if (localized !== raw) link.setAttribute("href", localized);
+    });
+  };
+  const setLanguage = next => {
+    language = valid(next) ? next : "en";
+    try { localStorage.setItem(storeKey, language); } catch (_) {}
+    const url = new URL(window.location.href);
+    url.searchParams.set("lang", language);
+    try { history.replaceState(null, "", url.href); } catch (_) {}
+    applyStatic();
+    window.dispatchEvent(new CustomEvent("stemhub-language-change", {detail:{language}}));
+  };
+  window.STEMHUB_LANGUAGE = {
+    get: () => language,
+    set: setLanguage,
+    t: text,
+    major: value => label("major", value),
+    minor: value => label("minor", value),
+    tag: value => label("tags", value),
+    href: internalHref,
+    apply: applyStatic,
+  };
+  document.addEventListener("click", event => {
+    const button = event.target.closest("[data-language]");
+    if (button) setLanguage(button.dataset.language);
+  });
+  applyStatic();
+})();
+
+
 window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]]},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]}};
+const updateDetailTitle=()=>{document.title=`2020 AMC 8 Problem 10 ${window.STEMHUB_LANGUAGE.get()==="en"?"Solution":"详细解答"}`;window.STEMHUB_LANGUAGE.apply();};
+window.addEventListener("stemhub-language-change",updateDetailTitle);updateDetailTitle();
 </script>
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>

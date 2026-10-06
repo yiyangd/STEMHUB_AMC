@@ -34,7 +34,8 @@ CSV_FIELDS = (
 )
 EXPECTED_PROBLEMS = 250
 EXPECTED_IMAGES = 76
-EXPECTED_PDF_REFERENCES = 96
+EXPECTED_PDF_REFERENCE_PAGES = 96
+EXPECTED_PDF_REFERENCES = 192
 PUBLIC_ROOT_FILES = {
     "index.html",
     "all_years_index.html",
@@ -282,6 +283,7 @@ def main() -> None:
     missing_alts: list[str] = []
     image_references: set[Path] = set()
     missing_site_nav: list[str] = []
+    non_bilingual_site_nav: list[str] = []
     css_external_urls: list[str] = []
     residual_input_links: list[str] = []
     forbidden_form_controls: list[str] = []
@@ -289,6 +291,14 @@ def main() -> None:
         text = page.read_text(encoding="utf-8")
         if 'data-stemhub-site-nav="1"' not in text:
             missing_site_nav.append(relative_name(page))
+        elif not all(
+            marker in text
+            for marker in (
+                '<span data-lang="en">STEMHUB Home</span>',
+                '<span data-lang="zh">STEMHUB 首页</span>',
+            )
+        ):
+            non_bilingual_site_nav.append(relative_name(page))
         if CSS_EXTERNAL_URL_RE.search(text):
             css_external_urls.append(relative_name(page))
         if re.search(r'(?i)(?:href|src)=["\'][^"\']*(?:\.\./)+input/', text):
@@ -319,12 +329,19 @@ def main() -> None:
                 missing_alts.append(f"{relative_name(page)} -> {src}")
 
     check("All 263 public HTML pages have STEMHUB/AMC10/AMC12 navigation", len(html_files) == 263 and not missing_site_nav, f"pages={len(html_files)}; missing nav={missing_site_nav[:5]}")
+    check("All injected STEMHUB navigation is bilingual with English first", not non_bilingual_site_nav, f"non-bilingual nav={non_bilingual_site_nav[:5]}")
     check("All static local HTML links and resources resolve", not broken_references, "no broken references" if not broken_references else "; ".join(broken_references[:8]))
     check("No external images or CSS image hotlinks exist", not external_images and not css_external_urls, f"external img={external_images[:4]}; external CSS={css_external_urls[:4]}")
     check("Every embedded image has non-empty alt text", not missing_alts, "all image alt text present" if not missing_alts else "; ".join(missing_alts[:8]))
     expected_image_set = {path.resolve() for path in image_files}
     check("Every published diagram image is referenced by a page", image_references == expected_image_set, f"referenced={len(image_references)}; published={len(expected_image_set)}")
     check("No detail page links to an unpublished local input PDF", not residual_input_links, f"residual pages={residual_input_links[:8]}")
+    bilingual_pdf_notices = sum(
+        '<span data-lang="en"> (source verified; original PDF not included in the public release)</span>' in path.read_text(encoding="utf-8")
+        and '<span data-lang="zh">（来源已核验；发布版未附原始 PDF）</span>' in path.read_text(encoding="utf-8")
+        for path in detail_files
+    )
+    check("All 96 published PDF-source pages have bilingual notices", bilingual_pdf_notices == EXPECTED_PDF_REFERENCE_PAGES, f"bilingual notice pages={bilingual_pdf_notices}")
     check("AMC 8 HTML contains no A/B form or difficulty controls", not forbidden_form_controls, f"pages={forbidden_form_controls[:8]}")
 
     # Markdown links are public entry points too.

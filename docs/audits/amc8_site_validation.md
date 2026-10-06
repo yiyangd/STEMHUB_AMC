@@ -1,7 +1,7 @@
 # AMC 8 Site Validation
 
 - Result: **PASS**
-- Checks passed: **33/33**
+- Checks passed: **35/35**
 - Publication subtree: `amc8/`
 - Validated source: `AMC8_Codex/output`
 
@@ -24,22 +24,24 @@
 | 15 | amc8/index.html is an exact copy of all_years_index.html | PASS | identical publication entrypoints |
 | 16 | Overview and annual pages embed the expected problem counts | PASS | overview=250 and every year=25 |
 | 17 | All 263 public HTML pages have STEMHUB/AMC10/AMC12 navigation | PASS | pages=263; missing nav=[] |
-| 18 | All static local HTML links and resources resolve | PASS | no broken references |
-| 19 | No external images or CSS image hotlinks exist | PASS | external img=[]; external CSS=[] |
-| 20 | Every embedded image has non-empty alt text | PASS | all image alt text present |
-| 21 | Every published diagram image is referenced by a page | PASS | referenced=76; published=76 |
-| 22 | No detail page links to an unpublished local input PDF | PASS | residual pages=[] |
-| 23 | AMC 8 HTML contains no A/B form or difficulty controls | PASS | pages=[] |
-| 24 | All local Markdown links resolve | PASS | no broken Markdown links |
-| 25 | Markdown contains no external image hotlinks | PASS | [] |
-| 26 | No absolute local paths, file URLs, or localhost URLs leak into publication files | PASS | [] |
-| 27 | No temporary, cache, backup, or internal audit artifacts are published | PASS | [] |
-| 28 | site_manifest.json covers every managed file with current SHA-256 and counts | PASS | manifest current |
-| 29 | Protected CSV/taxonomy/textbook Markdown is byte-identical to AMC8_Codex | PASS | 25 copied data/document files match |
-| 30 | STEMHUB home exposes AMC 8 with current aggregate counts and honest form wording | PASS | home integration current |
-| 31 | The site 404 page links to AMC 8 | PASS | AMC 8 fallback link present |
-| 32 | Home-page Chinese/English dictionary covers the AMC 8 integration | PASS | AMC 8 keys present in both languages |
-| 33 | All local links and assets on the STEMHUB home page resolve | PASS | home links resolve |
+| 18 | All injected STEMHUB navigation is bilingual with English first | PASS | non-bilingual nav=[] |
+| 19 | All static local HTML links and resources resolve | PASS | no broken references |
+| 20 | No external images or CSS image hotlinks exist | PASS | external img=[]; external CSS=[] |
+| 21 | Every embedded image has non-empty alt text | PASS | all image alt text present |
+| 22 | Every published diagram image is referenced by a page | PASS | referenced=76; published=76 |
+| 23 | No detail page links to an unpublished local input PDF | PASS | residual pages=[] |
+| 24 | All 96 published PDF-source pages have bilingual notices | PASS | bilingual notice pages=96 |
+| 25 | AMC 8 HTML contains no A/B form or difficulty controls | PASS | pages=[] |
+| 26 | All local Markdown links resolve | PASS | no broken Markdown links |
+| 27 | Markdown contains no external image hotlinks | PASS | [] |
+| 28 | No absolute local paths, file URLs, or localhost URLs leak into publication files | PASS | [] |
+| 29 | No temporary, cache, backup, or internal audit artifacts are published | PASS | [] |
+| 30 | site_manifest.json covers every managed file with current SHA-256 and counts | PASS | manifest current |
+| 31 | Protected CSV/taxonomy/textbook Markdown is byte-identical to AMC8_Codex | PASS | 25 copied data/document files match |
+| 32 | STEMHUB home exposes AMC 8 with current aggregate counts and honest form wording | PASS | home integration current |
+| 33 | The site 404 page links to AMC 8 | PASS | AMC 8 fallback link present |
+| 34 | Home-page Chinese/English dictionary covers the AMC 8 integration | PASS | AMC 8 keys present in both languages |
+| 35 | All local links and assets on the STEMHUB home page resolve | PASS | home links resolve |
 
 ## Publication contract
 
